@@ -86,7 +86,7 @@ import XCTest
         let compactTab = app.tabBars.buttons[name]
         if compactTab.exists { compactTab.tap() }
         else {
-            let regularTab = app.buttons[name].firstMatch
+            let regularTab = app.descendants(matching: .any).matching(identifier: name).firstMatch
             XCTAssertTrue(regularTab.waitForExistence(timeout: 10))
             regularTab.tap()
         }
