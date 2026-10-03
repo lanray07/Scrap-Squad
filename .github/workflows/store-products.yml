@@ -1,0 +1,44 @@
+name: Configure App Store cosmetic products
+on:
+  workflow_dispatch:
+    inputs:
+      complete:
+        description: Upload verified review screenshots and attach the tested build
+        type: boolean
+        default: false
+      build:
+        description: Processed cosmetic release build number
+        default: '5'
+permissions:
+  contents: read
+concurrency:
+  group: store-products
+  cancel-in-progress: false
+jobs:
+  products:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Apple authentication library
+        run: pip install 'PyJWT[crypto]==2.10.1'
+      - name: Save product metadata through Apple API
+        env:
+          ASC_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          ASC_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_API_PRIVATE_KEY }}
+          COMPLETE: ${{ inputs.complete }}
+          RELEASE_BUILD: ${{ inputs.build }}
+        run: |
+          options=()
+          if [ "$COMPLETE" = true ]; then options+=(--complete); fi
+          python Tools/configure_iap.py "${options[@]}" --build "$RELEASE_BUILD"
+      - name: Save non-sensitive verification report
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-store-product-status
+          path: .build/iap-status.json
+          if-no-files-found: error
