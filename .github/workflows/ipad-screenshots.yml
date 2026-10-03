@@ -1,0 +1,36 @@
+name: Capture iPad store screenshots
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  ipad:
+    runs-on: macos-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: brew install xcodegen
+      - run: xcodegen generate
+      - name: Capture actual iPad UI
+        env:
+          SIMULATOR_FAMILY: iPad Pro 13
+          UI_RESULT_NAME: ipad-ui-tests
+        run: |
+          mkdir -p .build
+          bash Tools/test_ios_ui.sh
+      - name: Export captures
+        if: always()
+        run: |
+          if [ -d .build/ipad-ui-tests.xcresult ]; then
+            mkdir -p .build/ipad-attachments
+            xcrun xcresulttool export attachments --path .build/ipad-ui-tests.xcresult --output-path .build/ipad-attachments
+            python3 Tools/collect_store_captures.py .build/ipad-attachments .build/ipad-captures
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ipad-store-captures
+          path: |
+            .build/ipad-captures
+            .build/ipad-ui-tests.log
+          if-no-files-found: ignore
