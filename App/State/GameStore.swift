@@ -19,7 +19,9 @@ import ScrapCore
         saveURL = directory.appending(path: "profile.json")
         do {
             try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
-            if FileManager.default.fileExists(atPath: saveURL.path) {
+            if ProcessInfo.processInfo.arguments.contains("--ui-testing") {
+                profile = PlayerProfile(); onboardingPresented = true
+            } else if FileManager.default.fileExists(atPath: saveURL.path) {
                 profile = try JSONDecoder().decode(PlayerProfile.self, from: Data(contentsOf: saveURL))
                 try profile.validate(content: content)
             } else {

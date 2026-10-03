@@ -49,7 +49,11 @@ struct RootView: View {
         .onChange(of: scenePhase) { _, phase in store.sceneChanged(phase) }
         .onAppear { if systemReduceMotion { store.profile.preferences.reducedMotion = true } }
         .onChange(of: systemReduceMotion) { _, enabled in if enabled { store.profile.preferences.reducedMotion = true } }
-        .task { await commerce.start(); gameCenter.authenticate() }
+        .task {
+            if !ProcessInfo.processInfo.arguments.contains("--ui-testing") {
+                await commerce.start(); gameCenter.authenticate()
+            }
+        }
     }
 }
 

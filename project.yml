@@ -37,4 +37,14 @@ targets:
         outputFiles:
           - $(SRCROOT)/App/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.png
     scheme:
-      testTargets: []
+      testTargets: [ScrapSquadUITests]
+  ScrapSquadUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [UITests]
+    dependencies:
+      - target: ScrapSquad
+    settings:
+      base:
+        SWIFT_VERSION: '6.0'
+        GENERATE_INFOPLIST_FILE: YES

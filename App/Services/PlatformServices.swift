@@ -33,7 +33,7 @@ struct RobotFinish: Codable { let robotID: String; let tint: String }
     func start() async {
         if updates == nil {
             updates = Task { [weak self] in
-                for await result in Transaction.updates {
+                for await result in StoreKit.Transaction.updates {
                     guard !Task.isCancelled, let self else { return }
                     await self.accept(result)
                 }
@@ -46,7 +46,7 @@ struct RobotFinish: Codable { let robotID: String; let tint: String }
         do { products = try await Product.products(for: configuration.cosmeticProductIDs).filter { $0.type == .nonConsumable && configuration.finishes[$0.id] != nil } }
         catch { messageKey = "error.purchase" }
         var owned = Set<String>()
-        for await result in Transaction.currentEntitlements {
+        for await result in StoreKit.Transaction.currentEntitlements {
             if case .verified(let transaction) = result,
                transaction.revocationDate == nil,
                configuration.cosmeticProductIDs.contains(transaction.productID) {
@@ -68,7 +68,7 @@ struct RobotFinish: Codable { let robotID: String; let tint: String }
             }
         } catch { messageKey = "error.purchase" }
     }
-    private func accept(_ result: VerificationResult<Transaction>) async {
+    private func accept(_ result: VerificationResult<StoreKit.Transaction>) async {
         guard case .verified(let transaction) = result else { messageKey = "error.purchase"; return }
         guard configuration.cosmeticProductIDs.contains(transaction.productID) else { return }
         if transaction.revocationDate == nil { entitlements.insert(transaction.productID) }
@@ -117,8 +117,10 @@ struct RobotFinish: Codable { let robotID: String; let tint: String }
         top.present(controller, animated: true)
     }
 }
-@MainActor final class GameCenterDismissal: NSObject, GKGameCenterControllerDelegate {
-    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) { gameCenterViewController.dismiss(animated: true) }
+final class GameCenterDismissal: NSObject, GKGameCenterControllerDelegate {
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+        Task { @MainActor in gameCenterViewController.dismiss(animated: true) }
+    }
 }
 
 enum AudioCue: String { case city, battle, boss, weapon, explosion, robot, fusion, victory, ui }
