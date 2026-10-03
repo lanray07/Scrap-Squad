@@ -6,7 +6,7 @@ Native iPhone/iPad game foundation using SwiftUI, SpriteKit and a standalone Swi
 
 The project is connected to [lanray07/Scrap-Squad](https://github.com/lanray07/Scrap-Squad). The `Validate native game` workflow builds with Xcode on a macOS runner, validates the core/tooling, saves a simulator app zip, and runs onboarding/fusion and battle/pause/retreat smoke tests. Xcode result bundles, test screenshots and startup diagnostics are retained as workflow artifacts.
 
-[Xcode build and five simulator tests passed for the cosmetic update](https://github.com/lanray07/Scrap-Squad/actions/runs/37156023763). The new replay update adds additional native tests; see [replay features and validation](Docs/PREMIUM_LOOP.md) and `Docs/GITHUB_BUILD.md` for verification details and captures.
+[The final Xcode build, 22 core tests and six simulator tests passed](https://github.com/lanray07/Scrap-Squad/actions/runs/37158254127). See [replay features and validation](Docs/PREMIUM_LOOP.md) and `Docs/GITHUB_BUILD.md` for verification details and captures.
 
 The simulator build requires no Apple signing secrets. The existing Apple team and App Store Connect secrets are not consumed by this workflow. A signed device archive or TestFlight upload is a separate distribution action.
 
@@ -111,7 +111,7 @@ No ads, subscriptions, consumables, season-pass charges, analytics or remote com
 
 ## App Store distribution
 
-The separate manual `release.yml` workflow consumes the existing Apple secrets, archives for iOS and uses Apple's cloud distribution signing during export/upload. It needs no registered development device. It removes its temporary private key after the run; keys and signing material are not saved as artifacts. [Release workflow run 5](https://github.com/lanray07/Scrap-Squad/actions/runs/37155902457) uploaded version 1.0, build 5, including cosmetic purchases and the app-only UserDefaults privacy reason. This build is attached in App Store Connect. Upload success does not mean App Review approval.
+The separate manual `release.yml` workflow consumes the existing Apple secrets, archives for iOS and uses Apple's cloud distribution signing during export/upload. It needs no registered development device. It removes its temporary private key after the run; keys and signing material are not saved as artifacts. [Release workflow run 7](https://github.com/lanray07/Scrap-Squad/actions/runs/37158256194) uploaded version 1.0, build 7, including replay/sharing features, cosmetic purchases and the app-only UserDefaults privacy reason. This build is attached in App Store Connect. Upload success does not mean App Review approval.
 
 `store-products.yml` updates the approved cosmetic products, eleven storefront localizations, exact GBP base prices and 173-region availability through Apple's API using the same existing secrets. Its optional completion step uploads actual review screenshots and attaches a processed build. It does not submit review, accept agreements or configure recurring subscriptions.
 

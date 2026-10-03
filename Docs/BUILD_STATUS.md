@@ -1,6 +1,6 @@
 # Verification snapshot — 3 October 2026
 
-**Updated:** Signed version 1.0, build 5 with optional cosmetic purchases is uploaded and attached in App Store Connect. [Native validation](https://github.com/lanray07/Scrap-Squad/actions/runs/37156023763) passed 16 core tests, 13 localization-tooling tests, Apple SDK compilation and five iPhone UI tests, including StoreKit purchase/equip/relaunch/restore/refund checks. All 332 English source keys resolve; additional in-app languages remain drafts. See [store preparation status](Store/APP_STORE_CONNECT.md) and [cosmetic verification](Store/IAP/README.md). The rows below retain the earlier Windows-host verification context.
+**Updated:** Signed version 1.0, build 7 with the replay/sharing update is uploaded, processed and attached in App Store Connect. [Final native validation](https://github.com/lanray07/Scrap-Squad/actions/runs/37158254127) passed Apple SDK compilation, 22 core tests, 13 tooling tests and six iPhone UI tests, including purchases/restore/refunds, earned Overdrive, share-card preview, retry clock and saved mastery. All 375 English source keys resolve. Ten languages have 3,750 integrity-checked drafts; language quality remains unapproved. See [replay verification](PREMIUM_LOOP.md), [actual captures](Replay/README.md) and [store status](Replay/app-store-status.json). The app and products have not been submitted for review or released. The rows below retain the earlier Windows-host verification context.
 
 | Check | Result |
 | --- | --- |

@@ -1,0 +1,49 @@
+{
+  "workflowRun": "https://github.com/lanray07/Scrap-Squad/actions/runs/37158254127",
+  "commit": "ddb294db90e44a7b426d14f332134e89f5042d34",
+  "runtime": "iOS 26.2",
+  "screenshots": [
+    {
+      "file": "Premium-01-mastery.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "iPhone 17 Pro Max",
+      "source": "9DB17382-14AC-4298-A21B-BFFC395D2A66.png",
+      "sha256": "7c38a76307be522c8bc6c36105fe9f06fb2401c81a5bd8831e0367cfc1093195"
+    },
+    {
+      "file": "Premium-02-daily-circuit.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "iPhone 17 Pro Max",
+      "source": "6A486629-DC7F-4771-9626-B66CE6407CAD.png",
+      "sha256": "a4cd2c1243cda4809745a32b9f7af2c10e8608af24f674cf1c547a52f16a4920"
+    },
+    {
+      "file": "Premium-03-results.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "iPhone 17 Pro Max",
+      "source": "EC03460E-5922-4DFE-BB4E-D1A611B13C68.png",
+      "sha256": "f194d46614dc93b57d3996f19fc4deed0479e818af2791d82141c996490fc5d1"
+    },
+    {
+      "file": "Premium-04-share-card.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "iPhone 17 Pro Max",
+      "source": "547944C0-AC32-4ADF-B474-D89A7463ED75.png",
+      "sha256": "a7bc7cc7e7bc82161544ad566e428ba6964a403a851553bf6d9e663174769321"
+    },
+    {
+      "file": "Premium-05-saved-records.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "iPhone 17 Pro Max",
+      "source": "A2A46019-4D3F-4932-B53B-F0EEABC113E0.png",
+      "sha256": "42ef7c69bc85027a6ff6b2937fe314a83baedcf06954164bd733c230c52e3801"
+    },
+    {
+      "file": "Premium-06-overdrive.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "iPhone 17 Pro Max",
+      "source": "A45BA52D-69C3-462F-938B-8954796AAC1B.png",
+      "sha256": "29d2eb11344b439a8e6ffb2a0c2909204a84918c3434e9c52f2d8d574b73dc6b"
+    }
+  ]
+}

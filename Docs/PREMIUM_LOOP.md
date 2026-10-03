@@ -14,9 +14,15 @@ This update turns a completed run into a story worth replaying or sharing. It do
 
 ## Validation
 
-New core tests cover UTC rotation, malformed codes, fixed loaner profiles, combo expiry/Overdrive gating, synergy prerequisites, seeded opening equivalence, old-save decoding, journal bounds/persistence and duplicate reward protection. A native UI test covers mastery, circuit deployment, result sharing preview, retry and saved records, with genuine simulator captures. Validation status is recorded after GitHub's Apple SDK run completes.
+[Final native validation](https://github.com/lanray07/Scrap-Squad/actions/runs/37158254127) passed Apple SDK compilation, 22 core tests, 13 tooling tests and all six iPhone UI tests for source `ddb294db90e44a7b426d14f332134e89f5042d34`. The replay test earns Overdrive through actual combat, activates it, previews a real run card, retries, confirms the combat clock continues and verifies saved mastery progress. Existing purchase/restore/refund and fusion/battle flows also passed.
+
+New core tests cover UTC rotation, malformed codes, fixed loaner profiles, combo expiry/Overdrive gating, synergy prerequisites, seeded opening equivalence, old-save decoding, journal bounds/persistence and duplicate reward protection. Six genuine simulator captures and their source hashes are saved in [Replay/Captures](Replay/Captures/capture-provenance.json). The archive lazily prepares visible cards, clears rendered images when they leave the screen and starts a fresh SpriteKit scene on retry. The combat clock shows seconds.
+
+[Signed build 7](https://github.com/lanray07/Scrap-Squad/actions/runs/37158256194) uploaded the same tested app source. All three music loops and eight cues were confirmed in the simulator bundle. [Free Argos generation](https://github.com/lanray07/Scrap-Squad/actions/runs/37157340806) produced 3,750 source-matched drafts across ten languages; coverage and token integrity passed, language quality remains unapproved.
 
 ## Product boundaries
+
+[Apple configuration verification](https://github.com/lanray07/Scrap-Squad/actions/runs/37158993311) confirmed processed build 7 is attached to version 1.0, resource `b96d37ee-18c5-4532-9860-3091624e86e2`. Both cosmetic products retain their pricing, eleven localizations, availability and processed review images. The [whitelisted status report](Replay/app-store-status.json) contains no credentials. No App Review submission or release occurred.
 
 The game still needs device performance testing, gameplay tuning with real players, reviewed non-English in-app translations and real App Store sandbox checks. Cloud saves, friends, multiplayer, public rankings and live events require a separate online design and privacy review; they are not represented as working features. A richer 3D presentation and more biomes/weapons also remain future production work.
 

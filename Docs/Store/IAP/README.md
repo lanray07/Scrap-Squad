@@ -23,3 +23,7 @@ StoreKit supplies localized names, descriptions and prices; the app does not use
 - App Store Connect's existing Paid Apps agreement is Active. No agreement, bank account or tax form was changed. The public privacy policy explains Apple-managed purchases and on-device transaction verification. The app declares UserDefaults reason `CA92.1` for its own preferences.
 
 The app and both products remain in preparation, not submitted, approved or released. Complete real-device App Store sandbox/TestFlight checks before submission, including pending/Ask to Buy, cancellation and cross-device restore. The local tests do not certify Apple's live purchase environment.
+
+## Replay update
+
+Build 7 now supersedes build 5 on version 1.0. [Final native validation](https://github.com/lanray07/Scrap-Squad/actions/runs/37158254127) passed 22 core tests, 13 tooling tests and six UI tests, including both original StoreKit tests and the new replay flow. [Apple verification](https://github.com/lanray07/Scrap-Squad/actions/runs/37158993311) confirmed the existing product configuration and attached processed build 7. Its current report is in [Replay/app-store-status.json](../../Replay/app-store-status.json); the build 5 report above remains historical evidence. See [replay features](../../PREMIUM_LOOP.md).
