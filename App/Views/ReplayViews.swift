@@ -114,7 +114,7 @@ struct ShareRunButton: View {
     @State private var image: Image?
     @State private var preview: RunRecord?
     var body: some View {
-        Group {
+        VStack(spacing: 8) {
             Button { preview = record } label: { Label { LText("run.preview") } icon: { Image(systemName: "rectangle.portrait.on.rectangle.portrait") } }
                 .tint(Theme.gold).frame(minHeight: 44).accessibilityIdentifier("preview-run")
             if let image {
@@ -133,7 +133,7 @@ struct ShareRunButton: View {
             let renderer = ImageRenderer(content: RunCard(record: record, content: store.content, locale: store.profile.preferences.locale))
             renderer.scale = 3
             if let rendered = renderer.uiImage { image = Image(uiImage: rendered) }
-        }
+        }.onDisappear { image = nil }
     }
 }
 
@@ -159,7 +159,7 @@ struct RunJournalView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(spacing: 18) {
+                LazyVStack(spacing: 18) {
                     PageHeading(title: "journal.title", subtitle: "journal.detail")
                     Panel {
                         LText("mastery.title").font(.title3.bold())

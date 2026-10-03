@@ -1,5 +1,7 @@
 # Original art assets
 
+The replay update also includes original procedural music and sound effects. `Tools/compose_audio.py` authors three mono PCM music loops and eight cues in `App/Resources/Audio`, using synthesized notes and deterministic percussion rather than external samples. The script records the complete score and synthesis parameters. Battle playback changes to the boss loop at the boss reveal, and the app honors volume controls, silent mode and pausing. Listening and mix review on real devices remain part of release QA.
+
 Generated using the built-in imagegen tool on 3 October 2026. No competitor imagery was used. Both selected images are copied into this repository; the app does not depend on the generator’s private output directory.
 
 | Asset | Purpose |

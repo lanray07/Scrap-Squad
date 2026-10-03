@@ -156,6 +156,15 @@
       "warnings": []
     },
     {
+      "key": "battle.bosses",
+      "source": "Bosses",
+      "sourceHash": "addb8394e9ecb296ca2c7617edfc5f1c5c819500bd17112bd502f4db14b362b8",
+      "translation": "ボスキャラクター",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
       "key": "battle.choice.subtitle",
       "source": "Make this invention your own.",
       "sourceHash": "90e86b1554cc9acf850f2c4e6b0fc3150626fe4abf1eda8438a08b65ef8cd349",
@@ -696,6 +705,87 @@
       "warnings": []
     },
     {
+      "key": "challenge.card",
+      "source": "Same loadout. Your turn to beat this run.",
+      "sourceHash": "d6ed590f1d2372b708a59eeea3f684c2ce246be4682fa2c6e6f57794e914072f",
+      "translation": "同じロードアウト。 この実行を打つあなたのターン。",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "challenge.daily",
+      "source": "Play today’s circuit",
+      "sourceHash": "320f06842bbc4dc3cc67c00f51ddb120c1df8f64a1b9163f0cb9617260462dca",
+      "translation": "今日のサーキットを再生",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "challenge.detail",
+      "source": "A rotating seeded arena. Everyone starts with the same loaner weapon and squad. Your upgrades and purchases give no advantage.",
+      "sourceHash": "5b9de13f3705443f978f2ef18db158f9f5c64afc0583dea41b1ec2f07746160b",
+      "translation": "回転シードアリーナ。 全員が同じ貸し手兵器と隊員で始まります。 あなたのアップグレードと購入は、利点はありません。",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "challenge.invalid",
+      "source": "Use SQS1- followed by eight hexadecimal characters.",
+      "sourceHash": "d202dd20bd8779468ac3b628c41426b27d25ab86242063cf2b316fd5deeabea4",
+      "translation": "SQS1- は8つの16進数文字で続けて使用します。",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "challenge.local",
+      "source": "Offline challenge codes, not live multiplayer. Replay any saved code, even after its day ends. Comparisons require the same game version.",
+      "sourceHash": "315a47bfe0a4ad87ea823f9581fd2bc5591f24afbac15b9ff4b2bfe7fb5aa80f",
+      "translation": "オフラインチャレンジコード、ライブマルチプレイヤーではなく。 保存したコードを、その日が終了しても再生します。 比較では、同じゲームバージョンが必要です。",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "challenge.placeholder",
+      "source": "Enter a code: SQS1-1234ABCD",
+      "sourceHash": "4c96965c33c0fb711d5fe7b1fd166463cf0c91a8246b6a4b03b2e72871b74ebc",
+      "translation": "コードを入力してください: SQS1-1234ABCD",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "challenge.play",
+      "source": "Play this challenge code",
+      "sourceHash": "366941c01b3833e509772ec062ba52cad30f07bae56f5e51894468694ace53ca",
+      "translation": "このチャレンジコードを再生",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "challenge.share",
+      "source": "Challenge a friend",
+      "sourceHash": "80d9d898568fe72cc37c588dfb610530275b3f4465e03e4a26db088be81cb146",
+      "translation": "友達に挑戦",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "challenge.title",
+      "source": "The Daily Circuit",
+      "sourceHash": "e43c32225c27298f29ac41c3da2e8c24a22cb8cd21537781f6db1c83c30236b9",
+      "translation": "毎日の回路",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
       "key": "city.level",
       "source": "City level",
       "sourceHash": "e90d5f45c139c31287879c3711dda7c6205048796e9c128a3ad27a5e833c4aab",
@@ -984,6 +1074,186 @@
       "warnings": []
     },
     {
+      "key": "cosmetic.aurora",
+      "source": "Aurora",
+      "sourceHash": "e9de098c7733b1b9a6c985aaf3555f7cd10877a0fae0f1ecaab71fefc05d0b3a",
+      "translation": "オーロラ",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "cosmetic.badge",
+      "source": "Scrap Squad Founder",
+      "sourceHash": "63b6b1f2cbb95b5db410e848602c9e6e8b18ece3e6749b16a6c2647e33e75441",
+      "translation": "Scrap Squad 創設者",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "cosmetic.badge.enable",
+      "source": "Show Founder badge",
+      "sourceHash": "d7850830d54d1258404572b4656ab0d8b1afadf46f0aa1ae8de6a5c0395004cd",
+      "translation": "創設者バッジを表示する",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "cosmetic.buy",
+      "source": "Buy pack",
+      "sourceHash": "6aefeb60f89b01c67a183d4c6bb70a00c4cb72f5fef5b7537ac09c7380aa5c7f",
+      "translation": "購入パック",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "cosmetic.cobalt",
+      "source": "Cobalt",
+      "sourceHash": "9eae7576c1913ab6bf4f30a2e3436b8463b5065be193a22b87b7e64e759fc003",
+      "translation": "コバルト",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "cosmetic.equip",
+      "source": "Equip",
+      "sourceHash": "885fd3041d12884b56119a71af7e84e4ad73261a7232419852d00c134dd10c05",
+      "translation": "エキップ",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "cosmetic.equipped",
+      "source": "Equipped",
+      "sourceHash": "c4dc8a3877a429eb48c2bd0a74a52ce0c0a23674ca153d7e00cdcb487aa889a5",
+      "translation": "導入事例",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "cosmetic.founder.detail",
+      "source": "Founder’s Gold finish for BOLT, golden weapon trails and a Founder badge. Cosmetic only.",
+      "sourceHash": "9b183f6cfba4b47e5a168d0f04f4f052fb740eb36d6452d162656d439c4f38f8",
+      "translation": "創業者のゴールドフィニッシュ BOLT黄金の武器のトレイルと創設者のバッジ。 化粧品だけ。",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "cosmetic.founder.name",
+      "source": "Founder’s Pack",
+      "sourceHash": "9ea8086df8a4973799c72fd7cfdf367e02f414135fb194d22c6a67428faed681",
+      "translation": "創業者のパック",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "cosmetic.gold",
+      "source": "Founder’s Gold",
+      "sourceHash": "4e33df4a30fa342ac38ddbf40726f4d064a14c6585d79e73091e0f64737aed9e",
+      "translation": "創業者のゴールド",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "cosmetic.once",
+      "source": "One-time purchase. No subscription. No combat or reward bonuses.",
+      "sourceHash": "d549a684f29204eecdd532763a07b331b85b2dd632c18d9138d45415474ca58d",
+      "translation": "ワンタイム購入 サブスクリプションはありません。 戦闘や報酬ボーナスはありません。",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "cosmetic.original",
+      "source": "Original finish",
+      "sourceHash": "ba702111aa30c5db9878894274bc8d6984916fb0ad248a6d1f28772e7a026882",
+      "translation": "元の終わり",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "cosmetic.owned",
+      "source": "Owned",
+      "sourceHash": "17b760c41cd2093315bba1008eaae9c4c05e3aa0fbbcf7477abfb775e62d6c5c",
+      "translation": "所有する",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "cosmetic.remove",
+      "source": "Remove",
+      "sourceHash": "c3812fc4acb861d5182fc2b8155f327f736fbe5e5eb86a7bd7afcb6dc5497282",
+      "translation": "削除",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "cosmetic.robot.locked",
+      "source": "Unlock this robot through gameplay to use its finish.",
+      "sourceHash": "5b7fa1e509cc3e88bbd983020d98eab5396f881162525424af54e06aa60084e9",
+      "translation": "ゲームプレイを通してこのロボットをロック解除して、その仕上がりを使用することができます。",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "cosmetic.rose",
+      "source": "Rose",
+      "sourceHash": "e10d850954a8e6113899eda0b14aa4706caaa04a73a804a693360816f6360c8d",
+      "translation": "ローズ",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "cosmetic.styles.detail",
+      "source": "Aurora BOLT, Cobalt TANK and Rose PATCH finishes. Robot unlocks are earned through gameplay.",
+      "sourceHash": "b64bf03069f5fd949082d3582589caf4dd8cc4a9d066ecfa20d9e87eeebf45db",
+      "translation": "オーロラ BOLT, コバルト TANK そしてローズ PATCH 終わり。 ゲームプレイでロボットアンロックが獲得",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "cosmetic.styles.name",
+      "source": "Robot Style Pack",
+      "sourceHash": "c8ee7696dc570d08a5e572e6f75e0989483d38535fc8c90e09974ab57e1336d0",
+      "translation": "ロボットスタイルパック",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "cosmetic.trails",
+      "source": "Golden weapon trails",
+      "sourceHash": "adbf3497f232ecd6dd6507a8789271667c0d7d370bd4718be69b93d7c87bce97",
+      "translation": "黄金の武器トレイル",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "cosmetic.trails.enable",
+      "source": "Use golden trails",
+      "sourceHash": "439cf660280d83c107bb7b1df93d1edfb8311b9a8d0049416fed8d222f07be52",
+      "translation": "黄金のトレイルを使用する",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
       "key": "currency.cores",
       "source": "Cores",
       "sourceHash": "7bff6181add2231b3c0f092fa826243267781cbeaef4fb83e292604e1319dcc0",
@@ -1150,6 +1420,42 @@
       "source": "The purchase could not be verified or completed. Please try again.",
       "sourceHash": "fcb77644751d3f7e9b933ff0169bfcc669390b105d241f01cbcb09b9b685d81c",
       "translation": "購入は確認または完了できません。 お問い合わせ",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "journal.detail",
+      "source": "Your best runs, earned medals and wildest inventions. Progress is saved on this device. Keep playing at your own pace.",
+      "sourceHash": "a0fd5985174d5413785cf30e0dd32e99f56a4394654d492b7dca82a040ec4c6b",
+      "translation": "メダル獲得や野生の発明など、ベストラン。 このデバイスに保存されます。 自分のペースで遊んでください。",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "journal.empty",
+      "source": "Your first run starts the story. Finish a battle to save its highlights here.",
+      "sourceHash": "96b9a5f9448464e0334878148a43d10dcc90a1baed791a165490f1f706cb4acd",
+      "translation": "初めてのランニングはストーリーから始まります。 ここにハイライトを保存するための戦いを終えます。",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "journal.open",
+      "source": "Records & mastery",
+      "sourceHash": "efe8909f087c2ce071dead9a171ecc99f3b0c99dcbeae18b8e858109135ac86e",
+      "translation": "レコード&マスター",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "journal.title",
+      "source": "The Hall of Scrap",
+      "sourceHash": "5bd2ca11602677d671ad6acb132b6791ff8b9307162da79657b990958848d213",
+      "translation": "スクラップホール",
       "approved": false,
       "allowWarnings": false,
       "warnings": []
@@ -1326,6 +1632,105 @@
       "warnings": []
     },
     {
+      "key": "mastery.bossHunter",
+      "source": "Boss Hunter · defeat 3 bosses",
+      "sourceHash": "30d8ecedc64d2ac1a4609ef7576d6c4238154b9a50b85ec35dd9c5f3c830ff5d",
+      "translation": "ボスハンター・敗北3ボス",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "mastery.comboArtist",
+      "source": "Combo Artist · reach a 16-kill chain",
+      "sourceHash": "f66274615d614d1f61814a42a80ada5f79ef07a768545f0fa8d5fa24d7f0c3c5",
+      "translation": "コンボアーティスト・16キルチェーン",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "mastery.firstSteps",
+      "source": "Field Tested · finish 3 runs",
+      "sourceHash": "d907a6fe9767c86312249a1428a5968bd4354e521d5345af3472eb8251db16f6",
+      "translation": "フィールドテスト・フィニッシュ3ラン",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "mastery.synergySeeker",
+      "source": "Mad Scientist · discover all 3 synergies",
+      "sourceHash": "4ee152165112759bbd13da132fabc379fc6d24e1beef92bc6dc998391e4dfbea",
+      "translation": "マッド・サイエンティスト・3つのシナジーをすべて発見",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "mastery.tinkerer",
+      "source": "Inventor · discover 6 blueprints",
+      "sourceHash": "15c5dbecfb7279e1f59c650bc5b1ae860be50587ac4bb23a866fa92403502878",
+      "translation": "発明者・6つの青写真を発見",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "mastery.title",
+      "source": "Commander mastery",
+      "sourceHash": "811bbea78d3d2a58673e97428c05ca93396aa36f6f545502871b5b962fc57b7a",
+      "translation": "司令官のマスタリー",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "mastery.veteran",
+      "source": "Scrap Veteran · finish 25 runs",
+      "sourceHash": "82d5717d1bf0efebf7bea46c9631358d0b27f7b68c569c6b24dc8e78506e1978",
+      "translation": "スクラップベテラン・フィニッシュ25ラン",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "medal.bossBreaker",
+      "source": "Boss Breaker",
+      "sourceHash": "4f5b06f207812c1de44c2e6a043910c41a47cf0069682aec54a503c58b22d9ea",
+      "translation": "ボスブレーカ",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "medal.comboAce",
+      "source": "Combo Ace",
+      "sourceHash": "41008654e30d9a8be05762354b12dfba6b30ad357493f1bbe387e00605a9c7bd",
+      "translation": "コンボエース",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "medal.inventor",
+      "source": "Synergy Inventor",
+      "sourceHash": "c5378734fca90e95c92958f38efbf4cb31c968eb466b7e01cf2e0528cbdb2d11",
+      "translation": "シナジーインベンター",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "medal.survivor",
+      "source": "Mission Complete",
+      "sourceHash": "b557f61503eba00d07d71270f1982adca50cd8f11be28197423a0e774e021dc2",
+      "translation": "ミッション・コンプリート",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
       "key": "mission.claim",
       "source": "Claim reward",
       "sourceHash": "345ee1d9e594a9e1c8f95f562415e253df8e149c99d1e802c46efb63a9371cfd",
@@ -1429,6 +1834,60 @@
       "source": "Survival",
       "sourceHash": "8302496de0ace1609784ecbc5fedc2e814fae849b504df6d92f8431d74534364",
       "translation": "サバイバル",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "momentum.active",
+      "source": "OVERDRIVE ACTIVE",
+      "sourceHash": "84ae735fa10372860ba5434a36d4a52e7f4c0fe3ef6b5021fcd3edd2ecc4ee6f",
+      "translation": "包括的な活動",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "momentum.best",
+      "source": "Best combo",
+      "sourceHash": "169636a35ca844b6d9a8a0861f226f58a7c6bdb68adf0af6a06c77a62e77445f",
+      "translation": "ベストコンボ",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "momentum.combo",
+      "source": "Combo",
+      "sourceHash": "55bb801cfba8343d4c6072814edc6fdaf12451adb58c1b642daa9dfddffae6c2",
+      "translation": "コンボ",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "momentum.hint",
+      "source": "Chain kills to charge Overdrive",
+      "sourceHash": "40aba1fa0d6f1be5c8d4c66d2fa5a344398df3387f1fef58b83b6596af92acbd",
+      "translation": "チェーンはオーバードライブを充電するために殺します",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "momentum.overdrive",
+      "source": "OVERDRIVE",
+      "sourceHash": "43c3dc251060e1dc59486e38964cf89d66d65e0a782390e7d7ced6a0f51fa4fe",
+      "translation": "オーバードライブ",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "momentum.wave",
+      "source": "Wave",
+      "sourceHash": "43eb1b148ebbaca00a1ab56d5455f617bfbf90cd219875150300024ead1a6f4e",
+      "translation": "ウェーブ",
       "approved": false,
       "allowWarnings": false,
       "warnings": []
@@ -1884,6 +2343,42 @@
       "warnings": []
     },
     {
+      "key": "run.personalBest",
+      "source": "New personal best",
+      "sourceHash": "ce39d2ab75d52509d6b16930ab31a0aa4b382981bc1d3a72893630cb86a0386c",
+      "translation": "新しい個人ベスト",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "run.preview",
+      "source": "Preview run card",
+      "sourceHash": "6f3b0a8defd226ff21774ecc40cf68196cd219fe015f1e023b3c8b3da471ccb3",
+      "translation": "プレビューランカード",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "run.retry",
+      "source": "Run it back",
+      "sourceHash": "92973a8bded8e1712dc3149380a7feb19e772f138fd2caea4098236603c9f77b",
+      "translation": "戻る",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "run.share",
+      "source": "Share run card",
+      "sourceHash": "ebbf2651a9a0277c38fb3404a7a0949ee83bc1fe73cf6f8fa1a65cf42b6be642",
+      "translation": "シェアランカード",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
       "key": "settings.flashes",
       "source": "Reduce flashes",
       "sourceHash": "cc6088f2d713888905628484bf2540aa95605f3af87920bfe1bc07b6063b6e65",
@@ -2046,6 +2541,15 @@
       "warnings": []
     },
     {
+      "key": "shop.cancelled",
+      "source": "Purchase cancelled. You have not been charged.",
+      "sourceHash": "4962904bbc016460bfe8bb2af426da75637b2a34a50e12761db136785e51b733",
+      "translation": "購入キャンセル お問い合わせ",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
       "key": "shop.entitlements",
       "source": "Owned cosmetics",
       "sourceHash": "50663285b2b945c8ec600668382cd800f7dc9c9a643da97cfad4c39359c4691a",
@@ -2055,10 +2559,19 @@
       "warnings": []
     },
     {
+      "key": "shop.loading",
+      "source": "Loading cosmetic packs",
+      "sourceHash": "78dc80fd590fb8b72d7b12778eb93915966b0949cb27103db225c76c67abac41",
+      "translation": "ローディングの化粧品のパック",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
       "key": "shop.note",
-      "source": "Only verified cosmetic entitlements are supported in this build. Consumables and subscriptions are not offered.",
-      "sourceHash": "91dddeb43fe4f89693f6ef639a95e829a225834b01dcdff2c000221a14d7a34e",
-      "translation": "このビルドでは、化粧品認証のみがサポートされています。 消耗品およびサブスクリプションは提供されません。",
+      "source": "Cosmetics are optional. Prices come from the App Store. Restore purchases using the Apple Account that bought them. All gameplay and progression remain available without buying a pack.",
+      "sourceHash": "47f54dd6144f010785018a806b1041eaef3610d92b6b90b881781f39b8744dae",
+      "translation": "化粧品は任意です。 価格はApp Storeから来ています。 購入したAppleアカウントを使用して購入を復元します。 すべてのゲームプレイとプログレッションは、パックを購入せずに利用できます。",
       "approved": false,
       "allowWarnings": false,
       "warnings": []
@@ -2091,10 +2604,28 @@
       "warnings": []
     },
     {
+      "key": "shop.restore.empty",
+      "source": "No previous cosmetic purchases were found for this Apple Account.",
+      "sourceHash": "d80cdcd4bd2df5e5e475b8d67794c119707f12e15ddb41c326dded6a5511f9b3",
+      "translation": "このAppleアカウントでは、以前の化粧品の購入が見つかりませんでした。",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
       "key": "shop.restored",
       "source": "Purchases restored.",
       "sourceHash": "cc4ab8f953cd667d17b390a60a88e0ffa656ca01c17e5aa867a9ae298905f351",
       "translation": "復元された購入。",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "shop.revoked",
+      "source": "This purchase was refunded or revoked. Its cosmetics are no longer available.",
+      "sourceHash": "ac3cf91846a522f1d0a8e1f7908ea2737389521a079df45be6da99171c5a0c6e",
+      "translation": "この購入は返金または返金されました。 化粧品は使用できません。",
       "approved": false,
       "allowWarnings": false,
       "warnings": []
@@ -2119,9 +2650,9 @@
     },
     {
       "key": "shop.unavailable",
-      "source": "The store is not configured for this development build. No purchases can be made.",
-      "sourceHash": "15d290b178ba052eb0a40c25db01bdac748c45dae9820635de38962f65d550de",
-      "translation": "この開発ビルドではストアは設定されていません。 ご購入はできません。",
+      "source": "Purchases are currently unavailable. Please try Refresh later.",
+      "sourceHash": "82b096bae2a40d48ab02b7c64a7623556feb4d60e12f15953b7c9a0d504e4759",
+      "translation": "ご購入は、現在利用できません。 あとはリフレッシュしてください。",
       "approved": false,
       "allowWarnings": false,
       "warnings": []
@@ -2257,6 +2788,78 @@
       "source": "An optional midnight blue paint finish for NOVA.",
       "sourceHash": "d1cdfe8d45005714e20fa79c74620eb57e2bc664bc63018060909b0f0b1453f2",
       "translation": "任意深夜青いペンキの終わりのための NOVA. .",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "synergy.activated",
+      "source": "BUILD SYNERGY ACTIVATED",
+      "sourceHash": "a828063c53cbd21748ccd5f5881a42219fd9202684587138fc8147cf641fb975",
+      "translation": "ビルド・シナジー ACTIVATED",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "synergy.perfectStorm",
+      "source": "Perfect Storm",
+      "sourceHash": "59e20654036ed88803209214dc177e5f9a1fdd25452701752d4f101b6cff030e",
+      "translation": "パーフェクトストーム",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "synergy.perfectStorm.detail",
+      "source": "Choose Critical Processor and Overclock Module in one run for +15% critical chance and +20% attack speed.",
+      "sourceHash": "53f855c45a3ac1da4f3fa3f0aba482878f02bf9a591d2661ca9dbbc91eac6fd5",
+      "translation": "クリティカルプロセッサとオーバークロックモジュールを1つのランで+15%の重要なチャンスと+20%の攻撃速度で選択します。",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "synergy.stormLattice",
+      "source": "Storm Lattice",
+      "sourceHash": "18f0785af28e2dcd8b221ea62efc18d8b88515796e8eac85db388397b71b8b47",
+      "translation": "嵐の格子",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "synergy.stormLattice.detail",
+      "source": "Choose Tesla Coil and Drone Core or Splitter Module in one run for two extra chain targets.",
+      "sourceHash": "419484cc5e6fe83165344a1a0bc3d25db11aa61d54d85363671414fe9081e2c4",
+      "translation": "Teslaコイルとドローンコアまたはスプリッタモジュールを2つの追加のチェーンターゲットに1つの実行で選択します。",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "synergy.thermalShock",
+      "source": "Thermal Shock",
+      "sourceHash": "12c1b86a897412f229f12755f0cef711aed1ff8562c159c6a52a97a23f471d79",
+      "translation": "熱衝撃",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "synergy.thermalShock.detail",
+      "source": "Choose Fire Core and Cryo Core in one run for +35% weapon damage.",
+      "sourceHash": "b30e3effb0e526a8f9955e73cffedff5e8f13a4db022c3258e9511afd499ae3b",
+      "translation": "+35%の武器の損傷のために1つの操業で火の中心およびCryoの中心を選んで下さい。",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "synergy.title",
+      "source": "Secret build synergies",
+      "sourceHash": "3519443e3ccd163bac97aa831813d9de413207dc2d45796e6f813f922a54f0a7",
+      "translation": "秘密のビルドシナジー",
       "approved": false,
       "allowWarnings": false,
       "warnings": []

@@ -10,7 +10,7 @@ This update turns a completed run into a story worth replaying or sharing. It do
 - **Run it back:** retry from results without returning through the lobby. Challenge retries retain the same code and loadout; normal retries reroll the world. Rewards are claimed once per run ID.
 - **Hall of Scrap:** thirty recent run records, lifetime best scores by mode, best combo, discovered synergies and earned medals. Six permanent mastery goals show progress without streaks, penalties, notifications or paid skips. Older version 1 saves decode without the new optional journal.
 - **Native sharing:** preview and export a 1020-pixel-wide branded result image using ImageRenderer and Apple's share sheet, plus a replay code and public game website. Sharing is player initiated. No automatic posting, contact access, name, personal ID or backend is involved.
-- **Original sound:** three composed synthesis loops (city, battle, boss) and nine authored cues. `Tools/compose_audio.py` reproduces them without samples or external assets. Sound honors silent mode, existing volume controls and background/pause stops. SFX concurrency is bounded. Overdrive has a static aura; wave, combo and synergy callouts respect reduced-motion preferences.
+- **Original sound:** three composed synthesis loops (city, battle, boss) and eight authored cues. `Tools/compose_audio.py` reproduces them without samples or external assets. Sound honors silent mode, existing volume controls and background/pause stops. SFX concurrency is bounded. Overdrive has a static aura; wave, combo and synergy callouts respect reduced-motion preferences.
 
 ## Validation
 

@@ -72,4 +72,4 @@ for name, notes in {
     for index, note in enumerate(notes):
         tone(samples, index * .065, .17, note, .25, .35)
     write(name, samples)
-print('Authored 3 original music loops and 9 sound cues.')
+print('Authored 3 original music loops and 8 sound cues.')
