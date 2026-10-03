@@ -1,0 +1,26 @@
+{
+  "status": "editorial-draft-requires-native-language-and-device-review",
+  "metadata": {
+    "locale": "fr-FR",
+    "name": "Scrap Squad: Fusion et survie",
+    "subtitle": "Robots et fusion d’armes",
+    "keywords": "fabrication,action,boss,plans,ville,éléments,laser,amélioration,aventure",
+    "promotionalText": "Fusionnez vos armes, assemblez votre escouade de robots et survivez aux vagues.",
+    "description": "Transformez la ferraille en inventions dans Scrap Squad, un jeu d’action mêlant robots, fusion d’armes et survie.\n\nDécouvrez 12 recettes de fusion et collectionnez huit robots originaux. Esquivez les attaques pendant que votre escouade tire automatiquement, choisissez des améliorations et exploitez les faiblesses des boss. Reconstruisez Scrap City avec neuf installations. Le quai d’expédition permet de récupérer jusqu’à huit heures de ressources hors ligne. Explorez sept modes, suivez les indices des plans et accomplissez des missions quotidiennes et hebdomadaires sans pénalité de série."
+  },
+  "webSEO": {
+    "title": "Scrap Squad: Fusion et survie | Robots et fusion d’armes",
+    "metaDescription": "Transformez la ferraille en inventions dans Scrap Squad, un jeu d’action mêlant robots, fusion d’armes et survie.",
+    "h1": "Scrap Squad: Fusion et survie",
+    "language": "fr-FR"
+  },
+  "review": {
+    "approved": false,
+    "keywordDemandValidated": false,
+    "appUILocalized": false
+  },
+  "policySources": [
+    "https://developer.apple.com/app-store/product-page/",
+    "https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications"
+  ]
+}

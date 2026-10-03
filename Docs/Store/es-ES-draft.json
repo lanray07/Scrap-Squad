@@ -1,0 +1,26 @@
+{
+  "status": "editorial-draft-requires-native-language-and-device-review",
+  "metadata": {
+    "locale": "es-ES",
+    "name": "Scrap Squad",
+    "subtitle": "Robots, armas y supervivencia",
+    "keywords": "fabricación,acción,mejoras,jefes,planos,ciudad,elementos,láser,aventura",
+    "promotionalText": "Fusiona armas, forma tu escuadrón de robots y sobrevive a las oleadas.",
+    "description": "Convierte la chatarra en tu próxima gran invención en Scrap Squad, un juego de acción con robots, fusión de armas y supervivencia.\n\nDescubre 12 recetas de fusión y colecciona ocho robots originales. Esquiva ataques mientras tu escuadrón dispara automáticamente, elige mejoras y explota las debilidades de los jefes. Reconstruye Scrap City con nueve instalaciones. Construye el muelle de expediciones para recoger hasta ocho horas de recursos sin conexión. Explora siete modos, sigue pistas de planos y completa tareas diarias y semanales sin penalizaciones por perder una racha."
+  },
+  "webSEO": {
+    "title": "Scrap Squad | Robots, armas y supervivencia",
+    "metaDescription": "Convierte la chatarra en tu próxima gran invención en Scrap Squad, un juego de acción con robots, fusión de armas y supervivencia.",
+    "h1": "Scrap Squad",
+    "language": "es-ES"
+  },
+  "review": {
+    "approved": false,
+    "keywordDemandValidated": false,
+    "appUILocalized": false
+  },
+  "policySources": [
+    "https://developer.apple.com/app-store/product-page/",
+    "https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications"
+  ]
+}

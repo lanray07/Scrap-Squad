@@ -1,0 +1,26 @@
+{
+  "status": "editorial-draft-requires-native-language-and-device-review",
+  "metadata": {
+    "locale": "zh-Hans",
+    "name": "Scrap Squad: 合成与生存",
+    "subtitle": "机器人小队与武器合成",
+    "keywords": "制作,动作,升级,首领,蓝图,城市建设,元素,激光,冒险",
+    "promotionalText": "合成武器，组建机器人小队，迎战蜂拥而至的敌人。",
+    "description": "在Scrap Squad中把废料变成新发明，体验融合武器合成、机器人养成与生存战斗的动作游戏。\n\n发现12种合成配方，收集8位原创机器人。小队会自动攻击，你需要躲避来袭攻击、选择强化并针对首领弱点制定策略。通过9种设施重建Scrap City。建造远征码头后，可领取最多8小时的离线资源。探索7种模式，追寻蓝图线索，完成每日与每周任务。连续游玩中断也不会受到惩罚。"
+  },
+  "webSEO": {
+    "title": "Scrap Squad: 合成与生存 | 机器人小队与武器合成",
+    "metaDescription": "在Scrap Squad中把废料变成新发明，体验融合武器合成、机器人养成与生存战斗的动作游戏。",
+    "h1": "Scrap Squad: 合成与生存",
+    "language": "zh-Hans"
+  },
+  "review": {
+    "approved": false,
+    "keywordDemandValidated": false,
+    "appUILocalized": false
+  },
+  "policySources": [
+    "https://developer.apple.com/app-store/product-page/",
+    "https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications"
+  ]
+}

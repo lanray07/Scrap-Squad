@@ -1,0 +1,45 @@
+name: Generate localization drafts
+on:
+  workflow_dispatch:
+    inputs:
+      locale:
+        description: Supported locale or all (custom adapter)
+        default: all
+        required: true
+      provider:
+        type: choice
+        options: [custom, libretranslate]
+        default: custom
+      target:
+        description: Optional explicit LibreTranslate target for regional locales
+        required: false
+permissions:
+  contents: read
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/cache@v4
+        with:
+          path: .build/translation-cache
+          key: translations-${{ inputs.provider }}-${{ github.run_id }}
+          restore-keys: translations-${{ inputs.provider }}-
+      - name: Generate source-only translation drafts
+        env:
+          TRANSLATION_API_KEY: ${{ secrets.TRANSLATION_API_KEY }}
+          TRANSLATION_ENDPOINT: ${{ vars.TRANSLATION_ENDPOINT }}
+          TRANSLATION_LOCALE: ${{ inputs.locale }}
+          TRANSLATION_PROVIDER: ${{ inputs.provider }}
+          TRANSLATION_TARGET: ${{ inputs.target }}
+        run: python Tools/auto_localize.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: localization-drafts-${{ github.run_number }}
+          path: .build/localization-drafts
+          if-no-files-found: ignore

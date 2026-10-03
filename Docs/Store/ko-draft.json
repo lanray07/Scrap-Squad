@@ -1,0 +1,26 @@
+{
+  "status": "editorial-draft-requires-native-language-and-device-review",
+  "metadata": {
+    "locale": "ko",
+    "name": "Scrap Squad: 합성과 생존",
+    "subtitle": "로봇 분대와 무기 합성",
+    "keywords": "제작,액션,강화,보스,설계도,도시건설,속성,레이저,모험",
+    "promotionalText": "무기를 합성하고 로봇 분대를 꾸려 밀려오는 적을 상대하세요.",
+    "description": "Scrap Squad에서 고철을 새로운 발명품으로 바꾸세요. 무기 합성과 로봇 분대 육성이 만나는 생존 액션 게임입니다.\n\n12개의 합성법을 발견하고 개성 있는 로봇 8종을 수집하세요. 분대가 자동으로 공격하는 동안 적의 공격을 피하고 강화를 선택하며 보스의 약점을 공략하세요. 시설 9종으로 Scrap City를 재건하세요. 원정 부두를 건설하면 오프라인 자원을 최대 8시간분 수집할 수 있습니다. 7가지 모드를 탐험하고 설계도 단서를 따라 일일 및 주간 과제를 완료하세요. 연속 플레이가 끊겨도 불이익은 없습니다."
+  },
+  "webSEO": {
+    "title": "Scrap Squad: 합성과 생존 | 로봇 분대와 무기 합성",
+    "metaDescription": "Scrap Squad에서 고철을 새로운 발명품으로 바꾸세요. 무기 합성과 로봇 분대 육성이 만나는 생존 액션 게임입니다.",
+    "h1": "Scrap Squad: 합성과 생존",
+    "language": "ko"
+  },
+  "review": {
+    "approved": false,
+    "keywordDemandValidated": false,
+    "appUILocalized": false
+  },
+  "policySources": [
+    "https://developer.apple.com/app-store/product-page/",
+    "https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications"
+  ]
+}

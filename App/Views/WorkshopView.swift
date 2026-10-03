@@ -56,7 +56,7 @@ struct WorkshopView: View {
                         }.padding(.vertical, 6)
                     }
                 }.padding(20).frame(maxWidth: 760)
-            }.background(Theme.ink).toolbar { ToolbarItem(placement: .confirmationAction) { Button("common.done") { dismiss() } } }
+            }.background(Theme.ink).toolbar { ToolbarItem(placement: .confirmationAction) { Button("common.done") { dismiss() }.accessibilityIdentifier("workshop-done") } }
                 .overlay { if revealing { revealOverlay } }
         }.preferredColorScheme(.dark)
     }
@@ -94,7 +94,7 @@ struct WorkshopView: View {
                     LText("rarity." + reveal.rarity.rawValue).foregroundStyle(Theme.rarity(reveal.rarity))
                     LText(reveal.descriptionKey).multilineTextAlignment(.center).foregroundStyle(Theme.muted)
                     ShareLink(item: LocalizedShareCard(weapon: reveal).text) { Label { LText("lab.share") } icon: { Image(systemName: "square.and.arrow.up") } }.frame(minHeight: 44)
-                    ActionButton(key: "lab.equip") { store.equip(reveal); revealing = false }
+                    ActionButton(key: "lab.equip") { store.equip(reveal); revealing = false }.accessibilityIdentifier("fusion-equip")
                 }
                 Button { revealing = false } label: { LText("common.done") }.frame(minHeight: 44)
             }.padding(30)

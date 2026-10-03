@@ -1,0 +1,26 @@
+{
+  "status": "editorial-draft-requires-native-language-and-device-review",
+  "metadata": {
+    "locale": "ja",
+    "name": "Scrap Squad: 合成とサバイバル",
+    "subtitle": "ロボット部隊と武器合成",
+    "keywords": "クラフト,アクション,強化,ボス,設計図,街づくり,属性,レーザー,冒険",
+    "promotionalText": "武器を合成し、ロボット部隊を編成。押し寄せる敵を乗り越えよう。",
+    "description": "Scrap Squadでスクラップを新しい発明に。武器合成とロボット部隊づくりを楽しむサバイバルアクション。\n\n12種類の合成レシピを発見し、個性豊かな8体のロボットを集めよう。部隊は自動で攻撃。敵の攻撃をかわし、強化を選び、ボスの弱点を狙おう。9つの施設でScrap Cityを再建。遠征ドックを建設すると、オフライン資源を最大8時間分回収できます。7つのモードに挑戦し、設計図のヒントを追い、毎日と毎週の任務に取り組もう。連続プレイが途切れてもペナルティはありません。"
+  },
+  "webSEO": {
+    "title": "Scrap Squad: 合成とサバイバル | ロボット部隊と武器合成",
+    "metaDescription": "Scrap Squadでスクラップを新しい発明に。武器合成とロボット部隊づくりを楽しむサバイバルアクション。",
+    "h1": "Scrap Squad: 合成とサバイバル",
+    "language": "ja"
+  },
+  "review": {
+    "approved": false,
+    "keywordDemandValidated": false,
+    "appUILocalized": false
+  },
+  "policySources": [
+    "https://developer.apple.com/app-store/product-page/",
+    "https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications"
+  ]
+}

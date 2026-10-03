@@ -1,0 +1,26 @@
+{
+  "status": "editorial-draft-requires-native-language-and-device-review",
+  "metadata": {
+    "locale": "de-DE",
+    "name": "Scrap Squad",
+    "subtitle": "Roboter und Waffenfusion",
+    "keywords": "herstellen,action,boss,bauplan,stadt,element,laser,verbessern,abenteuer",
+    "promotionalText": "Fusioniere Waffen, baue dein Roboterteam und überlebe die Angriffswellen.",
+    "description": "Mach aus Schrott neue Erfindungen in Scrap Squad, einem Actionspiel mit Robotern, Waffenfusion und Überlebenskämpfen.\n\nEntdecke 12 Fusionsrezepte und sammle acht originelle Roboter. Weiche Angriffen aus, während dein Team automatisch feuert. Wähle Verbesserungen und nutze die Schwächen der Bosse. Baue Scrap City mit neun Einrichtungen wieder auf. Das Expeditionsdock ermöglicht bis zu acht Stunden Offline-Ressourcen. Erkunde sieben Modi, folge Bauplanhinweisen und erledige tägliche und wöchentliche Aufgaben ohne Strafen für unterbrochene Serien."
+  },
+  "webSEO": {
+    "title": "Scrap Squad | Roboter und Waffenfusion",
+    "metaDescription": "Mach aus Schrott neue Erfindungen in Scrap Squad, einem Actionspiel mit Robotern, Waffenfusion und Überlebenskämpfen.",
+    "h1": "Scrap Squad",
+    "language": "de-DE"
+  },
+  "review": {
+    "approved": false,
+    "keywordDemandValidated": false,
+    "appUILocalized": false
+  },
+  "policySources": [
+    "https://developer.apple.com/app-store/product-page/",
+    "https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications"
+  ]
+}

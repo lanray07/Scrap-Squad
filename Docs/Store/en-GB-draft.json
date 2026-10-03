@@ -1,66 +1,128 @@
 {
+  "status": "editorial-draft-requires-native-language-and-device-review",
   "metadata": {
-    "status": "draft-not-for-upload-before-device-QA",
     "locale": "en-GB",
     "name": "Scrap Squad: Merge & Survive",
-    "subtitle": "Idle Robot RPG & Merge Game",
-    "keywords": "weapons,crafting,roguelite,offline,upgrade,action,swarm,robots,blueprints,boss,battle",
-    "promotionalText": "Build it. Merge it. Survive the swarm. Experiment with weapon recipes, assemble your robot squad and rebuild Scrap City.",
-    "description": "BUILD. MERGE. SURVIVE.\n\nThe machines have taken over. A few scrappy robots have other plans.\n\nAssemble your Scrap Squad, head into the wasteland, collect components and turn salvaged weapons into unexpected inventions.\n\nMERGE WEAPONS\nCombine blasters, elemental cores and strange modules. Discover recipes, equip your creations and take a new build into battle.\n\nBUILD YOUR SCRAP SQUAD\nMeet eight original robots, from cheerful BOLT to the repair specialist PATCH. Upgrade their circuitry and match weapon elements to squad affinities.\n\nSURVIVE THE SWARM\nMove to dodge attacks while your squad fires automatically. Choose temporary upgrades, break boss armor and use elemental weaknesses to your advantage.\n\nDISCOVER BLUEPRINTS\nExperiment with 12 discoverable recipes. Follow clues in the Blueprint Lab and expand your collection.\n\nREBUILD SCRAP CITY\nConstruct facilities, improve research and increase your squad capacity. Build an Expedition Dock to collect eligible offline salvage for up to eight hours.\n\nTRY A DIFFERENT CHALLENGE\nPlay Campaign, Survival, Boss Rush, Scrap Run, Fusion Lab, Daily Anomaly or Arena. Complete daily and weekly tasks without streak penalties.\n\nKeep building. Keep experimenting. See how far your inventions take you."
+    "subtitle": "Robot battles & weapon fusion",
+    "keywords": "crafting,roguelite,offline,upgrade,action,swarm,blueprint,boss,city,element,laser",
+    "promotionalText": "Merge weapons, build your robot squad and survive the swarm.",
+    "description": "Turn scrap into your next great invention in Scrap Squad, a robot action game about weapon fusion, squad building and survival.\n\nBUILD. MERGE. SURVIVE.\n\nThe machines have taken over. A few scrappy robots have other plans.\n\nAssemble your Scrap Squad, head into the wasteland, collect components and turn salvaged weapons into unexpected inventions.\n\nMERGE WEAPONS\nCombine blasters, elemental cores and strange modules. Discover recipes, equip your creations and take a new build into battle.\n\nBUILD YOUR SCRAP SQUAD\nMeet eight original robots, from cheerful BOLT to the repair specialist PATCH. Upgrade their circuitry and match weapon elements to squad affinities.\n\nSURVIVE THE SWARM\nMove to dodge attacks while your squad fires automatically. Choose temporary upgrades, break boss armor and use elemental weaknesses to your advantage.\n\nDISCOVER BLUEPRINTS\nExperiment with 12 discoverable recipes. Follow clues in the Blueprint Lab and expand your collection.\n\nREBUILD SCRAP CITY\nConstruct facilities, improve research and increase your squad capacity. Build an Expedition Dock to collect eligible offline salvage for up to eight hours.\n\nTRY A DIFFERENT CHALLENGE\nPlay Campaign, Survival, Boss Rush, Scrap Run, Fusion Lab, Daily Anomaly or Arena. Complete daily and weekly tasks without streak penalties.\n\nKeep building. Keep experimenting. See how far your inventions take you."
   },
-  "screenshots": [
-    {
-      "order": 1,
-      "headline": "MERGE. FIGHT. SURVIVE.",
-      "supportingCopy": "Build your robot squad.",
-      "realCaptureRequired": "Capture an actual mission with the available squad capacity and real active weapon effects. Do not depict a huge army that the build does not support."
-    },
-    {
-      "order": 2,
-      "headline": "MERGE WEAPONS",
-      "supportingCopy": "Discover new combinations.",
-      "realCaptureRequired": "Capture the Workshop with a valid recipe and owned ingredients, then an actual reveal."
-    },
-    {
-      "order": 3,
-      "headline": "DISCOVER 12 BLUEPRINTS",
-      "supportingCopy": "Experiment. Combine. Discover.",
-      "realCaptureRequired": "Capture the Blueprint Database with the actual discovered/total counter. Never substitute 180+."
-    },
-    {
-      "order": 4,
-      "headline": "BUILD YOUR ROBOT SQUAD",
-      "supportingCopy": "Meet heroes with distinct abilities.",
-      "realCaptureRequired": "Capture the eight-robot collection and a real equipped squad with affinity information."
-    },
-    {
-      "order": 5,
-      "headline": "BREAK THE BOSS",
-      "supportingCopy": "Find its weakness. Build your counter.",
-      "realCaptureRequired": "Capture a live boss telegraph and armor bar; keep player and warnings readable."
-    },
-    {
-      "order": 6,
-      "headline": "REBUILD SCRAP CITY",
-      "supportingCopy": "Turn salvage into a stronghold.",
-      "realCaptureRequired": "Capture an actual before/after city-building upgrade with visible level changes."
-    }
-  ],
-  "localizationStatus": {
-    "es": "requires market research, translation and human review",
-    "fr": "requires market research, translation and human review",
-    "de": "requires market research, translation and human review",
-    "it": "requires market research, translation and human review",
-    "pt": "requires market research, translation and human review",
-    "pt-BR": "requires market research, translation and human review",
-    "ja": "requires market research, translation and human review",
-    "ko": "requires market research, translation and human review",
-    "zh-Hans": "requires market research, translation and human review",
-    "zh-Hant": "requires market research, translation and human review"
+  "webSEO": {
+    "title": "Scrap Squad: Merge & Survive | Robot battles & weapon fusion",
+    "metaDescription": "Turn scrap into your next great invention in Scrap Squad, a robot action game about weapon fusion, squad building and survival.",
+    "h1": "Scrap Squad: Merge & Survive",
+    "language": "en-GB"
+  },
+  "review": {
+    "approved": false,
+    "keywordDemandValidated": false,
+    "appUILocalized": false
   },
   "policySources": [
     "https://developer.apple.com/app-store/product-page/",
-    "https://developer.apple.com/app-store/review/guidelines/",
-    "https://developer.apple.com/app-store/asset-best-practices/"
+    "https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications"
+  ],
+  "screenshots": [
+    {
+      "order": 1,
+      "capture": "Store-09-battle",
+      "headline": [
+        "MERGE. FIGHT.",
+        "SURVIVE."
+      ],
+      "supportingCopy": "Robot action. Your invention, unleashed.",
+      "keyword": "ROBOT SURVIVAL"
+    },
+    {
+      "order": 2,
+      "capture": "Store-05-workshop",
+      "headline": [
+        "SCRAP INTO",
+        "FIREPOWER."
+      ],
+      "supportingCopy": "Combine weapons. Discover your next build.",
+      "keyword": "WEAPON FUSION"
+    },
+    {
+      "order": 3,
+      "capture": "Store-03-squad",
+      "headline": [
+        "SMALL BOTS.",
+        "BIG ATTITUDE."
+      ],
+      "supportingCopy": "Collect eight robots with distinct abilities.",
+      "keyword": "SQUAD BUILDING"
+    },
+    {
+      "order": 4,
+      "capture": "Store-07-fusion",
+      "headline": [
+        "MEET YOUR",
+        "NEXT INVENTION."
+      ],
+      "supportingCopy": "Fuse a Flame Blaster. Equip the discovery.",
+      "keyword": "MERGE WEAPONS"
+    },
+    {
+      "order": 5,
+      "capture": "Store-04-blueprints",
+      "headline": [
+        "12 BLUEPRINTS.",
+        "ONE CURIOUS MIND."
+      ],
+      "supportingCopy": "Follow clues. Experiment with combinations.",
+      "keyword": "CRAFTING & DISCOVERY"
+    },
+    {
+      "order": 6,
+      "capture": "Store-02-city",
+      "headline": [
+        "BUILD A CITY",
+        "FROM SCRAP."
+      ],
+      "supportingCopy": "Construct facilities. Strengthen your squad.",
+      "keyword": "CITY PROGRESSION"
+    },
+    {
+      "order": 7,
+      "capture": "Store-08-lobby",
+      "headline": [
+        "PLAN THE BUILD.",
+        "TAKE THE FIELD."
+      ],
+      "supportingCopy": "Choose a mode. Match elemental weaknesses.",
+      "keyword": "TACTICAL LOADOUTS"
+    },
+    {
+      "order": 8,
+      "capture": "Store-06-roulette",
+      "headline": [
+        "TWO WEAPONS.",
+        "NEW POSSIBILITIES."
+      ],
+      "supportingCopy": "See the outcomes before you fuse.",
+      "keyword": "FUSION ROULETTE"
+    },
+    {
+      "order": 9,
+      "capture": "Store-01-onboarding",
+      "headline": [
+        "YOUR SQUAD",
+        "STARTS HERE."
+      ],
+      "supportingCopy": "Meet BOLT. Make your first invention.",
+      "keyword": "ROBOT COLLECTION"
+    },
+    {
+      "order": 10,
+      "capture": "Store-10-pause",
+      "headline": [
+        "PICK IT UP.",
+        "PUT IT DOWN."
+      ],
+      "supportingCopy": "Pause the mission. Return when you’re ready.",
+      "keyword": "PLAY AT YOUR PACE"
+    }
   ]
 }

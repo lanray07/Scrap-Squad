@@ -6,6 +6,8 @@ import os
 import re
 import sys
 import urllib.request
+import urllib.error
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -54,26 +56,73 @@ def export(locale, out):
             pending.append(dict(key=key,source=original,sourceHash=digest(original),translation=unit.get('value',''),approved=False,allowWarnings=False))
     write(out,dict(locale=locale,sourceLanguage='en',translations=pending))
     print(f'Exported {len(pending)} strings for {locale}.')
-def translate(path, endpoint, out):
+def request_translation(endpoint, payload, key, provider, attempts=3):
+    headers = {'Content-Type': 'application/json'}
+    if provider == 'custom': headers['Authorization'] = 'Bearer ' + key
+    else: payload = dict(payload, api_key=key)
+    request = urllib.request.Request(endpoint, data=json.dumps(payload).encode(), headers=headers)
+    for attempt in range(attempts):
+        try:
+            with urllib.request.urlopen(request, timeout=90) as response: return json.load(response)
+        except urllib.error.HTTPError as error:
+            if error.code not in (429, 500, 502, 503, 504) or attempt == attempts - 1:
+                raise ValueError(f'translation provider HTTP {error.code}; response body withheld') from None
+        except urllib.error.URLError:
+            if attempt == attempts - 1: raise ValueError('translation provider connection failed') from None
+        time.sleep(2 ** attempt)
+
+def validate_response(result, expected):
+    rows = result.get('translations', [])
+    keys = [row['key'] for row in rows]
+    if len(keys) != len(set(keys)) or set(keys) != set(expected):
+        raise ValueError('provider returned duplicate, missing or unexpected keys')
+    if any(not isinstance(row.get('text'), str) for row in rows):
+        raise ValueError('provider returned non-text translation')
+    return {row['key']: row['text'] for row in rows}
+
+def translate(path, endpoint, out, provider='custom', batch_size=25, cache=None, target=None):
     if not endpoint.startswith('https://'): raise ValueError('translation endpoint must use HTTPS')
     key=os.environ.get('TRANSLATION_API_KEY')
     if not key: raise ValueError('set TRANSLATION_API_KEY locally; do not paste it into chat')
     batch=read(path)
+    if batch['locale'] not in LOCALES: raise ValueError('unsupported production locale')
+    if not 1 <= batch_size <= 100: raise ValueError('batch size must be between 1 and 100')
     # Reject arbitrary documents: every item must match the checked-in application catalog.
     catalog=read(CATALOG)['strings']
-    lookup={}; items=[]
+    lookup={}; items=[]; seen=set()
     for item in batch['translations']:
-        if item['key'] not in catalog or item['source'] != source(catalog[item['key']]):
+        if item['key'] in seen: raise ValueError('duplicate input key')
+        seen.add(item['key'])
+        if item['key'] not in catalog or item['source'] != source(catalog[item['key']]) or item['sourceHash'] != digest(item['source']):
             raise ValueError('input is not current application localization content')
         value,tokens=protect(item['source']); lookup[item['key']]=tokens
         items.append(dict(key=item['key'],text=value))
-    payload=dict(sourceLanguage='en',targetLanguage=batch['locale'],
-        instruction='Translate game UI. Preserve __KEEP_N__ tokens exactly. Return JSON translations array with key and text.',strings=items)
-    request=urllib.request.Request(endpoint,data=json.dumps(payload).encode(),headers={'Content-Type':'application/json','Authorization':'Bearer '+key})
-    # Configurable provider adapter contract, not a hard-coded vendor model/API.
-    with urllib.request.urlopen(request,timeout=90) as response: result=json.load(response)
-    translated={item['key']:item['text'] for item in result['translations']}
-    if set(translated) != set(lookup): raise ValueError('provider returned missing or unexpected keys')
+    # Cache is scoped to source, locale, adapter and endpoint; never stores credentials.
+    saved = read(cache) if cache and Path(cache).exists() else {}
+    translated={}; pending=[]
+    for item in items:
+        cache_key=digest(json.dumps([endpoint,provider,target,batch['locale'],item['key'],item['text']]))
+        item['cacheKey']=cache_key
+        if cache_key in saved: translated[item['key']]=saved[cache_key]
+        else: pending.append(item)
+    for offset in range(0,len(pending),batch_size):
+        chunk=pending[offset:offset+batch_size]
+        if provider == 'libretranslate':
+            language=target or batch['locale']
+            if language in ('pt-BR','zh-Hans','zh-Hant') and not target:
+                raise ValueError('this locale requires an explicit provider target and regional human review; no silent language conversion')
+            result=request_translation(endpoint,dict(q=[row['text'] for row in chunk],source='en',target=language,format='text'),key,provider)
+            values=result.get('translatedText')
+            if not isinstance(values,list) or len(values)!=len(chunk) or any(not isinstance(x,str) for x in values):
+                raise ValueError('LibreTranslate returned incorrect translation count or type')
+            response=dict(zip([row['key'] for row in chunk],values))
+        else:
+            payload=dict(sourceLanguage='en',targetLanguage=batch['locale'],instruction='Translate game UI. Preserve __KEEP_N__ tokens exactly. Return JSON translations array with key and text.',strings=[dict(key=row['key'],text=row['text']) for row in chunk])
+            response=validate_response(request_translation(endpoint,payload,key,provider),[row['key'] for row in chunk])
+        for row in chunk:
+            unprotect(response[row['key']],lookup[row['key']])
+            saved[row['cacheKey']]=response[row['key']]; translated[row['key']]=response[row['key']]
+        if cache: write(cache,saved)
     for item in batch['translations']:
         item['translation']=unprotect(translated[item['key']],lookup[item['key']])
         item['warnings']=issues(item['source'],item['translation'])
@@ -151,13 +200,15 @@ def main():
     p=sub.add_parser('extract'); p.add_argument('out')
     p=sub.add_parser('export'); p.add_argument('locale',choices=LOCALES); p.add_argument('out')
     p=sub.add_parser('translate'); p.add_argument('input'); p.add_argument('--endpoint',required=True); p.add_argument('--out',required=True)
+    p.add_argument('--provider', choices=['custom','libretranslate'],default='custom'); p.add_argument('--batch-size',type=int,default=25)
+    p.add_argument('--cache'); p.add_argument('--target', help='Explicit provider target; reviewer must check regional language')
     p=sub.add_parser('import-approved'); p.add_argument('input')
     p=sub.add_parser('pseudo'); p.add_argument('out')
     args=parser.parse_args()
     if args.command=='audit': audit()
     elif args.command=='extract': extract(args.out)
     elif args.command=='export': export(args.locale,args.out)
-    elif args.command=='translate': translate(args.input,args.endpoint,args.out)
+    elif args.command=='translate': translate(args.input,args.endpoint,args.out,args.provider,args.batch_size,args.cache,args.target)
     elif args.command=='import-approved': import_approved(args.input)
     elif args.command=='pseudo': pseudo(args.out)
 if __name__=='__main__':

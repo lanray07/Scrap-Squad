@@ -71,11 +71,15 @@ enum LocalizationManager {
     static let supported = ["en", "es", "fr", "de", "it", "pt", "pt-BR", "ja", "ko", "zh-Hans", "zh-Hant"]
     static func string(_ key: String, locale: String = "system") -> String {
         let language = locale == "system" ? Locale.preferredLanguages.first ?? "en" : locale
-        let path = Bundle.main.path(forResource: language, ofType: "lproj")
-            ?? Bundle.main.path(forResource: String(language.prefix(2)), ofType: "lproj")
-            ?? Bundle.main.path(forResource: "en", ofType: "lproj")
+        let normalized = language.replacingOccurrences(of: "_", with: "-")
+        let candidates = supported.filter { normalized == $0 || normalized.hasPrefix($0 + "-") }.sorted { $0.count > $1.count }
+        let resolved = candidates.first(where: { Bundle.main.localizations.contains($0) }) ?? "en"
+        let path = Bundle.main.path(forResource: resolved, ofType: "lproj")
         let bundle = path.flatMap(Bundle.init(path:)) ?? .main
-        return bundle.localizedString(forKey: key, value: nil, table: nil)
+        let englishPath = Bundle.main.path(forResource: "en", ofType: "lproj")
+        let english = englishPath.flatMap(Bundle.init(path:)) ?? .main
+        let fallback = english.localizedString(forKey: key, value: key, table: nil)
+        return bundle.localizedString(forKey: key, value: fallback, table: nil)
     }
 }
 enum LocaleManager {
