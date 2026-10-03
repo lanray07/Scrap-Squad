@@ -1,0 +1,42 @@
+{
+  "workflowRun": "https://github.com/lanray07/Scrap-Squad/actions/runs/37156023763",
+  "commit": "1a1d66c544f935ee382ca21fb9460f7568654788",
+  "runtime": "iOS 26.2",
+  "screenshots": [
+    {
+      "file": "IAP-03-refunded.png",
+      "test": "CosmeticPurchaseUITests/testPurchaseEquipRestoreAndRefund()",
+      "device": "iPhone 17 Pro Max",
+      "source": "3B8DC583-313A-4489-BADA-8E61E6C6BDE9.png",
+      "sha256": "4013285565598af70d2be6c394971960ad0607aec3777a080027299bb576cd8e"
+    },
+    {
+      "file": "IAP-02-founder-owned.png",
+      "test": "CosmeticPurchaseUITests/testPurchaseEquipRestoreAndRefund()",
+      "device": "iPhone 17 Pro Max",
+      "source": "299C9C22-7715-4E2B-9EFB-E974E808B515.png",
+      "sha256": "f9bedd66872dd4eb2bf86872a492f0e827bc0d1b0a705f7ea2a7f4340fb9bdef"
+    },
+    {
+      "file": "IAP-01-founder-review.png",
+      "test": "CosmeticPurchaseUITests/testPurchaseEquipRestoreAndRefund()",
+      "device": "iPhone 17 Pro Max",
+      "source": "B41F0A68-B5B8-41DC-8CDC-F7DBE20E28D1.png",
+      "sha256": "4c6b6642ed7545d02f1d65cc32c8c4502cfd71e2abf80c2b96f96ca2a475d33a"
+    },
+    {
+      "file": "IAP-05-styles-owned.png",
+      "test": "CosmeticPurchaseUITests/testStylePackPurchaseAndSelection()",
+      "device": "iPhone 17 Pro Max",
+      "source": "2A9954AF-319D-49D8-A34A-D5C0A5AB6D90.png",
+      "sha256": "0ea42bccc5b7fd92688b693bdabf797b1621240bfd070d4223be791405078774"
+    },
+    {
+      "file": "IAP-04-styles-review.png",
+      "test": "CosmeticPurchaseUITests/testStylePackPurchaseAndSelection()",
+      "device": "iPhone 17 Pro Max",
+      "source": "3309A67D-A020-4EAA-BFAE-D2A5D4662B0E.png",
+      "sha256": "8f5d9ea79024bdd8ae85627d6101aa59a0212809263ce83a09147a96435316d7"
+    }
+  ]
+}

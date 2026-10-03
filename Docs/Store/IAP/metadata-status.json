@@ -1,0 +1,53 @@
+{
+  "appID": "6818847887",
+  "regions": 173,
+  "excluded": [
+    "CHN",
+    "VNM"
+  ],
+  "products": [
+    {
+      "id": "6818880427",
+      "productID": "com.ScrapSquad.app.founder",
+      "name": "Founder’s Pack",
+      "baseCurrency": "GBP",
+      "basePrice": "2.99",
+      "locales": [
+        "en-GB",
+        "es-ES",
+        "fr-FR",
+        "de-DE",
+        "it",
+        "pt-PT",
+        "pt-BR",
+        "ja",
+        "ko",
+        "zh-Hans",
+        "zh-Hant"
+      ],
+      "reviewScreenshotUploaded": false
+    },
+    {
+      "id": "6818884131",
+      "productID": "com.ScrapSquad.app.styles",
+      "name": "Robot Style Pack",
+      "baseCurrency": "GBP",
+      "basePrice": "1.99",
+      "locales": [
+        "en-GB",
+        "es-ES",
+        "fr-FR",
+        "de-DE",
+        "it",
+        "pt-PT",
+        "pt-BR",
+        "ja",
+        "ko",
+        "zh-Hans",
+        "zh-Hant"
+      ],
+      "reviewScreenshotUploaded": false
+    }
+  ],
+  "submittedForReview": false
+}
