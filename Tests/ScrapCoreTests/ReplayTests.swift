@@ -28,16 +28,20 @@ import Testing
 }
 @Test func comboChargesExpiresAndCannotStackOverdrive() {
     var combo = ComboMeter()
-    #expect(!combo.activate())
+    let emptyActivation = combo.activate()
+    #expect(!emptyActivation)
     combo.register(kills: 16)
     #expect(combo.best == 16 && combo.multiplier == 3 && combo.charge == 1)
-    #expect(combo.activate())
+    let firstActivation = combo.activate()
+    #expect(firstActivation)
     combo.register(kills: 10)
-    #expect(!combo.activate() && combo.charge == 0 && combo.activations == 1)
+    let stackedActivation = combo.activate()
+    #expect(!stackedActivation && combo.charge == 0 && combo.activations == 1)
     combo.tick(7)
     #expect(combo.count == 0 && combo.overdrive == 0 && combo.best == 26)
     combo.register(kills: 12)
-    #expect(combo.activate() && combo.activations == 2)
+    let secondActivation = combo.activate()
+    #expect(secondActivation && combo.activations == 2)
 }
 @Test func synergyRequirementsAreDistinctAndPresentInContent() throws {
     let content = try GameContent.bundled()

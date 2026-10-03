@@ -129,6 +129,18 @@ public struct RunJournal: Codable, Sendable {
     public private(set) var discoveredSynergies: Set<BuildSynergy> = []
     public private(set) var medals: Set<RunMedal> = []
     public init() {}
+    public func validate(content: GameContent) throws {
+        let modes = Set(GameMode.allCases.map(\.rawValue))
+        let weapons = Set(content.weapons.map(\.id))
+        guard recent.count <= 30, Set(recent.map(\.id)).count == recent.count,
+              Set(bestScores.keys).isSubset(of: modes), bestScores.values.allSatisfy({ $0 >= 0 }), bestCombo >= 0,
+              recent.allSatisfy({ run in
+                  run.zone >= 0 && run.zone < content.biomes.count && run.score >= 0 && run.kills >= 0 && run.bosses >= 0
+                  && weapons.contains(run.highlights.weaponID) && run.highlights.elapsed.isFinite && run.highlights.elapsed >= 0
+                  && run.highlights.bestCombo >= 0 && run.highlights.overdrives >= 0
+                  && (run.highlights.challengeCode == nil || RunChallenge(code: run.highlights.challengeCode!) != nil)
+              }) else { throw GameError.invalidContent }
+    }
     public mutating func record(_ run: RunRecord) {
         guard !recent.contains(where: { $0.id == run.id }) else { return }
         recent.insert(run, at: 0); recent = Array(recent.prefix(30))

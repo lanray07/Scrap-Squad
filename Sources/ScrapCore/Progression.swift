@@ -49,6 +49,7 @@ public struct PlayerProfile: Codable, Sendable {
     public var playerLevel: Int { 1 + completedRuns / 3 }
     public var cityLevel: Int { 1 + buildingLevels.values.reduce(0, +) }
     public func validate(content: GameContent) throws {
+        try journal?.validate(content: content)
         let weaponIDs = Set(content.weapons.map(\.id)), robotIDs = Set(content.robots.map(\.id))
         let componentIDs = Set(content.components.map(\.id)), buildingIDs = Set(content.buildings.map(\.id))
         guard schemaVersion == 1, credits >= 0, scrap >= 0, cores >= 0,
