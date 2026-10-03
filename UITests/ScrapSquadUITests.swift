@@ -12,13 +12,13 @@ import XCTest
         start.tap()
         XCTAssertTrue(app.staticTexts["Welcome to Scrap City"].waitForExistence(timeout: 10))
         capture(app, "Store-02-city")
-        app.tabBars.buttons["Squad"].tap()
+        selectTab("Squad", in: app)
         XCTAssertTrue(app.staticTexts.matching(identifier: "BOLT").firstMatch.waitForExistence(timeout: 10))
         capture(app, "Store-03-squad")
-        app.tabBars.buttons["Blueprints"].tap()
+        selectTab("Blueprints", in: app)
         XCTAssertTrue(app.staticTexts["0 / 12"].waitForExistence(timeout: 10))
         capture(app, "Store-04-blueprints")
-        app.tabBars.buttons["City"].tap()
+        selectTab("City", in: app)
         app.buttons["Open Workshop"].tap()
         XCTAssertTrue(app.staticTexts["Invent something outrageous"].waitForExistence(timeout: 10))
         capture(app, "Store-05-workshop")
@@ -30,7 +30,7 @@ import XCTest
         capture(app, "Store-07-fusion")
         app.buttons["fusion-equip"].tap()
         app.buttons["workshop-done"].tap()
-        app.tabBars.buttons["Battle"].tap()
+        selectTab("Battle", in: app)
         XCTAssertTrue(app.buttons["Deploy squad"].waitForExistence(timeout: 10))
         capture(app, "Store-08-lobby")
         app.buttons["Deploy squad"].tap()
@@ -68,7 +68,7 @@ import XCTest
         let start = app.buttons["Let’s build something"]
         XCTAssertTrue(start.waitForExistence(timeout: 20))
         start.tap()
-        app.tabBars.buttons["Battle"].tap()
+        selectTab("Battle", in: app)
         let deploy = app.buttons["Deploy squad"]
         XCTAssertTrue(deploy.waitForExistence(timeout: 10))
         deploy.tap()
@@ -80,6 +80,16 @@ import XCTest
         XCTAssertTrue(app.staticTexts["Back to the drawing board"].waitForExistence(timeout: 10))
         app.buttons["Return to city"].tap()
         XCTAssertTrue(deploy.waitForExistence(timeout: 10))
+    }
+
+    private func selectTab(_ name: String, in app: XCUIApplication) {
+        let compactTab = app.tabBars.buttons[name]
+        if compactTab.exists { compactTab.tap() }
+        else {
+            let regularTab = app.buttons[name].firstMatch
+            XCTAssertTrue(regularTab.waitForExistence(timeout: 10))
+            regularTab.tap()
+        }
     }
 
     private func capture(_ app: XCUIApplication, _ name: String) {

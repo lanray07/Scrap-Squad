@@ -32,5 +32,6 @@ jobs:
           name: ipad-store-captures
           path: |
             .build/ipad-captures
+            .build/ipad-attachments
             .build/ipad-ui-tests.log
           if-no-files-found: ignore
