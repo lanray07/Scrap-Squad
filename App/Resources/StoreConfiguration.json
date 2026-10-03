@@ -1,4 +1,22 @@
 {
-  "cosmeticProductIDs": [],
-  "finishes": {}
+  "packs": [
+    {
+      "id": "com.ScrapSquad.app.founder",
+      "nameKey": "cosmetic.founder.name",
+      "detailKey": "cosmetic.founder.detail",
+      "finishes": [{"id":"bolt-founders-gold","robotID":"bolt","nameKey":"cosmetic.gold","tint":"FFD878","accent":"FFF0C2","symbol":"star.fill"}],
+      "founderExtras": true
+    },
+    {
+      "id": "com.ScrapSquad.app.styles",
+      "nameKey": "cosmetic.styles.name",
+      "detailKey": "cosmetic.styles.detail",
+      "finishes": [
+        {"id":"bolt-aurora","robotID":"bolt","nameKey":"cosmetic.aurora","tint":"79E8CC","accent":"BFFFEF","symbol":"sparkle"},
+        {"id":"tank-cobalt","robotID":"tank","nameKey":"cosmetic.cobalt","tint":"80AAFF","accent":"CBDCFF","symbol":"diamond.fill"},
+        {"id":"patch-rose","robotID":"patch","nameKey":"cosmetic.rose","tint":"F4A3C2","accent":"FFE0ED","symbol":"heart.fill"}
+      ],
+      "founderExtras": false
+    }
+  ]
 }

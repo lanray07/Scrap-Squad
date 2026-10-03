@@ -5,30 +5,44 @@ import GameKit
 import AVFoundation
 import ScrapCore
 
-struct StoreConfiguration: Codable {
-    let cosmeticProductIDs: [String]
-    // Product IDs must map to a visible, implemented robot finish before being offered.
-    let finishes: [String: RobotFinish]
-    static func bundled() -> StoreConfiguration {
+extension CosmeticCatalog {
+    static func bundled() -> CosmeticCatalog {
         guard let url = Bundle.main.url(forResource: "StoreConfiguration", withExtension: "json"),
-              let data = try? Data(contentsOf: url), let config = try? JSONDecoder().decode(Self.self, from: data) else {
-            return StoreConfiguration(cosmeticProductIDs: [], finishes: [:])
+              let data = try? Data(contentsOf: url), let catalog = try? JSONDecoder().decode(Self.self, from: data) else {
+            return CosmeticCatalog(packs: [])
         }
-        return config
+        return catalog
     }
 }
-struct RobotFinish: Codable { let robotID: String; let tint: String }
 @MainActor @Observable final class CommerceService {
     var products: [Product] = []
-    var entitlements: Set<String> = []
+    private(set) var entitlements: Set<String> = []
     var messageKey: String?
-    var loading = false
+    private(set) var loading = false
+    private(set) var selection = CosmeticSelection()
     private var updates: Task<Void, Never>?
-    let configuration = StoreConfiguration.bundled()
-    var robotFinishes: [String: String] {
-        var finishes: [String: String] = [:]
-        for id in entitlements.sorted() { if let finish = configuration.finishes[id] { finishes[finish.robotID] = finish.tint } }
-        return finishes
+    private let selectionKey = "cosmetic-selection-v1"
+    let configuration = CosmeticCatalog.bundled()
+    init() {
+        if ProcessInfo.processInfo.arguments.contains("--reset-cosmetics") { UserDefaults.standard.removeObject(forKey: selectionKey) }
+        if let data = UserDefaults.standard.data(forKey: selectionKey),
+           let saved = try? JSONDecoder().decode(CosmeticSelection.self, from: data) { selection = saved }
+    }
+    var robotFinishes: [String: RobotFinish] { selection.activeFinishes(catalog: configuration, owned: entitlements) }
+    var hasFounderExtras: Bool { configuration.hasFounderExtras(owned: entitlements) }
+    var goldenTrails: Bool { hasFounderExtras && selection.goldenTrails }
+    var founderBadge: Bool { hasFounderExtras && selection.founderBadge }
+    func setFinish(_ finish: RobotFinish?, for robotID: String) {
+        if let finish {
+            guard finish.robotID == robotID, configuration.availableFinishes(owned: entitlements).contains(finish) else { return }
+            selection.robotFinishIDs[robotID] = finish.id
+        } else { selection.robotFinishIDs.removeValue(forKey: robotID) }
+        saveSelection()
+    }
+    func setGoldenTrails(_ enabled: Bool) { selection.goldenTrails = hasFounderExtras && enabled; saveSelection() }
+    func setFounderBadge(_ enabled: Bool) { selection.founderBadge = hasFounderExtras && enabled; saveSelection() }
+    private func saveSelection() {
+        if let data = try? JSONEncoder().encode(selection) { UserDefaults.standard.set(data, forKey: selectionKey) }
     }
     func start() async {
         if updates == nil {
@@ -42,44 +56,54 @@ struct RobotFinish: Codable { let robotID: String; let tint: String }
         await refresh()
     }
     func refresh() async {
-        loading = true; defer { loading = false }
-        do { products = try await Product.products(for: configuration.cosmeticProductIDs).filter { $0.type == .nonConsumable && configuration.finishes[$0.id] != nil } }
-        catch { messageKey = "error.purchase" }
+        guard !loading else { return }
+        loading = true; messageKey = nil; defer { loading = false }
+        await loadProductsAndEntitlements()
+    }
+    private func loadProductsAndEntitlements() async {
+        do {
+            let loaded = try await Product.products(for: configuration.productIDs).filter { $0.type == .nonConsumable }
+            products = configuration.productIDs.compactMap { id in loaded.first { $0.id == id } }
+            if products.count < configuration.packs.count { messageKey = "shop.unavailable" }
+        } catch { products = []; messageKey = "error.purchase" }
         var owned = Set<String>()
         for await result in StoreKit.Transaction.currentEntitlements {
-            if case .verified(let transaction) = result,
-               transaction.revocationDate == nil,
-               configuration.cosmeticProductIDs.contains(transaction.productID) {
+            if case .verified(let transaction) = result, transaction.revocationDate == nil,
+               transaction.productType == .nonConsumable, configuration.productIDs.contains(transaction.productID) {
                 owned.insert(transaction.productID)
             }
         }
         entitlements = owned
+        selection.reconcile(catalog: configuration, owned: owned); saveSelection()
     }
     func purchase(_ product: Product) async {
-        guard !loading else { return }
-        loading = true
-        defer { loading = false }
+        guard !loading, product.type == .nonConsumable, configuration.productIDs.contains(product.id), !entitlements.contains(product.id) else { return }
+        loading = true; messageKey = nil; defer { loading = false }
         do {
             switch try await product.purchase() {
             case .success(let result): await accept(result)
             case .pending: messageKey = "shop.pending"
-            case .userCancelled: break
+            case .userCancelled: messageKey = "shop.cancelled"
             @unknown default: messageKey = "error.purchase"
             }
         } catch { messageKey = "error.purchase" }
     }
     private func accept(_ result: VerificationResult<StoreKit.Transaction>) async {
         guard case .verified(let transaction) = result else { messageKey = "error.purchase"; return }
-        guard configuration.cosmeticProductIDs.contains(transaction.productID) else { return }
+        guard transaction.productType == .nonConsumable, configuration.productIDs.contains(transaction.productID) else { return }
         if transaction.revocationDate == nil { entitlements.insert(transaction.productID) }
         else { entitlements.remove(transaction.productID) }
-        // Entitlement is applied before acknowledging the transaction.
+        selection.reconcile(catalog: configuration, owned: entitlements); saveSelection()
         await transaction.finish()
-        messageKey = "shop.verified"
+        messageKey = transaction.revocationDate == nil ? "shop.verified" : "shop.revoked"
     }
     func restore() async {
-        do { try await AppStore.sync(); await refresh(); messageKey = "shop.restored" }
-        catch { messageKey = "error.purchase" }
+        guard !loading else { return }
+        loading = true; messageKey = nil; defer { loading = false }
+        do {
+            try await AppStore.sync(); await loadProductsAndEntitlements()
+            messageKey = entitlements.isEmpty ? "shop.restore.empty" : "shop.restored"
+        } catch { messageKey = "error.purchase" }
     }
 }
 

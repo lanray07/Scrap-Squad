@@ -65,28 +65,3 @@ struct SettingsView: View {
         VStack(alignment: .leading) { LText(key); Slider(value: binding(path), in: 0...1).accessibilityLabel(Text(LocalizationManager.string(key))) }
     }
 }
-struct ShopView: View {
-    @Environment(CommerceService.self) var commerce
-    var body: some View {
-        ScrollView {
-            VStack(spacing: 22) {
-                PageHeading(title: "shop.title", subtitle: "shop.subtitle")
-                if commerce.products.isEmpty {
-                    Panel { Image(systemName: "paintbrush.pointed.fill").font(.largeTitle).foregroundStyle(Theme.gold); LText("shop.unavailable").font(.subheadline).padding(.top, 12) }
-                }
-                ForEach(commerce.products) { product in
-                    Panel {
-                        Text(product.displayName).font(.title3.bold())
-                        Text(product.description).font(.subheadline).foregroundStyle(Theme.muted)
-                        if commerce.entitlements.contains(product.id) { Image(systemName: "checkmark.seal.fill").foregroundStyle(Theme.mint) }
-                        else { Button(product.displayPrice) { Task { await commerce.purchase(product) } }.disabled(commerce.loading).frame(minHeight: 44) }
-                    }
-                }
-                ActionButton(key: "shop.refresh", symbol: "arrow.clockwise", secondary: true) { Task { await commerce.refresh() } }.disabled(commerce.loading)
-                ActionButton(key: "shop.restore", symbol: "arrow.counterclockwise", secondary: true) { Task { await commerce.restore() } }.disabled(commerce.loading)
-                if let key = commerce.messageKey { LText(key).font(.subheadline).foregroundStyle(Theme.mint) }
-                LText("shop.note").font(.caption).foregroundStyle(Theme.muted)
-            }.padding(20).frame(maxWidth: 760)
-        }.background(Theme.ink)
-    }
-}

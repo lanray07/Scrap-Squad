@@ -43,9 +43,14 @@ targets:
   ScrapSquadUITests:
     type: bundle.ui-testing
     platform: iOS
-    sources: [UITests]
+    sources:
+      - path: UITests
+        excludes: [Cosmetics.storekit]
+      - path: UITests/Cosmetics.storekit
+        buildPhase: resources
     dependencies:
       - target: ScrapSquad
+      - sdk: StoreKitTest.framework
     settings:
       base:
         SWIFT_VERSION: '6.0'

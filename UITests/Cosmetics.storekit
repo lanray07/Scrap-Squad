@@ -1,0 +1,11 @@
+{
+  "identifier": "9F17D4AE-618D-48EB-B4E6-71A26E0C0A24",
+  "nonRenewingSubscriptions": [],
+  "products": [
+    {"displayPrice":"2.99","familyShareable":false,"internalID":"10001","localizations":[{"description":"Gold BOLT finish, golden weapon trails and a Founder badge. Cosmetic only.","displayName":"Founder’s Pack","locale":"en_GB"}],"productID":"com.ScrapSquad.app.founder","referenceName":"Founder’s Pack","type":"NonConsumable"},
+    {"displayPrice":"1.99","familyShareable":false,"internalID":"10002","localizations":[{"description":"Aurora BOLT, Cobalt TANK and Rose PATCH finishes. Cosmetic only.","displayName":"Robot Style Pack","locale":"en_GB"}],"productID":"com.ScrapSquad.app.styles","referenceName":"Robot Style Pack","type":"NonConsumable"}
+  ],
+  "settings": {"_failTransactionsEnabled":false,"_locale":"en_GB","_storefront":"GBR","_storeKitErrors":[]},
+  "subscriptionGroups": [],
+  "version": {"major":3,"minor":0}
+}

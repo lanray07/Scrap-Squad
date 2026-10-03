@@ -2544,12 +2544,11 @@
       }
     },
     "shop.unavailable": {
-      "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "The store is not configured for this development build. No purchases can be made."
+            "value": "Purchases are currently unavailable. Please try Refresh later."
           }
         }
       }
@@ -2621,12 +2620,11 @@
       }
     },
     "shop.note": {
-      "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Only verified cosmetic entitlements are supported in this build. Consumables and subscriptions are not offered."
+            "value": "Cosmetics are optional. Prices come from the App Store. Restore purchases using the Apple Account that bought them. All gameplay and progression remain available without buying a pack."
           }
         }
       }
@@ -3386,6 +3384,246 @@
           "stringUnit": {
             "state": "translated",
             "value": "Armor destroyed: full damage unlocked"
+          }
+        }
+      }
+    },
+    "cosmetic.founder.name": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Founder’s Pack"
+          }
+        }
+      }
+    },
+    "cosmetic.founder.detail": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Founder’s Gold finish for BOLT, golden weapon trails and a Founder badge. Cosmetic only."
+          }
+        }
+      }
+    },
+    "cosmetic.styles.name": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Robot Style Pack"
+          }
+        }
+      }
+    },
+    "cosmetic.styles.detail": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aurora BOLT, Cobalt TANK and Rose PATCH finishes. Robot unlocks are earned through gameplay."
+          }
+        }
+      }
+    },
+    "cosmetic.gold": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Founder’s Gold"
+          }
+        }
+      }
+    },
+    "cosmetic.aurora": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aurora"
+          }
+        }
+      }
+    },
+    "cosmetic.cobalt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cobalt"
+          }
+        }
+      }
+    },
+    "cosmetic.rose": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rose"
+          }
+        }
+      }
+    },
+    "cosmetic.original": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Original finish"
+          }
+        }
+      }
+    },
+    "cosmetic.owned": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Owned"
+          }
+        }
+      }
+    },
+    "cosmetic.equip": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Equip"
+          }
+        }
+      }
+    },
+    "cosmetic.remove": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove"
+          }
+        }
+      }
+    },
+    "cosmetic.equipped": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Equipped"
+          }
+        }
+      }
+    },
+    "cosmetic.trails": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Golden weapon trails"
+          }
+        }
+      }
+    },
+    "cosmetic.badge": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scrap Squad Founder"
+          }
+        }
+      }
+    },
+    "cosmetic.trails.enable": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use golden trails"
+          }
+        }
+      }
+    },
+    "cosmetic.badge.enable": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show Founder badge"
+          }
+        }
+      }
+    },
+    "cosmetic.robot.locked": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlock this robot through gameplay to use its finish."
+          }
+        }
+      }
+    },
+    "cosmetic.buy": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buy pack"
+          }
+        }
+      }
+    },
+    "cosmetic.once": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One-time purchase. No subscription. No combat or reward bonuses."
+          }
+        }
+      }
+    },
+    "shop.loading": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading cosmetic packs"
+          }
+        }
+      }
+    },
+    "shop.cancelled": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchase cancelled. You have not been charged."
+          }
+        }
+      }
+    },
+    "shop.revoked": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This purchase was refunded or revoked. Its cosmetics are no longer available."
+          }
+        }
+      }
+    },
+    "shop.restore.empty": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No previous cosmetic purchases were found for this Apple Account."
           }
         }
       }

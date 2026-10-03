@@ -4,7 +4,8 @@ import ScrapCore
 
 @MainActor final class BattleScene: SKScene {
     let engine: BattleEngine
-    let finishes: [String: String]
+    let finishes: [String: RobotFinish]
+    let goldenTrails: Bool
     var movement = Vector()
     var refresh: (() -> Void)?
     private var previous: TimeInterval = 0
@@ -16,9 +17,10 @@ import ScrapCore
     private let world = SKNode()
     private let effectsLayer = SKNode()
     private var lastKills = 0
-    init(engine: BattleEngine, finishes: [String: String]) {
+    init(engine: BattleEngine, finishes: [String: RobotFinish], goldenTrails: Bool) {
         self.engine = engine
         self.finishes = finishes
+        self.goldenTrails = goldenTrails
         super.init(size: CGSize(width: 600, height: 800))
         scaleMode = .resizeFill
         backgroundColor = UIColor(hex: engine.biome.palette[0])
@@ -93,7 +95,15 @@ import ScrapCore
             let sprite = SKSpriteNode(texture: SKTexture(rect: rect, in: atlas))
             let dimension: CGFloat = robot.silhouette == "heavy" ? 60 : 48
             sprite.size = CGSize(width: dimension, height: dimension)
-            if let tint = finishes[robot.id] { sprite.color = UIColor(hex: tint); sprite.colorBlendFactor = 0.45 }
+            if let finish = finishes[robot.id] {
+                sprite.color = UIColor(hex: finish.tint); sprite.colorBlendFactor = 0.65
+                let trim = SKShapeNode(ellipseOf: CGSize(width: dimension * 0.8, height: dimension * 0.25))
+                trim.strokeColor = UIColor(hex: finish.accent); trim.lineWidth = 2; trim.position.y = -dimension * 0.35
+                trim.zPosition = -1; sprite.addChild(trim)
+                let decal = SKLabelNode(fontNamed: "AvenirNext-Bold")
+                decal.text = finish.id == "bolt-founders-gold" ? "★" : finish.robotID == "patch" ? "♥" : "◆"
+                decal.fontSize = 10; decal.fontColor = UIColor(hex: finish.accent); decal.position.y = -5; sprite.addChild(decal)
+            }
             return sprite
         }
         let root = SKNode()
@@ -121,7 +131,7 @@ import ScrapCore
         return root
     }
     private func render(_ effect: CombatEffect) {
-        let color = UIColor(hex: engine.biome.palette[2])
+        let color = UIColor(hex: goldenTrails ? "FFD878" : engine.biome.palette[2])
         if effect.damage > 0 {
             let path = CGMutablePath(); path.move(to: point(effect.from)); path.addLine(to: point(effect.to))
             let trail = SKShapeNode(path: path); trail.strokeColor = color; trail.lineWidth = effect.critical ? 4 : 2; effectsLayer.addChild(trail)

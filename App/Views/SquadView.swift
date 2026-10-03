@@ -3,10 +3,15 @@ import ScrapCore
 
 struct SquadView: View {
     @Environment(GameStore.self) var store
+    @Environment(CommerceService.self) var commerce
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
                 PageHeading(title: "squad.title", subtitle: "squad.subtitle")
+                if commerce.founderBadge {
+                    Label { LText("cosmetic.badge") } icon: { Image(systemName: "star.circle.fill") }
+                        .font(.headline).foregroundStyle(Theme.gold).accessibilityIdentifier("founder-badge")
+                }
                 HStack {
                     ForEach(store.profile.squad, id: \.self) { id in
                         if let robot = store.content.robots.first(where: { $0.id == id }) {

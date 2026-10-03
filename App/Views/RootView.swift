@@ -44,11 +44,14 @@ struct RootView: View {
         .alert(Text(LocalizationManager.string("common.error")), isPresented: Binding(get: { store.errorKey != nil }, set: { if !$0 { store.errorKey = nil } })) {
             Button("common.ok", role: .cancel) { store.errorKey = nil }
         } message: { LText(store.errorKey ?? "common.error") }
-        .onChange(of: scenePhase) { _, phase in store.sceneChanged(phase) }
+        .onChange(of: scenePhase) { _, phase in
+            store.sceneChanged(phase)
+            if phase == .active && !ProcessInfo.processInfo.arguments.contains("--ui-testing") { Task { await commerce.refresh() } }
+        }
         .onAppear { if systemReduceMotion { store.profile.preferences.reducedMotion = true } }
         .onChange(of: systemReduceMotion) { _, enabled in if enabled { store.profile.preferences.reducedMotion = true } }
         .task {
-            if !ProcessInfo.processInfo.arguments.contains("--ui-testing") {
+            if !ProcessInfo.processInfo.arguments.contains("--ui-testing") || ProcessInfo.processInfo.arguments.contains("--storekit-testing") {
                 await commerce.start(); gameCenter.authenticate()
             }
         }

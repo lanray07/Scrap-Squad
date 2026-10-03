@@ -97,9 +97,21 @@ struct RobotPortrait: View {
     @Environment(CommerceService.self) private var commerce
     let robot: Robot
     var level = 1
+    var previewFinish: RobotFinish? = nil
     var body: some View {
+        let finish = previewFinish ?? commerce.robotFinishes[robot.id]
         if let image = RobotArt.image(robot.id) {
-            Image(uiImage: image).resizable().scaledToFit().colorMultiply(commerce.robotFinishes[robot.id].map { Color(hex: $0) } ?? .white).accessibilityLabel(Text(LocalizationManager.string(robot.nameKey)))
+            Image(uiImage: image).resizable().scaledToFit()
+                .colorMultiply(finish.map { Color(hex: $0.tint) } ?? .white)
+                .overlay(alignment: .bottomTrailing) {
+                    if let finish {
+                        Image(systemName: finish.symbol).font(.caption.bold()).foregroundStyle(Color(hex: finish.accent))
+                            .padding(6).background(Theme.ink, in: Circle())
+                            .overlay(Circle().stroke(Color(hex: finish.tint), lineWidth: 2))
+                    }
+                }
+                .accessibilityLabel(Text(LocalizationManager.string(robot.nameKey)))
+                .accessibilityValue(Text(finish.map { LocalizationManager.string($0.nameKey) } ?? LocalizationManager.string("cosmetic.original")))
         } else { procedural }
     }
     var procedural: some View {

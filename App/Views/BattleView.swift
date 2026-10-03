@@ -36,7 +36,7 @@ struct BattleLobby: View {
                 }
                 ActionButton(key: "battle.deploy", symbol: "bolt.shield.fill") {
                     var snapshot = store.profile; snapshot.zone = zone
-                    session = BattleSession(content: store.content, profile: snapshot, mode: mode, finishes: commerce.robotFinishes)
+                    session = BattleSession(content: store.content, profile: snapshot, mode: mode, finishes: commerce.robotFinishes, goldenTrails: commerce.goldenTrails)
                 }
                 LText("battle.move").font(.subheadline).foregroundStyle(Theme.muted)
                 LText("battle.survival.note").font(.caption).foregroundStyle(Theme.muted)
@@ -52,9 +52,9 @@ struct BattleLobby: View {
     var revision = 0
     var paused = false
     var claimed = false
-    init(content: GameContent, profile: PlayerProfile, mode: GameMode, finishes: [String: String]) {
+    init(content: GameContent, profile: PlayerProfile, mode: GameMode, finishes: [String: RobotFinish], goldenTrails: Bool) {
         engine = BattleEngine(content: content, profile: profile, mode: mode)
-        scene = BattleScene(engine: engine, finishes: finishes)
+        scene = BattleScene(engine: engine, finishes: finishes, goldenTrails: goldenTrails)
         scene.refresh = { [weak self] in self?.revision += 1 }
     }
 }
