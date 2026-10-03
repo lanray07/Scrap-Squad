@@ -1,0 +1,3424 @@
+{
+  "locale": "pt",
+  "sourceLanguage": "en",
+  "translations": [
+    {
+      "key": "accessibility.arena",
+      "source": "Combat arena. Drag to move. Automatic weapons target nearby enemies.",
+      "sourceHash": "1e58779a86213e3d0e2562df29a9a9a53ab2f96b218ae7fb7b63715d6581b4bf",
+      "translation": "Arena de combate. Arraste para mover. Alvo de armas automáticas inimigos próximos.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "accessibility.robot",
+      "source": "Robot portrait",
+      "sourceHash": "66a2b3dd45dbb5783b4e69856a3ab655cda4db2bbf0e21b41f9cf37551279aa5",
+      "translation": "Retrato do robô",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "accessibility.settings",
+      "source": "Open settings",
+      "sourceHash": "ca381c1e76e681b6c18fa984a2e2fda6ed4a9f28e914f539db34a6dcb3737149",
+      "translation": "Abrir configurações",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "achievement.bossbreaker",
+      "source": "Boss Breaker",
+      "sourceHash": "4f5b06f207812c1de44c2e6a043910c41a47cf0069682aec54a503c58b22d9ea",
+      "translation": "Quebrador de Chefes",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "achievement.firstfusion",
+      "source": "First Fusion",
+      "sourceHash": "9611bb6ad423baca1ad49b2d69711b2747f9bfe5a8890ce423e46d3cf779ee6f",
+      "translation": "Primeira Fusão",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "achievement.madscientist",
+      "source": "Mad Scientist",
+      "sourceHash": "539062420be3f6e28809a711b148ce03e0a53ccf19912ebe96aa2e19ca01544f",
+      "translation": "Cientista Louco",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "achievement.mythicengineer",
+      "source": "Mythic Engineer",
+      "sourceHash": "44e2253946359f3c2cbd4b748a60e8ad3cdfd3a1dad7663269bda4af920e274b",
+      "translation": "Engenheiro Mítico",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "achievement.scrapengineer",
+      "source": "Scrap Engineer",
+      "sourceHash": "aadac14498acc8c8037a7476013d4e91e366a45ef25f8a2d8ed556375d69657f",
+      "translation": "Engenheiro de sucata",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "achievement.swarmbreaker",
+      "source": "Swarm Breaker",
+      "sourceHash": "450d6c8b87a52a4aa79398e58ff0a1054b4e51525dced6b8965b293237e7f2d2",
+      "translation": "Quebra- Enxames",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "achievements.title",
+      "source": "Commander’s record",
+      "sourceHash": "f3ba8ee62690f26075146b681f89b8627fec5d191f80dc7fd9a872f885982177",
+      "translation": "Registo do Comandante",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "app.name",
+      "source": "Scrap Squad",
+      "sourceHash": "c9e4fddf378767a3967d04bfffc6dc575547a9cd0ae84e11aba6800a95e49b07",
+      "translation": "Scrap Squad",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "app.promise",
+      "source": "Build it. Merge it. Survive the swarm.",
+      "sourceHash": "66b12aaf7817b90d32477117ca7bbd033049810d1873aa48a7e4876cd534c12f",
+      "translation": "Construir. Mesclar. Sobreviver ao enxame.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "app.subtitle",
+      "source": "MERGE & SURVIVE",
+      "sourceHash": "a94354c7377426f0c22d483588774736a853803d057a4e30539a8f47df13bcdd",
+      "translation": "Fusão e Sobrevivência",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.ability",
+      "source": "Ability",
+      "sourceHash": "9c40ae32bd6bd868d855635f6d295120e965580a1182c2930a44c845569d1851",
+      "translation": "Capacidade",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.armor",
+      "source": "Breakable armor",
+      "sourceHash": "a237477216b60ffe8394df66c02c898392a6fa7d8c93cd1347e4bfbe59b8ac31",
+      "translation": "Armadura quebrável",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.armor.broken",
+      "source": "Armor destroyed: full damage unlocked",
+      "sourceHash": "cea9618be517d97392b88071dfd085f272e3e42d1a0fb1db4550f953827310c7",
+      "translation": "Armadura destruída: dano total desbloqueado",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.boss",
+      "source": "Boss incoming",
+      "sourceHash": "3e94e03f26f9982567737d19a10b2aa2be98efc6fbda00ba07b1952b5f933ece",
+      "translation": "Chefe a chegar",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.choice.subtitle",
+      "source": "Make this invention your own.",
+      "sourceHash": "90e86b1554cc9acf850f2c4e6b0fc3150626fe4abf1eda8438a08b65ef8cd349",
+      "translation": "Faz desta invenção a tua.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.choose",
+      "source": "Choose your upgrade",
+      "sourceHash": "f929a6c2936caae75dbf681a0245fbdba6928807f0d0b7e30ac707ccde183661",
+      "translation": "Escolha sua atualização",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.daily",
+      "source": "Today’s boosted element",
+      "sourceHash": "8eadbdab4f1c36df279a7cc3dd6acbda9b92003b8f613ad4abf7c1117cc758ab",
+      "translation": "O elemento impulsionado de hoje",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.defeat",
+      "source": "Back to the drawing board",
+      "sourceHash": "ec1309e8b0dc1eede9a3bfa2bbf4132bdd3211ff88d15936a549287d97ac3d8a",
+      "translation": "De volta ao quadro de desenho",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.deploy",
+      "source": "Deploy squad",
+      "sourceHash": "b50a6136390c55980cf50d5c939ad31b99ad1dd57c2c3990faa041a8fb7780eb",
+      "translation": "Esquadra de lançamento",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "long translation: layout review required",
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.health",
+      "source": "Squad integrity",
+      "sourceHash": "bf0307e8832a12a0c933588ae683e6b4474d78e407fc8e1cae22e916d2eeeacd",
+      "translation": "Integridade do esquadrão",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.kills",
+      "source": "Machines defeated",
+      "sourceHash": "f52082e560d3f7293128a3bc1baec2462d3116d8f84993d14fc98b784a642847",
+      "translation": "Máquinas derrotadas",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.mode",
+      "source": "Mission mode",
+      "sourceHash": "8068d3d8b6dee42ffb80ff8b33fee4f8ad912a2d8affbe6fe83ec4433237c044",
+      "translation": "Modo de missão",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.move",
+      "source": "Drag anywhere in the arena to move",
+      "sourceHash": "153cc13e0a567491b5e84209b2ed30e6d3b2e7e7d572b4a3132a61adf3b2fe07",
+      "translation": "Arraste em qualquer lugar da arena para se mover",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.pause",
+      "source": "Pause",
+      "sourceHash": "858e4ba7a29fd38b630ed73a79e2738333b3fc6778fafa90252f5556c1262fdc",
+      "translation": "Pausa",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.paused",
+      "source": "Mission paused",
+      "sourceHash": "cc99fa825377e524c6077eaa29294f121c0edc4775c7274f0c9e314cc2cbd9e9",
+      "translation": "Missão em pausa",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.priority",
+      "source": "Target priority",
+      "sourceHash": "64abb5b02724608d6fe402a4e934b33d1249f1fa11a44a1ab2894a02d8d7df02",
+      "translation": "Prioridade-alvo",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.results",
+      "source": "Every expedition brings progress.",
+      "sourceHash": "f4da9d9e76e4ebd10b2cd3796cd04da293742d911eb23e92f42220efab8c99c3",
+      "translation": "Cada expedição traz progresso.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.resume",
+      "source": "Resume",
+      "sourceHash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation": "Continuar",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.retreat",
+      "source": "Retreat",
+      "sourceHash": "e6e5c4f19dfe34b964bd6348cc46c60d1d565fb1949561f4c5c749101ed39bcf",
+      "translation": "Retirar",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.return",
+      "source": "Return to city",
+      "sourceHash": "ef5f430bcbebe3c2a89e1c02b120d3998ccbebc1baefb85f6c25367b85e21820",
+      "translation": "Voltar à cidade",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.score",
+      "source": "Score",
+      "sourceHash": "38e5a46cbc5ad32842ac60a4f1425ac9b31c06bac685f446a06ab72b87de31ed",
+      "translation": "Pontuação",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.subtitle",
+      "source": "The swarm is waiting. Bring something ridiculous.",
+      "sourceHash": "2fa742db67ffd4eac11c97b246c5fe51d129fab833d4ebd186d7e7874f70f67d",
+      "translation": "O enxame está à espera. Traz algo ridículo.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.survival.note",
+      "source": "Survival and Arena continue until defeat or retreat. Other modes last two minutes; Boss Rush ends after three bosses.",
+      "sourceHash": "b9070ce86207b8ddd86e5551e7e7dc730fa722755974e92c3239cb2a043bdb16",
+      "translation": "Sobrevivência e Arena continuam até a derrota ou retirada. Outros modos duram dois minutos; Boss Rush termina após três chefes.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.title",
+      "source": "Into the wasteland",
+      "sourceHash": "ecb35a731d7cdc22590d8ff3d9d5246cefe0b9477348781c8549c8fb74a25b15",
+      "translation": "Para o deserto",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.victory",
+      "source": "Swarm survived",
+      "sourceHash": "8f1b6497c757cdb31c935071cedc0b069cfbfab142d95eebec08bcd24209fd13",
+      "translation": "O enxame sobreviveu.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.weakness",
+      "source": "Weakness",
+      "sourceHash": "f3e0689e79fd25ed490fac398e253ebbd4828670267a9afbeda60651179cc622",
+      "translation": "Fraqueza",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.weapon",
+      "source": "Equipped weapon",
+      "sourceHash": "1165116d1f55195bde61fd864cef64f2164b98dde56c101f6e25b2e69d754891",
+      "translation": "Arma equipada",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "battle.zone",
+      "source": "Select zone",
+      "sourceHash": "e28fe492dcfeca1a8bbdd2bd5eff304535de96258f9fe5279e440f822bd7df3f",
+      "translation": "Selecionar zona",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "biome.city",
+      "source": "Abandoned Megacity",
+      "sourceHash": "e31b89c87a00b4eaf09708d21ad291b347308931c661bd568f2d22995fdd2520",
+      "translation": "Megacidade abandonada",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "biome.electric",
+      "source": "Electric Wastes",
+      "sourceHash": "2acc689d98c3543fb8982bf8297c954ea4cc4b7368e22e681847845717ed3846",
+      "translation": "Resíduos elétricos",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "biome.frozen",
+      "source": "Frozen Foundry",
+      "sourceHash": "ad536a2f4ca385de6175141a6bc5160ec74cb953d0372561feb7b7122bb57881",
+      "translation": "Fundição Congelada",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "biome.graveyard",
+      "source": "Machine Graveyard",
+      "sourceHash": "4263ed5eb3179cf53b9fbcbd3348b0f702c197ca33a4dbec949bc7427376db6e",
+      "translation": "Cemitério de máquina",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "biome.neon",
+      "source": "Neon Junkyard",
+      "sourceHash": "1bbc684452c18ba45c9619f07196eec9c6c6e4d9ab8a2980b8beb0f022114635",
+      "translation": "Neon Junkyard",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "unchanged translation: review required",
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "biome.orbital",
+      "source": "Orbital Factory",
+      "sourceHash": "f3aa017286d5e0ff58613a7ac9b399e2eab415b472d9793eaa1a63a60aef09c6",
+      "translation": "Fábrica Orbital",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "biome.rift",
+      "source": "Quantum Rift",
+      "sourceHash": "d52164f8770c438aaa07be4d377a5fb1f8ac059ff92e17d148b24eae6a684f30",
+      "translation": "Fenda quântica",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "biome.rust",
+      "source": "Rust Flats",
+      "sourceHash": "1fabbb6136e90bd5645b5f45cdcb07dc2d6341d63f70cfdef493ec4cf9355fad",
+      "translation": "Planos de ferrugem",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "biome.toxic",
+      "source": "Toxic Processing Plant",
+      "sourceHash": "733e9418af16ef5bb417650872e47fc6bbf87c2affd9cb2817022b9396531deb",
+      "translation": "Planta de processamento tóxico",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "boss.city",
+      "source": "Junk Queen",
+      "sourceHash": "ed4ae2b547dca77ec2cd39bebea9e3715c583fb223fad26e666658aad246a7a2",
+      "translation": "Rainha do Lixo",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "boss.electric",
+      "source": "Omega Warden",
+      "sourceHash": "346768b8425b1e63bdec48fc3f873cb8d98de2b05caa4b4c417041bb69ed7d54",
+      "translation": "Ômega Diretor",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "boss.frozen",
+      "source": "The Harvester",
+      "sourceHash": "9247ac120dd3d322a7d7cf95647fedbb2a1a6b428426516400a84d96631acad3",
+      "translation": "A Colheitadeira",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "boss.graveyard",
+      "source": "The Assembler",
+      "sourceHash": "684306badb8a607f3ff18c7736fdf74794944098f5242af3e605ca8bae703b35",
+      "translation": "O Assembler",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "boss.neon",
+      "source": "Iron Maw",
+      "sourceHash": "2ea0aca007d6b4c499b9b3b63080708601bf9d8b6dcae8a95d74a52c2f18a608",
+      "translation": "Maw de Ferro",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "boss.orbital",
+      "source": "Orbital Custodian",
+      "sourceHash": "72d8aa81b4f013c7edfbfdb0989dda312daeb700ae2078de6da5e7aa95a4226b",
+      "translation": "Custódio Orbital",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "boss.rift",
+      "source": "The Rift Heart",
+      "sourceHash": "7bf961532cb833f7c1629b786c0a04fc6a379aa87675ade9221926f3a393266b",
+      "translation": "O Coração da Fenda",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "boss.rust",
+      "source": "The Scrap Titan",
+      "sourceHash": "b07211c03d0e94f95f15863e94ed8944d69bc6fecce7134633e227ea89daa9c4",
+      "translation": "O Titã da Sucata",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "boss.toxic",
+      "source": "Void Engine",
+      "sourceHash": "8ec54aa2c58911e6aabacd666fe40ea862e08217ab59e1e52e6f3dcf044fc5d7",
+      "translation": "Motor de Vazio",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "building.arena",
+      "source": "Arena",
+      "sourceHash": "77d7cd99073bd654f4bc89d3231dcc74411ea08ce000218fda6220fd89a842fe",
+      "translation": "Arena",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "unchanged translation: review required",
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "building.arena.description",
+      "source": "A home for score challenges.",
+      "sourceHash": "58ce15b0320c0e4a55d848e7a5784daf6ebe86d320a3e252b9cfcc6b4e2e77b4",
+      "translation": "Uma casa para marcar desafios.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "building.blueprints",
+      "source": "Blueprint Lab",
+      "sourceHash": "208d80b2dad7e6fb4c6ad03f014db2b452351a69d4463a0cee1fbcf3a9f1fddf",
+      "translation": "Laboratório de Plantas",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "long translation: layout review required",
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "building.blueprints.description",
+      "source": "Keep a record of your discoveries.",
+      "sourceHash": "65e03c7afb59b3f2be4a485619e88139dae574efcdb1cdadb653c600e57c18de",
+      "translation": "Mantém um registo das tuas descobertas.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "building.command",
+      "source": "Command Center",
+      "sourceHash": "609519e4560a224b8a25b1d1aa3d971b5f545412e29b91add587cdbb1c6b2c38",
+      "translation": "Centro de Comandos",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "building.command.description",
+      "source": "Every two levels unlock another squad slot.",
+      "sourceHash": "68ef479b6fe9509602ccb8e69c312d589989db201d3252c3dfbbcd4b5aa08d5f",
+      "translation": "A cada dois níveis, destranque outra vaga.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "building.dock",
+      "source": "Expedition Dock",
+      "sourceHash": "afe1e34b01cbea10a89186e1c9c0e184858e49628d62e1af74391f41cb0e03c2",
+      "translation": "Expedition Dock",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "unchanged translation: review required",
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "building.dock.description",
+      "source": "Each level earns 2 scrap and 4 credits per offline minute.",
+      "sourceHash": "93fec185421fa78fbb22c0b467dd5baf309482f82dbc815980ca5bf7ff054696",
+      "translation": "Cada nível ganha 2 sucata e 4 créditos por minuto offline.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "building.factory",
+      "source": "Robot Factory",
+      "sourceHash": "4a3139e250b7078bb43cd5654b26199b23f76bdff75813e2cb397bbb35936747",
+      "translation": "Fábrica de robôs",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "building.factory.description",
+      "source": "Rebuild a home for rescued robots.",
+      "sourceHash": "7172be0d91dd0ff4fe36efac3db22abebaa85dff98f223749ee14dca8b930a80",
+      "translation": "Reconstruir um lar para robôs resgatados.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "building.market",
+      "source": "Market",
+      "sourceHash": "5238d9bd03d543e62fff76cbea6a2392a95f42110e36c282e4c919991f607daf",
+      "translation": "Mercado",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "building.market.description",
+      "source": "A gathering place for city traders.",
+      "sourceHash": "b85bd8f57523e8fb0af6e23735c6b4388c84e23d4b78f4d40b8e95882feb28b4",
+      "translation": "Um local de reunião para comerciantes da cidade.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "building.portal",
+      "source": "Portal",
+      "sourceHash": "b65ffe0cec61786d5d090268b99a14a807101d847fe4f5fbb4daa2764b73cd84",
+      "translation": "Portal",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "unchanged translation: review required",
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "building.portal.description",
+      "source": "Study the daily anomaly.",
+      "sourceHash": "0187d515148ac7c2f3eb55722d397a0b9e04a5914bb99353ac150e4c367a3b50",
+      "translation": "Estude a anomalia diária.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "building.research",
+      "source": "Research Lab",
+      "sourceHash": "bd7836477a1e597bb4c93aaa8aad12db91404402b93128920932a65c3a2376e3",
+      "translation": "Laboratório de Pesquisa",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "long translation: layout review required",
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "building.research.description",
+      "source": "Each level gives your squad +5% damage.",
+      "sourceHash": "365a5c63e24adf33ea3f732a8c9f6b06085de4855b66ae6e253b3b17e3fa5dde",
+      "translation": "Cada nível dá ao seu esquadrão +5% de danos.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "building.workshop",
+      "source": "Workshop",
+      "sourceHash": "c0086f23dcddcdda8b10b6601dcb1564c1aa5306a4bedb2dbb4b0ac41030ba59",
+      "translation": "Oficina",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "building.workshop.description",
+      "source": "Build and fuse weapons from salvaged components.",
+      "sourceHash": "70e6428549f620780b8929f84618f616edd69a891e3e0f696a7b78e0ed97884d",
+      "translation": "Construir e fundir armas de componentes resgatados.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "city.level",
+      "source": "City level",
+      "sourceHash": "e90d5f45c139c31287879c3711dda7c6205048796e9c128a3ad27a5e833c4aab",
+      "translation": "Nível da cidade",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "city.level.label",
+      "source": "Level",
+      "sourceHash": "1709305c9fa966d14f56f0da3c3614bbc10adcf53d72f90341bb96d24afcfca3",
+      "translation": "Nível",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "city.missions",
+      "source": "Commander’s orders",
+      "sourceHash": "e3cb965f7e38bcd7419a2b8043d25dc60a2796669969957c14530de0e0b1ca16",
+      "translation": "Ordens do Comandante",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "city.subtitle",
+      "source": "A little scrap. A lot of possibility.",
+      "sourceHash": "5ccdb339b8e537c6b3a19dd9283acb304c71f9529450aa178c5043e07f27c1e7",
+      "translation": "Um pouco de sucata. Muita possibilidade.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "city.title",
+      "source": "Welcome to Scrap City",
+      "sourceHash": "e10128301f9c71cabc2d00d66e508cdd1bcb218c75a1ef6e9ef24fe87070a67f",
+      "translation": "Bem- vindo a Scrap City",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "city.upgrade",
+      "source": "Build / Upgrade",
+      "sourceHash": "1e094c27495d66119bf6ef76ffaaeed9fe196664f6663f6da2ac0a711d6890d6",
+      "translation": "Compilar/Atualizar",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "city.workshop",
+      "source": "Open Workshop",
+      "sourceHash": "f31d7599527ed4508b38f3062c82b9994c5a53e5084a137ad4af4787b6d4d912",
+      "translation": "Abrir Oficina",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "clue.arc",
+      "source": "Some rivets carry a charge.",
+      "sourceHash": "9e287a88fd3ed79b01cc54ac3778934866d459e30e8b4838088825f71c2177e6",
+      "translation": "Alguns rebites carregam uma carga.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "clue.aurora",
+      "source": "Charge a winter storm.",
+      "sourceHash": "390360bb789ebb23b333f0e910f87fc962d008caeb8e707a03c1e71797c82bc0",
+      "translation": "Carreguem uma tempestade de inverno.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "clue.blizzard",
+      "source": "A cold front needs a big entrance.",
+      "sourceHash": "0836e4d19ff83a091caa737825ede4919bf5df9a999178f800f42956db3ab99e",
+      "translation": "Uma frente fria precisa de uma grande entrada.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "clue.chain",
+      "source": "One current can become many.",
+      "sourceHash": "ee61575851f0d80b7df3988226ea4952b00efa770eceba44313a452a525c0942",
+      "translation": "Uma corrente pode tornar-se muitas.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "clue.fireDrone",
+      "source": "Let the furnace take flight.",
+      "sourceHash": "5b53ccf82d1b2e80287e295c8fed63c473bc5a934718eee6565b75375be3c17a",
+      "translation": "Deixe a fornalha voar.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "clue.flame",
+      "source": "Give a humble blaster a warmer heart.",
+      "sourceHash": "1042c0fa874412042f2395a2d6cd67ef9e376550324c60ce9db3d0638e7e1fed",
+      "translation": "Dê um coração mais quente a um soprador humilde.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "clue.frost",
+      "source": "Cool down a scatter of scrap.",
+      "sourceHash": "f6c2cc6a2f3b4603119f529aaf64f23958ad05f82a3b9c018866843950afee18",
+      "translation": "Arrefecer um monte de sucata.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "clue.orbital",
+      "source": "A bigger payload needs a higher perch.",
+      "sourceHash": "565397f430e47aaa488124f2c3b7e8970a0b33f9a43e68116e883a6a2409115b",
+      "translation": "Uma carga maior precisa de um poleiro maior.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "clue.plasma",
+      "source": "Heat an electrical storm.",
+      "sourceHash": "9fc300f5a59e59df7cff57173b1592f3fd2e6134c7304072f36d1f9cc5b833d9",
+      "translation": "Aqueça uma tempestade eléctrica.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "clue.prism",
+      "source": "Light can take the scenic route.",
+      "sourceHash": "942bc5da05fd131a940f06dce56d9af7c76e371f438f9189f754ace514de579b",
+      "translation": "A luz pode tomar o caminho panorâmico.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "clue.singularity",
+      "source": "Split a beam until reality gives way.",
+      "sourceHash": "7b9f93e98ffd7f330f1ef6dec5a6e1fe5c1093dfaf0c64bd7d2ed3d0f859420d",
+      "translation": "Dividir um feixe até a realidade ceder.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "clue.swarm",
+      "source": "Teach rockets to fly together.",
+      "sourceHash": "fdc28cfa7ce191927f8fa92ae316137a6c65d16f09c7ff23ceec852edf3d9b57",
+      "translation": "Ensinar foguetes a voar juntos.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "common.cancel",
+      "source": "Cancel",
+      "sourceHash": "19766ed6ccb2f4a32778eed80d1928d2c87a18d7c275ccb163ec6709d3eb2e27",
+      "translation": "Cancelar",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "common.done",
+      "source": "Done",
+      "sourceHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516",
+      "translation": "Feito",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "common.error",
+      "source": "Cannot complete action",
+      "sourceHash": "b88afa614ade48c1d1e96fa0baed37f1b58d9f38628d2ddf623fa2164b71e706",
+      "translation": "Não foi possível completar a ação",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "common.locked",
+      "source": "Locked",
+      "sourceHash": "a424e33d90931d1ed22f2af37a3f3491a5c9de0dfae079f6f3ff4edf0309e07f",
+      "translation": "Travado",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "common.max",
+      "source": "Maximum level",
+      "sourceHash": "777774aaf270918df6b044e180ba81a0b314fa376c8a1d03d63a2630e7346080",
+      "translation": "Nível máximo",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "common.ok",
+      "source": "OK",
+      "sourceHash": "565339bc4d33d72817b583024112eb7f5cdf3e5eef0252d6ec1b9c9a94e12bb3",
+      "translation": "Está bem.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "component.cryo",
+      "source": "Cryo Core",
+      "sourceHash": "6d93cea07f28611ce7fac492fa6e572c1fcaa354177782353ba96373f7da7de1",
+      "translation": "Cryo Core",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "unchanged translation: review required",
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "component.drone",
+      "source": "Drone Core",
+      "sourceHash": "01f6cac86d7a1975e3d469ac38494c6f851e6b61f0a60549157dabc01ef051af",
+      "translation": "Núcleo do drone",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "component.explosive",
+      "source": "Explosive Payload",
+      "sourceHash": "cc5076c923b3f04b082075b9bd599713c81cab53631304f157bec441209b9e72",
+      "translation": "Carga útil explosiva",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "component.fire",
+      "source": "Fire Core",
+      "sourceHash": "72817014d5337a2ad3e413de02cca9d58e60e74604e9edc7d58828fab97c4e5d",
+      "translation": "Núcleo de Fogo",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "component.ricochet",
+      "source": "Ricochet Chip",
+      "sourceHash": "71e44c07ea787856fb56ec6b78cdc9700c056d21bd2d959cb23ce33816e4927f",
+      "translation": "Chip Ricochet",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "component.splitter",
+      "source": "Splitter Module",
+      "sourceHash": "3b5de17a08b67259201837be2063259f7b5bb61ad13ff7c6558caf3bac2fbf1c",
+      "translation": "Módulo Divisor",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "component.tesla",
+      "source": "Tesla Core",
+      "sourceHash": "598b4d5dd86a1eb4c46b854d75b9bdc1f2d71d27402be6be0518b7ec3d808704",
+      "translation": "Tesla Core",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "unchanged translation: review required",
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "currency.cores",
+      "source": "Cores",
+      "sourceHash": "7bff6181add2231b3c0f092fa826243267781cbeaef4fb83e292604e1319dcc0",
+      "translation": "Cores",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "unchanged translation: review required",
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "currency.credits",
+      "source": "Credits",
+      "sourceHash": "2a6b24ad287220345e96eb8021fe29d42b0785766c8df658827e7251da2d36dc",
+      "translation": "Créditos",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "currency.scrap",
+      "source": "Scrap",
+      "sourceHash": "c47d5f269809f5f66e1ca365e6a28e49675ef9401c4ddc286b1a9a6b8d6d13af",
+      "translation": "Sucata",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "element.ballistic",
+      "source": "Ballistic",
+      "sourceHash": "10db06f6e50e845f4bde426b0a320a59e452bd5d7edf5366a10cdf6776a32469",
+      "translation": "Balístico",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "element.cryo",
+      "source": "Cryo",
+      "sourceHash": "6c1c1f1c7c35c3c14e9138d5546fdebb20aa4e5899d0018c522909668100ea96",
+      "translation": "Cryo",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "unchanged translation: review required",
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "element.drone",
+      "source": "Drone",
+      "sourceHash": "ca5929f52e95b62663fdc6b522b6f2918060d0570fbf18788238e23463afa1ba",
+      "translation": "Drone",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "unchanged translation: review required",
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "element.electric",
+      "source": "Electric",
+      "sourceHash": "a76dab2d1c01a6ff05e81bd29fc7d891acb9d602a5fb87f64f5ea42b42201c1e",
+      "translation": "Electricidade",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "element.energy",
+      "source": "Energy",
+      "sourceHash": "f2fcd3f7dccadd194c4c5a54a5102c9559487743ac236a6236301e4418d0dd7c",
+      "translation": "Energia",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "element.experimental",
+      "source": "Experimental",
+      "sourceHash": "3dc9f569422dcfdadcb2c33f3eb2ee6fcebc8ba679bd63e690f9ddd0ff7c24be",
+      "translation": "Experimental",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "unchanged translation: review required",
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "element.explosive",
+      "source": "Explosive",
+      "sourceHash": "fe31fddcfa85f480209fcc1a423ce62afafc9ffc652da0cfade259f8cf54eff8",
+      "translation": "Explosivo",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "element.fire",
+      "source": "Fire",
+      "sourceHash": "c141faa80e43a11909f5736d1e767f12e1468aa06dadd446081746934e875fc3",
+      "translation": "Fogo",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "error.insufficientFunds",
+      "source": "You need more resources for this upgrade.",
+      "sourceHash": "2d988dc64a9debbce108339ff89fb4ffae5dffc8c9f2a1a2bb6ac87dc6609fa3",
+      "translation": "Você precisa de mais recursos para esta atualização.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "error.invalidContent",
+      "source": "The game content could not be loaded.",
+      "sourceHash": "2a3ec8e3ed52d0707db026ce0dd06270c19da426f121c45e6e1d1e9443289811",
+      "translation": "Não foi possível carregar o conteúdo do jogo.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "error.invalidSelection",
+      "source": "Choose a valid squad or pair of different weapons.",
+      "sourceHash": "cb4087689d4dfb2734be90cff69d13e330c1de972bd13d71e1630a89363bb5f5",
+      "translation": "Escolha um esquadrão válido ou um par de armas diferentes.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "error.load",
+      "source": "Saved progress could not be read. The original save is preserved; new progress cannot be saved.",
+      "sourceHash": "f90f74fbbe1ef6d7d5ce15491ad816c7ba23162e9cbd17314528e6119bc39355",
+      "translation": "Não foi possível ler o progresso salvo. A gravação original está preservada; o novo progresso não pode ser salvo.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "error.locked",
+      "source": "This action has not been unlocked yet.",
+      "sourceHash": "143dcd6615462ad6b07b34208c0a6e6a308e3a469702833cd02d25ce37fdcd3d",
+      "translation": "Esta acção ainda não foi desbloqueada.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "error.maxLevel",
+      "source": "This upgrade is already at its maximum level.",
+      "sourceHash": "515f18ce25e5eae19d558aeeaa9ab63f834d7b56529c02b1059ab87772286274",
+      "translation": "Esta atualização já está em seu nível máximo.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "error.missingIngredient",
+      "source": "You are missing a weapon or component.",
+      "sourceHash": "be6bed3b6e339bfe28601209d13ec85e0d932ec143333be62953153f60b58db3",
+      "translation": "Falta-lhe uma arma ou componente.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "error.purchase",
+      "source": "The purchase could not be verified or completed. Please try again.",
+      "sourceHash": "fcb77644751d3f7e9b933ff0169bfcc669390b105d241f01cbcb09b9b685d81c",
+      "translation": "A compra não pôde ser verificada ou concluída. Por favor, tente de novo.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "lab.components",
+      "source": "Components",
+      "sourceHash": "a150ce22160259313c47bc66940b905a9c2196924fd447f802cff12dbb1e9702",
+      "translation": "Componentes",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "lab.database",
+      "source": "Blueprint database",
+      "sourceHash": "6d317812db76c8213d1b510d8fd2e9334ebbbdfff002aa802dffd84e1a98b245",
+      "translation": "Base de dados de blueprint",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "lab.discovered",
+      "source": "Discovered",
+      "sourceHash": "96a5ba634bfc2ed418edc467f9a6926b28a34e701cc4db20e1ec6143cbed53f8",
+      "translation": "Descoberto",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "lab.equip",
+      "source": "Equip",
+      "sourceHash": "885fd3041d12884b56119a71af7e84e4ad73261a7232419852d00c134dd10c05",
+      "translation": "Equipamento",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "lab.fuse",
+      "source": "Fuse weapon",
+      "sourceHash": "d0f127420795da16e79d46bc83a8fc4083f70a582a1bbfc2152cb35942e0f452",
+      "translation": "Fusível",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "lab.initiated",
+      "source": "Fusion initiated…",
+      "sourceHash": "97e12185d985d4fc0752e1832d6195c56165c8dca4a9b2ed33d34daa70439e49",
+      "translation": "Fusão iniciada...",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "lab.inventory",
+      "source": "Your arsenal",
+      "sourceHash": "c8719c59c0dcf4a65623b5290bb9374c3886bfe017cf55e76b9f2148ec603f89",
+      "translation": "O teu arsenal.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "lab.recipes",
+      "source": "Workshop",
+      "sourceHash": "c0086f23dcddcdda8b10b6601dcb1564c1aa5306a4bedb2dbb4b0ac41030ba59",
+      "translation": "Oficina",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "lab.reveal",
+      "source": "New weapon discovered",
+      "sourceHash": "1eca71d9ee4f8e87039f46595a368751e6c3807ad901b5cef3563475a08116ba",
+      "translation": "Nova arma descoberta",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "lab.roulette",
+      "source": "Fusion Roulette",
+      "sourceHash": "c451646fcdd84ab0c74ecdce144ccbc06227d90c739d096f721025430b5c3734",
+      "translation": "Roleta de Fusão",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "lab.roulette.note",
+      "source": "Two different weapons + one Mystery Core. Each listed result has an equal chance. No purchase required.",
+      "sourceHash": "daffc5b42ef43c319499c27bbc88fde4b339d414e547427191d3b8b80e40c50d",
+      "translation": "Duas armas diferentes + um Núcleo Mistério. Cada resultado listado tem uma chance igual. Não é necessário comprar.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "lab.share",
+      "source": "Share invention",
+      "sourceHash": "543cd8f0d3ccb955c9fb359aa19c2cc42db7ab43837bd0779ffa43cd7642b785",
+      "translation": "Invenção da partilha",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "lab.spin",
+      "source": "Start fusion",
+      "sourceHash": "c501d916487bce0c6bd1ad200b3f19e8035b3c340a7cdfb43fb9a851a453f395",
+      "translation": "Iniciar fusão",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "lab.subtitle",
+      "source": "Every great idea starts with two questionable parts.",
+      "sourceHash": "1645f816e31e7bdb93ccdcdfa2cb396f682531d3c6b19da7f24a21897692700e",
+      "translation": "Cada grande ideia começa com duas partes questionáveis.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "lab.title",
+      "source": "Invent something outrageous",
+      "sourceHash": "f428968083d7e88a89134d6afcf9bcfc170655ec044bd51f630c076183d4c35a",
+      "translation": "Inventar algo ultrajante",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "lab.unknown",
+      "source": "Undiscovered invention",
+      "sourceHash": "a053f743fc8c33ae41e955577ad4b4df6320b3282807d0e50925c6985addf4ab",
+      "translation": "Invenção desconhecida",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "lab.upgrade",
+      "source": "Upgrade weapon",
+      "sourceHash": "b37b454c8a688f97069cedeeb0f0f7f8f73ba6c35e9cab7d926d4812b245a303",
+      "translation": "Arma de atualização",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "lab.weaponA",
+      "source": "Weapon A",
+      "sourceHash": "5d3b9f204887b2005b30c83dc113a83a54a936754b4a155ee936a1e002f2c356",
+      "translation": "Arma A",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "lab.weaponB",
+      "source": "Weapon B",
+      "sourceHash": "fc1fbe951b4689a2eda830ed0ef300f0905a57d864af1f442652a6d2321b9efb",
+      "translation": "Arma B",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "mission.claim",
+      "source": "Claim reward",
+      "sourceHash": "345ee1d9e594a9e1c8f95f562415e253df8e149c99d1e802c46efb63a9371cfd",
+      "translation": "Recompensa de reclamação",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "long translation: layout review required",
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "mission.claimed",
+      "source": "Reward claimed",
+      "sourceHash": "534bcaeec2abcddab3b25458db316b1b8788bafeae496499b66b9e4d3be28664",
+      "translation": "Recompensa reclamada",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "mission.daily",
+      "source": "Daily: defeat 60 machines",
+      "sourceHash": "62f0b048ac55c9b22d8a49f316b37e75458e450e61b4bdc72a2a42aa7bfd2611",
+      "translation": "Diariamente: derrota 60 máquinas",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "mission.note",
+      "source": "New tasks arrive without streak penalties.",
+      "sourceHash": "c3a50e3f0b8f06d89e230ec5a5bc8df7c5f30574c62ed27a230e0e85005d4109",
+      "translation": "Novas tarefas chegam sem penalidades.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "mission.weekly",
+      "source": "Weekly: defeat 3 bosses",
+      "sourceHash": "a68e6771ad7a99e55ef52646843f687619179d0c055ce86fe54746c8b4cc5b92",
+      "translation": "Semanalmente: derrota 3 chefes",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "mode.arena",
+      "source": "Arena",
+      "sourceHash": "77d7cd99073bd654f4bc89d3231dcc74411ea08ce000218fda6220fd89a842fe",
+      "translation": "Arena",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "unchanged translation: review required",
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "mode.bossRush",
+      "source": "Boss Rush",
+      "sourceHash": "fd4d3faf05b04f346120b8895bb4c96c05df0e6da5e48444a0dec3cf1291b837",
+      "translation": "Chefe Rush",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "mode.campaign",
+      "source": "Campaign",
+      "sourceHash": "268286d2ef7573e03e27c7a78d6c1b45f707646cfb20e9a8a2469c4e72aad4fb",
+      "translation": "Campanha",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "mode.dailyAnomaly",
+      "source": "Daily Anomaly",
+      "sourceHash": "ca0588bfb3960d4af88c7f3f39b370042f56f11a4a0700913c08bea033bc5657",
+      "translation": "Anomalias Diárias",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "mode.fusionLab",
+      "source": "Fusion Lab",
+      "sourceHash": "ed0fab502d65a515a3390cb111fc3efc4bf8e81f697e19e4d2619ea528129717",
+      "translation": "Laboratório de Fusão",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "mode.scrapRun",
+      "source": "Scrap Run",
+      "sourceHash": "d40e68d9d007308dff1e3eacd728a407ceb997e89a40ae92c65d7d6702b6518d",
+      "translation": "Scrap Run",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "unchanged translation: review required",
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "mode.survival",
+      "source": "Survival",
+      "sourceHash": "8302496de0ace1609784ecbc5fedc2e814fae849b504df6d92f8431d74534364",
+      "translation": "Sobrevivência",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "nav.battle",
+      "source": "Battle",
+      "sourceHash": "1b18ebbc3f490c845c2ebeca8853fcc82daefc66068eb984a445f8b1b7068438",
+      "translation": "Batalha",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "nav.blueprints",
+      "source": "Blueprints",
+      "sourceHash": "bdfcb9f749ddda36bf82aca38758293e7ed23702a046b05e64accd26b113441b",
+      "translation": "Plantas",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "nav.city",
+      "source": "City",
+      "sourceHash": "fc33f73246f48295702f404001e74d56f14d2f82689b2816422dc1a4c2ec4fb2",
+      "translation": "Cidade",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "nav.shop",
+      "source": "Shop",
+      "sourceHash": "d00aae6b7fbf77a4566d8df36805d7ae973894da9f533ec96516b31e028b71eb",
+      "translation": "Loja",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "nav.squad",
+      "source": "Squad",
+      "sourceHash": "df6163f4a4103bd6eb3c7801f2469fa3b56ae205c8747d3c7b8ec9a2b8d7ed65",
+      "translation": "Esquadrão",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "offline.away",
+      "source": "Expedition duration",
+      "sourceHash": "b1faabf56a048b7f120ee35b0eda9776025ca478c1d5451839b164f31953a40b",
+      "translation": "Duração da Expedição",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "offline.claim",
+      "source": "Claim salvage",
+      "sourceHash": "101eeeb9d73866ce9ca7bbdbe709491d7951b98b93b8bd64ece9136244ebf1f4",
+      "translation": "Requisito de resgate",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "offline.description",
+      "source": "Your expedition brought back real salvage. Rewards accumulate for up to eight hours.",
+      "sourceHash": "8b0d14087db1f60d84f9479e2efff32ce823805eff246fc25470b0fa99154fe4",
+      "translation": "A sua expedição trouxe de volta um verdadeiro salvamento. As recompensas acumulam-se por até oito horas.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "offline.title",
+      "source": "Welcome back, commander",
+      "sourceHash": "d7caf1dda5651238caab47b41675340f996b6d716b73caeef333e1fc7f40cc7f",
+      "translation": "Bem-vindo de volta, comandante.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "priority.boss",
+      "source": "Boss first",
+      "sourceHash": "c97c404f4e41ef64c713dcde583ff0374571d8dec4b312d147615fe2f6d09d74",
+      "translation": "Chefe primeiro.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "priority.nearest",
+      "source": "Nearest",
+      "sourceHash": "7e704c0b0be54024475e365195cef11f85e29b48fda2fcc964d5a1169162917d",
+      "translation": "Mais perto",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "priority.weakest",
+      "source": "Weakest",
+      "sourceHash": "3b7c8e0f6597e9410df7f1638d1cbdfab38fbc978919e0adfe3ab11e2736cd48",
+      "translation": "Mais Fraco",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "rarity.common",
+      "source": "Common",
+      "sourceHash": "309955e00850b8afeb148450c7208585a85f8b652d5c625c777726f44837f69c",
+      "translation": "Frequentes",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "rarity.epic",
+      "source": "Epic",
+      "sourceHash": "a93d389804ee0490f1903ab26500a66a695ce65fa7ecb074d79771857d074355",
+      "translation": "Épico",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "rarity.legendary",
+      "source": "Legendary",
+      "sourceHash": "c80b041f5d1d11574f40bd79c2ea8f64cfc47a49c6b8846abed3c294931a7946",
+      "translation": "Lendário",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "rarity.mythic",
+      "source": "Mythic",
+      "sourceHash": "54cd635db51c55fb48408636ed3e7bc2d8350627b9540b5cdd426e23bd1d540a",
+      "translation": "Mítico",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "rarity.rare",
+      "source": "Rare",
+      "sourceHash": "291d2a97565f2e9c3316bc5251922883bf205e277124f408875d30ffd6a5d92f",
+      "translation": "Raros",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "rarity.uncommon",
+      "source": "Uncommon",
+      "sourceHash": "ce9b9e6a2b753fcc9983ec052783411178629695a448d9b8cb4e0f5e5afef843",
+      "translation": "Pouco frequentes",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.bolt",
+      "source": "BOLT",
+      "sourceHash": "12699c942352d42d8168475a096c7f881f964de60db4ab8d29aacd6a2e010f0c",
+      "translation": "BOLT",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.bolt.active",
+      "source": "Pulse burst: damages nearby enemies.",
+      "sourceHash": "efc36e70a9d93b25b7f225b685f3ec5e5e6e03fe3347a34b9b7eb731d291941d",
+      "translation": "Explosão de pulso: danos inimigos próximos.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.bolt.passive",
+      "source": "Balanced circuitry: +8% damage.",
+      "sourceHash": "f0f9104bfa9e68ccf235fb24cd2d2df5cb7eae9f4e5d042cee8b6bd7b8586980",
+      "translation": "Circuitos equilibrados: +8% de danos.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.bolt.personality",
+      "source": "Optimistic to the last rivet.",
+      "sourceHash": "992b4b04a55c0fc717d859cf93edf5f24d9ec666888ae26387c6da3f181daadc",
+      "translation": "Otimista até ao último rebite.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.boomer",
+      "source": "BOOMER",
+      "sourceHash": "246564b1b6a4d74aa4c374f0d78d9788c2bbaf6c9a0b4a5ca4e8cd04cceae4ea",
+      "translation": "BOOMER",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.boomer.active",
+      "source": "Demolition: a powerful area blast.",
+      "sourceHash": "693ff8a808990b75e8b4db44881728b667e9be1bc8359aad6c8d9bc6929e5032",
+      "translation": "Demolição: uma explosão de área poderosa.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.boomer.passive",
+      "source": "Payload expert: adds splash damage.",
+      "sourceHash": "12fffd022238e5062d909aab84967c35e3e2c605f3a60844bb92e39fb509e77c",
+      "translation": "Especialista em carga útil: adiciona danos ao respingo.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.boomer.personality",
+      "source": "Safety third. Friendship first.",
+      "sourceHash": "088836e8098810aca6346c4a7fe4e4bcb89c974a62a187b554482ed8d2a13091",
+      "translation": "Segurança terceiro. A amizade primeiro.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.glitch",
+      "source": "GLITCH",
+      "sourceHash": "d09447f442a4ef87f3ad8e88228e2f79554f8351aa01b6f679cc97302f79b618",
+      "translation": "GLITCH",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.glitch.active",
+      "source": "Scramble: damages and slows nearby enemies.",
+      "sourceHash": "ded9280908bafadaa9ce8e91ec7002fa7d6af255b5c88bc604214ea481503af3",
+      "translation": "Mexido: danos e retarda inimigos próximos.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.glitch.passive",
+      "source": "Corrupted clock: +10% attack speed.",
+      "sourceHash": "f5a1cc2bcfc3cdb297b53b62fd62827453620d804ab61589b4c50795d74e34e8",
+      "translation": "Relógio corrompido: +10% velocidade de ataque.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.glitch.personality",
+      "source": "Speaks fluent error code.",
+      "sourceHash": "7da73912e236e38059ef61648c852a10fbe5d80f59da9f39914acb66f4db0f1a",
+      "translation": "Fala código de erro fluente.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.magnet",
+      "source": "MAGNET",
+      "sourceHash": "149a0df4f05a2c0e67060e9040ed614cf5385933613a2b29d6df896a026db779",
+      "translation": "MAGNET",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.magnet.active",
+      "source": "Salvage pulse: area damage and a small repair.",
+      "sourceHash": "22d5d247687c233e9d4f36eb65bf7108d544dbdfd620dfeba24173716a870d7f",
+      "translation": "Pulso de salvação: danos na área e uma pequena reparação.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.magnet.passive",
+      "source": "Collector: +10% damage.",
+      "sourceHash": "795ee08ffc3fed5602375880c02f622140bd91a52f6159c56b66ef6bd07635dc",
+      "translation": "Coletor: +10% danos.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.magnet.personality",
+      "source": "One robot’s trash is their treasure.",
+      "sourceHash": "4293e12a60e552a1b81f2313b93e8c10747068a21ca26bdb9be5238757594dce",
+      "translation": "O lixo de um robô é seu tesouro.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.nova",
+      "source": "NOVA",
+      "sourceHash": "c2385250186d29ac49370c0d87d40cfc0b434bdba9ae2e74e9a94c1cda87d667",
+      "translation": "NOVA",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.nova.active",
+      "source": "Solar pulse: damages nearby enemies.",
+      "sourceHash": "ec1a853e24ce3397fee1f0c4cfdc44b92a08783833e17b952c88e026387dfa0c",
+      "translation": "Pulso solar: danos inimigos próximos.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.nova.passive",
+      "source": "Precision optics: +18% damage.",
+      "sourceHash": "0088d82dddd2978e78474fd6762d125390a178663176b27f20a2fc6445cbe19c",
+      "translation": "Óptica de precisão: +18% dano.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.nova.personality",
+      "source": "Quiet until the lights go out.",
+      "sourceHash": "867d98cb56d846301b3b8a17455e44df5a060542d25548e4a97c48b21c52ab5a",
+      "translation": "Silêncio até as luzes se apagarem.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.patch",
+      "source": "PATCH",
+      "sourceHash": "8dce33b49f31396a100fb4baf9f8a5dd5d27a4e29d3e244b8eb7b3ae3e619d2c",
+      "translation": "PATCH",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.patch.active",
+      "source": "Repair pulse: restore 35% squad health.",
+      "sourceHash": "8d6d4e910b40694f957fec1bb11981e9dcece645f97aebd43fd6d574fed29787",
+      "translation": "Pulso de reparo: restaurar 35% de saúde do esquadrão.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.patch.passive",
+      "source": "Repair field: regenerate 0.6 health per second.",
+      "sourceHash": "1e4e0df9b67df5974de2239591a40c87d99ce1c0d63972a881df7af4bffe7e4c",
+      "translation": "Campo de reparo: regenerar 0,6 saúde por segundo.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.patch.personality",
+      "source": "Everything deserves a second chance.",
+      "sourceHash": "ceefd51716f9af1cc8d33fe98100123ab2f52c6f6e3101171e4ca1929543e0a6",
+      "translation": "Tudo merece uma segunda oportunidade.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.tank",
+      "source": "TANK",
+      "sourceHash": "110c59ad10063cf0964ba80d76ff272fc26637c40f9c9247e9d30825858ec0c0",
+      "translation": "TANK",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.tank.active",
+      "source": "Fortify: immune to damage for 5 seconds.",
+      "sourceHash": "4fae2454f1f1378bc671c953dcf3d8a167ec5708cf6a5c1175667e9a8f610fdc",
+      "translation": "Fortificar: imune a danos durante 5 segundos.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.tank.passive",
+      "source": "Heavy chassis: a larger health pool.",
+      "sourceHash": "2656f6313ef89ab9930ff899c611dfa715c165eb9ef319c12b68441235cc02f3",
+      "translation": "Chassis pesado: uma piscina de saúde maior.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.tank.personality",
+      "source": "Big shoulders. Soft heart.",
+      "sourceHash": "774e824474088f903590503c0da0e9b8800f6af5c3d5a978e4c45d5263a4e714",
+      "translation": "Ombros grandes. Coração suave.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.zip",
+      "source": "ZIP",
+      "sourceHash": "eaca4b30692888d0183a2b77143637676909413108ce72808d7bf7438679536a",
+      "translation": "ZIP",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.zip.active",
+      "source": "Flash burst: pulse damage and an immediate next shot.",
+      "sourceHash": "bd0e38e7baf46ff69a254b631565c8d1e7a908f6d702bc8855b72176468e047f",
+      "translation": "Explosão de flash: dano de pulso e um próximo tiro imediato.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.zip.passive",
+      "source": "Fast servos: +20% attack speed.",
+      "sourceHash": "9e8d9ee41689f9960141d7b6739828f693862527490413d55655f2f4ebc6faed",
+      "translation": "Servos rápidos: +20% velocidade de ataque.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "robot.zip.personality",
+      "source": "Already there. Already bored.",
+      "sourceHash": "3fb7b0b31580e11e349ee7bee6a7e01bdb79b0e1f0d6c09f4838484beac27dcc",
+      "translation": "Já lá está. Já estou aborrecido.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "settings.flashes",
+      "source": "Reduce flashes",
+      "sourceHash": "cc6088f2d713888905628484bf2540aa95605f3af87920bfe1bc07b6063b6e65",
+      "translation": "Reduzir os flashes",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "settings.gamecenter",
+      "source": "Connect Game Center",
+      "sourceHash": "47208b09cb513cbfa40abb646f7d7d39015ba1077ff9fe42e7d6409d93a6a48a",
+      "translation": "Centro de Jogo de Ligação",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "settings.haptics",
+      "source": "Haptic feedback",
+      "sourceHash": "153d8baf1c5f3908ed02bf29716a562e021ed84f7059f05fb28f3dd91f43d5b8",
+      "translation": "Feedback táctico",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "settings.language",
+      "source": "Language",
+      "sourceHash": "a4fe65264ef7dbb38d104b1e81eb3350f3142f3d16f32bdec39b1d9b42c1b8d1",
+      "translation": "Língua",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "settings.leaderboards",
+      "source": "Leaderboards",
+      "sourceHash": "ec19ab6ac5129d4945d37f355d35f1859d1fce42db63c521e2b93fec2a74a759",
+      "translation": "Quadros de orientação",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "long translation: layout review required",
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "settings.master",
+      "source": "Master volume",
+      "sourceHash": "b041a7d44291e8ae26acd896566d69d61ffdcf13583ffa29abf21fcddbd55650",
+      "translation": "Volume principal",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "settings.motion",
+      "source": "Reduce motion",
+      "sourceHash": "297ef4c79b4b21dd8fe7d32df1ad5dbeaeb3c70193ec7386f67d597140bf1537",
+      "translation": "Reduzir o movimento",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "settings.music",
+      "source": "Music volume",
+      "sourceHash": "d8773f37c57e87ea406a384f0522a193a7fca753ff0651809f09c16120bf9794",
+      "translation": "Volume de música",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "settings.numbers",
+      "source": "Damage numbers",
+      "sourceHash": "383b215a9fab9eb04a6d3fa35adc70e016040f1739c65e6571dd18aff1d63789",
+      "translation": "Números de danos",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "settings.particles",
+      "source": "Particle intensity",
+      "sourceHash": "52c58defa598143c58c820f582878f03003de7ad2092b08bfe649fb3066b1943",
+      "translation": "Intensidade das partículas",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "settings.reboot",
+      "source": "Core Reboot",
+      "sourceHash": "ee36fef50fb62ff14c4a3b224a7483e38e573565f5fffd8d822e9a37343cf0c9",
+      "translation": "Reiniciar o Núcleo",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "settings.reboot.confirm",
+      "source": "Reboot city",
+      "sourceHash": "b797b608709ed7844cf426705fe1212ab8d16c723766232568203ca43c7099ab",
+      "translation": "Reiniciar cidade",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "settings.reboot.detail",
+      "source": "Resets zone, city buildings, robot levels, credits and scrap. Keeps robots, squad capacity, squad, weapons, weapon levels, components, cores, blueprints, achievements and preferences. Each reboot permanently adds 10% damage. Unlock at zone 6.",
+      "sourceHash": "2be706a7aaf32649641f9f102765de18ffe467c8b51ed8cc74583ab1060b63fe",
+      "translation": "Restaura zona, edifícios da cidade, níveis de robôs, créditos e sucata. Mantém robôs, capacidade de esquadrão, esquadrão, armas, níveis de armas, componentes, núcleos, plantas, realizações e preferências. Cada reinicialização adiciona 10% de danos. Desbloquear na zona 6.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "settings.save.error",
+      "source": "Your progress could not be saved. Check device storage and retry before closing the app.",
+      "sourceHash": "a44052c1189c79c2e0aa5bd2b4fbcfa965ae7f33717056c22d2926481ad25ace",
+      "translation": "Seu progresso não pôde ser salvo. Verifique o armazenamento do dispositivo e tente novamente antes de fechar o aplicativo.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "settings.sfx",
+      "source": "Sound effects",
+      "sourceHash": "a7180005e20ceae0f62b58061f8132f9244fcb0ef1b6878e3006d3c723ae1fc6",
+      "translation": "Efeitos sonoros",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "settings.shake",
+      "source": "Screen shake",
+      "sourceHash": "4edb8b81f67c530638126c522d288fdfd5b8d8311bda0d9d580ae4cf2925739c",
+      "translation": "Agitar tela",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "settings.system",
+      "source": "Follow device language",
+      "sourceHash": "dc1f64e893d5c70ce651f7166dc5922211cc1f5056f9b901f7af42a654009fb2",
+      "translation": "Siga o idioma do dispositivo",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "settings.title",
+      "source": "Your controls",
+      "sourceHash": "b5d982247f16d4c2b36f2726dae5c391c26a6937fcb6894b61890a600331a628",
+      "translation": "Seus controles",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "shop.entitlements",
+      "source": "Owned cosmetics",
+      "sourceHash": "50663285b2b945c8ec600668382cd800f7dc9c9a643da97cfad4c39359c4691a",
+      "translation": "Cosméticos próprios",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "shop.note",
+      "source": "Only verified cosmetic entitlements are supported in this build. Consumables and subscriptions are not offered.",
+      "sourceHash": "91dddeb43fe4f89693f6ef639a95e829a225834b01dcdff2c000221a14d7a34e",
+      "translation": "Apenas os direitos cosméticos verificados são suportados nesta construção. Consumíveis e assinaturas não são oferecidos.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "shop.pending",
+      "source": "Purchase is awaiting approval.",
+      "sourceHash": "25fe8fa6445191447c0cf5a6e2435aced40229e946b3d6b71f4e0b2c234e7be2",
+      "translation": "A compra aguarda aprovação.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "shop.refresh",
+      "source": "Load store",
+      "sourceHash": "8c6a8e67b07aff74b996fe41a81923144269453c161bac4bc9340f2b32a690db",
+      "translation": "Armazenagem de carga",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "shop.restore",
+      "source": "Restore purchases",
+      "sourceHash": "c6399925b391caaed735230237718c717ba80013e258a2bc7a4c05a06867f491",
+      "translation": "Restaurar compras",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "shop.restored",
+      "source": "Purchases restored.",
+      "sourceHash": "cc4ab8f953cd667d17b390a60a88e0ffa656ca01c17e5aa867a9ae298905f351",
+      "translation": "Compras restauradas.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "shop.subtitle",
+      "source": "The core adventure is free. No mandatory ads.",
+      "sourceHash": "126445b40ce9375f1e603e500ff74c573731eb555c6876573418b8ca6cb1c90b",
+      "translation": "A aventura principal é livre. Sem anúncios obrigatórios.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "shop.title",
+      "source": "Make it yours",
+      "sourceHash": "34ca8a4540f5238f274f4bea7038463d9e3cf241eea55b1e76a8c027d9303b35",
+      "translation": "Faz com que seja teu.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "shop.unavailable",
+      "source": "The store is not configured for this development build. No purchases can be made.",
+      "sourceHash": "15d290b178ba052eb0a40c25db01bdac748c45dae9820635de38962f65d550de",
+      "translation": "A loja não está configurada para esta compilação de desenvolvimento. Nenhuma compra pode ser feita.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "shop.verified",
+      "source": "Purchase verified.",
+      "sourceHash": "0a6e173223d230e285901711082b4b7f7d5167ddf26e797a20162073075e194e",
+      "translation": "Compra verificada.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "squad.active",
+      "source": "Commander ability",
+      "sourceHash": "0bee7e9cb666314f5b80e0c747bdd145b88dc69701e26238e0cc0ce1aadee619",
+      "translation": "Capacidade de comandante",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "squad.add",
+      "source": "Add to squad",
+      "sourceHash": "bc2792e767b8ca5c8dc0d879d58f4b1ccde9969f3f1964c6c471769507284698",
+      "translation": "Adicionar ao esquadrão",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "long translation: layout review required",
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "squad.affinity",
+      "source": "Affinity synergy: +15% weapon damage",
+      "sourceHash": "ed6d204f1bb350d7309b8ee8b99944da1231acc888aedd9601c51bcac07b52e7",
+      "translation": "sinergia de afinidade: +15% dano arma",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "squad.commander",
+      "source": "The first robot in your squad leads its active ability.",
+      "sourceHash": "52302eb67623b605be4e8529892790c648e44b83c41a1f6d242de2680a68aaba",
+      "translation": "O primeiro robô em seu esquadrão lidera sua habilidade ativa.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "squad.passive",
+      "source": "Passive circuitry",
+      "sourceHash": "4c2357fd79eb0c051e6764b40a90f6d1fccbbe4b12c2543ef181b2bee1329e3d",
+      "translation": "Circuitos passivos",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "squad.remove",
+      "source": "Remove from squad",
+      "sourceHash": "b1b7194db786989a151f70e669fc826fba5ffc8e32a3403a6be571c1be302ca0",
+      "translation": "Remover do esquadrão",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "squad.subtitle",
+      "source": "Different parts. One purpose.",
+      "sourceHash": "c9a2086f71ff5a6135a9b40ffab3eb7d6aef5aa230403db5266e015098ce99fd",
+      "translation": "Partes diferentes. Um propósito.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "squad.title",
+      "source": "Your misfit heroes",
+      "sourceHash": "c37b1a4ddb9e70a54499696da427b4b711968423546bc6d9231d6ce624728216",
+      "translation": "Seus heróis desajustados",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "squad.unlock",
+      "source": "Rescue robot",
+      "sourceHash": "beef05568acef0775404e4583e2428b2b1b55abe68b2c978e6faa980b20a2753",
+      "translation": "Robô de resgate",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "squad.upgrade",
+      "source": "Upgrade robot",
+      "sourceHash": "6cbb215a15207325d1ef3310e46b36298ac3d0d82558260d699de5694c1c05c6",
+      "translation": "Actualizar o robot",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "store.skin.bolt",
+      "source": "Sunset BOLT",
+      "sourceHash": "29bdfb4d5dffd4937756d51d414039ac502d441f80445e44ecfd2fabbfca951c",
+      "translation": "Pôr do sol BOLT",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "store.skin.bolt.description",
+      "source": "An optional warm coral paint finish for BOLT.",
+      "sourceHash": "50cb1c720304436bd3c72c31339c4651a5cbb20d255eec2114a68d8fedf4c59b",
+      "translation": "Um acabamento de corais quente opcional para BOLT.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "store.skin.nova",
+      "source": "Starlight NOVA",
+      "sourceHash": "28396a4f715738154a7ef235a7524df4bfeca567b443a03e37877d8bff31d87f",
+      "translation": "Starlight NOVA",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "unchanged translation: review required",
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "store.skin.nova.description",
+      "source": "An optional midnight blue paint finish for NOVA.",
+      "sourceHash": "d1cdfe8d45005714e20fa79c74620eb57e2bc664bc63018060909b0f0b1453f2",
+      "translation": "Um acabamento opcional de tinta azul meia-noite para NOVA.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "tutorial.body",
+      "source": "Drag in battle to dodge attacks. Your squad fires automatically. Choose upgrades, bring home scrap, and combine weapons with cores in the Workshop. Build the Expedition Dock to earn salvage while away.",
+      "sourceHash": "91b3569b229ac616b0c9ed89a0c45585bacabb87fcf0f01a96b3930f45ae7cb8",
+      "translation": "Arraste em batalha para evitar ataques. O teu esquadrão dispara automaticamente. Escolha atualizações, traga sucata para casa e combine armas com núcleos no Workshop. Construa a Doca de Expedição para ganhar salvamento enquanto estiver longe.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "tutorial.start",
+      "source": "Let’s build something",
+      "sourceHash": "ef6625598155ac9629b478c4cc19335e91eb9996552ce52f2fad05b2794ec3eb",
+      "translation": "Vamos construir algo",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "tutorial.title",
+      "source": "A squad worth rebuilding",
+      "sourceHash": "97c731dd5769fd9ba5bd174acb8dda1ba40bf768108effaee799a7361805e1de",
+      "translation": "Um esquadrão que vale a pena reconstruir.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "long translation: layout review required",
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "upgrade.critical",
+      "source": "Critical Processor",
+      "sourceHash": "6d7e7fe7f716a6a562e05e3fbd4ed7ede4693a2125e0a816dc62877f673a001e",
+      "translation": "Processador crítico",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "upgrade.critical.description",
+      "source": "Increase critical chance by 12%.",
+      "sourceHash": "51e056592fe7fdd56a8915cd9f6567ed11a77581899292004a6d11969945f273",
+      "translation": "Aumentar a chance crítica em 12%.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "upgrade.cryo",
+      "source": "Cryo Core",
+      "sourceHash": "6d93cea07f28611ce7fac492fa6e572c1fcaa354177782353ba96373f7da7de1",
+      "translation": "Cryo Core",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "unchanged translation: review required",
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "upgrade.cryo.description",
+      "source": "Shots slow enemies for two seconds.",
+      "sourceHash": "317909d15ff290c841fd7656028c6bfae9f3d8f15908f6a9383fc15c15d75f9d",
+      "translation": "Tiros lentos inimigos durante dois segundos.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "upgrade.drone",
+      "source": "Drone Core",
+      "sourceHash": "01f6cac86d7a1975e3d469ac38494c6f851e6b61f0a60549157dabc01ef051af",
+      "translation": "Núcleo do drone",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "upgrade.drone.description",
+      "source": "Add an extra projectile to each volley.",
+      "sourceHash": "843999f028f661df87c30975ebc39c5140adfe31fc54cfad84b529f070a091c6",
+      "translation": "Adicione um projétil extra a cada volley.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "upgrade.fire",
+      "source": "Fire Core",
+      "sourceHash": "72817014d5337a2ad3e413de02cca9d58e60e74604e9edc7d58828fab97c4e5d",
+      "translation": "Núcleo de Fogo",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "upgrade.fire.description",
+      "source": "Shots burn enemies for three seconds.",
+      "sourceHash": "8a73ff1cac143092218e060c756d16dde12778ec4abd3507e8e6e9e8a5d0ae8f",
+      "translation": "Os tiros queimam inimigos durante três segundos.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "upgrade.overclock",
+      "source": "Overclock Module",
+      "sourceHash": "4f60923df360d6f4302f9205851b9106d0102582fc45de04cb9a428999b101c0",
+      "translation": "Módulo Overclock",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "upgrade.overclock.description",
+      "source": "Increase attack speed by 25%.",
+      "sourceHash": "7b2f75cbc352b936d1b22e13e0075d70de4e80b01207d3fe364a70d7bfa4b52b",
+      "translation": "Aumentar a velocidade de ataque em 25%.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "upgrade.payload",
+      "source": "Explosive Payload",
+      "sourceHash": "cc5076c923b3f04b082075b9bd599713c81cab53631304f157bec441209b9e72",
+      "translation": "Carga útil explosiva",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "upgrade.payload.description",
+      "source": "Shots damage enemies near their target.",
+      "sourceHash": "87c4f2fe0a0097a47881faec22013ec9d3d529f7325c379dc13cc6f53c72103d",
+      "translation": "Tiros danificam inimigos perto do alvo.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "upgrade.plasma",
+      "source": "Plasma Cell",
+      "sourceHash": "5d17bdde148a99f205caa24fc872039a6c45c9b947dcb13f3728b6498fd3bc09",
+      "translation": "Célula Plasma",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "upgrade.plasma.description",
+      "source": "Increase damage by 35%.",
+      "sourceHash": "91b2c5f0691a77f7e9d79b5e57abed7b8fb567d5bac58b21112ba1b02f862abb",
+      "translation": "Aumentar os danos em 35%.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "upgrade.repair",
+      "source": "Repair Nanites",
+      "sourceHash": "669cbb521879b8e7a897164872d835e95f4b020c29512c7b999dff84692e38cb",
+      "translation": "Nanites de reparação",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "upgrade.repair.description",
+      "source": "Regenerate 1.8 health each second.",
+      "sourceHash": "054dc8890fa074d15e20fbc428a068ae6f7bfc1099e893e0479def249d742024",
+      "translation": "Regenerar 1,8 saúde a cada segundo.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "upgrade.ricochet",
+      "source": "Ricochet Chip",
+      "sourceHash": "71e44c07ea787856fb56ec6b78cdc9700c056d21bd2d959cb23ce33816e4927f",
+      "translation": "Chip Ricochet",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "upgrade.ricochet.description",
+      "source": "Increase damage by 25%.",
+      "sourceHash": "693d3c01e4d9aa6171affdaa26d8e330d7540442d9c5ea7a6c7e104c16232f70",
+      "translation": "Aumentar os danos em 25%.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "upgrade.splitter",
+      "source": "Splitter Module",
+      "sourceHash": "3b5de17a08b67259201837be2063259f7b5bb61ad13ff7c6558caf3bac2fbf1c",
+      "translation": "Módulo Divisor",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "upgrade.splitter.description",
+      "source": "Add two projectiles to each volley.",
+      "sourceHash": "08874ab696faa36b66a3ba7c8e6c0567edc9a772f866a6bd457a15de49f5e02a",
+      "translation": "Adicione dois projéteis a cada volley.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "upgrade.tesla",
+      "source": "Tesla Coil",
+      "sourceHash": "2594cb66ed079c876ad085622b167b2f74d18bd49459e219e4937c4786e0b682",
+      "translation": "Bobina de Tesla",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "upgrade.tesla.description",
+      "source": "Hit two additional targets each volley.",
+      "sourceHash": "d215d9e12e0a406261ba907b8c98f64b2258d8f4264d6e1522802a3f1fc96969",
+      "translation": "Acertem em dois alvos adicionais cada voleio.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.arc",
+      "source": "Arc Blaster",
+      "sourceHash": "d15cd56162352920dc1f076c97529d882f1909441ea3fc8ffff3f9c86a124354",
+      "translation": "Arc Blaster",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "unchanged translation: review required",
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.arc.description",
+      "source": "Electric bolts jump between nearby machines.",
+      "sourceHash": "d18907783c6fa24cf75ff97d44b56f6a592ecf409cc014383006bffecd9767a5",
+      "translation": "Os parafusos elétricos saltam entre as máquinas próximas.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.aurora",
+      "source": "Aurora Engine",
+      "sourceHash": "c41c6c46f8f0030e267ada2b002be231537ee1f18b1e5e6d84b490b91b9b2f41",
+      "translation": "Motor Aurora",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.aurora.description",
+      "source": "Cold light fractures into a dazzling storm.",
+      "sourceHash": "b57850b06808ee4a23faf86ee7ebfc8af5433a1b7faa4b105c36be466e7a2549",
+      "translation": "Fracturas de luz fria numa tempestade deslumbrante.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.blaster",
+      "source": "Basic Blaster",
+      "sourceHash": "5aa512f2a39d77a524e955239fa036e09490c4dd9c24ff6e6569d48c9e24a23f",
+      "translation": "Blaster Básico",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.blaster.description",
+      "source": "A salvaged rivet driver. Small beginnings, big intentions.",
+      "sourceHash": "8701e6056395de285eca389dab72adc378a04564f1981992ab0ad6e87364da84",
+      "translation": "Um condutor de rebites resgatado. Pequenos começos, grandes intenções.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.blizzard",
+      "source": "Blizzard Cannon",
+      "sourceHash": "819ec7c3587062a03e17ce663a9b917514a5d6aace024f26977f6160a9a5a0bf",
+      "translation": "Canhão Blizzard",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.blizzard.description",
+      "source": "Frozen shells burst into a cloud of shrapnel.",
+      "sourceHash": "e8a068940d368c4c1d19e7a00d692b4576c0cb311fb349c074e87bda0ee971ee",
+      "translation": "Conchas congeladas estouram em uma nuvem de estilhaços.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.chain",
+      "source": "Chain Cannon",
+      "sourceHash": "c42e205c9cb1beba75a5291218697f49aa778213b2b5f0df82bf38f1f693eae8",
+      "translation": "Canhão de Corrente",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.chain.description",
+      "source": "A branching current finds every loose screw.",
+      "sourceHash": "e168f3c6a536709c49365ebe7b6554e7a58ba6523d1163648765b25f3283c39c",
+      "translation": "Uma corrente de ramificação encontra cada parafuso solto.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.fireDrone",
+      "source": "Fire Drone",
+      "sourceHash": "9b04ab2a9a4dfaa8548ef678d275c77c7c1d894384d46dc70d9a4f8d86bc37dd",
+      "translation": "Drone de Fogo",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.fireDrone.description",
+      "source": "A tiny flying furnace follows your lead.",
+      "sourceHash": "67bd002c676d9adc7d17eb10577d17ff4d01b0dd3a0bfbe3e1537c9c531eddf0",
+      "translation": "Uma pequena fornalha voadora segue a tua liderança.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.flame",
+      "source": "Flame Blaster",
+      "sourceHash": "06ef8d89fb711bda59ddc4bc52984cd3c23ee03ee7a9d86a55c6ddff2265aa72",
+      "translation": "Blaster de Chamas",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.flame.description",
+      "source": "Hot rivets leave a persistent burn.",
+      "sourceHash": "5ce12ff602ef7861405a3b7fb80548bb95ff32f8a89482c01f986dcb1e4bc986",
+      "translation": "Rebites quentes deixam uma queimadura persistente.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.frost",
+      "source": "Frost Shotgun",
+      "sourceHash": "b7ad26879548f2f1942f7657242b1f0eb9eed3c1b7361a4e849a5de66d5618fe",
+      "translation": "Frost Shotgun",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "unchanged translation: review required",
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.frost.description",
+      "source": "A cold front made from industrial coolant.",
+      "sourceHash": "5999dc38051fd399c7fc5e311c467f207accae1a2e9384aa40cf672c696ce649",
+      "translation": "Uma frente fria feita de refrigerante industrial.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.laser",
+      "source": "Workshop Laser",
+      "sourceHash": "f1dc9f6b316e6a1b3c581c5f1a0883697c6165e471405d0937782dceaff6109d",
+      "translation": "Laser de Oficina",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.laser.description",
+      "source": "A cutting tool with a new job.",
+      "sourceHash": "9cb551a9988e81d8b42f904f2fbd3459cc185bc67d0a44beb5378da2139bc44b",
+      "translation": "Uma ferramenta de corte com um novo emprego.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.orbital",
+      "source": "Orbital Hammer",
+      "sourceHash": "69be383d19c2cbc5cdfc2756adae740a7b28758b0ba1f7957626fbd6448e1012",
+      "translation": "Martelo Orbital",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.orbital.description",
+      "source": "Rebuilt satellites rain down precision fire.",
+      "sourceHash": "8376f02c7144ff8332423c1e55c3452a15f929083fbc44bb22a532046554c995",
+      "translation": "Os satélites reconstruídos fazem chover fogo de precisão.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.plasma",
+      "source": "Plasma Storm",
+      "sourceHash": "9e6eb6928274a76e163f0182dd7a14a10fe947281310996a2b51ceb3b4817523",
+      "translation": "Tempestade de Plasma",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.plasma.description",
+      "source": "An unstable electric furnace bends the air.",
+      "sourceHash": "78faab0d86ceab5f78b0bd4a660c5b983730cdadda0df6872e4fb331fb5aa221",
+      "translation": "Um forno elétrico instável dobra o ar.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.prism",
+      "source": "Prism Laser",
+      "sourceHash": "9fae98feb1a7b5c6381d74e83d7bb58a300bcf95b16890ad8c1c646d1d8cfe62",
+      "translation": "Laser de Prisma",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.prism.description",
+      "source": "Split light ricochets through the swarm.",
+      "sourceHash": "9524e9c0cf900532279d7a7c06c130c8d0c309b63c4a54cb0b859870ae8d59f2",
+      "translation": "Dividir ricochetes de luz através do enxame.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.rocket",
+      "source": "Rocket Launcher",
+      "sourceHash": "dcf4847e1af87fb45b879b1df37d0dca3ea7401e111b2f502e58737495514e4d",
+      "translation": "Lançador de foguetes",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.rocket.description",
+      "source": "Recycled fuel. Unrecycled enthusiasm.",
+      "sourceHash": "8e8bc6d4fac02da485a89d103e3215dade2b06f34df0d99881af08bea0265e1f",
+      "translation": "Combustível reciclado. Entusiasmo não reciclado.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.shotgun",
+      "source": "Scrap Shotgun",
+      "sourceHash": "3b6e175db9f754217cc09ec2caefa19b8cf8d067d45280ece4ad5e1a0e017649",
+      "translation": "Sucata Shotgun",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.shotgun.description",
+      "source": "Three bolts, one very loud opinion.",
+      "sourceHash": "9ff6174675143f0e68c56414f29ceb31c0627b75438c289f0c5c890ce49864bb",
+      "translation": "Três parafusos, uma opinião muito alta.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.singularity",
+      "source": "Singularity Array",
+      "sourceHash": "d1c8c4d6055e27870df5f63f4a7d1dc1dab1b613ecb6525e697fe83cad20950b",
+      "translation": "Array Singularity",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.singularity.description",
+      "source": "An impossible invention. Please stand back.",
+      "sourceHash": "013bfb972cd91d8233c0917d4950c7ab8eaeaece94d2997edcf647362a87b523",
+      "translation": "Uma invenção impossível. Por favor, afastem-se.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.swarm",
+      "source": "Missile Swarm",
+      "sourceHash": "225a3e3e66d04600b601cb60d52b983c30240f3c6bcb1279895915771dd2dc7d",
+      "translation": "Enxame de Mísseis",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    },
+    {
+      "key": "weapon.swarm.description",
+      "source": "A flock of guided rockets with terrible manners.",
+      "sourceHash": "c2d904663146f26fba5574ebf9678b7307bfb6453de06578118c49b665195ab3",
+      "translation": "Um bando de foguetes guiados com maneiras terríveis.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "European Portuguese terminology review required"
+      ]
+    }
+  ],
+  "provider": {
+    "name": "Argos Translate",
+    "version": "1.11.0",
+    "target": "pt",
+    "modelVersion": "1.9",
+    "apiFees": 0
+  }
+}

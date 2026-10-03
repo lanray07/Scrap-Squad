@@ -139,7 +139,7 @@ def import_approved(path):
         entry=catalog['strings'].get(item['key'])
         if entry is None or digest(source(entry)) != item['sourceHash']: raise ValueError('source changed since export; re-export and review')
         warnings=issues(source(entry),item['translation'])
-        fatal=[x for x in warnings if 'mismatch' in x or 'changed' in x or 'empty' in x]
+        fatal=[x for x in warnings if x == 'placeholder mismatch' or x == 'empty translation' or x.startswith('protected name changed:')]
         if fatal or (warnings and not item.get('allowWarnings')): raise ValueError(f"{item['key']}: {warnings}")
     for item in batch['translations']:
         catalog['strings'][item['key']]['localizations'][locale]={'stringUnit':{'state':'translated','value':item['translation']}}

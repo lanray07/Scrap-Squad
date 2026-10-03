@@ -6,6 +6,16 @@ import offline_localize
 from unittest.mock import patch
 
 class LocalizationTests(unittest.TestCase):
+    def test_reviewed_unchanged_term_can_be_explicitly_accepted(self):
+        with tempfile.TemporaryDirectory() as directory:
+            catalog=Path(directory)/'catalog.json'; batch=Path(directory)/'batch.json'
+            localize.write(catalog,{'strings':{'weapon.laser':{'localizations':{'en':{'stringUnit':{'value':'Laser','state':'translated'}}}}}})
+            localize.write(batch,{'locale':'de','translations':[{'key':'weapon.laser','translation':'Laser','sourceHash':localize.digest('Laser'),'approved':True,'allowWarnings':True}]})
+            original=localize.CATALOG; localize.CATALOG=catalog
+            try:
+                localize.import_approved(batch)
+                self.assertEqual(localize.read(catalog)['strings']['weapon.laser']['localizations']['de']['stringUnit']['value'],'Laser')
+            finally: localize.CATALOG=original
     def test_offline_translator_preserves_product_names_and_placeholders(self):
         translated=offline_localize.translate_preserving_tokens('BOLT found %d in Scrap City.',lambda value:value.replace('found','trouve').replace('in','dans'))
         self.assertEqual(translated,'BOLT trouve %d dans Scrap City.')

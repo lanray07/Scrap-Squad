@@ -1,0 +1,62 @@
+{
+  "es": {
+    "strings": 308,
+    "stringsWithWarnings": 69,
+    "approved": 0,
+    "providerTarget": "es"
+  },
+  "fr": {
+    "strings": 308,
+    "stringsWithWarnings": 27,
+    "approved": 0,
+    "providerTarget": "fr"
+  },
+  "de": {
+    "strings": 308,
+    "stringsWithWarnings": 34,
+    "approved": 0,
+    "providerTarget": "de"
+  },
+  "it": {
+    "strings": 308,
+    "stringsWithWarnings": 40,
+    "approved": 0,
+    "providerTarget": "it"
+  },
+  "pt": {
+    "strings": 308,
+    "stringsWithWarnings": 308,
+    "approved": 0,
+    "providerTarget": "pt"
+  },
+  "pt-BR": {
+    "strings": 308,
+    "stringsWithWarnings": 25,
+    "approved": 0,
+    "providerTarget": "pb"
+  },
+  "ja": {
+    "strings": 308,
+    "stringsWithWarnings": 0,
+    "approved": 0,
+    "providerTarget": "ja"
+  },
+  "ko": {
+    "strings": 308,
+    "stringsWithWarnings": 0,
+    "approved": 0,
+    "providerTarget": "ko"
+  },
+  "zh-Hans": {
+    "strings": 308,
+    "stringsWithWarnings": 0,
+    "approved": 0,
+    "providerTarget": "zh"
+  },
+  "zh-Hant": {
+    "strings": 308,
+    "stringsWithWarnings": 1,
+    "approved": 0,
+    "providerTarget": "zt"
+  }
+}

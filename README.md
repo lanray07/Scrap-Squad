@@ -71,7 +71,7 @@ python3 Tools/author_content.py
 swift test
 python3 Tools/localize.py audit
 python3 -m unittest discover -s Tools -p 'test_localize.py'
-python3 Tools/store_metadata.py
+python3 Tools/store_campaign.py
 ```
 
 On this Windows machine, SwiftPM needs a scratch path without spaces:
@@ -83,6 +83,8 @@ swift test --scratch-path C:\Users\User\ScrapSquadBuild
 The Swift core is compiled and tested here. Parsing app Swift files does **not** validate UIKit, SwiftUI, SpriteKit, StoreKit or GameKit type correctness. Read `Docs/RELEASE.md` before treating this as an App Store build.
 
 ## Localization
+
+The default GitHub localization workflow uses free, offline Argos models for all ten target languages. It runs automatically when the English catalog changes and uploads reviewable drafts; no API key is needed. See [automatic localization](Docs/AUTO_LOCALIZATION.md) for local use, review and optional service adapters.
 
 ```sh
 python3 Tools/localize.py export de localization-review.json
