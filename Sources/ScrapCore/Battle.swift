@@ -296,7 +296,7 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
     private func collectKills() {
         let dead = enemies.filter { $0.health <= 0 }
         combo.register(kills: dead.count)
-        comboScore += dead.count * 25 * max(0, combo.multiplier - 1)
+        comboScore += dead.count * 100 * max(0, combo.multiplier - 1)
         kills += dead.count
         let bossKills = dead.filter(\.boss).count
         bosses += bossKills

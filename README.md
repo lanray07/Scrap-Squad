@@ -6,7 +6,7 @@ Native iPhone/iPad game foundation using SwiftUI, SpriteKit and a standalone Swi
 
 The project is connected to [lanray07/Scrap-Squad](https://github.com/lanray07/Scrap-Squad). The `Validate native game` workflow builds with Xcode on a macOS runner, validates the core/tooling, saves a simulator app zip, and runs onboarding/fusion and battle/pause/retreat smoke tests. Xcode result bundles, test screenshots and startup diagnostics are retained as workflow artifacts.
 
-[Xcode build and both simulator tests passed in run #4](https://github.com/lanray07/Scrap-Squad/actions/runs/37147738498). See `Docs/GITHUB_BUILD.md` for verification details, artifact links and actual captures.
+[Xcode build and five simulator tests passed for the cosmetic update](https://github.com/lanray07/Scrap-Squad/actions/runs/37156023763). The new replay update adds additional native tests; see [replay features and validation](Docs/PREMIUM_LOOP.md) and `Docs/GITHUB_BUILD.md` for verification details and captures.
 
 The simulator build requires no Apple signing secrets. The existing Apple team and App Store Connect secrets are not consumed by this workflow. A signed device archive or TestFlight upload is a separate distribution action.
 
@@ -32,7 +32,7 @@ xcodegen generate
 open ScrapSquad.xcodeproj
 ```
 
-Choose the ScrapSquad scheme and an iPhone or iPad simulator. The build script prepares the 1024px app icon from the original generated source. For a device, set your development team and your registered bundle identifier. The supplied identifier is a development default; the existing App Store Connect app was not inspected or changed.
+Choose the ScrapSquad scheme and an iPhone or iPad simulator. The build script prepares the 1024px app icon from the original generated source. The configured bundle identifier is `com.ScrapSquad.app`; cloud distribution uses the existing Apple team secrets.
 
 Run `bash Tools/verify_macos.sh` for package tests and an unsigned simulator build. The Xcode project is generated from `project.yml`; edit that file rather than the generated project.
 
@@ -45,8 +45,11 @@ Run `bash Tools/verify_macos.sh` for package tests and an unsigned simulator bui
 - Nine campaign zones, seven mode configurations, two-minute missions, endless Survival/Arena, three-boss Boss Rush, double-scrap Scrap Run, projectile-boosted Fusion Lab, and a daily elemental modifier.
 - City construction with visible level growth, damage research, squad capacity unlocks, expedition rates, eight-hour offline cap, daily/weekly tasks without streaks, local achievements and Core Reboot with retention explanation.
 - Atomic local saves, corrupt-save protection, duplicate reward suppression, source String Catalogs, reviewed translation pipeline, pseudo-localization generation, accessibility labels and configurable effects/audio/haptics.
-- StoreKit 2 verification, pending/cancelled/error handling, transaction updates, restore and non-consumable cosmetic tint application. The product list is intentionally empty until real products are configured.
-- Game Center authentication, achievement reporting, leaderboard reporting and system leaderboard UI. Identifiers must be registered and the capability enabled before integration testing.
+- StoreKit 2 verification, pending/cancelled/error handling, transaction updates, restore and two configured non-consumable cosmetic packs. See [product verification](Docs/Store/IAP/README.md).
+- Combo kill-score multipliers, manual Overdrive, three upgrade synergies, rotating fixed-loadout circuits and versioned replay codes.
+- Instant retry, six mastery goals, earned medals, bounded run history, personal records and native branded image sharing.
+- Three original music loops, distinct sound cues, adaptive battle/boss playback and preference-aware visual callouts.
+- Game Center adapters remain disabled for release 1.0; online leaderboards are not offered.
 
 The shipped app language is English. Architecture supports ten additional locales; these appear in the picker only after approved translations are included. No player data is sent to translation services.
 
