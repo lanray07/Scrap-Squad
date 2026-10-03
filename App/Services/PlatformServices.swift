@@ -84,8 +84,11 @@ struct RobotFinish: Codable { let robotID: String; let tint: String }
 }
 
 @MainActor @Observable final class GameCenterService {
+    // Enable only after configuring the entitlement, leaderboard IDs and privacy disclosures.
+    let enabled = false
     var authenticated = false
     func authenticate() {
+        guard enabled else { return }
         GKLocalPlayer.local.authenticateHandler = { [weak self] controller, _ in
             Task { @MainActor in
                 self?.authenticated = GKLocalPlayer.local.isAuthenticated
@@ -94,11 +97,12 @@ struct RobotFinish: Codable { let robotID: String; let tint: String }
         }
     }
     func leaderboards() {
+        guard enabled else { return }
         guard authenticated else { authenticate(); return }
         present(GKGameCenterViewController(state: .leaderboards))
     }
     func report(profile: PlayerProfile, content: GameContent, reward: RunReward) {
-        guard authenticated else { return }
+        guard enabled, authenticated else { return }
         let achievements = Progression.achievements(profile, content: content).map { id, percent in
             let achievement = GKAchievement(identifier: "scrapsquad." + id)
             achievement.percentComplete = percent; achievement.showsCompletionBanner = true; return achievement

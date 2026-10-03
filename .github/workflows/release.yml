@@ -1,0 +1,78 @@
+name: Archive and upload iOS release
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ios-release
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: macos-latest
+    timeout-minutes: 40
+    env:
+      APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+      ASC_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
+      ASC_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install XcodeGen and record toolchain
+        run: |
+          brew install xcodegen
+          xcodebuild -version
+      - name: Prepare private authentication key
+        env:
+          ASC_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_API_PRIVATE_KEY }}
+        run: |
+          python3 - <<'PY'
+          import base64, os, pathlib
+          value = os.environ['ASC_PRIVATE_KEY'].strip().replace('\\n', '\n')
+          if not value.startswith('-----BEGIN'):
+              value = base64.b64decode(value).decode()
+          path = pathlib.Path(os.environ['RUNNER_TEMP']) / 'AuthKey.p8'
+          path.write_text(value + '\n')
+          path.chmod(0o600)
+          PY
+          openssl pkey -in "$RUNNER_TEMP/AuthKey.p8" -noout
+      - name: Generate project and test core
+        run: |
+          swift test
+          xcodegen generate
+      - name: Archive for App Store
+        run: |
+          set -o pipefail
+          mkdir -p .build/release
+          xcodebuild -project ScrapSquad.xcodeproj -scheme ScrapSquad \
+            -configuration Release -destination 'generic/platform=iOS' \
+            -archivePath .build/release/ScrapSquad.xcarchive \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$RUNNER_TEMP/AuthKey.p8" \
+            -authenticationKeyID "$ASC_KEY_ID" -authenticationKeyIssuerID "$ASC_ISSUER_ID" \
+            DEVELOPMENT_TEAM="$APPLE_TEAM_ID" CURRENT_PROJECT_VERSION="${{ github.run_number }}" \
+            archive 2>&1 | tee .build/release/archive.log
+      - name: Export and upload signed release
+        run: |
+          python3 - <<'PY'
+          import os, plistlib
+          with open('.build/release/ExportOptions.plist', 'wb') as stream:
+              plistlib.dump({'method': 'app-store-connect', 'destination': 'upload',
+                  'teamID': os.environ['APPLE_TEAM_ID'], 'signingStyle': 'automatic',
+                  'manageAppVersionAndBuildNumber': False, 'uploadSymbols': True}, stream)
+          PY
+          set -o pipefail
+          xcodebuild -exportArchive -archivePath .build/release/ScrapSquad.xcarchive \
+            -exportOptionsPlist .build/release/ExportOptions.plist \
+            -exportPath .build/release/export -allowProvisioningUpdates \
+            -authenticationKeyPath "$RUNNER_TEMP/AuthKey.p8" \
+            -authenticationKeyID "$ASC_KEY_ID" -authenticationKeyIssuerID "$ASC_ISSUER_ID" \
+            2>&1 | tee .build/release/export.log
+      - name: Save release diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-diagnostics-${{ github.run_number }}
+          path: .build/release/*.log
+          if-no-files-found: ignore
+      - name: Remove authentication key
+        if: always()
+        run: rm -f "$RUNNER_TEMP/AuthKey.p8"

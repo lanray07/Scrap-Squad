@@ -29,9 +29,15 @@ struct SettingsView: View {
                         ForEach(LocaleManager.available, id: \.self) { code in Text(Locale(identifier: code).localizedString(forIdentifier: code) ?? code).tag(code) }
                     } label: { LText("settings.language") }
                 }
+                if gameCenter.enabled {
+                    Section {
+                        Button { gameCenter.authenticate() } label: { LText("settings.gamecenter") }
+                        Button { gameCenter.leaderboards() } label: { LText("settings.leaderboards") }
+                    }
+                }
                 Section {
-                    Button { gameCenter.authenticate() } label: { LText("settings.gamecenter") }
-                    Button { gameCenter.leaderboards() } label: { LText("settings.leaderboards") }
+                    Link("Privacy Policy", destination: URL(string: "https://lanray07.github.io/Scrap-Squad/privacy.html")!)
+                    Link("Support", destination: URL(string: "https://github.com/lanray07/Scrap-Squad/issues")!)
                 }
                 Section {
                     ForEach(Progression.achievements(store.profile, content: store.content).keys.sorted(), id: \.self) { id in
