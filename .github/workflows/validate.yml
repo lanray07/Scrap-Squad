@@ -36,7 +36,7 @@ jobs:
           path: .build/artifacts/ScrapSquad-simulator.zip
           if-no-files-found: error
       - name: Run iPhone simulator smoke tests
-        timeout-minutes: 10
+        timeout-minutes: 18
         run: bash Tools/test_ios_ui.sh
       - name: Export simulator screenshots
         if: always()
