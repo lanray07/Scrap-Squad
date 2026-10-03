@@ -8,7 +8,7 @@ import ScrapCore
             switch contentResult {
             case .success(let content): RootView(store: GameStore(content: content))
             case .failure: ContentUnavailableView {
-                Label(Text("error.invalidContent"), systemImage: "exclamationmark.triangle")
+                Label("error.invalidContent", systemImage: "exclamationmark.triangle")
             }
             }
         }

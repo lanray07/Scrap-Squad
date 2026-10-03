@@ -105,7 +105,7 @@ struct RobotFinish: Codable { let robotID: String; let tint: String }
         }
         GKAchievement.report(achievements) { _ in }
         if let leaderboard = reward.mode.leaderboard {
-            GKLeaderboard.submitScore(reward.score, context: 0, player: .local, leaderboardIDs: [leaderboard]) { _ in }
+            GKLeaderboard.submitScore(reward.score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: [leaderboard]) { _ in }
         }
     }
     private let delegate = GameCenterDismissal()
