@@ -20,7 +20,7 @@ After downloading the simulator zip on a Mac, unzip it and install the app into 
 
 ```sh
 xcrun simctl install booted ScrapSquad.app
-xcrun simctl launch booted com.scrapsquad.mergeandsurvive
+xcrun simctl launch booted com.ScrapSquad.app
 ```
 
 ## Open on a Mac
@@ -100,7 +100,7 @@ The provider adapter accepts a JSON body with `sourceLanguage`, `targetLanguage`
 
 ## Service configuration
 
-Register Game Center IDs `scrapsquad.survival`, `scrapsquad.bossrush`, `scrapsquad.daily`, and the six `scrapsquad.<achievement>` identifiers in App Store Connect. Add the Game Center capability in the generated project and reflect it in `project.yml`/an entitlements file once provisioned.
+Game Center is disabled in release 1.0. Before enabling `GameCenterService.enabled`, register IDs `scrapsquad.survival`, `scrapsquad.bossrush`, `scrapsquad.daily`, and the six `scrapsquad.<achievement>` identifiers in App Store Connect. Add the entitlement, test the integration, provide appropriate consent and update the privacy policy/disclosures before enabling network reporting.
 
 For cosmetic products, add real non-consumable IDs to `App/Resources/StoreConfiguration.json` and map each to an existing robot and a six-digit hex tint:
 
@@ -114,3 +114,9 @@ For cosmetic products, add real non-consumable IDs to `App/Resources/StoreConfig
 ```
 
 No ads, subscriptions, consumables, season-pass charges, analytics or remote community totals are shipped. These require separate service and product work, as recorded in the release checklist.
+
+## App Store distribution
+
+The separate manual `release.yml` workflow consumes the existing Apple secrets, archives for iOS and uses Apple's cloud distribution signing during export/upload. It needs no registered development device. It removes its temporary private key after the run; keys and signing material are not saved as artifacts. Release workflow run 3 successfully uploaded version 1.0, build 3, using bundle ID `com.ScrapSquad.app` on 3 October 2026. Upload success does not mean App Review approval.
+
+The public [privacy policy](https://lanray07.github.io/Scrap-Squad/privacy.html) and [support website](https://lanray07.github.io/Scrap-Squad/) are hosted without a paid service on GitHub Pages. See [current App Store Connect status](Docs/Store/APP_STORE_CONNECT.md) for saved metadata and submission preparation.

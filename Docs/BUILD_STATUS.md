@@ -1,6 +1,6 @@
 # Verification snapshot — 3 October 2026
 
-**Updated:** Xcode compilation and both iPhone simulator smoke tests now pass on GitHub. See [the verified run and artifacts](GITHUB_BUILD.md). The rows below retain the earlier Windows-host verification context.
+**Updated:** Xcode compilation and iPhone simulator smoke tests pass on GitHub. Signed version 1.0, build 3 was uploaded through the separate release workflow and attached in App Store Connect. Current local localization tooling has 13 passing tests. See [store preparation status](Store/APP_STORE_CONNECT.md) and [the simulator run and artifacts](GITHUB_BUILD.md). The rows below retain the earlier Windows-host verification context.
 
 | Check | Result |
 | --- | --- |
@@ -19,4 +19,4 @@
 | StoreKit/Game Center sandbox verification | Pending service configuration and Mac/device testing |
 | Release readiness | Not ready; see RELEASE.md |
 
-Test invocation: `swift test --scratch-path C:\Users\User\ScrapSquadBuild`. SwiftPM prints an optional convenience-symlink warning on Windows; the compiled tests still execute and pass. App source was checked using `swiftc -frontend -parse` across all ten app Swift files. Nothing has been uploaded or changed in App Store Connect.
+Historical test invocation: `swift test --scratch-path C:\Users\User\ScrapSquadBuild`. SwiftPM prints an optional convenience-symlink warning on Windows; the compiled tests still execute and pass. App source was initially checked using `swiftc -frontend -parse`; the subsequent GitHub workflows compiled it against the Apple SDK and uploaded the signed release.

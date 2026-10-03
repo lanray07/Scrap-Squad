@@ -1,6 +1,6 @@
 # Release status and outstanding work
 
-Status: native source foundation; **not ready for submission**. No signing, upload, purchase, App Store metadata edit or deployment has been performed.
+Current distribution status: signed version 1.0, build 3 uploaded successfully to App Store Connect on 3 October 2026 and attached to the version record. Store copy, privacy, age ratings and content rights are saved. See [App Store Connect status](Store/APP_STORE_CONNECT.md). The app has not been submitted for review or approved. The broader gameplay, device, accessibility and performance checks below remain product-quality requirements.
 
 **GitHub verification update:** Xcode compilation and both onboarding/fusion and battle/pause/retreat simulator smoke tests pass. The actual captures and downloadable artifacts are recorded in [GITHUB_BUILD.md](GITHUB_BUILD.md). The broader device, accessibility, performance and service checks below remain release requirements.
 
@@ -15,15 +15,15 @@ Status: native source foundation; **not ready for submission**. No signing, uplo
 
 ## Required Mac pass
 
-1. Run `Tools/verify_macos.sh`. Resolve any Apple SDK type/concurrency diagnostics. Launch on a small iPhone, a large iPhone and iPad in both orientations.
+1. Apple SDK compilation, core tests and three UI tests passed on GitHub's Mac runners; iPhone and iPad portrait captures are recorded. Complete small-iPhone and landscape/device checks and run `Tools/verify_macos.sh` for broader local verification.
 2. Play the complete tutorial → mission → three choices → boss → rewards → workshop → fusion → blueprint → city upgrade → save/relaunch path.
 3. Validate move gesture geometry, render/update cadence, safe areas, Dynamic Type, VoiceOver focus, background/foreground pause, memory, battery and 60fps targets. Check arena aspect ratio on iPad; the engine currently uses normalized coordinates rather than a fixed physical aspect ratio.
 4. Confirm the generated atlas has clean per-cell framing at all scales. It is a static pose set, not a skeletal animation library. Procedural enemies, city structures, terrain and effects require a premium art pass; music and biome audio are not bundled. There are generated UI feedback tones only.
-5. Capture actual simulator/device screenshots. Do not use generated art as purported gameplay screenshots. Export all required sizes from the current App Store Connect requirements.
+5. Ten actual iPhone captures and ten actual iPad captures have been framed and uploaded to App Store Connect's required slots. Refresh these screenshots if the app UI or gameplay changes before submission.
 6. Run pseudo-localized German/French expansion, CJK and RTL layout tests. Translate and review the actual 308 English strings before announcing additional language support. Set `DEVELOPMENT_LANGUAGE` to English in the generated project if it differs.
-7. Configure the actual bundle identifier, development team, capabilities and Game Center records. Test sign-in decline, offline reporting, achievement retries and leaderboard submissions. Current client scores are not server-authoritative; add integrity/anti-cheat before competitive events.
+7. The actual bundle identifier and team are configured and cloud-signed build 3 is uploaded. Game Center is disabled for release 1.0. Before enabling it in a future release, configure records, update privacy disclosures and test sign-in decline, offline reporting, achievement retries and leaderboard submissions. Current client scores are not server-authoritative; add integrity/anti-cheat before competitive events.
 8. Configure and sandbox-test actual cosmetic products. Test Ask to Buy, pending transactions, cancellation, interrupted delivery, refund/revocation and restore. Add a local StoreKit configuration for repeatable QA. No real purchases are currently available.
-9. Verify privacy disclosures and required-reason API declarations against the final compiled dependencies; the included manifest describes this source build without analytics/tracking. Complete age rating, support URL, privacy policy and contact information using actual operator details.
+9. Privacy, age rating, content rights, support/marketing URLs and existing review contact details are saved for build 3. The included privacy manifest describes this source build without analytics/tracking. Reassess disclosures and required-reason API declarations if dependencies, services or data handling change.
 10. Tune progression with device playtests and measured retention/economy data. Current numbers are initial balancing values, not proven production balance.
 
 ## Features from the master prompt that remain incomplete

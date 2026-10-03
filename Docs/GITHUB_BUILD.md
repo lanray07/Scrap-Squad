@@ -36,4 +36,4 @@ These are real simulator captures from the passing run, not generated marketing 
 
 The inspected captures show the expected native controls, generated character art, real recipe reveal and SpriteKit battle arena. This smoke pass does not certify iPad layout, iOS 17 runtime behavior, VoiceOver, the full two-minute mission UI path, long-running performance or store-service integration. Those checks remain in RELEASE.md.
 
-The workflow produces an unsigned simulator build. It does not create a signed device archive, access the Apple signing secrets or upload to TestFlight.
+The validation workflow produces an unsigned simulator build. A separate manual `release.yml` workflow now uses the existing Apple API/team secrets and cloud distribution signing. Its [successful run 3](https://github.com/lanray07/Scrap-Squad/actions/runs/37152648395) uploaded version 1.0, build 3 with bundle ID `com.ScrapSquad.app`. No development-device registration was needed. The earlier simulator artifact described above used the old development bundle identifier.

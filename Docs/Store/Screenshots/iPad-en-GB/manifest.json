@@ -1,0 +1,78 @@
+{
+  "locale": "en-GB",
+  "device": "13-inch iPad",
+  "width": 2064,
+  "height": 2752,
+  "screenshots": [
+    {
+      "order": 1,
+      "file": "01-battle.png",
+      "source": "Docs/Store/iPad-Captures/Store-09-battle.png",
+      "sourceSHA256": "7450a97d1a9bd7cbbcf875ae547a965e8c7db0e98d2b4a9f0659ce88c386154a",
+      "exportSHA256": "09e7e1063604b6e2c4a5d81e29b5f804a8b94a711c9e6c3abd0d95df38109150"
+    },
+    {
+      "order": 2,
+      "file": "02-workshop.png",
+      "source": "Docs/Store/iPad-Captures/Store-05-workshop.png",
+      "sourceSHA256": "9753b79eee16a1c0931835b05cda6394a0aec448be277258bcec5bc7ac051d21",
+      "exportSHA256": "110133dabaefb05585d7f7cf12344a849156e8841541c610ccb0d60e6090383d"
+    },
+    {
+      "order": 3,
+      "file": "03-squad.png",
+      "source": "Docs/Store/iPad-Captures/Store-03-squad.png",
+      "sourceSHA256": "d035255842637a299fb82b9e38633811bdfc111ed583ce34246abca9b87e27c3",
+      "exportSHA256": "49c7f3093c028e90f7ae7c48d71519d9b27b834b2c2fc3731ce4fdd5d4d41d2b"
+    },
+    {
+      "order": 4,
+      "file": "04-fusion.png",
+      "source": "Docs/Store/iPad-Captures/Store-07-fusion.png",
+      "sourceSHA256": "f2c6c113b161bd481d71538369809331d8d7b62f26f77bf76c7988c429b8cbea",
+      "exportSHA256": "3962e4708593eef8d47c9b9656ed446aded2ef9ce491e2d11a05f014f6b30182"
+    },
+    {
+      "order": 5,
+      "file": "05-blueprints.png",
+      "source": "Docs/Store/iPad-Captures/Store-04-blueprints.png",
+      "sourceSHA256": "44830ee236f9813e0e1802d45d5680da1a3ec02d911cf7c6c6115f462ae825c8",
+      "exportSHA256": "1021f20d1fb0f4c282aa4c803541a6ee9dc523cff4719390c220994d4045a57e"
+    },
+    {
+      "order": 6,
+      "file": "06-city.png",
+      "source": "Docs/Store/iPad-Captures/Store-02-city.png",
+      "sourceSHA256": "b5681711e580d18699ca0fa35204c27a982fda1bf1b6e5aa66e3e5f0362be93a",
+      "exportSHA256": "02a37009c3a1d99b9c86d3951569b4d2d0c5abe985706a87e605a67dd19f14db"
+    },
+    {
+      "order": 7,
+      "file": "07-lobby.png",
+      "source": "Docs/Store/iPad-Captures/Store-08-lobby.png",
+      "sourceSHA256": "69d0e1b2673a9edd09bf9822708cd68090a0769049d9b42274244f4d52c72de7",
+      "exportSHA256": "e6d9f75f168a8caf07f6952057531e460e231735cc5d1f6b20ad928bd3564116"
+    },
+    {
+      "order": 8,
+      "file": "08-roulette.png",
+      "source": "Docs/Store/iPad-Captures/Store-06-roulette.png",
+      "sourceSHA256": "c4e6732aebfa78ac6d7deb49289db7940d0a2927d8472eb11c632fbaf8d7b8f5",
+      "exportSHA256": "bb998136f459ac2c663d989cb596c9558b07565b966cb566678fe24d1314d985"
+    },
+    {
+      "order": 9,
+      "file": "09-onboarding.png",
+      "source": "Docs/Store/iPad-Captures/Store-01-onboarding.png",
+      "sourceSHA256": "34baf7fe1c60491a26010e844074eaed1c86247a3128e63c920b3e917fd95783",
+      "exportSHA256": "e78b94f65fc8f508c12d63f74264ee8a6cd12536e33ac3a03c1341950045b913"
+    },
+    {
+      "order": 10,
+      "file": "10-pause.png",
+      "source": "Docs/Store/iPad-Captures/Store-10-pause.png",
+      "sourceSHA256": "a80320084aed265b19d8c2eaaa01df7693157d393c4d565bc1dfa1e931052b42",
+      "exportSHA256": "3fa0198ca4874d8b4c441b7854e9364420cc7bea7c823e8b7fe2cdd1e4696fa2"
+    }
+  ]
+}

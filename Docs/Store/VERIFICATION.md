@@ -15,4 +15,4 @@
 
 Store description and metadata drafts exist for eleven locales, with App Store field limits validated. Keyword demand and conversion are not measured. Native-language quality review is still required; production app translations are not enabled or falsely marked approved.
 
-This verifies the marketing asset pipeline and current development build, not production readiness or a signed device/TestFlight release. No App Store Connect publishing was performed.
+This snapshot verifies the marketing asset pipeline and development build. A subsequent distribution pass uploaded signed version 1.0, build 3 and saved metadata and screenshots in App Store Connect. See [current distribution status](APP_STORE_CONNECT.md). Upload success does not certify production quality or App Review approval.
