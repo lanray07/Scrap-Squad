@@ -25,4 +25,4 @@ xcodebuild -project ScrapSquad.xcodeproj -scheme ScrapSquad \
   -maximum-test-execution-time-allowance 240 \
   -derivedDataPath .build/ios-derived \
   -resultBundlePath ".build/$result_name.xcresult" \
-  CODE_SIGNING_ALLOWED=NO test 2>&1 | tee ".build/$result_name.log"
+  CODE_SIGNING_ALLOWED=YES CODE_SIGN_IDENTITY=- test 2>&1 | tee ".build/$result_name.log"

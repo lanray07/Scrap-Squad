@@ -40,6 +40,7 @@ targets:
           - $(SRCROOT)/App/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.png
     scheme:
       testTargets: [ScrapSquadUITests]
+      storeKitConfiguration: UITests/Cosmetics.storekit
   ScrapSquadUITests:
     type: bundle.ui-testing
     platform: iOS
