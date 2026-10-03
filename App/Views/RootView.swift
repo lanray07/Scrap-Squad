@@ -20,8 +20,6 @@ struct RootView: View {
             }.tint(Theme.gold)
         }
         .background(Theme.ink).foregroundStyle(.white).preferredColorScheme(.dark)
-        .environment(store).environment(commerce).environment(gameCenter)
-        .environment(\.locale, LocaleManager.locale(store.profile.preferences.locale))
         .sheet(isPresented: $store.workshopPresented) { WorkshopView() }
         .sheet(isPresented: $store.settingsPresented) { SettingsView() }
         .sheet(isPresented: $store.onboardingPresented) {
@@ -54,6 +52,9 @@ struct RootView: View {
                 await commerce.start(); gameCenter.authenticate()
             }
         }
+        // Inject above presentation modifiers so modal content and tab labels share dependencies.
+        .environment(store).environment(commerce).environment(gameCenter)
+        .environment(\.locale, LocaleManager.locale(store.profile.preferences.locale))
     }
 }
 

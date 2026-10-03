@@ -23,17 +23,6 @@ jobs:
         run: brew install xcodegen
       - name: Validate package, tooling and iOS build
         run: bash Tools/verify_macos.sh
-      - name: Run iPhone simulator smoke tests
-        run: bash Tools/test_ios_ui.sh
-      - name: Export simulator screenshots
-        if: always()
-        run: |
-          if [ -d .build/ios-ui-tests.xcresult ]; then
-            mkdir -p .build/artifacts/screenshots
-            xcrun xcresulttool export attachments \
-              --path .build/ios-ui-tests.xcresult \
-              --output-path .build/artifacts/screenshots
-          fi
       - name: Package simulator app
         run: |
           mkdir -p .build/artifacts
@@ -46,6 +35,18 @@ jobs:
           name: ScrapSquad-simulator-${{ github.run_number }}
           path: .build/artifacts/ScrapSquad-simulator.zip
           if-no-files-found: error
+      - name: Run iPhone simulator smoke tests
+        timeout-minutes: 10
+        run: bash Tools/test_ios_ui.sh
+      - name: Export simulator screenshots
+        if: always()
+        run: |
+          if [ -d .build/ios-ui-tests.xcresult ]; then
+            mkdir -p .build/artifacts/screenshots
+            xcrun xcresulttool export attachments \
+              --path .build/ios-ui-tests.xcresult \
+              --output-path .build/artifacts/screenshots
+          fi
       - name: Save simulator screenshots
         if: always()
         uses: actions/upload-artifact@v4
@@ -63,4 +64,5 @@ jobs:
             .build/ios-build.xcresult
             .build/ios-ui-tests.log
             .build/ios-ui-tests.xcresult
+            .build/simulator-boot.log
           if-no-files-found: ignore
