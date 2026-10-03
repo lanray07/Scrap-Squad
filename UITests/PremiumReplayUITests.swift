@@ -40,6 +40,10 @@ import XCTest
         for _ in 0..<3 where !retry.isHittable { app.swipeUp() }
         retry.tap()
         XCTAssertTrue(app.buttons["Pause"].waitForExistence(timeout: 10))
+        let clock = app.staticTexts["battle-clock"]
+        let initialClock = clock.label
+        let resumed = XCTNSPredicateExpectation(predicate: NSPredicate(format: "label != %@", initialClock), object: clock)
+        XCTAssertEqual(XCTWaiter.wait(for: [resumed], timeout: 6), .completed)
         app.buttons["Pause"].tap(); app.buttons["Retreat"].tap()
         let home = app.buttons["Return to city"]
         for _ in 0..<3 where !home.isHittable { app.swipeUp() }

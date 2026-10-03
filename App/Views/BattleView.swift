@@ -83,7 +83,8 @@ struct BattleView: View {
                 HStack {
                     VStack(alignment: .leading, spacing: 5) {
                         LText(engine.biome.nameKey).font(.headline)
-                        Text(LocalizedFormatting.duration(engine.elapsed)).font(.caption.monospacedDigit()).foregroundStyle(Theme.muted)
+                        Text(Duration.seconds(engine.elapsed).formatted(.time(pattern: .minuteSecond)))
+                            .font(.caption.monospacedDigit()).foregroundStyle(Theme.muted).accessibilityIdentifier("battle-clock")
                     }
                     Spacer()
                     Text(engine.kills, format: .number).font(.title3.bold())
@@ -102,6 +103,7 @@ struct BattleView: View {
                     if engine.activateOverdrive() { Feedback.play(.ability, preferences: store.profile.preferences); AudioBus.shared.play(.overdrive, preferences: store.profile.preferences); session.revision += 1 }
                 }
                 SpriteView(scene: session.scene, options: [.ignoresSiblingOrder])
+                    .id(session.id)
                     .accessibilityLabel(Text(LocalizationManager.string("accessibility.arena")))
                     .gesture(DragGesture(minimumDistance: 0).onChanged { value in
                         if dragOrigin == nil { dragOrigin = value.startLocation }
