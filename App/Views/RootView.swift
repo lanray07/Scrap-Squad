@@ -46,9 +46,12 @@ struct RootView: View {
         } message: { LText(store.errorKey ?? "common.error") }
         .onChange(of: scenePhase) { _, phase in
             store.sceneChanged(phase)
+            if phase != .active { AudioBus.shared.stop() }
+            else if store.selectedTab != 2 { AudioBus.shared.play(.city, preferences: store.profile.preferences) }
             if phase == .active && !ProcessInfo.processInfo.arguments.contains("--ui-testing") { Task { await commerce.refresh() } }
         }
-        .onAppear { if systemReduceMotion { store.profile.preferences.reducedMotion = true } }
+        .onAppear { if systemReduceMotion { store.profile.preferences.reducedMotion = true }; AudioBus.shared.play(.city, preferences: store.profile.preferences) }
+        .onChange(of: store.selectedTab) { _, tab in if tab != 2 { AudioBus.shared.play(.city, preferences: store.profile.preferences) } }
         .onChange(of: systemReduceMotion) { _, enabled in if enabled { store.profile.preferences.reducedMotion = true } }
         .task {
             if !ProcessInfo.processInfo.arguments.contains("--ui-testing") || ProcessInfo.processInfo.arguments.contains("--storekit-testing") {
@@ -63,6 +66,7 @@ struct RootView: View {
 
 struct CityView: View {
     @Environment(GameStore.self) var store
+    @State private var journalPresented = false
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
@@ -70,6 +74,8 @@ struct CityView: View {
                 CityIllustration().frame(height: 240).background(Theme.surface, in: RoundedRectangle(cornerRadius: 28))
                 HStack { LText("city.level"); Text(store.profile.cityLevel, format: .number); Spacer(); LText("currency.scrap").foregroundStyle(Theme.muted) }
                 ActionButton(key: "city.workshop", symbol: "wrench.and.screwdriver.fill") { store.workshopPresented = true }
+                ActionButton(key: "journal.open", symbol: "trophy.fill", secondary: true) { journalPresented = true }
+                    .accessibilityIdentifier("open-journal")
                 ForEach(store.content.buildings) { building in
                     let level = store.profile.buildingLevels[building.id, default: 0]
                     Panel {
@@ -100,7 +106,7 @@ struct CityView: View {
                     LText("mission.note").font(.caption).foregroundStyle(Theme.muted).padding(.top, 12)
                 }
             }.padding(20).frame(maxWidth: 760)
-        }.background(Theme.ink)
+        }.background(Theme.ink).sheet(isPresented: $journalPresented) { RunJournalView() }
     }
     func mission(weekly: Bool) -> some View {
         let amount = weekly ? store.profile.weeklyBosses : store.profile.dailyKills

@@ -17,6 +17,11 @@ import ScrapCore
     private let world = SKNode()
     private let effectsLayer = SKNode()
     private var lastKills = 0
+    private var lastWave = 1
+    private var lastComboTier = 1
+    private var lastSynergyCount = 0
+    private var overdriveAura: SKShapeNode?
+    private var lastShotSoundAt = -1.0
     init(engine: BattleEngine, finishes: [String: RobotFinish], goldenTrails: Bool) {
         self.engine = engine
         self.finishes = finishes
@@ -48,6 +53,7 @@ import ScrapCore
     override func update(_ currentTime: TimeInterval) {
         let dt = previous == 0 ? 0 : min(0.05, currentTime - previous); previous = currentTime
         engine.step(delta: dt, movement: movement)
+        updateMomentum()
         for (index, node) in robotNodes.enumerated() {
             let angle = Double(index) * .pi * 2 / Double(max(1, robotNodes.count))
             let offset = index == 0 ? Vector() : Vector(cos(angle), sin(angle)) * 0.055
@@ -86,6 +92,39 @@ import ScrapCore
             }
         }
         if currentTime - hudAt > 0.1 { hudAt = currentTime; refresh?() }
+    }
+    private func updateMomentum() {
+        if engine.combo.overdrive > 0 {
+            if overdriveAura == nil {
+                let aura = SKShapeNode(circleOfRadius: 42)
+                aura.strokeColor = UIColor(hex: "79D9BA"); aura.lineWidth = 3; aura.fillColor = .clear; aura.zPosition = 3
+                world.addChild(aura); overdriveAura = aura
+            }
+            overdriveAura?.position = point(engine.player)
+        } else { overdriveAura?.removeFromParent(); overdriveAura = nil }
+        if engine.wave > lastWave {
+            lastWave = engine.wave
+            announce(LocalizationManager.string("momentum.wave", locale: engine.profile.preferences.locale) + " \(engine.wave)", color: "F5B942")
+        }
+        if engine.combo.multiplier > lastComboTier {
+            announce("×\(engine.combo.multiplier) " + LocalizationManager.string("momentum.combo", locale: engine.profile.preferences.locale), color: "79D9BA")
+            AudioBus.shared.play(.combo, preferences: engine.profile.preferences)
+        }
+        lastComboTier = engine.combo.multiplier
+        if engine.synergies.count > lastSynergyCount {
+            lastSynergyCount = engine.synergies.count
+            announce(LocalizationManager.string("synergy.activated", locale: engine.profile.preferences.locale), color: "BA9DEB")
+            Feedback.play(.fusion, preferences: engine.profile.preferences)
+        }
+    }
+    private func announce(_ text: String, color: String) {
+        effectsLayer.childNode(withName: "momentum-announcement")?.removeFromParent()
+        let label = SKLabelNode(fontNamed: "AvenirNext-Bold")
+        label.name = "momentum-announcement"; label.text = text; label.fontSize = min(22, size.width / 18)
+        label.fontColor = UIColor(hex: color); label.position = CGPoint(x: size.width / 2, y: size.height * 0.85); label.zPosition = 20
+        effectsLayer.addChild(label)
+        let exit: SKAction = engine.profile.preferences.reducedMotion ? .wait(forDuration: 1.5) : .sequence([.wait(forDuration: 1), .fadeOut(withDuration: 0.5)])
+        label.run(.sequence([exit, .removeFromParent()]))
     }
     private func point(_ vector: Vector) -> CGPoint { CGPoint(x: vector.x * size.width, y: vector.y * size.height) }
     private func makeRobot(_ robot: Robot) -> SKNode {
@@ -133,6 +172,7 @@ import ScrapCore
     private func render(_ effect: CombatEffect) {
         let color = UIColor(hex: goldenTrails ? "FFD878" : engine.biome.palette[2])
         if effect.damage > 0 {
+            if engine.elapsed - lastShotSoundAt >= 0.18 { lastShotSoundAt = engine.elapsed; AudioBus.shared.play(.weapon, preferences: engine.profile.preferences) }
             let path = CGMutablePath(); path.move(to: point(effect.from)); path.addLine(to: point(effect.to))
             let trail = SKShapeNode(path: path); trail.strokeColor = color; trail.lineWidth = effect.critical ? 4 : 2; effectsLayer.addChild(trail)
             trail.run(.sequence([.fadeOut(withDuration: 0.18), .removeFromParent()]))

@@ -42,6 +42,8 @@ public struct PlayerProfile: Codable, Sendable {
     public var weeklyBosses = 0
     public var weeklyClaimed = false
     public var preferences = Preferences()
+    // Optional for backward-compatible decoding of existing version 1 saves.
+    public var journal: RunJournal? = nil
     public init(now: Date = Date()) { lastSeen = now }
     public var squadCapacity: Int { min(4, max(unlockedSquadCapacity, 2 + (buildingLevels["command"] ?? 0) / 2)) }
     public var playerLevel: Int { 1 + completedRuns / 3 }
@@ -78,9 +80,11 @@ public struct RunReward: Sendable {
     public let bosses: Int
     public let score: Int
     public let victory: Bool
-    public init(id: UUID, mode: GameMode, zone: Int, kills: Int, bosses: Int, score: Int, victory: Bool) {
+    public let highlights: RunHighlights?
+    public init(id: UUID, mode: GameMode, zone: Int, kills: Int, bosses: Int, score: Int, victory: Bool, highlights: RunHighlights? = nil) {
         self.id = id; self.mode = mode; self.zone = zone; self.kills = kills
         self.bosses = bosses; self.score = score; self.victory = victory
+        self.highlights = highlights
     }
 }
 public enum Progression {
@@ -184,6 +188,11 @@ public enum Progression {
         if profile.claimedRunIDs.count > 256 { profile.claimedRunIDs = [reward.id] }
         profile.kills += reward.kills; profile.bosses += reward.bosses
         profile.completedRuns += 1
+        if let highlights = reward.highlights {
+            var journal = profile.journal ?? RunJournal()
+            journal.record(RunRecord(reward: reward, highlights: highlights, date: now))
+            profile.journal = journal
+        }
         profile.scrap += reward.kills * content.economy.killScrap * (reward.mode == .scrapRun ? 2 : 1)
         profile.credits += reward.kills * 3 + reward.bosses * content.economy.bossCredits
         if reward.victory {

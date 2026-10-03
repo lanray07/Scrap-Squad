@@ -40,6 +40,10 @@ struct BattleLobby: View {
                 }
                 LText("battle.move").font(.subheadline).foregroundStyle(Theme.muted)
                 LText("battle.survival.note").font(.caption).foregroundStyle(Theme.muted)
+                ChallengePanel { challenge in
+                    session = BattleSession(content: store.content, profile: challenge.profile(content: store.content, preferences: store.profile.preferences), mode: .dailyAnomaly,
+                        finishes: commerce.robotFinishes, goldenTrails: commerce.goldenTrails, seed: UInt64(challenge.seed), challengeCode: challenge.code)
+                }
             }.padding(20).frame(maxWidth: 760)
         }.background(Theme.ink).onAppear { zone = min(zone, store.profile.zone) }
             .fullScreenCover(item: $session) { BattleView(session: $0) }
@@ -52,8 +56,12 @@ struct BattleLobby: View {
     var revision = 0
     var paused = false
     var claimed = false
-    init(content: GameContent, profile: PlayerProfile, mode: GameMode, finishes: [String: RobotFinish], goldenTrails: Bool) {
-        engine = BattleEngine(content: content, profile: profile, mode: mode)
+    var personalBest = false
+    let finishes: [String: RobotFinish]
+    let goldenTrails: Bool
+    init(content: GameContent, profile: PlayerProfile, mode: GameMode, finishes: [String: RobotFinish], goldenTrails: Bool, seed: UInt64 = UInt64.random(in: 1...UInt64.max), challengeCode: String? = nil) {
+        self.finishes = finishes; self.goldenTrails = goldenTrails
+        engine = BattleEngine(content: content, profile: profile, mode: mode, seed: seed, challengeCode: challengeCode)
         scene = BattleScene(engine: engine, finishes: finishes, goldenTrails: goldenTrails)
         scene.refresh = { [weak self] in self?.revision += 1 }
     }
@@ -90,6 +98,9 @@ struct BattleView: View {
                         HStack { LText(armor > 0 ? "battle.armor" : "battle.armor.broken").font(.caption2); if armor > 0 { ProgressView(value: armor).tint(Theme.muted) } }.padding(.horizontal, 20).padding(.bottom, 6)
                     }
                 }
+                CombatMomentum(engine: engine) {
+                    if engine.activateOverdrive() { Feedback.play(.ability, preferences: store.profile.preferences); AudioBus.shared.play(.overdrive, preferences: store.profile.preferences); session.revision += 1 }
+                }
                 SpriteView(scene: session.scene, options: [.ignoresSiblingOrder])
                     .accessibilityLabel(Text(LocalizationManager.string("accessibility.arena")))
                     .gesture(DragGesture(minimumDistance: 0).onChanged { value in
@@ -116,19 +127,31 @@ struct BattleView: View {
             else if engine.state == .victory || engine.state == .defeated { resultsOverlay }
         }.preferredColorScheme(.dark).foregroundStyle(.white)
             .onChange(of: phase) { _, value in if value != .active { pause() } }
-            .onDisappear { session.scene.isPaused = true }
+            .onAppear { playMusic() }
+            .onChange(of: engine.bossSpawned) { _, spawned in if spawned && !session.paused { playMusic() } }
+            .onChange(of: engine.state) { _, state in
+                if state == .victory || state == .defeated {
+                    AudioBus.shared.stop()
+                    if state == .victory { AudioBus.shared.play(.victory, preferences: store.profile.preferences) }
+                }
+            }
+            .onDisappear { session.scene.isPaused = true; AudioBus.shared.stop(); if phase == .active { AudioBus.shared.play(.city, preferences: store.profile.preferences) } }
     }
-    func pause() { session.paused = true; session.scene.isPaused = true; session.scene.movement = Vector() }
+    func playMusic() { AudioBus.shared.play(session.engine.bossSpawned ? .boss : .battle, preferences: store.profile.preferences) }
+    func pause() { session.paused = true; session.scene.isPaused = true; session.scene.movement = Vector(); AudioBus.shared.stop() }
     var pauseOverlay: some View {
         modal {
             LText("battle.paused").font(.largeTitle.bold())
-            ActionButton(key: "battle.resume", symbol: "play.fill") { session.paused = false; session.scene.isPaused = false }
+            ActionButton(key: "battle.resume", symbol: "play.fill") { session.paused = false; session.scene.isPaused = false; playMusic() }
             ActionButton(key: "battle.retreat", symbol: "arrow.uturn.backward", secondary: true) { session.engine.retreat(); session.paused = false; session.scene.isPaused = false; session.revision += 1 }
         }
     }
     var choicesOverlay: some View {
         modal {
             PageHeading(title: "battle.choose", subtitle: "battle.choice.subtitle")
+            if !session.engine.synergies.isEmpty {
+                ForEach(BuildSynergy.allCases.filter { session.engine.synergies.contains($0) }) { LText($0.nameKey).font(.caption.bold()).foregroundStyle(Theme.mint) }
+            }
             ForEach(session.engine.choices) { choice in
                 Button {
                     session.engine.choose(choice); session.revision += 1
@@ -136,7 +159,13 @@ struct BattleView: View {
                 } label: {
                     HStack(spacing: 16) {
                         Image(systemName: choice.symbol).font(.title).foregroundStyle(Theme.gold).frame(width: 40)
-                        VStack(alignment: .leading, spacing: 6) { LText(choice.nameKey).font(.headline); LText(choice.descriptionKey).font(.caption).foregroundStyle(Theme.muted) }
+                        VStack(alignment: .leading, spacing: 6) {
+                            LText(choice.nameKey).font(.headline); LText(choice.descriptionKey).font(.caption).foregroundStyle(Theme.muted)
+                            let kinds = Set(session.engine.content.upgrades.filter { session.engine.selected[$0.id, default: 0] > 0 }.map(\.kind)).union([choice.kind])
+                            ForEach(BuildSynergy.allCases.filter { $0.ready(kinds: kinds) && !session.engine.synergies.contains($0) }) { synergy in
+                                Label { LText(synergy.nameKey) } icon: { Image(systemName: "sparkles") }.font(.caption.bold()).foregroundStyle(Theme.mint)
+                            }
+                        }
                         Spacer()
                     }.padding(18).background(Theme.surface, in: RoundedRectangle(cornerRadius: 18))
                 }.buttonStyle(.plain)
@@ -149,12 +178,31 @@ struct BattleView: View {
             PageHeading(title: session.engine.state == .victory ? "battle.victory" : "battle.defeat", subtitle: "battle.results")
             HStack { LText("battle.kills"); Spacer(); Text(session.engine.kills, format: .number) }
             HStack { LText("battle.score"); Spacer(); Text(session.engine.score, format: .number) }
+            if session.personalBest { Label { LText("run.personalBest") } icon: { Image(systemName: "trophy.fill") }.foregroundStyle(Theme.gold) }
+            HStack { LText("momentum.best"); Spacer(); Text(session.engine.combo.best, format: .number) }
+            if let record = store.profile.journal?.recent.first(where: { $0.id == session.engine.id }) {
+                ForEach(record.medals) { medal in Label { LText(medal.nameKey) } icon: { Image(systemName: medal.symbol) }.font(.caption.bold()).foregroundStyle(Theme.gold) }
+                ForEach(record.highlights.synergies) { LText($0.nameKey).foregroundStyle(Theme.mint) }
+                if let code = record.highlights.challengeCode { Text(code).font(.caption.monospaced()).foregroundStyle(Theme.mint) }
+                ShareRunButton(record: record)
+            }
+            ActionButton(key: "run.retry", symbol: "arrow.clockwise") {
+                claim()
+                let previous = session
+                previous.scene.isPaused = true
+                session = BattleSession(content: previous.engine.content, profile: previous.engine.profile, mode: previous.engine.mode,
+                    finishes: previous.finishes, goldenTrails: previous.goldenTrails,
+                    seed: previous.engine.challengeCode == nil ? UInt64.random(in: 1...UInt64.max) : previous.engine.seed, challengeCode: previous.engine.challengeCode)
+                priority = .nearest; dragOrigin = nil
+                playMusic()
+            }.accessibilityIdentifier("run-retry")
             ActionButton(key: "battle.return", symbol: "house.fill") { claim(); dismiss() }
         }.onAppear { claim() }
     }
     func claim() {
         guard !session.claimed else { return }
         let reward = session.engine.reward()
+        session.personalBest = reward.score > (store.profile.journal?.bestScores[reward.mode.rawValue] ?? 0)
         store.perform { _ = Progression.apply(reward, profile: &$0, content: store.content, now: Date()) }
         session.claimed = true
         gameCenter.report(profile: store.profile, content: store.content, reward: reward)

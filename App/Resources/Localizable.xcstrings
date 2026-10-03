@@ -3627,6 +3627,479 @@
           }
         }
       }
+    },
+    "challenge.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The Daily Circuit"
+          }
+        }
+      }
+    },
+    "challenge.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A rotating seeded arena. Everyone starts with the same loaner weapon and squad. Your upgrades and purchases give no advantage."
+          }
+        }
+      }
+    },
+    "challenge.daily": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Play today’s circuit"
+          }
+        }
+      }
+    },
+    "challenge.share": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Challenge a friend"
+          }
+        }
+      }
+    },
+    "challenge.placeholder": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter a code: SQS1-1234ABCD"
+          }
+        }
+      }
+    },
+    "challenge.invalid": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use SQS1- followed by eight hexadecimal characters."
+          }
+        }
+      }
+    },
+    "challenge.play": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Play this challenge code"
+          }
+        }
+      }
+    },
+    "challenge.local": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Offline challenge codes, not live multiplayer. Replay any saved code, even after its day ends. Comparisons require the same game version."
+          }
+        }
+      }
+    },
+    "challenge.card": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Same loadout. Your turn to beat this run."
+          }
+        }
+      }
+    },
+    "momentum.wave": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wave"
+          }
+        }
+      }
+    },
+    "momentum.combo": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Combo"
+          }
+        }
+      }
+    },
+    "momentum.hint": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chain kills to charge Overdrive"
+          }
+        }
+      }
+    },
+    "momentum.overdrive": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OVERDRIVE"
+          }
+        }
+      }
+    },
+    "momentum.active": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OVERDRIVE ACTIVE"
+          }
+        }
+      }
+    },
+    "momentum.best": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Best combo"
+          }
+        }
+      }
+    },
+    "run.share": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share run card"
+          }
+        }
+      }
+    },
+    "run.retry": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Run it back"
+          }
+        }
+      }
+    },
+    "run.personalBest": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New personal best"
+          }
+        }
+      }
+    },
+    "battle.bosses": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bosses"
+          }
+        }
+      }
+    },
+    "journal.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The Hall of Scrap"
+          }
+        }
+      }
+    },
+    "journal.open": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Records & mastery"
+          }
+        }
+      }
+    },
+    "journal.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your best runs, earned medals and wildest inventions. Progress is saved on this device. Keep playing at your own pace."
+          }
+        }
+      }
+    },
+    "journal.empty": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your first run starts the story. Finish a battle to save its highlights here."
+          }
+        }
+      }
+    },
+    "mastery.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Commander mastery"
+          }
+        }
+      }
+    },
+    "mastery.firstSteps": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Field Tested · finish 3 runs"
+          }
+        }
+      }
+    },
+    "mastery.tinkerer": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inventor · discover 6 blueprints"
+          }
+        }
+      }
+    },
+    "mastery.bossHunter": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boss Hunter · defeat 3 bosses"
+          }
+        }
+      }
+    },
+    "mastery.comboArtist": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Combo Artist · reach a 16-kill chain"
+          }
+        }
+      }
+    },
+    "mastery.synergySeeker": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mad Scientist · discover all 3 synergies"
+          }
+        }
+      }
+    },
+    "mastery.veteran": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scrap Veteran · finish 25 runs"
+          }
+        }
+      }
+    },
+    "synergy.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Secret build synergies"
+          }
+        }
+      }
+    },
+    "synergy.activated": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BUILD SYNERGY ACTIVATED"
+          }
+        }
+      }
+    },
+    "synergy.thermalShock": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thermal Shock"
+          }
+        }
+      }
+    },
+    "synergy.thermalShock.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose Fire Core and Cryo Core in one run for +35% weapon damage."
+          }
+        }
+      }
+    },
+    "synergy.stormLattice": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Storm Lattice"
+          }
+        }
+      }
+    },
+    "synergy.stormLattice.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose Tesla Coil and Drone Core or Splitter Module in one run for two extra chain targets."
+          }
+        }
+      }
+    },
+    "synergy.perfectStorm": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perfect Storm"
+          }
+        }
+      }
+    },
+    "synergy.perfectStorm.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose Critical Processor and Overclock Module in one run for +15% critical chance and +20% attack speed."
+          }
+        }
+      }
+    },
+    "medal.bossBreaker": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boss Breaker"
+          }
+        }
+      }
+    },
+    "medal.comboAce": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Combo Ace"
+          }
+        }
+      }
+    },
+    "medal.survivor": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mission Complete"
+          }
+        }
+      }
+    },
+    "medal.inventor": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Synergy Inventor"
+          }
+        }
+      }
+    },
+    "run.preview": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preview run card"
+          }
+        }
+      }
     }
   }
 }

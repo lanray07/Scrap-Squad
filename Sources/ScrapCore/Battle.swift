@@ -51,6 +51,12 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
     public let mode: GameMode
     public let biome: Biome
     public let weapon: Weapon
+    public let seed: UInt64
+    public let challengeCode: String?
+    public private(set) var combo = ComboMeter()
+    public private(set) var synergies: Set<BuildSynergy> = []
+    public var wave: Int { min(6, 1 + Int(elapsed / 20)) }
+    private var comboScore = 0
     public private(set) var state: RunState = .fighting
     public private(set) var elapsed = 0.0
     public private(set) var player = Vector(0.5, 0.5)
@@ -66,11 +72,12 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
     public var priority: TargetPriority = .nearest
     public private(set) var bossSpawned = false
     public var bossArmor: Double? { enemies.first(where: \.boss).map { max(0, $0.armor / (90 * biome.difficulty)) } }
-    public var score: Int { kills * 100 + bosses * 1500 + Int(elapsed) * 10 }
+    public var score: Int { kills * 100 + bosses * 1500 + Int(elapsed) * 10 + comboScore }
     public var bossHealth: Double? { enemies.first(where: \.boss).map { $0.health / $0.maxHealth } }
     public var duration: Double { content.economy.runSeconds }
     public var anomalyElement: Element { Element.allCases[Int(profile.dailyKey.utf8.reduce(0) { $0 + Int($1) }) % Element.allCases.count] }
     private var rng: SeededRandom
+    private var offerRng: SeededRandom
     private var serial = 0
     private var nextSpawn = 0.0
     private var nextShot = 0.0
@@ -87,11 +94,13 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
     private var invulnerability = 0.0
     private var nextHazard = 12.0
 
-    public init(content: GameContent, profile: PlayerProfile, mode: GameMode, seed: UInt64 = UInt64.random(in: 1...UInt64.max)) {
+    public init(content: GameContent, profile: PlayerProfile, mode: GameMode, seed: UInt64 = UInt64.random(in: 1...UInt64.max), challengeCode: String? = nil) {
         self.content = content; self.profile = profile; self.mode = mode
         biome = content.biomes[min(max(0, profile.zone), content.biomes.count - 1)]
         weapon = content.weapons.first(where: { $0.id == profile.equippedWeapon }) ?? content.weapons[0]
         rng = SeededRandom(seed: seed)
+        offerRng = SeededRandom(seed: seed ^ 0x5343524150)
+        self.seed = seed; self.challengeCode = challengeCode
         let squad = content.robots.filter { profile.squad.contains($0.id) }
         maxHealth = squad.reduce(0) { $0 + $1.health * (1 + Double(profile.robotLevels[$1.id, default: 1] - 1) * 0.08) }
         health = maxHealth
@@ -110,6 +119,7 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
         guard state == .fighting else { return }
         let dt = min(max(delta, 0), 0.05)
         elapsed += dt
+        combo.tick(dt)
         abilityCooldown = max(0, abilityCooldown - dt)
         invulnerability = max(0, invulnerability - dt)
         health = min(maxHealth, health + regeneration * dt)
@@ -124,7 +134,7 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
                 let b = ($1.element == weapon.element ? 10 : 0) - selected[$1.id, default: 0]
                 return a == b ? $0.id < $1.id : a > b
             }
-            let offset = Int(rng.next() * Double(max(1, eligible.count - 2)))
+            let offset = Int(offerRng.next() * Double(max(1, eligible.count - 2)))
             choices = Array(eligible.dropFirst(offset).prefix(3))
             if !choices.isEmpty { state = .choosing; return }
         }
@@ -178,7 +188,7 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
             }
         }
         if elapsed >= nextShot && !enemies.isEmpty {
-            fire(); nextShot = elapsed + weapon.interval / attackMultiplier
+            fire(); nextShot = elapsed + weapon.interval / (attackMultiplier * (combo.overdrive > 0 ? 1.65 : 1))
         }
         collectKills()
         if health <= 0 { health = 0; state = .defeated }
@@ -190,7 +200,19 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
     public func choose(_ upgrade: Upgrade) {
         guard state == .choosing, choices.contains(where: { $0.id == upgrade.id }) else { return }
         selected[upgrade.id, default: 0] += 1; apply(kind: upgrade.kind, value: upgrade.value)
+        let kinds = Set(content.upgrades.filter { selected[$0.id, default: 0] > 0 }.map(\.kind))
+        for synergy in BuildSynergy.allCases where synergy.ready(kinds: kinds) && synergies.insert(synergy).inserted {
+            switch synergy {
+            case .thermalShock: damageMultiplier += 0.35
+            case .stormLattice: chain += 2
+            case .perfectStorm: criticalChance += 0.15; attackMultiplier += 0.2
+            }
+        }
         choices = []; state = .fighting
+    }
+    @discardableResult public func activateOverdrive() -> Bool {
+        guard state == .fighting else { return false }
+        return combo.activate()
     }
     private func apply(kind: String, value: Double) {
         switch kind {
@@ -225,7 +247,11 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
         collectKills()
     }
     public func retreat() { if state == .fighting || state == .choosing { state = .defeated } }
-    public func reward() -> RunReward { RunReward(id: id, mode: mode, zone: profile.zone, kills: kills, bosses: bosses, score: score, victory: state == .victory) }
+    public func reward() -> RunReward {
+        RunReward(id: id, mode: mode, zone: profile.zone, kills: kills, bosses: bosses, score: score, victory: state == .victory,
+            highlights: RunHighlights(weaponID: weapon.id, elapsed: elapsed, bestCombo: combo.best, overdrives: combo.activations,
+                synergies: BuildSynergy.allCases.filter { synergies.contains($0) }, challengeCode: challengeCode))
+    }
     private func spawn() {
         serial += 1
         let angle = rng.next() * .pi * 2
@@ -249,7 +275,7 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
             let critical = rng.next() < min(0.7, criticalChance)
             let bossBonus = enemies[index].boss && weapon.element == biome.weakness ? 1.75 : 1.0
             let shield = enemies[index].kind == "shield" && weapon.element == .ballistic ? 0.5 : 1.0
-            let damage = weapon.damage * damageMultiplier * bossBonus * shield * (critical ? 2 : 1)
+            let damage = weapon.damage * damageMultiplier * bossBonus * shield * (critical ? 2 : 1) * (combo.overdrive > 0 ? 1.35 : 1)
             if enemies[index].armor > 0 {
                 enemies[index].armor = max(0, enemies[index].armor - damage)
                 enemies[index].health -= damage * 0.45
@@ -269,6 +295,8 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
     }
     private func collectKills() {
         let dead = enemies.filter { $0.health <= 0 }
+        combo.register(kills: dead.count)
+        comboScore += dead.count * 25 * max(0, combo.multiplier - 1)
         kills += dead.count
         let bossKills = dead.filter(\.boss).count
         bosses += bossKills

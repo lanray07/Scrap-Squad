@@ -151,11 +151,12 @@ final class GameCenterDismissal: NSObject, GKGameCenterControllerDelegate {
     }
 }
 
-enum AudioCue: String { case city, battle, boss, weapon, explosion, robot, fusion, victory, ui }
+enum AudioCue: String { case city, battle, boss, weapon, explosion, robot, fusion, victory, ui, ability, combo, overdrive }
 @MainActor final class AudioBus {
     static let shared = AudioBus()
     private var music: AVAudioPlayer?
     private var voices: [AVAudioPlayer] = []
+    private init() { try? AVAudioSession.sharedInstance().setCategory(.ambient, options: [.mixWithOthers]) }
     func play(_ cue: AudioCue, preferences: Preferences) {
         let isMusic = [.city, .battle, .boss].contains(cue)
         let volume = preferences.masterVolume * (isMusic ? preferences.musicVolume : preferences.sfxVolume)
@@ -163,7 +164,7 @@ enum AudioCue: String { case city, battle, boss, weapon, explosion, robot, fusio
         if let url = Bundle.main.url(forResource: cue.rawValue, withExtension: "wav"), let player = try? AVAudioPlayer(contentsOf: url) {
             player.volume = Float(volume)
             if isMusic { music?.stop(); music = player; player.numberOfLoops = -1 }
-            else { voices.removeAll { !$0.isPlaying }; voices.append(player) }
+            else { voices.removeAll { !$0.isPlaying }; if voices.count >= 8 { voices.removeFirst().stop() }; voices.append(player) }
             player.play()
         } else if !isMusic { playTone(frequency: cue == .fusion ? 660 : 440, volume: volume) }
     }
@@ -189,6 +190,6 @@ enum FeedbackKind { case build, fusion, ability }
             if kind == .fusion { UINotificationFeedbackGenerator().notificationOccurred(.success) }
             else { UIImpactFeedbackGenerator(style: kind == .ability ? .heavy : .light).impactOccurred() }
         }
-        AudioBus.shared.play(kind == .fusion ? .fusion : .ui, preferences: preferences)
+        AudioBus.shared.play(kind == .fusion ? .fusion : kind == .ability ? .ability : .ui, preferences: preferences)
     }
 }
