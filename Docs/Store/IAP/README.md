@@ -15,4 +15,11 @@ StoreKit supplies localized names, descriptions and prices; the app does not use
 
 `UITests/Cosmetics.storekit` is a local Apple StoreKit test fixture, copied only into the UI-test bundle and referenced by the development run scheme. It is not used to supply fake products or entitlements to the distribution app. UI tests exercise purchases, selecting/removing finishes, persisted ownership/selections, restore and refund removal, and produce genuine review screenshots. The simulator test script uses installed iOS 26.2 and ad-hoc signing; the iOS 26.5 CLI runtime failed with the [Apple-reported StoreKitTest configuration regression](https://developer.apple.com/forums/thread/826971). Real App Store sandbox validation remains separate from local StoreKit testing.
 
-Final workflow outcomes, App Store product records and review screenshots are recorded here after verification. Nothing is submitted to App Review or released by this change.
+## Verified outcomes
+
+- [Native CI](https://github.com/lanray07/Scrap-Squad/actions/runs/37156023763): Apple SDK build, 16 core tests, 13 tooling tests and five UI tests passed. Both StoreKit test cases passed with genuine £2.99/£1.99 shop captures. Screenshot hashes, source attachment names, device and test identifiers are in `capture-provenance.json`.
+- [Signed release run 5](https://github.com/lanray07/Scrap-Squad/actions/runs/37155902457): version 1.0 build 5 uploaded and processed. Release app source is the same as the tested source; later commits adapt only the simulator test setup and publishing tools/docs.
+- [Metadata setup](https://github.com/lanray07/Scrap-Squad/actions/runs/37156476283) and [completion](https://github.com/lanray07/Scrap-Squad/actions/runs/37156627354): both product records, eleven localizations, exact UK base prices, 173 regions and review notes saved. Both actual review screenshots uploaded and processed. Build 5 attached and verified through Apple's API; `complete-status.json` records the results.
+- App Store Connect's existing Paid Apps agreement is Active. No agreement, bank account or tax form was changed. The public privacy policy explains Apple-managed purchases and on-device transaction verification. The app declares UserDefaults reason `CA92.1` for its own preferences.
+
+The app and both products remain in preparation, not submitted, approved or released. Complete real-device App Store sandbox/TestFlight checks before submission, including pending/Ask to Buy, cancellation and cross-device restore. The local tests do not certify Apple's live purchase environment.

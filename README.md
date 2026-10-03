@@ -102,21 +102,14 @@ The provider adapter accepts a JSON body with `sourceLanguage`, `targetLanguage`
 
 Game Center is disabled in release 1.0. Before enabling `GameCenterService.enabled`, register IDs `scrapsquad.survival`, `scrapsquad.bossrush`, `scrapsquad.daily`, and the six `scrapsquad.<achievement>` identifiers in App Store Connect. Add the entitlement, test the integration, provide appropriate consent and update the privacy policy/disclosures before enabling network reporting.
 
-For cosmetic products, add real non-consumable IDs to `App/Resources/StoreConfiguration.json` and map each to an existing robot and a six-digit hex tint:
-
-```json
-{
-  "cosmeticProductIDs": ["YOUR_REGISTERED_PRODUCT_ID"],
-  "finishes": {
-    "YOUR_REGISTERED_PRODUCT_ID": {"robotID": "bolt", "tint": "FFB7A5"}
-  }
-}
-```
+Two real non-consumable cosmetic packs are configured in `App/Resources/StoreConfiguration.json`: `com.ScrapSquad.app.founder` (£2.99 UK base price) and `com.ScrapSquad.app.styles` (£1.99). The catalog maps each pack to bundled robot finishes; Founder extras add optional golden weapon trails and a Squad badge. Ownership is verified through StoreKit, selections persist locally, and refunds remove access. No purchase changes combat or progression. See [cosmetic products and verification](Docs/Store/IAP/README.md).
 
 No ads, subscriptions, consumables, season-pass charges, analytics or remote community totals are shipped. These require separate service and product work, as recorded in the release checklist.
 
 ## App Store distribution
 
-The separate manual `release.yml` workflow consumes the existing Apple secrets, archives for iOS and uses Apple's cloud distribution signing during export/upload. It needs no registered development device. It removes its temporary private key after the run; keys and signing material are not saved as artifacts. Release workflow run 3 successfully uploaded version 1.0, build 3, using bundle ID `com.ScrapSquad.app` on 3 October 2026. Upload success does not mean App Review approval.
+The separate manual `release.yml` workflow consumes the existing Apple secrets, archives for iOS and uses Apple's cloud distribution signing during export/upload. It needs no registered development device. It removes its temporary private key after the run; keys and signing material are not saved as artifacts. [Release workflow run 5](https://github.com/lanray07/Scrap-Squad/actions/runs/37155902457) uploaded version 1.0, build 5, including cosmetic purchases and the app-only UserDefaults privacy reason. This build is attached in App Store Connect. Upload success does not mean App Review approval.
+
+`store-products.yml` updates the approved cosmetic products, eleven storefront localizations, exact GBP base prices and 173-region availability through Apple's API using the same existing secrets. Its optional completion step uploads actual review screenshots and attaches a processed build. It does not submit review, accept agreements or configure recurring subscriptions.
 
 The public [privacy policy](https://lanray07.github.io/Scrap-Squad/privacy.html) and [support website](https://lanray07.github.io/Scrap-Squad/) are hosted without a paid service on GitHub Pages. See [current App Store Connect status](Docs/Store/APP_STORE_CONNECT.md) for saved metadata and submission preparation.

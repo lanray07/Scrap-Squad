@@ -1,6 +1,6 @@
 # Verification snapshot — 3 October 2026
 
-**Updated:** Xcode compilation and iPhone simulator smoke tests pass on GitHub. Signed version 1.0, build 3 was uploaded through the separate release workflow and attached in App Store Connect. Current local localization tooling has 13 passing tests. See [store preparation status](Store/APP_STORE_CONNECT.md) and [the simulator run and artifacts](GITHUB_BUILD.md). The rows below retain the earlier Windows-host verification context.
+**Updated:** Signed version 1.0, build 5 with optional cosmetic purchases is uploaded and attached in App Store Connect. [Native validation](https://github.com/lanray07/Scrap-Squad/actions/runs/37156023763) passed 16 core tests, 13 localization-tooling tests, Apple SDK compilation and five iPhone UI tests, including StoreKit purchase/equip/relaunch/restore/refund checks. All 332 English source keys resolve; additional in-app languages remain drafts. See [store preparation status](Store/APP_STORE_CONNECT.md) and [cosmetic verification](Store/IAP/README.md). The rows below retain the earlier Windows-host verification context.
 
 | Check | Result |
 | --- | --- |
