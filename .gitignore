@@ -8,3 +8,4 @@ __pycache__/
 .env
 localization-review.json
 App/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.png
+/Scrap-Squad-Store-Localization-Pack.zip

@@ -12,7 +12,7 @@ def main():
         if batch['locale']!=locale or len(keys)!=len(set(keys)) or set(keys)!=set(catalog): failures.append(locale+': catalog coverage mismatch')
         for row in rows:
             entry=catalog.get(row['key'])
-            if not entry or row['sourceHash']!=localize.digest(localize.source(entry)): failures.append(locale+': stale source '+row['key'])
+            if not entry or row['source']!=localize.source(entry) or row['sourceHash']!=localize.digest(localize.source(entry)): failures.append(locale+': stale source '+row['key'])
             problems=localize.issues(row['source'],row['translation'])
             if any(x in ('placeholder mismatch','empty translation') or x.startswith('protected name changed:') for x in problems): failures.append(locale+': integrity error '+row['key'])
             if row.get('approved'): failures.append(locale+': unexpected approval '+row['key'])

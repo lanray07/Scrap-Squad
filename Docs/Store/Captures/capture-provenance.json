@@ -1,0 +1,92 @@
+{
+  "Store-10-pause": {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "22452A91-4697-4369-8812-53ADB77EB73B",
+    "deviceName": "iPhone 17 Pro",
+    "exportedFileName": "5D6FD5E4-5EA2-4233-927B-672C10DFFFE4.png",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "Store-10-pause_0_EFCF25C0-52F3-46C3-BBB6-0C297EF601CE.png",
+    "timestamp": 1791058112.457
+  },
+  "Store-09-battle": {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "22452A91-4697-4369-8812-53ADB77EB73B",
+    "deviceName": "iPhone 17 Pro",
+    "exportedFileName": "2F47BF36-593A-4929-998E-D6F241C4F4B2.png",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "Store-09-battle_0_45D12FC8-19D5-43F4-B537-5F2A1E91CFAC.png",
+    "timestamp": 1791058110.69
+  },
+  "Store-08-lobby": {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "22452A91-4697-4369-8812-53ADB77EB73B",
+    "deviceName": "iPhone 17 Pro",
+    "exportedFileName": "8109C936-4C70-43D6-94BB-6B75BAC5C350.png",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "Store-08-lobby_0_6279CA40-3459-4ECD-8988-D93E332FEB83.png",
+    "timestamp": 1791058107.921
+  },
+  "Store-07-fusion": {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "22452A91-4697-4369-8812-53ADB77EB73B",
+    "deviceName": "iPhone 17 Pro",
+    "exportedFileName": "F5187932-154B-40C8-8E5B-4CF0AD48A799.png",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "Store-07-fusion_0_CEE8E82B-8B1F-4D96-9EBA-B169F0FD604C.png",
+    "timestamp": 1791058100.372
+  },
+  "Store-06-roulette": {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "22452A91-4697-4369-8812-53ADB77EB73B",
+    "deviceName": "iPhone 17 Pro",
+    "exportedFileName": "9F9737CC-DC09-4ED9-AD03-DD5004CFFFAA.png",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "Store-06-roulette_0_4A7F63B3-4658-43FF-9863-1AE1A07725B3.png",
+    "timestamp": 1791058093.666
+  },
+  "Store-05-workshop": {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "22452A91-4697-4369-8812-53ADB77EB73B",
+    "deviceName": "iPhone 17 Pro",
+    "exportedFileName": "6CA78B31-6245-4295-AE3C-E3426F667433.png",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "Store-05-workshop_0_7B01DDB1-074D-4BC6-A776-71BF5964577A.png",
+    "timestamp": 1791058091.33
+  },
+  "Store-04-blueprints": {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "22452A91-4697-4369-8812-53ADB77EB73B",
+    "deviceName": "iPhone 17 Pro",
+    "exportedFileName": "DC7BEF3D-ADB0-45D4-B16B-3B72937D464F.png",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "Store-04-blueprints_0_A2760CA0-78F8-4A33-A446-EE6B0D9AF7EB.png",
+    "timestamp": 1791058087.384
+  },
+  "Store-03-squad": {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "22452A91-4697-4369-8812-53ADB77EB73B",
+    "deviceName": "iPhone 17 Pro",
+    "exportedFileName": "58642AD3-5CDD-479E-87FA-FAB63876A2FE.png",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "Store-03-squad_0_C06772D3-4D78-4075-9450-D9A73D46363F.png",
+    "timestamp": 1791058084.047
+  },
+  "Store-02-city": {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "22452A91-4697-4369-8812-53ADB77EB73B",
+    "deviceName": "iPhone 17 Pro",
+    "exportedFileName": "B6BA80D8-CF31-407D-8BC3-3D372DA42A32.png",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "Store-02-city_0_BD29E4F8-24C8-4978-8761-6A41B7C8507F.png",
+    "timestamp": 1791058080.731
+  },
+  "Store-01-onboarding": {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "22452A91-4697-4369-8812-53ADB77EB73B",
+    "deviceName": "iPhone 17 Pro",
+    "exportedFileName": "7193B6BD-6590-4AA1-AA89-7CB993D5749C.png",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "Store-01-onboarding_0_188A34BE-4CF2-4D7A-8EF3-1B0B24D3625C.png",
+    "timestamp": 1791058078.172
+  }
+}

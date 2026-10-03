@@ -13,7 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / 'App/Resources/Localizable.xcstrings'
 LOCALES = ['es','fr','de','it','pt','pt-BR','ja','ko','zh-Hans','zh-Hant']
-PLACEHOLDER = re.compile(r'%([0-9]+\$)?[-+0-9.]*[a-zA-Z@]|\{[^{}]+\}|__KEEP_\d+__')
+PLACEHOLDER = re.compile(r'%(?:[0-9]+\$)?[-+#0-9.*]*(?:hh|h|ll|l|L|z|j|t)?[diuoxXfFeEgGaAcCsSp@%]|\{[^{}]+\}|__KEEP_\d+__')
 PROTECTED = ['Scrap Squad', 'Scrap City', 'BOLT', 'TANK', 'ZIP', 'PATCH', 'NOVA', 'BOOMER', 'GLITCH', 'MAGNET']
 
 def read(path):

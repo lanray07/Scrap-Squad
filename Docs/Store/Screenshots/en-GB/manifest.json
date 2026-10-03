@@ -1,0 +1,149 @@
+{
+  "locale": "en-GB",
+  "width": 1320,
+  "height": 2868,
+  "format": "PNG RGB without alpha",
+  "status": "draft-for-review",
+  "screenshots": [
+    {
+      "order": 1,
+      "capture": "Store-09-battle",
+      "headline": [
+        "MERGE. FIGHT.",
+        "SURVIVE."
+      ],
+      "supportingCopy": "Robot action. Your invention, unleashed.",
+      "keyword": "ROBOT SURVIVAL",
+      "file": "01-battle.png",
+      "source": "Docs/Store/Captures/Store-09-battle.png",
+      "sourceSHA256": "a257b9fd73d5c8e081eacd08bdfd0d9a65cc78d1e46d718846c28b4fb8a3704b",
+      "exportSHA256": "6e9e6889b35dc9809e91ffbc2ee15051820099e16fb4612abf15c2c01c8ff57c"
+    },
+    {
+      "order": 2,
+      "capture": "Store-05-workshop",
+      "headline": [
+        "SCRAP INTO",
+        "FIREPOWER."
+      ],
+      "supportingCopy": "Combine weapons. Discover your next build.",
+      "keyword": "WEAPON FUSION",
+      "file": "02-workshop.png",
+      "source": "Docs/Store/Captures/Store-05-workshop.png",
+      "sourceSHA256": "9955e7e258849d85d7668e4ab98a1548972b71fe5319f1169f0f68e648069624",
+      "exportSHA256": "99a3e1b7701ebce0c633b81058f1630b3f95c3793ba43eeacb12585f97588cc7"
+    },
+    {
+      "order": 3,
+      "capture": "Store-03-squad",
+      "headline": [
+        "SMALL BOTS.",
+        "BIG ATTITUDE."
+      ],
+      "supportingCopy": "Collect eight robots with distinct abilities.",
+      "keyword": "SQUAD BUILDING",
+      "file": "03-squad.png",
+      "source": "Docs/Store/Captures/Store-03-squad.png",
+      "sourceSHA256": "0fe336460978ca59c0ee8370d43ec837b551ad32034a14cfd9102f4c1262ecbf",
+      "exportSHA256": "88c21abf8ec05223f9eac3d750ea8d004aa359a9a76c4fd77d55dd6b13f374e3"
+    },
+    {
+      "order": 4,
+      "capture": "Store-07-fusion",
+      "headline": [
+        "MEET YOUR",
+        "NEXT INVENTION."
+      ],
+      "supportingCopy": "Fuse a Flame Blaster. Equip the discovery.",
+      "keyword": "MERGE WEAPONS",
+      "file": "04-fusion.png",
+      "source": "Docs/Store/Captures/Store-07-fusion.png",
+      "sourceSHA256": "9e696731d1a8054cb4d24c7d899582e64c2a1766f76b33eb4ceaa05c117b665b",
+      "exportSHA256": "3576f35ce2803f3e368d00ffad294734a501c2b2f976569d6cb8d184ce672a63"
+    },
+    {
+      "order": 5,
+      "capture": "Store-04-blueprints",
+      "headline": [
+        "12 BLUEPRINTS.",
+        "ONE CURIOUS MIND."
+      ],
+      "supportingCopy": "Follow clues. Experiment with combinations.",
+      "keyword": "CRAFTING & DISCOVERY",
+      "file": "05-blueprints.png",
+      "source": "Docs/Store/Captures/Store-04-blueprints.png",
+      "sourceSHA256": "d3d6273f426f6d4c6a0c6650ba52f7ee7db28ae92ce9737021a899fc47808929",
+      "exportSHA256": "6585eabff43b7770a9eda5a4aedc6b4866d3a661796da93c8ccc8ac62a5e738c"
+    },
+    {
+      "order": 6,
+      "capture": "Store-02-city",
+      "headline": [
+        "BUILD A CITY",
+        "FROM SCRAP."
+      ],
+      "supportingCopy": "Construct facilities. Strengthen your squad.",
+      "keyword": "CITY PROGRESSION",
+      "file": "06-city.png",
+      "source": "Docs/Store/Captures/Store-02-city.png",
+      "sourceSHA256": "9bd0fa3f62514fb66a1db111d81d51f990cad44d9d581216dc25a8ec2d21d6c2",
+      "exportSHA256": "6cb44fbc89ffb0c82c7edc6ef18f731180313c58864323ac0ceb1fab376833d6"
+    },
+    {
+      "order": 7,
+      "capture": "Store-08-lobby",
+      "headline": [
+        "PLAN THE BUILD.",
+        "TAKE THE FIELD."
+      ],
+      "supportingCopy": "Choose a mode. Match elemental weaknesses.",
+      "keyword": "TACTICAL LOADOUTS",
+      "file": "07-lobby.png",
+      "source": "Docs/Store/Captures/Store-08-lobby.png",
+      "sourceSHA256": "036a8d16165d64924a71b8f8f41e0684c6a70fe757b7d746e664300ba11b9484",
+      "exportSHA256": "7b51af08ea564811c43d56c47ff84450e3c1dd409a625dfe75d997ef8729d86e"
+    },
+    {
+      "order": 8,
+      "capture": "Store-06-roulette",
+      "headline": [
+        "TWO WEAPONS.",
+        "NEW POSSIBILITIES."
+      ],
+      "supportingCopy": "See the outcomes before you fuse.",
+      "keyword": "FUSION ROULETTE",
+      "file": "08-roulette.png",
+      "source": "Docs/Store/Captures/Store-06-roulette.png",
+      "sourceSHA256": "28d9df8cc8b6106d2773a8914fabffaeb497032c82bc94937f0bed59450639ff",
+      "exportSHA256": "bd4304769841a9094c8c4040d94516857416a47fefc066c552058ad27f4a6833"
+    },
+    {
+      "order": 9,
+      "capture": "Store-01-onboarding",
+      "headline": [
+        "YOUR SQUAD",
+        "STARTS HERE."
+      ],
+      "supportingCopy": "Meet BOLT. Make your first invention.",
+      "keyword": "ROBOT COLLECTION",
+      "file": "09-onboarding.png",
+      "source": "Docs/Store/Captures/Store-01-onboarding.png",
+      "sourceSHA256": "bd4f1940d48c40dd6d287edd8f2dd6c296f0abc0b685008491c34cc1c4b9f5a3",
+      "exportSHA256": "d401b04f72b159597c074daabdee8c282547182e62fad5e38cbab963fd1aa6c4"
+    },
+    {
+      "order": 10,
+      "capture": "Store-10-pause",
+      "headline": [
+        "PICK IT UP.",
+        "PUT IT DOWN."
+      ],
+      "supportingCopy": "Pause the mission. Return when you’re ready.",
+      "keyword": "PLAY AT YOUR PACE",
+      "file": "10-pause.png",
+      "source": "Docs/Store/Captures/Store-10-pause.png",
+      "sourceSHA256": "3801529e77a77dab8cf0379676adbc7be8afba1a0850878d0cf69e61a6983cde",
+      "exportSHA256": "4823a659c41a8bb2a9e0d25be7dd174d46e8a91ad12d37bb7648fdf5368c16d2"
+    }
+  ]
+}

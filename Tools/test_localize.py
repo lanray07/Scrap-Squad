@@ -6,6 +6,12 @@ import offline_localize
 from unittest.mock import patch
 
 class LocalizationTests(unittest.TestCase):
+    def test_printf_length_and_precision_are_preserved(self):
+        original='Found %1$lld cores, %02.1f power, %@, 100%%.'
+        protected,tokens=localize.protect(original)
+        self.assertEqual(localize.unprotect(protected,tokens),original)
+        self.assertEqual(tokens,['%1$lld','%02.1f','%@','%%'])
+        self.assertIn('placeholder mismatch',localize.issues('Found %lld','Trouvé %d'))
     def test_reviewed_unchanged_term_can_be_explicitly_accepted(self):
         with tempfile.TemporaryDirectory() as directory:
             catalog=Path(directory)/'catalog.json'; batch=Path(directory)/'batch.json'
