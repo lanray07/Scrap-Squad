@@ -1,0 +1,1184 @@
+CODEX MASTER BUILD PROMPT
+PROJECT: SCRAP SQUAD: MERGE & SURVIVE
+PLATFORM: iOS + iPadOS
+PRODUCT TYPE: Premium-quality free-to-play idle / merge / roguelite action RPG
+
+========================================================
+1. ROLE & OBJECTIVE
+========================================================
+
+Act as a senior iOS game engineer, gameplay designer, economy designer,
+UI/UX designer, App Store growth specialist, localization engineer,
+accessibility specialist, and QA engineer.
+
+Build a production-quality original mobile game called:
+
+SCRAP SQUAD: MERGE & SURVIVE
+
+Core marketing promise:
+
+"Build it. Merge it. Survive the swarm."
+
+Secondary hook:
+
+"What happens when you merge ANY two weapons?"
+
+The game should combine:
+
+- Idle progression
+- Automatic combat
+- Weapon merging
+- Component-based crafting
+- Roguelite choices
+- Robot collection
+- Squad building
+- Boss battles
+- Base rebuilding
+- Blueprint discovery
+- Offline rewards
+- Seasonal events
+- Achievements
+- Leaderboards
+
+IMPORTANT:
+
+This must be an ORIGINAL game.
+
+Do not copy:
+- characters
+- artwork
+- UI
+- maps
+- dialogue
+- names
+- icons
+- screenshots
+- sound effects
+- music
+- proprietary mechanics
+- store assets
+
+from Idle Cat Gunner or any other game.
+
+Use genre conventions only as inspiration.
+
+The finished product must have its own recognizable visual identity,
+characters, progression system, world, economy and gameplay.
+
+========================================================
+2. PRODUCT VISION
+========================================================
+
+Scrap Squad takes place after an enormous machine catastrophe.
+
+Civilization's abandoned machines have mutated into hostile mechanical
+creatures.
+
+Small surviving robots have established a settlement called:
+
+SCRAP CITY
+
+The player commands a squad of robots that travels into dangerous zones
+to:
+
+- fight machine swarms
+- collect scrap
+- recover components
+- discover blueprints
+- construct weapons
+- rescue robots
+- defeat bosses
+- rebuild Scrap City
+
+The emotional progression should be:
+
+SMALL → CAPABLE → POWERFUL → RIDICULOUSLY POWERFUL
+
+Early weapons should feel improvised.
+
+Endgame weapons should create spectacular moments involving:
+
+- missile swarms
+- chain lightning
+- giant lasers
+- orbital strikes
+- drone armies
+- freezing explosions
+- plasma storms
+
+The game should remain readable and satisfying on a phone.
+
+========================================================
+3. CORE GAME LOOP
+========================================================
+
+Design the primary loop around:
+
+FIGHT
+↓
+COLLECT SCRAP
+↓
+FIND COMPONENTS
+↓
+MERGE WEAPONS
+↓
+DISCOVER BLUEPRINTS
+↓
+DEFEAT BOSSES
+↓
+UPGRADE ROBOTS
+↓
+REBUILD SCRAP CITY
+↓
+ENTER HARDER ZONE
+↓
+REPEAT
+
+Sessions should work at multiple lengths:
+
+30 seconds
+2 minutes
+5 minutes
+15+ minutes
+
+Players should always feel that they made progress.
+
+========================================================
+4. COMBAT SYSTEM
+========================================================
+
+Create responsive real-time combat optimized for mobile.
+
+The robot squad automatically attacks nearby enemies.
+
+Player interaction should include:
+
+- movement
+- ability activation
+- targeting priorities
+- temporary power choices
+- weapon fusion
+- squad positioning
+- boss preparation
+
+Avoid excessive micromanagement.
+
+The game should be playable primarily with one hand on iPhone.
+
+Provide:
+
+- satisfying hit reactions
+- critical-hit effects
+- damage numbers
+- enemy knockback
+- explosions
+- screen shake controls
+- haptic feedback
+- weapon trails
+- boss warnings
+- combo effects
+
+Include settings to reduce:
+
+- flashing
+- screen shake
+- particle intensity
+- damage numbers
+
+========================================================
+5. ROGUELITE RUN SYSTEM
+========================================================
+
+During missions, periodically present three upgrade choices.
+
+Example:
+
+CHOOSE YOUR UPGRADE
+
+⚡ Tesla Coil
+Chain electricity between enemies.
+
+🔥 Fire Core
+Adds burning damage.
+
+❄️ Cryo Core
+Slows and freezes enemies.
+
+Other examples:
+
+Drone Core
+Ricochet Chip
+Splitter Module
+Explosive Payload
+Plasma Cell
+Magnetic Collector
+Critical Processor
+Repair Nanites
+Overclock Module
+
+Choices should interact with the player's existing build.
+
+Avoid purely random meaningless upgrades.
+
+========================================================
+6. WEAPON FUSION SYSTEM
+========================================================
+
+This is the signature mechanic.
+
+Allow weapons and components to combine into new inventions.
+
+Example:
+
+Basic Blaster + Fire Core
+→ Flame Blaster
+
+Flame Blaster + Drone Core
+→ Fire Drone
+
+Basic Blaster + Tesla Core
+→ Arc Blaster
+
+Arc Blaster + Splitter Module
+→ Chain Cannon
+
+Shotgun + Cryo Core
+→ Frost Shotgun
+
+Frost Shotgun + Explosive Payload
+→ Blizzard Cannon
+
+Rocket Launcher + Drone Core
+→ Missile Swarm
+
+Laser + Ricochet Chip
+→ Prism Laser
+
+Create a scalable data-driven recipe architecture.
+
+Do NOT hard-code hundreds of recipes directly into UI logic.
+
+Create reusable models such as:
+
+Weapon
+Component
+FusionRecipe
+WeaponModifier
+WeaponRarity
+WeaponElement
+WeaponEvolution
+Blueprint
+
+Support rarity:
+
+Common
+Uncommon
+Rare
+Epic
+Legendary
+Mythic
+
+========================================================
+7. FUSION ROULETTE
+========================================================
+
+Create a special system called:
+
+FUSION ROULETTE
+
+Players insert:
+
+Weapon A
++
+Weapon B
++
+Mystery Core
+
+The system generates a compatible hybrid weapon.
+
+Present this as a dramatic sequence.
+
+Example:
+
+FUSION INITIATED...
+
+3
+2
+1
+
+SYSTEM OVERLOAD!
+
+NEW WEAPON DISCOVERED
+
+BLIZZARD CANNON
+
+Include:
+
+- animation
+- haptics
+- particles
+- sound
+- rarity reveal
+- blueprint unlock
+- shareable result card
+
+The result must come from controlled game rules rather than misleading
+randomness.
+
+Clearly disclose probabilities where applicable to purchasable/random
+items.
+
+========================================================
+8. BLUEPRINT COLLECTION
+========================================================
+
+Create a Blueprint Lab.
+
+Example:
+
+BLUEPRINT DATABASE
+
+47 / 180 DISCOVERED
+
+Categories:
+
+Ballistic
+Fire
+Cryo
+Electric
+Energy
+Explosive
+Drone
+Experimental
+Mythic
+
+Unknown recipes should appear as silhouettes.
+
+Provide subtle clues rather than revealing every combination immediately.
+
+Players should be motivated to complete the collection.
+
+========================================================
+9. ROBOT CHARACTERS
+========================================================
+
+Create original robots with distinct silhouettes and personalities.
+
+Initial roster:
+
+BOLT
+Balanced starter.
+
+TANK
+Heavy weapon specialist.
+
+ZIP
+High attack speed.
+
+PATCH
+Healing and repair specialist.
+
+NOVA
+Energy weapon specialist.
+
+BOOMER
+Explosives specialist.
+
+GLITCH
+Hacking/status specialist.
+
+MAGNET
+Resource collection specialist.
+
+Each robot requires:
+
+- unique silhouette
+- personality
+- passive skill
+- active ability
+- stats
+- rarity
+- upgrade path
+- animation set
+- character card
+- profile artwork
+- victory animation
+
+Architect the game to eventually support 40+ robots.
+
+========================================================
+10. SQUAD SYSTEM
+========================================================
+
+Allow players to build squads.
+
+Start with smaller squads and unlock additional capacity through
+progression.
+
+Players should experiment with synergies.
+
+Examples:
+
+Nova + Tesla weapons
+→ increased electrical damage
+
+Boomer + rockets
+→ increased explosion radius
+
+Patch + support drones
+→ improved regeneration
+
+Magnet + resource modules
+→ increased scrap collection
+
+Create visible synergy indicators.
+
+========================================================
+11. BOSS SYSTEM
+========================================================
+
+Bosses must involve more than large HP bars.
+
+Create bosses with:
+
+- phases
+- attack patterns
+- telegraphed attacks
+- elemental weaknesses
+- breakable components
+- environmental hazards
+
+Example:
+
+THE SCRAP TITAN
+
+Weakness:
+⚡ ELECTRIC
+
+Electrical damage +75%
+
+Other bosses:
+
+IRON MAW
+THE HARVESTER
+VOID ENGINE
+JUNK QUEEN
+OMEGA WARDEN
+THE ASSEMBLER
+
+Boss encounters should produce memorable visual moments.
+
+========================================================
+12. SCRAP CITY
+========================================================
+
+Scrap City is the player's persistent home base.
+
+Start as a tiny junkyard.
+
+Gradually transform it into a thriving robot settlement.
+
+Buildings:
+
+WORKSHOP
+Weapon construction and merging.
+
+RESEARCH LAB
+Permanent technology upgrades.
+
+ROBOT FACTORY
+Character unlocks and upgrades.
+
+EXPEDITION DOCK
+Offline missions.
+
+BLUEPRINT LAB
+Weapon discovery database.
+
+ARENA
+Challenge modes.
+
+PORTAL
+Events and special missions.
+
+MARKET
+Resources and cosmetics.
+
+COMMAND CENTER
+Account progression.
+
+Visually show buildings improving.
+
+The city itself should communicate progression.
+
+========================================================
+13. WORLD / BIOMES
+========================================================
+
+Create original biomes.
+
+Examples:
+
+Rust Flats
+Neon Junkyard
+Frozen Foundry
+Toxic Processing Plant
+Abandoned Megacity
+Electric Wastes
+Machine Graveyard
+Orbital Factory
+Quantum Rift
+
+Each biome needs:
+
+- distinctive palette
+- unique enemies
+- environmental hazards
+- boss
+- music variation
+- loot table
+- background storytelling
+
+========================================================
+14. ENEMY DESIGN
+========================================================
+
+Create multiple enemy archetypes:
+
+Swarmers
+Tanks
+Ranged units
+Shield units
+Repair units
+Exploders
+Burrowers
+Flying enemies
+Elite enemies
+Mini-bosses
+
+Enemy difficulty should come from interesting combinations rather than
+simply multiplying HP.
+
+========================================================
+15. OFFLINE PROGRESSION
+========================================================
+
+Implement meaningful offline rewards.
+
+Example:
+
+WELCOME BACK, COMMANDER!
+
+Away:
+7h 42m
+
+Collected:
+
+284K Credits
+18.2K Scrap
+14 Cores
+3 Equipment Crates
+
+[CLAIM]
+
+Occasionally:
+
+YOUR EXPEDITION FOUND SOMETHING...
+
+RARE BLUEPRINT DISCOVERED
+
+Cap offline accumulation at a reasonable configurable duration.
+
+Do not manipulate users with fake offline results.
+
+========================================================
+16. PROGRESSION
+========================================================
+
+Implement multiple progression layers without making the UI confusing.
+
+Player Level
+Robot Level
+Robot Rank
+Weapon Level
+Blueprint Collection
+Research Tree
+Scrap City Level
+Biome Progress
+Account Achievements
+
+Include a prestige-like late-game system, but give it an original identity.
+
+Call it:
+
+CORE REBOOT
+
+The player resets selected progression in exchange for permanent
+technology bonuses.
+
+Clearly explain what is retained and what resets before confirmation.
+
+========================================================
+17. DAILY / WEEKLY CONTENT
+========================================================
+
+Create:
+
+Daily missions
+Weekly missions
+Boss challenges
+Weapon challenges
+Robot-specific missions
+Limited-time events
+Community goals
+
+Avoid making the experience dependent on unhealthy streak pressure.
+
+Missed days should not permanently disadvantage players.
+
+========================================================
+18. GAME MODES
+========================================================
+
+Implement architecture supporting:
+
+CAMPAIGN
+Primary progression.
+
+SURVIVAL
+Endless waves.
+
+BOSS RUSH
+Sequential boss battles.
+
+SCRAP RUN
+Resource farming.
+
+FUSION LAB
+Experimental weapon challenges.
+
+DAILY ANOMALY
+Daily rule modifiers.
+
+ARENA
+Score-based challenge mode.
+
+========================================================
+19. GAME CENTER
+========================================================
+
+Integrate Apple Game Center where appropriate.
+
+Include achievements such as:
+
+FIRST FUSION
+Create your first fusion weapon.
+
+MAD SCIENTIST
+Discover 25 blueprints.
+
+SCRAP ENGINEER
+Discover 100 blueprints.
+
+SWARM BREAKER
+Defeat 10,000 enemies.
+
+BOSS BREAKER
+Defeat 100 bosses.
+
+MYTHIC ENGINEER
+Create your first Mythic weapon.
+
+Include leaderboards for modes such as:
+
+Survival score
+Boss Rush score
+Daily Anomaly score
+
+========================================================
+20. ECONOMY
+========================================================
+
+Create a balanced economy.
+
+Currencies could include:
+
+Credits
+Scrap
+Cores
+Blueprint Tokens
+
+Avoid creating unnecessary currencies.
+
+Define:
+
+sources
+sinks
+upgrade costs
+reward curves
+difficulty curves
+
+Provide economy configuration through data files rather than hard-coded
+numbers.
+
+========================================================
+21. MONETIZATION
+========================================================
+
+Use StoreKit 2.
+
+Potential purchases:
+
+Starter Pack
+Ad Removal
+Cosmetic Packs
+Robot Skins
+Season Pass
+Optional resource bundles
+
+Rewarded advertising should be optional.
+
+Possible rewarded ad actions:
+
+Double offline rewards
+Bonus mission reward
+Optional extra crate
+Temporary resource boost
+
+Do not make mandatory advertising part of the core experience.
+
+Do not intentionally frustrate players into paying.
+
+Provide:
+
+Purchase
+Restore Purchases
+Transaction verification
+Subscription status
+Error handling
+Parental purchase safeguards where applicable
+
+Do not claim purchases are discounted unless a genuine comparison basis
+exists.
+
+========================================================
+22. PREMIUM UX
+========================================================
+
+The interface should feel like a high-budget mobile game.
+
+Design principles:
+
+- extremely clear hierarchy
+- large readable controls
+- minimal clutter
+- satisfying animation
+- responsive transitions
+- premium typography
+- tactile buttons
+- accessible contrast
+- consistent iconography
+
+Primary navigation:
+
+CITY
+SQUAD
+BATTLE
+BLUEPRINTS
+SHOP
+
+Battle should be the prominent central action.
+
+========================================================
+23. ART DIRECTION
+========================================================
+
+Create an ORIGINAL visual identity.
+
+Direction:
+
+Stylized premium 3D
+Toy-like robots
+Expressive animation
+Colourful post-apocalyptic environments
+Oversized weapons
+Friendly character design
+Spectacular combat effects
+
+Avoid copying recognizable characters or art direction from competing
+games.
+
+Robots should be suitable for:
+
+App icons
+Screenshots
+Social videos
+Character cards
+Merchandise
+Promotional artwork
+
+========================================================
+24. AUDIO
+========================================================
+
+Create architecture for:
+
+Background music
+Battle music
+Boss music
+UI sounds
+Weapon sounds
+Explosion sounds
+Robot vocalizations
+Fusion reveal audio
+Victory sounds
+
+Allow independent controls:
+
+Master
+Music
+SFX
+
+Support mute.
+
+Do not use copyrighted audio without appropriate rights.
+
+========================================================
+25. ACCESSIBILITY
+========================================================
+
+Implement:
+
+VoiceOver labels
+Dynamic Type where practical
+Reduced Motion support
+Reduced screen shake
+Reduced flashes
+Haptic toggle
+Music/SFX controls
+High-contrast UI
+Colour-independent rarity indicators
+Readable typography
+
+Do not communicate important information using colour alone.
+
+========================================================
+26. LOCALIZATION + AUTO-TRANSLATION
+========================================================
+
+Localization is a FIRST-CLASS requirement.
+
+Do not hard-code user-facing strings.
+
+Use Apple's modern localization system:
+
+String Catalogs (.xcstrings)
+
+Build:
+
+LocalizationManager
+LocaleManager
+LocalizedFormatting utilities
+
+Initial source language:
+
+English
+
+Architect for:
+
+English
+Spanish
+French
+German
+Italian
+Portuguese
+Brazilian Portuguese
+Japanese
+Korean
+Simplified Chinese
+Traditional Chinese
+
+Make additional locales easy to add.
+
+Localize:
+
+UI
+tutorial
+onboarding
+weapon descriptions
+robot descriptions
+missions
+achievements
+settings
+notifications
+error messages
+store text
+accessibility labels
+promotional text where applicable
+
+AUTO-TRANSLATION WORKFLOW:
+
+Create a developer-side localization pipeline capable of:
+
+1. Extracting new source strings.
+2. Identifying missing translations.
+3. Exporting them in structured JSON.
+4. Sending strings to a configurable translation provider/API.
+5. Receiving translations.
+6. Validating placeholders.
+7. Preventing accidental translation of variables and product names.
+8. Importing approved translations into String Catalogs.
+9. Flagging unusually long translations.
+10. Flagging untranslated strings.
+11. Supporting manual human review before production release.
+
+NEVER silently send user-generated content to a translation service.
+
+The automated translation pipeline is for application/localization
+content unless explicit user consent and appropriate privacy protections
+are implemented.
+
+Include pseudo-localization testing.
+
+Test:
+
+German expansion
+French expansion
+CJK layout
+RTL-readiness
+
+Even if RTL languages are not included at launch, avoid architecture
+that makes future RTL support difficult.
+
+========================================================
+27. APP STORE OPTIMIZATION / SEO
+========================================================
+
+Treat App Store discoverability as part of the product.
+
+Primary name:
+
+Scrap Squad: Merge & Survive
+
+Potential subtitle:
+
+Idle Robot RPG & Merge Game
+
+Research and validate metadata before release rather than keyword
+stuffing blindly.
+
+Target relevant concepts such as:
+
+idle RPG
+robot game
+merge game
+survival game
+idle game
+merge weapons
+robot RPG
+roguelite
+offline RPG
+upgrade game
+crafting game
+
+Respect Apple's current metadata limits and policies.
+
+Create localized metadata for each supported storefront/language.
+
+========================================================
+28. SEO/ASO-OPTIMIZED APP DESCRIPTION
+========================================================
+
+Generate polished App Store copy.
+
+Opening concept:
+
+BUILD. MERGE. SURVIVE.
+
+The machines have taken over.
+
+Assemble your Scrap Squad, explore dangerous wastelands, collect strange
+components and turn ordinary weapons into outrageous inventions.
+
+Merge weapons.
+Discover hidden blueprints.
+Build your robot squad.
+Reconstruct Scrap City.
+Defeat massive machine bosses.
+
+How far can your inventions take you?
+
+Then naturally explain:
+
+WEAPON FUSION
+
+Combine weapons and components to discover powerful creations.
+
+BUILD YOUR SCRAP SQUAD
+
+Collect robots with different combat abilities and squad synergies.
+
+DISCOVER BLUEPRINTS
+
+Experiment with combinations and expand your Blueprint Database.
+
+SURVIVE THE SWARM
+
+Fight increasingly dangerous machine hordes and challenging bosses.
+
+REBUILD SCRAP CITY
+
+Upgrade your settlement and unlock new facilities.
+
+KEEP PROGRESSING
+
+Send squads on expeditions and collect eligible offline rewards when
+you return.
+
+Include naturally relevant search terminology without repetitive
+keyword stuffing.
+
+Do NOT make unsupported claims such as:
+
+#1 game
+best RPG
+most addictive game
+millions of players
+
+unless those claims become independently substantiated.
+
+Generate localized descriptions rather than blindly translating English
+keywords, because search behaviour varies by market.
+
+========================================================
+29. SCREENSHOT STRATEGY — CRITICAL
+========================================================
+
+Generate premium App Store screenshot specifications.
+
+Screenshots must tell a story rather than simply showing random gameplay.
+
+Use REAL gameplay/UI wherever store policy requires it.
+
+Do not create screenshots that materially misrepresent gameplay.
+
+Use short, keyword-aware headlines.
+
+SCREENSHOT 1
+
+Visual:
+Huge robot squad fighting an enormous swarm with spectacular weapon
+effects.
+
+Headline:
+
+MERGE. FIGHT. SURVIVE.
+
+Supporting copy:
+
+Build your ultimate robot squad.
+
+Keyword concepts:
+robot game
+survival
+RPG
+
+--------------------------------------------------------
+
+SCREENSHOT 2
+
+Visual:
+Weapon fusion interface.
+
+Headline:
+
+MERGE WEAPONS
+
+Supporting copy:
+
+Discover powerful new combinations.
+
+Keyword concepts:
+merge game
+weapon crafting
+
+--------------------------------------------------------
+
+SCREENSHOT 3
+
+Visual:
+Blueprint discovery.
+
+Headline:
+
+DISCOVER 180+ BLUEPRINTS
+
+Use this exact number only if the shipped build actually contains at
+least 180 discoverable blueprints.
+
+Otherwise dynamically replace it with the truthful launch count.
+
+Supporting copy:
+
+Experiment. Combine. Discover.
+
+Keyword concepts:
+crafting
+collection
+upgrades
+
+--------------------------------------------------------
+
+SCREENSHOT 4
+
+Visual:
+Robot collection.
+
+Headline:
+
+BUILD YOUR ROBOT SQUAD
+
+Supporting copy:
+
+Unlock heroes with unique abilities.
+
+Keyword concepts:
+robot RPG
+squad game
+
+--------------------------------------------------------
+
+SCREENSHOT 5
+
+Visual:
+Large boss encounter.
+
+Headline:
+
+DESTROY MASSIVE BOSSES
+
+Supporting copy:
+
+Find their weakness. Build your counter.
+
+Keyword concepts:
+boss battles
+action RPG
+
+--------------------------------------------------------
+
+SCREENSHOT 6
+
+Visual:
+Scrap City transformation.
+
+Headline:
+
+REBUILD SCRAP CITY
+
+Supporting copy:
+
+Turn a junkyard into a robot stronghold.
+
+Keyword concepts:
+upgrade

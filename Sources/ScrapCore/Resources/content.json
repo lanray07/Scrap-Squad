@@ -1,0 +1,869 @@
+{
+  "weapons": [
+    {
+      "id": "blaster",
+      "nameKey": "weapon.blaster",
+      "descriptionKey": "weapon.blaster.description",
+      "element": "ballistic",
+      "rarity": "common",
+      "damage": 18,
+      "interval": 0.65,
+      "projectiles": 1,
+      "modifiers": []
+    },
+    {
+      "id": "shotgun",
+      "nameKey": "weapon.shotgun",
+      "descriptionKey": "weapon.shotgun.description",
+      "element": "ballistic",
+      "rarity": "common",
+      "damage": 14,
+      "interval": 0.95,
+      "projectiles": 3,
+      "modifiers": []
+    },
+    {
+      "id": "rocket",
+      "nameKey": "weapon.rocket",
+      "descriptionKey": "weapon.rocket.description",
+      "element": "explosive",
+      "rarity": "uncommon",
+      "damage": 38,
+      "interval": 1.4,
+      "projectiles": 1,
+      "modifiers": [
+        {
+          "kind": "explosion",
+          "value": 0.08
+        }
+      ]
+    },
+    {
+      "id": "laser",
+      "nameKey": "weapon.laser",
+      "descriptionKey": "weapon.laser.description",
+      "element": "energy",
+      "rarity": "uncommon",
+      "damage": 24,
+      "interval": 0.5,
+      "projectiles": 1,
+      "modifiers": []
+    },
+    {
+      "id": "flame",
+      "nameKey": "weapon.flame",
+      "descriptionKey": "weapon.flame.description",
+      "element": "fire",
+      "rarity": "uncommon",
+      "damage": 24,
+      "interval": 0.6,
+      "projectiles": 1,
+      "modifiers": [
+        {
+          "kind": "burn",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "fireDrone",
+      "nameKey": "weapon.fireDrone",
+      "descriptionKey": "weapon.fireDrone.description",
+      "element": "drone",
+      "rarity": "rare",
+      "damage": 29,
+      "interval": 0.55,
+      "projectiles": 2,
+      "modifiers": [
+        {
+          "kind": "burn",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "arc",
+      "nameKey": "weapon.arc",
+      "descriptionKey": "weapon.arc.description",
+      "element": "electric",
+      "rarity": "uncommon",
+      "damage": 23,
+      "interval": 0.6,
+      "projectiles": 1,
+      "modifiers": [
+        {
+          "kind": "chain",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "chain",
+      "nameKey": "weapon.chain",
+      "descriptionKey": "weapon.chain.description",
+      "element": "electric",
+      "rarity": "rare",
+      "damage": 28,
+      "interval": 0.55,
+      "projectiles": 1,
+      "modifiers": [
+        {
+          "kind": "chain",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": "frost",
+      "nameKey": "weapon.frost",
+      "descriptionKey": "weapon.frost.description",
+      "element": "cryo",
+      "rarity": "uncommon",
+      "damage": 18,
+      "interval": 0.8,
+      "projectiles": 3,
+      "modifiers": [
+        {
+          "kind": "freeze",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "blizzard",
+      "nameKey": "weapon.blizzard",
+      "descriptionKey": "weapon.blizzard.description",
+      "element": "cryo",
+      "rarity": "epic",
+      "damage": 35,
+      "interval": 0.8,
+      "projectiles": 3,
+      "modifiers": [
+        {
+          "kind": "freeze",
+          "value": 1
+        },
+        {
+          "kind": "explosion",
+          "value": 0.1
+        }
+      ]
+    },
+    {
+      "id": "swarm",
+      "nameKey": "weapon.swarm",
+      "descriptionKey": "weapon.swarm.description",
+      "element": "drone",
+      "rarity": "epic",
+      "damage": 32,
+      "interval": 0.65,
+      "projectiles": 4,
+      "modifiers": [
+        {
+          "kind": "explosion",
+          "value": 0.06
+        }
+      ]
+    },
+    {
+      "id": "prism",
+      "nameKey": "weapon.prism",
+      "descriptionKey": "weapon.prism.description",
+      "element": "energy",
+      "rarity": "rare",
+      "damage": 30,
+      "interval": 0.45,
+      "projectiles": 3,
+      "modifiers": []
+    },
+    {
+      "id": "plasma",
+      "nameKey": "weapon.plasma",
+      "descriptionKey": "weapon.plasma.description",
+      "element": "electric",
+      "rarity": "legendary",
+      "damage": 48,
+      "interval": 0.45,
+      "projectiles": 3,
+      "modifiers": [
+        {
+          "kind": "chain",
+          "value": 2
+        },
+        {
+          "kind": "burn",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "orbital",
+      "nameKey": "weapon.orbital",
+      "descriptionKey": "weapon.orbital.description",
+      "element": "explosive",
+      "rarity": "legendary",
+      "damage": 95,
+      "interval": 1.1,
+      "projectiles": 2,
+      "modifiers": [
+        {
+          "kind": "explosion",
+          "value": 0.16
+        }
+      ]
+    },
+    {
+      "id": "aurora",
+      "nameKey": "weapon.aurora",
+      "descriptionKey": "weapon.aurora.description",
+      "element": "cryo",
+      "rarity": "mythic",
+      "damage": 58,
+      "interval": 0.4,
+      "projectiles": 4,
+      "modifiers": [
+        {
+          "kind": "freeze",
+          "value": 1
+        },
+        {
+          "kind": "chain",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "singularity",
+      "nameKey": "weapon.singularity",
+      "descriptionKey": "weapon.singularity.description",
+      "element": "energy",
+      "rarity": "mythic",
+      "damage": 72,
+      "interval": 0.4,
+      "projectiles": 4,
+      "modifiers": [
+        {
+          "kind": "explosion",
+          "value": 0.14
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "id": "fire",
+      "nameKey": "component.fire",
+      "element": "fire"
+    },
+    {
+      "id": "tesla",
+      "nameKey": "component.tesla",
+      "element": "electric"
+    },
+    {
+      "id": "cryo",
+      "nameKey": "component.cryo",
+      "element": "cryo"
+    },
+    {
+      "id": "drone",
+      "nameKey": "component.drone",
+      "element": "drone"
+    },
+    {
+      "id": "splitter",
+      "nameKey": "component.splitter",
+      "element": "experimental"
+    },
+    {
+      "id": "explosive",
+      "nameKey": "component.explosive",
+      "element": "explosive"
+    },
+    {
+      "id": "ricochet",
+      "nameKey": "component.ricochet",
+      "element": "energy"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "flame",
+      "weapon": "blaster",
+      "component": "fire",
+      "result": "flame",
+      "scrapCost": 70,
+      "clueKey": "clue.flame"
+    },
+    {
+      "id": "fireDrone",
+      "weapon": "flame",
+      "component": "drone",
+      "result": "fireDrone",
+      "scrapCost": 110,
+      "clueKey": "clue.fireDrone"
+    },
+    {
+      "id": "arc",
+      "weapon": "blaster",
+      "component": "tesla",
+      "result": "arc",
+      "scrapCost": 70,
+      "clueKey": "clue.arc"
+    },
+    {
+      "id": "chain",
+      "weapon": "arc",
+      "component": "splitter",
+      "result": "chain",
+      "scrapCost": 120,
+      "clueKey": "clue.chain"
+    },
+    {
+      "id": "frost",
+      "weapon": "shotgun",
+      "component": "cryo",
+      "result": "frost",
+      "scrapCost": 80,
+      "clueKey": "clue.frost"
+    },
+    {
+      "id": "blizzard",
+      "weapon": "frost",
+      "component": "explosive",
+      "result": "blizzard",
+      "scrapCost": 160,
+      "clueKey": "clue.blizzard"
+    },
+    {
+      "id": "swarm",
+      "weapon": "rocket",
+      "component": "drone",
+      "result": "swarm",
+      "scrapCost": 160,
+      "clueKey": "clue.swarm"
+    },
+    {
+      "id": "prism",
+      "weapon": "laser",
+      "component": "ricochet",
+      "result": "prism",
+      "scrapCost": 120,
+      "clueKey": "clue.prism"
+    },
+    {
+      "id": "plasma",
+      "weapon": "chain",
+      "component": "fire",
+      "result": "plasma",
+      "scrapCost": 260,
+      "clueKey": "clue.plasma"
+    },
+    {
+      "id": "orbital",
+      "weapon": "swarm",
+      "component": "explosive",
+      "result": "orbital",
+      "scrapCost": 300,
+      "clueKey": "clue.orbital"
+    },
+    {
+      "id": "aurora",
+      "weapon": "blizzard",
+      "component": "tesla",
+      "result": "aurora",
+      "scrapCost": 450,
+      "clueKey": "clue.aurora"
+    },
+    {
+      "id": "singularity",
+      "weapon": "prism",
+      "component": "splitter",
+      "result": "singularity",
+      "scrapCost": 450,
+      "clueKey": "clue.singularity"
+    }
+  ],
+  "robots": [
+    {
+      "id": "bolt",
+      "nameKey": "robot.bolt",
+      "personalityKey": "robot.bolt.personality",
+      "passiveKey": "robot.bolt.passive",
+      "activeKey": "robot.bolt.active",
+      "rarity": "common",
+      "health": 100,
+      "damageBonus": 0.08,
+      "speedBonus": 0,
+      "affinity": "ballistic",
+      "unlockCost": 0,
+      "silhouette": "round",
+      "color": "F5B942"
+    },
+    {
+      "id": "tank",
+      "nameKey": "robot.tank",
+      "personalityKey": "robot.tank.personality",
+      "passiveKey": "robot.tank.passive",
+      "activeKey": "robot.tank.active",
+      "rarity": "rare",
+      "health": 170,
+      "damageBonus": 0.12,
+      "speedBonus": -0.05,
+      "affinity": "ballistic",
+      "unlockCost": 700,
+      "silhouette": "heavy",
+      "color": "809CAA"
+    },
+    {
+      "id": "zip",
+      "nameKey": "robot.zip",
+      "personalityKey": "robot.zip.personality",
+      "passiveKey": "robot.zip.passive",
+      "activeKey": "robot.zip.active",
+      "rarity": "uncommon",
+      "health": 70,
+      "damageBonus": 0,
+      "speedBonus": 0.2,
+      "affinity": "electric",
+      "unlockCost": 450,
+      "silhouette": "slim",
+      "color": "66DBB4"
+    },
+    {
+      "id": "patch",
+      "nameKey": "robot.patch",
+      "personalityKey": "robot.patch.personality",
+      "passiveKey": "robot.patch.passive",
+      "activeKey": "robot.patch.active",
+      "rarity": "uncommon",
+      "health": 85,
+      "damageBonus": 0.02,
+      "speedBonus": 0,
+      "affinity": "drone",
+      "unlockCost": 300,
+      "silhouette": "medic",
+      "color": "F48193"
+    },
+    {
+      "id": "nova",
+      "nameKey": "robot.nova",
+      "personalityKey": "robot.nova.personality",
+      "passiveKey": "robot.nova.passive",
+      "activeKey": "robot.nova.active",
+      "rarity": "epic",
+      "health": 90,
+      "damageBonus": 0.18,
+      "speedBonus": 0.05,
+      "affinity": "energy",
+      "unlockCost": 1100,
+      "silhouette": "orb",
+      "color": "A9A0FF"
+    },
+    {
+      "id": "boomer",
+      "nameKey": "robot.boomer",
+      "personalityKey": "robot.boomer.personality",
+      "passiveKey": "robot.boomer.passive",
+      "activeKey": "robot.boomer.active",
+      "rarity": "rare",
+      "health": 110,
+      "damageBonus": 0.1,
+      "speedBonus": 0,
+      "affinity": "explosive",
+      "unlockCost": 850,
+      "silhouette": "heavy",
+      "color": "F28C50"
+    },
+    {
+      "id": "glitch",
+      "nameKey": "robot.glitch",
+      "personalityKey": "robot.glitch.personality",
+      "passiveKey": "robot.glitch.passive",
+      "activeKey": "robot.glitch.active",
+      "rarity": "epic",
+      "health": 80,
+      "damageBonus": 0.08,
+      "speedBonus": 0.1,
+      "affinity": "electric",
+      "unlockCost": 1200,
+      "silhouette": "slim",
+      "color": "64D5EB"
+    },
+    {
+      "id": "magnet",
+      "nameKey": "robot.magnet",
+      "personalityKey": "robot.magnet.personality",
+      "passiveKey": "robot.magnet.passive",
+      "activeKey": "robot.magnet.active",
+      "rarity": "rare",
+      "health": 95,
+      "damageBonus": 0.1,
+      "speedBonus": 0,
+      "affinity": "experimental",
+      "unlockCost": 900,
+      "silhouette": "round",
+      "color": "A5C96B"
+    }
+  ],
+  "buildings": [
+    {
+      "id": "workshop",
+      "nameKey": "building.workshop",
+      "descriptionKey": "building.workshop.description",
+      "baseCost": 100,
+      "symbol": "wrench.and.screwdriver.fill",
+      "maxLevel": 10
+    },
+    {
+      "id": "research",
+      "nameKey": "building.research",
+      "descriptionKey": "building.research.description",
+      "baseCost": 180,
+      "symbol": "atom",
+      "maxLevel": 10
+    },
+    {
+      "id": "factory",
+      "nameKey": "building.factory",
+      "descriptionKey": "building.factory.description",
+      "baseCost": 150,
+      "symbol": "gearshape.2.fill",
+      "maxLevel": 10
+    },
+    {
+      "id": "dock",
+      "nameKey": "building.dock",
+      "descriptionKey": "building.dock.description",
+      "baseCost": 120,
+      "symbol": "paperplane.fill",
+      "maxLevel": 10
+    },
+    {
+      "id": "blueprints",
+      "nameKey": "building.blueprints",
+      "descriptionKey": "building.blueprints.description",
+      "baseCost": 100,
+      "symbol": "square.stack.3d.up.fill",
+      "maxLevel": 10
+    },
+    {
+      "id": "arena",
+      "nameKey": "building.arena",
+      "descriptionKey": "building.arena.description",
+      "baseCost": 220,
+      "symbol": "flag.checkered",
+      "maxLevel": 10
+    },
+    {
+      "id": "portal",
+      "nameKey": "building.portal",
+      "descriptionKey": "building.portal.description",
+      "baseCost": 250,
+      "symbol": "sparkles",
+      "maxLevel": 10
+    },
+    {
+      "id": "market",
+      "nameKey": "building.market",
+      "descriptionKey": "building.market.description",
+      "baseCost": 160,
+      "symbol": "bag.fill",
+      "maxLevel": 10
+    },
+    {
+      "id": "command",
+      "nameKey": "building.command",
+      "descriptionKey": "building.command.description",
+      "baseCost": 200,
+      "symbol": "antenna.radiowaves.left.and.right",
+      "maxLevel": 10
+    }
+  ],
+  "biomes": [
+    {
+      "id": "rust",
+      "nameKey": "biome.rust",
+      "bossKey": "boss.rust",
+      "weakness": "electric",
+      "palette": [
+        "162C35",
+        "D29B50",
+        "F5B942"
+      ],
+      "difficulty": 1.0,
+      "hazard": "scrapfall",
+      "enemies": [
+        "swarmer",
+        "tank",
+        "exploder"
+      ]
+    },
+    {
+      "id": "neon",
+      "nameKey": "biome.neon",
+      "bossKey": "boss.neon",
+      "weakness": "cryo",
+      "palette": [
+        "20243E",
+        "D56EA5",
+        "6DE0DA"
+      ],
+      "difficulty": 1.28,
+      "hazard": "surge",
+      "enemies": [
+        "swarmer",
+        "ranged",
+        "shield",
+        "flying"
+      ]
+    },
+    {
+      "id": "frozen",
+      "nameKey": "biome.frozen",
+      "bossKey": "boss.frozen",
+      "weakness": "fire",
+      "palette": [
+        "193640",
+        "8FC4D4",
+        "C2EAF2"
+      ],
+      "difficulty": 1.56,
+      "hazard": "frost",
+      "enemies": [
+        "tank",
+        "repair",
+        "ranged"
+      ]
+    },
+    {
+      "id": "toxic",
+      "nameKey": "biome.toxic",
+      "bossKey": "boss.toxic",
+      "weakness": "energy",
+      "palette": [
+        "243832",
+        "8EA552",
+        "B5DF61"
+      ],
+      "difficulty": 1.84,
+      "hazard": "leak",
+      "enemies": [
+        "exploder",
+        "shield",
+        "repair",
+        "burrower"
+      ]
+    },
+    {
+      "id": "city",
+      "nameKey": "biome.city",
+      "bossKey": "boss.city",
+      "weakness": "explosive",
+      "palette": [
+        "252B3F",
+        "9F91B6",
+        "E4A0AB"
+      ],
+      "difficulty": 2.12,
+      "hazard": "scrapfall",
+      "enemies": [
+        "ranged",
+        "tank",
+        "swarmer"
+      ]
+    },
+    {
+      "id": "electric",
+      "nameKey": "biome.electric",
+      "bossKey": "boss.electric",
+      "weakness": "cryo",
+      "palette": [
+        "1C2941",
+        "8790DC",
+        "63DEEC"
+      ],
+      "difficulty": 2.4,
+      "hazard": "surge",
+      "enemies": [
+        "shield",
+        "ranged",
+        "exploder"
+      ]
+    },
+    {
+      "id": "graveyard",
+      "nameKey": "biome.graveyard",
+      "bossKey": "boss.graveyard",
+      "weakness": "electric",
+      "palette": [
+        "292E32",
+        "A99983",
+        "E9C997"
+      ],
+      "difficulty": 2.68,
+      "hazard": "scrapfall",
+      "enemies": [
+        "repair",
+        "tank",
+        "exploder",
+        "elite"
+      ]
+    },
+    {
+      "id": "orbital",
+      "nameKey": "biome.orbital",
+      "bossKey": "boss.orbital",
+      "weakness": "explosive",
+      "palette": [
+        "192E40",
+        "6BA7C0",
+        "AEDDE4"
+      ],
+      "difficulty": 2.96,
+      "hazard": "surge",
+      "enemies": [
+        "shield",
+        "ranged",
+        "repair"
+      ]
+    },
+    {
+      "id": "rift",
+      "nameKey": "biome.rift",
+      "bossKey": "boss.rift",
+      "weakness": "energy",
+      "palette": [
+        "29213D",
+        "AE82D1",
+        "DAB1FF"
+      ],
+      "difficulty": 3.24,
+      "hazard": "rift",
+      "enemies": [
+        "tank",
+        "ranged",
+        "exploder",
+        "miniboss"
+      ]
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "tesla",
+      "nameKey": "upgrade.tesla",
+      "descriptionKey": "upgrade.tesla.description",
+      "element": "electric",
+      "kind": "chain",
+      "value": 2,
+      "symbol": "bolt.fill"
+    },
+    {
+      "id": "fire",
+      "nameKey": "upgrade.fire",
+      "descriptionKey": "upgrade.fire.description",
+      "element": "fire",
+      "kind": "burn",
+      "value": 1,
+      "symbol": "flame.fill"
+    },
+    {
+      "id": "cryo",
+      "nameKey": "upgrade.cryo",
+      "descriptionKey": "upgrade.cryo.description",
+      "element": "cryo",
+      "kind": "freeze",
+      "value": 1,
+      "symbol": "snowflake"
+    },
+    {
+      "id": "drone",
+      "nameKey": "upgrade.drone",
+      "descriptionKey": "upgrade.drone.description",
+      "element": "drone",
+      "kind": "split",
+      "value": 1,
+      "symbol": "paperplane.fill"
+    },
+    {
+      "id": "ricochet",
+      "nameKey": "upgrade.ricochet",
+      "descriptionKey": "upgrade.ricochet.description",
+      "element": "energy",
+      "kind": "damage",
+      "value": 0.25,
+      "symbol": "arrow.triangle.branch"
+    },
+    {
+      "id": "splitter",
+      "nameKey": "upgrade.splitter",
+      "descriptionKey": "upgrade.splitter.description",
+      "element": "experimental",
+      "kind": "split",
+      "value": 2,
+      "symbol": "arrow.triangle.branch"
+    },
+    {
+      "id": "payload",
+      "nameKey": "upgrade.payload",
+      "descriptionKey": "upgrade.payload.description",
+      "element": "explosive",
+      "kind": "explosion",
+      "value": 0.08,
+      "symbol": "burst.fill"
+    },
+    {
+      "id": "plasma",
+      "nameKey": "upgrade.plasma",
+      "descriptionKey": "upgrade.plasma.description",
+      "element": "energy",
+      "kind": "damage",
+      "value": 0.35,
+      "symbol": "sun.max.fill"
+    },
+    {
+      "id": "critical",
+      "nameKey": "upgrade.critical",
+      "descriptionKey": "upgrade.critical.description",
+      "element": "ballistic",
+      "kind": "critical",
+      "value": 0.12,
+      "symbol": "scope"
+    },
+    {
+      "id": "repair",
+      "nameKey": "upgrade.repair",
+      "descriptionKey": "upgrade.repair.description",
+      "element": "drone",
+      "kind": "repair",
+      "value": 1.8,
+      "symbol": "cross.fill"
+    },
+    {
+      "id": "overclock",
+      "nameKey": "upgrade.overclock",
+      "descriptionKey": "upgrade.overclock.description",
+      "element": "electric",
+      "kind": "speed",
+      "value": 0.25,
+      "symbol": "speedometer"
+    }
+  ],
+  "economy": {
+    "offlineCapHours": 8,
+    "offlineScrapPerMinute": 2,
+    "offlineCreditsPerMinute": 4,
+    "robotLevelBaseCost": 100,
+    "costGrowth": 1.35,
+    "killScrap": 5,
+    "bossCredits": 250,
+    "runSeconds": 120,
+    "bossAtSeconds": 65,
+    "upgradeSeconds": [
+      20,
+      45,
+      75
+    ],
+    "rebootZone": 5
+  }
+}

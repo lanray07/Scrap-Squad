@@ -1,0 +1,10 @@
+.build/
+.swiftpm/
+DerivedData/
+*.xcodeproj/
+*.xcworkspace/
+.DS_Store
+__pycache__/
+.env
+localization-review.json
+App/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.png

@@ -1,0 +1,3394 @@
+{
+  "sourceLanguage": "en",
+  "version": "1.0",
+  "strings": {
+    "weapon.blaster": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Basic Blaster"
+          }
+        }
+      }
+    },
+    "weapon.blaster.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A salvaged rivet driver. Small beginnings, big intentions."
+          }
+        }
+      }
+    },
+    "weapon.shotgun": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scrap Shotgun"
+          }
+        }
+      }
+    },
+    "weapon.shotgun.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Three bolts, one very loud opinion."
+          }
+        }
+      }
+    },
+    "weapon.rocket": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rocket Launcher"
+          }
+        }
+      }
+    },
+    "weapon.rocket.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recycled fuel. Unrecycled enthusiasm."
+          }
+        }
+      }
+    },
+    "weapon.laser": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Workshop Laser"
+          }
+        }
+      }
+    },
+    "weapon.laser.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A cutting tool with a new job."
+          }
+        }
+      }
+    },
+    "weapon.flame": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flame Blaster"
+          }
+        }
+      }
+    },
+    "weapon.flame.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hot rivets leave a persistent burn."
+          }
+        }
+      }
+    },
+    "weapon.fireDrone": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fire Drone"
+          }
+        }
+      }
+    },
+    "weapon.fireDrone.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A tiny flying furnace follows your lead."
+          }
+        }
+      }
+    },
+    "weapon.arc": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arc Blaster"
+          }
+        }
+      }
+    },
+    "weapon.arc.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Electric bolts jump between nearby machines."
+          }
+        }
+      }
+    },
+    "weapon.chain": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chain Cannon"
+          }
+        }
+      }
+    },
+    "weapon.chain.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A branching current finds every loose screw."
+          }
+        }
+      }
+    },
+    "weapon.frost": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Frost Shotgun"
+          }
+        }
+      }
+    },
+    "weapon.frost.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A cold front made from industrial coolant."
+          }
+        }
+      }
+    },
+    "weapon.blizzard": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blizzard Cannon"
+          }
+        }
+      }
+    },
+    "weapon.blizzard.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Frozen shells burst into a cloud of shrapnel."
+          }
+        }
+      }
+    },
+    "weapon.swarm": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Missile Swarm"
+          }
+        }
+      }
+    },
+    "weapon.swarm.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A flock of guided rockets with terrible manners."
+          }
+        }
+      }
+    },
+    "weapon.prism": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prism Laser"
+          }
+        }
+      }
+    },
+    "weapon.prism.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Split light ricochets through the swarm."
+          }
+        }
+      }
+    },
+    "weapon.plasma": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plasma Storm"
+          }
+        }
+      }
+    },
+    "weapon.plasma.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "An unstable electric furnace bends the air."
+          }
+        }
+      }
+    },
+    "weapon.orbital": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Orbital Hammer"
+          }
+        }
+      }
+    },
+    "weapon.orbital.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rebuilt satellites rain down precision fire."
+          }
+        }
+      }
+    },
+    "weapon.aurora": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aurora Engine"
+          }
+        }
+      }
+    },
+    "weapon.aurora.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cold light fractures into a dazzling storm."
+          }
+        }
+      }
+    },
+    "weapon.singularity": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Singularity Array"
+          }
+        }
+      }
+    },
+    "weapon.singularity.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "An impossible invention. Please stand back."
+          }
+        }
+      }
+    },
+    "component.fire": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fire Core"
+          }
+        }
+      }
+    },
+    "component.tesla": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tesla Core"
+          }
+        }
+      }
+    },
+    "component.cryo": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cryo Core"
+          }
+        }
+      }
+    },
+    "component.drone": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drone Core"
+          }
+        }
+      }
+    },
+    "component.splitter": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Splitter Module"
+          }
+        }
+      }
+    },
+    "component.explosive": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Explosive Payload"
+          }
+        }
+      }
+    },
+    "component.ricochet": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ricochet Chip"
+          }
+        }
+      }
+    },
+    "clue.flame": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Give a humble blaster a warmer heart."
+          }
+        }
+      }
+    },
+    "clue.fireDrone": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let the furnace take flight."
+          }
+        }
+      }
+    },
+    "clue.arc": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Some rivets carry a charge."
+          }
+        }
+      }
+    },
+    "clue.chain": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One current can become many."
+          }
+        }
+      }
+    },
+    "clue.frost": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cool down a scatter of scrap."
+          }
+        }
+      }
+    },
+    "clue.blizzard": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A cold front needs a big entrance."
+          }
+        }
+      }
+    },
+    "clue.swarm": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teach rockets to fly together."
+          }
+        }
+      }
+    },
+    "clue.prism": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light can take the scenic route."
+          }
+        }
+      }
+    },
+    "clue.plasma": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heat an electrical storm."
+          }
+        }
+      }
+    },
+    "clue.orbital": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A bigger payload needs a higher perch."
+          }
+        }
+      }
+    },
+    "clue.aurora": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Charge a winter storm."
+          }
+        }
+      }
+    },
+    "clue.singularity": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Split a beam until reality gives way."
+          }
+        }
+      }
+    },
+    "robot.bolt": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BOLT"
+          }
+        }
+      }
+    },
+    "robot.bolt.personality": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Optimistic to the last rivet."
+          }
+        }
+      }
+    },
+    "robot.bolt.passive": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Balanced circuitry: +8% damage."
+          }
+        }
+      }
+    },
+    "robot.bolt.active": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pulse burst: damages nearby enemies."
+          }
+        }
+      }
+    },
+    "robot.tank": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TANK"
+          }
+        }
+      }
+    },
+    "robot.tank.personality": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Big shoulders. Soft heart."
+          }
+        }
+      }
+    },
+    "robot.tank.passive": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heavy chassis: a larger health pool."
+          }
+        }
+      }
+    },
+    "robot.tank.active": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fortify: immune to damage for 5 seconds."
+          }
+        }
+      }
+    },
+    "robot.zip": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ZIP"
+          }
+        }
+      }
+    },
+    "robot.zip.personality": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Already there. Already bored."
+          }
+        }
+      }
+    },
+    "robot.zip.passive": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fast servos: +20% attack speed."
+          }
+        }
+      }
+    },
+    "robot.zip.active": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flash burst: pulse damage and an immediate next shot."
+          }
+        }
+      }
+    },
+    "robot.patch": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PATCH"
+          }
+        }
+      }
+    },
+    "robot.patch.personality": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Everything deserves a second chance."
+          }
+        }
+      }
+    },
+    "robot.patch.passive": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repair field: regenerate 0.6 health per second."
+          }
+        }
+      }
+    },
+    "robot.patch.active": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repair pulse: restore 35% squad health."
+          }
+        }
+      }
+    },
+    "robot.nova": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NOVA"
+          }
+        }
+      }
+    },
+    "robot.nova.personality": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quiet until the lights go out."
+          }
+        }
+      }
+    },
+    "robot.nova.passive": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Precision optics: +18% damage."
+          }
+        }
+      }
+    },
+    "robot.nova.active": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solar pulse: damages nearby enemies."
+          }
+        }
+      }
+    },
+    "robot.boomer": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BOOMER"
+          }
+        }
+      }
+    },
+    "robot.boomer.personality": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Safety third. Friendship first."
+          }
+        }
+      }
+    },
+    "robot.boomer.passive": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Payload expert: adds splash damage."
+          }
+        }
+      }
+    },
+    "robot.boomer.active": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demolition: a powerful area blast."
+          }
+        }
+      }
+    },
+    "robot.glitch": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GLITCH"
+          }
+        }
+      }
+    },
+    "robot.glitch.personality": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speaks fluent error code."
+          }
+        }
+      }
+    },
+    "robot.glitch.passive": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Corrupted clock: +10% attack speed."
+          }
+        }
+      }
+    },
+    "robot.glitch.active": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scramble: damages and slows nearby enemies."
+          }
+        }
+      }
+    },
+    "robot.magnet": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MAGNET"
+          }
+        }
+      }
+    },
+    "robot.magnet.personality": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One robot’s trash is their treasure."
+          }
+        }
+      }
+    },
+    "robot.magnet.passive": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collector: +10% damage."
+          }
+        }
+      }
+    },
+    "robot.magnet.active": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salvage pulse: area damage and a small repair."
+          }
+        }
+      }
+    },
+    "building.workshop": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Workshop"
+          }
+        }
+      }
+    },
+    "building.workshop.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Build and fuse weapons from salvaged components."
+          }
+        }
+      }
+    },
+    "building.research": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Research Lab"
+          }
+        }
+      }
+    },
+    "building.research.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Each level gives your squad +5% damage."
+          }
+        }
+      }
+    },
+    "building.factory": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Robot Factory"
+          }
+        }
+      }
+    },
+    "building.factory.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rebuild a home for rescued robots."
+          }
+        }
+      }
+    },
+    "building.dock": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Expedition Dock"
+          }
+        }
+      }
+    },
+    "building.dock.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Each level earns 2 scrap and 4 credits per offline minute."
+          }
+        }
+      }
+    },
+    "building.blueprints": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blueprint Lab"
+          }
+        }
+      }
+    },
+    "building.blueprints.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep a record of your discoveries."
+          }
+        }
+      }
+    },
+    "building.arena": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arena"
+          }
+        }
+      }
+    },
+    "building.arena.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A home for score challenges."
+          }
+        }
+      }
+    },
+    "building.portal": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Portal"
+          }
+        }
+      }
+    },
+    "building.portal.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Study the daily anomaly."
+          }
+        }
+      }
+    },
+    "building.market": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Market"
+          }
+        }
+      }
+    },
+    "building.market.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A gathering place for city traders."
+          }
+        }
+      }
+    },
+    "building.command": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Command Center"
+          }
+        }
+      }
+    },
+    "building.command.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every two levels unlock another squad slot."
+          }
+        }
+      }
+    },
+    "biome.rust": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rust Flats"
+          }
+        }
+      }
+    },
+    "boss.rust": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The Scrap Titan"
+          }
+        }
+      }
+    },
+    "biome.neon": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neon Junkyard"
+          }
+        }
+      }
+    },
+    "boss.neon": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iron Maw"
+          }
+        }
+      }
+    },
+    "biome.frozen": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Frozen Foundry"
+          }
+        }
+      }
+    },
+    "boss.frozen": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The Harvester"
+          }
+        }
+      }
+    },
+    "biome.toxic": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toxic Processing Plant"
+          }
+        }
+      }
+    },
+    "boss.toxic": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Void Engine"
+          }
+        }
+      }
+    },
+    "biome.city": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abandoned Megacity"
+          }
+        }
+      }
+    },
+    "boss.city": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Junk Queen"
+          }
+        }
+      }
+    },
+    "biome.electric": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Electric Wastes"
+          }
+        }
+      }
+    },
+    "boss.electric": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Omega Warden"
+          }
+        }
+      }
+    },
+    "biome.graveyard": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Machine Graveyard"
+          }
+        }
+      }
+    },
+    "boss.graveyard": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The Assembler"
+          }
+        }
+      }
+    },
+    "biome.orbital": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Orbital Factory"
+          }
+        }
+      }
+    },
+    "boss.orbital": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Orbital Custodian"
+          }
+        }
+      }
+    },
+    "biome.rift": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quantum Rift"
+          }
+        }
+      }
+    },
+    "boss.rift": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The Rift Heart"
+          }
+        }
+      }
+    },
+    "upgrade.tesla": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tesla Coil"
+          }
+        }
+      }
+    },
+    "upgrade.tesla.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hit two additional targets each volley."
+          }
+        }
+      }
+    },
+    "upgrade.fire": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fire Core"
+          }
+        }
+      }
+    },
+    "upgrade.fire.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shots burn enemies for three seconds."
+          }
+        }
+      }
+    },
+    "upgrade.cryo": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cryo Core"
+          }
+        }
+      }
+    },
+    "upgrade.cryo.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shots slow enemies for two seconds."
+          }
+        }
+      }
+    },
+    "upgrade.drone": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drone Core"
+          }
+        }
+      }
+    },
+    "upgrade.drone.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add an extra projectile to each volley."
+          }
+        }
+      }
+    },
+    "upgrade.ricochet": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ricochet Chip"
+          }
+        }
+      }
+    },
+    "upgrade.ricochet.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Increase damage by 25%."
+          }
+        }
+      }
+    },
+    "upgrade.splitter": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Splitter Module"
+          }
+        }
+      }
+    },
+    "upgrade.splitter.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add two projectiles to each volley."
+          }
+        }
+      }
+    },
+    "upgrade.payload": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Explosive Payload"
+          }
+        }
+      }
+    },
+    "upgrade.payload.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shots damage enemies near their target."
+          }
+        }
+      }
+    },
+    "upgrade.plasma": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plasma Cell"
+          }
+        }
+      }
+    },
+    "upgrade.plasma.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Increase damage by 35%."
+          }
+        }
+      }
+    },
+    "upgrade.critical": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Critical Processor"
+          }
+        }
+      }
+    },
+    "upgrade.critical.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Increase critical chance by 12%."
+          }
+        }
+      }
+    },
+    "upgrade.repair": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repair Nanites"
+          }
+        }
+      }
+    },
+    "upgrade.repair.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Regenerate 1.8 health each second."
+          }
+        }
+      }
+    },
+    "upgrade.overclock": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Overclock Module"
+          }
+        }
+      }
+    },
+    "upgrade.overclock.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Increase attack speed by 25%."
+          }
+        }
+      }
+    },
+    "app.name": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scrap Squad"
+          }
+        }
+      }
+    },
+    "app.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MERGE & SURVIVE"
+          }
+        }
+      }
+    },
+    "app.promise": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Build it. Merge it. Survive the swarm."
+          }
+        }
+      }
+    },
+    "nav.city": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "City"
+          }
+        }
+      }
+    },
+    "nav.squad": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Squad"
+          }
+        }
+      }
+    },
+    "nav.battle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Battle"
+          }
+        }
+      }
+    },
+    "nav.blueprints": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blueprints"
+          }
+        }
+      }
+    },
+    "nav.shop": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shop"
+          }
+        }
+      }
+    },
+    "currency.scrap": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scrap"
+          }
+        }
+      }
+    },
+    "currency.credits": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Credits"
+          }
+        }
+      }
+    },
+    "currency.cores": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cores"
+          }
+        }
+      }
+    },
+    "city.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welcome to Scrap City"
+          }
+        }
+      }
+    },
+    "city.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A little scrap. A lot of possibility."
+          }
+        }
+      }
+    },
+    "city.level": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "City level"
+          }
+        }
+      }
+    },
+    "city.workshop": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Workshop"
+          }
+        }
+      }
+    },
+    "city.upgrade": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Build / Upgrade"
+          }
+        }
+      }
+    },
+    "city.level.label": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Level"
+          }
+        }
+      }
+    },
+    "city.missions": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Commander’s orders"
+          }
+        }
+      }
+    },
+    "mission.daily": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daily: defeat 60 machines"
+          }
+        }
+      }
+    },
+    "mission.weekly": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weekly: defeat 3 bosses"
+          }
+        }
+      }
+    },
+    "mission.claim": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Claim reward"
+          }
+        }
+      }
+    },
+    "mission.claimed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reward claimed"
+          }
+        }
+      }
+    },
+    "mission.note": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New tasks arrive without streak penalties."
+          }
+        }
+      }
+    },
+    "squad.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your misfit heroes"
+          }
+        }
+      }
+    },
+    "squad.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Different parts. One purpose."
+          }
+        }
+      }
+    },
+    "squad.add": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add to squad"
+          }
+        }
+      }
+    },
+    "squad.remove": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove from squad"
+          }
+        }
+      }
+    },
+    "squad.unlock": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rescue robot"
+          }
+        }
+      }
+    },
+    "squad.upgrade": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upgrade robot"
+          }
+        }
+      }
+    },
+    "squad.passive": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Passive circuitry"
+          }
+        }
+      }
+    },
+    "squad.active": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Commander ability"
+          }
+        }
+      }
+    },
+    "squad.affinity": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Affinity synergy: +15% weapon damage"
+          }
+        }
+      }
+    },
+    "squad.commander": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The first robot in your squad leads its active ability."
+          }
+        }
+      }
+    },
+    "battle.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Into the wasteland"
+          }
+        }
+      }
+    },
+    "battle.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The swarm is waiting. Bring something ridiculous."
+          }
+        }
+      }
+    },
+    "battle.deploy": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deploy squad"
+          }
+        }
+      }
+    },
+    "battle.weapon": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Equipped weapon"
+          }
+        }
+      }
+    },
+    "battle.mode": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mission mode"
+          }
+        }
+      }
+    },
+    "battle.zone": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select zone"
+          }
+        }
+      }
+    },
+    "battle.move": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drag anywhere in the arena to move"
+          }
+        }
+      }
+    },
+    "battle.ability": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ability"
+          }
+        }
+      }
+    },
+    "battle.retreat": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retreat"
+          }
+        }
+      }
+    },
+    "battle.pause": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pause"
+          }
+        }
+      }
+    },
+    "battle.resume": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resume"
+          }
+        }
+      }
+    },
+    "battle.paused": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mission paused"
+          }
+        }
+      }
+    },
+    "battle.choose": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose your upgrade"
+          }
+        }
+      }
+    },
+    "battle.choice.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Make this invention your own."
+          }
+        }
+      }
+    },
+    "battle.health": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Squad integrity"
+          }
+        }
+      }
+    },
+    "battle.kills": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Machines defeated"
+          }
+        }
+      }
+    },
+    "battle.score": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Score"
+          }
+        }
+      }
+    },
+    "battle.boss": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boss incoming"
+          }
+        }
+      }
+    },
+    "battle.victory": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Swarm survived"
+          }
+        }
+      }
+    },
+    "battle.defeat": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Back to the drawing board"
+          }
+        }
+      }
+    },
+    "battle.results": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every expedition brings progress."
+          }
+        }
+      }
+    },
+    "battle.return": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Return to city"
+          }
+        }
+      }
+    },
+    "battle.priority": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Target priority"
+          }
+        }
+      }
+    },
+    "battle.weakness": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weakness"
+          }
+        }
+      }
+    },
+    "battle.daily": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today’s boosted element"
+          }
+        }
+      }
+    },
+    "battle.survival.note": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Survival and Arena continue until defeat or retreat. Other modes last two minutes; Boss Rush ends after three bosses."
+          }
+        }
+      }
+    },
+    "priority.nearest": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nearest"
+          }
+        }
+      }
+    },
+    "priority.weakest": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weakest"
+          }
+        }
+      }
+    },
+    "priority.boss": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boss first"
+          }
+        }
+      }
+    },
+    "mode.campaign": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Campaign"
+          }
+        }
+      }
+    },
+    "mode.survival": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Survival"
+          }
+        }
+      }
+    },
+    "mode.bossRush": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boss Rush"
+          }
+        }
+      }
+    },
+    "mode.scrapRun": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scrap Run"
+          }
+        }
+      }
+    },
+    "mode.fusionLab": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fusion Lab"
+          }
+        }
+      }
+    },
+    "mode.dailyAnomaly": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daily Anomaly"
+          }
+        }
+      }
+    },
+    "mode.arena": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arena"
+          }
+        }
+      }
+    },
+    "lab.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invent something outrageous"
+          }
+        }
+      }
+    },
+    "lab.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every great idea starts with two questionable parts."
+          }
+        }
+      }
+    },
+    "lab.recipes": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Workshop"
+          }
+        }
+      }
+    },
+    "lab.database": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blueprint database"
+          }
+        }
+      }
+    },
+    "lab.roulette": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fusion Roulette"
+          }
+        }
+      }
+    },
+    "lab.fuse": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fuse weapon"
+          }
+        }
+      }
+    },
+    "lab.equip": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Equip"
+          }
+        }
+      }
+    },
+    "lab.upgrade": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upgrade weapon"
+          }
+        }
+      }
+    },
+    "lab.unknown": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Undiscovered invention"
+          }
+        }
+      }
+    },
+    "lab.discovered": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Discovered"
+          }
+        }
+      }
+    },
+    "lab.reveal": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New weapon discovered"
+          }
+        }
+      }
+    },
+    "lab.initiated": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fusion initiated…"
+          }
+        }
+      }
+    },
+    "lab.share": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share invention"
+          }
+        }
+      }
+    },
+    "lab.roulette.note": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Two different weapons + one Mystery Core. Each listed result has an equal chance. No purchase required."
+          }
+        }
+      }
+    },
+    "lab.weaponA": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weapon A"
+          }
+        }
+      }
+    },
+    "lab.weaponB": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weapon B"
+          }
+        }
+      }
+    },
+    "lab.spin": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start fusion"
+          }
+        }
+      }
+    },
+    "lab.inventory": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your arsenal"
+          }
+        }
+      }
+    },
+    "lab.components": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Components"
+          }
+        }
+      }
+    },
+    "shop.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Make it yours"
+          }
+        }
+      }
+    },
+    "shop.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The core adventure is free. No mandatory ads."
+          }
+        }
+      }
+    },
+    "shop.unavailable": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The store is not configured for this development build. No purchases can be made."
+          }
+        }
+      }
+    },
+    "shop.restore": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore purchases"
+          }
+        }
+      }
+    },
+    "shop.refresh": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Load store"
+          }
+        }
+      }
+    },
+    "shop.pending": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchase is awaiting approval."
+          }
+        }
+      }
+    },
+    "shop.restored": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchases restored."
+          }
+        }
+      }
+    },
+    "shop.verified": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchase verified."
+          }
+        }
+      }
+    },
+    "shop.entitlements": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Owned cosmetics"
+          }
+        }
+      }
+    },
+    "shop.note": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only verified cosmetic entitlements are supported in this build. Consumables and subscriptions are not offered."
+          }
+        }
+      }
+    },
+    "settings.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your controls"
+          }
+        }
+      }
+    },
+    "settings.haptics": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haptic feedback"
+          }
+        }
+      }
+    },
+    "settings.motion": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reduce motion"
+          }
+        }
+      }
+    },
+    "settings.flashes": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reduce flashes"
+          }
+        }
+      }
+    },
+    "settings.shake": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Screen shake"
+          }
+        }
+      }
+    },
+    "settings.numbers": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Damage numbers"
+          }
+        }
+      }
+    },
+    "settings.particles": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Particle intensity"
+          }
+        }
+      }
+    },
+    "settings.master": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Master volume"
+          }
+        }
+      }
+    },
+    "settings.music": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Music volume"
+          }
+        }
+      }
+    },
+    "settings.sfx": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sound effects"
+          }
+        }
+      }
+    },
+    "settings.language": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Language"
+          }
+        }
+      }
+    },
+    "settings.system": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Follow device language"
+          }
+        }
+      }
+    },
+    "settings.gamecenter": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connect Game Center"
+          }
+        }
+      }
+    },
+    "settings.leaderboards": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leaderboards"
+          }
+        }
+      }
+    },
+    "settings.reboot": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Core Reboot"
+          }
+        }
+      }
+    },
+    "settings.reboot.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resets zone, city buildings, robot levels, credits and scrap. Keeps robots, squad capacity, squad, weapons, weapon levels, components, cores, blueprints, achievements and preferences. Each reboot permanently adds 10% damage. Unlock at zone 6."
+          }
+        }
+      }
+    },
+    "settings.reboot.confirm": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reboot city"
+          }
+        }
+      }
+    },
+    "settings.save.error": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your progress could not be saved. Check device storage and retry before closing the app."
+          }
+        }
+      }
+    },
+    "offline.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welcome back, commander"
+          }
+        }
+      }
+    },
+    "offline.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your expedition brought back real salvage. Rewards accumulate for up to eight hours."
+          }
+        }
+      }
+    },
+    "offline.claim": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Claim salvage"
+          }
+        }
+      }
+    },
+    "offline.away": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Expedition duration"
+          }
+        }
+      }
+    },
+    "common.done": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        }
+      }
+    },
+    "common.cancel": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
+          }
+        }
+      }
+    },
+    "common.ok": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        }
+      }
+    },
+    "common.error": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cannot complete action"
+          }
+        }
+      }
+    },
+    "common.locked": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Locked"
+          }
+        }
+      }
+    },
+    "common.max": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maximum level"
+          }
+        }
+      }
+    },
+    "error.insufficientFunds": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You need more resources for this upgrade."
+          }
+        }
+      }
+    },
+    "error.missingIngredient": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You are missing a weapon or component."
+          }
+        }
+      }
+    },
+    "error.locked": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This action has not been unlocked yet."
+          }
+        }
+      }
+    },
+    "error.invalidSelection": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose a valid squad or pair of different weapons."
+          }
+        }
+      }
+    },
+    "error.maxLevel": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This upgrade is already at its maximum level."
+          }
+        }
+      }
+    },
+    "error.invalidContent": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The game content could not be loaded."
+          }
+        }
+      }
+    },
+    "error.purchase": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The purchase could not be verified or completed. Please try again."
+          }
+        }
+      }
+    },
+    "error.load": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saved progress could not be read. The original save is preserved; new progress cannot be saved."
+          }
+        }
+      }
+    },
+    "accessibility.settings": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open settings"
+          }
+        }
+      }
+    },
+    "accessibility.robot": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Robot portrait"
+          }
+        }
+      }
+    },
+    "accessibility.arena": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Combat arena. Drag to move. Automatic weapons target nearby enemies."
+          }
+        }
+      }
+    },
+    "tutorial.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A squad worth rebuilding"
+          }
+        }
+      }
+    },
+    "tutorial.body": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drag in battle to dodge attacks. Your squad fires automatically. Choose upgrades, bring home scrap, and combine weapons with cores in the Workshop. Build the Expedition Dock to earn salvage while away."
+          }
+        }
+      }
+    },
+    "tutorial.start": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let’s build something"
+          }
+        }
+      }
+    },
+    "achievement.firstfusion": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "First Fusion"
+          }
+        }
+      }
+    },
+    "achievement.madscientist": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mad Scientist"
+          }
+        }
+      }
+    },
+    "achievement.scrapengineer": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scrap Engineer"
+          }
+        }
+      }
+    },
+    "achievement.swarmbreaker": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Swarm Breaker"
+          }
+        }
+      }
+    },
+    "achievement.bossbreaker": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boss Breaker"
+          }
+        }
+      }
+    },
+    "achievement.mythicengineer": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mythic Engineer"
+          }
+        }
+      }
+    },
+    "achievements.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Commander’s record"
+          }
+        }
+      }
+    },
+    "store.skin.bolt": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sunset BOLT"
+          }
+        }
+      }
+    },
+    "store.skin.nova": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Starlight NOVA"
+          }
+        }
+      }
+    },
+    "store.skin.bolt.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "An optional warm coral paint finish for BOLT."
+          }
+        }
+      }
+    },
+    "store.skin.nova.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "An optional midnight blue paint finish for NOVA."
+          }
+        }
+      }
+    },
+    "rarity.common": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Common"
+          }
+        }
+      }
+    },
+    "rarity.uncommon": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uncommon"
+          }
+        }
+      }
+    },
+    "rarity.rare": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rare"
+          }
+        }
+      }
+    },
+    "rarity.epic": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Epic"
+          }
+        }
+      }
+    },
+    "rarity.legendary": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Legendary"
+          }
+        }
+      }
+    },
+    "rarity.mythic": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mythic"
+          }
+        }
+      }
+    },
+    "element.ballistic": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ballistic"
+          }
+        }
+      }
+    },
+    "element.fire": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fire"
+          }
+        }
+      }
+    },
+    "element.cryo": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cryo"
+          }
+        }
+      }
+    },
+    "element.electric": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Electric"
+          }
+        }
+      }
+    },
+    "element.energy": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Energy"
+          }
+        }
+      }
+    },
+    "element.explosive": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Explosive"
+          }
+        }
+      }
+    },
+    "element.drone": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drone"
+          }
+        }
+      }
+    },
+    "element.experimental": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Experimental"
+          }
+        }
+      }
+    },
+    "battle.armor": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Breakable armor"
+          }
+        }
+      }
+    },
+    "battle.armor.broken": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Armor destroyed: full damage unlocked"
+          }
+        }
+      }
+    }
+  }
+}
