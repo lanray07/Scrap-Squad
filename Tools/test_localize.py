@@ -2,9 +2,14 @@ import unittest
 import tempfile
 from pathlib import Path
 import localize
+import offline_localize
 from unittest.mock import patch
 
 class LocalizationTests(unittest.TestCase):
+    def test_offline_translator_preserves_product_names_and_placeholders(self):
+        translated=offline_localize.translate_preserving_tokens('BOLT found %d in Scrap City.',lambda value:value.replace('found','trouve').replace('in','dans'))
+        self.assertEqual(translated,'BOLT trouve %d dans Scrap City.')
+        self.assertNotIn('placeholder mismatch',localize.issues('BOLT found %d in Scrap City.',translated))
     def test_duplicate_provider_keys_rejected(self):
         with self.assertRaises(ValueError):
             localize.validate_response({'translations':[{'key':'a','text':'A'},{'key':'a','text':'B'}]},['a'])

@@ -3,13 +3,13 @@ on:
   workflow_dispatch:
     inputs:
       locale:
-        description: Supported locale or all (custom adapter)
+        description: Supported locale or all
         default: all
         required: true
       provider:
         type: choice
-        options: [custom, libretranslate]
-        default: custom
+        options: [argos, custom, libretranslate]
+        default: argos
       target:
         description: Optional explicit LibreTranslate target for regional locales
         required: false
@@ -18,18 +18,27 @@ permissions:
 jobs:
   translate:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: Tools/requirements-translation.txt
+      - name: Install free offline translator
+        if: inputs.provider == 'argos'
+        run: pip install -r Tools/requirements-translation.txt
       - uses: actions/cache@v4
         with:
-          path: .build/translation-cache
+          path: |
+            .build/translation-cache
+            ~/.local/share/argos-translate
+            ~/.cache/argos-translate
           key: translations-${{ inputs.provider }}-${{ github.run_id }}
           restore-keys: translations-${{ inputs.provider }}-
       - name: Generate source-only translation drafts
+        if: inputs.provider != 'argos'
         env:
           TRANSLATION_API_KEY: ${{ secrets.TRANSLATION_API_KEY }}
           TRANSLATION_ENDPOINT: ${{ vars.TRANSLATION_ENDPOINT }}
@@ -37,6 +46,12 @@ jobs:
           TRANSLATION_PROVIDER: ${{ inputs.provider }}
           TRANSLATION_TARGET: ${{ inputs.target }}
         run: python Tools/auto_localize.py
+      - name: Generate offline translation drafts
+        if: inputs.provider == 'argos'
+        env:
+          TRANSLATION_LOCALE: ${{ inputs.locale }}
+          ARGOS_DEVICE_TYPE: cpu
+        run: python -u Tools/offline_localize.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
