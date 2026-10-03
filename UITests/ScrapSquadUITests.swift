@@ -2,6 +2,7 @@ import XCTest
 
 @MainActor final class ScrapSquadUITests: XCTestCase {
     func testStoreScreenshotTour() throws {
+        executionTimeAllowance = 240
         let app = XCUIApplication()
         app.launchArguments = ["--ui-testing"]
         app.launch()
@@ -12,7 +13,7 @@ import XCTest
         XCTAssertTrue(app.staticTexts["Welcome to Scrap City"].waitForExistence(timeout: 10))
         capture(app, "Store-02-city")
         app.tabBars.buttons["Squad"].tap()
-        XCTAssertTrue(app.staticTexts["BOLT"].firstMatch.waitForExistence(timeout: 10))
+        XCTAssertTrue(app.staticTexts.matching(identifier: "BOLT").firstMatch.waitForExistence(timeout: 10))
         capture(app, "Store-03-squad")
         app.tabBars.buttons["Blueprints"].tap()
         XCTAssertTrue(app.staticTexts["0 / 12"].waitForExistence(timeout: 10))

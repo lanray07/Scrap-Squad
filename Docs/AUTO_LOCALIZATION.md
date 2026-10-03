@@ -2,11 +2,21 @@
 
 The app uses a String Catalog with 308 English source strings and supports ten target languages: Spanish, French, German, Italian, European Portuguese, Brazilian Portuguese, Japanese, Korean, Simplified Chinese and Traditional Chinese. Locale matching now preserves script and regional tags, and missing translated keys fall back to English text.
 
-`Generate localization drafts` is a manual GitHub Actions workflow. It exports pending source strings, translates in batches of 25, retries transient HTTP failures, and caches successful responses by source text, locale, provider and endpoint. Only checked-in app source may be submitted; player content is never submitted. Results are uploaded as artifacts, with `approved: false`. The workflow cannot modify the production catalog.
+`Generate localization drafts` is a manual GitHub Actions workflow. Its default **Argos** provider runs open-source translation models on the Linux runner with no translation API key, subscription or per-character fee. Only checked-in app source is translated; player content is never submitted. Results are uploaded as artifacts, with `approved: false`. The workflow cannot modify the production catalog.
 
-The repository currently has Apple signing secrets, but no translation credential. To execute live translation, configure repository secret `TRANSLATION_API_KEY` and repository variable `TRANSLATION_ENDPOINT` for an authorized service. No Apple credential is reused for translation.
+The Argos path needs no translation credential and never reuses Apple signing secrets. GitHub runner billing depends on repository visibility and the account's included minutes; this is not a guarantee of free compute. Model downloads and translations are cached for later runs.
 
 ## Providers
+
+**Argos** is the lowest-cost default. `Tools/offline_localize.py` installs direct English models for all ten targets, including Brazilian Portuguese (`pb`) and Traditional Chinese (`zt`). No Chinese script conversion or regional substitution is performed. Protected names and placeholders are excluded from model input, then restored exactly. European Portuguese terminology is flagged for review. Machine output can still be awkward or wrong and remains a draft. [Argos Translate's official repository](https://github.com/argosopentech/argos-translate).
+
+```powershell
+python -m pip install -r Tools/requirements-translation.txt
+$env:TRANSLATION_LOCALE = 'all'
+python Tools/offline_localize.py
+```
+
+Optional API adapters translate in batches of 25, retry temporary HTTP failures and cache successful responses. They require repository secret `TRANSLATION_API_KEY` and repository variable `TRANSLATION_ENDPOINT` for an authorized service.
 
 The **custom** adapter supports all ten app locales. It sends HTTPS JSON:
 

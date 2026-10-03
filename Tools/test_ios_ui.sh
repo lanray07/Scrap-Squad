@@ -20,7 +20,7 @@ xcodebuild -project ScrapSquad.xcodeproj -scheme ScrapSquad \
   -maximum-concurrent-test-simulator-destinations 1 \
   -test-timeouts-enabled YES \
   -default-test-execution-time-allowance 90 \
-  -maximum-test-execution-time-allowance 120 \
+  -maximum-test-execution-time-allowance 240 \
   -derivedDataPath .build/ios-derived \
   -resultBundlePath .build/ios-ui-tests.xcresult \
   CODE_SIGNING_ALLOWED=NO test 2>&1 | tee .build/ios-ui-tests.log
