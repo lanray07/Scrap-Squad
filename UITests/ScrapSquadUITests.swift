@@ -1,6 +1,45 @@
 import XCTest
 
 @MainActor final class ScrapSquadUITests: XCTestCase {
+    func testStoreScreenshotTour() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["--ui-testing"]
+        app.launch()
+        let start = app.buttons["Let’s build something"]
+        XCTAssertTrue(start.waitForExistence(timeout: 20))
+        capture(app, "Store-01-onboarding")
+        start.tap()
+        XCTAssertTrue(app.staticTexts["Welcome to Scrap City"].waitForExistence(timeout: 10))
+        capture(app, "Store-02-city")
+        app.tabBars.buttons["Squad"].tap()
+        XCTAssertTrue(app.staticTexts["BOLT"].firstMatch.waitForExistence(timeout: 10))
+        capture(app, "Store-03-squad")
+        app.tabBars.buttons["Blueprints"].tap()
+        XCTAssertTrue(app.staticTexts["0 / 12"].waitForExistence(timeout: 10))
+        capture(app, "Store-04-blueprints")
+        app.tabBars.buttons["City"].tap()
+        app.buttons["Open Workshop"].tap()
+        XCTAssertTrue(app.staticTexts["Invent something outrageous"].waitForExistence(timeout: 10))
+        capture(app, "Store-05-workshop")
+        app.segmentedControls.buttons.element(boundBy: 1).tap()
+        capture(app, "Store-06-roulette")
+        app.segmentedControls.buttons.element(boundBy: 0).tap()
+        app.buttons.matching(identifier: "Fuse weapon").firstMatch.tap()
+        XCTAssertTrue(app.staticTexts["New weapon discovered"].waitForExistence(timeout: 10))
+        capture(app, "Store-07-fusion")
+        app.buttons["Equip"].tap()
+        app.buttons["Done"].tap()
+        app.tabBars.buttons["Battle"].tap()
+        XCTAssertTrue(app.buttons["Deploy squad"].waitForExistence(timeout: 10))
+        capture(app, "Store-08-lobby")
+        app.buttons["Deploy squad"].tap()
+        XCTAssertTrue(app.buttons["Pause"].waitForExistence(timeout: 10))
+        capture(app, "Store-09-battle")
+        app.buttons["Pause"].tap()
+        XCTAssertTrue(app.staticTexts["Mission paused"].waitForExistence(timeout: 10))
+        capture(app, "Store-10-pause")
+    }
+
     func testOnboardingCityAndFusion() throws {
         let app = XCUIApplication()
         app.launchArguments = ["--ui-testing"]
