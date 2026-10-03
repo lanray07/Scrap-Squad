@@ -2,6 +2,27 @@
 
 Native iPhone/iPad game foundation using SwiftUI, SpriteKit and a standalone Swift gameplay package. This repository was created from the supplied master prompt. **It is a playable implementation foundation, not a release-certified production game.** The iOS application has not been compiled or run on this Windows host.
 
+## GitHub Xcode builds
+
+The project is connected to [lanray07/Scrap-Squad](https://github.com/lanray07/Scrap-Squad). The `Validate native game` workflow builds with Xcode on a macOS runner, validates the core/tooling, saves a simulator app zip, and runs onboarding/fusion and battle/pause/retreat smoke tests. Xcode result bundles, test screenshots and startup diagnostics are retained as workflow artifacts.
+
+[Xcode build and both simulator tests passed in run #4](https://github.com/lanray07/Scrap-Squad/actions/runs/37147738498). See `Docs/GITHUB_BUILD.md` for verification details, artifact links and actual captures.
+
+The simulator build requires no Apple signing secrets. The existing Apple team and App Store Connect secrets are not consumed by this workflow. A signed device archive or TestFlight upload is a separate distribution action.
+
+You can trigger a fresh build from GitHub Actions using **Run workflow**, or through:
+
+```sh
+gh workflow run validate.yml --repo lanray07/Scrap-Squad --ref main
+```
+
+After downloading the simulator zip on a Mac, unzip it and install the app into a booted iOS simulator:
+
+```sh
+xcrun simctl install booted ScrapSquad.app
+xcrun simctl launch booted com.scrapsquad.mergeandsurvive
+```
+
 ## Open on a Mac
 
 Requires Xcode with an iOS 17+ SDK, and XcodeGen. From this folder:

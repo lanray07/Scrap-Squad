@@ -2,6 +2,8 @@
 
 Status: native source foundation; **not ready for submission**. No signing, upload, purchase, App Store metadata edit or deployment has been performed.
 
+**GitHub verification update:** Xcode compilation and both onboarding/fusion and battle/pause/retreat simulator smoke tests pass. The actual captures and downloadable artifacts are recorded in [GITHUB_BUILD.md](GITHUB_BUILD.md). The broader device, accessibility, performance and service checks below remain release requirements.
+
 ## Verification recorded on Windows
 
 - Swift gameplay package compiles with Swift 6.3.1.

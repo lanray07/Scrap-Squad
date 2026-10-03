@@ -1,5 +1,7 @@
 # Verification snapshot — 3 October 2026
 
+**Updated:** Xcode compilation and both iPhone simulator smoke tests now pass on GitHub. See [the verified run and artifacts](GITHUB_BUILD.md). The rows below retain the earlier Windows-host verification context.
+
 | Check | Result |
 | --- | --- |
 | Swift 6.3.1 gameplay package build on Windows | Passed |
