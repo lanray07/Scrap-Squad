@@ -1,5 +1,10 @@
 name: Generate localization drafts
 on:
+  push:
+    branches: [main]
+    paths:
+      - App/Resources/Localizable.xcstrings
+      - Tools/author_content.py
   workflow_dispatch:
     inputs:
       locale:
@@ -19,6 +24,9 @@ jobs:
   translate:
     runs-on: ubuntu-latest
     timeout-minutes: 45
+    env:
+      TRANSLATION_PROVIDER: ${{ inputs.provider || 'argos' }}
+      TRANSLATION_LOCALE: ${{ inputs.locale || 'all' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -27,7 +35,7 @@ jobs:
           cache: pip
           cache-dependency-path: Tools/requirements-translation.txt
       - name: Install free offline translator
-        if: inputs.provider == 'argos'
+        if: env.TRANSLATION_PROVIDER == 'argos'
         run: pip install -r Tools/requirements-translation.txt
       - uses: actions/cache@v4
         with:
@@ -35,21 +43,18 @@ jobs:
             .build/translation-cache
             ~/.local/share/argos-translate
             ~/.cache/argos-translate
-          key: translations-${{ inputs.provider }}-${{ github.run_id }}
-          restore-keys: translations-${{ inputs.provider }}-
+          key: translations-${{ env.TRANSLATION_PROVIDER }}-${{ github.run_id }}
+          restore-keys: translations-${{ env.TRANSLATION_PROVIDER }}-
       - name: Generate source-only translation drafts
-        if: inputs.provider != 'argos'
+        if: env.TRANSLATION_PROVIDER != 'argos'
         env:
           TRANSLATION_API_KEY: ${{ secrets.TRANSLATION_API_KEY }}
           TRANSLATION_ENDPOINT: ${{ vars.TRANSLATION_ENDPOINT }}
-          TRANSLATION_LOCALE: ${{ inputs.locale }}
-          TRANSLATION_PROVIDER: ${{ inputs.provider }}
           TRANSLATION_TARGET: ${{ inputs.target }}
         run: python Tools/auto_localize.py
       - name: Generate offline translation drafts
-        if: inputs.provider == 'argos'
+        if: env.TRANSLATION_PROVIDER == 'argos'
         env:
-          TRANSLATION_LOCALE: ${{ inputs.locale }}
           ARGOS_DEVICE_TYPE: cpu
         run: python -u Tools/offline_localize.py
       - uses: actions/upload-artifact@v4

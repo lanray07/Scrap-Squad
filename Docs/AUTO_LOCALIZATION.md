@@ -2,7 +2,7 @@
 
 The app uses a String Catalog with 308 English source strings and supports ten target languages: Spanish, French, German, Italian, European Portuguese, Brazilian Portuguese, Japanese, Korean, Simplified Chinese and Traditional Chinese. Locale matching now preserves script and regional tags, and missing translated keys fall back to English text.
 
-`Generate localization drafts` is a manual GitHub Actions workflow. Its default **Argos** provider runs open-source translation models on the Linux runner with no translation API key, subscription or per-character fee. Only checked-in app source is translated; player content is never submitted. Results are uploaded as artifacts, with `approved: false`. The workflow cannot modify the production catalog.
+`Generate localization drafts` runs automatically when the English String Catalog or its authoring source changes on main, and can also be dispatched manually. Its default **Argos** provider runs open-source translation models on the Linux runner with no translation API key, subscription or per-character fee. Only checked-in app source is translated; player content is never submitted. Results are uploaded as artifacts, with `approved: false`. The workflow cannot modify the production catalog.
 
 The Argos path needs no translation credential and never reuses Apple signing secrets. GitHub runner billing depends on repository visibility and the account's included minutes; this is not a guarantee of free compute. Model downloads and translations are cached for later runs.
 
