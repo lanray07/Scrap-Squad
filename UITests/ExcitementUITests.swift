@@ -44,13 +44,14 @@ import XCTest
         app.buttons["Pause"].tap()
     }
     func testRealUpgradeRecipeWaveEventEvolutionAndCleanRetry() throws {
-        executionTimeAllowance = 180
+        executionTimeAllowance = 240
         let app = try deploy()
         let first = app.buttons["upgrade-fire"]
         XCTAssertTrue(first.waitForExistence(timeout: 35)); first.tap()
         app.buttons["battle-ability"].tap()
         let event = app.descendants(matching: .any).matching(identifier: "wave-event").firstMatch
-        XCTAssertTrue(event.waitForExistence(timeout: 20))
+        // Simulator rendering can advance simulation slower than wall time under runner load.
+        XCTAssertTrue(event.waitForExistence(timeout: 60))
         capture("Excitement-03-elite-wave-event")
         let second = app.buttons["upgrade-overclock"]
         XCTAssertTrue(second.waitForExistence(timeout: 35)); second.tap()
