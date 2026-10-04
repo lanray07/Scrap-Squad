@@ -7,3 +7,5 @@ Each robot leaves alternating left/right ground marks every 0.025 arena units. M
 Two core regression cases check distance-based spacing across different frame sizes, alternating feet, stopping, and teleport reset. The new UI case drags the actual arena, verifies squad displacement and increased step count, then verifies both stop changing after release. Its diagnostics are exposed only with the existing UI-testing launch flag. iPhone/iPad XCTest captures and GitHub workflow results will be recorded below after validation.
 
 Physical iPad feedback prompted this change; the revised build still needs a device check for the animation's feel.
+
+Signed [build 11](https://github.com/lanray07/Scrap-Squad/actions/runs/37188203778) uploaded successfully from source `05aba48753a6305868323ac8844282c713917ade`. Simulator UI validation is in progress; build 10 remains the selected version until the movement checks pass.
