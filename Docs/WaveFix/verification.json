@@ -1,0 +1,14 @@
+{
+  "sourceCommit": "099bafc3716981662564d4975221a6505eab55b2",
+  "build": 12,
+  "coreTests": 39,
+  "waveTests": 7,
+  "toolingTests": 18,
+  "iPhoneUITests": 14,
+  "iPhoneUIFailures": 0,
+  "nativeRun": 37190318962,
+  "releaseRun": 37190326222,
+  "attachmentRun": 37190556929,
+  "testflightRun": 37190768385,
+  "physicalIPadAcceptance": "pending"
+}

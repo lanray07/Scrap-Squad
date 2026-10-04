@@ -1,0 +1,6 @@
+native	Validate package, tooling and iOS build	2026-10-04T08:53:35.6786710Z ✔ Test run with 39 tests in 0 suites passed after 23.125 seconds.
+native	Validate package, tooling and iOS build	2026-10-04T08:53:36.5242700Z Ran 18 tests in 0.031s
+native	Validate package, tooling and iOS build	2026-10-04T08:54:48.6199370Z ** BUILD SUCCEEDED **
+native	Run iPhone simulator smoke tests	2026-10-04T09:08:11.4105350Z 	 Executed 14 tests, with 0 failures (0 unexpected) in 502.021 (502.056) seconds
+native	Run iPhone simulator smoke tests	2026-10-04T09:08:11.4326090Z 	 Executed 14 tests, with 0 failures (0 unexpected) in 502.021 (502.059) seconds
+native	Run iPhone simulator smoke tests	2026-10-04T09:08:13.3909430Z ** TEST SUCCEEDED **

@@ -1,6 +1,6 @@
-# Build 11 device and sandbox acceptance
+# Build 12 device and sandbox acceptance
 
-Version 1.0 build 11 is processed and available to the internal **Scrap Squad QA** group. One existing tester is present; this update preserved membership and did not add or invite anyone. An App Store Connect administrator can select their own existing team account in TestFlight → Internal Testing → Scrap Squad QA → Add Testers, then install through TestFlight on their device. External beta review is not required for internal testing. Never share a password or Apple verification code with this repository.
+Version 1.0 build 12 is processed and available to the internal **Scrap Squad QA** group. One existing tester is present; this update preserved membership and did not add or invite anyone. An App Store Connect administrator can select their own existing team account in TestFlight → Internal Testing → Scrap Squad QA → Add Testers, then install through TestFlight on their device. External beta review is not required for internal testing. Never share a password or Apple verification code with this repository.
 
 ## Record the actual device result
 
@@ -8,6 +8,7 @@ For each test, record device model, OS version, build, date, result and any repr
 
 | Check | Device procedure | Current evidence |
 | --- | --- | --- |
+| Wave progression | Survival/Arena past 150 seconds should show Wave 8. Boss Rush must require three defeated bosses; taking longer than two minutes must not award an early victory. Upgrade choices and Pause must freeze progress. | Seven deterministic engine tests pass; physical acceptance pending |
 | Full player path | Fresh install → tutorial → mission → three upgrade choices → boss → rewards → Workshop → fusion → equip → blueprint → city upgrade → relaunch. Verify currency and ownership persist. | Individual core/UI paths verified; physical end-to-end pending |
 | Touch and orientation | Drag the squad to all arena boundaries, rotate portrait/landscape during battle, pause and results. Check ability and Overdrive controls remain reachable. On iPad try supported multitasking window sizes. | Compact/iPad rotation simulator checks passed; physical and multitasking pending |
 | Accessibility | Enable VoiceOver and the largest text size. Navigate onboarding, city, Settings, Workshop, Shop, journal, results and share preview. Check labels, order, focus, readable values and reachable buttons. Enable Reduce Motion and reduced flashes; inspect combat warnings. | Automated audit and enlarged-text results recorded separately; manual assistive testing pending |

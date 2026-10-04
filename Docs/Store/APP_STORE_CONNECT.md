@@ -77,3 +77,7 @@ On 4 October, [the refreshed build 8 galleries](https://github.com/lanray07/Scra
 ## Walking update: build 11
 
 Build 11 is uploaded, processed and selected, resource `6243ff7c-1984-46ea-b25c-2b084062241c`. It is in internal beta testing with the existing tester preserved and updated notes. See [walking verification](../MOVEMENT_UPDATE.md). The existing galleries retain their genuine build 10 source manifests; this cosmetic movement update does not change the advertised features or screenshot dimensions. No App Review submission or public release occurred.
+
+## Current build 12 — wave progression fix
+
+Signed build 12 is processed, selected for version 1.0 and available in the existing internal TestFlight group. Endless waves continue beyond six, Boss Rush requires all three bosses and boss admission respects the total enemy limit. Store metadata and both ten-image galleries remain verified. See [wave verification](../WAVE_FIX.md). No App Review submission occurred.
