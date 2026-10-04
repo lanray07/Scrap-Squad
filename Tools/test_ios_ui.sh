@@ -19,9 +19,10 @@ for runtime in sorted(devices,reverse=True):
 sys.exit("No available requested simulator/runtime. StoreKit CLI tests use iOS 26.2 to avoid the iOS 26.3-26.5 StoreKitTest configuration bug.")
 ')
 fi
-test_filters=()
+# Positional arguments also work with macOS Bash 3.2 and nounset when empty.
+set --
 if [ -n "${UI_TEST_CLASS:-}" ]; then
-  test_filters+=("-only-testing:ScrapSquadUITests/$UI_TEST_CLASS")
+  set -- "-only-testing:ScrapSquadUITests/$UI_TEST_CLASS"
 fi
 echo "Testing on simulator $device"
 xcrun simctl boot "$device" || true
@@ -35,5 +36,5 @@ xcodebuild -project ScrapSquad.xcodeproj -scheme ScrapSquad \
   -maximum-test-execution-time-allowance 240 \
   -derivedDataPath .build/ios-derived \
   -resultBundlePath ".build/$result_name.xcresult" \
-  "${test_filters[@]}" \
+  "$@" \
   CODE_SIGNING_ALLOWED=YES CODE_SIGN_IDENTITY=- test 2>&1 | tee ".build/$result_name.log"
