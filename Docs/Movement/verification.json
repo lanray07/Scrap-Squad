@@ -18,5 +18,14 @@
     "iPhoneBossFailure": "Missed exact 0:05/0:06 clock observation window; predicate corrected in test only."
   },
   "physicalUpdatedBuildTested": false,
-  "appReviewSubmitted": false
+  "appReviewSubmitted": false,
+  "correctedTargeted": {
+    "workflow": "https://github.com/lanray07/Scrap-Squad/actions/runs/37188997790",
+    "iPhoneCasesPassed": 2,
+    "iPhoneSeconds": 55.874,
+    "iPadStatus": "passed",
+    "iPadCasesPassed": 2,
+    "workflowResult": "success"
+  },
+  "iPhoneUniqueUICasesCoveredAcrossNativeAndCorrectedRuns": 14
 }

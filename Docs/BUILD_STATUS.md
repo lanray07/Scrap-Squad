@@ -1,6 +1,6 @@
 # Verification snapshot — 4 October 2026
 
-**Updated:** Signed version 1.0 build 11 with robot walking and ground footprints is processed, selected and available in internal TestFlight. The Apple SDK build and 32 core tests passed. Both iPhone/iPad movement cases passed. Thirteen of fourteen native UI cases passed; one Xcode launch timeout is recorded alongside the corrected boss rerun in [current movement evidence](MOVEMENT_UPDATE.md). Eighteen tooling tests pass locally. Older build 10 release checks and storefront verification remain recorded in [release preparation](RELEASE_COMPLETION.md). All 375 English keys resolve; ten draft languages await human review. No App Review submission or public release occurred. The table below is historical Windows evidence.
+**Updated:** Signed version 1.0 build 11 with robot walking and ground footprints is processed, selected and available in internal TestFlight. The Apple SDK build and 32 core tests passed. Both iPhone/iPad movement cases passed. Thirteen of fourteen native UI cases passed; one Xcode launch timeout is recorded alongside the now-passing corrected boss rerun on both families in [current movement evidence](MOVEMENT_UPDATE.md). Eighteen tooling tests pass locally. Older build 10 release checks and storefront verification remain recorded in [release preparation](RELEASE_COMPLETION.md). All 375 English keys resolve; ten draft languages await human review. No App Review submission or public release occurred. The table below is historical Windows evidence.
 
 | Check | Result |
 | --- | --- |
