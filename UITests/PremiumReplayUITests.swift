@@ -27,7 +27,7 @@ import XCTest
         XCTAssertTrue(app.buttons["Pause"].waitForExistence(timeout: 10))
         XCTAssertTrue(app.buttons["Pause"].isHittable)
         capture(app, "Layout-02-landscape-combat")
-        app.buttons["Pause"].tap()
+        pauseBattle(in: app)
         XCTAssertTrue(app.buttons["Retreat"].waitForExistence(timeout: 10))
         XCTAssertTrue(app.buttons["Retreat"].isHittable)
         capture(app, "Layout-03-landscape-pause")
@@ -62,7 +62,7 @@ import XCTest
         XCTAssertTrue(app.staticTexts["OVERDRIVE ACTIVE"].waitForExistence(timeout: 3))
         capture(app, "Premium-06-overdrive")
         XCTAssertTrue(app.buttons["Pause"].exists)
-        app.buttons["Pause"].tap()
+        pauseBattle(in: app)
         app.buttons["Retreat"].tap()
         XCTAssertTrue(app.buttons["run-retry"].waitForExistence(timeout: 10))
         XCTAssertTrue(app.buttons["share-run"].exists)
@@ -81,7 +81,7 @@ import XCTest
         let initialClock = clock.label
         let resumed = XCTNSPredicateExpectation(predicate: NSPredicate(format: "label != %@", initialClock), object: clock)
         XCTAssertEqual(XCTWaiter.wait(for: [resumed], timeout: 6), .completed)
-        app.buttons["Pause"].tap(); app.buttons["Retreat"].tap()
+        pauseBattle(in: app); app.buttons["Retreat"].tap()
         let home = app.buttons["Return to city"]
         for _ in 0..<3 where !home.isHittable { app.swipeUp() }
         home.tap()
@@ -89,6 +89,23 @@ import XCTest
         openJournal(in: app)
         XCTAssertTrue(app.staticTexts["2/3"].waitForExistence(timeout: 10))
         capture(app, "Premium-05-saved-records")
+    }
+    private func pauseBattle(in app: XCUIApplication) {
+        // A timed upgrade can appear between the last snapshot and a pause tap.
+        // Choose a real offered upgrade, then pause; do not tap through its modal.
+        for _ in 0..<3 {
+            if app.staticTexts["Choose your upgrade"].exists {
+                let names = ["Tesla Coil", "Fire Core", "Cryo Core", "Drone Core", "Ricochet Chip", "Splitter Module", "Explosive Payload", "Plasma Cell", "Critical Processor", "Repair Nanites", "Overclock Module"]
+                let offer = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", names.first(where: { name in
+                    app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", name + ",")).firstMatch.exists
+                }).map { $0 + "," } ?? "unavailable-upgrade")).firstMatch
+                XCTAssertTrue(offer.exists)
+                offer.tap()
+            }
+            app.buttons["Pause"].tap()
+            if app.buttons["Retreat"].waitForExistence(timeout: 3) { return }
+        }
+        XCTFail("Pause did not present its retreat control")
     }
     private func openJournal(in app: XCUIApplication) {
         let journal = app.buttons["open-journal"]
@@ -107,7 +124,12 @@ import XCTest
         }
     }
     private func capture(_ app: XCUIApplication, _ name: String) {
-        let attachment = XCTAttachment(screenshot: app.screenshot())
+        // Capture the display rather than the application's rotated bounding box.
+        let screenshot = XCUIScreen.main.screenshot()
+        if name.contains("landscape") {
+            XCTAssertGreaterThan(screenshot.image.size.width, screenshot.image.size.height)
+        }
+        let attachment = XCTAttachment(screenshot: screenshot)
         attachment.name = name; attachment.lifetime = .keepAlways; add(attachment)
     }
 }
