@@ -1,0 +1,24 @@
+name: Verify release combat bounds
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  core:
+    runs-on: macos-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify core, translation integrity and tooling
+        run: |
+          mkdir -p .build
+          set -o pipefail
+          swift test 2>&1 | tee .build/release-core.log
+          python3 Tools/localize.py audit
+          python3 Tools/check_translation_drafts.py
+          python3 -m unittest discover -s Tools -p 'test_*.py'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: release-core-report
+          path: .build/release-core.log
