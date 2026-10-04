@@ -43,10 +43,7 @@ import StoreKitTest
         let app = launchShop(reset: true)
         let buy = app.buttons["buy-" + founder]
         XCTAssertTrue(buy.waitForExistence(timeout: 30)); buy.tap()
-        let recorded = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
-            session.allTransactions().contains { $0.productIdentifier == self.founder }
-        }, object: app)
-        XCTAssertEqual(XCTWaiter.wait(for: [recorded], timeout: 15), .completed)
+        XCTAssertTrue(app.staticTexts["shop-message"].waitForExistence(timeout: 15))
         XCTAssertFalse(app.staticTexts["owned-" + founder].exists)
         XCTAssertFalse(app.buttons["equip-bolt-founders-gold"].exists)
         let transaction = try XCTUnwrap(session.allTransactions().first { $0.productIdentifier == founder })
