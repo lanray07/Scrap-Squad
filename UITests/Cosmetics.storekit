@@ -2,10 +2,121 @@
   "identifier": "9F17D4AE-618D-48EB-B4E6-71A26E0C0A24",
   "nonRenewingSubscriptions": [],
   "products": [
-    {"displayPrice":"2.99","familyShareable":false,"internalID":"10001","localizations":[{"description":"Gold BOLT finish, golden weapon trails and a Founder badge. Cosmetic only.","displayName":"Founder’s Pack","locale":"en_GB"}],"productID":"com.ScrapSquad.app.founder","referenceName":"Founder’s Pack","type":"NonConsumable"},
-    {"displayPrice":"1.99","familyShareable":false,"internalID":"10002","localizations":[{"description":"Aurora BOLT, Cobalt TANK and Rose PATCH finishes. Cosmetic only.","displayName":"Robot Style Pack","locale":"en_GB"}],"productID":"com.ScrapSquad.app.styles","referenceName":"Robot Style Pack","type":"NonConsumable"}
+    {
+      "displayPrice": "2.99",
+      "familyShareable": false,
+      "internalID": "10001",
+      "localizations": [
+        {
+          "description": "Gold BOLT finish, golden weapon trails and a Founder badge. Cosmetic only.",
+          "displayName": "Founderâ€™s Pack",
+          "locale": "en_GB"
+        }
+      ],
+      "productID": "com.ScrapSquad.app.founder",
+      "referenceName": "Founderâ€™s Pack",
+      "type": "NonConsumable"
+    },
+    {
+      "displayPrice": "1.99",
+      "familyShareable": false,
+      "internalID": "10002",
+      "localizations": [
+        {
+          "description": "Aurora BOLT, Cobalt TANK and Rose PATCH finishes. Cosmetic only.",
+          "displayName": "Robot Style Pack",
+          "locale": "en_GB"
+        }
+      ],
+      "productID": "com.ScrapSquad.app.styles",
+      "referenceName": "Robot Style Pack",
+      "type": "NonConsumable"
+    },
+    {
+      "displayPrice": "2.99",
+      "familyShareable": false,
+      "internalID": "10003",
+      "localizations": [
+        {
+          "description": "BOLT skin, animated stride and victory salute.",
+          "displayName": "Solar Ronin BOLT",
+          "locale": "en_GB"
+        }
+      ],
+      "productID": "com.ScrapSquad.app.ronin",
+      "referenceName": "Solar Ronin BOLT",
+      "type": "NonConsumable"
+    },
+    {
+      "displayPrice": "2.99",
+      "familyShareable": false,
+      "internalID": "10004",
+      "localizations": [
+        {
+          "description": "TANK skin, animated stride and victory salute.",
+          "displayName": "Iron Bastion TANK",
+          "locale": "en_GB"
+        }
+      ],
+      "productID": "com.ScrapSquad.app.bastion",
+      "referenceName": "Iron Bastion TANK",
+      "type": "NonConsumable"
+    },
+    {
+      "displayPrice": "2.99",
+      "familyShareable": false,
+      "internalID": "10005",
+      "localizations": [
+        {
+          "description": "PATCH skin, animated stride and victory salute.",
+          "displayName": "Star Medic PATCH",
+          "locale": "en_GB"
+        }
+      ],
+      "productID": "com.ScrapSquad.app.medic",
+      "referenceName": "Star Medic PATCH",
+      "type": "NonConsumable"
+    },
+    {
+      "displayPrice": "2.99",
+      "familyShareable": false,
+      "internalID": "10006",
+      "localizations": [
+        {
+          "description": "Cosmetic weapon colours and diamond impact sparks.",
+          "displayName": "Prism Arsenal",
+          "locale": "en_GB"
+        }
+      ],
+      "productID": "com.ScrapSquad.app.prism",
+      "referenceName": "Prism Arsenal",
+      "type": "NonConsumable"
+    },
+    {
+      "displayPrice": "7.99",
+      "familyShareable": false,
+      "internalID": "10007",
+      "localizations": [
+        {
+          "description": "Three robot skins plus Prism Arsenal effects.",
+          "displayName": "Signature Collection",
+          "locale": "en_GB"
+        }
+      ],
+      "productID": "com.ScrapSquad.app.collection",
+      "referenceName": "Signature Collection",
+      "type": "NonConsumable"
+    }
   ],
-  "settings": {"_failTransactionsEnabled":false,"_locale":"en_GB","_storefront":"GBR","_storeKitErrors":[]},
+  "settings": {
+    "_failTransactionsEnabled": false,
+    "_locale": "en_GB",
+    "_storefront": "GBR",
+    "_storeKitErrors": []
+  },
   "subscriptionGroups": [],
-  "version": {"major":3,"minor":0}
+  "version": {
+    "major": 3,
+    "minor": 0
+  }
 }

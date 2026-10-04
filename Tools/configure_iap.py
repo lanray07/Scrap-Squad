@@ -144,33 +144,42 @@ def main():
     assert len(copy) == len(LOCALES)
     for row in copy:
         assert len(row[1]) <= 35 and len(row[3]) <= 35 and len(row[2]) <= 55 and len(row[4]) <= 55
+    premium = json.loads((ROOT / "Docs/Store/IAP/premium-products.json").read_text(encoding="utf-8"))
+    for product in premium:
+        assert set(product["localizations"]) == set(LOCALES)
+        assert product["priceGBP"] in ("2.99", "7.99")
+        assert all(0 < len(row["name"]) <= 35 and 0 < len(row["description"]) <= 55 for row in product["localizations"].values())
     if args.complete:
-        for name in ["IAP-01-founder-review.png", "IAP-04-styles-review.png"]:
+        for name in ["IAP-01-founder-review.png", "IAP-04-styles-review.png"] + [p["reviewScreenshot"] for p in premium]:
             assert (ROOT / "Docs/Store/IAP" / name).is_file(), "Actual UI-test screenshots are required"
     api = AppleAPI()
     existing = {p["attributes"]["productId"]: p for p in api.all(f"/v1/apps/{APP_ID}/inAppPurchasesV2?limit=200")}
     territories = {t["id"] for t in api.all("/v1/territories?limit=200")} - {"CHN", "VNM"}
     assert len(territories) == 173, "Review any change in Apple's territory list before expanding availability"
     notes = [
-        "Complete onboarding and open Shop. Founder’s Pack is a one-time non-consumable: Founder’s Gold BOLT finish, golden weapon trails and a Founder badge. Tap Equip and enable the two switches after purchase. Finish: Squad and battles; badge: Squad. Restore purchases: bottom of Shop. No power, currency, progression, robot unlock or reward bonuses. No subscription. All cosmetic content is bundled.",
+        "Complete onboarding and open Shop. Founderâ€™s Pack is a one-time non-consumable: Founderâ€™s Gold BOLT finish, golden weapon trails and a Founder badge. Tap Equip and enable the two switches after purchase. Finish: Squad and battles; badge: Squad. Restore purchases: bottom of Shop. No power, currency, progression, robot unlock or reward bonuses. No subscription. All cosmetic content is bundled.",
         "Complete onboarding and open Shop. Robot Style Pack is a one-time non-consumable with Aurora BOLT, Cobalt TANK and Rose PATCH finishes. After purchase tap Equip beside each finish; tap Remove to restore its original appearance. TANK and PATCH must still be unlocked through normal gameplay. Finishes are visible in Squad and battles. Restore purchases is at the bottom of Shop. No power, currency, progression or reward bonuses. No subscription. All content is bundled."]
     report = {"appID": APP_ID, "regions": len(territories), "excluded": ["CHN", "VNM"], "products": [], "submittedForReview": False}
+    offers = []
     for index, suffix in enumerate(["founder", "styles"]):
-        product_id = f"com.ScrapSquad.app.{suffix}"
         name_col, desc_col = (1, 2) if index == 0 else (3, 4)
-        name, price = copy[0][name_col], ["2.99", "1.99"][index]
+        offers.append({"productID": f"com.ScrapSquad.app.{suffix}", "name": copy[0][name_col], "priceGBP": ["2.99", "1.99"][index],
+            "reviewNote": notes[index], "reviewScreenshot": ["IAP-01-founder-review.png", "IAP-04-styles-review.png"][index],
+            "localizations": {locale: {"name": row[name_col], "description": row[desc_col]} for locale, row in zip(LOCALES, copy)}})
+    offers.extend(premium)
+    for offer in offers:
+        product_id, name, price = offer["productID"], offer["name"], offer["priceGBP"]
         product = existing.get(product_id)
         if product is None:
             product = api.call("POST", "/v2/inAppPurchases", {"data": {"type": "inAppPurchases",
-                "attributes": {"name": name, "productId": product_id, "inAppPurchaseType": "NON_CONSUMABLE", "reviewNote": notes[index], "familySharable": False},
+                "attributes": {"name": name, "productId": product_id, "inAppPurchaseType": "NON_CONSUMABLE", "reviewNote": offer["reviewNote"], "familySharable": False},
                 "relationships": {"app": relationship("apps", APP_ID)}}})["data"]
         identifier = product["id"]
         assert product["attributes"]["inAppPurchaseType"] == "NON_CONSUMABLE"
         api.call("PATCH", f"/v2/inAppPurchases/{identifier}", {"data": {**resource("inAppPurchases", identifier),
-            "attributes": {"name": name, "reviewNote": notes[index]}}})
+            "attributes": {"name": name, "reviewNote": offer["reviewNote"]}}})
         local = {p["attributes"]["locale"]: p for p in api.all(f"/v2/inAppPurchases/{identifier}/inAppPurchaseLocalizations?limit=200")}
-        for locale, row in zip(LOCALES, copy):
-            attributes = {"name": row[name_col], "description": row[desc_col]}
+        for locale, attributes in offer["localizations"].items():
             if locale in local:
                 if all(local[locale]["attributes"].get(k) == v for k, v in attributes.items()):
                     continue
@@ -182,7 +191,9 @@ def main():
         set_price(api, identifier, price)
         set_availability(api, identifier, territories)
         if args.complete:
-            upload_review(api, identifier, ROOT / "Docs/Store/IAP" / ["IAP-01-founder-review.png", "IAP-04-styles-review.png"][index])
+            upload_review(api, identifier, ROOT / "Docs/Store/IAP" / offer["reviewScreenshot"])
+        actual_locales = {row["attributes"]["locale"]: row["attributes"] for row in api.all(f"/v2/inAppPurchases/{identifier}/inAppPurchaseLocalizations?limit=200")}
+        assert all(all(actual_locales[locale].get(k) == v for k,v in attributes.items()) for locale,attributes in offer["localizations"].items()), "Localization read-back mismatch"
         report["products"].append({"id": identifier, "productID": product_id, "name": name, "baseCurrency": "GBP", "basePrice": price, "locales": LOCALES, "reviewScreenshotUploaded": args.complete})
         print(f"Configured {name}: GBP {price}, {len(LOCALES)} locales, {len(territories)} regions")
     if args.complete:

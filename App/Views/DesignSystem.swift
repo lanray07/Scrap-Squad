@@ -102,7 +102,12 @@ struct RobotPortrait: View {
     var previewFinish: RobotFinish? = nil
     var body: some View {
         let finish = previewFinish ?? commerce.robotFinishes[robot.id]
-        if let image = RobotArt.image(robot.id) {
+        if let skin = finish?.skin {
+            TimelineView(.animation(minimumInterval: 0.18, paused: true)) { _ in
+                Image(uiImage: SignatureRobotArt.image(skin)).resizable().scaledToFit()
+            }.accessibilityLabel(Text(LocalizationManager.string(robot.nameKey)))
+                .accessibilityValue(Text(LocalizationManager.string(finish!.nameKey)))
+        } else if let image = RobotArt.image(robot.id) {
             Image(uiImage: image).resizable().scaledToFit()
                 .colorMultiply(finish.map { Color(hex: $0.tint) } ?? .white)
                 .overlay(alignment: .bottomTrailing) {

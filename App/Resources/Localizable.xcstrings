@@ -4309,6 +4309,248 @@
           }
         }
       }
+    },
+    "premium.catalog": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cosmetic collections"
+          }
+        }
+      }
+    },
+    "premium.classic": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Classic packs"
+          }
+        }
+      }
+    },
+    "premium.signature": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Signature collection"
+          }
+        }
+      }
+    },
+    "premium.ronin.name": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solar Ronin BOLT"
+          }
+        }
+      }
+    },
+    "premium.ronin.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A sun-forged BOLT design with a crested helmet, energy blade, animated stride and victory salute. Cosmetic only; BOLT is earned through gameplay."
+          }
+        }
+      }
+    },
+    "premium.bastion.name": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iron Bastion TANK"
+          }
+        }
+      }
+    },
+    "premium.bastion.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A heavy-armour TANK design with a tower shield, reinforced shoulders, animated stride and victory salute. Unlock TANK through gameplay."
+          }
+        }
+      }
+    },
+    "premium.medic.name": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Star Medic PATCH"
+          }
+        }
+      }
+    },
+    "premium.medic.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A winged PATCH design with a luminous halo, medical insignia, animated stride and victory salute. Unlock PATCH through gameplay."
+          }
+        }
+      }
+    },
+    "premium.prism.name": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prism Arsenal"
+          }
+        }
+      }
+    },
+    "premium.prism.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mint and violet weapon trails, diamond impact sparks and prism projectile colours. Cosmetic only; attack damage and enemy warnings stay the same."
+          }
+        }
+      }
+    },
+    "premium.collection.name": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Signature Collection"
+          }
+        }
+      }
+    },
+    "premium.collection.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solar Ronin BOLT, Iron Bastion TANK, Star Medic PATCH and Prism Arsenal. Four permanent cosmetic products; no robot unlocks or combat bonuses."
+          }
+        }
+      }
+    },
+    "premium.bundle.overlap": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You already own part of this collection. Buy only your missing products below; the bundle is unavailable to avoid duplicate purchases."
+          }
+        }
+      }
+    },
+    "premium.preview": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try in the arena"
+          }
+        }
+      }
+    },
+    "premium.preview.note": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preview only. No purchases, ownership changes, rewards or progress are saved."
+          }
+        }
+      }
+    },
+    "premium.preview.mode": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preview mode"
+          }
+        }
+      }
+    },
+    "premium.arena": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Battle preview"
+          }
+        }
+      }
+    },
+    "premium.victory": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Victory poses"
+          }
+        }
+      }
+    },
+    "premium.preview.drag": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drag to steer the preview squad. Try Dash to see the skin in motion."
+          }
+        }
+      }
+    },
+    "premium.done": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        }
+      }
+    },
+    "premium.loadout": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Signature loadout"
+          }
+        }
+      }
     }
   }
 }

@@ -5,7 +5,7 @@ on:
       test_class:
         description: Release checks to run
         type: choice
-        options: [ReleaseReadinessUITests, CosmeticPurchaseUITests, CombatShowcaseUITests, ExcitementUITests, ExcitementUITests/testRealUpgradeRecipeWaveEventEvolutionAndCleanRetry]
+        options: [PremiumShopUITests, ReleaseReadinessUITests, CosmeticPurchaseUITests, CombatShowcaseUITests, ExcitementUITests, ExcitementUITests/testRealUpgradeRecipeWaveEventEvolutionAndCleanRetry]
         default: ReleaseReadinessUITests
       family:
         description: Simulator family

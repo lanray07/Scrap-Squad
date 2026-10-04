@@ -6,7 +6,7 @@ root = Path(__file__).resolve().parents[1]
 path = root / 'App/Resources/Localizable.xcstrings'
 catalog = json.loads(path.read_text(encoding='utf-8'))
 source = {}
-for filename in ["replay_strings.json", "excitement_strings.json"]:
+for filename in ["replay_strings.json", "excitement_strings.json", "premium_strings.json"]:
     source.update(json.loads((root / "Tools" / filename).read_text(encoding="utf-8")))
 for key, value in source.items():
     entry = catalog['strings'].setdefault(key, {'extractionState': 'manual', 'localizations': {}})

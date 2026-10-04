@@ -29,6 +29,12 @@ extension CosmeticCatalog {
            let saved = try? JSONDecoder().decode(CosmeticSelection.self, from: data) { selection = saved }
     }
     var robotFinishes: [String: RobotFinish] { selection.activeFinishes(catalog: configuration, owned: entitlements) }
+    var effectiveOwnership: Set<String> { configuration.effectiveOwnership(entitlements) }
+    var weaponEffect: String? { selection.weaponEffectID.flatMap { configuration.availableWeaponEffects(owned: entitlements).contains($0) ? $0 : nil } }
+    func setWeaponEffect(_ effect: String?) {
+        guard effect == nil || configuration.availableWeaponEffects(owned: entitlements).contains(effect!) else { return }
+        selection.weaponEffectID = effect; saveSelection()
+    }
     var hasFounderExtras: Bool { configuration.hasFounderExtras(owned: entitlements) }
     var goldenTrails: Bool { hasFounderExtras && selection.goldenTrails }
     var founderBadge: Bool { hasFounderExtras && selection.founderBadge }
@@ -77,8 +83,10 @@ extension CosmeticCatalog {
         selection.reconcile(catalog: configuration, owned: owned); saveSelection()
     }
     func purchase(_ product: Product) async {
-        guard !loading, product.type == .nonConsumable, configuration.productIDs.contains(product.id), !entitlements.contains(product.id) else { return }
+        guard !loading, product.type == .nonConsumable, configuration.productIDs.contains(product.id), configuration.canPurchase(product.id, owned: entitlements) else { return }
         loading = true; messageKey = nil; defer { loading = false }
+        await loadProductsAndEntitlements()
+        guard configuration.canPurchase(product.id, owned: entitlements) else { messageKey = "premium.bundle.overlap"; return }
         do {
             switch try await product.purchase() {
             case .success(let result): await accept(result)

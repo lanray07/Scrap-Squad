@@ -6,6 +6,7 @@ import ScrapCore
     let engine: BattleEngine
     let finishes: [String: RobotFinish]
     let goldenTrails: Bool
+    let weaponEffect: String?
     var movement = Vector()
     var simulationPaused = false
     var refresh: (() -> Void)?
@@ -45,10 +46,11 @@ import ScrapCore
     private var lastEventSequence = 0
     private var lastCompletedEvents = 0
     private var dashAura: SKShapeNode?
-    init(engine: BattleEngine, finishes: [String: RobotFinish], goldenTrails: Bool) {
+    init(engine: BattleEngine, finishes: [String: RobotFinish], goldenTrails: Bool, weaponEffect: String? = nil) {
         self.engine = engine
         self.finishes = finishes
         self.goldenTrails = goldenTrails
+        self.weaponEffect = weaponEffect
         super.init(size: CGSize(width: 600, height: 800))
         scaleMode = .resizeFill
         backgroundColor = UIColor(hex: engine.biome.palette[0])
@@ -116,6 +118,13 @@ import ScrapCore
                 let stride = robotStrides[index]
                 let animated = stride.moving && !engine.profile.preferences.reducedMotion
                 let phase = stride.distance / 0.05 * .pi * 2
+                if let sprite = body as? SKSpriteNode, let skin = finishes[engine.profile.squad[index]]?.skin {
+                    let frame = animated ? Int(stride.distance / 0.0125) % 4 : 0
+                    if sprite.userData?["skin-frame"] as? Int != frame {
+                        sprite.texture = SKTexture(image: SignatureRobotArt.image(skin, frame: frame))
+                        sprite.userData = NSMutableDictionary(dictionary: ["skin-frame": frame])
+                    }
+                }
                 body.position.y = animated ? CGFloat(abs(sin(phase))) * 4 : 0
                 body.zRotation = animated ? CGFloat(sin(phase)) * 0.07 - CGFloat(stride.direction.x) * 0.08 : 0
                 body.yScale = animated ? 1 - CGFloat(abs(sin(phase))) * 0.04 : 1
@@ -176,7 +185,7 @@ import ScrapCore
             announce(LocalizationManager.string("momentum.wave", locale: engine.profile.preferences.locale) + " \(engine.wave)", color: "F5B942")
         }
         if engine.combo.multiplier > lastComboTier {
-            announce("×\(engine.combo.multiplier) " + LocalizationManager.string("momentum.combo", locale: engine.profile.preferences.locale), color: "79D9BA")
+            announce("Ã—\(engine.combo.multiplier) " + LocalizationManager.string("momentum.combo", locale: engine.profile.preferences.locale), color: "79D9BA")
             AudioBus.shared.play(.combo, preferences: engine.profile.preferences)
         }
         lastComboTier = engine.combo.multiplier
@@ -302,13 +311,20 @@ import ScrapCore
         for id in Array(projectileNodes.keys) where !ids.contains(id) { projectileNodes.removeValue(forKey: id)?.removeFromParent() }
         for projectile in engine.projectiles {
             let node = projectileNodes[projectile.id] ?? SKShapeNode(rectOf: CGSize(width: 14, height: 5), cornerRadius: 2)
-            if let shape = node as? SKShapeNode { shape.fillColor = UIColor(hex: goldenTrails ? "FFD878" : "FFB66C"); shape.strokeColor = .white; shape.lineWidth = 1 }
+            if let shape = node as? SKShapeNode { shape.fillColor = UIColor(hex: weaponEffect == "prism" ? "A3FFED" : goldenTrails ? "FFD878" : "FFB66C"); shape.strokeColor = .white; shape.lineWidth = 1 }
             node.position = point(projectile.position); node.setScale(unitScale); node.zPosition = 7
             if let target = engine.enemies.first(where: { $0.id == projectile.targetID }) { node.zRotation = CGFloat(atan2(target.position.y - projectile.position.y, target.position.x - projectile.position.x)) }
             if node.parent == nil { world.addChild(node); projectileNodes[projectile.id] = node }
         }
     }
     private func makeRobot(_ robot: Robot) -> SKNode {
+        if let skin = finishes[robot.id]?.skin {
+            let sprite = SKSpriteNode(texture: SKTexture(image: SignatureRobotArt.image(skin)))
+            let dimension: CGFloat = robot.silhouette == "heavy" ? 66 : 58
+            sprite.size = CGSize(width: dimension, height: dimension)
+            sprite.userData = NSMutableDictionary(dictionary: ["skin-frame": 0])
+            return sprite
+        }
         if let index = RobotArt.order.firstIndex(of: robot.id) {
             let atlas = SKTexture(imageNamed: "RobotAtlas")
             let rect = CGRect(x: Double(index % 4) / 4, y: index < 4 ? 0.5 : 0, width: 0.25, height: 0.5)
@@ -321,7 +337,7 @@ import ScrapCore
                 trim.strokeColor = UIColor(hex: finish.accent); trim.lineWidth = 2; trim.position.y = -dimension * 0.35
                 trim.zPosition = -1; sprite.addChild(trim)
                 let decal = SKLabelNode(fontNamed: "AvenirNext-Bold")
-                decal.text = finish.id == "bolt-founders-gold" ? "★" : finish.robotID == "patch" ? "♥" : "◆"
+                decal.text = finish.id == "bolt-founders-gold" ? "â˜…" : finish.robotID == "patch" ? "â™¥" : "â—†"
                 decal.fontSize = 10; decal.fontColor = UIColor(hex: finish.accent); decal.position.y = -5; sprite.addChild(decal)
             }
             return sprite
@@ -375,7 +391,7 @@ import ScrapCore
     }
     private func render(_ effect: CombatEffect) {
         guard effectsLayer.children.count < 350 else { return }
-        let color = UIColor(hex: goldenTrails ? "FFD878" : effect.style == .arc ? "83EAFF" : effect.style == .beam ? "BC9BFF" : engine.biome.palette[2])
+        let color = UIColor(hex: weaponEffect == "prism" ? (effect.style == .arc || effect.style == .beam ? "E7A8FF" : "A3FFED") : goldenTrails ? "FFD878" : effect.style == .arc ? "83EAFF" : effect.style == .beam ? "BC9BFF" : engine.biome.palette[2])
         if effect.damage > 0 {
             if engine.elapsed - lastShotSoundAt >= 0.18 { lastShotSoundAt = engine.elapsed; AudioBus.shared.play(.weapon, preferences: engine.profile.preferences) }
             let path = CGMutablePath()
@@ -410,7 +426,7 @@ import ScrapCore
             }
             let count = engine.profile.preferences.reducedMotion ? 0 : Int(engine.profile.preferences.particleIntensity * 6)
             for index in 0..<count {
-                let spark = SKShapeNode(circleOfRadius: 2); spark.fillColor = color; spark.strokeColor = .clear; spark.position = point(effect.to); effectsLayer.addChild(spark)
+                let spark = weaponEffect == "prism" ? SKShapeNode(rectOf: CGSize(width: 5, height: 5)) : SKShapeNode(circleOfRadius: 2); spark.zRotation = .pi / 4; spark.fillColor = color; spark.strokeColor = .clear; spark.position = point(effect.to); effectsLayer.addChild(spark)
                 let angle = Double(index) * .pi * 2 / Double(max(1, count))
                 spark.run(.sequence([.group([.moveBy(x: cos(angle) * 17, y: sin(angle) * 17, duration: 0.2), .fadeOut(withDuration: 0.2)]), .removeFromParent()]))
             }

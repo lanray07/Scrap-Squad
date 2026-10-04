@@ -39,14 +39,14 @@ struct BattleLobby: View {
                     var snapshot = store.profile; snapshot.zone = zone
                     let arguments = ProcessInfo.processInfo.arguments
                     let seed: UInt64 = arguments.contains("--ui-testing") && arguments.contains("--excitement-qa") ? 42 : UInt64.random(in: 1...UInt64.max)
-                    session = BattleSession(content: store.content, profile: snapshot, mode: mode, finishes: commerce.robotFinishes, goldenTrails: commerce.goldenTrails, seed: seed)
+                    session = BattleSession(content: store.content, profile: snapshot, mode: mode, finishes: commerce.robotFinishes, goldenTrails: commerce.goldenTrails, weaponEffect: commerce.weaponEffect, seed: seed)
                 }
                 LText("battle.move").font(.subheadline).foregroundStyle(Theme.muted)
                 LText("battle.excitement.note").font(.caption).foregroundStyle(Theme.muted)
                 LText("battle.survival.note").font(.caption).foregroundStyle(Theme.muted)
                 ChallengePanel { challenge in
                     session = BattleSession(content: store.content, profile: challenge.profile(content: store.content, preferences: store.profile.preferences), mode: .dailyAnomaly,
-                        finishes: commerce.robotFinishes, goldenTrails: commerce.goldenTrails, seed: UInt64(challenge.seed), challengeCode: challenge.code)
+                        finishes: commerce.robotFinishes, goldenTrails: commerce.goldenTrails, weaponEffect: commerce.weaponEffect, seed: UInt64(challenge.seed), challengeCode: challenge.code)
                 }
             }.padding(20).frame(maxWidth: 760)
         }.background(Theme.ink).onAppear { zone = min(zone, store.profile.zone) }
@@ -63,10 +63,11 @@ struct BattleLobby: View {
     var personalBest = false
     let finishes: [String: RobotFinish]
     let goldenTrails: Bool
-    init(content: GameContent, profile: PlayerProfile, mode: GameMode, finishes: [String: RobotFinish], goldenTrails: Bool, seed: UInt64 = UInt64.random(in: 1...UInt64.max), challengeCode: String? = nil) {
-        self.finishes = finishes; self.goldenTrails = goldenTrails
+    let weaponEffect: String?
+    init(content: GameContent, profile: PlayerProfile, mode: GameMode, finishes: [String: RobotFinish], goldenTrails: Bool, weaponEffect: String? = nil, seed: UInt64 = UInt64.random(in: 1...UInt64.max), challengeCode: String? = nil) {
+        self.finishes = finishes; self.goldenTrails = goldenTrails; self.weaponEffect = weaponEffect
         engine = BattleEngine(content: content, profile: profile, mode: mode, seed: seed, challengeCode: challengeCode)
-        scene = BattleScene(engine: engine, finishes: finishes, goldenTrails: goldenTrails)
+        scene = BattleScene(engine: engine, finishes: finishes, goldenTrails: goldenTrails, weaponEffect: weaponEffect)
         scene.refresh = { [weak self] in self?.revision += 1 }
     }
 }
@@ -219,6 +220,9 @@ struct BattleView: View {
     var resultsOverlay: some View {
         modal {
             Image(systemName: session.engine.state == .victory ? "flag.checkered" : "wrench.and.screwdriver.fill").font(.system(size: 60)).foregroundStyle(Theme.gold)
+            if session.engine.state == .victory {
+                SignatureVictoryPose(finishes: Array(session.finishes.values).filter { $0.skin != nil }, reducedMotion: session.engine.profile.preferences.reducedMotion)
+            }
             PageHeading(title: session.engine.state == .victory ? "battle.victory" : "battle.defeat", subtitle: "battle.results")
             HStack { LText("battle.kills"); Spacer(); Text(session.engine.kills, format: .number) }
             HStack { LText("battle.score"); Spacer(); Text(session.engine.score, format: .number) }
@@ -238,7 +242,7 @@ struct BattleView: View {
                 let previous = session
                 previous.scene.isPaused = true
                 session = BattleSession(content: previous.engine.content, profile: previous.engine.profile, mode: previous.engine.mode,
-                    finishes: previous.finishes, goldenTrails: previous.goldenTrails,
+                    finishes: previous.finishes, goldenTrails: previous.goldenTrails, weaponEffect: previous.weaponEffect,
                     seed: previous.engine.challengeCode == nil ? UInt64.random(in: 1...UInt64.max) : previous.engine.seed, challengeCode: previous.engine.challengeCode)
                 priority = .nearest; dragOrigin = nil
                 playMusic()

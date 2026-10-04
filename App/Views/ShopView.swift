@@ -4,12 +4,17 @@ import ScrapCore
 
 struct ShopView: View {
     @Environment(CommerceService.self) private var commerce
+    @State private var signature = false
     var body: some View {
         ScrollView {
             VStack(spacing: 22) {
                 PageHeading(title: "shop.title", subtitle: "shop.subtitle")
                 if commerce.loading { ProgressView().accessibilityLabel(Text(LocalizationManager.string("shop.loading"))) }
-                ForEach(commerce.configuration.packs) { pack in CosmeticPackCard(pack: pack) }
+                Picker(LocalizationManager.string("premium.catalog"), selection: $signature) {
+                    LText("premium.classic").tag(false)
+                    LText("premium.signature").tag(true)
+                }.pickerStyle(.segmented).accessibilityIdentifier("shop-catalog")
+                ForEach(commerce.configuration.packs.filter { ($0.id != "com.ScrapSquad.app.founder" && $0.id != "com.ScrapSquad.app.styles") == signature }.sorted { ($0.includes != nil ? 0 : 1) < ($1.includes != nil ? 0 : 1) }) { pack in CosmeticPackCard(pack: pack) }
                 ActionButton(key: "shop.refresh", symbol: "arrow.clockwise", secondary: true) { Task { await commerce.refresh() } }
                     .disabled(commerce.loading).accessibilityIdentifier("shop-refresh")
                 ActionButton(key: "shop.restore", symbol: "arrow.counterclockwise", secondary: true) { Task { await commerce.restore() } }
@@ -25,7 +30,8 @@ private struct CosmeticPackCard: View {
     @Environment(GameStore.self) private var store
     @Environment(CommerceService.self) private var commerce
     let pack: CosmeticPack
-    private var owned: Bool { commerce.entitlements.contains(pack.id) }
+    @State private var preview: CosmeticPack?
+    private var owned: Bool { commerce.effectiveOwnership.contains(pack.id) }
     private var product: Product? { commerce.products.first { $0.id == pack.id } }
     var body: some View {
         Panel {
@@ -57,6 +63,21 @@ private struct CosmeticPackCard: View {
                     }
                 }
             }
+            if let includes = pack.includes {
+                ForEach(includes, id: \.self) { id in
+                    if let component = commerce.configuration.packs.first(where: { $0.id == id }) {
+                        HStack { LText(component.nameKey); Spacer(); if commerce.effectiveOwnership.contains(id) { LText("cosmetic.owned").foregroundStyle(Theme.mint) } }
+                    }
+                }
+            }
+            Button { preview = pack } label: { Label { LText("premium.preview") } icon: { Image(systemName: "play.rectangle.fill") } }
+                .frame(minHeight: 44).tint(Theme.mint).accessibilityIdentifier("preview-" + pack.id)
+            if let effect = pack.weaponEffect, owned {
+                let selected = commerce.weaponEffect == effect
+                Button { commerce.setWeaponEffect(selected ? nil : effect) } label: { LText(selected ? "cosmetic.remove" : "cosmetic.equip") }
+                    .frame(minHeight: 44).tint(Theme.gold).accessibilityIdentifier("equip-effect-" + effect)
+                    .accessibilityValue(Text(LocalizationManager.string(selected ? "cosmetic.equipped" : "cosmetic.original")))
+            }
             if pack.founderExtras {
                 Label { LText("cosmetic.trails") } icon: { Image(systemName: "sparkles") }.foregroundStyle(Theme.gold)
                 Label { LText("cosmetic.badge") } icon: { Image(systemName: "star.circle.fill") }.foregroundStyle(Theme.gold)
@@ -68,7 +89,9 @@ private struct CosmeticPackCard: View {
                 }
             }
             if !owned {
-                if let product {
+                if !commerce.configuration.canPurchase(pack.id, owned: commerce.entitlements) {
+                    LText("premium.bundle.overlap").font(.caption).foregroundStyle(Theme.mint).accessibilityIdentifier("bundle-overlap")
+                } else if let product {
                     Button { Task { await commerce.purchase(product) } } label: {
                         HStack { LText("cosmetic.buy"); Spacer(); Text(product.displayPrice) }
                             .font(.headline).padding(16).foregroundStyle(Theme.ink)
@@ -77,6 +100,6 @@ private struct CosmeticPackCard: View {
                 } else { LText("shop.unavailable").font(.caption).foregroundStyle(Theme.muted) }
             }
             LText("cosmetic.once").font(.caption2).foregroundStyle(Theme.muted)
-        }
+        }.sheet(item: $preview) { CosmeticPreviewSheet(pack: $0, content: store.content, catalog: commerce.configuration, preferences: store.profile.preferences) }
     }
 }

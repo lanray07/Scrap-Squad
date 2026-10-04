@@ -1,0 +1,267 @@
+[
+  {
+    "productID": "com.ScrapSquad.app.ronin",
+    "name": "Solar Ronin BOLT",
+    "priceGBP": "2.99",
+    "localizations": {
+      "en-GB": {
+        "name": "Solar Ronin BOLT",
+        "description": "BOLT skin with animated stride and victory salute."
+      },
+      "es-ES": {
+        "name": "Solar Ronin BOLT",
+        "description": "Aspecto BOLT con marcha y saludo animados."
+      },
+      "fr-FR": {
+        "name": "Solar Ronin BOLT",
+        "description": "Apparence BOLT, marche et salut de victoire animés."
+      },
+      "de-DE": {
+        "name": "Solar Ronin BOLT",
+        "description": "BOLT-Design mit Gang und animiertem Siegesgruß."
+      },
+      "it": {
+        "name": "Solar Ronin BOLT",
+        "description": "Aspetto BOLT con passo e saluto animati."
+      },
+      "pt-PT": {
+        "name": "Solar Ronin BOLT",
+        "description": "Visual BOLT com passada e saudação animadas."
+      },
+      "pt-BR": {
+        "name": "Solar Ronin BOLT",
+        "description": "Visual BOLT com passada e saudação animadas."
+      },
+      "ja": {
+        "name": "Solar Ronin BOLT",
+        "description": "歩行と勝利の挨拶が動くBOLTスキン。"
+      },
+      "ko": {
+        "name": "Solar Ronin BOLT",
+        "description": "걸음과 승리 인사 애니메이션이 있는 BOLT 스킨."
+      },
+      "zh-Hans": {
+        "name": "Solar Ronin BOLT",
+        "description": "包含行走动画和胜利致意的BOLT皮肤。"
+      },
+      "zh-Hant": {
+        "name": "Solar Ronin BOLT",
+        "description": "包含行走動畫和勝利致意的BOLT造型。"
+      }
+    },
+    "reviewScreenshot": "Premium-ronin-review.png",
+    "reviewNote": "Complete onboarding, open Shop, select Signature collection. Use Try in the arena for a disposable battle preview and Victory poses. One-time non-consumable, all art bundled. BOLT skin, animated stride and victory salute. After purchase tap Equip. Robot unlocks remain earned. Restore purchases is at the bottom. Bundle grants ronin, bastion, medic and prism; bundle purchase is disabled if any component is owned, and components are unavailable when owned through bundle. No combat stats, currency or progression bonuses. No ads, analytics, subscriptions or data collection."
+  },
+  {
+    "productID": "com.ScrapSquad.app.bastion",
+    "name": "Iron Bastion TANK",
+    "priceGBP": "2.99",
+    "localizations": {
+      "en-GB": {
+        "name": "Iron Bastion TANK",
+        "description": "TANK skin with animated stride and victory salute."
+      },
+      "es-ES": {
+        "name": "Iron Bastion TANK",
+        "description": "Aspecto TANK con marcha y saludo animados."
+      },
+      "fr-FR": {
+        "name": "Iron Bastion TANK",
+        "description": "Apparence TANK, marche et salut de victoire animés."
+      },
+      "de-DE": {
+        "name": "Iron Bastion TANK",
+        "description": "TANK-Design mit Gang und animiertem Siegesgruß."
+      },
+      "it": {
+        "name": "Iron Bastion TANK",
+        "description": "Aspetto TANK con passo e saluto animati."
+      },
+      "pt-PT": {
+        "name": "Iron Bastion TANK",
+        "description": "Visual TANK com passada e saudação animadas."
+      },
+      "pt-BR": {
+        "name": "Iron Bastion TANK",
+        "description": "Visual TANK com passada e saudação animadas."
+      },
+      "ja": {
+        "name": "Iron Bastion TANK",
+        "description": "歩行と勝利の挨拶が動くTANKスキン。"
+      },
+      "ko": {
+        "name": "Iron Bastion TANK",
+        "description": "걸음과 승리 인사 애니메이션이 있는 TANK 스킨."
+      },
+      "zh-Hans": {
+        "name": "Iron Bastion TANK",
+        "description": "包含行走动画和胜利致意的TANK皮肤。"
+      },
+      "zh-Hant": {
+        "name": "Iron Bastion TANK",
+        "description": "包含行走動畫和勝利致意的TANK造型。"
+      }
+    },
+    "reviewScreenshot": "Premium-bastion-review.png",
+    "reviewNote": "Complete onboarding, open Shop, select Signature collection. Use Try in the arena for a disposable battle preview and Victory poses. One-time non-consumable, all art bundled. TANK skin, animated stride and victory salute. After purchase tap Equip. Robot unlocks remain earned. Restore purchases is at the bottom. Bundle grants ronin, bastion, medic and prism; bundle purchase is disabled if any component is owned, and components are unavailable when owned through bundle. No combat stats, currency or progression bonuses. No ads, analytics, subscriptions or data collection."
+  },
+  {
+    "productID": "com.ScrapSquad.app.medic",
+    "name": "Star Medic PATCH",
+    "priceGBP": "2.99",
+    "localizations": {
+      "en-GB": {
+        "name": "Star Medic PATCH",
+        "description": "PATCH skin with animated stride and victory salute."
+      },
+      "es-ES": {
+        "name": "Star Medic PATCH",
+        "description": "Aspecto PATCH con marcha y saludo animados."
+      },
+      "fr-FR": {
+        "name": "Star Medic PATCH",
+        "description": "Apparence PATCH, marche et salut de victoire animés."
+      },
+      "de-DE": {
+        "name": "Star Medic PATCH",
+        "description": "PATCH-Design mit Gang und animiertem Siegesgruß."
+      },
+      "it": {
+        "name": "Star Medic PATCH",
+        "description": "Aspetto PATCH con passo e saluto animati."
+      },
+      "pt-PT": {
+        "name": "Star Medic PATCH",
+        "description": "Visual PATCH com passada e saudação animadas."
+      },
+      "pt-BR": {
+        "name": "Star Medic PATCH",
+        "description": "Visual PATCH com passada e saudação animadas."
+      },
+      "ja": {
+        "name": "Star Medic PATCH",
+        "description": "歩行と勝利の挨拶が動くPATCHスキン。"
+      },
+      "ko": {
+        "name": "Star Medic PATCH",
+        "description": "걸음과 승리 인사 애니메이션이 있는 PATCH 스킨."
+      },
+      "zh-Hans": {
+        "name": "Star Medic PATCH",
+        "description": "包含行走动画和胜利致意的PATCH皮肤。"
+      },
+      "zh-Hant": {
+        "name": "Star Medic PATCH",
+        "description": "包含行走動畫和勝利致意的PATCH造型。"
+      }
+    },
+    "reviewScreenshot": "Premium-medic-review.png",
+    "reviewNote": "Complete onboarding, open Shop, select Signature collection. Use Try in the arena for a disposable battle preview and Victory poses. One-time non-consumable, all art bundled. PATCH skin, animated stride and victory salute. After purchase tap Equip. Robot unlocks remain earned. Restore purchases is at the bottom. Bundle grants ronin, bastion, medic and prism; bundle purchase is disabled if any component is owned, and components are unavailable when owned through bundle. No combat stats, currency or progression bonuses. No ads, analytics, subscriptions or data collection."
+  },
+  {
+    "productID": "com.ScrapSquad.app.prism",
+    "name": "Prism Arsenal",
+    "priceGBP": "2.99",
+    "localizations": {
+      "en-GB": {
+        "name": "Prism Arsenal",
+        "description": "Weapon colours and diamond impact sparks."
+      },
+      "es-ES": {
+        "name": "Prism Arsenal",
+        "description": "Colores de armas y chispas de impacto de diamante."
+      },
+      "fr-FR": {
+        "name": "Prism Arsenal",
+        "description": "Couleurs des armes et étincelles en diamant."
+      },
+      "de-DE": {
+        "name": "Prism Arsenal",
+        "description": "Waffenfarben und diamantförmige Trefferfunken."
+      },
+      "it": {
+        "name": "Prism Arsenal",
+        "description": "Colori delle armi e scintille a diamante."
+      },
+      "pt-PT": {
+        "name": "Prism Arsenal",
+        "description": "Cores de armas e faíscas de impacto em diamante."
+      },
+      "pt-BR": {
+        "name": "Prism Arsenal",
+        "description": "Cores de armas e faíscas de impacto em diamante."
+      },
+      "ja": {
+        "name": "Prism Arsenal",
+        "description": "武器カラーとダイヤ形の着弾エフェクト。"
+      },
+      "ko": {
+        "name": "Prism Arsenal",
+        "description": "무기 색상과 다이아몬드 충돌 불꽃."
+      },
+      "zh-Hans": {
+        "name": "Prism Arsenal",
+        "description": "武器配色和菱形命中特效。"
+      },
+      "zh-Hant": {
+        "name": "Prism Arsenal",
+        "description": "武器配色和菱形命中特效。"
+      }
+    },
+    "reviewScreenshot": "Premium-prism-review.png",
+    "reviewNote": "Complete onboarding, open Shop, select Signature collection. Use Try in the arena for a disposable battle preview and Victory poses. One-time non-consumable, all art bundled. Cosmetic weapon colours and diamond impact sparks. After purchase tap Equip. Robot unlocks remain earned. Restore purchases is at the bottom. Bundle grants ronin, bastion, medic and prism; bundle purchase is disabled if any component is owned, and components are unavailable when owned through bundle. No combat stats, currency or progression bonuses. No ads, analytics, subscriptions or data collection."
+  },
+  {
+    "productID": "com.ScrapSquad.app.collection",
+    "name": "Signature Collection",
+    "priceGBP": "7.99",
+    "localizations": {
+      "en-GB": {
+        "name": "Signature Collection",
+        "description": "Three robot skins and Prism Arsenal weapon effects."
+      },
+      "es-ES": {
+        "name": "Signature Collection",
+        "description": "Tres aspectos de robot y efectos Prism Arsenal."
+      },
+      "fr-FR": {
+        "name": "Signature Collection",
+        "description": "Trois apparences de robot et effets Prism Arsenal."
+      },
+      "de-DE": {
+        "name": "Signature Collection",
+        "description": "Drei Roboterdesigns und Prism-Arsenal-Waffeneffekte."
+      },
+      "it": {
+        "name": "Signature Collection",
+        "description": "Tre aspetti robot ed effetti Prism Arsenal."
+      },
+      "pt-PT": {
+        "name": "Signature Collection",
+        "description": "Três visuais de robôs e efeitos Prism Arsenal."
+      },
+      "pt-BR": {
+        "name": "Signature Collection",
+        "description": "Três visuais de robôs e efeitos Prism Arsenal."
+      },
+      "ja": {
+        "name": "Signature Collection",
+        "description": "ロボットスキン3種とPrism Arsenal武器エフェクト。"
+      },
+      "ko": {
+        "name": "Signature Collection",
+        "description": "로봇 스킨 3종과 Prism Arsenal 무기 효과."
+      },
+      "zh-Hans": {
+        "name": "Signature Collection",
+        "description": "三款机器人皮肤和Prism Arsenal武器特效。"
+      },
+      "zh-Hant": {
+        "name": "Signature Collection",
+        "description": "三款機器人造型與Prism Arsenal武器特效。"
+      }
+    },
+    "reviewScreenshot": "Premium-collection-review.png",
+    "reviewNote": "Complete onboarding, open Shop, select Signature collection. Use Try in the arena for a disposable battle preview and Victory poses. One-time non-consumable, all art bundled. Three robot skins plus Prism Arsenal effects. After purchase tap Equip. Robot unlocks remain earned. Restore purchases is at the bottom. Bundle grants ronin, bastion, medic and prism; bundle purchase is disabled if any component is owned, and components are unavailable when owned through bundle. No combat stats, currency or progression bonuses. No ads, analytics, subscriptions or data collection."
+  }
+]

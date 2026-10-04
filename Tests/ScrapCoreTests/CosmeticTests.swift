@@ -8,11 +8,11 @@ private func cosmeticCatalog() throws -> CosmeticCatalog {
 }
 @Test func cosmeticCatalogMatchesRealRobots() throws {
     let catalog = try cosmeticCatalog(), content = try GameContent.bundled()
-    #expect(catalog.packs.count == 2)
-    #expect(Set(catalog.productIDs).count == 2)
+    #expect(catalog.packs.count == 7)
+    #expect(Set(catalog.productIDs).count == 7)
     let finishes = catalog.packs.flatMap(\.finishes)
-    #expect(finishes.count == 4)
-    #expect(Set(finishes.map(\.id)).count == 4)
+    #expect(finishes.count == 7)
+    #expect(Set(finishes.map(\.id)).count == 7)
     for finish in finishes { #expect(content.robots.contains { $0.id == finish.robotID }) }
     #expect(catalog.availableFinishes(owned: []).isEmpty)
     #expect(!catalog.hasFounderExtras(owned: ["unknown"]))
@@ -34,4 +34,34 @@ private func cosmeticCatalog() throws -> CosmeticCatalog {
     #expect(!selection.goldenTrails && !selection.founderBadge)
     selection.reconcile(catalog: catalog, owned: [])
     #expect(selection.robotFinishIDs.isEmpty)
+}
+
+@Test func premiumBundleOwnershipAndRevocation() throws {
+    let catalog = try cosmeticCatalog()
+    let bundle = "com.ScrapSquad.app.collection", ronin = "com.ScrapSquad.app.ronin", prism = "com.ScrapSquad.app.prism"
+    #expect(catalog.canPurchase(bundle, owned: []))
+    #expect(!catalog.canPurchase(bundle, owned: [ronin]))
+    #expect(catalog.canPurchase(prism, owned: [ronin]))
+    #expect(!catalog.canPurchase(ronin, owned: [bundle]))
+    #expect(catalog.availableFinishes(owned: [bundle]).count == 3)
+    #expect(!catalog.hasFounderExtras(owned: [bundle]))
+    var selection = CosmeticSelection()
+    selection.robotFinishIDs = ["bolt": "bolt-ronin"]; selection.weaponEffectID = "prism"
+    selection.reconcile(catalog: catalog, owned: [bundle])
+    #expect(selection.robotFinishIDs["bolt"] == "bolt-ronin")
+    #expect(selection.weaponEffectID == "prism")
+    selection.reconcile(catalog: catalog, owned: [ronin])
+    #expect(selection.robotFinishIDs["bolt"] == "bolt-ronin")
+    #expect(selection.weaponEffectID == nil)
+    selection.reconcile(catalog: catalog, owned: [])
+    #expect(selection.robotFinishIDs.isEmpty)
+}
+@Test func oldCosmeticSaveAndPremiumManifest() throws {
+    let saved = try JSONDecoder().decode(CosmeticSelection.self, from: Data("{\"robotFinishIDs\":{},\"goldenTrails\":true,\"founderBadge\":true}".utf8))
+    #expect(saved.weaponEffectID == nil)
+    let catalog = try cosmeticCatalog()
+    for pack in catalog.packs {
+        #expect((pack.includes ?? []).allSatisfy { catalog.productIDs.contains($0) && $0 != pack.id })
+        #expect(pack.finishes.allSatisfy { $0.skin == nil || ["ronin", "bastion", "medic"].contains($0.skin!) })
+    }
 }

@@ -4,7 +4,16 @@
       "id": "com.ScrapSquad.app.founder",
       "nameKey": "cosmetic.founder.name",
       "detailKey": "cosmetic.founder.detail",
-      "finishes": [{"id":"bolt-founders-gold","robotID":"bolt","nameKey":"cosmetic.gold","tint":"FFD878","accent":"FFF0C2","symbol":"star.fill"}],
+      "finishes": [
+        {
+          "id": "bolt-founders-gold",
+          "robotID": "bolt",
+          "nameKey": "cosmetic.gold",
+          "tint": "FFD878",
+          "accent": "FFF0C2",
+          "symbol": "star.fill"
+        }
+      ],
       "founderExtras": true
     },
     {
@@ -12,11 +21,104 @@
       "nameKey": "cosmetic.styles.name",
       "detailKey": "cosmetic.styles.detail",
       "finishes": [
-        {"id":"bolt-aurora","robotID":"bolt","nameKey":"cosmetic.aurora","tint":"79E8CC","accent":"BFFFEF","symbol":"sparkle"},
-        {"id":"tank-cobalt","robotID":"tank","nameKey":"cosmetic.cobalt","tint":"80AAFF","accent":"CBDCFF","symbol":"diamond.fill"},
-        {"id":"patch-rose","robotID":"patch","nameKey":"cosmetic.rose","tint":"F4A3C2","accent":"FFE0ED","symbol":"heart.fill"}
+        {
+          "id": "bolt-aurora",
+          "robotID": "bolt",
+          "nameKey": "cosmetic.aurora",
+          "tint": "79E8CC",
+          "accent": "BFFFEF",
+          "symbol": "sparkle"
+        },
+        {
+          "id": "tank-cobalt",
+          "robotID": "tank",
+          "nameKey": "cosmetic.cobalt",
+          "tint": "80AAFF",
+          "accent": "CBDCFF",
+          "symbol": "diamond.fill"
+        },
+        {
+          "id": "patch-rose",
+          "robotID": "patch",
+          "nameKey": "cosmetic.rose",
+          "tint": "F4A3C2",
+          "accent": "FFE0ED",
+          "symbol": "heart.fill"
+        }
       ],
       "founderExtras": false
+    },
+    {
+      "id": "com.ScrapSquad.app.ronin",
+      "nameKey": "premium.ronin.name",
+      "detailKey": "premium.ronin.detail",
+      "finishes": [
+        {
+          "id": "bolt-ronin",
+          "robotID": "bolt",
+          "nameKey": "premium.ronin.name",
+          "tint": "FFB94C",
+          "accent": "FFF0AE",
+          "symbol": "sun.max.fill",
+          "skin": "ronin"
+        }
+      ],
+      "founderExtras": false
+    },
+    {
+      "id": "com.ScrapSquad.app.bastion",
+      "nameKey": "premium.bastion.name",
+      "detailKey": "premium.bastion.detail",
+      "finishes": [
+        {
+          "id": "tank-bastion",
+          "robotID": "tank",
+          "nameKey": "premium.bastion.name",
+          "tint": "729FFF",
+          "accent": "C7E2FF",
+          "symbol": "shield.fill",
+          "skin": "bastion"
+        }
+      ],
+      "founderExtras": false
+    },
+    {
+      "id": "com.ScrapSquad.app.medic",
+      "nameKey": "premium.medic.name",
+      "detailKey": "premium.medic.detail",
+      "finishes": [
+        {
+          "id": "patch-medic",
+          "robotID": "patch",
+          "nameKey": "premium.medic.name",
+          "tint": "F1A4D6",
+          "accent": "B9FFEB",
+          "symbol": "cross.fill",
+          "skin": "medic"
+        }
+      ],
+      "founderExtras": false
+    },
+    {
+      "id": "com.ScrapSquad.app.prism",
+      "nameKey": "premium.prism.name",
+      "detailKey": "premium.prism.detail",
+      "finishes": [],
+      "founderExtras": false,
+      "weaponEffect": "prism"
+    },
+    {
+      "id": "com.ScrapSquad.app.collection",
+      "nameKey": "premium.collection.name",
+      "detailKey": "premium.collection.detail",
+      "finishes": [],
+      "founderExtras": false,
+      "includes": [
+        "com.ScrapSquad.app.ronin",
+        "com.ScrapSquad.app.bastion",
+        "com.ScrapSquad.app.medic",
+        "com.ScrapSquad.app.prism"
+      ]
     }
   ]
 }
