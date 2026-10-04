@@ -1,0 +1,64 @@
+{
+  "version": "1.0",
+  "build": "15",
+  "buildID": "7ea3098a-d081-47eb-9c78-da7c4d182b9f",
+  "appSourceCommit": "2a0916aebce19b5693f6f37eb0d7f186c4921603",
+  "appleSDKBuild": "passed",
+  "coreTests": {
+    "passed": 49,
+    "failed": 0
+  },
+  "toolingTests": {
+    "passed": 19,
+    "failed": 0
+  },
+  "premiumPurchaseUITests": {
+    "workflow": 37195373712,
+    "iPhonePassed": 3,
+    "iPadPro13Passed": 3,
+    "failed": 0
+  },
+  "fullIPhoneUI": {
+    "workflow": 37195372124,
+    "passed": 21,
+    "failed": 0,
+    "status": "passed"
+  },
+  "signedReleaseWorkflow": 37195575282,
+  "productMetadataWorkflow": 37195263711,
+  "productCompletionWorkflow": 37196066212,
+  "testflightWorkflow": 37196189029,
+  "products": {
+    "total": 7,
+    "new": 5,
+    "localizationsPerProduct": 11,
+    "availableTerritories": 173,
+    "reviewScreenshotsProcessed": 7,
+    "newUKPrices": {
+      "ronin": "2.99",
+      "bastion": "2.99",
+      "medic": "2.99",
+      "prism": "2.99",
+      "collection": "7.99"
+    }
+  },
+  "captures": {
+    "iPhone": 11,
+    "iPadPro13": 11,
+    "unalteredPNG": true
+  },
+  "localization": {
+    "workflow": 37195254258,
+    "englishKeys": 416,
+    "draftLocales": 10,
+    "draftStrings": 4160,
+    "integrity": "passed",
+    "languageQuality": "unapproved"
+  },
+  "internalTestflight": "IN_BETA_TESTING",
+  "automaticNotifications": false,
+  "appReviewSubmitted": false,
+  "publicReleased": false,
+  "physicalDeviceAppearanceAndLiveAppleSandbox": "pending",
+  "revenueAndRetention": "unmeasured"
+}

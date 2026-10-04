@@ -47,4 +47,4 @@ The reviewed catalog compiles into localized resources in the next Xcode build. 
 
 `python Tools/store_campaign.py` generates separate editorial description, title, subtitle, keyword and web SEO drafts for eleven storefront locales. These drafts are not imported into the app catalog and do not prove that the app UI is localized. They require native-language review and market keyword validation. Screenshot exports currently use English copy and English UI.
 
-The [combat draft run](https://github.com/lanray07/Scrap-Squad/actions/runs/37195254258) generated 4,160 current drafts. Coverage, source hashes, placeholders, protected names and non-empty output passed `Tools/check_translation_drafts.py`. All entries remain unapproved.
+The [Signature Collection draft run](https://github.com/lanray07/Scrap-Squad/actions/runs/37195254258) generated 4,160 current drafts. Coverage, source hashes, placeholders, protected names and non-empty output passed `Tools/check_translation_drafts.py`. All entries remain unapproved.

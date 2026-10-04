@@ -85,3 +85,7 @@ Signed build 12 is processed, selected for version 1.0 and available in the exis
 ## Current build 14 — combat excitement
 
 [Signed build 14](https://github.com/lanray07/Scrap-Squad/actions/runs/37193054378) is [processed and selected](https://github.com/lanray07/Scrap-Squad/actions/runs/37193340455) for version 1.0 and [available in internal TestFlight](https://github.com/lanray07/Scrap-Squad/actions/runs/37193416124). It adds three run evolutions, Dash/perfect dodges and three wave events while retaining the wave and walking fixes. See [feature and verification evidence](../COMBAT_EXCITEMENT.md). The earlier twenty store-gallery assets were not replaced in this update; new unaltered QA captures are saved separately. No App Review submission or public release occurred.
+
+## Current build 15 — Signature Collection
+
+[Signed build 15](https://github.com/lanray07/Scrap-Squad/actions/runs/37195575282) is [processed/selected](https://github.com/lanray07/Scrap-Squad/actions/runs/37196066212) and [available in the existing internal TestFlight group](https://github.com/lanray07/Scrap-Squad/actions/runs/37196189029). Five new non-consumables add three robot skins, Prism Arsenal effects and their ownership-aware bundle; existing products retain their benefits. All seven products have eleven localizations, pricing, availability, review notes and processed genuine review screenshots. No App Review submission or public release occurred. The twenty storefront gallery assets were not replaced in this update. See [feature and verification report](../PREMIUM_SHOP.md).

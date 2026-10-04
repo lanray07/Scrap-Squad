@@ -1,0 +1,7 @@
+Workflow 37195372124; source 2a0916aebce19b5693f6f37eb0d7f186c4921603.
+native	Validate package, tooling and iOS build	2026-10-04T10:28:08.2996460Z ✔ Test run with 49 tests in 0 suites passed after 19.551 seconds.
+native	Validate package, tooling and iOS build	2026-10-04T10:28:09.0764700Z Ran 19 tests in 0.020s
+native	Validate package, tooling and iOS build	2026-10-04T10:29:14.3476530Z ** BUILD SUCCEEDED **
+native	Run iPhone simulator smoke tests	2026-10-04T10:51:16.0244230Z 	 Executed 21 tests, with 0 failures (0 unexpected) in 962.918 (962.969) seconds
+native	Run iPhone simulator smoke tests	2026-10-04T10:51:16.0249120Z 	 Executed 21 tests, with 0 failures (0 unexpected) in 962.918 (962.971) seconds
+native	Run iPhone simulator smoke tests	2026-10-04T10:51:18.4924660Z ** TEST SUCCEEDED **

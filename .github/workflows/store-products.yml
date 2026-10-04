@@ -8,7 +8,7 @@ on:
         default: false
       build:
         description: Processed release build number to attach (verify before running)
-        default: '14'
+        default: '15'
 permissions:
   contents: read
 concurrency:

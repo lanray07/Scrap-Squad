@@ -1,6 +1,6 @@
-# Build 14 device and sandbox acceptance
+# Build 15 device and sandbox acceptance
 
-Version 1.0 build 14 is processed and available to the internal **Scrap Squad QA** group. One existing tester is present; this update preserved membership and did not add or invite anyone. An App Store Connect administrator can select their own existing team account in TestFlight → Internal Testing → Scrap Squad QA → Add Testers, then install through TestFlight on their device. External beta review is not required for internal testing. Never share a password or Apple verification code with this repository.
+Version 1.0 build 15 is processed and available to the internal **Scrap Squad QA** group. One existing tester is present; this update preserved membership and did not add or invite anyone. An App Store Connect administrator can select their own existing team account in TestFlight → Internal Testing → Scrap Squad QA → Add Testers, then install through TestFlight on their device. External beta review is not required for internal testing. Never share a password or Apple verification code with this repository.
 
 ## Record the actual device result
 
@@ -8,6 +8,7 @@ For each test, record device model, OS version, build, date, result and any repr
 
 | Check | Device procedure | Current evidence |
 | --- | --- | --- |
+| Signature Collection | Preview battle/victory poses, purchase/equip/remove each skin and Prism, restart, restore and refund. Component owners must not see a bundle buy button; bundle owners must not be offered components again. Check locked robots stay locked and combat stats unchanged. | Three StoreKit preview/purchase cases pass on each iPhone/iPad simulator; live Apple sandbox and physical acceptance pending |
 | Combat excitement | Dash after steering in each direction; try a last-moment boss dodge; complete each of the three two-module recipes; clear/fail each event and check bonus scrap once at results. Rotate and pause during dash, event and artillery countdowns. Retry must clear evolution. | Eight new core tests and all four new cases pass on iPad and iPhone simulators (iPhone event case passed on corrected rerun); physical acceptance pending |
 | Wave progression | Survival/Arena past 150 seconds should show Wave 8. Boss Rush must require three defeated bosses; taking longer than two minutes must not award an early victory. Upgrade choices and Pause must freeze progress. | Seven deterministic engine tests pass; physical acceptance pending |
 | Full player path | Fresh install → tutorial → mission → three upgrade choices → boss → rewards → Workshop → fusion → equip → blueprint → city upgrade → relaunch. Verify currency and ownership persist. | Individual core/UI paths verified; physical end-to-end pending |
@@ -22,11 +23,11 @@ For each test, record device model, OS version, build, date, result and any repr
 
 TestFlight purchases use Apple's sandbox and do not charge testers. Verify that the purchase confirmation identifies the test environment. If it appears to be a production charge, cancel and check that the installed app came from TestFlight. See [Apple's TestFlight purchase testing guidance](https://developer.apple.com/help/app-store-connect/test-a-beta-version/testing-subscriptions-and-in-app-purchases-in-testflight).
 
-1. Open Shop online and confirm real Apple product names and localized prices load for both packs.
+1. Open Shop online and confirm real Apple product names and localized prices load for the seven products across Classic packs and Signature collection.
 2. Cancel a purchase; no ownership or cosmetic should be granted.
-3. Complete each test purchase. Equip every included finish, gold trails and badge where available. Gameplay stats must remain unchanged.
+3. On a clean test account, purchase the Signature bundle or its separate components; overlap protection prevents buying both. Test the two Classic packs too. Equip every included finish, Prism, gold trails and badge where available. Gameplay stats must remain unchanged.
 4. Relaunch and verify ownership and selected cosmetics. Go offline and verify previously verified ownership remains usable; reconnect and refresh.
-5. Use Restore Purchases on another device signed into the same testing account. Verify both products return and no duplicate charge is requested.
+5. Use Restore Purchases on another device signed into the same testing account. Verify the actually purchased products return, bundled components remain owned and no duplicate charge is requested.
 6. With a dedicated Sandbox Apple Account configured according to Apple's documentation, test interrupted purchases and pending/Ask to Buy where supported. Pending transactions must not grant ownership; a subsequently verified completed transaction must deliver it.
 7. Test refund/revocation using the appropriate Apple sandbox controls when available. Refresh/relaunch and verify revoked cosmetics return to the original finish and unavailable toggles are disabled.
 

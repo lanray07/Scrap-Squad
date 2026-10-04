@@ -1,6 +1,6 @@
 # Release preparation — 4 October 2026
 
-**Current build: 14.** The [combat excitement update](COMBAT_EXCITEMENT.md) adds three evolutions, Dash/perfect dodges and three wave events, retaining the [wave fix](WAVE_FIX.md) and [walking/footprints](MOVEMENT_UPDATE.md). It is available in the existing TestFlight group. The evidence below records the earlier build 10 preparation.
+**Current build: 15.** The [Signature Collection shop update](PREMIUM_SHOP.md) adds three robot skins, Prism Arsenal, live previews and an ownership-aware bundle. It retains the [combat excitement update](COMBAT_EXCITEMENT.md), [wave fix](WAVE_FIX.md) and [walking/footprints](MOVEMENT_UPDATE.md). It is available in the existing internal TestFlight group. The evidence below records earlier build 10 preparation.
 
 Version 1.0 **build 10** was uploaded, processed and attached to App Store Connect (build resource `2914e126-c2a0-4756-acb9-2c20a829900c`). [Signed Xcode archive and upload](https://github.com/lanray07/Scrap-Squad/actions/runs/37175398830) and [Apple record attachment](https://github.com/lanray07/Scrap-Squad/actions/runs/37175900722) succeeded. No App Review submission or public release has been performed.
 
