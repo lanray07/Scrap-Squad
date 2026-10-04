@@ -106,6 +106,9 @@ struct BattleView: View {
                 SpriteView(scene: session.scene, isPaused: session.paused, options: [.ignoresSiblingOrder])
                     .id(session.id)
                     .accessibilityLabel(Text(LocalizationManager.string("accessibility.arena")))
+                    .accessibilityIdentifier("battle-arena")
+                    .accessibilityValue(ProcessInfo.processInfo.arguments.contains("--ui-testing")
+                        ? "\(engine.player.x),\(engine.player.y),\(session.scene.footstepCount)" : "")
                     .gesture(DragGesture(minimumDistance: 0).onChanged { value in
                         if dragOrigin == nil { dragOrigin = value.startLocation }
                         if let origin = dragOrigin {

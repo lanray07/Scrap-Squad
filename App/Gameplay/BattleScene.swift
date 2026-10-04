@@ -21,6 +21,15 @@ import ScrapCore
     private var arenaScale: CGFloat { max(1, min(size.width, size.height) * 1.4) }
     private var unitScale: CGFloat { max(0.4, min(1, arenaScale / 600)) }
     private var robotNodes: [SKNode] = []
+    private var robotStrides: [RobotStride] = []
+    private struct GroundPrint {
+        let node: SKShapeNode
+        var position = Vector()
+        var born = -10.0
+    }
+    private var footprints: [GroundPrint] = []
+    private var nextFootprint = 0
+    private(set) var footstepCount = 0
     private let world = SKNode()
     private let effectsLayer = SKNode()
     private var lastKills = 0
@@ -57,7 +66,20 @@ import ScrapCore
         }
         for id in engine.profile.squad {
             guard let robot = engine.content.robots.first(where: { $0.id == id }) else { continue }
-            let node = makeRobot(robot); node.zPosition = 5; world.addChild(node); robotNodes.append(node)
+            let node = SKNode()
+            let body = makeRobot(robot); body.name = "walking-body"; node.addChild(body)
+            let shadow = SKShapeNode(ellipseOf: CGSize(width: 35, height: 12))
+            shadow.fillColor = UIColor.black.withAlphaComponent(0.25); shadow.strokeColor = .clear
+            shadow.position.y = -19; shadow.zPosition = -2; node.addChild(shadow)
+            node.zPosition = 5; world.addChild(node); robotNodes.append(node)
+            robotStrides.append(RobotStride())
+        }
+        // Reuse a fixed pool rather than allocating ground effects every frame.
+        for _ in 0..<96 {
+            let print = SKShapeNode(rectOf: CGSize(width: 7, height: 11), cornerRadius: 2)
+            print.fillColor = UIColor(hex: goldenTrails ? "FFD878" : engine.biome.palette[2])
+            print.strokeColor = .clear; print.zPosition = -2; print.isHidden = true
+            world.addChild(print); footprints.append(GroundPrint(node: print))
         }
         for _ in engine.dronePositions {
             let drone = SKShapeNode(rectOf: CGSize(width: 18, height: 12), cornerRadius: 4)
@@ -77,10 +99,21 @@ import ScrapCore
         for (index, node) in robotNodes.enumerated() {
             let angle = Double(index) * .pi * 2 / Double(max(1, robotNodes.count))
             let offset = index == 0 ? Vector() : Vector(cos(angle), sin(angle)) * 0.055
-            node.position = point(engine.player + offset)
+            let position = engine.player + offset
+            node.position = point(position)
             node.setScale(unitScale)
-            if !engine.profile.preferences.reducedMotion { node.zRotation = CGFloat(sin(currentTime * 4 + Double(index))) * 0.035 }
+            let steps = robotStrides[index].advance(to: position)
+            for step in steps { leaveFootprint(step) }
+            if let body = node.childNode(withName: "walking-body") {
+                let stride = robotStrides[index]
+                let animated = stride.moving && !engine.profile.preferences.reducedMotion
+                let phase = stride.distance / 0.05 * .pi * 2
+                body.position.y = animated ? CGFloat(abs(sin(phase))) * 4 : 0
+                body.zRotation = animated ? CGFloat(sin(phase)) * 0.07 - CGFloat(stride.direction.x) * 0.08 : 0
+                body.yScale = animated ? 1 - CGFloat(abs(sin(phase))) * 0.04 : 1
+            }
         }
+        updateFootprints()
         let ids = Set(engine.enemies.map(\.id))
         for id in Array(enemyNodes.keys) where !ids.contains(id) { enemyNodes.removeValue(forKey: id)?.removeFromParent() }
         for enemy in engine.enemies {
@@ -155,6 +188,25 @@ import ScrapCore
         label.run(.sequence([exit, .removeFromParent()]))
     }
     private func point(_ vector: Vector) -> CGPoint { CGPoint(x: vector.x * arenaScale, y: vector.y * arenaScale) }
+    private func leaveFootprint(_ step: RobotFootstep) {
+        guard !footprints.isEmpty else { return }
+        footstepCount += 1
+        let sideways = Vector(-step.direction.y, step.direction.x)
+        footprints[nextFootprint].position = step.position - step.direction * 0.012 + sideways * (step.side * 0.008)
+        footprints[nextFootprint].born = engine.elapsed
+        footprints[nextFootprint].node.zRotation = CGFloat(atan2(step.direction.y, step.direction.x)) - .pi / 2
+        nextFootprint = (nextFootprint + 1) % footprints.count
+    }
+    private func updateFootprints() {
+        for print in footprints {
+            let age = engine.elapsed - print.born
+            print.node.isHidden = age < 0 || age >= 3
+            if !print.node.isHidden {
+                print.node.position = point(print.position); print.node.setScale(unitScale)
+                print.node.alpha = CGFloat(0.5 * (1 - age / 3))
+            }
+        }
+    }
     private func updateWarnings() {
         let ids = Set(engine.warnings.map(\.id))
         for id in Array(warnings.keys) where !ids.contains(id) { warnings.removeValue(forKey: id)?.removeFromParent() }
