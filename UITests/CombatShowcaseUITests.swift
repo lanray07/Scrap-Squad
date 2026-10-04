@@ -18,7 +18,7 @@ import XCTest
         let deploy = app.buttons["Deploy squad"]
         for _ in 0..<3 where !deploy.isHittable { app.swipeUp() }
         deploy.tap()
-        XCTAssertTrue(app.staticTexts["The Scrap Titan"].waitForExistence(timeout: 12))
+        XCTAssertTrue(app.staticTexts.matching(identifier: "The Scrap Titan").firstMatch.waitForExistence(timeout: 12))
         let clock = app.staticTexts["battle-clock"]
         let warningTime = XCTNSPredicateExpectation(predicate: NSPredicate(format: "label == '0:05' OR label == '0:06'"), object: clock)
         XCTAssertEqual(XCTWaiter.wait(for: [warningTime], timeout: 12), .completed)

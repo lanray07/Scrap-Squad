@@ -290,7 +290,7 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
         }
         var struck = Set<Int>()
         for (shot, index) in indices.prefix(min(8, weapon.projectiles + extraProjectiles)).enumerated() {
-            if struck.contains(enemies[index].id) { continue }
+            if enemies[index].health <= 0 || struck.contains(enemies[index].id) { continue }
             let origin = origins[shot % origins.count]
             let critical = rng.next() < min(0.7, criticalChance)
             if weapon.style == .missile {
