@@ -13,6 +13,11 @@ import ScrapCore
     private var renderedEffects = Set<Int>()
     private var enemyNodes: [Int: SKNode] = [:]
     private var warnings: [Int: SKShapeNode] = [:]
+    private var projectileNodes: [Int: SKNode] = [:]
+    private var droneNodes: [SKNode] = []
+    private let trackingCamera = SKCameraNode()
+    private var arenaScale: CGFloat { max(1, min(size.width, size.height) * 1.4) }
+    private var unitScale: CGFloat { max(0.4, min(1, arenaScale / 600)) }
     private var robotNodes: [SKNode] = []
     private let world = SKNode()
     private let effectsLayer = SKNode()
@@ -34,10 +39,11 @@ import ScrapCore
     override func didMove(to view: SKView) {
         guard world.parent == nil else { return }
         addChild(world); addChild(effectsLayer)
+        addChild(trackingCamera); camera = trackingCamera
         let grid = SKShapeNode()
         let path = CGMutablePath()
-        for x in stride(from: 0.0, through: Double(size.width), by: 60) { path.move(to: CGPoint(x: x, y: 0)); path.addLine(to: CGPoint(x: x, y: size.height)) }
-        for y in stride(from: 0.0, through: Double(size.height), by: 60) { path.move(to: CGPoint(x: 0, y: y)); path.addLine(to: CGPoint(x: size.width, y: y)) }
+        for x in stride(from: -1200.0, through: 2400.0, by: 60) { path.move(to: CGPoint(x: x, y: -1200)); path.addLine(to: CGPoint(x: x, y: 2400)) }
+        for y in stride(from: -1200.0, through: 2400.0, by: 60) { path.move(to: CGPoint(x: -1200, y: y)); path.addLine(to: CGPoint(x: 2400, y: y)) }
         grid.path = path; grid.strokeColor = UIColor.white.withAlphaComponent(0.04); grid.zPosition = -10; world.addChild(grid)
         for index in 0..<22 {
             let piece = SKShapeNode(rectOf: CGSize(width: CGFloat(14 + index % 4 * 5), height: 9), cornerRadius: 3)
@@ -49,38 +55,50 @@ import ScrapCore
             guard let robot = engine.content.robots.first(where: { $0.id == id }) else { continue }
             let node = makeRobot(robot); node.zPosition = 5; world.addChild(node); robotNodes.append(node)
         }
+        for _ in engine.dronePositions {
+            let drone = SKShapeNode(rectOf: CGSize(width: 18, height: 12), cornerRadius: 4)
+            drone.fillColor = UIColor(hex: "F5B942"); drone.strokeColor = .white; drone.lineWidth = 1.5; drone.zPosition = 6
+            let rotor = SKShapeNode(rectOf: CGSize(width: 28, height: 3), cornerRadius: 1)
+            rotor.fillColor = UIColor(hex: "79D9BA"); rotor.strokeColor = .clear; rotor.position.y = 9; drone.addChild(rotor)
+            world.addChild(drone); droneNodes.append(drone)
+        }
     }
     override func update(_ currentTime: TimeInterval) {
         let dt = previous == 0 ? 0 : min(0.05, currentTime - previous); previous = currentTime
         engine.step(delta: dt, movement: movement)
+        trackingCamera.position = point(engine.player)
         updateMomentum()
         for (index, node) in robotNodes.enumerated() {
             let angle = Double(index) * .pi * 2 / Double(max(1, robotNodes.count))
             let offset = index == 0 ? Vector() : Vector(cos(angle), sin(angle)) * 0.055
             node.position = point(engine.player + offset)
+            node.setScale(unitScale)
             if !engine.profile.preferences.reducedMotion { node.zRotation = CGFloat(sin(currentTime * 4 + Double(index))) * 0.035 }
         }
         let ids = Set(engine.enemies.map(\.id))
-        for id in Array(enemyNodes.keys) where !ids.contains(id) { enemyNodes.removeValue(forKey: id)?.removeFromParent(); warnings.removeValue(forKey: id)?.removeFromParent() }
+        for id in Array(enemyNodes.keys) where !ids.contains(id) { enemyNodes.removeValue(forKey: id)?.removeFromParent() }
         for enemy in engine.enemies {
             let node: SKNode
             if let existing = enemyNodes[enemy.id] { node = existing }
             else { node = makeEnemy(enemy); enemyNodes[enemy.id] = node; world.addChild(node) }
             node.position = point(enemy.position)
+            node.setScale(unitScale)
             node.alpha = enemy.kind == "burrower" && Int(engine.elapsed) % 5 < 2 ? 0.25 : 1
             if enemy.kind == "flying" && !engine.profile.preferences.reducedMotion { node.position.y += CGFloat(sin(currentTime * 5)) * 4 }
             if let bar = node.childNode(withName: "health") as? SKShapeNode { bar.xScale = max(0.01, enemy.health / enemy.maxHealth) }
-            if enemy.windup > 0 {
-                let warning: SKShapeNode
-                if let existing = warnings[enemy.id] { warning = existing }
-                else {
-                    warning = SKShapeNode(circleOfRadius: (enemy.boss ? 0.18 : 0.07) * size.width)
-                    warning.strokeColor = UIColor(hex: "FFB66C"); warning.lineWidth = 3
-                    warning.fillColor = UIColor(hex: "F28C50").withAlphaComponent(0.13); warning.zPosition = 2
-                    world.addChild(warning); warnings[enemy.id] = warning
-                }
-                warning.position = point(enemy.target)
-            } else { warnings.removeValue(forKey: enemy.id)?.removeFromParent() }
+        }
+        updateWarnings()
+        updateProjectiles()
+        // Upgrade-added drones appear without rebuilding the battle scene.
+        let positions = engine.dronePositions
+        while droneNodes.count < positions.count {
+            let drone = SKShapeNode(rectOf: CGSize(width: 18, height: 12), cornerRadius: 4)
+            drone.fillColor = UIColor(hex: "F5B942"); drone.strokeColor = .white; drone.zPosition = 6
+            world.addChild(drone); droneNodes.append(drone)
+        }
+        for (index, node) in droneNodes.enumerated() {
+            node.isHidden = index >= positions.count
+            if index < positions.count { node.position = point(positions[index]); node.setScale(unitScale) }
         }
         let effectIDs = Set(engine.effects.map(\.id))
         renderedEffects.formIntersection(effectIDs)
@@ -100,7 +118,7 @@ import ScrapCore
                 aura.strokeColor = UIColor(hex: "79D9BA"); aura.lineWidth = 3; aura.fillColor = .clear; aura.zPosition = 3
                 world.addChild(aura); overdriveAura = aura
             }
-            overdriveAura?.position = point(engine.player)
+            overdriveAura?.position = point(engine.player); overdriveAura?.setScale(unitScale)
         } else { overdriveAura?.removeFromParent(); overdriveAura = nil }
         if engine.wave > lastWave {
             lastWave = engine.wave
@@ -121,12 +139,50 @@ import ScrapCore
         effectsLayer.childNode(withName: "momentum-announcement")?.removeFromParent()
         let label = SKLabelNode(fontNamed: "AvenirNext-Bold")
         label.name = "momentum-announcement"; label.text = text; label.fontSize = min(22, size.width / 18)
-        label.fontColor = UIColor(hex: color); label.position = CGPoint(x: size.width / 2, y: size.height * 0.85); label.zPosition = 20
+        label.fontColor = UIColor(hex: color); let center = point(engine.player)
+        label.position = CGPoint(x: center.x, y: center.y + size.height * 0.30); label.zPosition = 20
         effectsLayer.addChild(label)
         let exit: SKAction = engine.profile.preferences.reducedMotion ? .wait(forDuration: 1.5) : .sequence([.wait(forDuration: 1), .fadeOut(withDuration: 0.5)])
         label.run(.sequence([exit, .removeFromParent()]))
     }
-    private func point(_ vector: Vector) -> CGPoint { CGPoint(x: vector.x * size.width, y: vector.y * size.height) }
+    private func point(_ vector: Vector) -> CGPoint { CGPoint(x: vector.x * arenaScale, y: vector.y * arenaScale) }
+    private func updateWarnings() {
+        let ids = Set(engine.warnings.map(\.id))
+        for id in Array(warnings.keys) where !ids.contains(id) { warnings.removeValue(forKey: id)?.removeFromParent() }
+        for warning in engine.warnings {
+            let node = warnings[warning.id] ?? SKShapeNode()
+            let area = warning.area
+            let path = CGMutablePath()
+            switch area.shape {
+            case .circle:
+                let center = point(area.to), radius = area.radius * arenaScale
+                path.addEllipse(in: CGRect(x: center.x - radius, y: center.y - radius, width: radius * 2, height: radius * 2))
+                node.lineWidth = 2; node.fillColor = UIColor.orange.withAlphaComponent(0.16)
+            case .ring:
+                let center = point(area.to), radius = area.radius * arenaScale
+                path.addEllipse(in: CGRect(x: center.x - radius, y: center.y - radius, width: radius * 2, height: radius * 2))
+                node.lineWidth = area.thickness * arenaScale * 2; node.fillColor = .clear
+            case .line:
+                let stroke = CGMutablePath(); stroke.move(to: point(area.from)); stroke.addLine(to: point(area.to))
+                path.addPath(stroke.copy(strokingWithWidth: area.radius * arenaScale * 2, lineCap: .round, lineJoin: .round, miterLimit: 1))
+                node.lineWidth = 2; node.fillColor = UIColor.orange.withAlphaComponent(0.16)
+            }
+            node.path = path; node.strokeColor = warning.boss ? UIColor(hex: "FF806E") : .systemOrange
+            node.alpha = 0.4 + 0.6 * (1 - warning.remaining / warning.duration); node.zPosition = 2
+            if node.parent == nil { world.addChild(node); warnings[warning.id] = node }
+        }
+    }
+    private func updateProjectiles() {
+        let ids = Set(engine.projectiles.map(\.id))
+        for id in Array(projectileNodes.keys) where !ids.contains(id) { projectileNodes.removeValue(forKey: id)?.removeFromParent() }
+        for projectile in engine.projectiles {
+            let node = projectileNodes[projectile.id] ?? SKShapeNode(rectOf: CGSize(width: 14, height: 5), cornerRadius: 2)
+            if let shape = node as? SKShapeNode { shape.fillColor = UIColor(hex: goldenTrails ? "FFD878" : "FFB66C"); shape.strokeColor = .white; shape.lineWidth = 1 }
+            node.position = point(projectile.position); node.setScale(unitScale); node.zPosition = 7
+            if let target = engine.enemies.first(where: { $0.id == projectile.targetID }) { node.zRotation = CGFloat(atan2(target.position.y - projectile.position.y, target.position.x - projectile.position.x)) }
+            if node.parent == nil { world.addChild(node); projectileNodes[projectile.id] = node }
+        }
+    }
     private func makeRobot(_ robot: Robot) -> SKNode {
         if let index = RobotArt.order.firstIndex(of: robot.id) {
             let atlas = SKTexture(imageNamed: "RobotAtlas")
@@ -170,17 +226,41 @@ import ScrapCore
         return root
     }
     private func render(_ effect: CombatEffect) {
-        let color = UIColor(hex: goldenTrails ? "FFD878" : engine.biome.palette[2])
+        guard effectsLayer.children.count < 350 else { return }
+        let color = UIColor(hex: goldenTrails ? "FFD878" : effect.style == .arc ? "83EAFF" : effect.style == .beam ? "BC9BFF" : engine.biome.palette[2])
         if effect.damage > 0 {
             if engine.elapsed - lastShotSoundAt >= 0.18 { lastShotSoundAt = engine.elapsed; AudioBus.shared.play(.weapon, preferences: engine.profile.preferences) }
-            let path = CGMutablePath(); path.move(to: point(effect.from)); path.addLine(to: point(effect.to))
-            let trail = SKShapeNode(path: path); trail.strokeColor = color; trail.lineWidth = effect.critical ? 4 : 2; effectsLayer.addChild(trail)
+            let path = CGMutablePath()
+            let start = point(effect.from), end = point(effect.to)
+            if effect.style == .orbital { path.move(to: CGPoint(x: end.x, y: end.y + arenaScale * 0.35)); path.addLine(to: end) }
+            else {
+                path.move(to: start)
+                if effect.style == .arc {
+                    let dx = end.x - start.x, dy = end.y - start.y
+                    let length = max(1, hypot(dx, dy))
+                    for segment in 1..<6 {
+                        let t = CGFloat(segment) / 6, jag = CGFloat(segment % 2 == 0 ? 7 : -7) * unitScale
+                        path.addLine(to: CGPoint(x: start.x + dx * t - dy / length * jag, y: start.y + dy * t + dx / length * jag))
+                    }
+                }
+                path.addLine(to: end)
+            }
+            let trail = SKShapeNode(path: path); trail.strokeColor = color
+            trail.lineWidth = (effect.style == .beam || effect.style == .orbital ? 6 : effect.critical ? 4 : 2) * unitScale
+            trail.glowWidth = effect.style == .beam ? 3 * unitScale : 0; effectsLayer.addChild(trail)
             trail.run(.sequence([.fadeOut(withDuration: 0.18), .removeFromParent()]))
+            if effect.style == .missile || effect.style == .orbital {
+                let blast = SKShapeNode(circleOfRadius: arenaScale * (effect.style == .orbital ? 0.16 : 0.08))
+                blast.position = end; blast.strokeColor = color; blast.lineWidth = 3; blast.fillColor = color.withAlphaComponent(0.12)
+                effectsLayer.addChild(blast); blast.run(.sequence([.fadeOut(withDuration: 0.3), .removeFromParent()]))
+                AudioBus.shared.play(.explosion, preferences: engine.profile.preferences)
+            }
             if engine.profile.preferences.damageNumbers {
                 let label = SKLabelNode(fontNamed: "AvenirNext-Bold"); label.text = String(effect.damage); label.fontSize = effect.critical ? 19 : 13; label.fontColor = effect.critical ? .systemYellow : .white; label.position = point(effect.to); effectsLayer.addChild(label)
-                label.run(.sequence([.group([.moveBy(x: 0, y: 20, duration: 0.45), .fadeOut(withDuration: 0.45)]), .removeFromParent()]))
+                let exit: SKAction = engine.profile.preferences.reducedMotion ? .fadeOut(withDuration: 0.45) : .group([.moveBy(x: 0, y: 20, duration: 0.45), .fadeOut(withDuration: 0.45)])
+                label.run(.sequence([exit, .removeFromParent()]))
             }
-            let count = Int(engine.profile.preferences.particleIntensity * 6)
+            let count = engine.profile.preferences.reducedMotion ? 0 : Int(engine.profile.preferences.particleIntensity * 6)
             for index in 0..<count {
                 let spark = SKShapeNode(circleOfRadius: 2); spark.fillColor = color; spark.strokeColor = .clear; spark.position = point(effect.to); effectsLayer.addChild(spark)
                 let angle = Double(index) * .pi * 2 / Double(max(1, count))
