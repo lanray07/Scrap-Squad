@@ -1,6 +1,6 @@
-# Build 8 device and sandbox acceptance
+# Build 10 device and sandbox acceptance
 
-Version 1.0 build 8 is processed and available to the internal **Scrap Squad QA** group. No tester was added and no invitation was sent. An App Store Connect administrator can select their own existing team account in TestFlight → Internal Testing → Scrap Squad QA → Add Testers, then install through TestFlight on their device. External beta review is not required for internal testing. Never share a password or Apple verification code with this repository.
+Version 1.0 build 10 is processed and available to the internal **Scrap Squad QA** group. No tester was added and no invitation was sent. An App Store Connect administrator can select their own existing team account in TestFlight → Internal Testing → Scrap Squad QA → Add Testers, then install through TestFlight on their device. External beta review is not required for internal testing. Never share a password or Apple verification code with this repository.
 
 ## Record the actual device result
 
@@ -28,7 +28,7 @@ TestFlight purchases use Apple's sandbox and do not charge testers. Verify that 
 6. With a dedicated Sandbox Apple Account configured according to Apple's documentation, test interrupted purchases and pending/Ask to Buy where supported. Pending transactions must not grant ownership; a subsequently verified completed transaction must deliver it.
 7. Test refund/revocation using the appropriate Apple sandbox controls when available. Refresh/relaunch and verify revoked cosmetics return to the original finish and unavailable toggles are disabled.
 
-The local StoreKit configuration has passed purchase, persistence, restore and refund UI tests. Those results do not certify the real Apple sandbox, cross-device restore, pending approvals or service outages. Never put sandbox account credentials or transaction receipts in public issues, captures or workflow artifacts.
+The local StoreKit configuration has passed purchase, persistence, restore and refund UI tests. Local approval/decline and interrupted-delivery scenarios are covered too. Those results do not certify live Apple sandbox approvals, cross-device restore or service outages. Never put sandbox account credentials or transaction receipts in public issues, captures or workflow artifacts.
 
 ## Completion gate
 

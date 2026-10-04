@@ -6,7 +6,7 @@ The English screenshot story is ordered as combat → workshop → robot squad �
 
 ## Reproduce the ten exports
 
-The native GitHub workflow builds the app, runs `testStoreScreenshotTour`, exports XCTest attachments and renders the store pack. It uploads raw captures and final exports as `store-screenshots-<run number>`.
+The native GitHub workflow builds the app, runs the store tour plus genuine boss/replay cases, exports XCTest attachments and renders the store pack. The collector retains fifteen source captures for the ten-frame campaign. It uploads raw captures and final exports as `store-screenshots-<run number>`.
 
 ```sh
 python Tools/collect_store_captures.py <xcresult-attachment-directory> Docs/Store/Captures
@@ -17,4 +17,4 @@ NODE_PATH="$PWD/.build/screenshot-tools/node_modules" node Tools/render_store_sc
 
 On Windows, set `NODE_PATH` to the installed sharp module directory, then run the same Node script. PNG exports are 1320 × 2868 RGB with no alpha, accepted in Apple's 6.9-inch iPhone screenshot slot. SVG files retain editable copy and vector framing. The manifest includes raw/export SHA-256 hashes and the source capture for each frame.
 
-Storefront copy and screenshots are drafts for review and reflect the current development build. No App Store Connect upload is performed. English screenshots do not prove localized UI; the automatic localization workflow produces separately reviewed String Catalog drafts. See [the localization workflow](../AUTO_LOCALIZATION.md).
+The initial drafts have been saved in App Store Connect. The build 8 campaign includes boss combat, Overdrive, the Daily Circuit, mastery and voluntary share cards. Each size's `manifest.json` defines the current ten images; earlier files remain as historical sources. `release-assets.yml` verifies checksums, processing and the saved gallery order when refreshing the draft version. See [App Store Connect status](APP_STORE_CONNECT.md) for the recorded upload outcome. English screenshots do not prove localized UI; the automatic localization workflow produces separately reviewed String Catalog drafts. See [the localization workflow](../AUTO_LOCALIZATION.md).

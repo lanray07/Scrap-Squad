@@ -1,0 +1,57 @@
+{
+  "sourceCommit": "6163658",
+  "workflow": "https://github.com/lanray07/Scrap-Squad/actions/runs/37175351391",
+  "environment": "Local StoreKitTest fixture; not live Apple sandbox",
+  "captures": [
+    {
+      "file": "IAP-08-declined-locked.png",
+      "sha256": "68717078935cde8817e68c456be1f5eed3b70429bcb61dc358a50ace48fa49f4",
+      "test": "CosmeticPurchaseUITests/testAskToBuyWaitsForApprovalAndDeclinedPurchaseStaysLocked()"
+    },
+    {
+      "file": "IAP-07-approved-delivery.png",
+      "sha256": "b5aa187238d693ceaa8bf3c5841071a81cb4353b25335b3d5aa03246d457a6e8",
+      "test": "CosmeticPurchaseUITests/testAskToBuyWaitsForApprovalAndDeclinedPurchaseStaysLocked()"
+    },
+    {
+      "file": "IAP-06-awaiting-approval.png",
+      "sha256": "7f94dde881c1920772ac981d4035e7eaca570b59f44ac6f6e0948f1a767e1355",
+      "test": "CosmeticPurchaseUITests/testAskToBuyWaitsForApprovalAndDeclinedPurchaseStaysLocked()"
+    },
+    {
+      "file": "IAP-10-interrupted-delivered.png",
+      "sha256": "db5adaea7c58755bf36bc3ddbe9fc1d1b7c311c4421671f731de32b9ebbe66e4",
+      "test": "CosmeticPurchaseUITests/testInterruptedPurchaseDeliversOnlyAfterResolution()"
+    },
+    {
+      "file": "IAP-09-interrupted-locked.png",
+      "sha256": "25bfa891743d51398f0dbbed763864ded7c2591e14f941bcfa5954a2333125d3",
+      "test": "CosmeticPurchaseUITests/testInterruptedPurchaseDeliversOnlyAfterResolution()"
+    },
+    {
+      "file": "IAP-03-refunded.png",
+      "sha256": "4bb752a3e20f4d5e754ae3a563796aca3fcd6b57f2960ce3d5e9b934dd231050",
+      "test": "CosmeticPurchaseUITests/testPurchaseEquipRestoreAndRefund()"
+    },
+    {
+      "file": "IAP-02-founder-owned.png",
+      "sha256": "94b87dcfb958da16c33a619961d6b2fa7e90da57f97b56966dd432f62679fe54",
+      "test": "CosmeticPurchaseUITests/testPurchaseEquipRestoreAndRefund()"
+    },
+    {
+      "file": "IAP-01-founder-review.png",
+      "sha256": "25bfa891743d51398f0dbbed763864ded7c2591e14f941bcfa5954a2333125d3",
+      "test": "CosmeticPurchaseUITests/testPurchaseEquipRestoreAndRefund()"
+    },
+    {
+      "file": "IAP-05-styles-owned.png",
+      "sha256": "bf06331ff0b49cd849927a0776baf8d4828626c2139ee9320a91f87caa926d9e",
+      "test": "CosmeticPurchaseUITests/testStylePackPurchaseAndSelection()"
+    },
+    {
+      "file": "IAP-04-styles-review.png",
+      "sha256": "91bdde8c765101d13f8aeb77f4a00987d6fde3003b6fa851acae29ccef5fe348",
+      "test": "CosmeticPurchaseUITests/testStylePackPurchaseAndSelection()"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+Building for debugging...
+[0/8] /Users/runner/work/Scrap-Squad/Scrap-Squad/.build/arm64-apple-macosx/debug/ScrapSquadPackageTests.derived/runner.swift
+[1/8] Write sources
+[3/8] Copying content.json
+[5/8] Write swift-version-7974D3F7F03D5E95.txt
+[7/14] Emitting module ScrapCore
+[8/16] Compiling ScrapCore Replay.swift
+[9/16] Compiling ScrapCore resource_bundle_accessor.swift
+[10/16] Compiling ScrapCore Models.swift
+[11/16] Compiling ScrapCore Progression.swift
+[12/16] Compiling ScrapCore Battle.swift
+[13/16] Compiling ScrapCore CombatMechanics.swift
+[14/16] Compiling ScrapCore Cosmetics.swift
+[15/21] Emitting module ScrapCoreTests
+[16/21] Compiling ScrapCoreTests CombatTests.swift
+[17/21] Compiling ScrapCoreTests CoreTests.swift
+[18/21] Compiling ScrapCoreTests CosmeticTests.swift
+[19/21] Compiling ScrapCoreTests ReleaseStressTests.swift
+[20/22] Compiling ScrapCoreTests ReplayTests.swift
+[21/24] Emitting module ScrapSquadPackageTests
+[22/24] Compiling ScrapSquadPackageTests runner.swift
+[22/24] Write Objects.LinkFileList
+[23/24] Linking ScrapSquadPackageTests
+Build complete! (27.67s)
+Test Suite 'All tests' started at 2026-10-04 03:22:06.790.
+Test Suite 'All tests' passed at 2026-10-04 03:22:06.794.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.004) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Test saveRoundTrip() started.
+◇ Test rebootPreservesCollection() started.
+◇ Test circuitEnginesShareOpeningAndReplayHighlights() started.
+◇ Test contentIntegrity() started.
+◇ Test comboChargesExpiresAndCannotStackOverdrive() started.
+◇ Test journalMigrationRewardsIdempotencyAndBoundedHistory() started.
+◇ Test cosmeticOwnershipAndRefunds() started.
+◇ Test runRewardsCannotBeClaimedTwice() started.
+◇ Test challengeCodesRoundTripAndRejectOtherVersions() started.
+◇ Test squadNeverEmptyOrOverCapacity() started.
+◇ Test guidedMissilesTravelBeforeDamageAndRemainBounded() started.
+◇ Test missionsHaveNoStreakDependency() started.
+◇ Test everyWeaponAndBiomeKeepsCombatStateFiniteAndBounded() started.
+◇ Test attackGeometryMatchesCirclesCapsulesAndRingSafeCenter() started.
+◇ Test abilityCooldownPreventsRepeatedHealing() started.
+◇ Test dailyCircuitRotatesAtUTCMidnightAndIgnoresPurchasedProgress() started.
+◇ Test rouletteConsumesOnlyValidIngredients() started.
+◇ Test allNineBossesHaveDistinctFiniteDodgeablePatterns() started.
+◇ Test fusionIsAtomicAndUnlocksBlueprint() started.
+◇ Test offlineCapAndClockRollback() started.
+◇ Test dockDoesNotGrantRetroactiveIncome() started.
+◇ Test bossWarningsAllowEscapeAndFreezeAtUpgrade() started.
+◇ Test synergyRequirementsAreDistinctAndPresentInContent() started.
+◇ Test cosmeticCatalogMatchesRealRobots() started.
+◇ Test completeCampaignRewardsVictory() started.
+◇ Test shotsCannotEraseTheSwarmAtSpawnDistance() started.
+◇ Test corruptedProfileRejected() started.
+◇ Test dronesOrbitAndElectricLinksStayLocal() started.
+◇ Test beamsPierceAlignedLivingTargetsWithinRangeInOrder() started.
+◇ Test deterministicCombatAndUpgradePause() started.
+✔ Test saveRoundTrip() passed after 0.013 seconds.
+✔ Test rebootPreservesCollection() passed after 0.013 seconds.
+✔ Test contentIntegrity() passed after 0.013 seconds.
+✔ Test cosmeticOwnershipAndRefunds() passed after 0.013 seconds.
+✔ Test comboChargesExpiresAndCannotStackOverdrive() passed after 0.013 seconds.
+✔ Test runRewardsCannotBeClaimedTwice() passed after 0.013 seconds.
+✔ Test squadNeverEmptyOrOverCapacity() passed after 0.013 seconds.
+✔ Test challengeCodesRoundTripAndRejectOtherVersions() passed after 0.013 seconds.
+✔ Test missionsHaveNoStreakDependency() passed after 0.013 seconds.
+✔ Test attackGeometryMatchesCirclesCapsulesAndRingSafeCenter() passed after 0.013 seconds.
+✔ Test dailyCircuitRotatesAtUTCMidnightAndIgnoresPurchasedProgress() passed after 0.013 seconds.
+✔ Test journalMigrationRewardsIdempotencyAndBoundedHistory() passed after 0.014 seconds.
+✔ Test allNineBossesHaveDistinctFiniteDodgeablePatterns() passed after 0.014 seconds.
+✔ Test fusionIsAtomicAndUnlocksBlueprint() passed after 0.013 seconds.
+✔ Test rouletteConsumesOnlyValidIngredients() passed after 0.014 seconds.
+✔ Test dockDoesNotGrantRetroactiveIncome() passed after 0.013 seconds.
+✔ Test synergyRequirementsAreDistinctAndPresentInContent() passed after 0.014 seconds.
+✔ Test cosmeticCatalogMatchesRealRobots() passed after 0.013 seconds.
+✔ Test beamsPierceAlignedLivingTargetsWithinRangeInOrder() passed after 0.013 seconds.
+✔ Test corruptedProfileRejected() passed after 0.013 seconds.
+✔ Test circuitEnginesShareOpeningAndReplayHighlights() passed after 0.014 seconds.
+✔ Test offlineCapAndClockRollback() passed after 0.014 seconds.
+✔ Test guidedMissilesTravelBeforeDamageAndRemainBounded() passed after 0.019 seconds.
+✔ Test abilityCooldownPreventsRepeatedHealing() passed after 0.020 seconds.
+Release stress: 144 weapon/biome cases; sampled peaks enemies=80, projectiles=5, warnings=11; host elapsed=21.72382375 seconds. Not a device FPS or thermal measurement.
+✔ Test everyWeaponAndBiomeKeepsCombatStateFiniteAndBounded() passed after 21.745 seconds.
+✔ Test bossWarningsAllowEscapeAndFreezeAtUpgrade() passed after 21.747 seconds.
+✔ Test completeCampaignRewardsVictory() passed after 21.755 seconds.
+✔ Test shotsCannotEraseTheSwarmAtSpawnDistance() passed after 21.756 seconds.
+✔ Test dronesOrbitAndElectricLinksStayLocal() passed after 21.764 seconds.
+✔ Test deterministicCombatAndUpgradePause() passed after 21.774 seconds.
+✔ Test run with 30 tests in 0 suites passed after 21.776 seconds.

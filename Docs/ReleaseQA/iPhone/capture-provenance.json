@@ -1,0 +1,26 @@
+{
+  "sourceCommit": "f47c6c0fd0595e00ce7618d86256b84ea20ec206",
+  "workflow": "https://github.com/lanray07/Scrap-Squad/actions/runs/37175000720",
+  "captures": [
+    {
+      "file": "QA-background-paused.png",
+      "sha256": "6afefb2385b782de453cb81867c6061a0a1612de52f70bada5ba75450df9035e",
+      "test": "ReleaseReadinessUITests/testBackgroundingPausesCombatUntilExplicitResume()"
+    },
+    {
+      "file": "QA-largest-text-journal.png",
+      "sha256": "f369ed4348dfc76224c98c8259d6218fde8d9b6edab7cfcf91be415450ed846b",
+      "test": "ReleaseReadinessUITests/testLargestDynamicTypeSettingsAndJournalRemainReachable()"
+    },
+    {
+      "file": "QA-largest-text-settings.png",
+      "sha256": "9753f39200a3f19f579f84b9d1c2388aecd0c1bef6bd425abb9ed30e377f3ab7",
+      "test": "ReleaseReadinessUITests/testLargestDynamicTypeSettingsAndJournalRemainReachable()"
+    },
+    {
+      "file": "QA-accessibility-settings.png",
+      "sha256": "8ba5a6c66cc18496c2bf21c5d54e90f723dd7989e8bcd04d38bd698beac50011",
+      "test": "ReleaseReadinessUITests/testOnboardingAndSettingsAccessibilityAudit()"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "build": "10",
+  "appSource": "f47c6c0fd0595e00ce7618d86256b84ea20ec206",
+  "native": {
+    "workflow": "https://github.com/lanray07/Scrap-Squad/actions/runs/37175000200",
+    "result": "passed",
+    "coreTests": 30,
+    "toolingTests": 16,
+    "iPhoneUICases": 11,
+    "iPhoneUniqueUICasesIncludingSupplemental": 13
+  },
+  "releaseQA": {
+    "workflow": "https://github.com/lanray07/Scrap-Squad/actions/runs/37175000720",
+    "iPhoneCasesPassed": 3,
+    "iPadCasesPassed": 3
+  },
+  "compactMatrix": {
+    "workflow": "https://github.com/lanray07/Scrap-Squad/actions/runs/37175189424",
+    "iPhoneSECasesPassed": 2,
+    "iPadCasesPassed": 2
+  },
+  "stress": {
+    "cases": 144,
+    "maxSampledEnemies": 80,
+    "maxSampledMissiles": 5,
+    "maxSampledWarnings": 11,
+    "hostSeconds": 23.032668166999997,
+    "devicePerformanceMeasured": false
+  },
+  "physicalDeviceTested": false,
+  "liveAppleSandboxTested": false,
+  "humanTranslationApproved": false,
+  "submittedForReview": false,
+  "commerce": {
+    "workflow": "https://github.com/lanray07/Scrap-Squad/actions/runs/37175351391",
+    "iPhoneCasesPassed": 4,
+    "iPadCasesPassed": 4,
+    "localStoreKitOnly": true
+  }
+}

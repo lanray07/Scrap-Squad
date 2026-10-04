@@ -58,8 +58,18 @@ On the user's instruction, Founder’s Pack (`com.ScrapSquad.app.founder`, Apple
 
 The new run history and challenge codes stay on-device. Card sharing is voluntary through Apple's share sheet, explained in the live privacy policy. No new analytics, advertising, account service or data collection was introduced. The app and both purchases remain in preparation, not submitted or released. See [replay details](../PREMIUM_LOOP.md) and [build 7 status report](../Replay/app-store-status.json).
 
-## Combat update: current build 8
+## Historical combat update: build 8
 
 [Signed release 8](https://github.com/lanray07/Scrap-Squad/actions/runs/37173028209) uploaded the distinct weapon and boss-pattern update from source `2a2306418d78e6450d8b8b8f5f39d051ec6dd105`. [Native validation](https://github.com/lanray07/Scrap-Squad/actions/runs/37172499986) passed 29 core, 13 tooling and eight iPhone UI tests. Two replay/rotation cases each also passed on iPhone SE and iPad Pro. See [combat details and 31 captures](../COMBAT_UPDATE.md).
 
 [Apple API completion](https://github.com/lanray07/Scrap-Squad/actions/runs/37173348117) verified processing and attached build **8** to version 1.0, build resource `33bdbcc9-e7cb-4b1e-8e99-5c3ed6c1d8b5`. Both cosmetic products retain their prices, eleven locales, 173-region availability and review screenshots; see [current status report](../Combat/app-store-status.json). No new data collection was introduced. The app and purchases have not been submitted for review or released. Refresh store screenshots for the updated gameplay before submission and complete the outstanding physical-device, accessibility and sandbox checks.
+
+## Current gallery and form verification
+
+On 4 October, [the refreshed build 8 galleries](https://github.com/lanray07/Scrap-Squad/actions/runs/37174117548) replaced the earlier campaign in both primary-language device slots. Apple confirmed ten processed screenshots each with verified source checksums and saved campaign order. The new images include actual boss combat, Daily Circuit, Overdrive, mastery and sharing. Manifests and editable frames are saved under `Screenshots/en-GB` and `Screenshots/iPad-en-GB`.
+
+[Independent form verification](https://github.com/lanray07/Scrap-Squad/actions/runs/37174177493) confirmed the eleven localized names, subtitles, privacy URLs, descriptions, keywords and support URLs, and the existing reviewer notes/contact fields. No reviewer contact data is included in the saved report. The internal Scrap Squad QA TestFlight group contains processed build 8 and zero testers; no invitations were sent. See [release completion evidence](../RELEASE_COMPLETION.md) and [device acceptance checklist](../TESTFLIGHT_QA.md). The app and products remain in preparation, without App Review submission or public release.
+
+## Current release: build 10
+
+[Signed build 10](https://github.com/lanray07/Scrap-Squad/actions/runs/37175398830) is uploaded and [processed/attached](https://github.com/lanray07/Scrap-Squad/actions/runs/37175900722), resource `2914e126-c2a0-4756-acb9-2c20a829900c`. It adds background-pause and onboarding text fixes. Current screenshot, form and TestFlight verification is recorded in [release evidence](../RELEASE_COMPLETION.md). Physical-device/live Apple sandbox acceptance and human language review remain pending. No App Review submission or public release has occurred.

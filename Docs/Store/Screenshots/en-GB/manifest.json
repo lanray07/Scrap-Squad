@@ -3,7 +3,7 @@
   "width": 1320,
   "height": 2868,
   "format": "PNG RGB without alpha",
-  "status": "visually-reviewed-awaiting-apple-upload",
+  "status": "visually-reviewed-uploaded-and-apple-processing-verified",
   "screenshots": [
     {
       "order": 1,
@@ -148,5 +148,6 @@
   ],
   "build": "10",
   "sourceCommit": "f47c6c0fd0595e00ce7618d86256b84ea20ec206",
-  "sourceWorkflow": "https://github.com/lanray07/Scrap-Squad/actions/runs/37175000200"
+  "sourceWorkflow": "https://github.com/lanray07/Scrap-Squad/actions/runs/37175000200",
+  "uploadWorkflow": "https://github.com/lanray07/Scrap-Squad/actions/runs/37176024736"
 }
