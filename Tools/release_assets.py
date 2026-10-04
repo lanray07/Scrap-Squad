@@ -110,15 +110,16 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--upload", action="store_true")
     parser.add_argument("--prepare-testflight", action="store_true")
+    parser.add_argument("--build", required=True, help="Processed release build already attached to version 1.0")
     args = parser.parse_args()
     api = AppleAPI()
     versions = api.all(f"/v1/apps/{APP_ID}/appStoreVersions?filter[platform]=IOS&limit=200")
     version = next(v for v in versions if v["attributes"]["versionString"] == "1.0")
     build = api.call("GET", f"/v1/appStoreVersions/{version['id']}/build")["data"]
-    assert build["attributes"]["version"] == "8" and build["attributes"]["processingState"] == "VALID"
+    assert build["attributes"]["version"] == args.build and build["attributes"]["processingState"] == "VALID"
     locales = api.all(f"/v1/appStoreVersions/{version['id']}/appStoreVersionLocalizations?limit=200")
     primary = next(l for l in locales if l["attributes"]["locale"] == "en-GB")
-    report = {"appID": APP_ID, "version": "1.0", "build": "8", "buildID": build["id"],
+    report = {"appID": APP_ID, "version": "1.0", "build": args.build, "buildID": build["id"],
               "versionState": version["attributes"]["appStoreState"], "locales": [], "galleries": [], "betaGroups": []}
     for locale in locales:
         attrs = locale["attributes"]
@@ -162,7 +163,7 @@ def main():
         builds = api.all(f"/v1/betaGroups/{group['id']}/builds?limit=200")
         testers = api.all(f"/v1/betaGroups/{group['id']}/betaTesters?limit=200")
         report["betaGroups"].append({"id": group["id"], "internal": group["attributes"]["isInternalGroup"],
-            "build8Available": any(b["id"] == build["id"] for b in builds), "testerCount": len(testers)})
+            "requestedBuildAvailable": any(b["id"] == build["id"] for b in builds), "testerCount": len(testers)})
     report["betaState"] = api.call("GET", f"/v1/builds/{build['id']}/buildBetaDetail")["data"]["attributes"]
     Path(".build").mkdir(exist_ok=True)
     Path(".build/release-readiness.json").write_text(json.dumps(report, indent=2) + "\n")

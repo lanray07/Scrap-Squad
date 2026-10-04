@@ -2,6 +2,10 @@ name: Verify release records and refresh screenshots
 on:
   workflow_dispatch:
     inputs:
+      build:
+        description: Processed release build already attached to version 1.0
+        required: true
+        default: '9'
       upload:
         description: Replace the draft gallery with verified current screenshots
         type: boolean
@@ -32,11 +36,12 @@ jobs:
           ASC_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_API_PRIVATE_KEY }}
           UPLOAD: ${{ inputs.upload }}
           TESTFLIGHT: ${{ inputs.testflight }}
+          RELEASE_BUILD: ${{ inputs.build }}
         run: |
           options=()
           if [ "$UPLOAD" = true ]; then options+=(--upload); fi
           if [ "$TESTFLIGHT" = true ]; then options+=(--prepare-testflight); fi
-          python Tools/release_assets.py "${options[@]}"
+          python Tools/release_assets.py --build "$RELEASE_BUILD" "${options[@]}"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
