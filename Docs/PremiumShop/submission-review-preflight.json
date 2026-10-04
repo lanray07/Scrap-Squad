@@ -1,0 +1,66 @@
+{
+  "checkedAt": "2026-10-04T11:02:46.318799+00:00",
+  "appID": "6818847887",
+  "versionID": "b721ccd6-6baa-462e-9385-b4232e1724a1",
+  "version": "1.0",
+  "build": "15",
+  "buildID": "7ea3098a-d081-47eb-9c78-da7c4d182b9f",
+  "versionState": "PREPARE_FOR_SUBMISSION",
+  "releaseType": "AFTER_APPROVAL",
+  "products": [
+    {
+      "id": "6818880427",
+      "productID": "com.ScrapSquad.app.founder",
+      "state": "READY_TO_SUBMIT",
+      "reviewScreenshotComplete": true,
+      "localizationCount": 11
+    },
+    {
+      "id": "6818884131",
+      "productID": "com.ScrapSquad.app.styles",
+      "state": "READY_TO_SUBMIT",
+      "reviewScreenshotComplete": true,
+      "localizationCount": 11
+    },
+    {
+      "id": "6818989958",
+      "productID": "com.ScrapSquad.app.ronin",
+      "state": "READY_TO_SUBMIT",
+      "reviewScreenshotComplete": true,
+      "localizationCount": 11
+    },
+    {
+      "id": "6818989889",
+      "productID": "com.ScrapSquad.app.bastion",
+      "state": "READY_TO_SUBMIT",
+      "reviewScreenshotComplete": true,
+      "localizationCount": 11
+    },
+    {
+      "id": "6818990132",
+      "productID": "com.ScrapSquad.app.medic",
+      "state": "READY_TO_SUBMIT",
+      "reviewScreenshotComplete": true,
+      "localizationCount": 11
+    },
+    {
+      "id": "6818989968",
+      "productID": "com.ScrapSquad.app.prism",
+      "state": "READY_TO_SUBMIT",
+      "reviewScreenshotComplete": true,
+      "localizationCount": 11
+    },
+    {
+      "id": "6818990081",
+      "productID": "com.ScrapSquad.app.collection",
+      "state": "READY_TO_SUBMIT",
+      "reviewScreenshotComplete": true,
+      "localizationCount": 11
+    }
+  ],
+  "reviewNotesCurrent": true,
+  "reviewContactPresent": true,
+  "demoAccountRequired": false,
+  "submissions": [],
+  "submissionPerformedByThisTool": false
+}

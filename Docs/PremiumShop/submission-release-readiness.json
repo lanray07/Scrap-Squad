@@ -1,0 +1,173 @@
+{
+  "appID": "6818847887",
+  "version": "1.0",
+  "build": "15",
+  "buildID": "7ea3098a-d081-47eb-9c78-da7c4d182b9f",
+  "versionState": "PREPARE_FOR_SUBMISSION",
+  "locales": [
+    {
+      "locale": "ko",
+      "descriptionSaved": true,
+      "keywordsSaved": true,
+      "supportURLSaved": true
+    },
+    {
+      "locale": "pt-PT",
+      "descriptionSaved": true,
+      "keywordsSaved": true,
+      "supportURLSaved": true
+    },
+    {
+      "locale": "es-ES",
+      "descriptionSaved": true,
+      "keywordsSaved": true,
+      "supportURLSaved": true
+    },
+    {
+      "locale": "ja",
+      "descriptionSaved": true,
+      "keywordsSaved": true,
+      "supportURLSaved": true
+    },
+    {
+      "locale": "de-DE",
+      "descriptionSaved": true,
+      "keywordsSaved": true,
+      "supportURLSaved": true
+    },
+    {
+      "locale": "pt-BR",
+      "descriptionSaved": true,
+      "keywordsSaved": true,
+      "supportURLSaved": true
+    },
+    {
+      "locale": "zh-Hant",
+      "descriptionSaved": true,
+      "keywordsSaved": true,
+      "supportURLSaved": true
+    },
+    {
+      "locale": "fr-FR",
+      "descriptionSaved": true,
+      "keywordsSaved": true,
+      "supportURLSaved": true
+    },
+    {
+      "locale": "it",
+      "descriptionSaved": true,
+      "keywordsSaved": true,
+      "supportURLSaved": true
+    },
+    {
+      "locale": "en-GB",
+      "descriptionSaved": true,
+      "keywordsSaved": true,
+      "supportURLSaved": true
+    },
+    {
+      "locale": "zh-Hans",
+      "descriptionSaved": true,
+      "keywordsSaved": true,
+      "supportURLSaved": true
+    }
+  ],
+  "galleries": [
+    {
+      "display": "APP_IPAD_PRO_3GEN_129",
+      "setID": "919ed0ec-8aa1-4459-9423-fa8c89bcd8b5",
+      "count": 10
+    },
+    {
+      "display": "APP_IPHONE_67",
+      "setID": "7384ec90-559e-4ec8-a928-d3c9e6f3821b",
+      "count": 10
+    }
+  ],
+  "betaGroups": [
+    {
+      "id": "2d76688d-f2fe-43d8-9e7a-1bdd53abe9e5",
+      "internal": true,
+      "requestedBuildAvailable": true,
+      "testerCount": 1
+    }
+  ],
+  "reviewMetadata": {
+    "notesSaved": true,
+    "contactSaved": true,
+    "demoAccountRequired": false
+  },
+  "appInfoLocales": [
+    {
+      "locale": "ko",
+      "nameSaved": true,
+      "subtitleSaved": true,
+      "privacyPolicyURLSaved": true
+    },
+    {
+      "locale": "fr-FR",
+      "nameSaved": true,
+      "subtitleSaved": true,
+      "privacyPolicyURLSaved": true
+    },
+    {
+      "locale": "pt-BR",
+      "nameSaved": true,
+      "subtitleSaved": true,
+      "privacyPolicyURLSaved": true
+    },
+    {
+      "locale": "it",
+      "nameSaved": true,
+      "subtitleSaved": true,
+      "privacyPolicyURLSaved": true
+    },
+    {
+      "locale": "en-GB",
+      "nameSaved": true,
+      "subtitleSaved": true,
+      "privacyPolicyURLSaved": true
+    },
+    {
+      "locale": "de-DE",
+      "nameSaved": true,
+      "subtitleSaved": true,
+      "privacyPolicyURLSaved": true
+    },
+    {
+      "locale": "zh-Hant",
+      "nameSaved": true,
+      "subtitleSaved": true,
+      "privacyPolicyURLSaved": true
+    },
+    {
+      "locale": "ja",
+      "nameSaved": true,
+      "subtitleSaved": true,
+      "privacyPolicyURLSaved": true
+    },
+    {
+      "locale": "pt-PT",
+      "nameSaved": true,
+      "subtitleSaved": true,
+      "privacyPolicyURLSaved": true
+    },
+    {
+      "locale": "zh-Hans",
+      "nameSaved": true,
+      "subtitleSaved": true,
+      "privacyPolicyURLSaved": true
+    },
+    {
+      "locale": "es-ES",
+      "nameSaved": true,
+      "subtitleSaved": true,
+      "privacyPolicyURLSaved": true
+    }
+  ],
+  "betaState": {
+    "autoNotifyEnabled": false,
+    "internalBuildState": "IN_BETA_TESTING",
+    "externalBuildState": "READY_FOR_BETA_SUBMISSION"
+  }
+}

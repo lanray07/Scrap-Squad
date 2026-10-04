@@ -89,3 +89,10 @@ Signed build 12 is processed, selected for version 1.0 and available in the exis
 ## Current build 15 — Signature Collection
 
 [Signed build 15](https://github.com/lanray07/Scrap-Squad/actions/runs/37195575282) is [processed/selected](https://github.com/lanray07/Scrap-Squad/actions/runs/37196066212) and [available in the existing internal TestFlight group](https://github.com/lanray07/Scrap-Squad/actions/runs/37196189029). Five new non-consumables add three robot skins, Prism Arsenal effects and their ownership-aware bundle; existing products retain their benefits. All seven products have eleven localizations, pricing, availability, review notes and processed genuine review screenshots. No App Review submission or public release occurred. The twenty storefront gallery assets were not replaced in this update. See [feature and verification report](../PREMIUM_SHOP.md).
+
+
+## Submission preparation — 4 October 2026
+
+[Review preflight](https://github.com/lanray07/Scrap-Squad/actions/runs/37197335265) read back selected VALID build 15, all seven non-consumables in READY_TO_SUBMIT with eleven localizations and completed review screenshots, eleven storefront locales and both ten-image galleries. Current reviewer instructions were saved and read back exactly; existing contact information was preserved. Release type remains AFTER_APPROVAL.
+
+Apple's first-purchase submission requires the App Store Connect website. The browser session expired and is on the Apple Account sign-in screen; the user was asked to sign in. No draft submission exists and the app remains PREPARE_FOR_SUBMISSION. No review submission or public release occurred. Once authenticated, add version 1.0 and all seven purchases to the same submission, resolve any Apple validation errors, submit, and verify WAITING_FOR_REVIEW. Saved sanitized reports: ../PremiumShop/submission-review-preflight.json and ../PremiumShop/submission-release-readiness.json.
