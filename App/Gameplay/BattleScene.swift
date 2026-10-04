@@ -67,6 +67,7 @@ import ScrapCore
         }
     }
     override func update(_ currentTime: TimeInterval) {
+        guard !isPaused else { previous = currentTime; return }
         let dt = previous == 0 ? 0 : min(0.05, currentTime - previous); previous = currentTime
         engine.step(delta: dt, movement: movement)
         trackingCamera.position = point(engine.player)

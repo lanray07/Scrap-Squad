@@ -103,7 +103,7 @@ struct BattleView: View {
                 CombatMomentum(engine: engine) {
                     if engine.activateOverdrive() { Feedback.play(.ability, preferences: store.profile.preferences); AudioBus.shared.play(.overdrive, preferences: store.profile.preferences); session.revision += 1 }
                 }
-                SpriteView(scene: session.scene, options: [.ignoresSiblingOrder])
+                SpriteView(scene: session.scene, isPaused: session.paused, options: [.ignoresSiblingOrder])
                     .id(session.id)
                     .accessibilityLabel(Text(LocalizationManager.string("accessibility.arena")))
                     .gesture(DragGesture(minimumDistance: 0).onChanged { value in

@@ -23,11 +23,13 @@ struct RootView: View {
         .sheet(isPresented: $store.workshopPresented) { WorkshopView() }
         .sheet(isPresented: $store.settingsPresented) { SettingsView() }
         .sheet(isPresented: $store.onboardingPresented) {
-            VStack(spacing: 24) {
-                RobotPortrait(robot: store.content.robots[0]).frame(width: 180, height: 180)
-                PageHeading(title: "tutorial.title", subtitle: "tutorial.body")
-                ActionButton(key: "tutorial.start") { store.onboardingPresented = false; store.save() }
-            }.padding(28).presentationDetents([.large]).interactiveDismissDisabled()
+            ScrollView {
+                VStack(spacing: 24) {
+                    RobotPortrait(robot: store.content.robots[0]).frame(width: 180, height: 180)
+                    PageHeading(title: "tutorial.title", subtitle: "tutorial.body")
+                    ActionButton(key: "tutorial.start") { store.onboardingPresented = false; store.save() }
+                }.padding(28)
+            }.presentationDetents([.large]).interactiveDismissDisabled()
         }
         .sheet(isPresented: Binding(get: { store.offline != nil && !store.onboardingPresented }, set: { _ in })) {
             if let reward = store.offline {

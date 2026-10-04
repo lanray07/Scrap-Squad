@@ -52,7 +52,9 @@ struct PageHeading: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             LText(title).font(.system(.largeTitle, design: .rounded, weight: .heavy))
+                .fixedSize(horizontal: false, vertical: true)
             LText(subtitle).font(.subheadline).foregroundStyle(Theme.muted)
+                .fixedSize(horizontal: false, vertical: true)
         }.frame(maxWidth: .infinity, alignment: .leading).padding(.vertical, 12)
     }
 }
