@@ -4,6 +4,58 @@ import StoreKitTest
 @MainActor final class CosmeticPurchaseUITests: XCTestCase {
     private let founder = "com.ScrapSquad.app.founder"
     private let styles = "com.ScrapSquad.app.styles"
+    func testAskToBuyWaitsForApprovalAndDeclinedPurchaseStaysLocked() throws {
+        executionTimeAllowance = 240
+        let session = try SKTestSession(configurationFileNamed: "Cosmetics")
+        session.resetToDefaultState(); session.disableDialogs = true; try session.clearTransactions()
+        session.askToBuyEnabled = true
+        defer { session.resetToDefaultState(); try? session.clearTransactions() }
+        let app = launchShop(reset: true)
+        XCTAssertTrue(app.buttons["buy-" + founder].waitForExistence(timeout: 30))
+        app.buttons["buy-" + founder].tap()
+        XCTAssertTrue(app.staticTexts["Purchase is awaiting approval."].waitForExistence(timeout: 15))
+        XCTAssertFalse(app.staticTexts["owned-" + founder].exists)
+        XCTAssertFalse(app.buttons["equip-bolt-founders-gold"].exists)
+        let pending = try XCTUnwrap(session.allTransactions().first { $0.productIdentifier == founder && $0.pendingAskToBuyConfirmation })
+        capture(app, "IAP-06-awaiting-approval")
+        try session.approveAskToBuyTransaction(identifier: pending.identifier)
+        XCTAssertTrue(app.staticTexts["owned-" + founder].waitForExistence(timeout: 20))
+        XCTAssertTrue(app.buttons["equip-bolt-founders-gold"].exists)
+        capture(app, "IAP-07-approved-delivery")
+        app.swipeUp()
+        let buy = app.buttons["buy-" + styles]
+        XCTAssertTrue(buy.waitForExistence(timeout: 10)); buy.tap()
+        XCTAssertTrue(app.staticTexts["Purchase is awaiting approval."].waitForExistence(timeout: 15))
+        let declined = try XCTUnwrap(session.allTransactions().first { $0.productIdentifier == styles && $0.pendingAskToBuyConfirmation })
+        try session.declineAskToBuyTransaction(identifier: declined.identifier)
+        app.buttons["shop-refresh"].tap()
+        XCTAssertTrue(buy.waitForExistence(timeout: 15))
+        XCTAssertFalse(app.staticTexts["owned-" + styles].exists)
+        XCTAssertFalse(app.buttons["equip-bolt-aurora"].exists)
+        capture(app, "IAP-08-declined-locked")
+    }
+    func testInterruptedPurchaseDeliversOnlyAfterResolution() throws {
+        executionTimeAllowance = 240
+        let session = try SKTestSession(configurationFileNamed: "Cosmetics")
+        session.resetToDefaultState(); session.disableDialogs = true; try session.clearTransactions()
+        session.interruptedPurchasesEnabled = true
+        defer { session.resetToDefaultState(); try? session.clearTransactions() }
+        let app = launchShop(reset: true)
+        let buy = app.buttons["buy-" + founder]
+        XCTAssertTrue(buy.waitForExistence(timeout: 30)); buy.tap()
+        let recorded = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
+            session.allTransactions().contains { $0.productIdentifier == self.founder }
+        }, object: app)
+        XCTAssertEqual(XCTWaiter.wait(for: [recorded], timeout: 15), .completed)
+        XCTAssertFalse(app.staticTexts["owned-" + founder].exists)
+        XCTAssertFalse(app.buttons["equip-bolt-founders-gold"].exists)
+        let transaction = try XCTUnwrap(session.allTransactions().first { $0.productIdentifier == founder })
+        capture(app, "IAP-09-interrupted-locked")
+        session.interruptedPurchasesEnabled = false
+        try session.resolveIssueForTransaction(identifier: transaction.identifier)
+        XCTAssertTrue(app.staticTexts["owned-" + founder].waitForExistence(timeout: 20))
+        capture(app, "IAP-10-interrupted-delivered")
+    }
     func testPurchaseEquipRestoreAndRefund() throws {
         executionTimeAllowance = 240
         let session = try SKTestSession(configurationFileNamed: "Cosmetics")

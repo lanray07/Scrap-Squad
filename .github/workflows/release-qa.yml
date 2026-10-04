@@ -1,6 +1,12 @@
 name: Verify release accessibility and lifecycle
 on:
   workflow_dispatch:
+    inputs:
+      test_class:
+        description: Release checks to run
+        type: choice
+        options: [ReleaseReadinessUITests, CosmeticPurchaseUITests]
+        default: ReleaseReadinessUITests
 permissions:
   contents: read
 jobs:
@@ -18,7 +24,7 @@ jobs:
       - name: Verify accessibility and lifecycle
         env:
           SIMULATOR_FAMILY: ${{ matrix.family }}
-          UI_TEST_CLASS: ReleaseReadinessUITests
+          UI_TEST_CLASS: ${{ inputs.test_class || 'ReleaseReadinessUITests' }}
           UI_RESULT_NAME: release-qa
         run: bash Tools/test_ios_ui.sh
       - name: Export proof
