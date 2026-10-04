@@ -124,6 +124,18 @@ def main():
         attrs = locale["attributes"]
         report["locales"].append({"locale": attrs["locale"], "descriptionSaved": bool(attrs.get("description")),
                                  "keywordsSaved": bool(attrs.get("keywords")), "supportURLSaved": bool(attrs.get("supportUrl"))})
+    review = api.call("GET", f"/v1/appStoreVersions/{version['id']}/appStoreReviewDetail", missing=True)
+    attrs = review["data"]["attributes"] if review and review.get("data") else {}
+    report["reviewMetadata"] = {"notesSaved": bool(attrs.get("notes")),
+        "contactSaved": all(bool(attrs.get(field)) for field in ["contactFirstName", "contactLastName", "contactEmail", "contactPhone"]),
+        "demoAccountRequired": attrs.get("demoAccountRequired")}
+    infos = api.all(f"/v1/apps/{APP_ID}/appInfos?limit=200")
+    info = next((i for i in infos if i["attributes"].get("appStoreState") == report["versionState"]), infos[0])
+    report["appInfoLocales"] = []
+    for item in api.all(f"/v1/appInfos/{info['id']}/appInfoLocalizations?limit=200"):
+        attrs = item["attributes"]
+        report["appInfoLocales"].append({"locale": attrs["locale"], "nameSaved": bool(attrs.get("name")),
+            "subtitleSaved": bool(attrs.get("subtitle")), "privacyPolicyURLSaved": bool(attrs.get("privacyPolicyUrl"))})
     if args.upload:
         assert report["versionState"] == "PREPARE_FOR_SUBMISSION", "Preserving version in review"
         for display, folder in [("APP_IPHONE_67", "en-GB"), ("APP_IPAD_PRO_3GEN_129", "iPad-en-GB")]:
