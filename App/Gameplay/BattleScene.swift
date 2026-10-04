@@ -7,6 +7,7 @@ import ScrapCore
     let finishes: [String: RobotFinish]
     let goldenTrails: Bool
     var movement = Vector()
+    var simulationPaused = false
     var refresh: (() -> Void)?
     private var previous: TimeInterval = 0
     private var hudAt = 0.0
@@ -67,7 +68,7 @@ import ScrapCore
         }
     }
     override func update(_ currentTime: TimeInterval) {
-        guard !isPaused else { previous = currentTime; return }
+        guard !simulationPaused && !isPaused else { previous = currentTime; return }
         let dt = previous == 0 ? 0 : min(0.05, currentTime - previous); previous = currentTime
         engine.step(delta: dt, movement: movement)
         trackingCamera.position = point(engine.player)

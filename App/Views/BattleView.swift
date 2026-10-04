@@ -141,12 +141,12 @@ struct BattleView: View {
             .onDisappear { session.scene.isPaused = true; AudioBus.shared.stop(); if phase == .active { AudioBus.shared.play(.city, preferences: store.profile.preferences) } }
     }
     func playMusic() { AudioBus.shared.play(session.engine.bossSpawned ? .boss : .battle, preferences: store.profile.preferences) }
-    func pause() { session.paused = true; session.scene.isPaused = true; session.scene.movement = Vector(); AudioBus.shared.stop() }
+    func pause() { session.scene.simulationPaused = true; session.paused = true; session.scene.isPaused = true; session.scene.movement = Vector(); session.revision += 1; AudioBus.shared.stop() }
     var pauseOverlay: some View {
         modal {
             LText("battle.paused").font(.largeTitle.bold())
-            ActionButton(key: "battle.resume", symbol: "play.fill") { session.paused = false; session.scene.isPaused = false; playMusic() }
-            ActionButton(key: "battle.retreat", symbol: "arrow.uturn.backward", secondary: true) { session.engine.retreat(); session.paused = false; session.scene.isPaused = false; session.revision += 1 }
+            ActionButton(key: "battle.resume", symbol: "play.fill") { session.scene.simulationPaused = false; session.paused = false; session.scene.isPaused = false; playMusic() }
+            ActionButton(key: "battle.retreat", symbol: "arrow.uturn.backward", secondary: true) { session.engine.retreat(); session.scene.simulationPaused = false; session.paused = false; session.scene.isPaused = false; session.revision += 1 }
         }
     }
     var choicesOverlay: some View {

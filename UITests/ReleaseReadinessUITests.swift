@@ -14,9 +14,14 @@ import XCTest
         app.activate()
         XCTAssertTrue(app.buttons["Resume"].waitForExistence(timeout: 10))
         let clock = app.staticTexts["battle-clock"]
+        // Foregrounding can deliver the last HUD refresh from before the pause.
+        // Then require a full three-second stable window; continuous ticking still fails.
+        let settling = XCTNSPredicateExpectation(predicate: NSPredicate(format: "label != %@", clock.label), object: clock)
+        _ = XCTWaiter.wait(for: [settling], timeout: 1)
         let paused = clock.label
         let changed = XCTNSPredicateExpectation(predicate: NSPredicate(format: "label != %@", paused), object: clock)
         XCTAssertEqual(XCTWaiter.wait(for: [changed], timeout: 3), .timedOut)
+        print("Pause stability: before=\(paused), after=\(clock.label)")
         capture("QA-background-paused")
         app.buttons["Resume"].tap()
         let resumed = XCTNSPredicateExpectation(predicate: NSPredicate(format: "label != %@", paused), object: clock)
