@@ -1,6 +1,6 @@
 # Verification snapshot — 4 October 2026
 
-**Updated:** Signed version 1.0 build 12 fixes the three wave defects and includes walking/footprints. It is processed, selected and available in internal TestFlight. Apple SDK compilation, 39 core tests, 18 tooling tests and all 14 iPhone simulator UI tests passed in the full native run. See [wave fix evidence](WAVE_FIX.md), [historical movement evidence](MOVEMENT_UPDATE.md) and [device acceptance](TESTFLIGHT_QA.md). All 375 English keys resolve; ten draft languages await human review. No App Review submission or public release occurred. The table below is historical Windows evidence.
+**Updated:** Signed version 1.0 build 14 adds three evolutions, Dash/perfect dodges and three wave events, retaining the wave fix and walking/footprints. It is processed, selected and available in internal TestFlight. Apple SDK compilation, 47 core tests and 18 tooling tests passed. The full native run passed 17/18 iPhone UI cases; its sole failure was the event-wait timeout. The corrected targeted rerun passed the remaining case, giving eighteen unique passing iPhone UI cases across the two runs. All four new combat cases passed on iPad Pro 13 and on iPhone across the matrix and targeted rerun. See [combat excitement evidence](COMBAT_EXCITEMENT.md) and [device acceptance](TESTFLIGHT_QA.md). All 394 English keys resolve; 3,940 free machine drafts in ten languages await human review. No App Review submission or public release occurred. The table below is historical Windows evidence.
 
 | Check | Result |
 | --- | --- |

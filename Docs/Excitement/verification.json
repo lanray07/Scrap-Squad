@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+  "build": "14",
+  "buildID": "59cb5ae0-aaaa-4376-93fb-b9f90e3924c0",
+  "appSourceCommit": "57b568e73892b78160038ed037a764cb5106dac3",
+  "testToleranceCommit": "2deab9d6b9231cfd772276385b7115819a0576f5",
+  "appRuntimeUnchangedByTestToleranceFix": true,
+  "appleSDKBuild": "passed",
+  "coreTests": {
+    "passed": 47,
+    "failed": 0
+  },
+  "toolingTests": {
+    "passed": 18,
+    "failed": 0
+  },
+  "iPhoneUI": {
+    "fullNativeRun": 37193033703,
+    "initialPassed": 17,
+    "initialFailed": 1,
+    "failure": "Event wait expired before game-time 28s; initial suite conclusion remains failure.",
+    "correctedRerun": 37194094624,
+    "rerunPassed": 1,
+    "rerunFailed": 0,
+    "uniquePassingCasesAcrossRuns": 18
+  },
+  "newCombatUI": {
+    "matrixRun": 37193034733,
+    "iPadPro13Passed": 4,
+    "iPhoneMatrixPassed": 3,
+    "iPhoneRerunPassed": 1,
+    "casesPerFamily": 4
+  },
+  "releaseWorkflow": 37193054378,
+  "appleAttachmentWorkflow": 37193340455,
+  "testflightWorkflow": 37193416124,
+  "distribution": "Existing internal TestFlight group; no App Review submission or public release",
+  "localization": {
+    "workflow": 37192135277,
+    "englishKeys": 394,
+    "draftLocales": 10,
+    "draftStrings": 3940,
+    "integrity": "passed",
+    "languageQuality": "unapproved"
+  },
+  "physicalDeviceAcceptance": "pending",
+  "performanceFPSAndRetention": "unmeasured",
+  "captures": {
+    "iPhone": 6,
+    "iPadPro13": 6,
+    "unalteredPNG": true
+  }
+}

@@ -1,0 +1,7 @@
+Workflow 37194094624; workflow source 2deab9d6b9231cfd772276385b7115819a0576f5; app runtime identical to signed source 57b568e73892b78160038ed037a764cb5106dac3.
+qa (iPhone)	Verify accessibility and lifecycle	2026-10-04T10:08:55.0002980Z Test Case '-[ScrapSquadUITests.ExcitementUITests testRealUpgradeRecipeWaveEventEvolutionAndCleanRetry]' started.
+qa (iPhone)	Verify accessibility and lifecycle	2026-10-04T10:10:31.5657900Z Test Case '-[ScrapSquadUITests.ExcitementUITests testRealUpgradeRecipeWaveEventEvolutionAndCleanRetry]' passed (97.390 seconds).
+qa (iPhone)	Verify accessibility and lifecycle	2026-10-04T10:10:31.6090670Z 	 Executed 1 test, with 0 failures (0 unexpected) in 97.390 (97.393) seconds
+qa (iPhone)	Verify accessibility and lifecycle	2026-10-04T10:10:31.6092080Z 	 Executed 1 test, with 0 failures (0 unexpected) in 97.390 (97.394) seconds
+qa (iPhone)	Verify accessibility and lifecycle	2026-10-04T10:10:31.6093180Z 	 Executed 1 test, with 0 failures (0 unexpected) in 97.390 (97.395) seconds
+qa (iPhone)	Verify accessibility and lifecycle	2026-10-04T10:10:33.7977820Z ** TEST SUCCEEDED **

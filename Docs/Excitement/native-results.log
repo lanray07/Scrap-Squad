@@ -1,0 +1,9 @@
+Workflow 37193033703; source 57b568e73892b78160038ed037a764cb5106dac3
+The full native suite passed 17/18 iPhone cases; the sole event-wait failure is retained below.
+native	Validate package, tooling and iOS build	2026-10-04T09:45:17.7165780Z ✔ Test run with 47 tests in 0 suites passed after 19.402 seconds.
+native	Validate package, tooling and iOS build	2026-10-04T09:45:18.2543820Z Ran 18 tests in 0.023s
+native	Validate package, tooling and iOS build	2026-10-04T09:46:18.0901340Z ** BUILD SUCCEEDED **
+native	Run iPhone simulator smoke tests	2026-10-04T09:58:53.2571390Z /Users/runner/work/Scrap-Squad/Scrap-Squad/UITests/ExcitementUITests.swift:53: error: -[ScrapSquadUITests.ExcitementUITests testRealUpgradeRecipeWaveEventEvolutionAndCleanRetry] : XCTAssertTrue failed
+native	Run iPhone simulator smoke tests	2026-10-04T10:06:20.8843080Z 	 Executed 18 tests, with 1 failure (0 unexpected) in 779.719 (779.747) seconds
+native	Run iPhone simulator smoke tests	2026-10-04T10:06:20.9481940Z 	 Executed 18 tests, with 1 failure (0 unexpected) in 779.719 (779.750) seconds
+native	Run iPhone simulator smoke tests	2026-10-04T10:07:03.1972640Z ** TEST FAILED **

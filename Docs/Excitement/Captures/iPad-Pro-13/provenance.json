@@ -1,0 +1,50 @@
+[
+  {
+    "file": "Excitement-02-landscape-controls.png",
+    "sha256": "b5a282b7103defd16339e13b2173ba5cda5a099e00464b18dff8cdbe1526fe37",
+    "test": "ExcitementUITests/testDashMovesSquadCooldownAndPauseAcrossRotation()",
+    "sourceAttachment": "3A3B5CC3-56E0-47D7-863A-878F479D0BBB.png",
+    "sourceCommit": "57b568e73892b78160038ed037a764cb5106dac3",
+    "workflowRun": 37193034733
+  },
+  {
+    "file": "Excitement-01-dash.png",
+    "sha256": "f1361ccda512b2dc9adad23dfe6ed327e733626e971bf3961c15e76aaabfcd37",
+    "test": "ExcitementUITests/testDashMovesSquadCooldownAndPauseAcrossRotation()",
+    "sourceAttachment": "CB033CBB-86BB-43C7-9678-62E5A09C49D5.png",
+    "sourceCommit": "57b568e73892b78160038ed037a764cb5106dac3",
+    "workflowRun": 37193034733
+  },
+  {
+    "file": "Excitement-04-fire-vortex.png",
+    "sha256": "81b55381921c584397c50e042906fb4d2f90737d7d328055c3133344c500ef7a",
+    "test": "ExcitementUITests/testRealUpgradeRecipeWaveEventEvolutionAndCleanRetry()",
+    "sourceAttachment": "E105ED58-8E99-488F-86E5-CD9F7D81B69B.png",
+    "sourceCommit": "57b568e73892b78160038ed037a764cb5106dac3",
+    "workflowRun": 37193034733
+  },
+  {
+    "file": "Excitement-03-elite-wave-event.png",
+    "sha256": "a02ea4d83b3d6ecb4aceb5e046612da79006c75207623e73bfb5566e4f8099b4",
+    "test": "ExcitementUITests/testRealUpgradeRecipeWaveEventEvolutionAndCleanRetry()",
+    "sourceAttachment": "C60E601F-0B2F-4675-9B0E-AD6F0FF1A5BE.png",
+    "sourceCommit": "57b568e73892b78160038ed037a764cb5106dac3",
+    "workflowRun": 37193034733
+  },
+  {
+    "file": "Excitement-06-siege-barrage.png",
+    "sha256": "dd88638649a420ebf0adfa2a6b5dbbd6cca847c14e85973774c05e9ce1d3dae9",
+    "test": "ExcitementUITests/testSiegeBarrageRecipeAndArenaPresentation()",
+    "sourceAttachment": "9AC276B4-6451-4A26-84C7-9D584C9BD48F.png",
+    "sourceCommit": "57b568e73892b78160038ed037a764cb5106dac3",
+    "workflowRun": 37193034733
+  },
+  {
+    "file": "Excitement-05-storm-cage.png",
+    "sha256": "66b5c158277574e672b4ec87d1f48fe06699ed60a788eca1d8a2fa576c791eac",
+    "test": "ExcitementUITests/testStormCageRecipeAndArenaPresentation()",
+    "sourceAttachment": "3515213E-BB0D-475D-8021-9EE3D2F4E9B8.png",
+    "sourceCommit": "57b568e73892b78160038ed037a764cb5106dac3",
+    "workflowRun": 37193034733
+  }
+]

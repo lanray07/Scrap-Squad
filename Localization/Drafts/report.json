@@ -1,61 +1,61 @@
 {
   "es": {
-    "strings": 375,
-    "stringsWithWarnings": 88,
+    "strings": 394,
+    "stringsWithWarnings": 93,
     "approved": 0,
     "providerTarget": "es"
   },
   "fr": {
-    "strings": 375,
-    "stringsWithWarnings": 38,
+    "strings": 394,
+    "stringsWithWarnings": 39,
     "approved": 0,
     "providerTarget": "fr"
   },
   "de": {
-    "strings": 375,
-    "stringsWithWarnings": 42,
+    "strings": 394,
+    "stringsWithWarnings": 43,
     "approved": 0,
     "providerTarget": "de"
   },
   "it": {
-    "strings": 375,
-    "stringsWithWarnings": 49,
+    "strings": 394,
+    "stringsWithWarnings": 50,
     "approved": 0,
     "providerTarget": "it"
   },
   "pt": {
-    "strings": 375,
-    "stringsWithWarnings": 375,
+    "strings": 394,
+    "stringsWithWarnings": 394,
     "approved": 0,
     "providerTarget": "pt"
   },
   "pt-BR": {
-    "strings": 375,
-    "stringsWithWarnings": 29,
+    "strings": 394,
+    "stringsWithWarnings": 30,
     "approved": 0,
     "providerTarget": "pb"
   },
   "ja": {
-    "strings": 375,
+    "strings": 394,
     "stringsWithWarnings": 0,
     "approved": 0,
     "providerTarget": "ja"
   },
   "ko": {
-    "strings": 375,
+    "strings": 394,
     "stringsWithWarnings": 0,
     "approved": 0,
     "providerTarget": "ko"
   },
   "zh-Hans": {
-    "strings": 375,
+    "strings": 394,
     "stringsWithWarnings": 0,
     "approved": 0,
     "providerTarget": "zh"
   },
   "zh-Hant": {
-    "strings": 375,
-    "stringsWithWarnings": 12,
+    "strings": 394,
+    "stringsWithWarnings": 15,
     "approved": 0,
     "providerTarget": "zt"
   }

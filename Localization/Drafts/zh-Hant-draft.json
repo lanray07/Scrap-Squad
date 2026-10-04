@@ -194,6 +194,24 @@
       "warnings": []
     },
     {
+      "key": "battle.dash",
+      "source": "Dash",
+      "sourceHash": "8c3ea2ea786aee267ed410e1043ac86787a47ffceba86efc59367dcb7df40f1b",
+      "translation": "有花",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "battle.dash.hint",
+      "source": "Dash in your last movement direction. Escape a warning just before impact for a perfect dodge.",
+      "sourceHash": "f72b1acc8d3786a728c43b76a40986ebaf1669d772b3eb8cd5d46c160f9ffe0a",
+      "translation": "在你最後一行方向上出發了. 在被擊出前跑出警告去躲一躲",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
       "key": "battle.defeat",
       "source": "Back to the drawing board",
       "sourceHash": "ec1309e8b0dc1eede9a3bfa2bbf4132bdd3211ff88d15936a549287d97ac3d8a",
@@ -210,6 +228,17 @@
       "approved": false,
       "allowWarnings": false,
       "warnings": []
+    },
+    {
+      "key": "battle.excitement.note",
+      "source": "Drag to steer; Dash follows your last direction (up before your first move). Combine two modules to evolve your weapon. Watch for bonus wave events.",
+      "sourceHash": "2f2a4082da437fddcbe36bc086947f6425dd5014dfe8c364b5c2ce740e6b4090",
+      "translation": "拖曳以向上; Dash 遵循您最後的方向( 在您第一次出手前上方) 。 有兩個模組能進化出你的武器 有花有花 有花有花 有花 有花有花 有花有花 有花 有花有花 有花 有花有花 有花 有花有花 有花 有花有花 有花 有花 有花有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有 有花 有花 有花 有 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有花 有 有花 有花 有花 有 有 有 有 有 有花 有花 有花 有花 有 有",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "long translation: layout review required"
+      ]
     },
     {
       "key": "battle.health",
@@ -261,6 +290,24 @@
       "source": "Mission paused",
       "sourceHash": "cc99fa825377e524c6077eaa29294f121c0edc4775c7274f0c9e314cc2cbd9e9",
       "translation": "任務暫停",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "battle.perfectDodge",
+      "source": "Perfect dodge • +30% damage",
+      "sourceHash": "63aa42ddb68e2cbd6491c1f237d847753d7c25cfaa8e0d97aa1d13df4b16b905",
+      "translation": "+30%的損失",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "battle.perfectDodges",
+      "source": "Perfect dodges",
+      "sourceHash": "2e8d5eb997850600c88dac32601a07c0503579027be24ca1b08b5250ddc534b5",
+      "translation": "完美的躲避",
       "approved": false,
       "allowWarnings": false,
       "warnings": []
@@ -1432,6 +1479,136 @@
       "source": "The purchase could not be verified or completed. Please try again.",
       "sourceHash": "fcb77644751d3f7e9b933ff0169bfcc669390b105d241f01cbcb09b9b685d81c",
       "translation": "無法驗證或完成购买 。 再試一次",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "event.bonusScrap",
+      "source": "Event bonus scrap",
+      "sourceHash": "5007dd0a9179fb505dcbace166388c0d3484abd2f47bd93843160baedff1bcd6",
+      "translation": "事件獎金廢棄",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "event.complete",
+      "source": "Event cleared • bonus scrap earned",
+      "sourceHash": "a4fe935f4a094462a90fd9f5c2722615af775d6422f9c740fb5c40f1a9b757f0",
+      "translation": "· 已收取的分紅",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "event.eliteAmbush",
+      "source": "Elite ambush",
+      "sourceHash": "5f69bab9ce210e6165e1d856b9f6c5f53c79a2de908f6c121645e035c297ff1d",
+      "translation": "有地出事了",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "event.eliteAmbush.detail",
+      "source": "Defeat the marked elite squad before time runs out: +60 scrap.",
+      "sourceHash": "79a5a6a7122bb510486fc3425cc904c5c3714daec276e7de676ed7820dbee961",
+      "translation": "在有標記的精英小組出局前先出局:+60出局.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "event.scrapStorm",
+      "source": "Scrap storm",
+      "sourceHash": "a8468473b5c2119295b5cdcf19ed573415a30f4bdc20257d083627ac6bb0d94a",
+      "translation": "有暴風雨了",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "event.scrapStorm.detail",
+      "source": "Dodge the falling scrap and survive the countdown: +40 scrap.",
+      "sourceHash": "114daa77bb635f624aa01ea0b72257d35811130dba68b7cbca10d1245e98fc14",
+      "translation": "在倒數倒數后能活出倒數:+40",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "event.treasureCarrier",
+      "source": "Treasure carrier",
+      "sourceHash": "22b9ed813bb4479d85414735262a0b2d0066993a8ca3be3255d20a4e3d956d9a",
+      "translation": "寶藏運輸器",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "event.treasureCarrier.detail",
+      "source": "Destroy the fleeing gold carrier before it escapes: +40 scrap.",
+      "sourceHash": "0e531a61f86675827ffdc877d19b82db93f6971790a65dff410560f7b390a41a",
+      "translation": "在出逃前把出逃的黃金運輸機毀了:+40廢品.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "evolution.fireVortex",
+      "source": "Fire Vortex",
+      "sourceHash": "d35880793b3cc9e491443669c2e287cd8219b0992a3f9dee39f3f4278f6f56ca",
+      "translation": "火花花花花",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "evolution.fireVortex.detail",
+      "source": "Fire Core + Overclock Module: three orbiting fireballs burn nearby enemies.",
+      "sourceHash": "38564a6209d048eb1ccc9756d6cac983143230d7ecc290770f9ef392b4a03be4",
+      "translation": "火心相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相接相相接相相接相接相接相相接相相相接相相接相相接相接相相接相相相接相接相接相接相接相接相接相相相相相相相相相",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "long translation: layout review required"
+      ]
+    },
+    {
+      "key": "evolution.siegeBarrage",
+      "source": "Siege Barrage",
+      "sourceHash": "944042d07726a29fc365e6196735a5ba7d2cfb190c94f3760d6e075365d92c6d",
+      "translation": "二. 圍城",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "evolution.siegeBarrage.detail",
+      "source": "Explosive Payload + Critical Processor: marked artillery strikes land after a short delay.",
+      "sourceHash": "ce81ad2863dc42af09bfb3fc529eff1991f7745e54a53363396b6e5e19013564",
+      "translation": "有標記的火炮出擊出地后,",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "evolution.stormCage",
+      "source": "Storm Cage",
+      "sourceHash": "00c51bad739dd8d2f3222206c9e017416503fc2fabdf76ecc410043cb0a03b44",
+      "translation": "相克相克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "long translation: layout review required"
+      ]
+    },
+    {
+      "key": "evolution.stormCage.detail",
+      "source": "Tesla Coil + a splitting module: an electric ring damages and slows enemies.",
+      "sourceHash": "71a3729d587adb85a291596a7755d3016297caf5354a573d5f9582d11b75f404",
+      "translation": "Tesla Coil + 一分離模組:一電環損壞并減慢敵人.",
       "approved": false,
       "allowWarnings": false,
       "warnings": []

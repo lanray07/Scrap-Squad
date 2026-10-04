@@ -1,0 +1,13 @@
+Workflow 37193034733; iPad Pro 13; source 57b568e73892b78160038ed037a764cb5106dac3.
+2026-10-04T09:49:16.8082130Z Test Case '-[ScrapSquadUITests.ExcitementUITests testDashMovesSquadCooldownAndPauseAcrossRotation]' started.
+2026-10-04T09:50:04.0265050Z Test Case '-[ScrapSquadUITests.ExcitementUITests testDashMovesSquadCooldownAndPauseAcrossRotation]' passed (47.482 seconds).
+2026-10-04T09:50:04.0875390Z Test Case '-[ScrapSquadUITests.ExcitementUITests testRealUpgradeRecipeWaveEventEvolutionAndCleanRetry]' started.
+2026-10-04T09:51:45.4803010Z Test Case '-[ScrapSquadUITests.ExcitementUITests testRealUpgradeRecipeWaveEventEvolutionAndCleanRetry]' passed (101.481 seconds).
+2026-10-04T09:51:45.8451660Z Test Case '-[ScrapSquadUITests.ExcitementUITests testSiegeBarrageRecipeAndArenaPresentation]' started.
+2026-10-04T09:52:57.5602730Z Test Case '-[ScrapSquadUITests.ExcitementUITests testSiegeBarrageRecipeAndArenaPresentation]' passed (72.078 seconds).
+2026-10-04T09:52:57.7802290Z Test Case '-[ScrapSquadUITests.ExcitementUITests testStormCageRecipeAndArenaPresentation]' started.
+2026-10-04T09:54:11.2426070Z Test Case '-[ScrapSquadUITests.ExcitementUITests testStormCageRecipeAndArenaPresentation]' passed (73.676 seconds).
+2026-10-04T09:54:11.3801070Z 	 Executed 4 tests, with 0 failures (0 unexpected) in 294.718 (294.726) seconds
+2026-10-04T09:54:11.3805410Z 	 Executed 4 tests, with 0 failures (0 unexpected) in 294.718 (294.729) seconds
+2026-10-04T09:54:11.5294620Z 	 Executed 4 tests, with 0 failures (0 unexpected) in 294.718 (294.731) seconds
+2026-10-04T09:54:13.8892380Z ** TEST SUCCEEDED **

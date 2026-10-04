@@ -81,3 +81,7 @@ Build 11 is uploaded, processed and selected, resource `6243ff7c-1984-46ea-b25c-
 ## Current build 12 — wave progression fix
 
 Signed build 12 is processed, selected for version 1.0 and available in the existing internal TestFlight group. Endless waves continue beyond six, Boss Rush requires all three bosses and boss admission respects the total enemy limit. Store metadata and both ten-image galleries remain verified. See [wave verification](../WAVE_FIX.md). No App Review submission occurred.
+
+## Current build 14 — combat excitement
+
+[Signed build 14](https://github.com/lanray07/Scrap-Squad/actions/runs/37193054378) is [processed and selected](https://github.com/lanray07/Scrap-Squad/actions/runs/37193340455) for version 1.0 and [available in internal TestFlight](https://github.com/lanray07/Scrap-Squad/actions/runs/37193416124). It adds three run evolutions, Dash/perfect dodges and three wave events while retaining the wave and walking fixes. See [feature and verification evidence](../COMBAT_EXCITEMENT.md). The earlier twenty store-gallery assets were not replaced in this update; new unaltered QA captures are saved separately. No App Review submission or public release occurred.

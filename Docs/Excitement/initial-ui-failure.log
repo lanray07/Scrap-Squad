@@ -1,0 +1,9 @@
+2026-10-04T09:32:15.5101710Z /Users/runner/work/Scrap-Squad/Scrap-Squad/UITests/ExcitementUITests.swift:52: error: -[ScrapSquadUITests.ExcitementUITests testRealUpgradeRecipeWaveEventEvolutionAndCleanRetry] : XCTAssertTrue failed
+2026-10-04T09:32:51.8201340Z /Users/runner/work/Scrap-Squad/Scrap-Squad/UITests/ExcitementUITests.swift:55: error: -[ScrapSquadUITests.ExcitementUITests testRealUpgradeRecipeWaveEventEvolutionAndCleanRetry] : XCTAssertTrue failed
+2026-10-04T09:32:55.0855510Z <unknown>:0: error: -[ScrapSquadUITests.ExcitementUITests testRealUpgradeRecipeWaveEventEvolutionAndCleanRetry] : Failed to tap "upgrade-overclock" Button: No matches found for Elements matching predicate '"upgrade-overclock" IN identifiers' from input {(
+2026-10-04T09:34:10.4752320Z /Users/runner/work/Scrap-Squad/Scrap-Squad/UITests/ExcitementUITests.swift:73: error: -[ScrapSquadUITests.ExcitementUITests testSiegeBarrageRecipeAndArenaPresentation] : XCTAssertTrue failed
+2026-10-04T09:35:31.5103580Z /Users/runner/work/Scrap-Squad/Scrap-Squad/UITests/ExcitementUITests.swift:73: error: -[ScrapSquadUITests.ExcitementUITests testStormCageRecipeAndArenaPresentation] : XCTAssertTrue failed
+2026-10-04T09:35:34.6925540Z 	 Executed 4 tests, with 5 failures (0 unexpected) in 306.407 (306.412) seconds
+2026-10-04T09:35:34.6929430Z 	 Executed 4 tests, with 5 failures (0 unexpected) in 306.407 (306.413) seconds
+2026-10-04T09:35:34.6934830Z 	 Executed 4 tests, with 5 failures (0 unexpected) in 306.407 (306.415) seconds
+2026-10-04T09:36:08.4160370Z ** TEST FAILED **

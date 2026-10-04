@@ -1,0 +1,5 @@
+qa (iPhone)	Verify accessibility and lifecycle	2026-10-04T09:54:38.4828310Z /Users/runner/work/Scrap-Squad/Scrap-Squad/UITests/ExcitementUITests.swift:53: error: -[ScrapSquadUITests.ExcitementUITests testRealUpgradeRecipeWaveEventEvolutionAndCleanRetry] : XCTAssertTrue failed
+qa (iPhone)	Verify accessibility and lifecycle	2026-10-04T09:57:48.1937030Z 	 Executed 4 tests, with 1 failure (0 unexpected) in 351.005 (351.014) seconds
+qa (iPhone)	Verify accessibility and lifecycle	2026-10-04T09:57:48.6554890Z 	 Executed 4 tests, with 1 failure (0 unexpected) in 351.005 (351.021) seconds
+qa (iPhone)	Verify accessibility and lifecycle	2026-10-04T09:57:48.6919300Z 	 Executed 4 tests, with 1 failure (0 unexpected) in 351.005 (351.024) seconds
+qa (iPhone)	Verify accessibility and lifecycle	2026-10-04T09:58:38.8960800Z ** TEST FAILED **

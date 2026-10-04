@@ -1,6 +1,6 @@
-# Build 12 device and sandbox acceptance
+# Build 14 device and sandbox acceptance
 
-Version 1.0 build 12 is processed and available to the internal **Scrap Squad QA** group. One existing tester is present; this update preserved membership and did not add or invite anyone. An App Store Connect administrator can select their own existing team account in TestFlight → Internal Testing → Scrap Squad QA → Add Testers, then install through TestFlight on their device. External beta review is not required for internal testing. Never share a password or Apple verification code with this repository.
+Version 1.0 build 14 is processed and available to the internal **Scrap Squad QA** group. One existing tester is present; this update preserved membership and did not add or invite anyone. An App Store Connect administrator can select their own existing team account in TestFlight → Internal Testing → Scrap Squad QA → Add Testers, then install through TestFlight on their device. External beta review is not required for internal testing. Never share a password or Apple verification code with this repository.
 
 ## Record the actual device result
 
@@ -8,6 +8,7 @@ For each test, record device model, OS version, build, date, result and any repr
 
 | Check | Device procedure | Current evidence |
 | --- | --- | --- |
+| Combat excitement | Dash after steering in each direction; try a last-moment boss dodge; complete each of the three two-module recipes; clear/fail each event and check bonus scrap once at results. Rotate and pause during dash, event and artillery countdowns. Retry must clear evolution. | Eight new core tests and all four new cases pass on iPad and iPhone simulators (iPhone event case passed on corrected rerun); physical acceptance pending |
 | Wave progression | Survival/Arena past 150 seconds should show Wave 8. Boss Rush must require three defeated bosses; taking longer than two minutes must not award an early victory. Upgrade choices and Pause must freeze progress. | Seven deterministic engine tests pass; physical acceptance pending |
 | Full player path | Fresh install → tutorial → mission → three upgrade choices → boss → rewards → Workshop → fusion → equip → blueprint → city upgrade → relaunch. Verify currency and ownership persist. | Individual core/UI paths verified; physical end-to-end pending |
 | Touch and orientation | Drag the squad to all arena boundaries, rotate portrait/landscape during battle, pause and results. Check ability and Overdrive controls remain reachable. On iPad try supported multitasking window sizes. | Compact/iPad rotation simulator checks passed; physical and multitasking pending |

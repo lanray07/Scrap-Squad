@@ -1,0 +1,58 @@
+[
+  {
+    "file": "Excitement-01-dash.png",
+    "sha256": "8ab32cd3a067283440dd6c2613a83d7a5adf33a6f6c79e28d187b5b46e284fdb",
+    "test": "ExcitementUITests/testDashMovesSquadCooldownAndPauseAcrossRotation()",
+    "sourceAttachment": "DE5CB84A-C519-434B-A88F-7718EAF4CD7F.png",
+    "sourceCommit": "57b568e73892b78160038ed037a764cb5106dac3",
+    "workflowRun": 37193034733,
+    "testPassed": true
+  },
+  {
+    "file": "Excitement-02-landscape-controls.png",
+    "sha256": "6c4f163b4bd2b4176fe3ef52f084961bade8c8a96193cbed081525f34cb6da01",
+    "test": "ExcitementUITests/testDashMovesSquadCooldownAndPauseAcrossRotation()",
+    "sourceAttachment": "84F0EFBC-F760-4A5F-AD3C-27142DF25BBE.png",
+    "sourceCommit": "57b568e73892b78160038ed037a764cb5106dac3",
+    "workflowRun": 37193034733,
+    "testPassed": true
+  },
+  {
+    "file": "Excitement-03-elite-wave-event.png",
+    "sha256": "7aedb9cf492c5b9b518483240ba7b203d0c0a982d96cf30c6f55dfea94ef394b",
+    "test": "ExcitementUITests/testRealUpgradeRecipeWaveEventEvolutionAndCleanRetry()",
+    "sourceAttachment": "72244FB6-582A-4C3B-974B-0C75EFA50198.png",
+    "sourceCommit": "57b568e73892b78160038ed037a764cb5106dac3",
+    "workflowRun": 37194094624,
+    "workflowCommit": "2deab9d6b9231cfd772276385b7115819a0576f5",
+    "testPassed": true
+  },
+  {
+    "file": "Excitement-04-fire-vortex.png",
+    "sha256": "84272f125e015f582162bec0d5fba2364198ca39cb75f0306b8afaabd84586df",
+    "test": "ExcitementUITests/testRealUpgradeRecipeWaveEventEvolutionAndCleanRetry()",
+    "sourceAttachment": "3D29875E-7066-4225-9556-6EA3EABE9568.png",
+    "sourceCommit": "57b568e73892b78160038ed037a764cb5106dac3",
+    "workflowRun": 37194094624,
+    "workflowCommit": "2deab9d6b9231cfd772276385b7115819a0576f5",
+    "testPassed": true
+  },
+  {
+    "file": "Excitement-05-storm-cage.png",
+    "sha256": "7e93421c6019946301889c9d62dae6799d8b3b11599cc651861cf93119938f01",
+    "test": "ExcitementUITests/testStormCageRecipeAndArenaPresentation()",
+    "sourceAttachment": "3C91B56A-5A1A-49E3-A6AC-F3F011BF9BA1.png",
+    "sourceCommit": "57b568e73892b78160038ed037a764cb5106dac3",
+    "workflowRun": 37193034733,
+    "testPassed": true
+  },
+  {
+    "file": "Excitement-06-siege-barrage.png",
+    "sha256": "69b5e53d37ce9bfbe59704dd0bde988ae6bc36d6f3b93ce04c02c782d8bf9064",
+    "test": "ExcitementUITests/testSiegeBarrageRecipeAndArenaPresentation()",
+    "sourceAttachment": "0D02A5AD-08F7-4FC5-A144-5FEF3DE9FF5B.png",
+    "sourceCommit": "57b568e73892b78160038ed037a764cb5106dac3",
+    "workflowRun": 37193034733,
+    "testPassed": true
+  }
+]

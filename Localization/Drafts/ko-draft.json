@@ -192,6 +192,24 @@
       "warnings": []
     },
     {
+      "key": "battle.dash",
+      "source": "Dash",
+      "sourceHash": "8c3ea2ea786aee267ed410e1043ac86787a47ffceba86efc59367dcb7df40f1b",
+      "translation": "대시보드",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "battle.dash.hint",
+      "source": "Dash in your last movement direction. Escape a warning just before impact for a perfect dodge.",
+      "sourceHash": "f72b1acc8d3786a728c43b76a40986ebaf1669d772b3eb8cd5d46c160f9ffe0a",
+      "translation": "마지막 이동 방향의 대시. 완벽한 dodge를 위해 충격의 앞에 경고를 다만 탈출하십시오.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
       "key": "battle.defeat",
       "source": "Back to the drawing board",
       "sourceHash": "ec1309e8b0dc1eede9a3bfa2bbf4132bdd3211ff88d15936a549287d97ac3d8a",
@@ -205,6 +223,15 @@
       "source": "Deploy squad",
       "sourceHash": "b50a6136390c55980cf50d5c939ad31b99ad1dd57c2c3990faa041a8fb7780eb",
       "translation": "파일 형식",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "battle.excitement.note",
+      "source": "Drag to steer; Dash follows your last direction (up before your first move). Combine two modules to evolve your weapon. Watch for bonus wave events.",
+      "sourceHash": "2f2a4082da437fddcbe36bc086947f6425dd5014dfe8c364b5c2ce740e6b4090",
+      "translation": "스티어로 드래그; 대시는 당신의 마지막 방향을 따릅니다 (당신의 첫 번째 이동의 앞에). 무기를 진화하는 두 개의 모듈을 결합합니다. 보너스 파 이벤트를 볼 수 있습니다.",
       "approved": false,
       "allowWarnings": false,
       "warnings": []
@@ -259,6 +286,24 @@
       "source": "Mission paused",
       "sourceHash": "cc99fa825377e524c6077eaa29294f121c0edc4775c7274f0c9e314cc2cbd9e9",
       "translation": "관련 링크",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "battle.perfectDodge",
+      "source": "Perfect dodge • +30% damage",
+      "sourceHash": "63aa42ddb68e2cbd6491c1f237d847753d7c25cfaa8e0d97aa1d13df4b16b905",
+      "translation": "완벽한 dodge • +30% 손상",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "battle.perfectDodges",
+      "source": "Perfect dodges",
+      "sourceHash": "2e8d5eb997850600c88dac32601a07c0503579027be24ca1b08b5250ddc534b5",
+      "translation": "완벽한 dodges",
       "approved": false,
       "allowWarnings": false,
       "warnings": []
@@ -1420,6 +1465,132 @@
       "source": "The purchase could not be verified or completed. Please try again.",
       "sourceHash": "fcb77644751d3f7e9b933ff0169bfcc669390b105d241f01cbcb09b9b685d81c",
       "translation": "구매는 확인되거나 완료 될 수 없습니다. 다시 시도하십시오.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "event.bonusScrap",
+      "source": "Event bonus scrap",
+      "sourceHash": "5007dd0a9179fb505dcbace166388c0d3484abd2f47bd93843160baedff1bcd6",
+      "translation": "이벤트 보너스 스크랩",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "event.complete",
+      "source": "Event cleared • bonus scrap earned",
+      "sourceHash": "a4fe935f4a094462a90fd9f5c2722615af775d6422f9c740fb5c40f1a9b757f0",
+      "translation": "Event cleared • 보너스 스크랩 획득",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "event.eliteAmbush",
+      "source": "Elite ambush",
+      "sourceHash": "5f69bab9ce210e6165e1d856b9f6c5f53c79a2de908f6c121645e035c297ff1d",
+      "translation": "엘리트 ambush",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "event.eliteAmbush.detail",
+      "source": "Defeat the marked elite squad before time runs out: +60 scrap.",
+      "sourceHash": "79a5a6a7122bb510486fc3425cc904c5c3714daec276e7de676ed7820dbee961",
+      "translation": "시간 전에 표시된 엘리트 스쿼드를 패배: +60 스크랩.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "event.scrapStorm",
+      "source": "Scrap storm",
+      "sourceHash": "a8468473b5c2119295b5cdcf19ed573415a30f4bdc20257d083627ac6bb0d94a",
+      "translation": "스크랩 폭풍",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "event.scrapStorm.detail",
+      "source": "Dodge the falling scrap and survive the countdown: +40 scrap.",
+      "sourceHash": "114daa77bb635f624aa01ea0b72257d35811130dba68b7cbca10d1245e98fc14",
+      "translation": "닷지 떨어지는 스크랩과 카운트 다운 생존 : +40 스크랩.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "event.treasureCarrier",
+      "source": "Treasure carrier",
+      "sourceHash": "22b9ed813bb4479d85414735262a0b2d0066993a8ca3be3255d20a4e3d956d9a",
+      "translation": "회사소개",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "event.treasureCarrier.detail",
+      "source": "Destroy the fleeing gold carrier before it escapes: +40 scrap.",
+      "sourceHash": "0e531a61f86675827ffdc877d19b82db93f6971790a65dff410560f7b390a41a",
+      "translation": "탈출하기 전에 플레잉 골드 캐리어를 파괴 : +40 스크랩.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "evolution.fireVortex",
+      "source": "Fire Vortex",
+      "sourceHash": "d35880793b3cc9e491443669c2e287cd8219b0992a3f9dee39f3f4278f6f56ca",
+      "translation": "화재 Vortex",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "evolution.fireVortex.detail",
+      "source": "Fire Core + Overclock Module: three orbiting fireballs burn nearby enemies.",
+      "sourceHash": "38564a6209d048eb1ccc9756d6cac983143230d7ecc290770f9ef392b4a03be4",
+      "translation": "화재 코어 + 오버 클럭 모듈 : 3 개의 궤도 소방은 주변 적을 태울.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "evolution.siegeBarrage",
+      "source": "Siege Barrage",
+      "sourceHash": "944042d07726a29fc365e6196735a5ba7d2cfb190c94f3760d6e075365d92c6d",
+      "translation": "Siege 배분",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "evolution.siegeBarrage.detail",
+      "source": "Explosive Payload + Critical Processor: marked artillery strikes land after a short delay.",
+      "sourceHash": "ce81ad2863dc42af09bfb3fc529eff1991f7745e54a53363396b6e5e19013564",
+      "translation": "폭발성 탑재량 + 긴요한 가공업자: 짧은 지연 후에 표시된 동맥 타격 땅.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "evolution.stormCage",
+      "source": "Storm Cage",
+      "sourceHash": "00c51bad739dd8d2f3222206c9e017416503fc2fabdf76ecc410043cb0a03b44",
+      "translation": "폭풍 케이지",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "evolution.stormCage.detail",
+      "source": "Tesla Coil + a splitting module: an electric ring damages and slows enemies.",
+      "sourceHash": "71a3729d587adb85a291596a7755d3016297caf5354a573d5f9582d11b75f404",
+      "translation": "Tesla Coil + 분할 모듈 : 전기 링 손상과 적을 느리게합니다.",
       "approved": false,
       "allowWarnings": false,
       "warnings": []
