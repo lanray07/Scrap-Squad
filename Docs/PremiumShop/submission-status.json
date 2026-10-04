@@ -1,0 +1,66 @@
+{
+  "appID": "6818847887",
+  "version": "1.0",
+  "build": "15",
+  "buildID": "7ea3098a-d081-47eb-9c78-da7c4d182b9f",
+  "submissionID": "1e6bb3b3-8d9f-4f05-9d24-67aa95a3cc3e",
+  "submittedAtDisplayed": "Oct 4, 2026 at 12:09 PM Europe/London",
+  "state": "WAITING_FOR_REVIEW",
+  "itemsSubmitted": 8,
+  "appVersionState": "WAITING_FOR_REVIEW",
+  "products": [
+    {
+      "id": "6818880427",
+      "productID": "com.ScrapSquad.app.founder",
+      "state": "WAITING_FOR_REVIEW",
+      "reviewScreenshotComplete": true,
+      "localizationCount": 11
+    },
+    {
+      "id": "6818884131",
+      "productID": "com.ScrapSquad.app.styles",
+      "state": "WAITING_FOR_REVIEW",
+      "reviewScreenshotComplete": true,
+      "localizationCount": 11
+    },
+    {
+      "id": "6818989958",
+      "productID": "com.ScrapSquad.app.ronin",
+      "state": "WAITING_FOR_REVIEW",
+      "reviewScreenshotComplete": true,
+      "localizationCount": 11
+    },
+    {
+      "id": "6818989889",
+      "productID": "com.ScrapSquad.app.bastion",
+      "state": "WAITING_FOR_REVIEW",
+      "reviewScreenshotComplete": true,
+      "localizationCount": 11
+    },
+    {
+      "id": "6818990132",
+      "productID": "com.ScrapSquad.app.medic",
+      "state": "WAITING_FOR_REVIEW",
+      "reviewScreenshotComplete": true,
+      "localizationCount": 11
+    },
+    {
+      "id": "6818989968",
+      "productID": "com.ScrapSquad.app.prism",
+      "state": "WAITING_FOR_REVIEW",
+      "reviewScreenshotComplete": true,
+      "localizationCount": 11
+    },
+    {
+      "id": "6818990081",
+      "productID": "com.ScrapSquad.app.collection",
+      "state": "WAITING_FOR_REVIEW",
+      "reviewScreenshotComplete": true,
+      "localizationCount": 11
+    }
+  ],
+  "releaseType": "AFTER_APPROVAL",
+  "publicReleased": false,
+  "evidence": "App Store Connect submission detail UI",
+  "proof": "../Store/app-review-build15-submitted.png"
+}

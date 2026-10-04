@@ -96,3 +96,10 @@ Signed build 12 is processed, selected for version 1.0 and available in the exis
 [Review preflight](https://github.com/lanray07/Scrap-Squad/actions/runs/37197335265) read back selected VALID build 15, all seven non-consumables in READY_TO_SUBMIT with eleven localizations and completed review screenshots, eleven storefront locales and both ten-image galleries. Current reviewer instructions were saved and read back exactly; existing contact information was preserved. Release type remains AFTER_APPROVAL.
 
 Apple's first-purchase submission requires the App Store Connect website. The browser session expired and is on the Apple Account sign-in screen; the user was asked to sign in. No draft submission exists and the app remains PREPARE_FOR_SUBMISSION. No review submission or public release occurred. Once authenticated, add version 1.0 and all seven purchases to the same submission, resolve any Apple validation errors, submit, and verify WAITING_FOR_REVIEW. Saved sanitized reports: ../PremiumShop/submission-review-preflight.json and ../PremiumShop/submission-release-readiness.json.
+
+
+## Submitted — 4 October 2026
+
+After the user restored browser authentication, version 1.0 build 15 was added to a draft, and all seven prepared non-consumables were added to that same draft. Apple validated eight ready items. Submit for Review completed successfully at the displayed time 12:09 PM Europe/London. Submission **1e6bb3b3-8d9f-4f05-9d24-67aa95a3cc3e** shows **Waiting for Review**, with version **1.0 (15)** and all seven purchases individually **Waiting for Review**. No new legal agreement was presented. Automatic release after approval remains selected. This is a submitted review, not an approval or public release.
+
+[Saved confirmation](app-review-build15-submitted.png) and [sanitized submission record](../PremiumShop/submission-status.json). Earlier sections are historical records.

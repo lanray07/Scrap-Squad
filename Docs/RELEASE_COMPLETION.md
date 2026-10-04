@@ -2,7 +2,7 @@
 
 **Current build: 15.** The [Signature Collection shop update](PREMIUM_SHOP.md) adds three robot skins, Prism Arsenal, live previews and an ownership-aware bundle. It retains the [combat excitement update](COMBAT_EXCITEMENT.md), [wave fix](WAVE_FIX.md) and [walking/footprints](MOVEMENT_UPDATE.md). It is available in the existing internal TestFlight group. The evidence below records earlier build 10 preparation.
 
-Version 1.0 **build 10** was uploaded, processed and attached to App Store Connect (build resource `2914e126-c2a0-4756-acb9-2c20a829900c`). [Signed Xcode archive and upload](https://github.com/lanray07/Scrap-Squad/actions/runs/37175398830) and [Apple record attachment](https://github.com/lanray07/Scrap-Squad/actions/runs/37175900722) succeeded. No App Review submission or public release has been performed.
+Version 1.0 **build 10** was uploaded, processed and attached to App Store Connect (build resource `2914e126-c2a0-4756-acb9-2c20a829900c`). [Signed Xcode archive and upload](https://github.com/lanray07/Scrap-Squad/actions/runs/37175398830) and [Apple record attachment](https://github.com/lanray07/Scrap-Squad/actions/runs/37175900722) succeeded. Version 1.0 build 15 and all seven purchases were submitted together on 4 October 2026 and are WAITING_FOR_REVIEW; no public release has occurred.
 
 The app includes distinct weapon attacks, nine boss patterns, Overdrive, daily replay codes, mastery, voluntary result-card sharing and optional one-time cosmetics. This release also fixes background simulation pausing and expanding onboarding text. These features have automated coverage; virality, retention and human difficulty have not been measured.
 
@@ -28,3 +28,6 @@ The active player-facing app remains English. Free Argos localization tooling an
 Physical-device access is unavailable in this Windows workspace. No iPhone/iPad is connected, and no physical result is marked passed. The internal **Scrap Squad QA** group has zero testers; no account was added and no invitation was sent. A team administrator must select their own account and install build 10 through TestFlight, following [device and live Apple sandbox acceptance](TESTFLIGHT_QA.md). Touch, sound, VoiceOver, battery/thermal/frame performance, cross-device restore and live Apple service behavior need real-device evidence.
 
 The separate [master-prompt backlog](RELEASE.md) remains future product work, including real 3D assets, expanded recipes, research/rank systems and online community infrastructure. This report does not certify those unimplemented features or promise viral success.
+
+
+Current submission: [version 1.0 build 15 and seven purchases](PremiumShop/submission-status.json), submission `1e6bb3b3-8d9f-4f05-9d24-67aa95a3cc3e`, **Waiting for Review**. [Apple confirmation](Store/app-review-build15-submitted.png). Automatic release after approval remains selected. Physical-device/live Apple sandbox and human translation quality limitations above remain unverified.

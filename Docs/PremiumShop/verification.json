@@ -57,8 +57,10 @@
   },
   "internalTestflight": "IN_BETA_TESTING",
   "automaticNotifications": false,
-  "appReviewSubmitted": false,
+  "appReviewSubmitted": true,
   "publicReleased": false,
   "physicalDeviceAppearanceAndLiveAppleSandbox": "pending",
-  "revenueAndRetention": "unmeasured"
+  "revenueAndRetention": "unmeasured",
+  "appReviewState": "WAITING_FOR_REVIEW",
+  "appReviewSubmissionID": "1e6bb3b3-8d9f-4f05-9d24-67aa95a3cc3e"
 }
