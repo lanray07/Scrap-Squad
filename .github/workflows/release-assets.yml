@@ -1,0 +1,43 @@
+name: Verify release records and refresh screenshots
+on:
+  workflow_dispatch:
+    inputs:
+      upload:
+        description: Replace the draft gallery with verified current screenshots
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: release-assets
+  cancel-in-progress: false
+jobs:
+  records:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'PyJWT[crypto]==2.10.1'
+      - name: Verify Apple records
+        env:
+          ASC_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          ASC_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_API_PRIVATE_KEY }}
+          UPLOAD: ${{ inputs.upload }}
+        run: |
+          if [ "$UPLOAD" = true ]; then
+            python Tools/release_assets.py --upload
+          else
+            python Tools/release_assets.py
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: release-readiness
+          path: |
+            .build/release-readiness.json
+            .build/gallery-before-*.json
+          if-no-files-found: ignore
