@@ -6,7 +6,7 @@ Native iPhone/iPad game foundation using SwiftUI, SpriteKit and a standalone Swi
 
 The project is connected to [lanray07/Scrap-Squad](https://github.com/lanray07/Scrap-Squad). The `Validate native game` workflow builds with Xcode on a macOS runner, validates the core/tooling, saves a simulator app zip, and runs onboarding/fusion and battle/pause/retreat smoke tests. Xcode result bundles, test screenshots and startup diagnostics are retained as workflow artifacts.
 
-[The final Xcode build, 22 core tests and six simulator tests passed](https://github.com/lanray07/Scrap-Squad/actions/runs/37158254127). See [replay features and validation](Docs/PREMIUM_LOOP.md) and `Docs/GITHUB_BUILD.md` for verification details and captures.
+[The final Xcode build, 29 core tests and eight simulator tests passed](https://github.com/lanray07/Scrap-Squad/actions/runs/37172499986). Additional iPhone SE and iPad replay/rotation checks passed. See [combat features and verification](Docs/COMBAT_UPDATE.md), [replay features](Docs/PREMIUM_LOOP.md) and `Docs/GITHUB_BUILD.md` for details and captures.
 
 The simulator build requires no Apple signing secrets. The existing Apple team and App Store Connect secrets are not consumed by this workflow. A signed device archive or TestFlight upload is a separate distribution action.
 
@@ -39,7 +39,8 @@ Run `bash Tools/verify_macos.sh` for package tests and an unsigned simulator bui
 ## What works in the source
 
 - Automatic real-time combat, drag movement, commander abilities, targeting priority, knockback, critical hits, burn, freeze, splash, additional targets/projectiles, repair, and three paused upgrade selections.
-- Ten enemy archetypes, boss armor breakage, low-health attack acceleration, dodgeable attack circles, biome palettes and environmental danger circles.
+- Orbiting drone firing positions, travelling guided missiles, piercing lasers, local chain lightning and artillery impacts, with bounded engagement range and spawn bursts.
+- Ten enemy archetypes, nine biome-specific boss attack patterns, armor breakage, low-health attack acceleration, dodgeable circles/lanes/rings and biome hazards. A uniform arena scale and tracking camera preserve geometry across orientations.
 - Eight original robot characters, generated art atlas, squad limits, affinity bonuses, unlocks, robot/weapon levels, and active/passive effects.
 - Sixteen weapons and **twelve** discoverable recipes, atomic ingredient consumption, inventory, equipping, clues, rarity labels and a rules-based roulette with displayed equal probabilities.
 - Nine campaign zones, seven mode configurations, two-minute missions, endless Survival/Arena, three-boss Boss Rush, double-scrap Scrap Run, projectile-boosted Fusion Lab, and a daily elemental modifier.

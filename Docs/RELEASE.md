@@ -1,8 +1,8 @@
 # Release status and outstanding work
 
-Current distribution status: signed version 1.0, build 7 with combat momentum, challenges, mastery, sharing and optional one-time cosmetic purchases uploaded successfully to App Store Connect on 3 October 2026 and attached to the version record. Both products have eleven localizations, pricing, availability, review notes and genuine review screenshots saved. Store copy, privacy, age ratings and content rights are saved. See [App Store Connect status](Store/APP_STORE_CONNECT.md) and [cosmetic verification](Store/IAP/README.md). The app and purchases have not been submitted for review or approved. The broader gameplay, device, accessibility and performance checks below remain product-quality requirements.
+Current distribution status: signed version 1.0, build 8 with distinct weapon attacks, nine boss patterns, combat momentum, challenges, mastery, sharing and optional one-time cosmetic purchases uploaded successfully to App Store Connect on 4 October 2026 and attached to the version record. Both products have eleven localizations, pricing, availability, review notes and genuine review screenshots saved. Store copy, privacy, age ratings and content rights are saved. See [App Store Connect status](Store/APP_STORE_CONNECT.md) and [cosmetic verification](Store/IAP/README.md). The app and purchases have not been submitted for review or approved. The broader gameplay, device, accessibility and performance checks below remain product-quality requirements.
 
-**GitHub verification update:** Apple SDK compilation, 22 core tests, 13 tooling tests and six simulator UI tests pass, including the replay update and StoreKit purchases. See [PREMIUM_LOOP.md](PREMIUM_LOOP.md). The actual captures and downloadable artifacts are recorded in [GITHUB_BUILD.md](GITHUB_BUILD.md). The broader device, accessibility, performance and service checks below remain release requirements.
+**GitHub verification update:** Apple SDK compilation, 29 core tests, 13 tooling tests and eight simulator UI tests pass, including the replay update and StoreKit purchases. See [COMBAT_UPDATE.md](COMBAT_UPDATE.md). The actual captures and downloadable artifacts are recorded in [GITHUB_BUILD.md](GITHUB_BUILD.md). The broader device, accessibility, performance and service checks below remain release requirements.
 
 ## Verification recorded on Windows
 
@@ -15,15 +15,15 @@ Current distribution status: signed version 1.0, build 7 with combat momentum, c
 
 ## Required Mac pass
 
-1. Apple SDK compilation, 22 core tests and six UI tests passed on GitHub's Mac runners. Additional iPhone SE and iPad Pro replay/landscape/rotation cases passed on 4 October 2026, with twenty genuine captures; see [device verification](DeviceQA/README.md). Complete physical-device, split-view and accessibility checks and run `Tools/verify_macos.sh` for broader local verification.
+1. Apple SDK compilation, 29 core tests and eight UI tests passed on GitHub's Mac runners. Two replay/rotation cases each also passed on iPhone SE and iPad Pro, with 31 genuine captures across the three devices; see [combat verification](COMBAT_UPDATE.md). Complete physical-device, split-view and accessibility checks and run `Tools/verify_macos.sh` for broader local verification.
 2. Play the complete tutorial → mission → three choices → boss → rewards → workshop → fusion → blueprint → city upgrade → save/relaunch path.
-3. Validate move gesture geometry, render/update cadence, safe areas, Dynamic Type, VoiceOver focus, background/foreground pause, memory, battery and 60fps targets. Check arena aspect ratio on iPad; the engine currently uses normalized coordinates rather than a fixed physical aspect ratio.
+3. Validate move gesture geometry, render/update cadence, safe areas, Dynamic Type, VoiceOver focus, background/foreground pause, memory, battery and 60fps targets. The camera now uses one physical scale for both axes across screen aspect ratios; verify movement and warning readability on physical devices.
 4. Confirm the generated atlas has clean per-cell framing at all scales. It is a static pose set, not a skeletal animation library. Procedural enemies, city structures, terrain and effects require further art work. Three original city/combat/boss music loops and eight original sound cues are bundled; check their mix, silent-mode behavior and headphone output on physical devices.
 5. Ten actual iPhone captures and ten actual iPad captures have been framed and uploaded to App Store Connect's required slots. Refresh these screenshots if the app UI or gameplay changes before submission.
 6. Run pseudo-localized German/French expansion, CJK and RTL layout tests. Review the actual 375 English-source translation drafts before announcing additional language support. `DEVELOPMENT_LANGUAGE` is English in the generated project.
-7. The actual bundle identifier and team are configured and cloud-signed build 7 is uploaded and attached. Game Center is disabled for release 1.0. Before enabling it in a future release, configure records, update privacy disclosures and test sign-in decline, offline reporting, achievement retries and leaderboard submissions. Current client scores are not server-authoritative; add integrity/anti-cheat before competitive events.
+7. The actual bundle identifier and team are configured and cloud-signed build 8 is uploaded and attached. Game Center is disabled for release 1.0. Before enabling it in a future release, configure records, update privacy disclosures and test sign-in decline, offline reporting, achievement retries and leaderboard submissions. Current client scores are not server-authoritative; add integrity/anti-cheat before competitive events.
 8. Two cosmetic products are configured and local StoreKit UI tests passed purchase, equip/remove, relaunch persistence, restore and refund removal. A bundled UI-test StoreKit configuration enables repeatable QA. Complete real-device App Store sandbox/TestFlight validation, including Ask to Buy, pending approval, cancellation, interrupted delivery and cross-device restore. The app and purchases are not live.
-9. Privacy, age rating, content rights, support/marketing URLs and existing review contact details are saved. Build 7 declares app-only UserDefaults access for cosmetic preferences, without analytics/tracking; StoreKit verification stays on-device. Reassess disclosures and required-reason API declarations if dependencies, services or data handling change.
+9. Privacy, age rating, content rights, support/marketing URLs and existing review contact details are saved. Build 8 declares app-only UserDefaults access for cosmetic preferences, without analytics/tracking; StoreKit verification stays on-device. Reassess disclosures and required-reason API declarations if dependencies, services or data handling change.
 10. Tune progression with device playtests and measured retention/economy data. Current numbers are initial balancing values, not proven production balance.
 
 ## Features from the master prompt that remain incomplete
@@ -31,11 +31,11 @@ Current distribution status: signed version 1.0, build 7 with combat momentum, c
 | Requirement | Current status / remaining work |
 | --- | --- |
 | Premium stylized 3D | Generated 3D-looking 2D robot sprites; no real 3D scene/rigs, expression/victory sets or completed biome/environment art |
-| Signature weapon spectacle | Native trails, splash and status logic; distinct drone armies, orbitals, laser beams and missile guidance still need weapon-specific visuals/behaviors |
+| Signature weapon spectacle | Orbiting drones, guided missiles, piercing beams, local chain lightning and artillery impacts implemented; deeper authored animation and physical-device tuning remain |
 | Robot progression | Levels and affinities implemented; rank evolution and a dedicated robot-factory UI remain |
 | City facilities | All nine buildable/visible; several are cosmetic scaffolding. Research uses a level bonus, not a full branch research tree |
 | Blueprint scope | 12 recipes, not 180. The 25/100 collection achievements are expansion milestones and cannot be completed with this content pack |
-| Boss variety | Nine named encounters share one armor/telegraph/phase controller. Unique patterns, multi-part weakpoints and bespoke arena hazards remain |
+| Boss variety | Nine distinct dodgeable attack patterns implemented with shared warning geometry and enrage timing; multi-part weakpoints and bespoke arena art remain |
 | Squad positioning | Formation follows player; explicit editable formation/positioning remains |
 | Roguelite specificity | Synergy-ranked choices implemented; some modifiers still share underlying effects |
 | Roulette presentation | Immediate animated reveal, haptics, tone and text sharing; timed countdown, dedicated particles/audio and rendered share card remain |
@@ -43,7 +43,7 @@ Current distribution status: signed version 1.0, build 7 with combat momentum, c
 | Monetization | Optional verified non-consumable tint cosmetics adapter. Ads, consumable packs, subscriptions and season pass are not offered |
 | Audio | Three bundled original music loops, eight sound cues, independent volume controls and bounded playback; device listening and biome-specific expansion remain |
 | Localization | English source ready; ten other locales have export/translation/review/import tooling, not approved app translations |
-| ASO | Eleven storefront descriptions/localizations and ten genuine premium screenshots per iPhone/iPad set saved; market testing and screenshots for new replay features remain |
-| Production QA | Apple SDK compilation, 22 core/13 tooling/six simulator UI tests and signed upload verified; broader device/accessibility QA, real Apple sandbox, performance profiling and review approval remain |
+| ASO | Eleven storefront descriptions/localizations and ten genuine premium screenshots per iPhone/iPad set saved; market testing and screenshots for updated replay/combat features remain |
+| Production QA | Apple SDK compilation, 29 core/13 tooling/eight simulator UI tests plus four compact/iPad replay/rotation cases and signed upload verified; broader device/accessibility QA, real Apple sandbox, performance profiling and review approval remain |
 
 The app deliberately makes no claims about live community totals, actual player rankings, discounted products or unshipped blueprint counts. Daily activities use UTC keys and no streak dependency. Local clocks are used for expeditions; introduce server time if economic integrity later requires it.

@@ -1,0 +1,117 @@
+{
+  "workflowRun": "https://github.com/lanray07/Scrap-Squad/actions/runs/37172499986",
+  "commit": "2a2306418d78e6450d8b8b8f5f39d051ec6dd105",
+  "runtime": "iOS 26.2",
+  "screenshots": [
+    {
+      "file": "Combat-01-boss-encounter.png",
+      "test": "CombatShowcaseUITests/testBossRushTelegraphAndPause()",
+      "device": "iPhone 17 Pro Max",
+      "source": "FEB8A8DF-9075-4277-83B6-285857CAADE2.png",
+      "width": 1320,
+      "height": 2868,
+      "exifOrientation": 1,
+      "sha256": "9603fd0f2bc0eacab4f6dd1f1efd505df255237bcba3208fde34e445c06e4f96"
+    },
+    {
+      "file": "Layout-01-landscape-mastery.png",
+      "test": "PremiumReplayUITests/testLandscapeNavigationAndCombatRotation()",
+      "device": "iPhone 17 Pro Max",
+      "source": "EA8DA96E-FCC7-4DF1-933E-2A9639220424.png",
+      "width": 2868,
+      "height": 1320,
+      "exifOrientation": 8,
+      "sha256": "86b3dfe41d9b276ad6ae7a0f5a6b5212c8e212d112893930a88315d7d1109d96"
+    },
+    {
+      "file": "Layout-02-landscape-combat.png",
+      "test": "PremiumReplayUITests/testLandscapeNavigationAndCombatRotation()",
+      "device": "iPhone 17 Pro Max",
+      "source": "613705E8-963F-4258-8E0F-A73F949FB5D1.png",
+      "width": 2868,
+      "height": 1320,
+      "exifOrientation": 8,
+      "sha256": "dddb7785486007b431f5b6639adc5c00a2e13c99707c97288b2e4ff1a560067a"
+    },
+    {
+      "file": "Layout-03-landscape-pause.png",
+      "test": "PremiumReplayUITests/testLandscapeNavigationAndCombatRotation()",
+      "device": "iPhone 17 Pro Max",
+      "source": "E3B86FE8-5876-41D7-8721-AE6D9B26AD3B.png",
+      "width": 2868,
+      "height": 1320,
+      "exifOrientation": 8,
+      "sha256": "5209dd0704ec5e19f962a2893364716abcba67d7b68f4d781d2115836a38afe2"
+    },
+    {
+      "file": "Layout-04-rotated-results.png",
+      "test": "PremiumReplayUITests/testLandscapeNavigationAndCombatRotation()",
+      "device": "iPhone 17 Pro Max",
+      "source": "8D9B55AA-8E0C-44EC-A715-9BE2FA297C28.png",
+      "width": 1320,
+      "height": 2868,
+      "exifOrientation": 1,
+      "sha256": "1ba5d80a729e711bd81080d6b80b32f6b0a503f41f9ac3a54e367a2e2d40fcfb"
+    },
+    {
+      "file": "Premium-01-mastery.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "iPhone 17 Pro Max",
+      "source": "98FAD409-8056-4591-8D1B-8A40E5A5805E.png",
+      "width": 1320,
+      "height": 2868,
+      "exifOrientation": 1,
+      "sha256": "65413b333a05864c71e8f580296bb978cafe582b25f78b6117759ca8050b075e"
+    },
+    {
+      "file": "Premium-02-daily-circuit.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "iPhone 17 Pro Max",
+      "source": "A642AF83-D6F9-4E1F-B9D0-F0F73F6DB534.png",
+      "width": 1320,
+      "height": 2868,
+      "exifOrientation": 1,
+      "sha256": "7a134fd5c85b885d0a458f9ce40320f1816d45d3b3921c34b3263d45ade19930"
+    },
+    {
+      "file": "Premium-03-results.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "iPhone 17 Pro Max",
+      "source": "FF072CF5-15E3-4FD4-95FC-B342E55D3C31.png",
+      "width": 1320,
+      "height": 2868,
+      "exifOrientation": 1,
+      "sha256": "65b850c9e86d2d8a88b6c3a30ad4bb154cdd6db12c4cf5b8cf9da7b2db8b79e3"
+    },
+    {
+      "file": "Premium-04-share-card.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "iPhone 17 Pro Max",
+      "source": "22CC2003-A13E-4AA6-8410-173D97D57C31.png",
+      "width": 1320,
+      "height": 2868,
+      "exifOrientation": 1,
+      "sha256": "c372200e6655da25968852437cc516dc8cc13c0004adc646b4bb13bd604121c0"
+    },
+    {
+      "file": "Premium-05-saved-records.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "iPhone 17 Pro Max",
+      "source": "0E542A54-0283-4F8A-89C9-1032E22B21C0.png",
+      "width": 1320,
+      "height": 2868,
+      "exifOrientation": 1,
+      "sha256": "90e9d8b5131b3ee059decf02ebc1d6f3c74b576f67a222611aacfc59f966be7f"
+    },
+    {
+      "file": "Premium-06-overdrive.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "iPhone 17 Pro Max",
+      "source": "5B166E98-021C-4591-8EEF-E4E2730D1662.png",
+      "width": 1320,
+      "height": 2868,
+      "exifOrientation": 1,
+      "sha256": "dfa272c45351f5153e6238c404cbc0005dd5cffc4b09cca578e75c3dd58252c8"
+    }
+  ]
+}

@@ -136,8 +136,10 @@ def upload_review(api, identifier, file):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--complete", action="store_true")
-    parser.add_argument("--build", default="5")
+    parser.add_argument("--build", help="Processed build number required with --complete")
     args = parser.parse_args()
+    if args.complete and not args.build:
+        parser.error("--complete requires an explicit --build number")
     copy = json.loads((ROOT / "Docs/Store/IAP/localizations.json").read_text(encoding="utf-8"))
     assert len(copy) == len(LOCALES)
     for row in copy:

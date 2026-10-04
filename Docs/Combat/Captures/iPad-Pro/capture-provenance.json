@@ -1,0 +1,107 @@
+{
+  "workflowRun": "https://github.com/lanray07/Scrap-Squad/actions/runs/37172032601",
+  "commit": "0f9cbb7",
+  "runtime": "iOS 26.2",
+  "screenshots": [
+    {
+      "file": "Layout-01-landscape-mastery.png",
+      "test": "PremiumReplayUITests/testLandscapeNavigationAndCombatRotation()",
+      "device": "iPad Pro 13-inch (M5)",
+      "source": "D88F4B7E-CA96-4415-BB30-ABCF204B5D0F.png",
+      "width": 2752,
+      "height": 2064,
+      "exifOrientation": 8,
+      "sha256": "3f5f8f2cb4d40b8d694efdfef7a1928037992765514ab7722f8b4f61fd65fa7f"
+    },
+    {
+      "file": "Layout-02-landscape-combat.png",
+      "test": "PremiumReplayUITests/testLandscapeNavigationAndCombatRotation()",
+      "device": "iPad Pro 13-inch (M5)",
+      "source": "FE0E089C-C77F-4314-A762-1BC2C67A051A.png",
+      "width": 2752,
+      "height": 2064,
+      "exifOrientation": 8,
+      "sha256": "b2eaeb29d8694ff08d9e48510a38f7affd9fa262edf4c773cb0c149c3a08fcf3"
+    },
+    {
+      "file": "Layout-03-landscape-pause.png",
+      "test": "PremiumReplayUITests/testLandscapeNavigationAndCombatRotation()",
+      "device": "iPad Pro 13-inch (M5)",
+      "source": "CC38D0A6-43F8-4A38-BABA-84481282DC9B.png",
+      "width": 2752,
+      "height": 2064,
+      "exifOrientation": 8,
+      "sha256": "61e5c9ba77f7340d1608cd9c241cb3d958ceb65b3d5fa8338153c5cbc811b279"
+    },
+    {
+      "file": "Layout-04-rotated-results.png",
+      "test": "PremiumReplayUITests/testLandscapeNavigationAndCombatRotation()",
+      "device": "iPad Pro 13-inch (M5)",
+      "source": "EE85A9EA-38BC-4F30-8FFA-2F7140B864FE.png",
+      "width": 2064,
+      "height": 2752,
+      "exifOrientation": 1,
+      "sha256": "abe74dd3b903b7d1183fdffc31eb7967baba49e7121b7a6fd72606f6b79590ca"
+    },
+    {
+      "file": "Premium-01-mastery.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "iPad Pro 13-inch (M5)",
+      "source": "D35B9A63-516D-4760-99D8-6549C3A81EB1.png",
+      "width": 2064,
+      "height": 2752,
+      "exifOrientation": 1,
+      "sha256": "7dd782b337e55ce2f1592a272013619ffe80cf0cf71ca0d5c7230b4300134c50"
+    },
+    {
+      "file": "Premium-02-daily-circuit.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "iPad Pro 13-inch (M5)",
+      "source": "48091837-BEB0-405A-A167-91655CDCF759.png",
+      "width": 2064,
+      "height": 2752,
+      "exifOrientation": 1,
+      "sha256": "7d4a1b1dd82752b8c58e9c83bbba53eb64e2e3bba25dda12b85a164b3146d6dd"
+    },
+    {
+      "file": "Premium-03-results.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "iPad Pro 13-inch (M5)",
+      "source": "05DEE500-9B63-4EE7-B426-EFE896FB74D7.png",
+      "width": 2064,
+      "height": 2752,
+      "exifOrientation": 1,
+      "sha256": "fdf1e7410c7161d850da93bbd4ac948ebd580095fbf9fd3b869aa4c9228c2a8a"
+    },
+    {
+      "file": "Premium-04-share-card.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "iPad Pro 13-inch (M5)",
+      "source": "32082165-4ECF-4EE3-A29F-A1AA40FFE3E3.png",
+      "width": 2064,
+      "height": 2752,
+      "exifOrientation": 1,
+      "sha256": "7ad8bbba1727e9da168eab27d4f080c01d06af45e3d6a4540d903441e8392b34"
+    },
+    {
+      "file": "Premium-05-saved-records.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "iPad Pro 13-inch (M5)",
+      "source": "480E7755-CA81-4172-B4C1-36A0F879A6CD.png",
+      "width": 2064,
+      "height": 2752,
+      "exifOrientation": 1,
+      "sha256": "d0902f4c2e9a462025ef81422138593a38a82b1ef88fce5a81810dd7d341ceae"
+    },
+    {
+      "file": "Premium-06-overdrive.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "iPad Pro 13-inch (M5)",
+      "source": "B6E591A2-4262-4D8F-BB77-0674991F8E2B.png",
+      "width": 2064,
+      "height": 2752,
+      "exifOrientation": 1,
+      "sha256": "443e897040557870abee3e555f30dfa3bb15059e48a62c13b03dcbc09c5732c1"
+    }
+  ]
+}

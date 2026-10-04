@@ -41,13 +41,16 @@ if '--layouts' in sys.argv[5:]:
         'Layout-01-landscape-mastery', 'Layout-02-landscape-combat',
         'Layout-03-landscape-pause', 'Layout-04-rotated-results'
     })
+if '--boss' in sys.argv[5:]:
+    required.add('Combat-01-boss-encounter')
 manifest = json.loads((source / 'manifest.json').read_text(encoding='utf-8'))
 captures = {}
 for test in manifest:
-    if 'PremiumReplayUITests' not in test.get('testIdentifier', ''):
+    identifier = test.get('testIdentifier', '')
+    if 'PremiumReplayUITests' not in identifier and not ('--boss' in sys.argv[5:] and 'CombatShowcaseUITests' in identifier):
         continue
     for attachment in test['attachments']:
-        match = re.match(r'^((?:Premium|Layout)-\d{2}-[a-z-]+)_', attachment.get('suggestedHumanReadableName', ''))
+        match = re.match(r'^((?:Premium|Layout|Combat)-\d{2}-[a-z-]+)_', attachment.get('suggestedHumanReadableName', ''))
         if match and match[1] in required and not attachment.get('isAssociatedWithFailure'):
             captures[match[1]] = (test['testIdentifier'], attachment)
 assert set(captures) == required, f'{len(required)} successful native captures are required; no substitutions made.'

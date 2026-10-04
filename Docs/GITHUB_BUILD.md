@@ -1,5 +1,7 @@
 # Verified GitHub Xcode build — 3 October 2026
 
+Current combat build 8 verification, 31 captures and release links are recorded in [COMBAT_UPDATE.md](COMBAT_UPDATE.md). The initial validation below is historical.
+
 The [Validate native game run #4](https://github.com/lanray07/Scrap-Squad/actions/runs/37147738498) completed successfully for source commit `e2ab702b08cd75fbbad4fa71fb628f2666c94a92`.
 
 | Check | Result |

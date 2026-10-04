@@ -44,7 +44,7 @@ The version has not been submitted for review or released. The existing standard
 
 ## Cosmetic product update
 
-The following records describe the initial cosmetic build. The current version record uses build 7, described in the replay update below.
+The following records describe the initial cosmetic build. The current version record uses build 8, described in the combat update below.
 
 On the user's instruction, Founder’s Pack (`com.ScrapSquad.app.founder`, Apple ID `6818880427`) and Robot Style Pack (`com.ScrapSquad.app.styles`, Apple ID `6818884131`) were implemented and configured as non-consumables at £2.99 and £1.99 UK base prices. Apple supplies regional prices to the app. Both have eleven localized names/descriptions, review walkthroughs, genuine shop review screenshots and availability in the same 173 regions. Tax category is inherited from the parent app. No recurring subscription was created. The existing Paid Apps agreement was checked and is Active; no agreement or financial details were changed.
 
@@ -52,8 +52,14 @@ On the user's instruction, Founder’s Pack (`com.ScrapSquad.app.founder`, Apple
 
 [Apple API completion](https://github.com/lanray07/Scrap-Squad/actions/runs/37156627354) verified product configuration, uploaded both review screenshots and attached processed version 1.0 **build 5**, resource ID `076b9fa6-c6d6-4453-99c6-8b2c9ef34be6`. The initial status report is in `IAP/complete-status.json`. Product records, captures and provenance are recorded in `IAP/README.md`. App Store review and release have not been requested or submitted.
 
-## Replay update: current build 7
+## Replay update: historical build 7
 
 [Signed release 7](https://github.com/lanray07/Scrap-Squad/actions/runs/37158256194) uploaded the replay/sharing update for tested source `ddb294db90e44a7b426d14f332134e89f5042d34`. [Final native validation](https://github.com/lanray07/Scrap-Squad/actions/runs/37158254127) passed 22 core, 13 tooling and six iPhone UI tests. [Apple API verification](https://github.com/lanray07/Scrap-Squad/actions/runs/37158993311) confirmed processed build **7** is attached to version 1.0, build resource `b96d37ee-18c5-4532-9860-3091624e86e2`.
 
-The new run history and challenge codes stay on-device. Card sharing is voluntary through Apple's share sheet, explained in the live privacy policy. No new analytics, advertising, account service or data collection was introduced. The app and both purchases remain in preparation, not submitted or released. See [replay details](../PREMIUM_LOOP.md) and [current status report](../Replay/app-store-status.json).
+The new run history and challenge codes stay on-device. Card sharing is voluntary through Apple's share sheet, explained in the live privacy policy. No new analytics, advertising, account service or data collection was introduced. The app and both purchases remain in preparation, not submitted or released. See [replay details](../PREMIUM_LOOP.md) and [build 7 status report](../Replay/app-store-status.json).
+
+## Combat update: current build 8
+
+[Signed release 8](https://github.com/lanray07/Scrap-Squad/actions/runs/37173028209) uploaded the distinct weapon and boss-pattern update from source `2a2306418d78e6450d8b8b8f5f39d051ec6dd105`. [Native validation](https://github.com/lanray07/Scrap-Squad/actions/runs/37172499986) passed 29 core, 13 tooling and eight iPhone UI tests. Two replay/rotation cases each also passed on iPhone SE and iPad Pro. See [combat details and 31 captures](../COMBAT_UPDATE.md).
+
+[Apple API completion](https://github.com/lanray07/Scrap-Squad/actions/runs/37173348117) verified processing and attached build **8** to version 1.0, build resource `33bdbcc9-e7cb-4b1e-8e99-5c3ed6c1d8b5`. Both cosmetic products retain their prices, eleven locales, 173-region availability and review screenshots; see [current status report](../Combat/app-store-status.json). No new data collection was introduced. The app and purchases have not been submitted for review or released. Refresh store screenshots for the updated gameplay before submission and complete the outstanding physical-device, accessibility and sandbox checks.
