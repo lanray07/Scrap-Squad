@@ -157,7 +157,7 @@ def main():
     territories = {t["id"] for t in api.all("/v1/territories?limit=200")} - {"CHN", "VNM"}
     assert len(territories) == 173, "Review any change in Apple's territory list before expanding availability"
     notes = [
-        "Complete onboarding and open Shop. Founderâ€™s Pack is a one-time non-consumable: Founderâ€™s Gold BOLT finish, golden weapon trails and a Founder badge. Tap Equip and enable the two switches after purchase. Finish: Squad and battles; badge: Squad. Restore purchases: bottom of Shop. No power, currency, progression, robot unlock or reward bonuses. No subscription. All cosmetic content is bundled.",
+        "Complete onboarding and open Shop. Founder’s Pack is a one-time non-consumable: Founder’s Gold BOLT finish, golden weapon trails and a Founder badge. Tap Equip and enable the two switches after purchase. Finish: Squad and battles; badge: Squad. Restore purchases: bottom of Shop. No power, currency, progression, robot unlock or reward bonuses. No subscription. All cosmetic content is bundled.",
         "Complete onboarding and open Shop. Robot Style Pack is a one-time non-consumable with Aurora BOLT, Cobalt TANK and Rose PATCH finishes. After purchase tap Equip beside each finish; tap Remove to restore its original appearance. TANK and PATCH must still be unlocked through normal gameplay. Finishes are visible in Squad and battles. Restore purchases is at the bottom of Shop. No power, currency, progression or reward bonuses. No subscription. All content is bundled."]
     report = {"appID": APP_ID, "regions": len(territories), "excluded": ["CHN", "VNM"], "products": [], "submittedForReview": False}
     offers = []

@@ -9,12 +9,12 @@
       "localizations": [
         {
           "description": "Gold BOLT finish, golden weapon trails and a Founder badge. Cosmetic only.",
-          "displayName": "Founderâ€™s Pack",
+          "displayName": "Founder’s Pack",
           "locale": "en_GB"
         }
       ],
       "productID": "com.ScrapSquad.app.founder",
-      "referenceName": "Founderâ€™s Pack",
+      "referenceName": "Founder’s Pack",
       "type": "NonConsumable"
     },
     {

@@ -185,7 +185,7 @@ import ScrapCore
             announce(LocalizationManager.string("momentum.wave", locale: engine.profile.preferences.locale) + " \(engine.wave)", color: "F5B942")
         }
         if engine.combo.multiplier > lastComboTier {
-            announce("Ã—\(engine.combo.multiplier) " + LocalizationManager.string("momentum.combo", locale: engine.profile.preferences.locale), color: "79D9BA")
+            announce("×\(engine.combo.multiplier) " + LocalizationManager.string("momentum.combo", locale: engine.profile.preferences.locale), color: "79D9BA")
             AudioBus.shared.play(.combo, preferences: engine.profile.preferences)
         }
         lastComboTier = engine.combo.multiplier
@@ -337,7 +337,7 @@ import ScrapCore
                 trim.strokeColor = UIColor(hex: finish.accent); trim.lineWidth = 2; trim.position.y = -dimension * 0.35
                 trim.zPosition = -1; sprite.addChild(trim)
                 let decal = SKLabelNode(fontNamed: "AvenirNext-Bold")
-                decal.text = finish.id == "bolt-founders-gold" ? "â˜…" : finish.robotID == "patch" ? "â™¥" : "â—†"
+                decal.text = finish.id == "bolt-founders-gold" ? "★" : finish.robotID == "patch" ? "♥" : "◆"
                 decal.fontSize = 10; decal.fontColor = UIColor(hex: finish.accent); decal.position.y = -5; sprite.addChild(decal)
             }
             return sprite

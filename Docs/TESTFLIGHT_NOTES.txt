@@ -1,6 +1,6 @@
 Signature Collection update: three original robot skins (Solar Ronin BOLT, Iron Bastion TANK, Star Medic PATCH), animated walking frames and victory salutes, Prism Arsenal weapon colours/diamond sparks, and a four-product bundle. In Shop select Signature collection and Try in the arena. Previews are disposable and save no rewards or progress. Bundle ownership grants every component; owning any component disables the overlapping bundle purchase. Purchases remain cosmetic and robot unlocks are earned. Verify purchase/equip/remove, relaunch, Restore Purchases and revocation in Apple sandbox.
 
-Scrap Squad: Merge & Survive â€” internal device acceptance
+Scrap Squad: Merge & Survive — internal device acceptance
 
 New combat update: Dash follows your last movement direction (up before your first move), recharges in four seconds and protects you during the dash. Escape an imminent warning for a perfect dodge: +30% damage for three seconds.
 
