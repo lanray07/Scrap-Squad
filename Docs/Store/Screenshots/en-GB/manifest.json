@@ -3,7 +3,7 @@
   "width": 1320,
   "height": 2868,
   "format": "PNG RGB without alpha",
-  "status": "visually-reviewed-current-build-8-awaiting-store-upload",
+  "status": "visually-reviewed-awaiting-apple-upload",
   "screenshots": [
     {
       "order": 1,
@@ -16,8 +16,8 @@
       "keyword": "ROBOT BOSS BATTLES",
       "file": "01-boss.png",
       "source": "Docs/Store/Captures/Store-11-boss.png",
-      "sourceSHA256": "9603fd0f2bc0eacab4f6dd1f1efd505df255237bcba3208fde34e445c06e4f96",
-      "exportSHA256": "8bda242d3adc72d5fa3fcba2cb527086df403a5ffc8f54fe76946ea1653cad47"
+      "sourceSHA256": "2595c6becb8b2e6a67b523fb9e465f11c2c6f9fb3e7c04653dfcfa95ea14243b",
+      "exportSHA256": "eca1c665d25e689bacb4394d06aec8459e14461f6f20c0afb2d0e1fe215b442a"
     },
     {
       "order": 2,
@@ -30,8 +30,8 @@
       "keyword": "WEAPON FUSION",
       "file": "02-workshop.png",
       "source": "Docs/Store/Captures/Store-05-workshop.png",
-      "sourceSHA256": "c1acd8c909d1d2b63d5fa097ac1c89f279135078b44182eea4c754260a40026c",
-      "exportSHA256": "3f25b3508c7b19615cc32ea0afd3f1e306713857bcfd16b9fc2ec769ce1b9b46"
+      "sourceSHA256": "909e4fceee4380015f5be5a2b91b891c30fdbbadbb62a040f3a509032f020468",
+      "exportSHA256": "c4c7df2120462b8d491645a8d7733a163bf9e56e625d3eeb29b004ac9be1baf6"
     },
     {
       "order": 3,
@@ -44,8 +44,8 @@
       "keyword": "SQUAD BUILDING",
       "file": "03-squad.png",
       "source": "Docs/Store/Captures/Store-03-squad.png",
-      "sourceSHA256": "53d2cbd9cd2185f5f93e0d66f20518745995e87c2e5b5aa512a3d21032be7b47",
-      "exportSHA256": "4bc136ffa6db586cc7696bb40629f56c38128853f82d4f10e369fd7e21e22452"
+      "sourceSHA256": "cca6d7a10c1d9d4801b46b7764e88525c0b45dd228fecf20d0cdfc5fea657cbd",
+      "exportSHA256": "d180c4a5e574422794077c1d609e8a1c31e2411f8d8793a8296493897d5b8f81"
     },
     {
       "order": 4,
@@ -58,8 +58,8 @@
       "keyword": "MERGE WEAPONS",
       "file": "04-fusion.png",
       "source": "Docs/Store/Captures/Store-07-fusion.png",
-      "sourceSHA256": "1f8ac89633532580f7ae8a6f0012c8c2e1133999ed63a4e45da3e588740ae117",
-      "exportSHA256": "884a68da2bb69f9373c9dd3ad5d2427f6ad39b0fe0a02f7c29df9edcc171477f"
+      "sourceSHA256": "da60685ed72358bad8a5710cc3f744546117ab2a0cac4f5bce8c2f2be3a400fc",
+      "exportSHA256": "a733ea9b687d29cb2d3907dcf4fea672ced24f2179887e4f87431cfc39264646"
     },
     {
       "order": 5,
@@ -72,8 +72,8 @@
       "keyword": "CRAFTING & DISCOVERY",
       "file": "05-blueprints.png",
       "source": "Docs/Store/Captures/Store-04-blueprints.png",
-      "sourceSHA256": "dc12d0e12b91d8575a0bd321f85c6c3ced519711e6cafd65b9bf70ea6e641348",
-      "exportSHA256": "86e0c80687f7bec5e31805a488616df18ada664e63168bdc23742c0a5c39fd86"
+      "sourceSHA256": "4a7dfbc59e44d370f496694f5422213ffa1991af49ded5935295bd71ac5b1a58",
+      "exportSHA256": "4c24ba7d558cc1a0ff61c58d8c375bc0c359758e135e72327ec10c0101347505"
     },
     {
       "order": 6,
@@ -86,8 +86,8 @@
       "keyword": "CITY PROGRESSION",
       "file": "06-city.png",
       "source": "Docs/Store/Captures/Store-02-city.png",
-      "sourceSHA256": "71143dc34a175c5742ac17d03b0b525bde5463f6196cb0c4a56f315a3881f101",
-      "exportSHA256": "af0c8ffee714ebd0a46f7f771c6c9cb1ae2ead678f169c55490cc3f5e729d55e"
+      "sourceSHA256": "f3463d6136077634a5bdde277d440b143de1e106759ff63a521f483349d45514",
+      "exportSHA256": "2f23292d6f66830f04e33b28d68287bc315f4a6ec18921ae35733f22c5b1e7a3"
     },
     {
       "order": 7,
@@ -100,8 +100,8 @@
       "keyword": "DAILY ROGUELITE CHALLENGES",
       "file": "07-daily.png",
       "source": "Docs/Store/Captures/Store-12-daily.png",
-      "sourceSHA256": "7a134fd5c85b885d0a458f9ce40320f1816d45d3b3921c34b3263d45ade19930",
-      "exportSHA256": "a13f5d2bf6ec8f786b1f01a53743f48828bdda1e68a442deee524cc61a89bd6b"
+      "sourceSHA256": "ba58e62721346067e239305dda34a54c48a501bd60aecfc6a9bcad13a3db0c8f",
+      "exportSHA256": "63983177670cacbdaf331132203b96d998bba090e256566ad757b148f24739cf"
     },
     {
       "order": 8,
@@ -114,8 +114,8 @@
       "keyword": "ACTION & COMBOS",
       "file": "08-overdrive.png",
       "source": "Docs/Store/Captures/Store-13-overdrive.png",
-      "sourceSHA256": "dfa272c45351f5153e6238c404cbc0005dd5cffc4b09cca578e75c3dd58252c8",
-      "exportSHA256": "8edd99284de89dbd98f1e6e81416f01b899018a156d80757fec0768be7e2d504"
+      "sourceSHA256": "5b7f943c6ca9513ee31dd96d9312799ec0a473e162e48fc9abbaeab45f776aee",
+      "exportSHA256": "c47d8b137f4e60b6537fafac91f34b0b2144d5502f1215b3709bda53c27c69c8"
     },
     {
       "order": 9,
@@ -128,8 +128,8 @@
       "keyword": "ROBOT MASTERY",
       "file": "09-mastery.png",
       "source": "Docs/Store/Captures/Store-14-mastery.png",
-      "sourceSHA256": "65413b333a05864c71e8f580296bb978cafe582b25f78b6117759ca8050b075e",
-      "exportSHA256": "b97b1b19fd0a1dc50ca8aebf6196bfc70142c385e2d122f37bdabbc06ebf30a6"
+      "sourceSHA256": "9939fe3333048b71abbca088f299b91ffb75611d542d3889d57e5355cd0b3dbf",
+      "exportSHA256": "3271d539bfd01988f1d1b9ad768b5309332f1873204c06847ad62eb5eef2924e"
     },
     {
       "order": 10,
@@ -142,11 +142,11 @@
       "keyword": "CHALLENGE REPLAY & SHARING",
       "file": "10-share.png",
       "source": "Docs/Store/Captures/Store-15-share.png",
-      "sourceSHA256": "c372200e6655da25968852437cc516dc8cc13c0004adc646b4bb13bd604121c0",
-      "exportSHA256": "b0f294a14d0dc07be574ceb9463f499104f1f503cf33959485d5b230a0108632"
+      "sourceSHA256": "86a8d382a45a6e36bd068933bf4f15382040bf081523360248c95cadbf866aaa",
+      "exportSHA256": "281e3c0640206fd6ac250d19cf809f7e1d16e96fa45f10c58e7d7db1f1588439"
     }
   ],
-  "sourceWorkflow": "https://github.com/lanray07/Scrap-Squad/actions/runs/37172499986",
-  "sourceCommit": "2a2306418d78e6450d8b8b8f5f39d051ec6dd105",
-  "build": "8"
+  "build": "10",
+  "sourceCommit": "f47c6c0fd0595e00ce7618d86256b84ea20ec206",
+  "sourceWorkflow": "https://github.com/lanray07/Scrap-Squad/actions/runs/37175000200"
 }

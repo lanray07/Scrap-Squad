@@ -8,75 +8,75 @@
       "order": 1,
       "file": "01-boss.png",
       "source": "Docs/Store/iPad-Captures/Store-11-boss.png",
-      "sourceSHA256": "70b42ad8202d31612fdc6521978d9f103e547b5d8d59d515342c10842cbf030f",
-      "exportSHA256": "1daf083b055c97cb1e063565c4749775f6108b769a1901549add8b3e40ec2bc9"
+      "sourceSHA256": "69a258e3da2b6b5c08f44b10a7b424b7d05c08537627654cfc31515e3a818642",
+      "exportSHA256": "c91156ff67882e3a22ee087530f1b96515c738c3ef9afd010f7250546b7d4b05"
     },
     {
       "order": 2,
       "file": "02-workshop.png",
       "source": "Docs/Store/iPad-Captures/Store-05-workshop.png",
-      "sourceSHA256": "bc5aae92a47646286db7bcc456f75a4efacd3ad6f530a689f96d45d279b36926",
-      "exportSHA256": "cb002c2df1a8245a52d72da9d4a204877749daf1a34496ddf91dddbeb88a9ac4"
+      "sourceSHA256": "8b67a1bf3bed8a1c3c88efe0bba059d208d4901c7aa1a4d9756019a2afcd8549",
+      "exportSHA256": "1a0729d7e05b64d209a15d89692caf60de9a02b275c8fb538399f5995553afc0"
     },
     {
       "order": 3,
       "file": "03-squad.png",
       "source": "Docs/Store/iPad-Captures/Store-03-squad.png",
-      "sourceSHA256": "0a86ec893037065c101a8591847b98cc8cb3d268cedf7636d5a150b9e277d843",
-      "exportSHA256": "bb54f3cd262dcf57ff9537b0043e368c81c3270afa3bf59f1fe0315e25f6f035"
+      "sourceSHA256": "b5e928ec45c1aaf8615ed13c12dd85d2262bd13f43924882c85b50f953f9f968",
+      "exportSHA256": "48ec1b0771e91f799b4aa03ebbb196f710af86e92f00fdebb1a99199352ec55b"
     },
     {
       "order": 4,
       "file": "04-fusion.png",
       "source": "Docs/Store/iPad-Captures/Store-07-fusion.png",
-      "sourceSHA256": "8d34b8e3f49dc74916e1004d6ac41c87750b98c4bc5b8e8614db4199ef3dca91",
-      "exportSHA256": "6b32aebc908fc32dc3e9508055690b615b01e3bcb507c5e13db1cc0d4e002a0e"
+      "sourceSHA256": "d74a8b0d2b0db74c0f911708911d33d245d78158eb760a91f7c3e3ad664b9dc3",
+      "exportSHA256": "78a13ae108b4039bb4957e7de5e356284336edd0146d70575deecb13a5244965"
     },
     {
       "order": 5,
       "file": "05-blueprints.png",
       "source": "Docs/Store/iPad-Captures/Store-04-blueprints.png",
-      "sourceSHA256": "ce57221907915d7161ff5e3d32393812bb06cfe808cc1422d466f37915516c7f",
-      "exportSHA256": "d9095e830daf9031ddf18063ee50a4b95533a81b92045b427ca1b946d9f0ea69"
+      "sourceSHA256": "d2115fdfcc75b3017d44d2569f3fef3012215acddac3e4709d37ca0942d80b56",
+      "exportSHA256": "df386454231d134d0b8ce755d9d837d02b1c5acdd8cf7a0fa3a08542d2f206ed"
     },
     {
       "order": 6,
       "file": "06-city.png",
       "source": "Docs/Store/iPad-Captures/Store-02-city.png",
-      "sourceSHA256": "37b48ae944832d864cd827a780a88b89d16bd3208733fcf0f1066ce5de14add5",
-      "exportSHA256": "bff75fc23320f61b590979bd086f385b49546dd70af1181b091e409f19613d28"
+      "sourceSHA256": "6e9508b5600b30155e1b0c130c0b06db2c47f972e57df65989bca83382b9ea1a",
+      "exportSHA256": "5e1dfd5153e2b1bb6e083fba394f0d379674bbbaafa60021dfd3cd7c5f4737df"
     },
     {
       "order": 7,
       "file": "07-daily.png",
       "source": "Docs/Store/iPad-Captures/Store-12-daily.png",
-      "sourceSHA256": "d89db7285be78c508746ee6cba7c9974e8678026fa1332419695e460511ff736",
-      "exportSHA256": "97bcd5e4b9e7774eae94a4e8b1cd9e3c6560eecee27a4a45d729f8de966e78c2"
+      "sourceSHA256": "2031257561fe4ea60c893b0b1dee7e73bd7cc766c4ce67f8f751b56ffbd2352e",
+      "exportSHA256": "4f698d5df4efba07635470b268036bad2d5972a6cdf3a8968b72a7a3627ff079"
     },
     {
       "order": 8,
       "file": "08-overdrive.png",
       "source": "Docs/Store/iPad-Captures/Store-13-overdrive.png",
-      "sourceSHA256": "0bc3a7565a16350848f74f1a2ec421d80d8ca4470a313abfe7f206a1ce7d695d",
-      "exportSHA256": "3ec17adc54a01d0e369821e2c273f3900fcb5b787d546817d8103738de7be0b3"
+      "sourceSHA256": "30aaf66091c98e000c929c88daefc6fa57f0fb5dd7b7d40608d42a63ddc734b2",
+      "exportSHA256": "2f94836ba6fb4748d58df62f6c81cbac3cadf43fc16137437cfdd5268eb5607a"
     },
     {
       "order": 9,
       "file": "09-mastery.png",
       "source": "Docs/Store/iPad-Captures/Store-14-mastery.png",
-      "sourceSHA256": "ef54acbf34f8a7d59fc1cd092896b9b6d8605fa75faa69bdca14a97d109bbfca",
-      "exportSHA256": "f24d5feb9cca7277ef7d70ea6005b9958d3e9813a8e03457856b54b5bb8b4625"
+      "sourceSHA256": "63b8f5c81fe905717692fde026b20bbcbc09286fd6cdb615f697123f25fd338c",
+      "exportSHA256": "ab314cd437590b0d1769551ef775da5a29d2b9f4cb5b4ce31a4f0cbd54fe217e"
     },
     {
       "order": 10,
       "file": "10-share.png",
       "source": "Docs/Store/iPad-Captures/Store-15-share.png",
-      "sourceSHA256": "4ea318a118e2586eb9145941f36395a1c45bbf5aa25493f48b53f2db6e255ebe",
-      "exportSHA256": "f738152d546eb789b292d9cf06058c126555d177170602e1e2defb34517fbe28"
+      "sourceSHA256": "ea5388a77a6d1eb0d0940947f16c0237dd843734d5a046c62257d12bb484f93a",
+      "exportSHA256": "468dc76079b6ce07cf3e81e472813873400b03aac8018bca82e3aef16c5a461f"
     }
   ],
-  "status": "visually-reviewed-current-build-8-awaiting-store-upload",
-  "sourceWorkflow": "https://github.com/lanray07/Scrap-Squad/actions/runs/37173511606",
-  "sourceCommit": "bc9f81b",
-  "build": "8"
+  "build": "10",
+  "sourceCommit": "f47c6c0fd0595e00ce7618d86256b84ea20ec206",
+  "sourceWorkflow": "https://github.com/lanray07/Scrap-Squad/actions/runs/37175002314",
+  "status": "visually-reviewed-awaiting-apple-upload"
 }
