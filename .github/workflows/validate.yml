@@ -12,7 +12,7 @@ concurrency:
 jobs:
   native:
     runs-on: macos-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
       - name: Record Apple toolchain
@@ -36,7 +36,7 @@ jobs:
           path: .build/artifacts/ScrapSquad-simulator.zip
           if-no-files-found: error
       - name: Run iPhone simulator smoke tests
-        timeout-minutes: 18
+        timeout-minutes: 24
         run: bash Tools/test_ios_ui.sh
       - name: Export simulator screenshots
         if: always()

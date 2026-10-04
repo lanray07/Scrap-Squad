@@ -170,7 +170,7 @@ struct BattleView: View {
                     } label: {
                         HStack { Image(systemName: "bolt.fill"); if engine.abilityCooldown > 0 { Text(Int(ceil(engine.abilityCooldown)), format: .number) } else { LText("battle.ability") } }
                             .font(.headline).foregroundStyle(Theme.ink).padding(18).background(Theme.gold, in: Capsule())
-                    }.disabled(engine.abilityCooldown > 0 || engine.state != .fighting || session.paused)
+                    }.disabled(engine.abilityCooldown > 0 || engine.state != .fighting || session.paused).accessibilityIdentifier("battle-ability")
         }
     }
     func playMusic() { AudioBus.shared.play(session.engine.bossSpawned ? .boss : .battle, preferences: store.profile.preferences) }

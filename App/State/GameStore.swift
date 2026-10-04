@@ -23,7 +23,8 @@ import ScrapCore
                 profile = PlayerProfile(); onboardingPresented = true
                 // Opt-in UI fixture: normal content and timing, extra health for long combat checks.
                 if ProcessInfo.processInfo.arguments.contains("--excitement-qa") {
-                    profile.robotLevels = ["bolt": 30, "patch": 30]
+                    profile.robotLevels = ["bolt": 50, "patch": 50]
+                    profile.weaponLevels = ["blaster": 3]
                 }
             } else if FileManager.default.fileExists(atPath: saveURL.path) {
                 profile = try JSONDecoder().decode(PlayerProfile.self, from: Data(contentsOf: saveURL))

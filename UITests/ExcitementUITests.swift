@@ -48,6 +48,7 @@ import XCTest
         let app = try deploy()
         let first = app.buttons["upgrade-fire"]
         XCTAssertTrue(first.waitForExistence(timeout: 35)); first.tap()
+        app.buttons["battle-ability"].tap()
         let event = app.descendants(matching: .any).matching(identifier: "wave-event").firstMatch
         XCTAssertTrue(event.waitForExistence(timeout: 20))
         capture("Excitement-03-elite-wave-event")
@@ -68,6 +69,7 @@ import XCTest
         let app = try deploy()
         let primer = app.buttons["upgrade-" + first]
         XCTAssertTrue(primer.waitForExistence(timeout: 35)); primer.tap()
+        app.buttons["battle-ability"].tap()
         let partner = app.buttons["upgrade-" + second]
         XCTAssertTrue(partner.waitForExistence(timeout: 35)); partner.tap()
         XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "weapon-evolution").firstMatch.waitForExistence(timeout: 5))
