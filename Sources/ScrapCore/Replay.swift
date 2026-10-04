@@ -93,9 +93,13 @@ public struct RunHighlights: Codable, Sendable {
     public let overdrives: Int
     public let synergies: [BuildSynergy]
     public let challengeCode: String?
-    public init(weaponID: String, elapsed: Double, bestCombo: Int, overdrives: Int, synergies: [BuildSynergy], challengeCode: String?) {
+    public let evolution: RunEvolution?
+    public let perfectDodges: Int?
+    public let completedWaveEvents: Int?
+    public init(weaponID: String, elapsed: Double, bestCombo: Int, overdrives: Int, synergies: [BuildSynergy], challengeCode: String?, evolution: RunEvolution? = nil, perfectDodges: Int? = nil, completedWaveEvents: Int? = nil) {
         self.weaponID = weaponID; self.elapsed = elapsed; self.bestCombo = bestCombo
         self.overdrives = overdrives; self.synergies = synergies; self.challengeCode = challengeCode
+        self.evolution = evolution; self.perfectDodges = perfectDodges; self.completedWaveEvents = completedWaveEvents
     }
 }
 public struct RunRecord: Codable, Sendable, Identifiable {
@@ -138,6 +142,7 @@ public struct RunJournal: Codable, Sendable {
                   run.zone >= 0 && run.zone < content.biomes.count && run.score >= 0 && run.kills >= 0 && run.bosses >= 0
                   && weapons.contains(run.highlights.weaponID) && run.highlights.elapsed.isFinite && run.highlights.elapsed >= 0
                   && run.highlights.bestCombo >= 0 && run.highlights.overdrives >= 0
+                  && (run.highlights.perfectDodges ?? 0) >= 0 && (run.highlights.completedWaveEvents ?? 0) >= 0
                   && (run.highlights.challengeCode == nil || RunChallenge(code: run.highlights.challengeCode!) != nil)
               }) else { throw GameError.invalidContent }
     }

@@ -1,0 +1,235 @@
+Building for debugging...
+[0/3] Write sources
+[1/3] Write swift-version--5B60246215D675FD.txt
+[3/5] Emitting module ScrapCoreTests
+[4/5] Compiling ScrapCoreTests ExcitementTests.swift
+[5/12] C:\Users\User\ScrapSquadMovementBuild\x86_64-unknown-windows-msvc\debug\ScrapSquadPackageDiscoveredTests.derived\all-discovered-tests.swift
+[6/13] Write sources
+[7/13] Wrapping AST for ScrapCoreTests for debugging
+[9/16] Emitting module ScrapSquadPackageDiscoveredTests
+[10/16] Compiling ScrapSquadPackageDiscoveredTests ScrapCoreTests.swift
+[11/16] Compiling ScrapSquadPackageDiscoveredTests all-discovered-tests.swift
+[12/14] Write Objects.LinkFileList
+[13/14] Linking ScrapSquadPackageTests.xctest
+Build complete! (12.61s)
+warning: unable to create symbolic link at C:\Users\User\ScrapSquadMovementBuild\debug: encountered an I/O error (code: 512) while reading C:\Users\User\ScrapSquadMovementBuild\debug
+Test Suite 'All tests' started at 2026-10-04 10:24:54.142
+
+Test Suite 'debug.xctest' started at 2026-10-04 10:24:54.148
+
+Test Suite 'debug.xctest' passed at 2026-10-04 10:24:54.148
+
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.0 (0.0) seconds
+
+Test Suite 'All tests' passed at 2026-10-04 10:24:54.148
+
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.0 (0.0) seconds
+
+Wave review: normal checkpoints (time, wave, spawned)=[(0.05, 1, 1), (20.05000000000015, 2, 19), (40.04999999999986, 3, 48), (60.049999999998725, 4, 79), (80.0499999999976, 5, 80), (100.04999999999646, 6, 80)]
+
+Wave review: Boss Rush time=120.4999999999953 bosses=1 state=fighting
+
+Wave review: survival time=149.99999999999986 wave=8 state=fighting
+
+Wave review: arena time=149.99999999999986 wave=8 state=fighting
+
+Release stress: 144 weapon/biome cases; sampled peaks enemies=80, projectiles=4, warnings=10; host elapsed=16.3934663 seconds. Not a device FPS or thermal measurement.
+
+Wave review: peak enemies=80, boss spawned=true
+
+◊ Test run started.
+
+→ Testing Library Version: 6.3.1 (937120cbc281cf2)
+
+→ Target Platform: x86_64-unknown-windows-msvc
+
+◊ Test guidedMissilesTravelBeforeDamageAndRemainBounded() started.
+
+◊ Test fusionIsAtomicAndUnlocksBlueprint() started.
+
+◊ Test waveReviewNormalTwentySecondProgressionAndDeterministicSpawns() started.
+
+◊ Test abilityCooldownPreventsRepeatedHealing() started.
+
+◊ Test waveReviewUpgradeSelectionFreezesWaveAndSpawning() started.
+
+◊ Test runRewardsCannotBeClaimedTwice() started.
+
+◊ Test cosmeticOwnershipAndRefunds() started.
+
+◊ Test saveRoundTrip() started.
+
+◊ Test bossWarningsAllowEscapeAndFreezeAtUpgrade() started.
+
+◊ Test attackGeometryMatchesCirclesCapsulesAndRingSafeCenter() started.
+
+◊ Test missionsHaveNoStreakDependency() started.
+
+◊ Test shotsCannotEraseTheSwarmAtSpawnDistance() started.
+
+◊ Test deterministicCombatAndUpgradePause() started.
+
+◊ Test waveReviewBossRushRequiresAllThreeBosses() started.
+
+◊ Test corruptedProfileRejected() started.
+
+◊ Test comboChargesExpiresAndCannotStackOverdrive() started.
+
+◊ Test threeSeededEventsRespectCapTimeoutsAndNoFreeCarrierKills() started.
+
+◊ Test stationaryAndTeleportingRobotsLeaveNoSteps() started.
+
+◊ Test waveReviewEndlessContinuesPastSix() started.
+
+◊ Test everyWeaponAndBiomeKeepsCombatStateFiniteAndBounded() started.
+
+◊ Test successfulEliteEventPaysOnceAndRewardIsIdempotent() started.
+
+◊ Test eventReplayIsDeterministicAndUpgradeFreezesItsCountdown() started.
+
+◊ Test dashEscapesImminentRealBossWarningAndRewardsOnce() started.
+
+◊ Test dailyCircuitRotatesAtUTCMidnightAndIgnoresPurchasedProgress() started.
+
+◊ Test dronesOrbitAndElectricLinksStayLocal() started.
+
+◊ Test squadNeverEmptyOrOverCapacity() started.
+
+◊ Test allNineBossesHaveDistinctFiniteDodgeablePatterns() started.
+
+◊ Test challengeCodesRoundTripAndRejectOtherVersions() started.
+
+◊ Test completeCampaignRewardsVictory() started.
+
+◊ Test synergyRequirementsAreDistinctAndPresentInContent() started.
+
+◊ Test rouletteConsumesOnlyValidIngredients() started.
+
+◊ Test waveReviewTimedModesRetainTwoMinuteDeadlineAndSixWaveCap() started.
+
+◊ Test offlineCapAndClockRollback() started.
+
+◊ Test contentIntegrity() started.
+
+◊ Test dashAndCooldownFreezeDuringUpgradeAndStayInsideArena() started.
+
+◊ Test cosmeticCatalogMatchesRealRobots() started.
+
+◊ Test siegeBarrageWarnsBeforeDamageAndFreezesAtChoice() started.
+
+◊ Test dockDoesNotGrantRetroactiveIncome() started.
+
+◊ Test olderRunHighlightsDecodeWithoutNewCombatFields() started.
+
+◊ Test journalMigrationRewardsIdempotencyAndBoundedHistory() started.
+
+◊ Test waveReviewBossRushCompletesAfterThirdBossAndStopsSpawning() started.
+
+◊ Test rebootPreservesCollection() started.
+
+◊ Test beamsPierceAlignedLivingTargetsWithinRangeInOrder() started.
+
+◊ Test circuitEnginesShareOpeningAndReplayHighlights() started.
+
+◊ Test footprintSpacingIsIndependentOfFrameRateAndFeetAlternate() started.
+
+◊ Test evolutionsUnlockThroughRealChoicesAndDealDistinctBoundedDamage() started.
+
+◊ Test waveReviewBossSpawnRespectsEnemyLimit() started.
+
+√ Test saveRoundTrip() passed after 0.035 seconds.
+
+√ Test cosmeticOwnershipAndRefunds() passed after 0.036 seconds.
+
+√ Test comboChargesExpiresAndCannotStackOverdrive() passed after 0.035 seconds.
+
+√ Test attackGeometryMatchesCirclesCapsulesAndRingSafeCenter() passed after 0.036 seconds.
+
+√ Test stationaryAndTeleportingRobotsLeaveNoSteps() passed after 0.036 seconds.
+
+√ Test missionsHaveNoStreakDependency() passed after 0.036 seconds.
+
+√ Test squadNeverEmptyOrOverCapacity() passed after 0.034 seconds.
+
+√ Test challengeCodesRoundTripAndRejectOtherVersions() passed after 0.034 seconds.
+
+√ Test fusionIsAtomicAndUnlocksBlueprint() passed after 0.038 seconds.
+
+√ Test corruptedProfileRejected() passed after 0.036 seconds.
+
+√ Test dailyCircuitRotatesAtUTCMidnightAndIgnoresPurchasedProgress() passed after 0.035 seconds.
+
+√ Test synergyRequirementsAreDistinctAndPresentInContent() passed after 0.035 seconds.
+
+√ Test rouletteConsumesOnlyValidIngredients() passed after 0.035 seconds.
+
+√ Test offlineCapAndClockRollback() passed after 0.035 seconds.
+
+√ Test allNineBossesHaveDistinctFiniteDodgeablePatterns() passed after 0.036 seconds.
+
+√ Test cosmeticCatalogMatchesRealRobots() passed after 0.035 seconds.
+
+√ Test runRewardsCannotBeClaimedTwice() passed after 0.038 seconds.
+
+√ Test beamsPierceAlignedLivingTargetsWithinRangeInOrder() passed after 0.034 seconds.
+
+√ Test footprintSpacingIsIndependentOfFrameRateAndFeetAlternate() passed after 0.034 seconds.
+
+√ Test olderRunHighlightsDecodeWithoutNewCombatFields() passed after 0.035 seconds.
+
+√ Test dockDoesNotGrantRetroactiveIncome() passed after 0.036 seconds.
+
+√ Test contentIntegrity() passed after 0.042 seconds.
+
+√ Test rebootPreservesCollection() passed after 0.047 seconds.
+
+√ Test guidedMissilesTravelBeforeDamageAndRemainBounded() passed after 0.052 seconds.
+
+√ Test journalMigrationRewardsIdempotencyAndBoundedHistory() passed after 0.050 seconds.
+
+√ Test waveReviewNormalTwentySecondProgressionAndDeterministicSpawns() passed after 0.768 seconds.
+
+√ Test waveReviewUpgradeSelectionFreezesWaveAndSpawning() passed after 0.779 seconds.
+
+√ Test bossWarningsAllowEscapeAndFreezeAtUpgrade() passed after 0.787 seconds.
+
+√ Test shotsCannotEraseTheSwarmAtSpawnDistance() passed after 0.791 seconds.
+
+√ Test deterministicCombatAndUpgradePause() passed after 0.804 seconds.
+
+√ Test waveReviewBossRushRequiresAllThreeBosses() passed after 0.835 seconds.
+
+√ Test threeSeededEventsRespectCapTimeoutsAndNoFreeCarrierKills() passed after 0.926 seconds.
+
+√ Test abilityCooldownPreventsRepeatedHealing() passed after 0.931 seconds.
+
+√ Test waveReviewEndlessContinuesPastSix() passed after 1.492 seconds.
+
+√ Test everyWeaponAndBiomeKeepsCombatStateFiniteAndBounded() passed after 17.890 seconds.
+
+√ Test successfulEliteEventPaysOnceAndRewardIsIdempotent() passed after 17.925 seconds.
+
+√ Test eventReplayIsDeterministicAndUpgradeFreezesItsCountdown() passed after 17.963 seconds.
+
+√ Test dashEscapesImminentRealBossWarningAndRewardsOnce() passed after 17.976 seconds.
+
+√ Test dronesOrbitAndElectricLinksStayLocal() passed after 17.996 seconds.
+
+√ Test completeCampaignRewardsVictory() passed after 18.018 seconds.
+
+√ Test waveReviewTimedModesRetainTwoMinuteDeadlineAndSixWaveCap() passed after 18.933 seconds.
+
+√ Test dashAndCooldownFreezeDuringUpgradeAndStayInsideArena() passed after 18.946 seconds.
+
+√ Test siegeBarrageWarnsBeforeDamageAndFreezesAtChoice() passed after 18.959 seconds.
+
+√ Test waveReviewBossRushCompletesAfterThirdBossAndStopsSpawning() passed after 18.970 seconds.
+
+√ Test circuitEnginesShareOpeningAndReplayHighlights() passed after 18.974 seconds.
+
+√ Test evolutionsUnlockThroughRealChoicesAndDealDistinctBoundedDamage() passed after 19.012 seconds.
+
+√ Test waveReviewBossSpawnRespectsEnemyLimit() passed after 19.111 seconds.
+
+√ Test run with 47 tests in 0 suites passed after 19.118 seconds.
+

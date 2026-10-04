@@ -1,5 +1,9 @@
 Scrap Squad: Merge & Survive — internal device acceptance
 
+New combat update: Dash follows your last movement direction (up before your first move), recharges in four seconds and protects you during the dash. Escape an imminent warning for a perfect dodge: +30% damage for three seconds.
+
+At the first upgrade, choose Fire Core, Tesla Coil or Explosive Payload. Complete its partner at the next upgrade to unlock Fire Vortex (Fire + Overclock), Storm Cage (Tesla + splitting module) or Siege Barrage (Payload + Critical Processor). Evolutions last for this run only. Watch for elite ambushes, falling scrap storms and fleeing gold carriers; their bonus scrap is paid with run rewards.
+
 This build fixes wave progression: Survival and Arena continue beyond Wave 6, Boss Rush requires three defeated bosses, and scheduled bosses respect the 80-enemy limit. Check an endless run past 150 seconds and a Boss Rush fight lasting more than two minutes.
 
 This build adds visible robot walking and alternating ground footprints while dragging. Steps stop on release and pause; Reduce Motion keeps ground trails without bobbing or leaning.

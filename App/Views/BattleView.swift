@@ -37,9 +37,12 @@ struct BattleLobby: View {
                 }
                 ActionButton(key: "battle.deploy", symbol: "bolt.shield.fill") {
                     var snapshot = store.profile; snapshot.zone = zone
-                    session = BattleSession(content: store.content, profile: snapshot, mode: mode, finishes: commerce.robotFinishes, goldenTrails: commerce.goldenTrails)
+                    let arguments = ProcessInfo.processInfo.arguments
+                    let seed: UInt64 = arguments.contains("--ui-testing") && arguments.contains("--excitement-qa") ? 42 : UInt64.random(in: 1...UInt64.max)
+                    session = BattleSession(content: store.content, profile: snapshot, mode: mode, finishes: commerce.robotFinishes, goldenTrails: commerce.goldenTrails, seed: seed)
                 }
                 LText("battle.move").font(.subheadline).foregroundStyle(Theme.muted)
+                LText("battle.excitement.note").font(.caption).foregroundStyle(Theme.muted)
                 LText("battle.survival.note").font(.caption).foregroundStyle(Theme.muted)
                 ChallengePanel { challenge in
                     session = BattleSession(content: store.content, profile: challenge.profile(content: store.content, preferences: store.profile.preferences), mode: .dailyAnomaly,
@@ -103,6 +106,7 @@ struct BattleView: View {
                 CombatMomentum(engine: engine) {
                     if engine.activateOverdrive() { Feedback.play(.ability, preferences: store.profile.preferences); AudioBus.shared.play(.overdrive, preferences: store.profile.preferences); session.revision += 1 }
                 }
+                CombatExcitementStatus(engine: engine)
                 SpriteView(scene: session.scene, isPaused: session.paused, options: [.ignoresSiblingOrder])
                     .id(session.id)
                     .accessibilityLabel(Text(LocalizationManager.string("accessibility.arena")))
@@ -116,17 +120,11 @@ struct BattleView: View {
                             session.scene.movement = hypot(dx, dy) < 8 ? Vector() : Vector(Double(dx), Double(dy))
                         }
                     }.onEnded { _ in dragOrigin = nil; session.scene.movement = Vector() })
-                HStack {
-                    Picker(selection: $priority) { ForEach(TargetPriority.allCases, id: \.self) { LText("priority." + $0.rawValue).tag($0) } } label: { LText("battle.priority") }
-                        .onChange(of: priority) { _, value in engine.priority = value }
-                    Spacer()
-                    Button {
-                        engine.activateAbility(); Feedback.play(.ability, preferences: store.profile.preferences)
-                    } label: {
-                        HStack { Image(systemName: "bolt.fill"); if engine.abilityCooldown > 0 { Text(Int(ceil(engine.abilityCooldown)), format: .number) } else { LText("battle.ability") } }
-                            .font(.headline).foregroundStyle(Theme.ink).padding(18).background(Theme.gold, in: Capsule())
-                    }.disabled(engine.abilityCooldown > 0)
-                }.padding(16)
+                ViewThatFits(in: .horizontal) {
+                    HStack { targetingPicker; Spacer(); dashButton; abilityButton }
+                    VStack(spacing: 6) { targetingPicker; HStack { dashButton; Spacer(); abilityButton } }
+                    VStack(spacing: 6) { targetingPicker; dashButton; abilityButton }
+                }.padding(12)
             }
             if session.paused { pauseOverlay }
             else if engine.state == .choosing { choicesOverlay }
@@ -142,6 +140,38 @@ struct BattleView: View {
                 }
             }
             .onDisappear { session.scene.isPaused = true; AudioBus.shared.stop(); if phase == .active { AudioBus.shared.play(.city, preferences: store.profile.preferences) } }
+    }
+    private var targetingPicker: some View {
+        let engine = session.engine
+        return Group {
+                    Picker(selection: $priority) { ForEach(TargetPriority.allCases, id: \.self) { LText("priority." + $0.rawValue).tag($0) } } label: { LText("battle.priority") }
+                        .onChange(of: priority) { _, value in engine.priority = value }
+        }
+    }
+    private var dashButton: some View {
+        let engine = session.engine
+        return Button {
+            if engine.activateDash(direction: session.scene.movement) {
+                Feedback.play(.ability, preferences: store.profile.preferences)
+                session.revision += 1
+            }
+        } label: {
+            HStack { Image(systemName: "arrow.up.forward"); LText("battle.dash"); if engine.dashCooldown > 0 { Text(Int(ceil(engine.dashCooldown)), format: .number).monospacedDigit() } }
+                .font(.headline).foregroundStyle(Theme.ink).padding(14).background(Theme.mint, in: Capsule())
+        }.disabled(engine.dashCooldown > 0 || engine.state != .fighting || session.paused)
+            .accessibilityIdentifier("battle-dash")
+            .accessibilityHint(Text(LocalizationManager.string("battle.dash.hint")))
+    }
+    private var abilityButton: some View {
+        let engine = session.engine
+        return Group {
+                    Button {
+                        engine.activateAbility(); Feedback.play(.ability, preferences: store.profile.preferences)
+                    } label: {
+                        HStack { Image(systemName: "bolt.fill"); if engine.abilityCooldown > 0 { Text(Int(ceil(engine.abilityCooldown)), format: .number) } else { LText("battle.ability") } }
+                            .font(.headline).foregroundStyle(Theme.ink).padding(18).background(Theme.gold, in: Capsule())
+                    }.disabled(engine.abilityCooldown > 0 || engine.state != .fighting || session.paused)
+        }
     }
     func playMusic() { AudioBus.shared.play(session.engine.bossSpawned ? .boss : .battle, preferences: store.profile.preferences) }
     func pause() { session.scene.simulationPaused = true; session.paused = true; session.scene.isPaused = true; session.scene.movement = Vector(); session.revision += 1; AudioBus.shared.stop() }
@@ -168,13 +198,21 @@ struct BattleView: View {
                         VStack(alignment: .leading, spacing: 6) {
                             LText(choice.nameKey).font(.headline); LText(choice.descriptionKey).font(.caption).foregroundStyle(Theme.muted)
                             let kinds = Set(session.engine.content.upgrades.filter { session.engine.selected[$0.id, default: 0] > 0 }.map(\.kind)).union([choice.kind])
+                            if session.engine.evolution == nil {
+                                ForEach(RunEvolution.allCases.filter { $0.requirements.contains(choice.kind) }) { evolution in
+                                    VStack(alignment: .leading, spacing: 3) {
+                                        Label { LText(evolution.nameKey); Text("\(evolution.requirements.intersection(kinds).count)/2") } icon: { Image(systemName: "sparkles") }
+                                        LText(evolution.detailKey)
+                                    }.font(.caption).foregroundStyle(evolution.ready(kinds: kinds) ? Theme.mint : Theme.muted)
+                                }
+                            }
                             ForEach(BuildSynergy.allCases.filter { $0.ready(kinds: kinds) && !session.engine.synergies.contains($0) }) { synergy in
                                 Label { LText(synergy.nameKey) } icon: { Image(systemName: "sparkles") }.font(.caption.bold()).foregroundStyle(Theme.mint)
                             }
                         }
                         Spacer()
                     }.padding(18).background(Theme.surface, in: RoundedRectangle(cornerRadius: 18))
-                }.buttonStyle(.plain)
+                }.buttonStyle(.plain).accessibilityIdentifier("upgrade-" + choice.id)
             }
         }
     }
@@ -184,6 +222,9 @@ struct BattleView: View {
             PageHeading(title: session.engine.state == .victory ? "battle.victory" : "battle.defeat", subtitle: "battle.results")
             HStack { LText("battle.kills"); Spacer(); Text(session.engine.kills, format: .number) }
             HStack { LText("battle.score"); Spacer(); Text(session.engine.score, format: .number) }
+            if let evolution = session.engine.evolution { Label { LText(evolution.nameKey) } icon: { Image(systemName: "sparkles") }.foregroundStyle(Theme.mint) }
+            HStack { LText("battle.perfectDodges"); Spacer(); Text(session.engine.perfectDodges, format: .number) }
+            HStack { LText("event.bonusScrap"); Spacer(); Text(session.engine.bonusScrap, format: .number) }
             if session.personalBest { Label { LText("run.personalBest") } icon: { Image(systemName: "trophy.fill") }.foregroundStyle(Theme.gold) }
             HStack { LText("momentum.best"); Spacer(); Text(session.engine.combo.best, format: .number) }
             if let record = store.profile.journal?.recent.first(where: { $0.id == session.engine.id }) {

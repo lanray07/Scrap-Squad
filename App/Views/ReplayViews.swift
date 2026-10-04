@@ -90,6 +90,8 @@ struct RunCard: View {
                 Label(text(weapon.nameKey), systemImage: icon(weapon.element)).font(.subheadline.bold()).foregroundStyle(Theme.mint)
             }
             ForEach(record.highlights.synergies) { Text(text($0.nameKey)).font(.caption.bold()).foregroundStyle(Theme.gold) }
+            if let evolution = record.highlights.evolution { Text(text(evolution.nameKey)).font(.headline.bold()).foregroundStyle(Theme.mint) }
+            if let dodges = record.highlights.perfectDodges, dodges > 0 { stat("battle.perfectDodges", dodges) }
             if !record.medals.isEmpty {
                 HStack(spacing: 14) { ForEach(record.medals) { Image(systemName: $0.symbol).foregroundStyle(Theme.gold).accessibilityLabel(text($0.nameKey)) } }
             }

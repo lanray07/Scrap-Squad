@@ -82,10 +82,12 @@ public struct RunReward: Sendable {
     public let score: Int
     public let victory: Bool
     public let highlights: RunHighlights?
-    public init(id: UUID, mode: GameMode, zone: Int, kills: Int, bosses: Int, score: Int, victory: Bool, highlights: RunHighlights? = nil) {
+    public let bonusScrap: Int
+    public init(id: UUID, mode: GameMode, zone: Int, kills: Int, bosses: Int, score: Int, victory: Bool, highlights: RunHighlights? = nil, bonusScrap: Int = 0) {
         self.id = id; self.mode = mode; self.zone = zone; self.kills = kills
         self.bosses = bosses; self.score = score; self.victory = victory
         self.highlights = highlights
+        self.bonusScrap = max(0, bonusScrap)
     }
 }
 public enum Progression {
@@ -194,7 +196,7 @@ public enum Progression {
             journal.record(RunRecord(reward: reward, highlights: highlights, date: now))
             profile.journal = journal
         }
-        profile.scrap += reward.kills * content.economy.killScrap * (reward.mode == .scrapRun ? 2 : 1)
+        profile.scrap += reward.kills * content.economy.killScrap * (reward.mode == .scrapRun ? 2 : 1) + reward.bonusScrap
         profile.credits += reward.kills * 3 + reward.bosses * content.economy.bossCredits
         if reward.victory {
             profile.cores += 1

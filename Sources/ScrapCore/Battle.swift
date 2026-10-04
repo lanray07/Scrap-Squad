@@ -57,6 +57,15 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
     public let challengeCode: String?
     public private(set) var combo = ComboMeter()
     public private(set) var synergies: Set<BuildSynergy> = []
+    public private(set) var evolution: RunEvolution?
+    public private(set) var evolutionStrikes: [EvolutionStrike] = []
+    public private(set) var dashCooldown = 0.0
+    public private(set) var dashRemaining = 0.0
+    public private(set) var perfectDodgeBoost = 0.0
+    public private(set) var perfectDodges = 0
+    public private(set) var waveEvent: WaveEvent?
+    public private(set) var completedWaveEvents = 0
+    public private(set) var bonusScrap = 0
     public var wave: Int {
         let number = 1 + Int(elapsed / 20)
         return mode == .survival || mode == .arena ? number : min(6, number)
@@ -108,6 +117,14 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
     private var explosionRadius = 0.0
     private var invulnerability = 0.0
     private var nextHazard = 12.0
+    private var heading = Vector(0, 1)
+    private var dashDirection = Vector()
+    private var perfectCandidates: Set<Int> = []
+    private var nextEvolutionPulse = 0.0
+    private var nextEvent = 28.0
+    private var eventSequence = 0
+    private var eventRng: SeededRandom
+    private var nextStormPulse = 0.0
     private let enemyLimit = 80
     // Leave one place for the scheduled boss, without deleting enemies or granting kills.
     private var regularEnemyLimit: Int { bossSpawned ? enemyLimit : enemyLimit - 1 }
@@ -118,6 +135,7 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
         weapon = content.weapons.first(where: { $0.id == profile.equippedWeapon }) ?? content.weapons[0]
         rng = SeededRandom(seed: seed)
         offerRng = SeededRandom(seed: seed ^ 0x5343524150)
+        eventRng = SeededRandom(seed: seed ^ 0x4556454E54)
         self.seed = seed; self.challengeCode = challengeCode
         let squad = content.robots.filter { profile.squad.contains($0.id) }
         maxHealth = squad.reduce(0) { $0 + $1.health * (1 + Double(profile.robotLevels[$1.id, default: 1] - 1) * 0.08) }
@@ -138,10 +156,17 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
         let dt = min(max(delta, 0), 0.05)
         elapsed += dt
         combo.tick(dt)
+        dashCooldown = max(0, dashCooldown - dt)
+        perfectDodgeBoost = max(0, perfectDodgeBoost - dt)
         abilityCooldown = max(0, abilityCooldown - dt)
         invulnerability = max(0, invulnerability - dt)
         health = min(maxHealth, health + regeneration * dt)
-        player = player + movement.normalized * (0.24 * dt)
+        if movement.length > 0 { heading = movement.normalized }
+        if dashRemaining > 0 {
+            let dashTime = min(dt, dashRemaining)
+            player = player + dashDirection * (1.2 * dashTime)
+            dashRemaining = max(0, dashRemaining - dt)
+        } else { player = player + movement.normalized * (0.24 * dt) }
         player.x = min(0.93, max(0.07, player.x)); player.y = min(0.93, max(0.07, player.y))
         effects = effects.compactMap { var effect = $0; effect.remaining -= dt; return effect.remaining > 0 ? effect : nil }
         if nextChoice < content.economy.upgradeSeconds.count && elapsed >= content.economy.upgradeSeconds[nextChoice] {
@@ -154,6 +179,15 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
             }
             let offset = Int(offerRng.next() * Double(max(1, eligible.count - 2)))
             choices = Array(eligible.dropFirst(offset).prefix(3))
+            if selected.isEmpty {
+                choices = ["fire", "tesla", "payload"].compactMap { id in eligible.first { $0.id == id } }
+            } else if evolution == nil {
+                let kinds = selectedUpgradeKinds
+                if let recipe = RunEvolution.allCases.first(where: { !$0.requirements.intersection(kinds).isEmpty }),
+                   let missing = eligible.first(where: { recipe.requirements.subtracting(kinds).contains($0.kind) }) {
+                    choices = [missing] + choices.filter { $0.id != missing.id }.prefix(2)
+                }
+            }
             if !choices.isEmpty { state = .choosing; return }
         }
         let bossTime = mode == .bossRush ? 3 : content.economy.bossAtSeconds
@@ -169,6 +203,7 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
             let center = Vector(0.25 + rng.next() * 0.5, 0.25 + rng.next() * 0.5)
             warn(AttackArea(shape: .circle, from: center, to: center, radius: 0.14), damage: 10, duration: 1.5, boss: false)
         }
+        advanceWaveEvent()
         advanceWarnings(dt)
         for index in enemies.indices {
             if enemies[index].burnUntil > elapsed { enemies[index].health -= weapon.damage * 0.18 * dt }
@@ -177,7 +212,11 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
             let kind = enemies[index].kind
             let slow = enemies[index].slowUntil > elapsed ? 0.35 : 1.0
             let speed = (kind == "swarmer" || kind == "flying" ? 0.1 : kind == "burrower" ? 0.13 : kind == "tank" || kind == "boss" ? 0.04 : 0.065) * slow
-            if kind != "ranged" || distance > 0.28 {
+            if kind == "treasure" {
+                enemies[index].position = enemies[index].position + (enemies[index].position - player).normalized * (0.09 * dt)
+                enemies[index].position.x = min(0.93, max(0.07, enemies[index].position.x))
+                enemies[index].position.y = min(0.93, max(0.07, enemies[index].position.y))
+            } else if kind != "ranged" || distance > 0.28 {
                 enemies[index].position = enemies[index].position + (player - enemies[index].position).normalized * (speed * dt)
             }
             if kind == "repair" {
@@ -201,7 +240,7 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
                     for area in areas { warn(area, damage: enemies[index].boss ? 30 : 12, duration: enemies[index].windup, boss: enemies[index].boss) }
                 }
             }
-            if distance < (enemies[index].boss ? 0.1 : 0.045) && invulnerability == 0 {
+            if kind != "treasure" && distance < (enemies[index].boss ? 0.1 : 0.045) && invulnerability == 0 && dashRemaining == 0 {
                 health -= (kind == "exploder" ? 25 : kind == "elite" || kind == "miniboss" ? 18 : 9) * (kind == "exploder" ? 1 : dt)
                 if kind == "exploder" { enemies[index].health = 0 }
             }
@@ -210,17 +249,23 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
             fire(); nextShot = elapsed + weapon.interval / (attackMultiplier * (combo.overdrive > 0 ? 1.65 : 1))
         }
         advanceProjectiles(dt)
+        advanceEvolution(dt)
         collectKills()
         if health <= 0 { health = 0; state = .defeated }
         else if mode == .bossRush && bosses >= 3 { state = .victory }
         else if mode != .survival && mode != .arena && mode != .bossRush && elapsed >= duration {
             state = bosses > 0 ? .victory : .defeated
         }
+        if state == .victory || state == .defeated { waveEvent = nil; perfectCandidates = []; dashRemaining = 0 }
+    }
+    private var selectedUpgradeKinds: Set<String> {
+        Set(content.upgrades.filter { selected[$0.id, default: 0] > 0 }.map(\.kind))
     }
     public func choose(_ upgrade: Upgrade) {
         guard state == .choosing, choices.contains(where: { $0.id == upgrade.id }) else { return }
         selected[upgrade.id, default: 0] += 1; apply(kind: upgrade.kind, value: upgrade.value)
-        let kinds = Set(content.upgrades.filter { selected[$0.id, default: 0] > 0 }.map(\.kind))
+        let kinds = selectedUpgradeKinds
+        if evolution == nil { evolution = RunEvolution.allCases.first { $0.ready(kinds: kinds) }; nextEvolutionPulse = elapsed }
         for synergy in BuildSynergy.allCases where synergy.ready(kinds: kinds) && synergies.insert(synergy).inserted {
             switch synergy {
             case .thermalShock: damageMultiplier += 0.35
@@ -233,6 +278,16 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
     @discardableResult public func activateOverdrive() -> Bool {
         guard state == .fighting else { return false }
         return combo.activate()
+    }
+    @discardableResult public func activateDash(direction: Vector = Vector()) -> Bool {
+        guard state == .fighting && dashCooldown == 0 else { return false }
+        let intended = direction.length > 0 ? direction.normalized : heading
+        let end = player + intended * 0.264
+        let bounded = Vector(min(0.93, max(0.07, end.x)), min(0.93, max(0.07, end.y)))
+        guard (bounded - player).length > 0.01 else { return false }
+        perfectCandidates = Set(warnings.filter { $0.remaining <= 0.30 && $0.area.contains(player) && !$0.area.contains(bounded) }.map(\.id))
+        dashDirection = intended; heading = intended; dashRemaining = 0.22; dashCooldown = 4
+        return true
     }
     private func apply(kind: String, value: Double) {
         switch kind {
@@ -266,11 +321,12 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
         effects.append(CombatEffect(id: serial, from: player, to: player, element: weapon.element, damage: 0, critical: true, remaining: 0.7))
         collectKills()
     }
-    public func retreat() { if state == .fighting || state == .choosing { state = .defeated } }
+    public func retreat() { if state == .fighting || state == .choosing { state = .defeated; waveEvent = nil; dashRemaining = 0; perfectCandidates = [] } }
     public func reward() -> RunReward {
         RunReward(id: id, mode: mode, zone: profile.zone, kills: kills, bosses: bosses, score: score, victory: state == .victory,
             highlights: RunHighlights(weaponID: weapon.id, elapsed: elapsed, bestCombo: combo.best, overdrives: combo.activations,
-                synergies: BuildSynergy.allCases.filter { synergies.contains($0) }, challengeCode: challengeCode))
+                synergies: BuildSynergy.allCases.filter { synergies.contains($0) }, challengeCode: challengeCode,
+                evolution: evolution, perfectDodges: perfectDodges, completedWaveEvents: completedWaveEvents), bonusScrap: bonusScrap)
     }
     private func spawn() {
         guard enemies.count < regularEnemyLimit else { return }
@@ -332,7 +388,7 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
     private func hit(_ index: Int, from: Vector, critical: Bool, scale: Double, style: WeaponStyle) {
         let bossBonus = enemies[index].boss && weapon.element == biome.weakness ? 1.75 : 1.0
         let shield = enemies[index].kind == "shield" && weapon.element == .ballistic ? 0.5 : 1.0
-        let damage = weapon.damage * damageMultiplier * bossBonus * shield * scale * (critical ? 2 : 1) * (combo.overdrive > 0 ? 1.35 : 1)
+        let damage = weapon.damage * damageMultiplier * bossBonus * shield * scale * (critical ? 2 : 1) * (combo.overdrive > 0 ? 1.35 : 1) * (perfectDodgeBoost > 0 ? 1.3 : 1)
         let impact = enemies[index].position
         damageEnemy(index, amount: damage)
         if !enemies[index].boss { enemies[index].position = impact + (impact - from).normalized * 0.012 }
@@ -381,16 +437,25 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
             warning.remaining -= dt
             if warning.remaining > 0 { active.append(warning) }
             else {
+                if perfectCandidates.remove(warning.id) != nil && !warning.area.contains(player) {
+                    perfectCandidates = []; perfectDodges += 1; perfectDodgeBoost = 3
+                }
                 if warning.area.contains(player) { damage = max(damage, warning.damage) }
                 serial += 1
                 effects.append(CombatEffect(id: serial, from: warning.area.from, to: warning.area.to, element: .explosive, damage: 0, critical: false, remaining: 0.3))
             }
         }
         warnings = active
-        if damage > 0 && invulnerability == 0 { health -= damage; invulnerability = 0.35 }
+        if damage > 0 && invulnerability == 0 && dashRemaining == 0 { health -= damage; invulnerability = 0.35 }
     }
     private func collectKills() {
         let dead = enemies.filter { $0.health <= 0 }
+        if let event = waveEvent, event.kind != .scrapStorm, !event.enemyIDs.isEmpty,
+           event.enemyIDs.isSubset(of: Set(dead.map(\.id)).union(eventDefeatedIDs)) {
+            finishWaveEvent(success: true)
+        } else if let event = waveEvent, event.kind != .scrapStorm {
+            eventDefeatedIDs.formUnion(dead.filter { event.enemyIDs.contains($0.id) }.map(\.id))
+        }
         combo.register(kills: dead.count)
         comboScore += dead.count * 100 * max(0, combo.multiplier - 1)
         kills += dead.count
@@ -399,5 +464,66 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
         bosses += bossKills
         enemies.removeAll { $0.health <= 0 }
         if mode == .bossRush && bossKills > 0 && bosses < 3 { spawnBoss() }
+    }
+
+    private var eventDefeatedIDs: Set<Int> = []
+    private func finishWaveEvent(success: Bool) {
+        guard let event = waveEvent else { return }
+        if success { completedWaveEvents += 1; bonusScrap += event.kind.scrapReward }
+        if event.kind == .treasureCarrier { enemies.removeAll { event.enemyIDs.contains($0.id) && $0.health > 0 } }
+        eventDefeatedIDs = []; waveEvent = nil
+    }
+    private func advanceWaveEvent() {
+        guard mode != .bossRush else { return }
+        if let event = waveEvent {
+            if elapsed >= event.endsAt { finishWaveEvent(success: event.kind == .scrapStorm && health > 0) }
+            else if event.kind == .scrapStorm && elapsed >= nextStormPulse {
+                nextStormPulse = elapsed + 1.6
+                for _ in 0..<3 {
+                    let center = Vector(0.1 + eventRng.next() * 0.8, 0.1 + eventRng.next() * 0.8)
+                    warn(AttackArea(shape: .circle, from: center, to: center, radius: 0.11), damage: 14, duration: 1.3, boss: false)
+                }
+            }
+        }
+        guard waveEvent == nil && elapsed >= nextEvent else { return }
+        let offset = Int(seed % UInt64(WaveEventKind.allCases.count))
+        let kind = WaveEventKind.allCases[(offset + eventSequence) % WaveEventKind.allCases.count]
+        eventSequence += 1; nextEvent = elapsed + 30; eventDefeatedIDs = []
+        var event = WaveEvent(sequence: eventSequence, kind: kind, endsAt: elapsed + kind.duration)
+        if kind != .scrapStorm {
+            for index in 0..<(kind == .eliteAmbush ? 3 : 1) where enemies.count < regularEnemyLimit {
+                serial += 1
+                let angle = eventRng.next() * .pi * 2 + Double(index)
+                let position = player + Vector(cos(angle), sin(angle)) * 0.30
+                let hp = (kind == .eliteAmbush ? 70.0 : 85) * biome.difficulty
+                enemies.append(Enemy(id: serial, position: Vector(min(0.93, max(0.07, position.x)), min(0.93, max(0.07, position.y))), health: hp, maxHealth: hp, kind: kind == .eliteAmbush ? "elite" : "treasure"))
+                event.enemyIDs.insert(serial)
+            }
+        }
+        waveEvent = event; nextStormPulse = elapsed
+    }
+    private func advanceEvolution(_ dt: Double) {
+        for index in evolutionStrikes.indices { evolutionStrikes[index].remaining -= dt }
+        for strike in evolutionStrikes where strike.remaining <= 0 {
+            for index in enemies.indices where enemies[index].health > 0 && strike.area.contains(enemies[index].position) {
+                hit(index, from: strike.area.to, critical: false, scale: 1.4, style: .orbital)
+            }
+        }
+        evolutionStrikes.removeAll { $0.remaining <= 0 }
+        guard let evolution, elapsed >= nextEvolutionPulse else { return }
+        nextEvolutionPulse = elapsed + (evolution == .fireVortex ? 0.45 : evolution == .stormCage ? 0.85 : 1.8)
+        if evolution == .siegeBarrage {
+            for enemy in enemies.filter({ $0.health > 0 && ($0.position - player).length <= 0.52 }).prefix(3) where evolutionStrikes.count < 12 {
+                serial += 1
+                evolutionStrikes.append(EvolutionStrike(id: serial, area: AttackArea(shape: .circle, from: enemy.position, to: enemy.position, radius: 0.10), remaining: 0.65))
+            }
+        } else {
+            let areas = evolution.areas(center: player, time: elapsed)
+            for index in enemies.indices.filter({ index in enemies[index].health > 0 && areas.contains { $0.contains(enemies[index].position) } }).prefix(8) {
+                hit(index, from: player, critical: false, scale: evolution == .fireVortex ? 0.55 : 0.9, style: evolution == .fireVortex ? .bolt : .arc)
+                if evolution == .fireVortex { enemies[index].burnUntil = elapsed + 2 }
+                else { enemies[index].slowUntil = elapsed + 1.1 }
+            }
+        }
     }
 }

@@ -1,0 +1,21 @@
+{
+  "battle.dash": "Dash",
+  "battle.dash.hint": "Dash in your last movement direction. Escape a warning just before impact for a perfect dodge.",
+  "battle.perfectDodge": "Perfect dodge • +30% damage",
+  "battle.perfectDodges": "Perfect dodges",
+  "battle.excitement.note": "Drag to steer; Dash follows your last direction (up before your first move). Combine two modules to evolve your weapon. Watch for bonus wave events.",
+  "evolution.fireVortex": "Fire Vortex",
+  "evolution.fireVortex.detail": "Fire Core + Overclock Module: three orbiting fireballs burn nearby enemies.",
+  "evolution.stormCage": "Storm Cage",
+  "evolution.stormCage.detail": "Tesla Coil + a splitting module: an electric ring damages and slows enemies.",
+  "evolution.siegeBarrage": "Siege Barrage",
+  "evolution.siegeBarrage.detail": "Explosive Payload + Critical Processor: marked artillery strikes land after a short delay.",
+  "event.eliteAmbush": "Elite ambush",
+  "event.eliteAmbush.detail": "Defeat the marked elite squad before time runs out: +60 scrap.",
+  "event.scrapStorm": "Scrap storm",
+  "event.scrapStorm.detail": "Dodge the falling scrap and survive the countdown: +40 scrap.",
+  "event.treasureCarrier": "Treasure carrier",
+  "event.treasureCarrier.detail": "Destroy the fleeing gold carrier before it escapes: +40 scrap.",
+  "event.complete": "Event cleared • bonus scrap earned",
+  "event.bonusScrap": "Event bonus scrap"
+}

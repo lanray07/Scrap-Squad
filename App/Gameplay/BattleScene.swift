@@ -38,6 +38,13 @@ import ScrapCore
     private var lastSynergyCount = 0
     private var overdriveAura: SKShapeNode?
     private var lastShotSoundAt = -1.0
+    private var evolutionNodes: [SKShapeNode] = []
+    private var strikeNodes: [Int: SKShapeNode] = [:]
+    private var lastEvolution: RunEvolution?
+    private var lastPerfectDodges = 0
+    private var lastEventSequence = 0
+    private var lastCompletedEvents = 0
+    private var dashAura: SKShapeNode?
     init(engine: BattleEngine, finishes: [String: RobotFinish], goldenTrails: Bool) {
         self.engine = engine
         self.finishes = finishes
@@ -96,6 +103,7 @@ import ScrapCore
         trackingCamera.position = point(engine.player)
         arenaBoundary.path = CGPath(rect: CGRect(x: arenaScale * 0.07, y: arenaScale * 0.07, width: arenaScale * 0.86, height: arenaScale * 0.86), transform: nil)
         updateMomentum()
+        updateExcitement()
         for (index, node) in robotNodes.enumerated() {
             let angle = Double(index) * .pi * 2 / Double(max(1, robotNodes.count))
             let offset = index == 0 ? Vector() : Vector(cos(angle), sin(angle)) * 0.055
@@ -121,6 +129,7 @@ import ScrapCore
             if let existing = enemyNodes[enemy.id] { node = existing }
             else { node = makeEnemy(enemy); enemyNodes[enemy.id] = node; world.addChild(node) }
             node.position = point(enemy.position)
+            if let mark = node.childNode(withName: "event-mark") { mark.isHidden = !(engine.waveEvent?.enemyIDs.contains(enemy.id) ?? false) }
             node.setScale(unitScale)
             node.alpha = enemy.kind == "burrower" && Int(engine.elapsed) % 5 < 2 ? 0.25 : 1
             if enemy.kind == "flying" && !engine.profile.preferences.reducedMotion { node.position.y += CGFloat(sin(currentTime * 5)) * 4 }
@@ -175,6 +184,61 @@ import ScrapCore
             lastSynergyCount = engine.synergies.count
             announce(LocalizationManager.string("synergy.activated", locale: engine.profile.preferences.locale), color: "BA9DEB")
             Feedback.play(.fusion, preferences: engine.profile.preferences)
+        }
+    }
+    private func updateExcitement() {
+        if engine.evolution != lastEvolution {
+            lastEvolution = engine.evolution
+            if let evolution = engine.evolution {
+                announce(LocalizationManager.string(evolution.nameKey, locale: engine.profile.preferences.locale), color: evolution.color)
+                Feedback.play(.fusion, preferences: engine.profile.preferences)
+            }
+        }
+        let areas = engine.evolution?.areas(center: engine.player, time: engine.elapsed) ?? []
+        while evolutionNodes.count < areas.count {
+            let node = SKShapeNode(); node.zPosition = 4; world.addChild(node); evolutionNodes.append(node)
+        }
+        for (index, node) in evolutionNodes.enumerated() {
+            node.isHidden = index >= areas.count
+            guard index < areas.count else { continue }
+            let area = areas[index], center = point(area.to), radius = area.radius * arenaScale
+            node.path = CGPath(ellipseIn: CGRect(x: -radius, y: -radius, width: radius * 2, height: radius * 2), transform: nil)
+            node.position = center
+            let color = UIColor(hex: engine.evolution?.color ?? "79D9BA")
+            node.strokeColor = color; node.fillColor = area.shape == .ring ? .clear : color.withAlphaComponent(0.15)
+            node.lineWidth = area.shape == .ring ? area.thickness * arenaScale * 2 : 3
+            node.alpha = 0.55
+        }
+        let strikeIDs = Set(engine.evolutionStrikes.map(\.id))
+        for id in Array(strikeNodes.keys) where !strikeIDs.contains(id) { strikeNodes.removeValue(forKey: id)?.removeFromParent() }
+        for strike in engine.evolutionStrikes {
+            let node = strikeNodes[strike.id] ?? SKShapeNode()
+            let radius = strike.area.radius * arenaScale
+            node.path = CGPath(ellipseIn: CGRect(x: -radius, y: -radius, width: radius * 2, height: radius * 2), transform: nil)
+            node.position = point(strike.area.to); node.strokeColor = UIColor(hex: "BC9BFF"); node.fillColor = UIColor(hex: "BC9BFF").withAlphaComponent(0.15); node.lineWidth = 3; node.zPosition = 4
+            if node.parent == nil { world.addChild(node); strikeNodes[strike.id] = node }
+        }
+        if engine.dashRemaining > 0 || engine.perfectDodgeBoost > 0 {
+            if dashAura == nil {
+                let node = SKShapeNode(circleOfRadius: 34); node.strokeColor = UIColor(hex: "83EAFF"); node.fillColor = .clear; node.lineWidth = 3; node.zPosition = 5
+                world.addChild(node); dashAura = node
+            }
+            dashAura?.position = point(engine.player); dashAura?.setScale(unitScale)
+        } else { dashAura?.removeFromParent(); dashAura = nil }
+        if engine.perfectDodges > lastPerfectDodges {
+            lastPerfectDodges = engine.perfectDodges
+            announce(LocalizationManager.string("battle.perfectDodge", locale: engine.profile.preferences.locale), color: "83EAFF")
+            Feedback.play(.ability, preferences: engine.profile.preferences)
+            AudioBus.shared.play(.combo, preferences: engine.profile.preferences)
+        }
+        if let event = engine.waveEvent, event.sequence > lastEventSequence {
+            lastEventSequence = event.sequence
+            announce(LocalizationManager.string(event.kind.nameKey, locale: engine.profile.preferences.locale), color: "F5B942")
+        }
+        if engine.completedWaveEvents > lastCompletedEvents {
+            lastCompletedEvents = engine.completedWaveEvents
+            announce(LocalizationManager.string("event.complete", locale: engine.profile.preferences.locale), color: "79D9BA")
+            AudioBus.shared.play(.combo, preferences: engine.profile.preferences)
         }
     }
     private func announce(_ text: String, color: String) {
@@ -275,6 +339,16 @@ import ScrapCore
     }
     private func makeEnemy(_ enemy: Enemy) -> SKNode {
         let root = SKNode()
+        let mark = SKShapeNode(circleOfRadius: enemy.boss ? 54 : 26)
+        mark.name = "event-mark"; mark.strokeColor = .systemYellow; mark.lineWidth = 2; mark.fillColor = .clear; mark.zPosition = -2
+        root.addChild(mark)
+        if enemy.kind == "treasure" {
+            let box = SKShapeNode(rectOf: CGSize(width: 30, height: 24), cornerRadius: 5)
+            box.fillColor = UIColor(hex: "F5B942"); box.strokeColor = .white; box.lineWidth = 2; root.addChild(box)
+            let label = SKLabelNode(fontNamed: "AvenirNext-Bold"); label.text = "+"; label.fontSize = 24; label.fontColor = UIColor(hex: "10252D"); label.verticalAlignmentMode = .center; root.addChild(label)
+            let bar = SKShapeNode(rectOf: CGSize(width: 30, height: 3), cornerRadius: 1); bar.fillColor = .systemYellow; bar.strokeColor = .clear; bar.position.y = 22; bar.name = "health"; root.addChild(bar)
+            return root
+        }
         let radius: CGFloat = enemy.boss ? 46 : enemy.kind == "miniboss" ? 30 : enemy.kind == "tank" || enemy.kind == "elite" ? 21 : 13
         let roundBoss = enemy.boss && [.shockRing, .bombardment, .collapse].contains(engine.bossPattern)
         let body = roundBoss ? SKShapeNode(circleOfRadius: radius) : SKShapeNode(rectOf: CGSize(width: radius * 2, height: radius * 1.8), cornerRadius: enemy.kind == "swarmer" ? 4 : radius * 0.5)

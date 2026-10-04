@@ -21,6 +21,10 @@ import ScrapCore
             try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
             if ProcessInfo.processInfo.arguments.contains("--ui-testing") {
                 profile = PlayerProfile(); onboardingPresented = true
+                // Opt-in UI fixture: normal content and timing, extra health for long combat checks.
+                if ProcessInfo.processInfo.arguments.contains("--excitement-qa") {
+                    profile.robotLevels = ["bolt": 30, "patch": 30]
+                }
             } else if FileManager.default.fileExists(atPath: saveURL.path) {
                 profile = try JSONDecoder().decode(PlayerProfile.self, from: Data(contentsOf: saveURL))
                 try profile.validate(content: content)

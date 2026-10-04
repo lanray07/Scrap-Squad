@@ -4100,6 +4100,215 @@
           }
         }
       }
+    },
+    "battle.dash": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dash"
+          }
+        }
+      }
+    },
+    "battle.dash.hint": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dash in your last movement direction. Escape a warning just before impact for a perfect dodge."
+          }
+        }
+      }
+    },
+    "battle.perfectDodge": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perfect dodge • +30% damage"
+          }
+        }
+      }
+    },
+    "battle.perfectDodges": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perfect dodges"
+          }
+        }
+      }
+    },
+    "battle.excitement.note": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drag to steer; Dash follows your last direction (up before your first move). Combine two modules to evolve your weapon. Watch for bonus wave events."
+          }
+        }
+      }
+    },
+    "evolution.fireVortex": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fire Vortex"
+          }
+        }
+      }
+    },
+    "evolution.fireVortex.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fire Core + Overclock Module: three orbiting fireballs burn nearby enemies."
+          }
+        }
+      }
+    },
+    "evolution.stormCage": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Storm Cage"
+          }
+        }
+      }
+    },
+    "evolution.stormCage.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tesla Coil + a splitting module: an electric ring damages and slows enemies."
+          }
+        }
+      }
+    },
+    "evolution.siegeBarrage": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Siege Barrage"
+          }
+        }
+      }
+    },
+    "evolution.siegeBarrage.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Explosive Payload + Critical Processor: marked artillery strikes land after a short delay."
+          }
+        }
+      }
+    },
+    "event.eliteAmbush": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elite ambush"
+          }
+        }
+      }
+    },
+    "event.eliteAmbush.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Defeat the marked elite squad before time runs out: +60 scrap."
+          }
+        }
+      }
+    },
+    "event.scrapStorm": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scrap storm"
+          }
+        }
+      }
+    },
+    "event.scrapStorm.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dodge the falling scrap and survive the countdown: +40 scrap."
+          }
+        }
+      }
+    },
+    "event.treasureCarrier": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Treasure carrier"
+          }
+        }
+      }
+    },
+    "event.treasureCarrier.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Destroy the fleeing gold carrier before it escapes: +40 scrap."
+          }
+        }
+      }
+    },
+    "event.complete": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Event cleared • bonus scrap earned"
+          }
+        }
+      }
+    },
+    "event.bonusScrap": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Event bonus scrap"
+          }
+        }
+      }
     }
   }
 }

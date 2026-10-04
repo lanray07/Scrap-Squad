@@ -5,7 +5,7 @@ on:
       test_class:
         description: Release checks to run
         type: choice
-        options: [ReleaseReadinessUITests, CosmeticPurchaseUITests, CombatShowcaseUITests]
+        options: [ReleaseReadinessUITests, CosmeticPurchaseUITests, CombatShowcaseUITests, ExcitementUITests]
         default: ReleaseReadinessUITests
 permissions:
   contents: read
