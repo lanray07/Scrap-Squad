@@ -1,4 +1,4 @@
-# Robot walking and ground footprints — build 11
+# Robot walking and ground footprints â€” build 11
 
 Build 11 is uploaded, processed, selected and available in the existing **Scrap Squad QA** TestFlight group. Update through TestFlight, then drag inside the arena. The camera follows the squad; robots now bob, subtly squash and lean during movement, and leave an alternating trail on the ground. They return to a resting pose when you release your finger. This is procedural motion of the existing robot art, rather than new individually rigged leg animation. Combat balance and drag controls are unchanged.
 

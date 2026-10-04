@@ -1,4 +1,4 @@
-# Release preparation — 4 October 2026
+# Release preparation â€” 4 October 2026
 
 **Current build: 11.** The [walking and footprint update](MOVEMENT_UPDATE.md) supersedes build 10 and is available in the existing TestFlight group. The evidence below records the earlier build 10 preparation.
 
@@ -17,7 +17,7 @@ The app includes distinct weapon attacks, nine boss patterns, Overdrive, daily r
 
 ## Store and TestFlight preparation
 
-Both ten-frame campaigns use current unaltered simulator UI in editable marketing frames. iPhone PNGs are opaque RGB at 1320 × 2868; iPad PNGs are 2064 × 2752. Source/export hashes and workflow provenance are saved in the manifests. All twenty frames were visually inspected. Captures show actual boss combat, fusion, eight robots, twelve blueprints, city progression, Daily Circuit, earned Overdrive, mastery and sharing.
+Both ten-frame campaigns use current unaltered simulator UI in editable marketing frames. iPhone PNGs are opaque RGB at 1320 Ã— 2868; iPad PNGs are 2064 Ã— 2752. Source/export hashes and workflow provenance are saved in the manifests. All twenty frames were visually inspected. Captures show actual boss combat, fusion, eight robots, twelve blueprints, city progression, Daily Circuit, earned Overdrive, mastery and sharing.
 
 [Current gallery and TestFlight preparation](https://github.com/lanray07/Scrap-Squad/actions/runs/37176024736) verifies Apple's processing, exact checksums and order, eleven localized descriptions/keywords/support URLs, eleven names/subtitles/privacy URLs, reviewer notes/contact presence, internal availability and saved testing notes. The saved report excludes reviewer contact data and credentials. All twenty assets are fully processed, with exact manifest checksums and saved order. All eleven version and app-info locales passed field-presence checks; reviewer details are saved. Build 10 is `READY_FOR_BETA_TESTING`, present in Scrap Squad QA, and its testing notes were read back exactly. Reports are saved in [ReleaseQA](ReleaseQA/gallery-upload.json).
 
