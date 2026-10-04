@@ -1,0 +1,37 @@
+name: Verify release accessibility and lifecycle
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  qa:
+    runs-on: macos-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        family: [iPhone, iPad Pro 13]
+    steps:
+      - uses: actions/checkout@v4
+      - run: brew install xcodegen
+      - run: xcodegen generate
+      - name: Verify accessibility and lifecycle
+        env:
+          SIMULATOR_FAMILY: ${{ matrix.family }}
+          UI_TEST_CLASS: ReleaseReadinessUITests
+          UI_RESULT_NAME: release-qa
+        run: bash Tools/test_ios_ui.sh
+      - name: Export proof
+        if: always()
+        run: |
+          if [ -d .build/release-qa.xcresult ]; then
+            xcrun xcresulttool export attachments --path .build/release-qa.xcresult --output-path .build/release-qa-captures
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: release-qa-${{ matrix.family }}
+          path: |
+            .build/release-qa.log
+            .build/release-qa.xcresult
+            .build/release-qa-captures
