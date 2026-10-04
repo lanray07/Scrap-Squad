@@ -22,6 +22,8 @@ New core tests cover UTC rotation, malformed codes, fixed loaner profiles, combo
 
 ## Product boundaries
 
+[Additional device verification](DeviceQA/README.md) passed both replay and landscape/rotation cases on iPhone SE and iPad Pro 13-inch simulators on 4 October 2026. Twenty genuine captures include full landscape pause controls and the compact-device share card. App code is unchanged from build 7; broader physical-device and accessibility checks remain.
+
 [Apple configuration verification](https://github.com/lanray07/Scrap-Squad/actions/runs/37158993311) confirmed processed build 7 is attached to version 1.0, resource `b96d37ee-18c5-4532-9860-3091624e86e2`. Both cosmetic products retain their pricing, eleven localizations, availability and processed review images. The [whitelisted status report](Replay/app-store-status.json) contains no credentials. No App Review submission or release occurred.
 
 The game still needs device performance testing, gameplay tuning with real players, reviewed non-English in-app translations and real App Store sandbox checks. Cloud saves, friends, multiplayer, public rankings and live events require a separate online design and privacy review; they are not represented as working features. A richer 3D presentation and more biomes/weapons also remain future production work.

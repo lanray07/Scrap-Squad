@@ -1,0 +1,107 @@
+{
+  "workflowRun": "https://github.com/lanray07/Scrap-Squad/actions/runs/37170958846",
+  "commit": "49afe23",
+  "runtime": "iOS 26.2",
+  "screenshots": [
+    {
+      "file": "Layout-01-landscape-mastery.png",
+      "test": "PremiumReplayUITests/testLandscapeNavigationAndCombatRotation()",
+      "device": "Scrap Squad layout QA",
+      "source": "D1F469C0-086A-435D-89C4-4E61F3F2E52A.png",
+      "width": 1334,
+      "height": 750,
+      "exifOrientation": 8,
+      "sha256": "1ef8a2f391988f57c9201d9d26347b7b90a08577d66ca9e314fd9e832d386bb4"
+    },
+    {
+      "file": "Layout-02-landscape-combat.png",
+      "test": "PremiumReplayUITests/testLandscapeNavigationAndCombatRotation()",
+      "device": "Scrap Squad layout QA",
+      "source": "ECA51975-9CE2-419D-B675-1AD30A5B586B.png",
+      "width": 1334,
+      "height": 750,
+      "exifOrientation": 8,
+      "sha256": "6efa0080dc076c1f74b381c35c5ec41b882dc020c6c4ff25a8ae90051234da5a"
+    },
+    {
+      "file": "Layout-03-landscape-pause.png",
+      "test": "PremiumReplayUITests/testLandscapeNavigationAndCombatRotation()",
+      "device": "Scrap Squad layout QA",
+      "source": "76A67C89-5B97-41CE-B5DB-BD4D370DA48B.png",
+      "width": 1334,
+      "height": 750,
+      "exifOrientation": 8,
+      "sha256": "dbdc055a56034b46c1cda72602b37a6e2321005f0daabff91b6940e6278a88c7"
+    },
+    {
+      "file": "Layout-04-rotated-results.png",
+      "test": "PremiumReplayUITests/testLandscapeNavigationAndCombatRotation()",
+      "device": "Scrap Squad layout QA",
+      "source": "67485D02-88E5-47CA-8E41-F415ABA3ABE6.png",
+      "width": 750,
+      "height": 1334,
+      "exifOrientation": 1,
+      "sha256": "87feb6d91a14f2d648aa000736cabd398044081713a005fd30e8b91802e7d147"
+    },
+    {
+      "file": "Premium-01-mastery.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "Scrap Squad layout QA",
+      "source": "84607AB1-8FD1-4BA3-AF03-4DBCE98F0050.png",
+      "width": 750,
+      "height": 1334,
+      "exifOrientation": 1,
+      "sha256": "839e75d3ad12210813c398984ee0eea70b9981dc4bbe2c62a6758c299f9b6cdd"
+    },
+    {
+      "file": "Premium-02-daily-circuit.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "Scrap Squad layout QA",
+      "source": "B67BA22E-8BA3-47FE-8B87-8318AE0CE5A3.png",
+      "width": 750,
+      "height": 1334,
+      "exifOrientation": 1,
+      "sha256": "9a321a7e2f9c8a340fe2e4ac7c3edb03744db502d858fadd01db3b2f808f9314"
+    },
+    {
+      "file": "Premium-03-results.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "Scrap Squad layout QA",
+      "source": "E97B274B-4152-4217-A058-A25972685CE3.png",
+      "width": 750,
+      "height": 1334,
+      "exifOrientation": 1,
+      "sha256": "c209b925beed4728e2ceff570d222128c45a610948830bc9fec182dce71697b4"
+    },
+    {
+      "file": "Premium-04-share-card.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "Scrap Squad layout QA",
+      "source": "F80D31F3-B368-4284-83AA-3C1B2D6010ED.png",
+      "width": 750,
+      "height": 1334,
+      "exifOrientation": 1,
+      "sha256": "fdf7c8b20cd770259c76567019002e4762f80e39437abe7896ed27b39e50d5f8"
+    },
+    {
+      "file": "Premium-05-saved-records.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "Scrap Squad layout QA",
+      "source": "7913FD84-91FB-4C0D-9250-2FDCCD547A07.png",
+      "width": 750,
+      "height": 1334,
+      "exifOrientation": 1,
+      "sha256": "6da7870e5cf910aabc7e0eba4f42cd8fe90bb0d944826e30a4cdae18b3957807"
+    },
+    {
+      "file": "Premium-06-overdrive.png",
+      "test": "PremiumReplayUITests/testDailyCircuitResultsCardRetryAndMastery()",
+      "device": "Scrap Squad layout QA",
+      "source": "72B00B24-6C81-4A90-960E-51088F031C67.png",
+      "width": 750,
+      "height": 1334,
+      "exifOrientation": 1,
+      "sha256": "97334954b13464e18bc6f7f1f61239e24c72aea0d4443e1e15fd547a57c0b97f"
+    }
+  ]
+}

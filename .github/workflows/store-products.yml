@@ -7,8 +7,8 @@ on:
         type: boolean
         default: false
       build:
-        description: Processed cosmetic release build number
-        default: '5'
+        description: Processed release build number to attach (verify before running)
+        default: '7'
 permissions:
   contents: read
 concurrency:

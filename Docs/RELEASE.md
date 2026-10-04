@@ -15,10 +15,10 @@ Current distribution status: signed version 1.0, build 7 with combat momentum, c
 
 ## Required Mac pass
 
-1. Apple SDK compilation, 22 core tests and six UI tests passed on GitHub's Mac runners; iPhone and iPad portrait captures are recorded. Complete small-iPhone and landscape/device checks and run `Tools/verify_macos.sh` for broader local verification.
+1. Apple SDK compilation, 22 core tests and six UI tests passed on GitHub's Mac runners. Additional iPhone SE and iPad Pro replay/landscape/rotation cases passed on 4 October 2026, with twenty genuine captures; see [device verification](DeviceQA/README.md). Complete physical-device, split-view and accessibility checks and run `Tools/verify_macos.sh` for broader local verification.
 2. Play the complete tutorial → mission → three choices → boss → rewards → workshop → fusion → blueprint → city upgrade → save/relaunch path.
 3. Validate move gesture geometry, render/update cadence, safe areas, Dynamic Type, VoiceOver focus, background/foreground pause, memory, battery and 60fps targets. Check arena aspect ratio on iPad; the engine currently uses normalized coordinates rather than a fixed physical aspect ratio.
-4. Confirm the generated atlas has clean per-cell framing at all scales. It is a static pose set, not a skeletal animation library. Procedural enemies, city structures, terrain and effects require a premium art pass; music and biome audio are not bundled. There are generated UI feedback tones only.
+4. Confirm the generated atlas has clean per-cell framing at all scales. It is a static pose set, not a skeletal animation library. Procedural enemies, city structures, terrain and effects require further art work. Three original city/combat/boss music loops and eight original sound cues are bundled; check their mix, silent-mode behavior and headphone output on physical devices.
 5. Ten actual iPhone captures and ten actual iPad captures have been framed and uploaded to App Store Connect's required slots. Refresh these screenshots if the app UI or gameplay changes before submission.
 6. Run pseudo-localized German/French expansion, CJK and RTL layout tests. Review the actual 375 English-source translation drafts before announcing additional language support. `DEVELOPMENT_LANGUAGE` is English in the generated project.
 7. The actual bundle identifier and team are configured and cloud-signed build 7 is uploaded and attached. Game Center is disabled for release 1.0. Before enabling it in a future release, configure records, update privacy disclosures and test sign-in decline, offline reporting, achievement retries and leaderboard submissions. Current client scores are not server-authoritative; add integrity/anti-cheat before competitive events.
@@ -41,9 +41,9 @@ Current distribution status: signed version 1.0, build 7 with combat momentum, c
 | Roulette presentation | Immediate animated reveal, haptics, tone and text sharing; timed countdown, dedicated particles/audio and rendered share card remain |
 | Events/community goals | Daily/weekly local tasks and daily anomaly only. No seasonal service, community server, event calendar or global progress |
 | Monetization | Optional verified non-consumable tint cosmetics adapter. Ads, consumable packs, subscriptions and season pass are not offered |
-| Audio | Volume channels and cue routing, synthesized feedback; licensed/original music and combat sound library remain |
+| Audio | Three bundled original music loops, eight sound cues, independent volume controls and bounded playback; device listening and biome-specific expansion remain |
 | Localization | English source ready; ten other locales have export/translation/review/import tooling, not approved app translations |
-| ASO | English draft and six truthful screenshot briefs. Market-specific keyword research and localized descriptions remain |
-| Production QA | Core tests pass; Apple SDK compilation, simulator/device QA, store integration, performance profiling and release approval remain |
+| ASO | Eleven storefront descriptions/localizations and ten genuine premium screenshots per iPhone/iPad set saved; market testing and screenshots for new replay features remain |
+| Production QA | Apple SDK compilation, 22 core/13 tooling/six simulator UI tests and signed upload verified; broader device/accessibility QA, real Apple sandbox, performance profiling and review approval remain |
 
 The app deliberately makes no claims about live community totals, actual player rankings, discounted products or unshipped blueprint counts. Daily activities use UTC keys and no streak dependency. Local clocks are used for expeditions; introduce server time if economic integrity later requires it.
