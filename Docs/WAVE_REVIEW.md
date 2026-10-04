@@ -1,5 +1,7 @@
 # Wave review — build 11 engine
 
+These historical findings are now fixed in the engine. See [wave fix verification](WAVE_FIX.md) for regression tests and delivery status.
+
 Five deterministic tests exercised the actual BattleEngine. Two passed and three exposed defects. The [reproduction source](WaveReview/WaveReviewTests.swift) and [results](WaveReview/results.log) are saved. Production gameplay was unchanged during this review.
 
 ## Confirmed findings

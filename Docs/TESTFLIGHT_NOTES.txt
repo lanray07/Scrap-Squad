@@ -1,5 +1,7 @@
 Scrap Squad: Merge & Survive — internal device acceptance
 
+This build fixes wave progression: Survival and Arena continue beyond Wave 6, Boss Rush requires three defeated bosses, and scheduled bosses respect the 80-enemy limit. Check an endless run past 150 seconds and a Boss Rush fight lasting more than two minutes.
+
 This build adds visible robot walking and alternating ground footprints while dragging. Steps stop on release and pause; Reduce Motion keeps ground trails without bobbing or leaning.
 
 This build includes distinct drone, missile, laser and lightning attacks; nine boss warning patterns; Overdrive; daily replay codes; mastery; result-card sharing; and fixes for background pausing and expanding onboarding text.

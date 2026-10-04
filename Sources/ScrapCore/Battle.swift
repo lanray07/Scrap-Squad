@@ -57,7 +57,10 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
     public let challengeCode: String?
     public private(set) var combo = ComboMeter()
     public private(set) var synergies: Set<BuildSynergy> = []
-    public var wave: Int { min(6, 1 + Int(elapsed / 20)) }
+    public var wave: Int {
+        let number = 1 + Int(elapsed / 20)
+        return mode == .survival || mode == .arena ? number : min(6, number)
+    }
     private var comboScore = 0
     public private(set) var state: RunState = .fighting
     public private(set) var elapsed = 0.0
@@ -105,6 +108,9 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
     private var explosionRadius = 0.0
     private var invulnerability = 0.0
     private var nextHazard = 12.0
+    private let enemyLimit = 80
+    // Leave one place for the scheduled boss, without deleting enemies or granting kills.
+    private var regularEnemyLimit: Int { bossSpawned ? enemyLimit : enemyLimit - 1 }
 
     public init(content: GameContent, profile: PlayerProfile, mode: GameMode, seed: UInt64 = UInt64.random(in: 1...UInt64.max), challengeCode: String? = nil) {
         self.content = content; self.profile = profile; self.mode = mode
@@ -151,11 +157,11 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
             if !choices.isEmpty { state = .choosing; return }
         }
         let bossTime = mode == .bossRush ? 3 : content.economy.bossAtSeconds
-        if !bossSpawned && elapsed >= bossTime { spawnBoss(); bossSpawned = true }
-        if elapsed >= nextSpawn && enemies.count < 80 && mode != .bossRush {
+        if !bossSpawned && elapsed >= bossTime { bossSpawned = spawnBoss() }
+        if elapsed >= nextSpawn && enemies.count < regularEnemyLimit && mode != .bossRush {
             spawn()
             // Wave bursts create visible groups, with room to breathe between them.
-            if wave >= 2 && enemies.count < 80 && Int(elapsed) % 8 < 2 { spawn() }
+            if wave >= 2 && enemies.count < regularEnemyLimit && Int(elapsed) % 8 < 2 { spawn() }
             nextSpawn = elapsed + max(0.35, 1.05 - Double(wave - 1) * 0.12)
         }
         if elapsed >= nextHazard {
@@ -207,7 +213,7 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
         collectKills()
         if health <= 0 { health = 0; state = .defeated }
         else if mode == .bossRush && bosses >= 3 { state = .victory }
-        else if mode != .survival && mode != .arena && elapsed >= duration {
+        else if mode != .survival && mode != .arena && mode != .bossRush && elapsed >= duration {
             state = bosses > 0 ? .victory : .defeated
         }
     }
@@ -267,6 +273,7 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
                 synergies: BuildSynergy.allCases.filter { synergies.contains($0) }, challengeCode: challengeCode))
     }
     private func spawn() {
+        guard enemies.count < regularEnemyLimit else { return }
         serial += 1
         let angle = rng.next() * .pi * 2
         let kind = biome.enemies[Int(rng.next() * Double(biome.enemies.count))]
@@ -274,10 +281,12 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
         let position = player + Vector(cos(angle), sin(angle)) * 0.48
         enemies.append(Enemy(id: serial, position: Vector(min(1.05, max(-0.05, position.x)), min(1.05, max(-0.05, position.y))), health: hp, maxHealth: hp, kind: kind))
     }
-    private func spawnBoss() {
+    @discardableResult private func spawnBoss() -> Bool {
+        guard enemies.count < enemyLimit else { return false }
         serial += 1
         let hp = 450 * biome.difficulty * (1 + Double(bosses) * 0.5)
         enemies.append(Enemy(id: serial, position: Vector(0.5, 0.9), health: hp, maxHealth: hp, kind: "boss", nextAttack: elapsed + 2, armor: 90 * biome.difficulty))
+        return true
     }
     private func fire() {
         let origins = dronePositions.isEmpty ? [player] : dronePositions
