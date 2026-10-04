@@ -1,6 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 cd "$(dirname "$0")/.."
+mkdir -p .build
 family=${SIMULATOR_FAMILY:-iPhone}
 runtime_filter=${SIMULATOR_RUNTIME:-iOS-26-2}
 result_name=${UI_RESULT_NAME:-ios-ui-tests}
