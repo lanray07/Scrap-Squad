@@ -37,7 +37,8 @@ jobs:
         if: always()
         with:
           name: release-readiness
+          include-hidden-files: true
           path: |
             .build/release-readiness.json
             .build/gallery-before-*.json
-          if-no-files-found: ignore
+          if-no-files-found: error

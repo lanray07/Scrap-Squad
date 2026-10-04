@@ -33,11 +33,11 @@ import XCTest
         app.launch()
         XCTAssertTrue(app.buttons["Let’s build something"].waitForExistence(timeout: 20))
         app.buttons["Let’s build something"].tap()
-        let settings = app.buttons["Settings"]
+        let settings = app.buttons["Open settings"]
         XCTAssertTrue(settings.waitForExistence(timeout: 10))
         settings.tap()
-        XCTAssertTrue(app.navigationBars["Settings"].waitForExistence(timeout: 10))
-        let motion = app.switches["Reduced motion"]
+        XCTAssertTrue(app.navigationBars["Your controls"].waitForExistence(timeout: 10))
+        let motion = app.switches["Reduce motion"]
         XCTAssertTrue(motion.waitForExistence(timeout: 10))
         XCTAssertTrue(motion.isHittable)
         motion.tap()
@@ -60,8 +60,8 @@ import XCTest
         XCTAssertTrue(app.buttons["Let’s build something"].waitForExistence(timeout: 20))
         try app.performAccessibilityAudit(for: [.sufficientElementDescription, .hitRegion, .textClipped, .contrast])
         app.buttons["Let’s build something"].tap()
-        app.buttons["Settings"].tap()
-        XCTAssertTrue(app.navigationBars["Settings"].waitForExistence(timeout: 10))
+        app.buttons["Open settings"].tap()
+        XCTAssertTrue(app.navigationBars["Your controls"].waitForExistence(timeout: 10))
         try app.performAccessibilityAudit(for: [.sufficientElementDescription, .hitRegion, .textClipped, .contrast])
         capture("QA-accessibility-settings")
     }

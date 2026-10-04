@@ -50,16 +50,16 @@ MARKETS={
  '發現{count}種合成配方，收集8位原創機器人。小隊會自動攻擊，你需要閃避來襲攻擊、選擇強化並針對首領弱點制定策略。透過9種設施重建Scrap City。建造遠征碼頭後，可領取最多8小時的離線資源。探索7種模式，追尋藍圖線索，完成每日與每週任務。連續遊玩中斷也不會受到懲罰。'),
 }
 SHOTS=[
- ('09-battle',['MERGE. FIGHT.','SURVIVE.'],'Robot action. Your invention, unleashed.','ROBOT SURVIVAL'),
+ ('11-boss',['DODGE THE BOSS.','BREAK ITS ARMOR.'],'Read the warning. Make your next move.','ROBOT BOSS BATTLES'),
  ('05-workshop',['SCRAP INTO','FIREPOWER.'],'Combine weapons. Discover your next build.','WEAPON FUSION'),
  ('03-squad',['SMALL BOTS.','BIG ATTITUDE.'],'Collect eight robots with distinct abilities.','SQUAD BUILDING'),
  ('07-fusion',['MEET YOUR','NEXT INVENTION.'],'Fuse a Flame Blaster. Equip the discovery.','MERGE WEAPONS'),
  ('04-blueprints',['12 BLUEPRINTS.','ONE CURIOUS MIND.'],'Follow clues. Experiment with combinations.','CRAFTING & DISCOVERY'),
  ('02-city',['BUILD A CITY','FROM SCRAP.'],'Construct facilities. Strengthen your squad.','CITY PROGRESSION'),
- ('08-lobby',['PLAN THE BUILD.','TAKE THE FIELD.'],'Choose a mode. Match elemental weaknesses.','TACTICAL LOADOUTS'),
- ('06-roulette',['TWO WEAPONS.','NEW POSSIBILITIES.'],'See the outcomes before you fuse.','FUSION ROULETTE'),
- ('01-onboarding',['YOUR SQUAD','STARTS HERE.'],'Meet BOLT. Make your first invention.','ROBOT COLLECTION'),
- ('10-pause',['PICK IT UP.','PUT IT DOWN.'],'Pause the mission. Return when you’re ready.','PLAY AT YOUR PACE')]
+ ('12-daily',['ONE DAILY CODE.','YOUR NEXT BUILD.'],'Replay an offline challenge. Share the code.','DAILY ROGUELITE CHALLENGES'),
+ ('13-overdrive',['EARN THE CHARGE.','UNLEASH OVERDRIVE.'],'Build your combo. Activate a power burst.','ACTION & COMBOS'),
+ ('14-mastery',['MAKE YOUR MARK.','MASTER THE SCRAP.'],'Track medals, synergies and personal bests.','ROBOT MASTERY'),
+ ('15-share',['GREAT RUN?','SHARE THE STORY.'],'Preview your card. Share when you choose.','CHALLENGE REPLAY & SHARING')]
 
 def main():
     content=json.loads((ROOT/'Sources/ScrapCore/Resources/content.json').read_text())
