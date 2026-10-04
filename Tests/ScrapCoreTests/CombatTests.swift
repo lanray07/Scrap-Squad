@@ -2,6 +2,14 @@ import Foundation
 import Testing
 @testable import ScrapCore
 
+@Test func beamsPierceAlignedLivingTargetsWithinRangeInOrder() {
+    let positions = [Vector(0.3, 0.5), Vector(0.45, 0.52), Vector(0.45, 0.7), Vector(0.9, 0.5), Vector(0.2, 0.5)]
+    let enemies = positions.enumerated().map { Enemy(id: $0.offset, position: $0.element, health: $0.offset == 4 ? 0 : 50, maxHealth: 50, kind: "tank") }
+    let hit = CombatGeometry.piercingTargets(origin: Vector(0.1, 0.5), target: Vector(0.3, 0.5), range: 0.52, enemies: enemies, excluding: [])
+    #expect(hit == [0, 1])
+    #expect(CombatGeometry.piercingTargets(origin: Vector(0.1, 0.5), target: Vector(0.3, 0.5), range: 0.52, enemies: enemies, excluding: [0]) == [1])
+}
+
 @Test func attackGeometryMatchesCirclesCapsulesAndRingSafeCenter() {
     let circle = AttackArea(shape: .circle, from: Vector(), to: Vector(0.5, 0.5), radius: 0.1)
     #expect(circle.contains(Vector(0.55, 0.5)))

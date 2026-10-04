@@ -23,6 +23,7 @@ struct BattleLobby: View {
                 Picker(selection: $mode) {
                     ForEach(GameMode.allCases) { LText("mode." + $0.rawValue).tag($0) }
                 } label: { LText("battle.mode") }
+                    .accessibilityIdentifier("battle-mode")
                 Panel {
                     LText("battle.weapon").font(.caption).foregroundStyle(Theme.muted)
                     if let weapon = store.content.weapons.first(where: { $0.id == store.profile.equippedWeapon }) {

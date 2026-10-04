@@ -55,6 +55,14 @@ public struct AttackWarning: Identifiable, Sendable {
     public let boss: Bool
 }
 
+enum CombatGeometry {
+    static func piercingTargets(origin: Vector, target: Vector, range: Double, enemies: [Enemy], excluding: Set<Int>) -> [Int] {
+        let ray = AttackArea(shape: .line, from: origin, to: origin + (target - origin).normalized * range, radius: 0.035)
+        return Array(enemies.indices.filter { !excluding.contains(enemies[$0].id) && enemies[$0].health > 0 && ray.contains(enemies[$0].position) }
+            .sorted { (enemies[$0].position - origin).length < (enemies[$1].position - origin).length }.prefix(3))
+    }
+}
+
 public enum BossPattern: String, CaseIterable, Sendable {
     case slam, charge, frostCross, toxicMines, fan, shockRing, sweep, bombardment, collapse
     public init(biomeID: String) {

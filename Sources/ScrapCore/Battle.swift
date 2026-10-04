@@ -155,7 +155,7 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
         if elapsed >= nextSpawn && enemies.count < 80 && mode != .bossRush {
             spawn()
             // Wave bursts create visible groups, with room to breathe between them.
-            if wave >= 2 && Int(elapsed) % 8 < 2 { spawn() }
+            if wave >= 2 && enemies.count < 80 && Int(elapsed) % 8 < 2 { spawn() }
             nextSpawn = elapsed + max(0.35, 1.05 - Double(wave - 1) * 0.12)
         }
         if elapsed >= nextHazard {
@@ -166,6 +166,7 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
         advanceWarnings(dt)
         for index in enemies.indices {
             if enemies[index].burnUntil > elapsed { enemies[index].health -= weapon.damage * 0.18 * dt }
+            if enemies[index].health <= 0 { continue }
             let distance = (player - enemies[index].position).length
             let kind = enemies[index].kind
             let slow = enemies[index].slowUntil > elapsed ? 0.35 : 1.0
@@ -174,7 +175,7 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
                 enemies[index].position = enemies[index].position + (player - enemies[index].position).normalized * (speed * dt)
             }
             if kind == "repair" {
-                for other in enemies.indices where other != index && (enemies[other].position - enemies[index].position).length < 0.12 {
+                for other in enemies.indices where other != index && enemies[other].health > 0 && (enemies[other].position - enemies[index].position).length < 0.12 {
                     enemies[other].health = min(enemies[other].maxHealth, enemies[other].health + dt * 3)
                 }
             }
@@ -303,10 +304,7 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
             let impact = enemies[index].position
             hit(index, from: origin, critical: critical, scale: 1, style: weapon.style)
             if weapon.style == .beam {
-                let ray = AttackArea(shape: .line, from: origin, to: origin + (impact - origin).normalized * weapon.range, radius: 0.035)
-                let pierce = enemies.indices.filter { !struck.contains(enemies[$0].id) && enemies[$0].health > 0 && ray.contains(enemies[$0].position) }
-                    .sorted { (enemies[$0].position - origin).length < (enemies[$1].position - origin).length }
-                for other in pierce.prefix(3) {
+                for other in CombatGeometry.piercingTargets(origin: origin, target: impact, range: weapon.range, enemies: enemies, excluding: struck) {
                     struck.insert(enemies[other].id)
                     hit(other, from: origin, critical: critical, scale: 0.7, style: .beam)
                 }

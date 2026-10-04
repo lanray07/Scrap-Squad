@@ -55,9 +55,15 @@ import XCTest
         capture(app, "Premium-02-daily-circuit")
         daily.tap()
         XCTAssertTrue(app.buttons["overdrive-button"].waitForExistence(timeout: 10))
-        let charged = XCTNSPredicateExpectation(predicate: NSPredicate(format: "enabled == true"), object: app.buttons["overdrive-button"])
-        // Charge is earned in real combat; compact simulators may run below real time.
-        XCTAssertEqual(XCTWaiter.wait(for: [charged], timeout: 35), .completed)
+        // Earn charge through combat, handling real timed upgrade interruptions.
+        for _ in 0..<35 where !app.buttons["overdrive-button"].isEnabled {
+            if app.staticTexts["Choose your upgrade"].exists { chooseOfferedUpgrade(in: app) }
+            else {
+                let charged = XCTNSPredicateExpectation(predicate: NSPredicate(format: "enabled == true"), object: app.buttons["overdrive-button"])
+                _ = XCTWaiter.wait(for: [charged], timeout: 2)
+            }
+        }
+        XCTAssertTrue(app.buttons["overdrive-button"].isEnabled)
         app.buttons["overdrive-button"].tap()
         XCTAssertTrue(app.staticTexts["OVERDRIVE ACTIVE"].waitForExistence(timeout: 3))
         capture(app, "Premium-06-overdrive")
@@ -95,17 +101,20 @@ import XCTest
         // Choose a real offered upgrade, then pause; do not tap through its modal.
         for _ in 0..<3 {
             if app.staticTexts["Choose your upgrade"].exists {
-                let names = ["Tesla Coil", "Fire Core", "Cryo Core", "Drone Core", "Ricochet Chip", "Splitter Module", "Explosive Payload", "Plasma Cell", "Critical Processor", "Repair Nanites", "Overclock Module"]
-                let offer = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", names.first(where: { name in
-                    app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", name + ",")).firstMatch.exists
-                }).map { $0 + "," } ?? "unavailable-upgrade")).firstMatch
-                XCTAssertTrue(offer.exists)
-                offer.tap()
+                chooseOfferedUpgrade(in: app)
             }
             app.buttons["Pause"].tap()
             if app.buttons["Retreat"].waitForExistence(timeout: 3) { return }
         }
         XCTFail("Pause did not present its retreat control")
+    }
+    private func chooseOfferedUpgrade(in app: XCUIApplication) {
+        let names = ["Tesla Coil", "Fire Core", "Cryo Core", "Drone Core", "Ricochet Chip", "Splitter Module", "Explosive Payload", "Plasma Cell", "Critical Processor", "Repair Nanites", "Overclock Module"]
+        for name in names {
+            let offer = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", name + ",")).firstMatch
+            if offer.exists { offer.tap(); return }
+        }
+        XCTFail("The upgrade screen has no selectable offer")
     }
     private func openJournal(in app: XCUIApplication) {
         let journal = app.buttons["open-journal"]

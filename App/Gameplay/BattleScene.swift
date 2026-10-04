@@ -16,6 +16,7 @@ import ScrapCore
     private var projectileNodes: [Int: SKNode] = [:]
     private var droneNodes: [SKNode] = []
     private let trackingCamera = SKCameraNode()
+    private let arenaBoundary = SKShapeNode()
     private var arenaScale: CGFloat { max(1, min(size.width, size.height) * 1.4) }
     private var unitScale: CGFloat { max(0.4, min(1, arenaScale / 600)) }
     private var robotNodes: [SKNode] = []
@@ -40,6 +41,8 @@ import ScrapCore
         guard world.parent == nil else { return }
         addChild(world); addChild(effectsLayer)
         addChild(trackingCamera); camera = trackingCamera
+        arenaBoundary.strokeColor = UIColor(hex: "79D9BA").withAlphaComponent(0.2)
+        arenaBoundary.lineWidth = 2; arenaBoundary.fillColor = .clear; arenaBoundary.zPosition = -3; world.addChild(arenaBoundary)
         let grid = SKShapeNode()
         let path = CGMutablePath()
         for x in stride(from: -1200.0, through: 2400.0, by: 60) { path.move(to: CGPoint(x: x, y: -1200)); path.addLine(to: CGPoint(x: x, y: 2400)) }
@@ -67,6 +70,7 @@ import ScrapCore
         let dt = previous == 0 ? 0 : min(0.05, currentTime - previous); previous = currentTime
         engine.step(delta: dt, movement: movement)
         trackingCamera.position = point(engine.player)
+        arenaBoundary.path = CGPath(rect: CGRect(x: arenaScale * 0.07, y: arenaScale * 0.07, width: arenaScale * 0.86, height: arenaScale * 0.86), transform: nil)
         updateMomentum()
         for (index, node) in robotNodes.enumerated() {
             let angle = Double(index) * .pi * 2 / Double(max(1, robotNodes.count))
@@ -86,6 +90,9 @@ import ScrapCore
             node.alpha = enemy.kind == "burrower" && Int(engine.elapsed) % 5 < 2 ? 0.25 : 1
             if enemy.kind == "flying" && !engine.profile.preferences.reducedMotion { node.position.y += CGFloat(sin(currentTime * 5)) * 4 }
             if let bar = node.childNode(withName: "health") as? SKShapeNode { bar.xScale = max(0.01, enemy.health / enemy.maxHealth) }
+            if enemy.boss, let hull = node.childNode(withName: "hull") as? SKShapeNode {
+                hull.strokeColor = enemy.health < enemy.maxHealth / 2 ? .systemRed : UIColor(hex: engine.biome.palette[2])
+            }
         }
         updateWarnings()
         updateProjectiles()
@@ -215,9 +222,22 @@ import ScrapCore
     private func makeEnemy(_ enemy: Enemy) -> SKNode {
         let root = SKNode()
         let radius: CGFloat = enemy.boss ? 46 : enemy.kind == "miniboss" ? 30 : enemy.kind == "tank" || enemy.kind == "elite" ? 21 : 13
-        let body = SKShapeNode(rectOf: CGSize(width: radius * 2, height: radius * 1.8), cornerRadius: enemy.kind == "swarmer" ? 4 : radius * 0.5)
-        body.fillColor = UIColor(hex: enemy.kind == "repair" ? "8CAD8A" : enemy.kind == "shield" ? "839CC1" : enemy.boss ? "B78062" : "8B7572")
+        let roundBoss = enemy.boss && [.shockRing, .bombardment, .collapse].contains(engine.bossPattern)
+        let body = roundBoss ? SKShapeNode(circleOfRadius: radius) : SKShapeNode(rectOf: CGSize(width: radius * 2, height: radius * 1.8), cornerRadius: enemy.kind == "swarmer" ? 4 : radius * 0.5)
+        body.name = "hull"
+        body.fillColor = UIColor(hex: enemy.kind == "repair" ? "8CAD8A" : enemy.kind == "shield" ? "839CC1" : enemy.boss ? engine.biome.palette[1] : "8B7572")
         body.strokeColor = UIColor(hex: "E4B1A0"); body.lineWidth = enemy.boss ? 4 : 2; root.addChild(body)
+        if enemy.boss {
+            let patternIndex = BossPattern.allCases.firstIndex(of: engine.bossPattern) ?? 0
+            let count = 2 + patternIndex % 4
+            for index in 0..<count {
+                let angle = Double(index) * .pi * 2 / Double(count) + Double(patternIndex) * 0.3
+                let module = SKShapeNode(rectOf: CGSize(width: 16, height: 22), cornerRadius: 4)
+                module.fillColor = UIColor(hex: engine.biome.palette[2]); module.strokeColor = UIColor(hex: "10252D"); module.lineWidth = 2
+                module.position = CGPoint(x: cos(angle) * radius, y: sin(angle) * radius)
+                module.zRotation = CGFloat(angle); module.zPosition = -1; root.addChild(module)
+            }
+        }
         let eye = SKShapeNode(rectOf: CGSize(width: radius, height: 4), cornerRadius: 2); eye.fillColor = UIColor(hex: "FFC88C"); eye.strokeColor = .clear; root.addChild(eye)
         for x in [-1,1] {
             let leg = SKShapeNode(rectOf: CGSize(width: radius * 0.65, height: radius * 0.6), cornerRadius: 3); leg.fillColor = UIColor(hex: "374A4D"); leg.strokeColor = .clear; leg.position = CGPoint(x: CGFloat(x) * radius * 0.85, y: -radius * 0.6); leg.zPosition = -1; root.addChild(leg)
