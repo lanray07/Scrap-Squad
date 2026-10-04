@@ -1,0 +1,47 @@
+name: Verify small iPhone and iPad layouts
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  layout:
+    runs-on: macos-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: small-iphone
+            family: iPhone
+            type: com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation
+          - name: ipad
+            family: iPad Pro 13
+            type: ''
+    steps:
+      - uses: actions/checkout@v4
+      - run: brew install xcodegen
+      - run: xcodegen generate
+      - name: Verify challenge, results, sharing and rotation
+        env:
+          SIMULATOR_FAMILY: ${{ matrix.family }}
+          SIMULATOR_DEVICE_TYPE: ${{ matrix.type }}
+          UI_RESULT_NAME: layout-tests
+          UI_TEST_CLASS: PremiumReplayUITests
+        run: |
+          mkdir -p .build
+          bash Tools/test_ios_ui.sh
+      - name: Export genuine simulator screenshots
+        if: always()
+        run: |
+          if [ -d .build/layout-tests.xcresult ]; then
+            xcrun xcresulttool export attachments --path .build/layout-tests.xcresult --output-path .build/layout-attachments
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: layout-${{ matrix.name }}
+          path: |
+            .build/layout-attachments
+            .build/layout-tests.log
+            .build/layout-tests.xcresult
+          if-no-files-found: ignore

@@ -1,18 +1,54 @@
 import XCTest
 
 @MainActor final class PremiumReplayUITests: XCTestCase {
-    func testDailyCircuitResultsCardRetryAndMastery() throws {
-        executionTimeAllowance = 240
+    override func tearDown() {
+        XCUIDevice.shared.orientation = .portrait
+        super.tearDown()
+    }
+    func testLandscapeNavigationAndCombatRotation() throws {
+        executionTimeAllowance = 180
+        XCUIDevice.shared.orientation = .portrait
         let app = XCUIApplication()
         app.launchArguments = ["--ui-testing"]
         app.launch()
         XCTAssertTrue(app.buttons["Let’s build something"].waitForExistence(timeout: 20))
         app.buttons["Let’s build something"].tap()
-        app.buttons["open-journal"].tap()
+        XCUIDevice.shared.orientation = .landscapeLeft
+        XCTAssertTrue(app.staticTexts["Welcome to Scrap City"].waitForExistence(timeout: 10))
+        openJournal(in: app)
+        XCTAssertTrue(app.staticTexts["The Hall of Scrap"].waitForExistence(timeout: 10))
+        capture(app, "Layout-01-landscape-mastery")
+        app.buttons["Done"].tap()
+        selectTab("Battle", in: app)
+        let daily = app.buttons["daily-play"]
+        for _ in 0..<6 where !daily.isHittable { app.swipeUp() }
+        XCTAssertTrue(daily.isHittable)
+        daily.tap()
+        XCTAssertTrue(app.buttons["Pause"].waitForExistence(timeout: 10))
+        XCTAssertTrue(app.buttons["Pause"].isHittable)
+        capture(app, "Layout-02-landscape-combat")
+        app.buttons["Pause"].tap()
+        XCTAssertTrue(app.buttons["Retreat"].waitForExistence(timeout: 10))
+        XCTAssertTrue(app.buttons["Retreat"].isHittable)
+        capture(app, "Layout-03-landscape-pause")
+        XCUIDevice.shared.orientation = .portrait
+        app.buttons["Retreat"].tap()
+        XCTAssertTrue(app.buttons["run-retry"].waitForExistence(timeout: 10))
+        capture(app, "Layout-04-rotated-results")
+    }
+    func testDailyCircuitResultsCardRetryAndMastery() throws {
+        executionTimeAllowance = 240
+        XCUIDevice.shared.orientation = .portrait
+        let app = XCUIApplication()
+        app.launchArguments = ["--ui-testing"]
+        app.launch()
+        XCTAssertTrue(app.buttons["Let’s build something"].waitForExistence(timeout: 20))
+        app.buttons["Let’s build something"].tap()
+        openJournal(in: app)
         XCTAssertTrue(app.staticTexts["The Hall of Scrap"].waitForExistence(timeout: 10))
         capture(app, "Premium-01-mastery")
         app.buttons["Done"].tap()
-        app.tabBars.buttons["Battle"].tap()
+        selectTab("Battle", in: app)
         let daily = app.buttons["daily-play"]
         for _ in 0..<4 where !daily.isHittable { app.swipeUp() }
         XCTAssertTrue(daily.isHittable)
@@ -48,10 +84,25 @@ import XCTest
         let home = app.buttons["Return to city"]
         for _ in 0..<3 where !home.isHittable { app.swipeUp() }
         home.tap()
-        app.tabBars.buttons["City"].tap()
-        app.buttons["open-journal"].tap()
+        selectTab("City", in: app)
+        openJournal(in: app)
         XCTAssertTrue(app.staticTexts["2/3"].waitForExistence(timeout: 10))
         capture(app, "Premium-05-saved-records")
+    }
+    private func openJournal(in app: XCUIApplication) {
+        let journal = app.buttons["open-journal"]
+        for _ in 0..<4 where !journal.isHittable { app.swipeUp() }
+        XCTAssertTrue(journal.isHittable)
+        journal.tap()
+    }
+    private func selectTab(_ name: String, in app: XCUIApplication) {
+        let compact = app.tabBars.buttons[name]
+        if compact.exists { compact.tap() }
+        else {
+            let regular = app.descendants(matching: .any).matching(identifier: name).firstMatch
+            XCTAssertTrue(regular.waitForExistence(timeout: 10))
+            regular.tap()
+        }
     }
     private func capture(_ app: XCUIApplication, _ name: String) {
         let attachment = XCTAttachment(screenshot: app.screenshot())
