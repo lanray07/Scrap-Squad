@@ -2,7 +2,7 @@
 
 Current distribution status: signed version 1.0, build 10 with distinct weapon attacks, nine boss patterns, combat momentum, challenges, mastery, sharing and optional one-time cosmetic purchases uploaded successfully to App Store Connect on 4 October 2026 and attached to the version record. Both products have eleven localizations, pricing, availability, review notes and genuine review screenshots saved. Store copy, privacy, age ratings and content rights are saved. See [App Store Connect status](Store/APP_STORE_CONNECT.md) and [cosmetic verification](Store/IAP/README.md). The app and purchases have not been submitted for review or approved. See [release completion evidence](RELEASE_COMPLETION.md) and [device acceptance checklist](TESTFLIGHT_QA.md). The broader gameplay, device, accessibility and performance checks below remain product-quality requirements.
 
-**GitHub verification update:** Apple SDK compilation, 30 core tests, 16 tooling tests and eleven iPhone simulator UI tests pass, including the replay update and StoreKit purchases. See [current release evidence](RELEASE_COMPLETION.md). The actual captures and downloadable artifacts are recorded in [GITHUB_BUILD.md](GITHUB_BUILD.md). The broader device, accessibility, performance and service checks below remain release requirements.
+**GitHub verification update:** Apple SDK compilation, 30 core tests, 16 tooling tests and thirteen unique UI cases per device family pass across full and supplemental runs, including the replay update and StoreKit purchases. See [current release evidence](RELEASE_COMPLETION.md). The actual captures and downloadable artifacts are recorded in [GITHUB_BUILD.md](GITHUB_BUILD.md). The broader device, accessibility, performance and service checks below remain release requirements.
 
 ## Verification recorded on Windows
 
@@ -44,6 +44,6 @@ Current distribution status: signed version 1.0, build 10 with distinct weapon a
 | Audio | Three bundled original music loops, eight sound cues, independent volume controls and bounded playback; device listening and biome-specific expansion remain |
 | Localization | English source ready; ten other locales have export/translation/review/import tooling, not approved app translations |
 | ASO | Eleven storefront descriptions/localizations and ten genuine premium screenshots per iPhone/iPad set saved; build 10 replay/combat galleries refreshed and verified; market testing remains |
-| Production QA | Apple SDK compilation, 30 core/16 tooling/eleven iPhone simulator UI tests plus four compact/iPad replay/rotation cases and signed upload verified; broader device/accessibility QA, real Apple sandbox, performance profiling and review approval remain |
+| Production QA | Apple SDK compilation, 30 core/16 tooling/thirteen unique UI cases per family plus four compact/iPad replay/rotation cases and signed upload verified; broader device/accessibility QA, real Apple sandbox, performance profiling and review approval remain |
 
 The app deliberately makes no claims about live community totals, actual player rankings, discounted products or unshipped blueprint counts. Daily activities use UTC keys and no streak dependency. Local clocks are used for expeditions; introduce server time if economic integrity later requires it.

@@ -79,5 +79,7 @@
   "sourceCommit": "f47c6c0fd0595e00ce7618d86256b84ea20ec206",
   "sourceWorkflow": "https://github.com/lanray07/Scrap-Squad/actions/runs/37175002314",
   "status": "visually-reviewed-uploaded-and-apple-processing-verified",
-  "uploadWorkflow": "https://github.com/lanray07/Scrap-Squad/actions/runs/37176024736"
+  "uploadWorkflow": "https://github.com/lanray07/Scrap-Squad/actions/runs/37176024736",
+  "sourceAttempt": 1,
+  "sourceNote": "Named store-tour, combat and replay captures passed on attempt 1; two unrelated StoreKit cases failed. Full unchanged-app suite passed on attempt 2."
 }

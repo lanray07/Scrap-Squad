@@ -36,5 +36,12 @@
     "iPhoneCasesPassed": 4,
     "iPadCasesPassed": 4,
     "localStoreKitOnly": true
+  },
+  "iPad": {
+    "workflow": "https://github.com/lanray07/Scrap-Squad/actions/runs/37175002314/attempts/2",
+    "fullUICasesPassed": 11,
+    "uniqueUICasesIncludingSupplemental": 13,
+    "seconds": 468.509,
+    "initialAttempt": "Two StoreKit ownership-delivery cases failed; fresh full rerun and separate commerce run passed with unchanged app code."
   }
 }
