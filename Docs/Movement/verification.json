@@ -1,0 +1,22 @@
+{
+  "build": "11",
+  "appSource": "05aba48753a6305868323ac8844282c713917ade",
+  "native": {
+    "workflow": "https://github.com/lanray07/Scrap-Squad/actions/runs/37188200872",
+    "appleSDKCompile": "passed",
+    "coreTestsPassed": 32,
+    "toolingTestsPassed": 16,
+    "UICasesPassed": 13,
+    "UICasesTotal": 14,
+    "failure": "Boss case: Xcode application-launch timeout"
+  },
+  "localToolingTestsPassed": 18,
+  "initialTargeted": {
+    "workflow": "https://github.com/lanray07/Scrap-Squad/actions/runs/37188201808",
+    "iPadCasesPassed": 2,
+    "iPhoneMovementPassed": true,
+    "iPhoneBossFailure": "Missed exact 0:05/0:06 clock observation window; predicate corrected in test only."
+  },
+  "physicalUpdatedBuildTested": false,
+  "appReviewSubmitted": false
+}

@@ -1,6 +1,6 @@
-# Build 10 device and sandbox acceptance
+# Build 11 device and sandbox acceptance
 
-Version 1.0 build 10 is processed and available to the internal **Scrap Squad QA** group. No tester was added and no invitation was sent. An App Store Connect administrator can select their own existing team account in TestFlight → Internal Testing → Scrap Squad QA → Add Testers, then install through TestFlight on their device. External beta review is not required for internal testing. Never share a password or Apple verification code with this repository.
+Version 1.0 build 11 is processed and available to the internal **Scrap Squad QA** group. One existing tester is present; this update preserved membership and did not add or invite anyone. An App Store Connect administrator can select their own existing team account in TestFlight → Internal Testing → Scrap Squad QA → Add Testers, then install through TestFlight on their device. External beta review is not required for internal testing. Never share a password or Apple verification code with this repository.
 
 ## Record the actual device result
 

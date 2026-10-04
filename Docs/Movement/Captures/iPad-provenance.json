@@ -1,0 +1,7 @@
+{
+  "sourceCommit": "05aba48753a6305868323ac8844282c713917ade",
+  "workflow": "https://github.com/lanray07/Scrap-Squad/actions/runs/37188201808",
+  "test": "CombatShowcaseUITests/testSquadWalksAndLeavesFootprintsOnlyWhileMoving()",
+  "file": "iPad-footprints.png",
+  "sha256": "aae9de76247ebe825c3a5f74220eec67a61db93dc32a1ebdea5f577e6106dc71"
+}

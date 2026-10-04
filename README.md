@@ -6,7 +6,7 @@ Native iPhone/iPad game foundation using SwiftUI, SpriteKit and a standalone Swi
 
 The project is connected to [lanray07/Scrap-Squad](https://github.com/lanray07/Scrap-Squad). The `Validate native game` workflow builds with Xcode on a macOS runner, validates the core/tooling, saves a simulator app zip, and runs onboarding/fusion and battle/pause/retreat smoke tests. Xcode result bundles, test screenshots and startup diagnostics are retained as workflow artifacts.
 
-[The current Xcode build, 30 core, 16 tooling and eleven iPhone UI tests passed](https://github.com/lanray07/Scrap-Squad/actions/runs/37175000200). Additional iPhone SE and iPad replay/rotation checks passed. Signed build 10 is attached; see [release preparation and outstanding device checks](Docs/RELEASE_COMPLETION.md). See [combat features and verification](Docs/COMBAT_UPDATE.md), [replay features](Docs/PREMIUM_LOOP.md) and `Docs/GITHUB_BUILD.md` for details and captures.
+[The current Xcode build, 30 core, 16 tooling and eleven iPhone UI tests passed](https://github.com/lanray07/Scrap-Squad/actions/runs/37175000200). Additional iPhone SE and iPad replay/rotation checks passed. Signed build 11 adds [walking and footprints](Docs/MOVEMENT_UPDATE.md) and is available in internal TestFlight; see [release preparation and outstanding device checks](Docs/RELEASE_COMPLETION.md). See [combat features and verification](Docs/COMBAT_UPDATE.md), [replay features](Docs/PREMIUM_LOOP.md) and `Docs/GITHUB_BUILD.md` for details and captures.
 
 The simulator build requires no Apple signing secrets. The existing Apple team and App Store Connect secrets are not consumed by this workflow. A signed device archive or TestFlight upload is a separate distribution action.
 

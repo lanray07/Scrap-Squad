@@ -1,6 +1,8 @@
 # Release preparation — 4 October 2026
 
-Version 1.0 **build 10** is uploaded, processed and attached to App Store Connect (build resource `2914e126-c2a0-4756-acb9-2c20a829900c`). [Signed Xcode archive and upload](https://github.com/lanray07/Scrap-Squad/actions/runs/37175398830) and [Apple record attachment](https://github.com/lanray07/Scrap-Squad/actions/runs/37175900722) succeeded. No App Review submission or public release has been performed.
+**Current build: 11.** The [walking and footprint update](MOVEMENT_UPDATE.md) supersedes build 10 and is available in the existing TestFlight group. The evidence below records the earlier build 10 preparation.
+
+Version 1.0 **build 10** was uploaded, processed and attached to App Store Connect (build resource `2914e126-c2a0-4756-acb9-2c20a829900c`). [Signed Xcode archive and upload](https://github.com/lanray07/Scrap-Squad/actions/runs/37175398830) and [Apple record attachment](https://github.com/lanray07/Scrap-Squad/actions/runs/37175900722) succeeded. No App Review submission or public release has been performed.
 
 The app includes distinct weapon attacks, nine boss patterns, Overdrive, daily replay codes, mastery, voluntary result-card sharing and optional one-time cosmetics. This release also fixes background simulation pausing and expanding onboarding text. These features have automated coverage; virality, retention and human difficulty have not been measured.
 

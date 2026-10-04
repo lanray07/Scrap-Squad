@@ -73,3 +73,7 @@ On 4 October, [the refreshed build 8 galleries](https://github.com/lanray07/Scra
 ## Current release: build 10
 
 [Signed build 10](https://github.com/lanray07/Scrap-Squad/actions/runs/37175398830) is uploaded and [processed/attached](https://github.com/lanray07/Scrap-Squad/actions/runs/37175900722), resource `2914e126-c2a0-4756-acb9-2c20a829900c`. It adds background-pause and onboarding text fixes. Current screenshot, form and TestFlight verification is recorded in [release evidence](../RELEASE_COMPLETION.md). Physical-device/live Apple sandbox acceptance and human language review remain pending. No App Review submission or public release has occurred.
+
+## Walking update: build 11
+
+Build 11 is uploaded, processed and selected, resource `6243ff7c-1984-46ea-b25c-2b084062241c`. It is in internal beta testing with the existing tester preserved and updated notes. See [walking verification](../MOVEMENT_UPDATE.md). The existing galleries retain their genuine build 10 source manifests; this cosmetic movement update does not change the advertised features or screenshot dimensions. No App Review submission or public release occurred.
