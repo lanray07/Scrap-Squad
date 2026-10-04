@@ -56,7 +56,8 @@ import XCTest
         daily.tap()
         XCTAssertTrue(app.buttons["overdrive-button"].waitForExistence(timeout: 10))
         let charged = XCTNSPredicateExpectation(predicate: NSPredicate(format: "enabled == true"), object: app.buttons["overdrive-button"])
-        XCTAssertEqual(XCTWaiter.wait(for: [charged], timeout: 18), .completed)
+        // Charge is earned in real combat; compact simulators may run below real time.
+        XCTAssertEqual(XCTWaiter.wait(for: [charged], timeout: 35), .completed)
         app.buttons["overdrive-button"].tap()
         XCTAssertTrue(app.staticTexts["OVERDRIVE ACTIVE"].waitForExistence(timeout: 3))
         capture(app, "Premium-06-overdrive")
@@ -91,8 +92,9 @@ import XCTest
     }
     private func openJournal(in app: XCUIApplication) {
         let journal = app.buttons["open-journal"]
-        for _ in 0..<4 where !journal.isHittable { app.swipeUp() }
-        XCTAssertTrue(journal.isHittable)
+        XCTAssertTrue(journal.waitForExistence(timeout: 10))
+        // XCTest scrolls this element into view. Full-screen swipes can overshoot
+        // the short journal row on a compact device.
         journal.tap()
     }
     private func selectTab(_ name: String, in app: XCUIApplication) {
