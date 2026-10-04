@@ -159,6 +159,20 @@ def main():
         available = api.all(f"/v1/betaGroups/{group['id']}/builds?limit=200")
         if not any(b["id"] == build["id"] for b in available):
             api.call("POST", f"/v1/betaGroups/{group['id']}/relationships/builds", {"data": [resource("builds", build["id"])]})
+        notes = (ROOT / "Docs/TESTFLIGHT_NOTES.txt").read_text(encoding="utf-8").strip()
+        assert 0 < len(notes) <= 4000
+        existing = api.all(f"/v1/builds/{build['id']}/betaBuildLocalizations?limit=200")
+        primary_notes = next((n for n in existing if n["attributes"]["locale"] == "en-GB"), None)
+        if primary_notes:
+            api.call("PATCH", f"/v1/betaBuildLocalizations/{primary_notes['id']}", {"data": {
+                **resource("betaBuildLocalizations", primary_notes["id"]), "attributes": {"whatsNew": notes}}})
+        else:
+            api.call("POST", "/v1/betaBuildLocalizations", {"data": {
+                "type": "betaBuildLocalizations", "attributes": {"locale": "en-GB", "whatsNew": notes},
+                "relationships": {"build": relationship("builds", build["id"])}}})
+        actual = api.all(f"/v1/builds/{build['id']}/betaBuildLocalizations?limit=200")
+        report["testingNotesSaved"] = any(n["attributes"].get("whatsNew") == notes and n["attributes"]["locale"] == "en-GB" for n in actual)
+        assert report["testingNotesSaved"]
     for group in groups:
         builds = api.all(f"/v1/betaGroups/{group['id']}/builds?limit=200")
         testers = api.all(f"/v1/betaGroups/{group['id']}/betaTesters?limit=200")

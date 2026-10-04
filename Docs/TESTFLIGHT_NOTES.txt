@@ -1,0 +1,16 @@
+Scrap Squad: Merge & Survive — internal device acceptance
+
+This build includes distinct drone, missile, laser and lightning attacks; nine boss warning patterns; Overdrive; daily replay codes; mastery; result-card sharing; and fixes for background pausing and expanding onboarding text.
+
+Please test:
+1. Tutorial, mission upgrades, boss, rewards, weapon fusion/equip, city upgrade and save/relaunch.
+2. Movement at arena boundaries, portrait/landscape rotation, iPad window sizes, Pause/Resume, backgrounding and lock/unlock. Combat must stay paused until Resume.
+3. Largest text, VoiceOver focus/labels, Reduce Motion, reduced flashes and reachable controls. The app UI is currently English.
+4. Drone/missile/beam/lightning builds and a sustained Survival session. Note stutter, heat, battery usage, crashes and difficulty.
+5. Speaker/headphone music, independent volume sliders, silent mode and audio interruption.
+6. Daily Circuit retry with the same code; earned Overdrive; mastery records; voluntary share-card preview. Compare challenge results only on the same build.
+7. Both optional one-time cosmetic packs using the TestFlight sandbox: cancellation, completed purchase, relaunch, offline ownership, restore on another device and pending/interrupted transactions where supported. Pending transactions must grant no cosmetic. Refund/revocation must remove the revoked cosmetic after verification refresh.
+
+Check that the purchase dialog identifies the testing environment. Core gameplay is free and purchases change appearance only. No ads, analytics, account login or developer backend is integrated.
+
+Include device model, OS version, build number and reproduction steps in feedback. The complete acceptance checklist is at https://github.com/lanray07/Scrap-Squad/blob/main/Docs/TESTFLIGHT_QA.md.
