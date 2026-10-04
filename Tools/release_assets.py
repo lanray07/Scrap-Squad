@@ -5,6 +5,7 @@ Apple protocol: developer.apple.com/documentation/appstoreconnectapi/uploading-a
 import argparse
 import hashlib
 import json
+import struct
 from pathlib import Path
 import time
 import urllib.parse
@@ -57,6 +58,10 @@ def refresh(api, localization, display, directory):
         file = directory / shot["file"]
         assert file.parent == directory and file.suffix == ".png"
         content = file.read_bytes()
+        assert content[:8] == b'\x89PNG\r\n\x1a\n'
+        size = struct.unpack('>II', content[16:24])
+        assert size == ((1320, 2868) if display == 'APP_IPHONE_67' else (2064, 2752))
+        assert content[25] == 2, "Opaque RGB PNGs are required"
         assert hashlib.sha256(content).hexdigest() == shot["exportSHA256"]
         expected.append((file, hashlib.md5(content).hexdigest()))
     sets = api.all(f"/v1/appStoreVersionLocalizations/{localization}/appScreenshotSets?limit=200")

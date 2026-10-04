@@ -26,13 +26,13 @@
   "screenshots": [
     {
       "order": 1,
-      "capture": "Store-09-battle",
+      "capture": "Store-11-boss",
       "headline": [
-        "MERGE. FIGHT.",
-        "SURVIVE."
+        "DODGE THE BOSS.",
+        "BREAK ITS ARMOR."
       ],
-      "supportingCopy": "Robot action. Your invention, unleashed.",
-      "keyword": "ROBOT SURVIVAL"
+      "supportingCopy": "Read the warning. Make your next move.",
+      "keyword": "ROBOT BOSS BATTLES"
     },
     {
       "order": 2,
@@ -86,43 +86,43 @@
     },
     {
       "order": 7,
-      "capture": "Store-08-lobby",
+      "capture": "Store-12-daily",
       "headline": [
-        "PLAN THE BUILD.",
-        "TAKE THE FIELD."
+        "ONE DAILY CODE.",
+        "YOUR NEXT BUILD."
       ],
-      "supportingCopy": "Choose a mode. Match elemental weaknesses.",
-      "keyword": "TACTICAL LOADOUTS"
+      "supportingCopy": "Replay an offline challenge. Share the code.",
+      "keyword": "DAILY ROGUELITE CHALLENGES"
     },
     {
       "order": 8,
-      "capture": "Store-06-roulette",
+      "capture": "Store-13-overdrive",
       "headline": [
-        "TWO WEAPONS.",
-        "NEW POSSIBILITIES."
+        "EARN THE CHARGE.",
+        "UNLEASH OVERDRIVE."
       ],
-      "supportingCopy": "See the outcomes before you fuse.",
-      "keyword": "FUSION ROULETTE"
+      "supportingCopy": "Build your combo. Activate a power burst.",
+      "keyword": "ACTION & COMBOS"
     },
     {
       "order": 9,
-      "capture": "Store-01-onboarding",
+      "capture": "Store-14-mastery",
       "headline": [
-        "YOUR SQUAD",
-        "STARTS HERE."
+        "MAKE YOUR MARK.",
+        "MASTER THE SCRAP."
       ],
-      "supportingCopy": "Meet BOLT. Make your first invention.",
-      "keyword": "ROBOT COLLECTION"
+      "supportingCopy": "Track medals, synergies and personal bests.",
+      "keyword": "ROBOT MASTERY"
     },
     {
       "order": 10,
-      "capture": "Store-10-pause",
+      "capture": "Store-15-share",
       "headline": [
-        "PICK IT UP.",
-        "PUT IT DOWN."
+        "GREAT RUN?",
+        "SHARE THE STORY."
       ],
-      "supportingCopy": "Pause the mission. Return when you’re ready.",
-      "keyword": "PLAY AT YOUR PACE"
+      "supportingCopy": "Preview your card. Share when you choose.",
+      "keyword": "CHALLENGE REPLAY & SHARING"
     }
   ]
 }

@@ -1,0 +1,32 @@
+[
+  {
+    "capture": "Store-11-boss",
+    "source": "Docs\\Combat\\Captures\\iPhone-Pro-Max\\Combat-01-boss-encounter.png",
+    "sha256": "9603fd0f2bc0eacab4f6dd1f1efd505df255237bcba3208fde34e445c06e4f96",
+    "build": "8"
+  },
+  {
+    "capture": "Store-12-daily",
+    "source": "Docs\\Combat\\Captures\\iPhone-Pro-Max\\Premium-02-daily-circuit.png",
+    "sha256": "7a134fd5c85b885d0a458f9ce40320f1816d45d3b3921c34b3263d45ade19930",
+    "build": "8"
+  },
+  {
+    "capture": "Store-13-overdrive",
+    "source": "Docs\\Combat\\Captures\\iPhone-Pro-Max\\Premium-06-overdrive.png",
+    "sha256": "dfa272c45351f5153e6238c404cbc0005dd5cffc4b09cca578e75c3dd58252c8",
+    "build": "8"
+  },
+  {
+    "capture": "Store-14-mastery",
+    "source": "Docs\\Combat\\Captures\\iPhone-Pro-Max\\Premium-01-mastery.png",
+    "sha256": "65413b333a05864c71e8f580296bb978cafe582b25f78b6117759ca8050b075e",
+    "build": "8"
+  },
+  {
+    "capture": "Store-15-share",
+    "source": "Docs\\Combat\\Captures\\iPhone-Pro-Max\\Premium-04-share-card.png",
+    "sha256": "c372200e6655da25968852437cc516dc8cc13c0004adc646b4bb13bd604121c0",
+    "build": "8"
+  }
+]
