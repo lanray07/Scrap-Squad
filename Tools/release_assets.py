@@ -104,6 +104,7 @@ def refresh(api, localization, display, directory):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--upload", action="store_true")
+    parser.add_argument("--prepare-testflight", action="store_true")
     args = parser.parse_args()
     api = AppleAPI()
     versions = api.all(f"/v1/apps/{APP_ID}/appStoreVersions?filter[platform]=IOS&limit=200")
@@ -120,13 +121,27 @@ def main():
                                  "keywordsSaved": bool(attrs.get("keywords")), "supportURLSaved": bool(attrs.get("supportUrl"))})
     if args.upload:
         assert report["versionState"] == "PREPARE_FOR_SUBMISSION", "Preserving version in review"
-        for display, folder in [("APP_IPHONE_69", "en-GB"), ("APP_IPAD_PRO_3GEN_129", "iPad-en-GB")]:
+        for display, folder in [("APP_IPHONE_67", "en-GB"), ("APP_IPAD_PRO_3GEN_129", "iPad-en-GB")]:
             report["galleries"].append(refresh(api, primary["id"], display, ROOT / "Docs/Store/Screenshots" / folder))
     else:
         for group in api.all(f"/v1/appStoreVersionLocalizations/{primary['id']}/appScreenshotSets?limit=200"):
             shots = api.all(f"/v1/appScreenshotSets/{group['id']}/appScreenshots?limit=200")
             report["galleries"].append({"display": group["attributes"]["screenshotDisplayType"], "setID": group["id"], "count": len(shots)})
-    for group in api.all(f"/v1/apps/{APP_ID}/betaGroups?limit=200"):
+    groups = api.all(f"/v1/apps/{APP_ID}/betaGroups?limit=200")
+    if args.prepare_testflight:
+        group = next((g for g in groups if g["attributes"]["isInternalGroup"] and g["attributes"]["name"] == "Scrap Squad QA"), None)
+        if group is None:
+            group = api.call("POST", "/v1/betaGroups", {"data": {
+                "type": "betaGroups", "attributes": {"name": "Scrap Squad QA", "isInternalGroup": True},
+                "relationships": {"app": relationship("apps", APP_ID)}}})["data"]
+            groups.append(group)
+        testers = api.all(f"/v1/betaGroups/{group['id']}/betaTesters?limit=200")
+        if testers:
+            raise RuntimeError("Preserving existing testers; no notification or invitation authorized")
+        available = api.all(f"/v1/betaGroups/{group['id']}/builds?limit=200")
+        if not any(b["id"] == build["id"] for b in available):
+            api.call("POST", f"/v1/betaGroups/{group['id']}/relationships/builds", {"data": [resource("builds", build["id"])]})
+    for group in groups:
         builds = api.all(f"/v1/betaGroups/{group['id']}/builds?limit=200")
         testers = api.all(f"/v1/betaGroups/{group['id']}/betaTesters?limit=200")
         report["betaGroups"].append({"id": group["id"], "internal": group["attributes"]["isInternalGroup"],

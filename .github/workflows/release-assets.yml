@@ -6,6 +6,10 @@ on:
         description: Replace the draft gallery with verified current screenshots
         type: boolean
         default: false
+      testflight:
+        description: Prepare an empty internal QA group without invitations
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
@@ -27,12 +31,12 @@ jobs:
           ASC_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
           ASC_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_API_PRIVATE_KEY }}
           UPLOAD: ${{ inputs.upload }}
+          TESTFLIGHT: ${{ inputs.testflight }}
         run: |
-          if [ "$UPLOAD" = true ]; then
-            python Tools/release_assets.py --upload
-          else
-            python Tools/release_assets.py
-          fi
+          options=()
+          if [ "$UPLOAD" = true ]; then options+=(--upload); fi
+          if [ "$TESTFLIGHT" = true ]; then options+=(--prepare-testflight); fi
+          python Tools/release_assets.py "${options[@]}"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
