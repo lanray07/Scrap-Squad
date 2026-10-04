@@ -1,6 +1,6 @@
 # Automatic localization drafts
 
-The app uses a String Catalog with 394 English source strings and supports ten target languages: Spanish, French, German, Italian, European Portuguese, Brazilian Portuguese, Japanese, Korean, Simplified Chinese and Traditional Chinese. Locale matching preserves script and regional tags, and missing translated keys fall back to English text. The latest free draft workflow covers the cosmetic, replay and combat excitement updates; in-app language quality still requires review before activation.
+The app uses a String Catalog with 416 English source strings and supports ten target languages: Spanish, French, German, Italian, European Portuguese, Brazilian Portuguese, Japanese, Korean, Simplified Chinese and Traditional Chinese. Locale matching preserves script and regional tags, and missing translated keys fall back to English text. The latest free draft workflow covers the cosmetic, replay, combat excitement and Signature Collection updates; in-app language quality still requires review before activation.
 
 `Generate localization drafts` runs automatically when the English String Catalog or its authoring source changes on main, and can also be dispatched manually. Its default **Argos** provider runs open-source translation models on the Linux runner with no translation API key, subscription or per-character fee. Only checked-in app source is translated; player content is never submitted. Results are uploaded as artifacts, with `approved: false`. The workflow cannot modify the production catalog.
 
@@ -47,4 +47,4 @@ The reviewed catalog compiles into localized resources in the next Xcode build. 
 
 `python Tools/store_campaign.py` generates separate editorial description, title, subtitle, keyword and web SEO drafts for eleven storefront locales. These drafts are not imported into the app catalog and do not prove that the app UI is localized. They require native-language review and market keyword validation. Screenshot exports currently use English copy and English UI.
 
-The [combat draft run](https://github.com/lanray07/Scrap-Squad/actions/runs/37192135277) generated 3,940 current drafts. Coverage, source hashes, placeholders, protected names and non-empty output passed `Tools/check_translation_drafts.py`. All entries remain unapproved.
+The [combat draft run](https://github.com/lanray07/Scrap-Squad/actions/runs/37195254258) generated 4,160 current drafts. Coverage, source hashes, placeholders, protected names and non-empty output passed `Tools/check_translation_drafts.py`. All entries remain unapproved.

@@ -27,3 +27,7 @@ The app and both products remain in preparation, not submitted, approved or rele
 ## Replay update
 
 Build 7 now supersedes build 5 on version 1.0. [Final native validation](https://github.com/lanray07/Scrap-Squad/actions/runs/37158254127) passed 22 core tests, 13 tooling tests and six UI tests, including both original StoreKit tests and the new replay flow. [Apple verification](https://github.com/lanray07/Scrap-Squad/actions/runs/37158993311) confirmed the existing product configuration and attached processed build 7. Its current report is in [Replay/app-store-status.json](../../Replay/app-store-status.json); the build 5 report above remains historical evidence. See [replay features](../../PREMIUM_LOOP.md).
+
+## Signature Collection expansion — 4 October 2026
+
+Five new non-consumables add Solar Ronin BOLT, Iron Bastion TANK, Star Medic PATCH and Prism Arsenal at £2.99 each, plus their £7.99 bundle. The existing two products retain their original benefits and prices. New prices, eleven localizations each, review notes and 173-region availability were saved and read back in [metadata setup](https://github.com/lanray07/Scrap-Squad/actions/runs/37195263711). Review screenshots, signed build and purchase verification are recorded in [the current update report](../../PREMIUM_SHOP.md). See `premium-products.json` for exact new product metadata. Bundle overlap prevention is enforced in the shop and purchase path; no dynamic ownership discount is promised.

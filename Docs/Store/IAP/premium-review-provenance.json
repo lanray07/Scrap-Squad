@@ -1,0 +1,57 @@
+[
+  {
+    "file": "Premium-ronin-review.png",
+    "sha256": "4e41b90f9910f7dac19b43c7f56944fb49a8e73fb521479b97dfaeaeca6acfbd",
+    "test": "PremiumShopUITests/testLivePreviewAndAllFiveProductCards()",
+    "sourceAttachment": "4E220DE8-7FAC-44E7-A66D-495CAD109B42.png",
+    "sourceCommit": "2a0916aebce19b5693f6f37eb0d7f186c4921603",
+    "workflowRun": 37195373712,
+    "reviewProductID": "com.ScrapSquad.app.ronin",
+    "deviceFamily": "iPhone",
+    "visuallyInspected": true
+  },
+  {
+    "file": "Premium-bastion-review.png",
+    "sha256": "a55cf37b72d33180b9bcdc24ab2676e915dafab8b5468aef62a64d8d07bb3cdc",
+    "test": "PremiumShopUITests/testLivePreviewAndAllFiveProductCards()",
+    "sourceAttachment": "7147EF4D-3217-4429-A3DB-0F64CFA59445.png",
+    "sourceCommit": "2a0916aebce19b5693f6f37eb0d7f186c4921603",
+    "workflowRun": 37195373712,
+    "reviewProductID": "com.ScrapSquad.app.bastion",
+    "deviceFamily": "iPad-Pro-13",
+    "visuallyInspected": true
+  },
+  {
+    "file": "Premium-medic-review.png",
+    "sha256": "5ebc08e469319ca0d270c4688807042a950dfd582954272a8b108da72ed6a1ed",
+    "test": "PremiumShopUITests/testLivePreviewAndAllFiveProductCards()",
+    "sourceAttachment": "146AC395-F08F-4C91-8C32-2F6D7800DBB0.png",
+    "sourceCommit": "2a0916aebce19b5693f6f37eb0d7f186c4921603",
+    "workflowRun": 37195373712,
+    "reviewProductID": "com.ScrapSquad.app.medic",
+    "deviceFamily": "iPhone",
+    "visuallyInspected": true
+  },
+  {
+    "file": "Premium-prism-review.png",
+    "sha256": "ebaf425cfad338f4cc423849963f4892e515ed5bc3339d13dba12a2ab8ef9f9e",
+    "test": "PremiumShopUITests/testLivePreviewAndAllFiveProductCards()",
+    "sourceAttachment": "156416B1-4700-4088-9BD9-41F67079E5F7.png",
+    "sourceCommit": "2a0916aebce19b5693f6f37eb0d7f186c4921603",
+    "workflowRun": 37195373712,
+    "reviewProductID": "com.ScrapSquad.app.prism",
+    "deviceFamily": "iPhone",
+    "visuallyInspected": true
+  },
+  {
+    "file": "Premium-collection-review.png",
+    "sha256": "2f9e7302199cfde4d9c9e3a7502592b06d443e3859b659797ff4343595f13765",
+    "test": "PremiumShopUITests/testLivePreviewAndAllFiveProductCards()",
+    "sourceAttachment": "22D3B23B-3F03-40DA-89AE-4E4A4873D01F.png",
+    "sourceCommit": "2a0916aebce19b5693f6f37eb0d7f186c4921603",
+    "workflowRun": 37195373712,
+    "reviewProductID": "com.ScrapSquad.app.collection",
+    "deviceFamily": "iPhone",
+    "visuallyInspected": true
+  }
+]

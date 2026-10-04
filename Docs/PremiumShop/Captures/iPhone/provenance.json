@@ -1,0 +1,101 @@
+[
+  {
+    "file": "Premium-bundle-refunded.png",
+    "sha256": "a18551ff5f343d278fada0cfcaad8a214f85f89be21d9ddf5aca57f2bc66b98a",
+    "test": "PremiumShopUITests/testBundleGrantsComponentsPersistsRestoresAndRefunds()",
+    "sourceAttachment": "179EB09D-EB0D-4659-ADE1-DCCBC75C993F.png",
+    "sourceCommit": "2a0916aebce19b5693f6f37eb0d7f186c4921603",
+    "workflowRun": 37195373712,
+    "testPassed": true
+  },
+  {
+    "file": "Premium-bundle-equipped.png",
+    "sha256": "f3d1eec74ce1bdc4879723503cdf991f277a0965eba67de04e5a0130b85aa1c0",
+    "test": "PremiumShopUITests/testBundleGrantsComponentsPersistsRestoresAndRefunds()",
+    "sourceAttachment": "AD3998D4-6B76-4D8F-9582-C96F1E317241.png",
+    "sourceCommit": "2a0916aebce19b5693f6f37eb0d7f186c4921603",
+    "workflowRun": 37195373712,
+    "testPassed": true
+  },
+  {
+    "file": "Premium-pending-declined.png",
+    "sha256": "75a1ecf734aefe1377e3887d26dd628bfc92b63faff86f176f3affa29ff9d3eb",
+    "test": "PremiumShopUITests/testIndividualOwnershipBlocksOverlapAndPendingDoesNotGrant()",
+    "sourceAttachment": "024E9E8B-6FF8-42EF-A604-17110CF68F87.png",
+    "sourceCommit": "2a0916aebce19b5693f6f37eb0d7f186c4921603",
+    "workflowRun": 37195373712,
+    "testPassed": true
+  },
+  {
+    "file": "Premium-owned-overlap-protected.png",
+    "sha256": "9ea00e4a31f4c312323e9b2acb1ba473e8cf816b3ecfe00312aec57a7707a806",
+    "test": "PremiumShopUITests/testIndividualOwnershipBlocksOverlapAndPendingDoesNotGrant()",
+    "sourceAttachment": "CB2B2677-6BFC-43DA-949C-1FD80262EF9F.png",
+    "sourceCommit": "2a0916aebce19b5693f6f37eb0d7f186c4921603",
+    "workflowRun": 37195373712,
+    "testPassed": true
+  },
+  {
+    "file": "Premium-prism-review.png",
+    "sha256": "ebaf425cfad338f4cc423849963f4892e515ed5bc3339d13dba12a2ab8ef9f9e",
+    "test": "PremiumShopUITests/testLivePreviewAndAllFiveProductCards()",
+    "sourceAttachment": "156416B1-4700-4088-9BD9-41F67079E5F7.png",
+    "sourceCommit": "2a0916aebce19b5693f6f37eb0d7f186c4921603",
+    "workflowRun": 37195373712,
+    "testPassed": true
+  },
+  {
+    "file": "Premium-medic-review.png",
+    "sha256": "5ebc08e469319ca0d270c4688807042a950dfd582954272a8b108da72ed6a1ed",
+    "test": "PremiumShopUITests/testLivePreviewAndAllFiveProductCards()",
+    "sourceAttachment": "146AC395-F08F-4C91-8C32-2F6D7800DBB0.png",
+    "sourceCommit": "2a0916aebce19b5693f6f37eb0d7f186c4921603",
+    "workflowRun": 37195373712,
+    "testPassed": true
+  },
+  {
+    "file": "Premium-bastion-review.png",
+    "sha256": "4e41b90f9910f7dac19b43c7f56944fb49a8e73fb521479b97dfaeaeca6acfbd",
+    "test": "PremiumShopUITests/testLivePreviewAndAllFiveProductCards()",
+    "sourceAttachment": "BBB327CB-E2A9-4FDE-B671-CD34A4368353.png",
+    "sourceCommit": "2a0916aebce19b5693f6f37eb0d7f186c4921603",
+    "workflowRun": 37195373712,
+    "testPassed": true
+  },
+  {
+    "file": "Premium-ronin-review.png",
+    "sha256": "4e41b90f9910f7dac19b43c7f56944fb49a8e73fb521479b97dfaeaeca6acfbd",
+    "test": "PremiumShopUITests/testLivePreviewAndAllFiveProductCards()",
+    "sourceAttachment": "4E220DE8-7FAC-44E7-A66D-495CAD109B42.png",
+    "sourceCommit": "2a0916aebce19b5693f6f37eb0d7f186c4921603",
+    "workflowRun": 37195373712,
+    "testPassed": true
+  },
+  {
+    "file": "Premium-victory-poses.png",
+    "sha256": "57b24b530997034c5a8d07c98e358dd852f39fa41d98c98867200829fec57821",
+    "test": "PremiumShopUITests/testLivePreviewAndAllFiveProductCards()",
+    "sourceAttachment": "955C6133-2840-4EE0-A5D4-BB3B38D115C1.png",
+    "sourceCommit": "2a0916aebce19b5693f6f37eb0d7f186c4921603",
+    "workflowRun": 37195373712,
+    "testPassed": true
+  },
+  {
+    "file": "Premium-live-arena.png",
+    "sha256": "6e586f32450686308c22054b09d821862fac8264825bb3318822a5163c49751f",
+    "test": "PremiumShopUITests/testLivePreviewAndAllFiveProductCards()",
+    "sourceAttachment": "AC8D1254-8CA5-4A1E-9CE6-8D642FC8EB39.png",
+    "sourceCommit": "2a0916aebce19b5693f6f37eb0d7f186c4921603",
+    "workflowRun": 37195373712,
+    "testPassed": true
+  },
+  {
+    "file": "Premium-collection-review.png",
+    "sha256": "2f9e7302199cfde4d9c9e3a7502592b06d443e3859b659797ff4343595f13765",
+    "test": "PremiumShopUITests/testLivePreviewAndAllFiveProductCards()",
+    "sourceAttachment": "22D3B23B-3F03-40DA-89AE-4E4A4873D01F.png",
+    "sourceCommit": "2a0916aebce19b5693f6f37eb0d7f186c4921603",
+    "workflowRun": 37195373712,
+    "testPassed": true
+  }
+]

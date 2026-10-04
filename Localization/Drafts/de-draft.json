@@ -2215,6 +2215,212 @@
       "warnings": []
     },
     {
+      "key": "premium.arena",
+      "source": "Battle preview",
+      "sourceHash": "5b760872ea1082ff59b338c3c17a990846da66d7420d0834d3b32908c21a4808",
+      "translation": "Battle Preview",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "premium.bastion.detail",
+      "source": "A heavy-armour TANK design with a tower shield, reinforced shoulders, animated stride and victory salute. Unlock TANK through gameplay.",
+      "sourceHash": "b89148a9d1f398c9383d497155322a57ebc30b06d8ed9485c83456def12547fe",
+      "translation": "Eine schwere Rüstung TANK Design mit einem Turmschild, verstärkten Schultern, animiertem Schritt und Sieggruß. Entsperrung TANK durch Gameplay.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "premium.bastion.name",
+      "source": "Iron Bastion TANK",
+      "sourceHash": "8c16158b082be7d6542066c08645d4ae1a0a8f8bb4661c312ada6f91c6fe2db9",
+      "translation": "Eisenbastion TANK",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "premium.bundle.overlap",
+      "source": "You already own part of this collection. Buy only your missing products below; the bundle is unavailable to avoid duplicate purchases.",
+      "sourceHash": "eaa27fc2af6ae493f1ab80e695e0a227a7e7236548b3d5b6dfecd7d2cad51a8f",
+      "translation": "Sie besitzen bereits einen Teil dieser Sammlung. Kaufen Sie nur Ihre fehlenden Produkte unten; das Bundle ist nicht verfügbar, um doppelte Einkäufe zu vermeiden.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "premium.catalog",
+      "source": "Cosmetic collections",
+      "sourceHash": "3a372dc00c4171dd9c8a3732573d7063a4779e00cfab8cc2af31c755f05ce956",
+      "translation": "Kosmetische Sammlungen",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "premium.classic",
+      "source": "Classic packs",
+      "sourceHash": "99630f58b19dd809f6b0ad50fbcad83824fc37304266f308d2280e45853b93b5",
+      "translation": "Klassische Packungen",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "premium.collection.detail",
+      "source": "Solar Ronin BOLT, Iron Bastion TANK, Star Medic PATCH and Prism Arsenal. Four permanent cosmetic products; no robot unlocks or combat bonuses.",
+      "sourceHash": "7188d3418a603055db78fbe8303dc5da4be76982fda86eace3f3c4018a7bb89b",
+      "translation": "Solar Ronin BOLTEisenbastion TANK, Star Medic PATCH und Prism Arsenal. Vier dauerhafte kosmetische Produkte; kein Roboter entsperrt oder bekämpft Boni.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "premium.collection.name",
+      "source": "Signature Collection",
+      "sourceHash": "ec5486757b85b2a4226bcebc2748622899692b45df9fdd8c15315938f50a9f3e",
+      "translation": "Unterschriftensammlung",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "premium.done",
+      "source": "Done",
+      "sourceHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516",
+      "translation": "Geschehen",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "premium.loadout",
+      "source": "Signature loadout",
+      "sourceHash": "b1209b6cf175a3dbc87a82d25c75f1808df297b0da07ca58c3514abbca1d3c52",
+      "translation": "Signatur Loadout",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "premium.medic.detail",
+      "source": "A winged PATCH design with a luminous halo, medical insignia, animated stride and victory salute. Unlock PATCH through gameplay.",
+      "sourceHash": "d0e3773741421aed5dca87cea06f6062737e4e5b523a660e4c9193834788091d",
+      "translation": "A geflügelt PATCH Design mit einem leuchtenden Heiligenschein, medizinischen Insignien, animiertem Schritt und Sieggruß. Entsperrung PATCH durch Gameplay.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "premium.medic.name",
+      "source": "Star Medic PATCH",
+      "sourceHash": "f8236a56a9e3240cd83cb66a5275566f5f8edb09eb8c3a64e428e9953a97a17a",
+      "translation": "Star Medic PATCH",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "unchanged translation: review required"
+      ]
+    },
+    {
+      "key": "premium.preview",
+      "source": "Try in the arena",
+      "sourceHash": "8d9b38b87331eda6355fada6a50fe65501419b187c632ec67371ba5c89e45061",
+      "translation": "Versuchen Sie es in der Arena",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "long translation: layout review required"
+      ]
+    },
+    {
+      "key": "premium.preview.drag",
+      "source": "Drag to steer the preview squad. Try Dash to see the skin in motion.",
+      "sourceHash": "7a02e15e124cfa7de7df4cd75319283341f8b65498cff9ea0a8b3f045d1351e0",
+      "translation": "Ziehen Sie, um den Preview-Trupp zu steuern. Versuchen Sie Dash, um die Haut in Bewegung zu sehen.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "premium.preview.mode",
+      "source": "Preview mode",
+      "sourceHash": "481bc90fc7d186152a8f65a55360da9f3d75d8fdc2b33047558701bd81d1316b",
+      "translation": "Vorschaumodus",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "premium.preview.note",
+      "source": "Preview only. No purchases, ownership changes, rewards or progress are saved.",
+      "sourceHash": "07bbc8f00e880dbe8413b0d01902fb6f4303fbef45ba4f50819146bd2d2d6c89",
+      "translation": "Nur Vorschau. Es werden keine Käufe, Eigentumsänderungen, Belohnungen oder Fortschritte gespeichert.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "premium.prism.detail",
+      "source": "Mint and violet weapon trails, diamond impact sparks and prism projectile colours. Cosmetic only; attack damage and enemy warnings stay the same.",
+      "sourceHash": "ce357f1364a408da271b5353dd089881660ed260fc1b077825ad649e34385868",
+      "translation": "Minze und violette Waffenspuren, Diamantschlagfunken und Prismenprojektilfarben. Nur Kosmetik; Angriffsschaden und feindliche Warnungen bleiben gleich.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "premium.prism.name",
+      "source": "Prism Arsenal",
+      "sourceHash": "b9a86208af3538ca1b43d0619c115d234dc08105453967333f1e213751a72e84",
+      "translation": "Prism Arsenal",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "unchanged translation: review required"
+      ]
+    },
+    {
+      "key": "premium.ronin.detail",
+      "source": "A sun-forged BOLT design with a crested helmet, energy blade, animated stride and victory salute. Cosmetic only; BOLT is earned through gameplay.",
+      "sourceHash": "e257a19105e9cc34f50f0df84b5a87515fe4291e0fd04efd19183bd63be10844",
+      "translation": "Eine Sonne geschmiedet BOLT Design mit einem Crested Helm, Energieklinge, animierten Schritt und Sieg salute. Nur Kosmetika; BOLT Es wird durch Gameplay verdient.",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "premium.ronin.name",
+      "source": "Solar Ronin BOLT",
+      "sourceHash": "2608c0c16ca1201cbb408dfdba193c563c671792a8a0126da9487dcb71d48f20",
+      "translation": "Solar Ronin BOLT",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": [
+        "unchanged translation: review required"
+      ]
+    },
+    {
+      "key": "premium.signature",
+      "source": "Signature collection",
+      "sourceHash": "a14f6bb54adbce545eb2b8c56732563ca04ecd8ab99450cbd077e01775323067",
+      "translation": "Unterschriftensammlung",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
+      "key": "premium.victory",
+      "source": "Victory poses",
+      "sourceHash": "3c5d8bfcd5b4bf807b1aa3a1744c44074be6542bbff97cd307a4aaf3a6f4f901",
+      "translation": "Siegposen",
+      "approved": false,
+      "allowWarnings": false,
+      "warnings": []
+    },
+    {
       "key": "priority.boss",
       "source": "Boss first",
       "sourceHash": "c97c404f4e41ef64c713dcde583ff0374571d8dec4b312d147615fe2f6d09d74",

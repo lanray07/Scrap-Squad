@@ -1,0 +1,21 @@
+Workflow 37195373712; source 2a0916aebce19b5693f6f37eb0d7f186c4921603. Three cases per family, all passed.
+qa (iPad Pro 13)	Verify accessibility and lifecycle	2026-10-04T10:33:41.1540150Z Test Case '-[ScrapSquadUITests.PremiumShopUITests testBundleGrantsComponentsPersistsRestoresAndRefunds]' started.
+qa (iPad Pro 13)	Verify accessibility and lifecycle	2026-10-04T10:35:30.7835910Z Test Case '-[ScrapSquadUITests.PremiumShopUITests testBundleGrantsComponentsPersistsRestoresAndRefunds]' passed (110.808 seconds).
+qa (iPad Pro 13)	Verify accessibility and lifecycle	2026-10-04T10:35:30.8804490Z Test Case '-[ScrapSquadUITests.PremiumShopUITests testIndividualOwnershipBlocksOverlapAndPendingDoesNotGrant]' started.
+qa (iPad Pro 13)	Verify accessibility and lifecycle	2026-10-04T10:36:10.4782080Z Test Case '-[ScrapSquadUITests.PremiumShopUITests testIndividualOwnershipBlocksOverlapAndPendingDoesNotGrant]' passed (39.709 seconds).
+qa (iPad Pro 13)	Verify accessibility and lifecycle	2026-10-04T10:36:10.4886440Z Test Case '-[ScrapSquadUITests.PremiumShopUITests testLivePreviewAndAllFiveProductCards]' started.
+qa (iPad Pro 13)	Verify accessibility and lifecycle	2026-10-04T10:37:05.5736610Z Test Case '-[ScrapSquadUITests.PremiumShopUITests testLivePreviewAndAllFiveProductCards]' passed (55.094 seconds).
+qa (iPad Pro 13)	Verify accessibility and lifecycle	2026-10-04T10:37:05.5751330Z 	 Executed 3 tests, with 0 failures (0 unexpected) in 205.611 (205.620) seconds
+qa (iPad Pro 13)	Verify accessibility and lifecycle	2026-10-04T10:37:05.5761880Z 	 Executed 3 tests, with 0 failures (0 unexpected) in 205.611 (205.621) seconds
+qa (iPad Pro 13)	Verify accessibility and lifecycle	2026-10-04T10:37:05.5766760Z 	 Executed 3 tests, with 0 failures (0 unexpected) in 205.611 (205.625) seconds
+qa (iPad Pro 13)	Verify accessibility and lifecycle	2026-10-04T10:37:08.1710960Z ** TEST SUCCEEDED **
+qa (iPhone)	Verify accessibility and lifecycle	2026-10-04T10:32:44.0090780Z Test Case '-[ScrapSquadUITests.PremiumShopUITests testBundleGrantsComponentsPersistsRestoresAndRefunds]' started.
+qa (iPhone)	Verify accessibility and lifecycle	2026-10-04T10:34:23.2971750Z Test Case '-[ScrapSquadUITests.PremiumShopUITests testBundleGrantsComponentsPersistsRestoresAndRefunds]' passed (99.596 seconds).
+qa (iPhone)	Verify accessibility and lifecycle	2026-10-04T10:34:23.3040670Z Test Case '-[ScrapSquadUITests.PremiumShopUITests testIndividualOwnershipBlocksOverlapAndPendingDoesNotGrant]' started.
+qa (iPhone)	Verify accessibility and lifecycle	2026-10-04T10:35:37.6870170Z Test Case '-[ScrapSquadUITests.PremiumShopUITests testIndividualOwnershipBlocksOverlapAndPendingDoesNotGrant]' passed (74.429 seconds).
+qa (iPhone)	Verify accessibility and lifecycle	2026-10-04T10:35:37.8978320Z Test Case '-[ScrapSquadUITests.PremiumShopUITests testLivePreviewAndAllFiveProductCards]' started.
+qa (iPhone)	Verify accessibility and lifecycle	2026-10-04T10:36:22.2657580Z Test Case '-[ScrapSquadUITests.PremiumShopUITests testLivePreviewAndAllFiveProductCards]' passed (44.519 seconds).
+qa (iPhone)	Verify accessibility and lifecycle	2026-10-04T10:36:22.4033080Z 	 Executed 3 tests, with 0 failures (0 unexpected) in 218.543 (218.550) seconds
+qa (iPhone)	Verify accessibility and lifecycle	2026-10-04T10:36:23.0240380Z 	 Executed 3 tests, with 0 failures (0 unexpected) in 218.543 (218.551) seconds
+qa (iPhone)	Verify accessibility and lifecycle	2026-10-04T10:36:23.5680440Z 	 Executed 3 tests, with 0 failures (0 unexpected) in 218.543 (218.553) seconds
+qa (iPhone)	Verify accessibility and lifecycle	2026-10-04T10:36:26.0985840Z ** TEST SUCCEEDED **
