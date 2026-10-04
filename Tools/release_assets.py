@@ -106,6 +106,20 @@ def refresh(api, localization, display, directory):
     return {"display": display, "setID": set_id, "count": len(actual), "ordered": True, "checksumsVerified": True}
 
 
+def prepare_internal_build(api, group_id, build_id):
+    # Preserve tester membership. Disable automatic invitations before attaching.
+    detail = api.call("GET", f"/v1/builds/{build_id}/buildBetaDetail")["data"]
+    if detail["attributes"].get("autoNotifyEnabled") is not False:
+        api.call("PATCH", f"/v1/buildBetaDetails/{detail['id']}", {"data": {
+            **resource("buildBetaDetails", detail["id"]), "attributes": {"autoNotifyEnabled": False}}})
+    actual = api.call("GET", f"/v1/builds/{build_id}/buildBetaDetail")["data"]
+    if actual["attributes"].get("autoNotifyEnabled") is not False:
+        raise RuntimeError("Automatic notifications were not disabled; build not added to group")
+    available = api.all(f"/v1/betaGroups/{group_id}/builds?limit=200")
+    if not any(b["id"] == build_id for b in available):
+        api.call("POST", f"/v1/betaGroups/{group_id}/relationships/builds", {"data": [resource("builds", build_id)]})
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--upload", action="store_true")
@@ -153,12 +167,8 @@ def main():
                 "type": "betaGroups", "attributes": {"name": "Scrap Squad QA", "isInternalGroup": True},
                 "relationships": {"app": relationship("apps", APP_ID)}}})["data"]
             groups.append(group)
-        testers = api.all(f"/v1/betaGroups/{group['id']}/betaTesters?limit=200")
-        if testers:
-            raise RuntimeError("Preserving existing testers; no notification or invitation authorized")
-        available = api.all(f"/v1/betaGroups/{group['id']}/builds?limit=200")
-        if not any(b["id"] == build["id"] for b in available):
-            api.call("POST", f"/v1/betaGroups/{group['id']}/relationships/builds", {"data": [resource("builds", build["id"])]})
+        prepare_internal_build(api, group["id"], build["id"])
+        report["automaticNotificationsDisabled"] = True
         notes = (ROOT / "Docs/TESTFLIGHT_NOTES.txt").read_text(encoding="utf-8").strip()
         assert 0 < len(notes) <= 4000
         existing = api.all(f"/v1/builds/{build['id']}/betaBuildLocalizations?limit=200")

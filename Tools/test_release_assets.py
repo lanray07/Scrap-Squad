@@ -82,5 +82,41 @@ class GalleryTests(unittest.TestCase):
         self.assertEqual(result["count"], 10)
 
 
+class BetaAvailabilityTests(unittest.TestCase):
+    class API:
+        def __init__(self, accepts_disable=True):
+            self.enabled = True
+            self.accepts_disable = accepts_disable
+            self.builds = []
+            self.attached = 0
+        def all(self, path):
+            assert path == "/v1/betaGroups/group/builds?limit=200"
+            return self.builds
+        def call(self, method, path, body=None):
+            if method == "GET":
+                return {"data": {"id": "detail", "attributes": {"autoNotifyEnabled": self.enabled}}}
+            if method == "PATCH":
+                assert body["data"]["attributes"] == {"autoNotifyEnabled": False}
+                if self.accepts_disable: self.enabled = False
+            if method == "POST":
+                assert not self.enabled
+                assert path == "/v1/betaGroups/group/relationships/builds"
+                self.builds = [{"id": "build"}]; self.attached += 1
+            return {}
+
+    def test_internal_build_is_attached_without_notifications_and_retry_is_idempotent(self):
+        api = self.API()
+        release_assets.prepare_internal_build(api, "group", "build")
+        release_assets.prepare_internal_build(api, "group", "build")
+        self.assertFalse(api.enabled)
+        self.assertEqual(api.attached, 1)
+
+    def test_unconfirmed_notification_setting_prevents_group_attachment(self):
+        api = self.API(accepts_disable=False)
+        with self.assertRaises(RuntimeError):
+            release_assets.prepare_internal_build(api, "group", "build")
+        self.assertEqual(api.attached, 0)
+
+
 if __name__ == "__main__":
     unittest.main()
