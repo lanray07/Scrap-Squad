@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-06",
+  "submissionID": "1e6bb3b3-8d9f-4f05-9d24-67aa95a3cc3e",
+  "version": "1.0",
+  "build": "15",
+  "submissionStateDisplayed": "Unresolved Issues",
+  "appVersionStateDisplayed": "Rejected",
+  "productStatesDisplayed": "Ready for Review (all seven)",
+  "replySent": true,
+  "parts": [
+    {
+      "number": 1,
+      "file": "APP_REVIEW_REPLY_PART_1.txt",
+      "characters": 3215,
+      "sha256": "358562e3093ca411b01e43cf4412ad7365b8cd856965d7b27e0200ea308129eb",
+      "postedTextVerified": true
+    },
+    {
+      "number": 2,
+      "file": "APP_REVIEW_REPLY_PART_2.txt",
+      "characters": 3677,
+      "sha256": "04f645048dd372384d622f965513d512514ea906e25ca2405547dc406a0f64bb",
+      "postedTextVerified": true
+    },
+    {
+      "number": 3,
+      "file": "APP_REVIEW_REPLY_PART_3.txt",
+      "characters": 3119,
+      "sha256": "520a6332362ddf2d412e7e9e064b1eb86ecb14987e68b2e4e55a2a32d9a75c69",
+      "postedTextVerified": true
+    }
+  ],
+  "messagesAfterSend": 4,
+  "newBinaryResubmitted": false,
+  "attachmentDelivered": false,
+  "proof": "app-review-response-sent-2026-10-06.png"
+}

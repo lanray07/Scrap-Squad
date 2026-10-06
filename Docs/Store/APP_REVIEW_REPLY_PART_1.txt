@@ -1,0 +1,24 @@
+Response to guidelines 4.3 and 4.2.6 - Part 1 of 3
+Version 1.0, build 15; submission 1e6bb3b3-8d9f-4f05-9d24-67aa95a3cc3e
+
+Hello App Review,
+
+Thank you for identifying your concerns. Scrap Squad is my game. I would like to provide the following explanation of the submitted version 1.0, build 15, and clarify its implementation and development history.
+
+1. What does the app do, and what primary problem does it solve?
+
+Scrap Squad is a native, single-player robot action and crafting game for iPhone and iPad. Players move their squad through an arena while its weapons fire automatically. They avoid visible boss warnings, choose temporary upgrades, collect salvage and then use that salvage outside the run to craft equipment and develop their squad and city. The lasting progression and individual combat runs use separate state: temporary run upgrades do not become permanent purchases or permanent power.
+
+The workshop has twelve defined recipes. For example, Basic Blaster and Fire Core combine into Flame Blaster, which the player can equip for a later run. During combat, complementary upgrade choices can produce Fire Vortex, Storm Cage or Siege Barrage. Robot affinities, equipment, squad development and dodge timing affect the player's choices. Endless Survival/Arena and the three-boss Boss Rush have distinct completion rules.
+
+The entertainment need is a playable cycle of experimentation and action: the player can turn resources earned in a run into a different loadout and directly test the result. The core game runs locally without a developer account, advertisements or a developer-operated server. Optional purchases are fixed, one-time appearance changes; they do not sell combat power, robot unlocks or paid random rewards.
+
+2. Who is the intended user?
+
+The intended audience is players who enjoy mobile survivor-style combat, equipment experimentation and persistent collection/progression, particularly those who prefer a single-player experience without advertising interruptions or compulsory online social participation. Automatic weapon firing lets the player concentrate on movement and upgrade choices. The workshop gives players who enjoy crafting a reason to return with a different combination rather than relying only on repeated identical runs.
+
+The game supports iPhone and iPad, portrait and landscape layouts. Its fictional robot combat includes weapons and fantasy violence; it is not represented as a children's educational app. The submitted player-facing interface is English. Translated store metadata does not imply that unreviewed in-app translations are shipped.
+
+3. What need or gap does it address?
+
+The intended distinction is the connected relationship between permanent recipe-based equipment crafting, robot squad development and temporary combat evolution in a locally playable game. These are not separate menu demonstrations: a workshop result becomes equipped combat equipment, and the next run offers temporary choices that can change the attack pattern again. Fire Vortex creates rotating attack areas, Storm Cage creates a ring attack, and Siege Barrage uses artillery effects. Drone, missile, beam and lightning weapons have different attack behavior.

@@ -103,3 +103,10 @@ Apple's first-purchase submission requires the App Store Connect website. The br
 After the user restored browser authentication, version 1.0 build 15 was added to a draft, and all seven prepared non-consumables were added to that same draft. Apple validated eight ready items. Submit for Review completed successfully at the displayed time 12:09 PM Europe/London. Submission **1e6bb3b3-8d9f-4f05-9d24-67aa95a3cc3e** shows **Waiting for Review**, with version **1.0 (15)** and all seven purchases individually **Waiting for Review**. No new legal agreement was presented. Automatic release after approval remains selected. This is a submitted review, not an approval or public release.
 
 [Saved confirmation](app-review-build15-submitted.png) and [sanitized submission record](../PremiumShop/submission-status.json). Earlier sections are historical records.
+
+
+## Review issue and response — 6 October 2026
+
+Apple rejected version 1.0 build 15 under displayed guideline 4.3.0, with a message discussing 4.3 and 4.2.6 and requesting nine answers. Submission status is Unresolved Issues; all seven purchases are Ready for Review and cannot be approved while the app issue remains unresolved. The owner authorized sending the prepared response.
+
+All nine answers were posted in three numbered messages under the existing submission. Each posted body was verified; Messages (4) shows the Apple notice plus three owner replies. Attachment upload returned an error/stalled, so no attachment was delivered and the full content was sent in the message bodies. No binary was updated or resubmitted. Apple's further response is pending. [Response record](app-review-response-status.json) and [proof](app-review-response-sent-2026-10-06.png).

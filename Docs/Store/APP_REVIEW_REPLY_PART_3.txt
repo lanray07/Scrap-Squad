@@ -1,0 +1,22 @@
+Response to guidelines 4.3 and 4.2.6 - Part 3 of 3
+Version 1.0, build 15; submission 1e6bb3b3-8d9f-4f05-9d24-67aa95a3cc3e
+
+7. Does the binary share significant code, frameworks or assets with another app on the account?
+
+This project's native app links a local Swift package called ScrapCore. ScrapCore implements its gameplay state, combat, recipes, progression, challenge codes and cosmetic entitlement model. It is code bundled from this game's repository, not a purchased external game engine. The application uses Apple frameworks including SwiftUI, SpriteKit, UIKit, Foundation, AVFoundation and StoreKit; GameKit integration code exists, but Game Center is disabled for release 1.0. StoreKitTest is used by the test target.
+
+No significant code or assets are shared with another app under my developer account; I have no other apps on that account.
+
+8. Does it share a codebase, SDK or content library with a third-party app?
+
+The inspected Package.swift and XcodeGen project declare the local ScrapCore package and Apple system frameworks; they do not declare an external game template, third-party gameplay SDK or commercial content library. Its custom Swift/SpriteKit implementation, content definitions, vector cosmetic rendering and procedural music synthesis are in the repository at https://github.com/lanray07/Scrap-Squad.
+
+Development used AI-assisted coding. The base robot atlas and app icon were generated for this project using AI image generation; their generation prompts are recorded in Docs/ART.md. The signature skins are drawn by this project's vector renderer. Music and sound cues are synthesized by Tools/compose_audio.py rather than downloaded sample packs. I am not representing the project as entirely hand-coded or all artwork as hand-drawn. The repository records no imported third-party game template or competitor imagery. This describes the inspected project's dependencies and provenance; it is not a claim to have audited every third-party app's source code.
+
+9. Was it created for a client, partner or other third-party content provider?
+
+No. Scrap Squad is my own game and branding, submitted directly under my developer account. It was not created for a separate client or submitted by me as a template-service provider on another content provider's behalf. AI development tools assisted with implementation and project-specific artwork; they are not a separate client whose game I am publishing.
+
+To inspect the connected gameplay in the submitted binary: complete onboarding, open City > Open Workshop, fuse Basic Blaster + Fire Core, equip Flame Blaster, then open Battle and deploy the squad. Move to dodge warnings and use the run's upgrade choices. Daily Circuit shows the repeatable-code experience. Shop > Signature collection > Try in the arena previews the cosmetic content without granting ownership or saving gameplay rewards.
+
+Please let me know which specific content, functionality or template similarity remains a concern after considering these details so that I can address it directly. I have not submitted an unchanged new binary in response to this notice.

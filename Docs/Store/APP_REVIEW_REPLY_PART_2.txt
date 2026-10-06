@@ -1,0 +1,28 @@
+Response to guidelines 4.3 and 4.2.6 - Part 2 of 3
+Version 1.0, build 15; submission 1e6bb3b3-8d9f-4f05-9d24-67aa95a3cc3e
+
+Daily Circuit also supplies a repeatable challenge code with a generated loadout. A player can share the code and a locally generated result card voluntarily, without an account or a live leaderboard. Cosmetic ownership does not enter that challenge loadout. This is intended to support replay comparison without building the core experience around network accounts or paid power.
+
+I do not claim these individual genre mechanics have never appeared in another game, or that no competing game combines them. I have not completed a comprehensive market comparison. The basis for requesting reconsideration is the submitted game's own connected implementation, authored robot identities and recipe content, distinct attack behaviors, and local replay system. I understand that originality of source alone does not establish a meaningfully different user experience.
+
+4. What beta testing was conducted, and what feedback changed the production build?
+
+Before submission I tested the game on an iPad and reported that the robots appeared static as gameplay progressed. This feedback resulted in distance-driven robot walking and alternating ground footprints. The steps stop when movement stops or combat pauses. Reduced Motion retains ground trails without bobbing or leaning. Those changes were included before submitted build 15.
+
+I also requested a review of wave progression. The resulting engineering checks found that Survival/Arena stopped advancing beyond wave six and that Boss Rush could finish on a timer before three bosses were defeated. These rules were corrected before submission. This second example is an engineering review and regression fix, not a claim of feedback from an additional human tester.
+
+Build 15 was made available in an internal TestFlight group with one recorded tester. Group membership alone is not evidence of installation or a completed playtest. I did not conduct a broader human beta programme or receive feedback from additional testers before submission. The physical-user feedback described above came from my own iPad testing. I understand that this limits the user-validation evidence available for the initial submission.
+
+Separately, automated pre-submission verification passed 49 gameplay-core tests, 19 tooling tests and 21 iPhone simulator UI tests. Three additional premium preview/purchase cases each passed on iPhone and iPad Pro 13 simulators. Local StoreKit tests exercised ownership, restore, pending transactions and revocation. These are automated engineering results, not human beta feedback or proof of live Apple sandbox purchases. Broader physical-device performance and cross-device live purchase restoration were not recorded as completed.
+
+5. Is this a standalone product or part of a suite?
+
+Functionally, Scrap Squad is a self-contained game. It has its own local progression and does not need another installed app or a companion account to run.
+
+It is a standalone product, not part of a suite of related apps. I have no other apps under this developer account.
+
+6. Could its functionality be consolidated into another app on the account?
+
+Scrap Squad contains an integrated combat/crafting/progression loop rather than an isolated cosmetic pack or a catalog of content. Its seven appearance purchases are already consolidated into this game's binary, rather than being submitted as separate apps.
+
+There is no other app on my developer account into which this functionality could be consolidated. The full game is provided in one app, with optional cosmetics within that same product.
