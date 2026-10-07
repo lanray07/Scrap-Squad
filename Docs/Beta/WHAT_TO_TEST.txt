@@ -1,0 +1,13 @@
+Scrap Squad player beta — version 1.0 (15)
+
+Please try three short sessions and send honest feedback through TestFlight's Send Beta Feedback. Include your device/OS, build number, exact steps and a gameplay screenshot where useful. Do not include Apple IDs, payment details or private notifications. No sign-in is required; the game UI is English and progress is stored on this device.
+
+1. First impression: complete onboarding without help. What is confusing?
+2. Craft: City > Open Workshop > fuse Basic Blaster + Fire Core > equip Flame Blaster. Battle > Deploy squad. Does the new weapon feel different?
+3. Movement: drag, change direction, stop, dash and use Ability. Do robots move and footprints follow correctly? Check pause/resume, background/return and Reduce Motion.
+4. Waves: try Survival/Arena beyond wave 6 if you can. Does progression continue? Boss Rush victory should require three defeated bosses. Report stuck waves or premature victory.
+5. Replay: try upgrades/evolutions and compare a shared Daily Circuit code with another tester. What would make you return? What feels distinctive or too familiar?
+6. Shop: preview a Signature cosmetic in the arena; preview rewards/ownership must not persist. Are one-time cosmetic offers and bundle contents clear?
+7. Optional purchases: only test if Apple's sheet explicitly identifies a test/sandbox purchase with no charge. Otherwise cancel. Check cancellation grants nothing, successful ownership persists, Restore Purchases works and overlapping bundles cannot be bought twice. Never share payment credentials.
+
+Report crashes, stutter, heat, unreadable controls and lost progress. Tell us your best moment, worst moment and one change you want. Do not delete an existing install for testing: local progress may be lost.

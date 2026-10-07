@@ -1,0 +1,32 @@
+{
+  "checkedOn": "2026-10-07",
+  "appID": "6818847887",
+  "version": "1.0",
+  "build": "15",
+  "buildID": "7ea3098a-d081-47eb-9c78-da7c4d182b9f",
+  "externalGroupName": "Scrap Squad Player Beta",
+  "externalGroupID": "51d21d36-ef20-486b-9d73-7af47ff4d40c",
+  "externalBetaStatus": "WAITING_FOR_REVIEW",
+  "externalTesterCount": 0,
+  "automaticallyNotifyTesters": false,
+  "testInstructionsSubmitted": "WHAT_TO_TEST.txt",
+  "feedbackTracker": "feedback.csv",
+  "evidenceScreenshot": "testflight-beta-2026-10-07.png",
+  "existingBuildMetricsBeforeExternalSetup": {
+    "invites": 1,
+    "installs": 2,
+    "sessions": 5,
+    "crashesDisplay": "–",
+    "feedbackDisplay": "–",
+    "note": "Portal counts do not establish unique testers, completed test cases, or zero crashes."
+  },
+  "appStoreVersionResubmitted": false,
+  "newBinaryUploaded": false,
+  "externalInvitationsSent": false,
+  "pending": [
+    "Beta App Review approval",
+    "Willing tester email addresses",
+    "Actual player sessions and feedback",
+    "Fixes and device retests based on findings"
+  ]
+}

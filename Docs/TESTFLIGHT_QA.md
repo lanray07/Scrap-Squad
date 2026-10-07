@@ -1,5 +1,7 @@
 # Build 15 device and sandbox acceptance
 
+7 October 2026: the external **Scrap Squad Player Beta** group now contains build 15, **Waiting for Review** in Beta App Review. It has zero external testers; invitations await participant addresses. The focused three-session player plan is [PLAYER_BETA.md](Beta/PLAYER_BETA.md), with an anonymous feedback template and empty tracking CSV. This does not change the rejected App Store submission or constitute completed player testing.
+
 Version 1.0 build 15 is processed and available to the internal **Scrap Squad QA** group. One existing tester is present; this update preserved membership and did not add or invite anyone. An App Store Connect administrator can select their own existing team account in TestFlight → Internal Testing → Scrap Squad QA → Add Testers, then install through TestFlight on their device. External beta review is not required for internal testing. Never share a password or Apple verification code with this repository.
 
 ## Record the actual device result
