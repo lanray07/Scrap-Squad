@@ -7,7 +7,7 @@
   "externalGroupName": "Scrap Squad Player Beta",
   "externalGroupID": "51d21d36-ef20-486b-9d73-7af47ff4d40c",
   "externalBetaStatus": "WAITING_FOR_REVIEW",
-  "externalTesterCount": 1,
+  "externalTesterCount": 2,
   "externalTesterStatus": "NO_BUILDS_AVAILABLE",
   "testerEmailStoredInRepository": false,
   "automaticallyNotifyTesters": false,
@@ -27,7 +27,7 @@
   "externalInvitationsSent": false,
   "pending": [
     "Beta App Review approval",
-    "Notify the registered tester after approval; automatic notifications are disabled",
+    "Notify the registered testers after approval; automatic notifications are disabled",
     "Additional willing testers for device coverage",
     "Actual player sessions and feedback",
     "Fixes and device retests based on findings"
