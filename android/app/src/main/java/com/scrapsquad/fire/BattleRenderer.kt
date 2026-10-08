@@ -156,7 +156,12 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
         }
         while (footprints.isNotEmpty() && elapsed - footprints.first().born >= 3) footprints.removeFirst()
         footprints.forEach { shapes.color = Color.valueOf(if (cosmeticState.getJSONObject("selection").getBoolean("goldenTrails")) "FFD878" else biome.getJSONArray("palette").getString(2)).apply { a = ((1 - (elapsed - it.born) / 3) * .5).toFloat() }; shapes.rect(x(it.x) - 3.5f * unit, y(it.y) - 5.5f * unit, 3.5f * unit, 5.5f * unit, 7 * unit, 11 * unit, 1f, 1f, it.rotation) }
-        battle.getJSONArray("warnings").objects { warning -> drawArea(warning.getJSONObject("area"), Color(1f, .25f, .2f, .18f + .2f * (1 - warning.getDouble("remaining") / warning.getDouble("duration")).toFloat())) }
+        battle.getJSONArray("warnings").objects { warning ->
+            val area = warning.getJSONObject("area"); val alpha = (.4 + .6 * (1 - warning.getDouble("remaining") / warning.getDouble("duration"))).toFloat()
+            val border = Color.valueOf(if (warning.getBoolean("boss")) "FF806E" else "FF9500").apply { a = alpha }
+            if (area.getString("shape") == "ring") drawArea(area, border)
+            else { drawArea(area, Color(1f, .5f, 0f, .16f * alpha)); outlineArea(area, border) }
+        }
         battle.getJSONArray("strikes").objects { drawArea(it.getJSONObject("area"), Color(.74f, .61f, 1f, .3f)) }
         battle.getJSONArray("evolutionAreas").objects { drawArea(it, Color.valueOf(battle.getString("evolutionColor")).apply { a = if (it.getString("shape") == "ring") .55f else .0825f }) }
         if (battle.getDouble("overdrive") > 0) ring(x(px), y(py), 42 * unit, 3 * unit, Color.valueOf("79D9BA"))
@@ -189,12 +194,20 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
             }
             shapes.color = Color.ORANGE; shapes.rect(ex - radius, ey + radius + 5 * unit, radius * 2 * (enemy.getDouble("health") / enemy.getDouble("maxHealth")).toFloat(), 3 * unit)
         }
-        battle.getJSONArray("projectiles").objects { val at = position(it); shapes.color = Color.valueOf("FFB66C"); shapes.rect(x(at.getDouble(0)), y(at.getDouble(1)), 14 * unit, 5 * unit) }
-        battle.getJSONArray("drones").let { drones -> for (i in 0 until drones.length()) { val at = drones.getJSONArray(i); shapes.color = Color.valueOf("F5B942"); shapes.rect(x(at.getDouble(0)) - 9 * unit, y(at.getDouble(1)) - 6 * unit, 18 * unit, 12 * unit) } }
+        battle.getJSONArray("projectiles").objects { projectile ->
+            val at = position(projectile); val cx = x(at.getDouble(0)); val cy = y(at.getDouble(1))
+            val target = battle.getJSONArray("enemies").objects().firstOrNull { it.getInt("id") == projectile.getInt("target") }?.getJSONArray("position")
+            val angle = if (target == null) 0f else (atan2(target.getDouble(1) - at.getDouble(1), target.getDouble(0) - at.getDouble(0)) * 180 / PI).toFloat()
+            shapes.color = Color.WHITE; shapes.rect(cx - 7.5f * unit, cy - 3 * unit, 7.5f * unit, 3 * unit, 15 * unit, 6 * unit, 1f, 1f, angle)
+            shapes.color = Color.valueOf(if (cosmeticState.getJSONObject("selection").optString("weaponEffectID") == "prism") "A3FFED" else if (cosmeticState.getJSONObject("selection").getBoolean("goldenTrails")) "FFD878" else "FFB66C")
+            shapes.rect(cx - 7 * unit, cy - 2.5f * unit, 7 * unit, 2.5f * unit, 14 * unit, 5 * unit, 1f, 1f, angle)
+        }
+        battle.getJSONArray("drones").let { drones -> for (i in 0 until drones.length()) { val at = drones.getJSONArray(i); val cx = x(at.getDouble(0)); val cy = y(at.getDouble(1)); rounded(cx - 9.75f * unit, cy - 6.75f * unit, 19.5f * unit, 13.5f * unit, 4 * unit, Color.WHITE); rounded(cx - 9 * unit, cy - 6 * unit, 18 * unit, 12 * unit, 4 * unit, Color.valueOf("F5B942")); shapes.color = Color.valueOf("79D9BA"); shapes.rect(cx - 14 * unit, cy + 7.5f * unit, 28 * unit, 3 * unit) } }
         presentation.effects.forEach { rendered ->
             val effect = rendered.data; val age = elapsed - rendered.born
             val from = effect.getJSONArray("from"); val to = effect.getJSONArray("to")
-            shapes.color = if (cosmeticState.getJSONObject("selection").optString("weaponEffectID") == "prism") Color().fromHsv(((elapsed * 90 + effect.getInt("id") * 37) % 360).toFloat(), .55f, 1f) else Color.valueOf(if (effect.getString("style") == "arc") "83EAFF" else if (effect.getString("style") == "beam") "BC9BFF" else biome.getJSONArray("palette").getString(2))
+            val prism = cosmeticState.getJSONObject("selection").optString("weaponEffectID") == "prism"
+            shapes.color = Color.valueOf(if (prism) if (effect.getString("style") in listOf("arc", "beam")) "E7A8FF" else "A3FFED" else if (cosmeticState.getJSONObject("selection").getBoolean("goldenTrails")) "FFD878" else if (effect.getString("style") == "arc") "83EAFF" else if (effect.getString("style") == "beam") "BC9BFF" else biome.getJSONArray("palette").getString(2))
             shapes.color.a = (1 - age / .18).toFloat().coerceIn(0f, 1f)
             val style = effect.getString("style"); val fx = x(from.getDouble(0)); val fy = y(from.getDouble(1)); val tx = x(to.getDouble(0)); val ty = y(to.getDouble(1))
             if (effect.getDouble("damage") <= 0) {
@@ -233,7 +246,7 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
             val bob = if (animated) abs(sin(phase)).toFloat() * 4 else 0f
             val rotation = if (animated) (sin(phase) * .07 - stride.getJSONArray("direction").getDouble(0) * .08) * 180 / PI else 0.0
             val squash = if (animated) 1 - abs(sin(phase)).toFloat() * .04f else 1f
-            val dimension = (if (squad.getString(i) in listOf("tank", "boomer")) 60 else 48) * unit
+            val dimension = (if (skin.isNotEmpty()) if (squad.getString(i) in listOf("tank", "boomer")) 66 else 58 else if (squad.getString(i) in listOf("tank", "boomer")) 60 else 48) * unit
             batch.draw(region, rx - dimension / 2, ry - dimension / 2 + bob, dimension / 2, dimension / 2, dimension, dimension, 1f, squash, rotation.toFloat())
             batch.color = Color.WHITE
         }
@@ -269,6 +282,21 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
             "line" -> { shapes.rectLine(x(from.getDouble(0)), y(from.getDouble(1)), x(to.getDouble(0)), y(to.getDouble(1)), radius * 2); shapes.circle(x(from.getDouble(0)), y(from.getDouble(1)), radius, 24); shapes.circle(x(to.getDouble(0)), y(to.getDouble(1)), radius, 24) }
             "ring" -> { val cx = x(to.getDouble(0)); val cy = y(to.getDouble(1)); for (i in 0..63) { val a = i * PI / 32; val b = (i + 1) * PI / 32; shapes.rectLine(cx + cos(a).toFloat() * radius, cy + sin(a).toFloat() * radius, cx + cos(b).toFloat() * radius, cy + sin(b).toFloat() * radius, area.getDouble("thickness").toFloat() * scale * 2) } }
             else -> shapes.circle(x(to.getDouble(0)), y(to.getDouble(1)), radius, 40)
+        }
+    }
+    private fun outlineArea(area: JSONObject, color: Color) {
+        val from = area.getJSONArray("from"); val to = area.getJSONArray("to"); val radius = area.getDouble("radius").toFloat() * scale
+        val cx = x(to.getDouble(0)); val cy = y(to.getDouble(1))
+        if (area.getString("shape") != "line") { ring(cx, cy, radius, 2f, color); return }
+        val fx = x(from.getDouble(0)); val fy = y(from.getDouble(1)); val length = hypot(cx - fx, cy - fy).coerceAtLeast(.001f)
+        val ox = -(cy - fy) / length * radius; val oy = (cx - fx) / length * radius
+        shapes.color = color
+        shapes.rectLine(fx + ox, fy + oy, cx + ox, cy + oy, 2f); shapes.rectLine(fx - ox, fy - oy, cx - ox, cy - oy, 2f)
+        val angle = atan2(cy - fy, cx - fx)
+        for (end in 0..1) for (segment in 0 until 24) {
+            val a = angle + (if (end == 0) PI / 2 else -PI / 2) + segment * PI / 24; val b = a + PI / 24
+            val ex = if (end == 0) fx else cx; val ey = if (end == 0) fy else cy
+            shapes.rectLine(ex + cos(a).toFloat() * radius, ey + sin(a).toFloat() * radius, ex + cos(b).toFloat() * radius, ey + sin(b).toFloat() * radius, 2f)
         }
     }
     private fun rounded(x: Float, y: Float, w: Float, h: Float, radius: Float, color: Color) {

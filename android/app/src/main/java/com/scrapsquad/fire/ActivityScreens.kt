@@ -68,7 +68,7 @@ internal fun MenuScreens.settings() {
     label(t("settings.language")); val languages = listOf("system") + strings.availableLanguages()
     val language = spinner(languages, languages.map { if (it == "system") t("settings.system") else Locale.forLanguageTag(it).getDisplayName(Locale.forLanguageTag(it)) }, profile.getJSONObject("preferences").getString("locale"))
     button("common.done") { preference("locale", languages[language.selectedItemPosition]); show() }
-    button("android.privacy") { activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://lanray07.github.io/Scrap-Squad/privacy.html"))) }
+    button("android.privacy", BuildConfig.PRIVACY_POLICY_URL.startsWith("https://")) { activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(BuildConfig.PRIVACY_POLICY_URL))) }
     button("android.support") { activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/lanray07/Scrap-Squad/issues"))) }
     heading("achievements.title")
     menu.getJSONObject("achievements").keys().forEach { id -> label("${t("achievement.$id")}: ${menu.getJSONObject("achievements").getDouble(id).toInt()}%") }

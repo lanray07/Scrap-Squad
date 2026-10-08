@@ -46,6 +46,7 @@ jobs:
           swift test
           python3 android/tools/sync_assets.py
           python3 android/tools/validate_localization.py
+          python3 android/tools/validate_store.py
           python3 android/tools/build_native.py --oracle
           python3 android/tools/generate_parity.py
       - name: Compile shared simulation for both Android architectures

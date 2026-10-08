@@ -8,6 +8,8 @@ android {
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
+        val privacyUrl = providers.environmentVariable("SCRAP_ANDROID_PRIVACY_URL").orElse("").get()
+        buildConfigField("String", "PRIVACY_POLICY_URL", "\"" + privacyUrl.replace("\\", "\\\\").replace("\"", "\\\"") + "\"")
         ndk { abiFilters += listOf("arm64-v8a", "x86_64") }
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

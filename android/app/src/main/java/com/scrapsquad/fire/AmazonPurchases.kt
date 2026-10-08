@@ -6,6 +6,8 @@ import android.os.Looper
 import android.util.AtomicFile
 import com.amazon.device.iap.PurchasingListener
 import com.amazon.device.iap.PurchasingService
+import com.amazon.device.drm.LicensingService
+import com.amazon.device.drm.model.LicenseResponse
 import com.amazon.device.iap.model.*
 import org.json.JSONArray
 import org.json.JSONObject
@@ -16,8 +18,9 @@ import java.util.concurrent.Executors
  * The server must call Amazon RVS with its merchant secret and bind all four fields.
  * Network errors must throw; only authoritative invalid/cancelled receipts revoke. */
 internal fun interface AmazonReceiptVerifier {
-    fun verify(userId: String, receiptId: String): VerifiedAmazonReceipt
+    fun verify(userId: String, receiptId: String, environment: AmazonStoreEnvironment): VerifiedAmazonReceipt
 }
+internal enum class AmazonStoreEnvironment { SANDBOX, PRODUCTION }
 internal data class VerifiedAmazonReceipt(val userId: String, val receiptId: String, val sku: String, val active: Boolean)
 
 /** One listener per process, so activity recreation cannot abandon a transaction.
@@ -31,6 +34,8 @@ internal class AmazonPurchases private constructor(context: Context) : Purchasin
     val skus = catalog.getJSONArray("packs").objects().map { it.getString("id") }.toSet()
     private var verifier: AmazonReceiptVerifier? = null
     private var registered = false
+    private var licensed = false
+    private var environment: AmazonStoreEnvironment? = null
     private var user: String? = null
     private var generation = 0
     private var restoreInFlight = false
@@ -40,7 +45,7 @@ internal class AmazonPurchases private constructor(context: Context) : Purchasin
     var changed: (() -> Unit)? = null
     var statusKey = "shop.unavailable"; private set
     val owned: Set<String> get() = receipts.values.filter { it.active }.map { it.sku }.toSet()
-    val ready get() = registered && user != null && verifier != null
+    val ready get() = registered && licensed && environment != null && user != null && verifier != null
     val selectionKey get() = user?.let { id -> "selection." + java.security.MessageDigest.getInstance("SHA-256").digest(id.toByteArray()).joinToString("") { "%02x".format(it) } }
     fun price(sku: String): String? = products[sku]?.price
 
@@ -60,7 +65,15 @@ internal class AmazonPurchases private constructor(context: Context) : Purchasin
         start()
         if (!registered) return
         status("shop.loading")
-        runCatching { PurchasingService.getUserData() }.onFailure { status("shop.unavailable") }
+        runCatching {
+            LicensingService.verifyLicense(app) { response ->
+                licensed = response.requestStatus == LicenseResponse.RequestStatus.LICENSED
+                environment = AmazonStoreEnvironment.entries.firstOrNull { it.name == LicensingService.getAppstoreSDKMode() }
+                if (!BuildConfig.DEBUG && environment == AmazonStoreEnvironment.SANDBOX) licensed = false
+                if (licensed && environment != null) runCatching { PurchasingService.getUserData() }.onFailure { status("shop.unavailable") }
+                else status("shop.unavailable")
+            }
+        }.onFailure { licensed = false; status("shop.unavailable") }
     }
     fun restore() {
         if (!ready || restoreInFlight) { if (!ready) status("shop.unavailable"); return }
@@ -149,16 +162,17 @@ internal class AmazonPurchases private constructor(context: Context) : Purchasin
     }
     private fun validate(id: String, values: List<Pair<String, String>>, cancelled: Set<String>) {
         val validator = verifier ?: return
+        val receiptEnvironment = environment ?: return
         val epoch = generation
         worker.execute {
             try {
                 val checked = values.distinct().map { (receipt, expectedSku) ->
-                    validator.verify(id, receipt).also {
+                    validator.verify(id, receipt, receiptEnvironment).also {
                         require(it.userId == id && it.receiptId == receipt && it.sku == expectedSku && it.sku in skus) { "Receipt binding mismatch" }
                     }
                 }
                 main.post {
-                    if (generation != epoch || user != id) return@post
+                    if (generation != epoch || user != id || !licensed || environment != receiptEnvironment) return@post
                     val next = LinkedHashMap(receipts)
                     revokedReceiptIDs.addAll(checked.filter { !it.active }.map { it.receiptId })
                     checked.forEach { if (it.active && it.receiptId !in revokedReceiptIDs) next[it.receiptId] = it else next.remove(it.receiptId) }

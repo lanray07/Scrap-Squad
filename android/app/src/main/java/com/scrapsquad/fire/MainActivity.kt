@@ -16,6 +16,7 @@ class MainActivity : Activity() {
         repository = GameRepository(this); strings = Strings(this)
         try {
             repository.initialize(); audio = MenuAudio(this) { repository.profile.getJSONObject("preferences") }; screens = MenuScreens(this, repository, strings)
+            purchases.start()
             screens.page = savedInstanceState?.getString("page") ?: "city"
             screens.show()
             val flags = getSharedPreferences("interface", MODE_PRIVATE)
