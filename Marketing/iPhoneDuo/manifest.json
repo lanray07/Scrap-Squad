@@ -1,0 +1,205 @@
+{
+  "createdOn": "2026-10-08",
+  "locale": "en-GB",
+  "format": "Opaque RGB PNG",
+  "captureDevice": "13-inch iPad simulator",
+  "nativeDuoCapture": false,
+  "method": "Full original UI scaled proportionally inside a marketing layout; no gameplay cropping, stretching or replacement.",
+  "specification": "https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications/",
+  "sets": [
+    {
+      "display": "inner",
+      "width": 2007,
+      "height": 2853,
+      "screenshots": [
+        {
+          "order": 1,
+          "file": "inner/01-boss.png",
+          "source": "Docs/Store/iPad-Captures/Store-11-boss.png",
+          "sourceSHA256": "69a258e3da2b6b5c08f44b10a7b424b7d05c08537627654cfc31515e3a818642",
+          "exportSHA256": "f0c2c3045033952dd5c5e84838509d5e6996d75e699054ba6b26c975398b9f4e",
+          "width": 2007,
+          "height": 2853
+        },
+        {
+          "order": 2,
+          "file": "inner/02-workshop.png",
+          "source": "Docs/Store/iPad-Captures/Store-05-workshop.png",
+          "sourceSHA256": "8b67a1bf3bed8a1c3c88efe0bba059d208d4901c7aa1a4d9756019a2afcd8549",
+          "exportSHA256": "2d4a2eec02f0d457617f02e21e185bfba404c1a8188dc848a38a5b18c6c29aae",
+          "width": 2007,
+          "height": 2853
+        },
+        {
+          "order": 3,
+          "file": "inner/03-squad.png",
+          "source": "Docs/Store/iPad-Captures/Store-03-squad.png",
+          "sourceSHA256": "b5e928ec45c1aaf8615ed13c12dd85d2262bd13f43924882c85b50f953f9f968",
+          "exportSHA256": "c7d0d4cc0897ffa10c12734ae5a5e02dd3a247447d39e1bf9a995af97727836d",
+          "width": 2007,
+          "height": 2853
+        },
+        {
+          "order": 4,
+          "file": "inner/04-fusion.png",
+          "source": "Docs/Store/iPad-Captures/Store-07-fusion.png",
+          "sourceSHA256": "d74a8b0d2b0db74c0f911708911d33d245d78158eb760a91f7c3e3ad664b9dc3",
+          "exportSHA256": "6681253131b35049eb738d913c4ae6789303d70b25b716909a6b0deb9f41c584",
+          "width": 2007,
+          "height": 2853
+        },
+        {
+          "order": 5,
+          "file": "inner/05-blueprints.png",
+          "source": "Docs/Store/iPad-Captures/Store-04-blueprints.png",
+          "sourceSHA256": "d2115fdfcc75b3017d44d2569f3fef3012215acddac3e4709d37ca0942d80b56",
+          "exportSHA256": "828b8617660597b7fd33cb6d254b1082de4ec680fe0434fedc0b3904e3216bda",
+          "width": 2007,
+          "height": 2853
+        },
+        {
+          "order": 6,
+          "file": "inner/06-city.png",
+          "source": "Docs/Store/iPad-Captures/Store-02-city.png",
+          "sourceSHA256": "6e9508b5600b30155e1b0c130c0b06db2c47f972e57df65989bca83382b9ea1a",
+          "exportSHA256": "6c511b772294e0c966bba4c287e4e438ffdd7430164125783322aced0c8ce53c",
+          "width": 2007,
+          "height": 2853
+        },
+        {
+          "order": 7,
+          "file": "inner/07-daily.png",
+          "source": "Docs/Store/iPad-Captures/Store-12-daily.png",
+          "sourceSHA256": "2031257561fe4ea60c893b0b1dee7e73bd7cc766c4ce67f8f751b56ffbd2352e",
+          "exportSHA256": "bccf4696ffc5dc005cafb09bb0c808231526e4a7972f2134bab63bfce8d49134",
+          "width": 2007,
+          "height": 2853
+        },
+        {
+          "order": 8,
+          "file": "inner/08-overdrive.png",
+          "source": "Docs/Store/iPad-Captures/Store-13-overdrive.png",
+          "sourceSHA256": "30aaf66091c98e000c929c88daefc6fa57f0fb5dd7b7d40608d42a63ddc734b2",
+          "exportSHA256": "cc375a9dc709eb6942415a9784f2f32d17aa4c7698b5ba275f70330be08020d5",
+          "width": 2007,
+          "height": 2853
+        },
+        {
+          "order": 9,
+          "file": "inner/09-mastery.png",
+          "source": "Docs/Store/iPad-Captures/Store-14-mastery.png",
+          "sourceSHA256": "63b8f5c81fe905717692fde026b20bbcbc09286fd6cdb615f697123f25fd338c",
+          "exportSHA256": "c3b0c3ac40bba7fa0b1c787aa163c6b98b3ce5b543f90dac611c3dccabe0ad6c",
+          "width": 2007,
+          "height": 2853
+        },
+        {
+          "order": 10,
+          "file": "inner/10-share.png",
+          "source": "Docs/Store/iPad-Captures/Store-15-share.png",
+          "sourceSHA256": "ea5388a77a6d1eb0d0940947f16c0237dd843734d5a046c62257d12bb484f93a",
+          "exportSHA256": "f9c03074f626f83b57f4b31e9e26907cf737c9ed76ae9b891301ef115164b27f",
+          "width": 2007,
+          "height": 2853
+        }
+      ]
+    },
+    {
+      "display": "outer",
+      "width": 1398,
+      "height": 2034,
+      "screenshots": [
+        {
+          "order": 1,
+          "file": "outer/01-boss.png",
+          "source": "Docs/Store/iPad-Captures/Store-11-boss.png",
+          "sourceSHA256": "69a258e3da2b6b5c08f44b10a7b424b7d05c08537627654cfc31515e3a818642",
+          "exportSHA256": "f483dc465b33065bed0b7e36fa335a5ff6e99c057fc7128b411e7483711b22cc",
+          "width": 1398,
+          "height": 2034
+        },
+        {
+          "order": 2,
+          "file": "outer/02-workshop.png",
+          "source": "Docs/Store/iPad-Captures/Store-05-workshop.png",
+          "sourceSHA256": "8b67a1bf3bed8a1c3c88efe0bba059d208d4901c7aa1a4d9756019a2afcd8549",
+          "exportSHA256": "5257f579cdde7079988076de453cd77ac0687e6844558a9ac01d8fab5180e9e0",
+          "width": 1398,
+          "height": 2034
+        },
+        {
+          "order": 3,
+          "file": "outer/03-squad.png",
+          "source": "Docs/Store/iPad-Captures/Store-03-squad.png",
+          "sourceSHA256": "b5e928ec45c1aaf8615ed13c12dd85d2262bd13f43924882c85b50f953f9f968",
+          "exportSHA256": "7ef9a0f8cfda7312bceaff1e9a02211eb40eba9614f6ca32ecc28c3bdb82d193",
+          "width": 1398,
+          "height": 2034
+        },
+        {
+          "order": 4,
+          "file": "outer/04-fusion.png",
+          "source": "Docs/Store/iPad-Captures/Store-07-fusion.png",
+          "sourceSHA256": "d74a8b0d2b0db74c0f911708911d33d245d78158eb760a91f7c3e3ad664b9dc3",
+          "exportSHA256": "faabaeab25237000c94898e64b5a39e929e6824596cf57cd356d8dc2e6ddb9d8",
+          "width": 1398,
+          "height": 2034
+        },
+        {
+          "order": 5,
+          "file": "outer/05-blueprints.png",
+          "source": "Docs/Store/iPad-Captures/Store-04-blueprints.png",
+          "sourceSHA256": "d2115fdfcc75b3017d44d2569f3fef3012215acddac3e4709d37ca0942d80b56",
+          "exportSHA256": "fed4b69cae8b472234c2770abe8414bf8b0eee3b2920f14542c1efbe59d40524",
+          "width": 1398,
+          "height": 2034
+        },
+        {
+          "order": 6,
+          "file": "outer/06-city.png",
+          "source": "Docs/Store/iPad-Captures/Store-02-city.png",
+          "sourceSHA256": "6e9508b5600b30155e1b0c130c0b06db2c47f972e57df65989bca83382b9ea1a",
+          "exportSHA256": "633327be6eb99e6a4746eb95a8b39dc160ef066c3db4fd5333f62f2650d1d711",
+          "width": 1398,
+          "height": 2034
+        },
+        {
+          "order": 7,
+          "file": "outer/07-daily.png",
+          "source": "Docs/Store/iPad-Captures/Store-12-daily.png",
+          "sourceSHA256": "2031257561fe4ea60c893b0b1dee7e73bd7cc766c4ce67f8f751b56ffbd2352e",
+          "exportSHA256": "e92021fbd8ccc62bd79a5caacb93689dc489b70b2727443d6e3753bcc5176513",
+          "width": 1398,
+          "height": 2034
+        },
+        {
+          "order": 8,
+          "file": "outer/08-overdrive.png",
+          "source": "Docs/Store/iPad-Captures/Store-13-overdrive.png",
+          "sourceSHA256": "30aaf66091c98e000c929c88daefc6fa57f0fb5dd7b7d40608d42a63ddc734b2",
+          "exportSHA256": "23c7868c69e0eed648f404e15c1fad469f53295f2d9a331c8b381ca4f5f5cf4b",
+          "width": 1398,
+          "height": 2034
+        },
+        {
+          "order": 9,
+          "file": "outer/09-mastery.png",
+          "source": "Docs/Store/iPad-Captures/Store-14-mastery.png",
+          "sourceSHA256": "63b8f5c81fe905717692fde026b20bbcbc09286fd6cdb615f697123f25fd338c",
+          "exportSHA256": "c9e979a35ac50082e5f8d0218d49c8fb2d78fee07725354b530503afea85f913",
+          "width": 1398,
+          "height": 2034
+        },
+        {
+          "order": 10,
+          "file": "outer/10-share.png",
+          "source": "Docs/Store/iPad-Captures/Store-15-share.png",
+          "sourceSHA256": "ea5388a77a6d1eb0d0940947f16c0237dd843734d5a046c62257d12bb484f93a",
+          "exportSHA256": "58aad2a5205db31769b8cb05678907d5e1381bfee424339804dd8a307a1155c6",
+          "width": 1398,
+          "height": 2034
+        }
+      ]
+    }
+  ]
+}
