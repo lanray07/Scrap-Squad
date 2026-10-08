@@ -1,0 +1,57 @@
+{
+  "en-GB": [
+    "weapon fusion,crafting,blueprint",
+    "robot survival,boss battle,roguelite",
+    "daily challenge,challenge code,replay"
+  ],
+  "es-ES": [
+    "fusión de armas,fabricación,planos",
+    "supervivencia,robots,jefes",
+    "reto diario,código de desafío,repetición"
+  ],
+  "fr-FR": [
+    "fusion armes,fabrication,plans",
+    "survie,robots,boss",
+    "défi quotidien,code défi,rejouer"
+  ],
+  "de-DE": [
+    "Waffenfusion,Herstellen,Baupläne",
+    "Überleben,Roboter,Bosskampf",
+    "Tagesherausforderung,Challenge-Code,Wiederholen"
+  ],
+  "it": [
+    "fusione armi,creazione,progetti",
+    "sopravvivenza,robot,boss",
+    "sfida giornaliera,codice sfida,rigioca"
+  ],
+  "pt-PT": [
+    "fusão de armas,criação,plantas",
+    "sobrevivência,robôs,chefes",
+    "desafio diário,código de desafio,repetir"
+  ],
+  "pt-BR": [
+    "fusão de armas,criação,projetos",
+    "sobrevivência,robôs,chefes",
+    "desafio diário,código de desafio,repetir"
+  ],
+  "ja": [
+    "武器合成,クラフト,設計図",
+    "サバイバル,ロボット,ボス戦",
+    "デイリーチャレンジ,チャレンジコード,リプレイ"
+  ],
+  "ko": [
+    "무기 합성,제작,설계도",
+    "생존,로봇,보스전",
+    "일일 도전,도전 코드,다시 플레이"
+  ],
+  "zh-Hans": [
+    "武器合成,制作,蓝图",
+    "生存,机器人,首领战",
+    "每日挑战,挑战代码,重玩"
+  ],
+  "zh-Hant": [
+    "武器合成,製作,藍圖",
+    "生存,機器人,首領戰",
+    "每日挑戰,挑戰代碼,重玩"
+  ]
+}

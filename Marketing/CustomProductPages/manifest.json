@@ -1,0 +1,3020 @@
+{
+  "createdOn": "2026-10-08",
+  "status": "prepared-not-published",
+  "appUILanguage": "English",
+  "translationReview": "editorial-not-native-speaker-reviewed",
+  "keywordDemandValidated": false,
+  "campaigns": [
+    {
+      "id": "weapon-fusion",
+      "referenceName": "Weapon Fusion • Craft Your Firepower",
+      "locale": "en-GB",
+      "headline": [
+        "Craft your",
+        "firepower."
+      ],
+      "promotionalText": "Fuse weapons, discover blueprints and equip your robot squad. Turn workshop experiments into your next combat build.",
+      "languageNotice": "Game interface in English.",
+      "keywordCandidates": [
+        "weapon fusion",
+        "crafting",
+        "blueprint"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "weapon-fusion/en-GB/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "32576a1cfe1ccaf805af0c74ad4927988299605ab9039004219402fd095bcab8",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-05-workshop.png",
+          "sourceSHA256": "909e4fceee4380015f5be5a2b91b891c30fdbbadbb62a040f3a509032f020468",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/en-GB/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "cc5ca45da694dd60982b90c267db25a4c1da2a3b5e454630ff95a9a17ef23400",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-07-fusion.png",
+          "sourceSHA256": "da60685ed72358bad8a5710cc3f744546117ab2a0cac4f5bce8c2f2be3a400fc",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/en-GB/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "f949ad47267e11e55a97aa9a9102776bd549c3b7dc242578ae408613a84942b9",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-04-blueprints.png",
+          "sourceSHA256": "4a7dfbc59e44d370f496694f5422213ffa1991af49ded5935295bd71ac5b1a58",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/en-GB/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "a1458bc4b0a12a047e7ce1fe348c0371e075b33b49b244b0700562acf088c5bb",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-05-workshop.png",
+          "sourceSHA256": "8b67a1bf3bed8a1c3c88efe0bba059d208d4901c7aa1a4d9756019a2afcd8549",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/en-GB/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "c380860586366f76a4bfb2b1dd4d091cd1e4fab1f39d80f496918615730f5a64",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-07-fusion.png",
+          "sourceSHA256": "d74a8b0d2b0db74c0f911708911d33d245d78158eb760a91f7c3e3ad664b9dc3",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/en-GB/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "802d1094fe7f3d1e643737ac2e5d16f883a13761323f4401f3091ed8896fc7eb",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-04-blueprints.png",
+          "sourceSHA256": "d2115fdfcc75b3017d44d2569f3fef3012215acddac3e4709d37ca0942d80b56",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "weapon-fusion/en-GB/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "8b2d6dfce1103c076ab74d547003d8b80c5ae1d5966a5fc24f06bde510ba92e3"
+      }
+    },
+    {
+      "id": "boss-survival",
+      "referenceName": "Boss Survival • Dodge Adapt Survive",
+      "locale": "en-GB",
+      "headline": [
+        "Dodge. Adapt.",
+        "Survive."
+      ],
+      "promotionalText": "Read boss warnings, dodge attacks and choose upgrades. Lead your robot squad through endless waves and three-boss challenges.",
+      "languageNotice": "Game interface in English.",
+      "keywordCandidates": [
+        "robot survival",
+        "boss battle",
+        "roguelite"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "boss-survival/en-GB/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "b8d52748de8acf38bfaac6aacef4657cb0d1cad4fa56b43997b0f47ce41e3860",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-11-boss.png",
+          "sourceSHA256": "2595c6becb8b2e6a67b523fb9e465f11c2c6f9fb3e7c04653dfcfa95ea14243b",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/en-GB/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "2f5a45911aae49e663e9817806d5f27bc67c1e13df7c0744fb1bf8c8254f8124",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-13-overdrive.png",
+          "sourceSHA256": "5b7f943c6ca9513ee31dd96d9312799ec0a473e162e48fc9abbaeab45f776aee",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/en-GB/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "f7bc8a4c25dcf9e59e064ebab8adc9582c4c4a938142b48cd9ea5fd975891500",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-03-squad.png",
+          "sourceSHA256": "cca6d7a10c1d9d4801b46b7764e88525c0b45dd228fecf20d0cdfc5fea657cbd",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/en-GB/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "369feb2e0b22189d36c9790d59525fae5f6a7891d5edbc5b8d0eeb7a371d4608",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-11-boss.png",
+          "sourceSHA256": "69a258e3da2b6b5c08f44b10a7b424b7d05c08537627654cfc31515e3a818642",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/en-GB/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "726f1cad5894414fe1f8ecf0e2fac3e4563d082430ce506730df8265bc2a94bf",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-13-overdrive.png",
+          "sourceSHA256": "30aaf66091c98e000c929c88daefc6fa57f0fb5dd7b7d40608d42a63ddc734b2",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/en-GB/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "12359fdda45567bab0e8c8604a36adc24c20ab3712f14e521ae91d3c4b68bd69",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-03-squad.png",
+          "sourceSHA256": "b5e928ec45c1aaf8615ed13c12dd85d2262bd13f43924882c85b50f953f9f968",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "boss-survival/en-GB/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "2ad6186b7b7ee7c52626d6c91160e3d28b64050c83d50f7865a89a893bfe1fcc"
+      }
+    },
+    {
+      "id": "daily-circuit",
+      "referenceName": "Daily Circuit • One Code Your Best Run",
+      "locale": "en-GB",
+      "headline": [
+        "One code.",
+        "Your best run."
+      ],
+      "promotionalText": "Replay a Daily Circuit code, explore its loadout and share your result card. Compare runs with friends, without a live leaderboard.",
+      "languageNotice": "Game interface in English.",
+      "keywordCandidates": [
+        "daily challenge",
+        "challenge code",
+        "replay"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "daily-circuit/en-GB/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "eb1d9745bc0a543acb09ef8cc583a1c4f17cdae3009967e2a3ebed52a077b0b3",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-12-daily.png",
+          "sourceSHA256": "ba58e62721346067e239305dda34a54c48a501bd60aecfc6a9bcad13a3db0c8f",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/en-GB/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "c9fb5cedc32718e5dd40b6efeb1eb0cec728e202909ae0f093af45feac4e22e3",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-14-mastery.png",
+          "sourceSHA256": "9939fe3333048b71abbca088f299b91ffb75611d542d3889d57e5355cd0b3dbf",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/en-GB/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "d3b5e4b7cae06c51e079d4691832fac1f25eaabfac93c900eef87a514bc5efde",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-15-share.png",
+          "sourceSHA256": "86a8d382a45a6e36bd068933bf4f15382040bf081523360248c95cadbf866aaa",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/en-GB/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "8d297bef12b94260bb50b76cffbdeb5ec0c7d4571df68a2860ba983a6440a003",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-12-daily.png",
+          "sourceSHA256": "2031257561fe4ea60c893b0b1dee7e73bd7cc766c4ce67f8f751b56ffbd2352e",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/en-GB/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "10ffd77e463fcbf13f9e66db77a7bf2b2ed91218709d55bbc09b39f92d668f64",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-14-mastery.png",
+          "sourceSHA256": "63b8f5c81fe905717692fde026b20bbcbc09286fd6cdb615f697123f25fd338c",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/en-GB/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "3e91ed1e0611b7cef926642efe5212f06a6f3264f317e5cb1a1a6851029ebf96",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-15-share.png",
+          "sourceSHA256": "ea5388a77a6d1eb0d0940947f16c0237dd843734d5a046c62257d12bb484f93a",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "daily-circuit/en-GB/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "61d7aacfaa007cdb54a9093961f5431e3954ed51d62a63640f6749cb7ba18ab8"
+      }
+    },
+    {
+      "id": "weapon-fusion",
+      "referenceName": "Weapon Fusion • Craft Your Firepower",
+      "locale": "es-ES",
+      "headline": [
+        "Fabrica tu",
+        "potencia de fuego."
+      ],
+      "promotionalText": "Fusiona armas, descubre planos y equipa a tu escuadrón de robots. Convierte tus experimentos del taller en nuevas opciones de combate.",
+      "languageNotice": "Interfaz del juego en inglés.",
+      "keywordCandidates": [
+        "fusión de armas",
+        "fabricación",
+        "planos"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "weapon-fusion/es-ES/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "c76db59007c828bf084bec940a2153f9d5be788de40007ea7c2581db174f2d3a",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-05-workshop.png",
+          "sourceSHA256": "909e4fceee4380015f5be5a2b91b891c30fdbbadbb62a040f3a509032f020468",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/es-ES/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "b29339f15af6e6aa5bf150cb048d958546bb6ee313ffa00cddab8031064ceee8",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-07-fusion.png",
+          "sourceSHA256": "da60685ed72358bad8a5710cc3f744546117ab2a0cac4f5bce8c2f2be3a400fc",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/es-ES/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "d909251c9c81af721ce0193fa072c04078ca0fa968237d83fb8a8dc18429cb1b",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-04-blueprints.png",
+          "sourceSHA256": "4a7dfbc59e44d370f496694f5422213ffa1991af49ded5935295bd71ac5b1a58",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/es-ES/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "0d19aa93e54685cb045f099b5d27d7d4d4050260bceaeb5f04ae05177fdeb13f",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-05-workshop.png",
+          "sourceSHA256": "8b67a1bf3bed8a1c3c88efe0bba059d208d4901c7aa1a4d9756019a2afcd8549",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/es-ES/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "2c536b884078f42bd6e0bcd15d614794cc4d4b417f6ece75a79e808fc71f640e",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-07-fusion.png",
+          "sourceSHA256": "d74a8b0d2b0db74c0f911708911d33d245d78158eb760a91f7c3e3ad664b9dc3",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/es-ES/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "7161f07cc78481fedb371c34e7eccf106b18e5cf884166c9e8db13be91dc1f9e",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-04-blueprints.png",
+          "sourceSHA256": "d2115fdfcc75b3017d44d2569f3fef3012215acddac3e4709d37ca0942d80b56",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "weapon-fusion/es-ES/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "b9f9f3d4d909af729369bde2ae35c5dae9091e25082500d646c8dfc536af93c2"
+      }
+    },
+    {
+      "id": "boss-survival",
+      "referenceName": "Boss Survival • Dodge Adapt Survive",
+      "locale": "es-ES",
+      "headline": [
+        "Esquiva. Mejora.",
+        "Sobrevive."
+      ],
+      "promotionalText": "Anticipa los ataques de los jefes, esquiva y elige mejoras. Guía a tus robots por oleadas sin fin y desafíos de tres jefes.",
+      "languageNotice": "Interfaz del juego en inglés.",
+      "keywordCandidates": [
+        "supervivencia",
+        "robots",
+        "jefes"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "boss-survival/es-ES/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "663df3cd143344a04e991f5170d7791f534564e182958b0887945a6a3178b052",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-11-boss.png",
+          "sourceSHA256": "2595c6becb8b2e6a67b523fb9e465f11c2c6f9fb3e7c04653dfcfa95ea14243b",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/es-ES/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "c0745f93147d36cf241f33a637b3bc8d942b70be010ed3b8686ba788a1322870",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-13-overdrive.png",
+          "sourceSHA256": "5b7f943c6ca9513ee31dd96d9312799ec0a473e162e48fc9abbaeab45f776aee",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/es-ES/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "e03663fd8f6b8ac2f8747d64ef40710c44fe2b54e7045a5282e38799d0411695",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-03-squad.png",
+          "sourceSHA256": "cca6d7a10c1d9d4801b46b7764e88525c0b45dd228fecf20d0cdfc5fea657cbd",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/es-ES/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "5afdf617e453c164ebfd4ee2fc29ffa8a92e37efceaf09267cdb20f7262a467a",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-11-boss.png",
+          "sourceSHA256": "69a258e3da2b6b5c08f44b10a7b424b7d05c08537627654cfc31515e3a818642",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/es-ES/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "35c76bbb04ce483cb54923ae324b76b3a6a89470266100a04be67cc5a20bd731",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-13-overdrive.png",
+          "sourceSHA256": "30aaf66091c98e000c929c88daefc6fa57f0fb5dd7b7d40608d42a63ddc734b2",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/es-ES/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "a64b0b4e9970c202005c70a376cd3ebc0a55697b29178d8e1fde977f92938776",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-03-squad.png",
+          "sourceSHA256": "b5e928ec45c1aaf8615ed13c12dd85d2262bd13f43924882c85b50f953f9f968",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "boss-survival/es-ES/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "f57775b04f7075085e9843b7bc68bbde9c5b9a915fc20dff16119eabb45c8c74"
+      }
+    },
+    {
+      "id": "daily-circuit",
+      "referenceName": "Daily Circuit • One Code Your Best Run",
+      "locale": "es-ES",
+      "headline": [
+        "Un código.",
+        "Tu mejor partida."
+      ],
+      "promotionalText": "Repite un código del Circuito diario, explora su equipo y comparte tu tarjeta de resultados. Compara partidas sin clasificación en línea.",
+      "languageNotice": "Interfaz del juego en inglés.",
+      "keywordCandidates": [
+        "reto diario",
+        "código de desafío",
+        "repetición"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "daily-circuit/es-ES/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "72bf88bdc18ec83661d31c65042c97832fc19418096a0943ca0f1e5757c04c11",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-12-daily.png",
+          "sourceSHA256": "ba58e62721346067e239305dda34a54c48a501bd60aecfc6a9bcad13a3db0c8f",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/es-ES/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "9e486388a2f5c6cbb1c9f9d55dc9c11635c18a7d8470f734cfa2de29a07a84b0",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-14-mastery.png",
+          "sourceSHA256": "9939fe3333048b71abbca088f299b91ffb75611d542d3889d57e5355cd0b3dbf",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/es-ES/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "5d964d79cc5869b805e0abe8b9bbf02cb51fb7f2f2f13d4257670be2b4e19209",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-15-share.png",
+          "sourceSHA256": "86a8d382a45a6e36bd068933bf4f15382040bf081523360248c95cadbf866aaa",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/es-ES/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "d969e967c80b1e977c6ccdcacc39307dd90834081a8761fc5466327afc62e4d0",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-12-daily.png",
+          "sourceSHA256": "2031257561fe4ea60c893b0b1dee7e73bd7cc766c4ce67f8f751b56ffbd2352e",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/es-ES/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "5aeb23d665fadfd6895fbef072edbc4aef7eda9b6d1ac0f283f4213a653bcd54",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-14-mastery.png",
+          "sourceSHA256": "63b8f5c81fe905717692fde026b20bbcbc09286fd6cdb615f697123f25fd338c",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/es-ES/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "a4a4c0652e626e9ba6c3f48cb60b16612e749160f31a22ff411e95f84d048b02",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-15-share.png",
+          "sourceSHA256": "ea5388a77a6d1eb0d0940947f16c0237dd843734d5a046c62257d12bb484f93a",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "daily-circuit/es-ES/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "23e61c43face5dd199660519f66691c42b44e68c7c69ed238a0f3bc1e96ddc35"
+      }
+    },
+    {
+      "id": "weapon-fusion",
+      "referenceName": "Weapon Fusion • Craft Your Firepower",
+      "locale": "fr-FR",
+      "headline": [
+        "Fabriquez votre",
+        "puissance de feu."
+      ],
+      "promotionalText": "Fusionnez des armes, découvrez des plans et équipez vos robots. Transformez vos expériences à l’atelier en nouvelles possibilités de combat.",
+      "languageNotice": "Interface du jeu en anglais.",
+      "keywordCandidates": [
+        "fusion armes",
+        "fabrication",
+        "plans"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "weapon-fusion/fr-FR/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "ef1a42e76c6cae90292199a2f63f2ad88c2b7be384d4a33fb74adc2d45ea1cdf",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-05-workshop.png",
+          "sourceSHA256": "909e4fceee4380015f5be5a2b91b891c30fdbbadbb62a040f3a509032f020468",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/fr-FR/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "643be4215f29386be205698f8098726160b03c95e280870dfd6a0a8be87fe141",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-07-fusion.png",
+          "sourceSHA256": "da60685ed72358bad8a5710cc3f744546117ab2a0cac4f5bce8c2f2be3a400fc",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/fr-FR/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "603bc7458cb45d0179ba7d535e86a8ee53cf0df7e9bb03d768847f2560f38a34",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-04-blueprints.png",
+          "sourceSHA256": "4a7dfbc59e44d370f496694f5422213ffa1991af49ded5935295bd71ac5b1a58",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/fr-FR/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "d1adeadb58e52b603ae0b46ff4c18e04be723851f83950c8840ef1fe3028a768",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-05-workshop.png",
+          "sourceSHA256": "8b67a1bf3bed8a1c3c88efe0bba059d208d4901c7aa1a4d9756019a2afcd8549",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/fr-FR/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "c47a326a4d5b38c3d2572e50f3252249c083c56d6d4ecd18367a79886f4e5417",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-07-fusion.png",
+          "sourceSHA256": "d74a8b0d2b0db74c0f911708911d33d245d78158eb760a91f7c3e3ad664b9dc3",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/fr-FR/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "42539ae9997e5d57fbe952bc8a3035891806fa57d92178e27517990d27415ce8",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-04-blueprints.png",
+          "sourceSHA256": "d2115fdfcc75b3017d44d2569f3fef3012215acddac3e4709d37ca0942d80b56",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "weapon-fusion/fr-FR/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "1a6fa3880891f6ed42c484e1b3e8d460533060dd8187c7dfdc366a3aec3f0d73"
+      }
+    },
+    {
+      "id": "boss-survival",
+      "referenceName": "Boss Survival • Dodge Adapt Survive",
+      "locale": "fr-FR",
+      "headline": [
+        "Esquivez. Évoluez.",
+        "Survivez."
+      ],
+      "promotionalText": "Anticipez les attaques des boss, esquivez et choisissez vos améliorations. Affrontez des vagues infinies et des défis à trois boss.",
+      "languageNotice": "Interface du jeu en anglais.",
+      "keywordCandidates": [
+        "survie",
+        "robots",
+        "boss"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "boss-survival/fr-FR/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "72cc08ef75f3601cbe2292e03ebcf616e357f7108b6d9b586482d29f66131bb8",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-11-boss.png",
+          "sourceSHA256": "2595c6becb8b2e6a67b523fb9e465f11c2c6f9fb3e7c04653dfcfa95ea14243b",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/fr-FR/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "eab1e1fb5fc441672105d37e8b05068c912a47c00200c5ac1e4cc978eaeb32f4",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-13-overdrive.png",
+          "sourceSHA256": "5b7f943c6ca9513ee31dd96d9312799ec0a473e162e48fc9abbaeab45f776aee",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/fr-FR/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "dfd5e0604dcd37de25e69feaae59798f5440145db45322e181034ddec7eb5e58",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-03-squad.png",
+          "sourceSHA256": "cca6d7a10c1d9d4801b46b7764e88525c0b45dd228fecf20d0cdfc5fea657cbd",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/fr-FR/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "186d34390a634319dca4653b9e765da6df4f0ffb07cbf8dbe15bf0ea8f71eef9",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-11-boss.png",
+          "sourceSHA256": "69a258e3da2b6b5c08f44b10a7b424b7d05c08537627654cfc31515e3a818642",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/fr-FR/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "6d9a54cbbd22c1c42af08cc21ea6a4682e1b7fd53545ce257e079d27df9635a1",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-13-overdrive.png",
+          "sourceSHA256": "30aaf66091c98e000c929c88daefc6fa57f0fb5dd7b7d40608d42a63ddc734b2",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/fr-FR/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "c91bf8ce911fdf82c4246f25747ad1d7832c4d0c1ef27030c1590fd92eeace8c",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-03-squad.png",
+          "sourceSHA256": "b5e928ec45c1aaf8615ed13c12dd85d2262bd13f43924882c85b50f953f9f968",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "boss-survival/fr-FR/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "3d59ee34d3f4c7dfa0767167fdc045546e7348bbfbb8fc97a5a647f674e8fd73"
+      }
+    },
+    {
+      "id": "daily-circuit",
+      "referenceName": "Daily Circuit • One Code Your Best Run",
+      "locale": "fr-FR",
+      "headline": [
+        "Un code.",
+        "Votre meilleur run."
+      ],
+      "promotionalText": "Rejouez un code du Circuit quotidien, explorez son équipement et partagez votre fiche de résultats. Comparez vos runs sans classement en ligne.",
+      "languageNotice": "Interface du jeu en anglais.",
+      "keywordCandidates": [
+        "défi quotidien",
+        "code défi",
+        "rejouer"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "daily-circuit/fr-FR/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "7d6614da2a86e65bbebebef1e03675a705cbc4f69e38f05eb2a08aa884a381d7",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-12-daily.png",
+          "sourceSHA256": "ba58e62721346067e239305dda34a54c48a501bd60aecfc6a9bcad13a3db0c8f",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/fr-FR/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "cd0452f6c59fe9203815ea2bccfccaf50b467de1320e2c2e7a6d1b4ef4c0432d",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-14-mastery.png",
+          "sourceSHA256": "9939fe3333048b71abbca088f299b91ffb75611d542d3889d57e5355cd0b3dbf",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/fr-FR/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "cb29784aa290a3ba4d7e93ef608f58525c6eee16d7c8d76e7d9746fbe4e112e2",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-15-share.png",
+          "sourceSHA256": "86a8d382a45a6e36bd068933bf4f15382040bf081523360248c95cadbf866aaa",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/fr-FR/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "e82301b1d696362e9d7bb332e71cb27b52e8c2e09be9f37be3a1a79882f2e5b0",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-12-daily.png",
+          "sourceSHA256": "2031257561fe4ea60c893b0b1dee7e73bd7cc766c4ce67f8f751b56ffbd2352e",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/fr-FR/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "31054af34a340dfdaa279589176a43a31e06ed405238fe8184f7999f54535419",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-14-mastery.png",
+          "sourceSHA256": "63b8f5c81fe905717692fde026b20bbcbc09286fd6cdb615f697123f25fd338c",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/fr-FR/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "62b19d5ccbeeb72b34b64c104350f46f9c30ecf7e8e81c9589ed36dba5f4d8a4",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-15-share.png",
+          "sourceSHA256": "ea5388a77a6d1eb0d0940947f16c0237dd843734d5a046c62257d12bb484f93a",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "daily-circuit/fr-FR/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "ceeb604f12e39805a838347119d8e56ad3abbe33002102aa564ce894bb97ec68"
+      }
+    },
+    {
+      "id": "weapon-fusion",
+      "referenceName": "Weapon Fusion • Craft Your Firepower",
+      "locale": "de-DE",
+      "headline": [
+        "Baue deine",
+        "Feuerkraft."
+      ],
+      "promotionalText": "Fusioniere Waffen, entdecke Baupläne und rüste dein Roboterteam aus. Mach aus Werkstatt-Experimenten neue Möglichkeiten für den Kampf.",
+      "languageNotice": "Spieloberfläche auf Englisch.",
+      "keywordCandidates": [
+        "Waffenfusion",
+        "Herstellen",
+        "Baupläne"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "weapon-fusion/de-DE/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "7a5e1f61c0fab28f7eae16c7a99c34f04598f41814c1438a2e4e8d69ff64ee60",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-05-workshop.png",
+          "sourceSHA256": "909e4fceee4380015f5be5a2b91b891c30fdbbadbb62a040f3a509032f020468",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/de-DE/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "ef63b991301a3f66e358d4430e574279eb49215dba36149cb711b3c99134b852",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-07-fusion.png",
+          "sourceSHA256": "da60685ed72358bad8a5710cc3f744546117ab2a0cac4f5bce8c2f2be3a400fc",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/de-DE/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "54ccb96dd94e276cd017948828167984ee6930c6ad53dfbe86c1d0b7b4e23f87",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-04-blueprints.png",
+          "sourceSHA256": "4a7dfbc59e44d370f496694f5422213ffa1991af49ded5935295bd71ac5b1a58",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/de-DE/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "fd4b69a6236534883e17b94f190ec7538d3bee7091cec985eba0e70ededacf23",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-05-workshop.png",
+          "sourceSHA256": "8b67a1bf3bed8a1c3c88efe0bba059d208d4901c7aa1a4d9756019a2afcd8549",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/de-DE/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "02be6c617452aed2d64a941fca8252e1491c1d869d9ddef7477b3dc3f7579490",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-07-fusion.png",
+          "sourceSHA256": "d74a8b0d2b0db74c0f911708911d33d245d78158eb760a91f7c3e3ad664b9dc3",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/de-DE/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "850f40640cebeaaa026b1a51e1348a38b85c995aef1c49593669d9058f9ce9c6",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-04-blueprints.png",
+          "sourceSHA256": "d2115fdfcc75b3017d44d2569f3fef3012215acddac3e4709d37ca0942d80b56",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "weapon-fusion/de-DE/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "31483a52330d979fa3729fedaaadb864dd48bf35ae9aeb05628f31dd625732fe"
+      }
+    },
+    {
+      "id": "boss-survival",
+      "referenceName": "Boss Survival • Dodge Adapt Survive",
+      "locale": "de-DE",
+      "headline": [
+        "Ausweichen. Lernen.",
+        "Überleben."
+      ],
+      "promotionalText": "Erkenne Bosswarnungen, weiche Angriffen aus und wähle Upgrades. Führe dein Team durch endlose Wellen und Herausforderungen mit drei Bossen.",
+      "languageNotice": "Spieloberfläche auf Englisch.",
+      "keywordCandidates": [
+        "Überleben",
+        "Roboter",
+        "Bosskampf"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "boss-survival/de-DE/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "4807565851c9d3fe380bfe04d9feecc708f6ebb0350e48559ad056fa7e171b96",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-11-boss.png",
+          "sourceSHA256": "2595c6becb8b2e6a67b523fb9e465f11c2c6f9fb3e7c04653dfcfa95ea14243b",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/de-DE/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "67514ce1f56327a43174bf8e848f25614e65175f08f6f09ff3768a34433b3a72",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-13-overdrive.png",
+          "sourceSHA256": "5b7f943c6ca9513ee31dd96d9312799ec0a473e162e48fc9abbaeab45f776aee",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/de-DE/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "cfd148e986266376295fd45de150d6b387edfb683599f0472f45c17b68eca747",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-03-squad.png",
+          "sourceSHA256": "cca6d7a10c1d9d4801b46b7764e88525c0b45dd228fecf20d0cdfc5fea657cbd",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/de-DE/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "333a0b236cc4547f00ae0d02b6268bbf5e33d3b24156f43f42554a88aa1839bf",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-11-boss.png",
+          "sourceSHA256": "69a258e3da2b6b5c08f44b10a7b424b7d05c08537627654cfc31515e3a818642",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/de-DE/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "b8c44ad26915b44a3b0bc2cb91be0c595a82e84ef60e51593c73b6e776fab1f6",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-13-overdrive.png",
+          "sourceSHA256": "30aaf66091c98e000c929c88daefc6fa57f0fb5dd7b7d40608d42a63ddc734b2",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/de-DE/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "56eccff8af1425cbec813a234b890f221e2cd59716b301bed484434f3317cc92",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-03-squad.png",
+          "sourceSHA256": "b5e928ec45c1aaf8615ed13c12dd85d2262bd13f43924882c85b50f953f9f968",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "boss-survival/de-DE/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "021546745d26950043069be19acbe812172667d492fa3de2f316252d6ad3de62"
+      }
+    },
+    {
+      "id": "daily-circuit",
+      "referenceName": "Daily Circuit • One Code Your Best Run",
+      "locale": "de-DE",
+      "headline": [
+        "Ein Code.",
+        "Dein bester Lauf."
+      ],
+      "promotionalText": "Spiele einen Tagescode erneut, entdecke seine Ausrüstung und teile deine Ergebniskarte. Vergleiche Läufe ohne Online-Bestenliste.",
+      "languageNotice": "Spieloberfläche auf Englisch.",
+      "keywordCandidates": [
+        "Tagesherausforderung",
+        "Challenge-Code",
+        "Wiederholen"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "daily-circuit/de-DE/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "e7da3afb72cab94760cd37500953b2e51a032d5330694bf369ff0822de958a3e",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-12-daily.png",
+          "sourceSHA256": "ba58e62721346067e239305dda34a54c48a501bd60aecfc6a9bcad13a3db0c8f",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/de-DE/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "172b60d93969fed32360fa8d712c04b3285690cd044cb3be15d928320971ff34",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-14-mastery.png",
+          "sourceSHA256": "9939fe3333048b71abbca088f299b91ffb75611d542d3889d57e5355cd0b3dbf",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/de-DE/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "ad845c24a5ab0dd964648ee731b917eb0a8fd4570740731a4ac61f738f7636a6",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-15-share.png",
+          "sourceSHA256": "86a8d382a45a6e36bd068933bf4f15382040bf081523360248c95cadbf866aaa",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/de-DE/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "d2734d0b5b9fff551b66c9887f4cbf492dbd811ad954b2e82a19f1ddc1d060df",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-12-daily.png",
+          "sourceSHA256": "2031257561fe4ea60c893b0b1dee7e73bd7cc766c4ce67f8f751b56ffbd2352e",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/de-DE/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "15e577323739762d15e0fe064795af37349c034ecb0c63be8b83e7947814570c",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-14-mastery.png",
+          "sourceSHA256": "63b8f5c81fe905717692fde026b20bbcbc09286fd6cdb615f697123f25fd338c",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/de-DE/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "39f6eecef8cd42b6663017d928c0c593f7a6415c2727eeccd726f517c193c5e2",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-15-share.png",
+          "sourceSHA256": "ea5388a77a6d1eb0d0940947f16c0237dd843734d5a046c62257d12bb484f93a",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "daily-circuit/de-DE/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "627f7d2e268cfb27086daff67412d68bb7f22553effb1cc6c4e1eba8f594913f"
+      }
+    },
+    {
+      "id": "weapon-fusion",
+      "referenceName": "Weapon Fusion • Craft Your Firepower",
+      "locale": "it",
+      "headline": [
+        "Crea la tua",
+        "potenza di fuoco."
+      ],
+      "promotionalText": "Fondi armi, scopri progetti ed equipaggia i tuoi robot. Trasforma gli esperimenti in officina in nuove possibilità di combattimento.",
+      "languageNotice": "Interfaccia di gioco in inglese.",
+      "keywordCandidates": [
+        "fusione armi",
+        "creazione",
+        "progetti"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "weapon-fusion/it/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "856601bf7eb9ccc878c3c46008763743086ee4f8c6e4e64cbc6ce7ade4793e6c",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-05-workshop.png",
+          "sourceSHA256": "909e4fceee4380015f5be5a2b91b891c30fdbbadbb62a040f3a509032f020468",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/it/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "92c7bf8c3852ba18a63b920eb7085784676b5795908694fd9a04e8216ca35070",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-07-fusion.png",
+          "sourceSHA256": "da60685ed72358bad8a5710cc3f744546117ab2a0cac4f5bce8c2f2be3a400fc",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/it/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "361fc040e45b6d161e93bbf7c6806d1481ff4394509c76f69ad35733abf3f842",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-04-blueprints.png",
+          "sourceSHA256": "4a7dfbc59e44d370f496694f5422213ffa1991af49ded5935295bd71ac5b1a58",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/it/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "847e78d997e0a209de7b3f32f30b32c640f59a96fed019d0a3d22b97a0055cd9",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-05-workshop.png",
+          "sourceSHA256": "8b67a1bf3bed8a1c3c88efe0bba059d208d4901c7aa1a4d9756019a2afcd8549",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/it/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "ed70da3d67e546ae30dbe9561556c9c044f970523ba352932d19b0135dec8620",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-07-fusion.png",
+          "sourceSHA256": "d74a8b0d2b0db74c0f911708911d33d245d78158eb760a91f7c3e3ad664b9dc3",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/it/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "2560352dfddf20f701d8355cd9f51759db750f14809796b234aaac0998cb23a2",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-04-blueprints.png",
+          "sourceSHA256": "d2115fdfcc75b3017d44d2569f3fef3012215acddac3e4709d37ca0942d80b56",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "weapon-fusion/it/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "b4657b0e4103936bc26d802fb0c377caf61b3e300c13ca71877689bb4a0debbd"
+      }
+    },
+    {
+      "id": "boss-survival",
+      "referenceName": "Boss Survival • Dodge Adapt Survive",
+      "locale": "it",
+      "headline": [
+        "Schiva. Adattati.",
+        "Sopravvivi."
+      ],
+      "promotionalText": "Anticipa gli attacchi dei boss, schiva e scegli potenziamenti. Guida i robot tra ondate infinite e sfide con tre boss.",
+      "languageNotice": "Interfaccia di gioco in inglese.",
+      "keywordCandidates": [
+        "sopravvivenza",
+        "robot",
+        "boss"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "boss-survival/it/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "12ab6d132586d18c7336a66e04abba19f182f6359aabb6b25da6a3ecf9f196a3",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-11-boss.png",
+          "sourceSHA256": "2595c6becb8b2e6a67b523fb9e465f11c2c6f9fb3e7c04653dfcfa95ea14243b",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/it/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "934fbe56809fd01f50863a9f2cd51ea03f09291e8d7db44932cf366d3ae4d26c",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-13-overdrive.png",
+          "sourceSHA256": "5b7f943c6ca9513ee31dd96d9312799ec0a473e162e48fc9abbaeab45f776aee",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/it/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "2ee0b5c2b0ed544350e0292fc7672dd8846524bae87a4d6d6c01157ce6ce70ca",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-03-squad.png",
+          "sourceSHA256": "cca6d7a10c1d9d4801b46b7764e88525c0b45dd228fecf20d0cdfc5fea657cbd",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/it/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "dfbd0949392acdc01b0551a80054082ccc98f5c7f49de38c9a342d67c6fc0e5d",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-11-boss.png",
+          "sourceSHA256": "69a258e3da2b6b5c08f44b10a7b424b7d05c08537627654cfc31515e3a818642",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/it/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "c9bb810cb9e3ba6f10552592ab50697a72eea42a9c9244abf7adb872dcbeb5b0",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-13-overdrive.png",
+          "sourceSHA256": "30aaf66091c98e000c929c88daefc6fa57f0fb5dd7b7d40608d42a63ddc734b2",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/it/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "e5c943a1134da42d8b41fc49491934030c6658922f280231ee0955d94b7a3c56",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-03-squad.png",
+          "sourceSHA256": "b5e928ec45c1aaf8615ed13c12dd85d2262bd13f43924882c85b50f953f9f968",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "boss-survival/it/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "67d6a30c537b514d3c1de7e1e4d883d484ed093fc41513f039b94174cf40b9c2"
+      }
+    },
+    {
+      "id": "daily-circuit",
+      "referenceName": "Daily Circuit • One Code Your Best Run",
+      "locale": "it",
+      "headline": [
+        "Un codice.",
+        "La tua sfida."
+      ],
+      "promotionalText": "Rigioca un codice del Circuito giornaliero, esplora il suo equipaggiamento e condividi i risultati. Confronta partite senza classifica online.",
+      "languageNotice": "Interfaccia di gioco in inglese.",
+      "keywordCandidates": [
+        "sfida giornaliera",
+        "codice sfida",
+        "rigioca"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "daily-circuit/it/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "35e54e9ed45740d840b90164c930953413f9cc965bc4de219ac11eb6efea8b5c",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-12-daily.png",
+          "sourceSHA256": "ba58e62721346067e239305dda34a54c48a501bd60aecfc6a9bcad13a3db0c8f",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/it/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "2e11bf1d33b7c0e36608ac41de43a04994bfe979b9daa8840b9c973b15d89a6e",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-14-mastery.png",
+          "sourceSHA256": "9939fe3333048b71abbca088f299b91ffb75611d542d3889d57e5355cd0b3dbf",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/it/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "4e01ef9e08c17af5d7b9b034ee53dcd4c897d027e85ebee778788448647fc9a8",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-15-share.png",
+          "sourceSHA256": "86a8d382a45a6e36bd068933bf4f15382040bf081523360248c95cadbf866aaa",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/it/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "4b132fc275cd2ef2a97a998458376087356cdc6b552c2052e36baef7be99e0a1",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-12-daily.png",
+          "sourceSHA256": "2031257561fe4ea60c893b0b1dee7e73bd7cc766c4ce67f8f751b56ffbd2352e",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/it/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "ee4e3938f1332760dd21aacc41720d76d0bcecdc1171a4e9a488b979e27ac46b",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-14-mastery.png",
+          "sourceSHA256": "63b8f5c81fe905717692fde026b20bbcbc09286fd6cdb615f697123f25fd338c",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/it/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "88f7e9392770b4cb3e58f4fb3fb437e39991c66375ddd2a0e6901c7ec71dee23",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-15-share.png",
+          "sourceSHA256": "ea5388a77a6d1eb0d0940947f16c0237dd843734d5a046c62257d12bb484f93a",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "daily-circuit/it/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "79d432b217e6909a28badb7de0ed9eb74b97ef9f36b52b3cf865e5547e8547f8"
+      }
+    },
+    {
+      "id": "weapon-fusion",
+      "referenceName": "Weapon Fusion • Craft Your Firepower",
+      "locale": "pt-PT",
+      "headline": [
+        "Cria o teu",
+        "poder de fogo."
+      ],
+      "promotionalText": "Funde armas, descobre projetos e equipa os teus robôs. Transforma experiências na oficina em novas opções para o combate.",
+      "languageNotice": "Interface do jogo em inglês.",
+      "keywordCandidates": [
+        "fusão de armas",
+        "criação",
+        "plantas"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "weapon-fusion/pt-PT/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "d591a2ca0442a44b0ff2ac5303e374d37a566879f4aa3f7aa1c8189e28b33936",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-05-workshop.png",
+          "sourceSHA256": "909e4fceee4380015f5be5a2b91b891c30fdbbadbb62a040f3a509032f020468",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/pt-PT/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "68b2ceaabdc2cf268d895c2d773b0c7c3801f304472acc6b3a416068508fdc41",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-07-fusion.png",
+          "sourceSHA256": "da60685ed72358bad8a5710cc3f744546117ab2a0cac4f5bce8c2f2be3a400fc",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/pt-PT/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "4ae1ba59293528e8592286600913253a406ec96920001ad6f14dd72a42f9ba6d",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-04-blueprints.png",
+          "sourceSHA256": "4a7dfbc59e44d370f496694f5422213ffa1991af49ded5935295bd71ac5b1a58",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/pt-PT/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "f3439b2bf5a5260b7b32749b2383d7a8f9b70e48f9c1b9e150bb7d525d9fdfd6",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-05-workshop.png",
+          "sourceSHA256": "8b67a1bf3bed8a1c3c88efe0bba059d208d4901c7aa1a4d9756019a2afcd8549",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/pt-PT/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "7577df30cf70213afed0ab92ea830989b2f9c615a2fa5ec58b789cec1a14d129",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-07-fusion.png",
+          "sourceSHA256": "d74a8b0d2b0db74c0f911708911d33d245d78158eb760a91f7c3e3ad664b9dc3",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/pt-PT/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "089a53259fa2ed6000eca44b50e2a13a69ec2f2523f81f13a55f8fe0aa2b2b34",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-04-blueprints.png",
+          "sourceSHA256": "d2115fdfcc75b3017d44d2569f3fef3012215acddac3e4709d37ca0942d80b56",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "weapon-fusion/pt-PT/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "a6d561bf4b416ef9fe79606b83996489577a1b748ca5defa3de53b5dfaffa14a"
+      }
+    },
+    {
+      "id": "boss-survival",
+      "referenceName": "Boss Survival • Dodge Adapt Survive",
+      "locale": "pt-PT",
+      "headline": [
+        "Desvia. Adapta.",
+        "Sobrevive."
+      ],
+      "promotionalText": "Antecipa ataques dos chefes, desvia-te e escolhe melhorias. Guia os teus robôs por vagas sem fim e desafios com três chefes.",
+      "languageNotice": "Interface do jogo em inglês.",
+      "keywordCandidates": [
+        "sobrevivência",
+        "robôs",
+        "chefes"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "boss-survival/pt-PT/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "0a786c6d0ac7fffa5514066fced63b91dcf37bcf18c9c15ee356dfbc75051e73",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-11-boss.png",
+          "sourceSHA256": "2595c6becb8b2e6a67b523fb9e465f11c2c6f9fb3e7c04653dfcfa95ea14243b",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/pt-PT/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "b08b959ca6296b13dc2130871e3f8e25e48fda5991a06c723eca84e30ca52fcc",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-13-overdrive.png",
+          "sourceSHA256": "5b7f943c6ca9513ee31dd96d9312799ec0a473e162e48fc9abbaeab45f776aee",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/pt-PT/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "bc87993d5f5cefcac75bd6ac6ff040fcdb509c9afd01e0ed0cb95a92e5d3d763",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-03-squad.png",
+          "sourceSHA256": "cca6d7a10c1d9d4801b46b7764e88525c0b45dd228fecf20d0cdfc5fea657cbd",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/pt-PT/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "aac55fa143e8c2b178ab6c0aa754a14b394e90e623f88e31208773a4c397611e",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-11-boss.png",
+          "sourceSHA256": "69a258e3da2b6b5c08f44b10a7b424b7d05c08537627654cfc31515e3a818642",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/pt-PT/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "939b5875a41398e16614a62db7aabfc6700f00d612c8e1ce8e586a7c2e87b94b",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-13-overdrive.png",
+          "sourceSHA256": "30aaf66091c98e000c929c88daefc6fa57f0fb5dd7b7d40608d42a63ddc734b2",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/pt-PT/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "29774a9e3cd0ba53a45afe079771a571e9ee621b6716f6932e2a6d286bf63923",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-03-squad.png",
+          "sourceSHA256": "b5e928ec45c1aaf8615ed13c12dd85d2262bd13f43924882c85b50f953f9f968",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "boss-survival/pt-PT/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "e236dd7c1e7b72c47fe69b543525e755aad021665afaea0a9f5aa8699b209d9e"
+      }
+    },
+    {
+      "id": "daily-circuit",
+      "referenceName": "Daily Circuit • One Code Your Best Run",
+      "locale": "pt-PT",
+      "headline": [
+        "Um código.",
+        "A tua melhor ronda."
+      ],
+      "promotionalText": "Repete um código do Circuito diário, explora o equipamento e partilha os resultados. Compara rondas sem classificação online.",
+      "languageNotice": "Interface do jogo em inglês.",
+      "keywordCandidates": [
+        "desafio diário",
+        "código de desafio",
+        "repetir"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "daily-circuit/pt-PT/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "465eb8255f50b7f2043a9a1b651ebce9884daaf184baeae2a2edcb7f99768d1f",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-12-daily.png",
+          "sourceSHA256": "ba58e62721346067e239305dda34a54c48a501bd60aecfc6a9bcad13a3db0c8f",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/pt-PT/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "b9f6638c2e78d087d9135c49fc2b014afd76f4e26425229d64370851ab1f492c",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-14-mastery.png",
+          "sourceSHA256": "9939fe3333048b71abbca088f299b91ffb75611d542d3889d57e5355cd0b3dbf",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/pt-PT/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "ace8df3bee351d958ba73756cb969982687c31f36e2f78e1df18b92f5697e5e8",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-15-share.png",
+          "sourceSHA256": "86a8d382a45a6e36bd068933bf4f15382040bf081523360248c95cadbf866aaa",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/pt-PT/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "241bdeda709f5b0dbb43b0c3510f11cb5ac0dc3f5ac1544a93d6fd1e96896042",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-12-daily.png",
+          "sourceSHA256": "2031257561fe4ea60c893b0b1dee7e73bd7cc766c4ce67f8f751b56ffbd2352e",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/pt-PT/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "9c031117f3153eaf0f55225895b85b2b542a96f604dd85c59a80cd06887bc275",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-14-mastery.png",
+          "sourceSHA256": "63b8f5c81fe905717692fde026b20bbcbc09286fd6cdb615f697123f25fd338c",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/pt-PT/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "4ba4b1f8befc0395350f9671a16212c39b37c5a3fe5a4b65a2c88f5ea2090429",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-15-share.png",
+          "sourceSHA256": "ea5388a77a6d1eb0d0940947f16c0237dd843734d5a046c62257d12bb484f93a",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "daily-circuit/pt-PT/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "7f940ad367c764a77c2c29ae8ec5fe99c28b1b33fbd5bb9ed0e8d77c4765e74d"
+      }
+    },
+    {
+      "id": "weapon-fusion",
+      "referenceName": "Weapon Fusion • Craft Your Firepower",
+      "locale": "pt-BR",
+      "headline": [
+        "Crie seu",
+        "poder de fogo."
+      ],
+      "promotionalText": "Funda armas, descubra projetos e equipe seus robôs. Transforme experimentos na oficina em novas opções de combate.",
+      "languageNotice": "Interface do jogo em inglês.",
+      "keywordCandidates": [
+        "fusão de armas",
+        "criação",
+        "projetos"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "weapon-fusion/pt-BR/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "faa3172a46759e4959df215af8268b458d7a4a93707b11e3ce286041a9d189ef",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-05-workshop.png",
+          "sourceSHA256": "909e4fceee4380015f5be5a2b91b891c30fdbbadbb62a040f3a509032f020468",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/pt-BR/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "530a7215b0344a9de9a352456e95fb2a1927bc398a22aca3688bdccd2fd06b61",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-07-fusion.png",
+          "sourceSHA256": "da60685ed72358bad8a5710cc3f744546117ab2a0cac4f5bce8c2f2be3a400fc",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/pt-BR/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "c655f1b5d892fd22658c4295deef07ab92fe84bcf78178ac4c0c59d67ac30eaf",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-04-blueprints.png",
+          "sourceSHA256": "4a7dfbc59e44d370f496694f5422213ffa1991af49ded5935295bd71ac5b1a58",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/pt-BR/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "dc09bec6d4cbaa1a0edc046fc59a09f9029fae7b276f4fb437c0445e6aa5aad4",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-05-workshop.png",
+          "sourceSHA256": "8b67a1bf3bed8a1c3c88efe0bba059d208d4901c7aa1a4d9756019a2afcd8549",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/pt-BR/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "8d92fb46df29fb9e26bcfd9e48d140bebe0697921826888bc3880bbb94e0d264",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-07-fusion.png",
+          "sourceSHA256": "d74a8b0d2b0db74c0f911708911d33d245d78158eb760a91f7c3e3ad664b9dc3",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/pt-BR/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "af6c36ff8f223734c94b9ebfa5ee78083ffe15f5eea6fde0062d0446faa3bef6",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-04-blueprints.png",
+          "sourceSHA256": "d2115fdfcc75b3017d44d2569f3fef3012215acddac3e4709d37ca0942d80b56",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "weapon-fusion/pt-BR/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "7ee02609812f25435b9ebd4fa23a0bf8edac9b5c991497fad866196885b89f0b"
+      }
+    },
+    {
+      "id": "boss-survival",
+      "referenceName": "Boss Survival • Dodge Adapt Survive",
+      "locale": "pt-BR",
+      "headline": [
+        "Desvie. Adapte.",
+        "Sobreviva."
+      ],
+      "promotionalText": "Antecipe ataques dos chefes, desvie e escolha melhorias. Guie seus robôs por ondas sem fim e desafios com três chefes.",
+      "languageNotice": "Interface do jogo em inglês.",
+      "keywordCandidates": [
+        "sobrevivência",
+        "robôs",
+        "chefes"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "boss-survival/pt-BR/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "c5f02579604218e25b18f0af82c4684e9c02a37b4a6a0cea9ec2bb7d64c07495",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-11-boss.png",
+          "sourceSHA256": "2595c6becb8b2e6a67b523fb9e465f11c2c6f9fb3e7c04653dfcfa95ea14243b",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/pt-BR/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "154104a61b681f9b063fe68217361c3ae00b0ae459247e2296d015b8b37026e6",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-13-overdrive.png",
+          "sourceSHA256": "5b7f943c6ca9513ee31dd96d9312799ec0a473e162e48fc9abbaeab45f776aee",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/pt-BR/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "15eacd79c2eb5d736fb566b942ad4d8a1dcb3fe54302fc5bef08051f0b5eeb5d",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-03-squad.png",
+          "sourceSHA256": "cca6d7a10c1d9d4801b46b7764e88525c0b45dd228fecf20d0cdfc5fea657cbd",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/pt-BR/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "80287a2b2337035e9f765914982224362b9f73473f6175383645f25fc408b914",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-11-boss.png",
+          "sourceSHA256": "69a258e3da2b6b5c08f44b10a7b424b7d05c08537627654cfc31515e3a818642",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/pt-BR/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "3fd7cfda3bb25be934c81297ed8a6019f1bc94b5e611c41a98c00d8bffcaa88e",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-13-overdrive.png",
+          "sourceSHA256": "30aaf66091c98e000c929c88daefc6fa57f0fb5dd7b7d40608d42a63ddc734b2",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/pt-BR/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "c4a56020484009d5dc69909f0d3ed4d22c3ab458bf7ec9f76c737497b657c3e2",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-03-squad.png",
+          "sourceSHA256": "b5e928ec45c1aaf8615ed13c12dd85d2262bd13f43924882c85b50f953f9f968",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "boss-survival/pt-BR/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "ba4113af1d40a2b8e7d4719bad0c010feed27e2e75bd9c08f750c25a06ef1240"
+      }
+    },
+    {
+      "id": "daily-circuit",
+      "referenceName": "Daily Circuit • One Code Your Best Run",
+      "locale": "pt-BR",
+      "headline": [
+        "Um código.",
+        "Sua melhor partida."
+      ],
+      "promotionalText": "Repita um código do Circuito diário, explore o equipamento e compartilhe os resultados. Compare partidas sem ranking online.",
+      "languageNotice": "Interface do jogo em inglês.",
+      "keywordCandidates": [
+        "desafio diário",
+        "código de desafio",
+        "repetir"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "daily-circuit/pt-BR/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "e5d0b9c46ac482120329ab28243659aaf38d52bd0c50349f97bbe7d77a5d3f5a",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-12-daily.png",
+          "sourceSHA256": "ba58e62721346067e239305dda34a54c48a501bd60aecfc6a9bcad13a3db0c8f",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/pt-BR/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "e92abef967793e825352d9691822ea227e259e6b2b594535d467ec909ed5b090",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-14-mastery.png",
+          "sourceSHA256": "9939fe3333048b71abbca088f299b91ffb75611d542d3889d57e5355cd0b3dbf",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/pt-BR/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "0ba975b75f999139209fc0d07e3454ac19e632408e57fb25031807c60c7b3ab5",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-15-share.png",
+          "sourceSHA256": "86a8d382a45a6e36bd068933bf4f15382040bf081523360248c95cadbf866aaa",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/pt-BR/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "8edb5eae88307138cdc6518124ec131235ebbd4001ad26f3e13ac4d7db6b5ed2",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-12-daily.png",
+          "sourceSHA256": "2031257561fe4ea60c893b0b1dee7e73bd7cc766c4ce67f8f751b56ffbd2352e",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/pt-BR/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "14343b804cdcbbd6efb654d8611a466ed5a833dacfd7f6cd90346193782e7542",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-14-mastery.png",
+          "sourceSHA256": "63b8f5c81fe905717692fde026b20bbcbc09286fd6cdb615f697123f25fd338c",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/pt-BR/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "7f84e01de9e8bf1dc5aa683eb24951217762558c6dc529d99e75f4e8adeace22",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-15-share.png",
+          "sourceSHA256": "ea5388a77a6d1eb0d0940947f16c0237dd843734d5a046c62257d12bb484f93a",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "daily-circuit/pt-BR/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "e59e16a96520a57ea1c9b367287870862793c33ba5f8f3b571d75cf2576f5267"
+      }
+    },
+    {
+      "id": "weapon-fusion",
+      "referenceName": "Weapon Fusion • Craft Your Firepower",
+      "locale": "ja",
+      "headline": [
+        "武器を合成。",
+        "自分の戦い方へ。"
+      ],
+      "promotionalText": "武器を合成し、設計図を発見。ロボット部隊に装備して戦いへ。ワークショップでの実験を次の戦術につなげよう。",
+      "languageNotice": "ゲーム内表示は英語です。",
+      "keywordCandidates": [
+        "武器合成",
+        "クラフト",
+        "設計図"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "weapon-fusion/ja/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "9b6e013aa6f68a57698da3c3c88697a631180fe5561e7661bf1f13c08335aa06",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-05-workshop.png",
+          "sourceSHA256": "909e4fceee4380015f5be5a2b91b891c30fdbbadbb62a040f3a509032f020468",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/ja/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "63902a8c1fb4326562141ce722f4d7ebd41a5e4b0b7d93b6ffde54e18704bd54",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-07-fusion.png",
+          "sourceSHA256": "da60685ed72358bad8a5710cc3f744546117ab2a0cac4f5bce8c2f2be3a400fc",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/ja/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "75d108c366482e3636a8302f23cb4a86529fab527e40f7a2a869f34280d6c319",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-04-blueprints.png",
+          "sourceSHA256": "4a7dfbc59e44d370f496694f5422213ffa1991af49ded5935295bd71ac5b1a58",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/ja/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "e5dcdd06e80faf270850d874c7fa169da8309066c0ddc0c220402115a601a7f4",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-05-workshop.png",
+          "sourceSHA256": "8b67a1bf3bed8a1c3c88efe0bba059d208d4901c7aa1a4d9756019a2afcd8549",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/ja/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "ae05afdd735b9fa992ddff42c4eed0c69db72e23bfe8234e846e69d1bd47cca7",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-07-fusion.png",
+          "sourceSHA256": "d74a8b0d2b0db74c0f911708911d33d245d78158eb760a91f7c3e3ad664b9dc3",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/ja/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "74f5d5a33ddbdfec25ff2663b206cd8cd6353cb8c36b72b34ffc57883b33b7c8",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-04-blueprints.png",
+          "sourceSHA256": "d2115fdfcc75b3017d44d2569f3fef3012215acddac3e4709d37ca0942d80b56",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "weapon-fusion/ja/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "1b4974612a6962ade7806d2d56625220f2c2d6df308e21f6846ed861c3050cbf"
+      }
+    },
+    {
+      "id": "boss-survival",
+      "referenceName": "Boss Survival • Dodge Adapt Survive",
+      "locale": "ja",
+      "headline": [
+        "かわして、強化。",
+        "生き残れ。"
+      ],
+      "promotionalText": "ボスの予告を読み、攻撃をかわし、強化を選ぼう。終わりのないウェーブや3体のボスにロボット部隊で挑戦。",
+      "languageNotice": "ゲーム内表示は英語です。",
+      "keywordCandidates": [
+        "サバイバル",
+        "ロボット",
+        "ボス戦"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "boss-survival/ja/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "1ebc35eb2068274c5e6b28e5d925c9d61499c03cc1e21b2964b78448e0b7c1f0",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-11-boss.png",
+          "sourceSHA256": "2595c6becb8b2e6a67b523fb9e465f11c2c6f9fb3e7c04653dfcfa95ea14243b",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/ja/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "bed26ede8bb5f135052ece7c70551f2d6f50a98dd94a548d445621071007c646",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-13-overdrive.png",
+          "sourceSHA256": "5b7f943c6ca9513ee31dd96d9312799ec0a473e162e48fc9abbaeab45f776aee",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/ja/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "194c6eb2ed5ec63ac8205e3656af73fa0482ab947f4e0b97f737ec8778b6b961",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-03-squad.png",
+          "sourceSHA256": "cca6d7a10c1d9d4801b46b7764e88525c0b45dd228fecf20d0cdfc5fea657cbd",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/ja/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "4f0d016c9155e9594749327b44d91f07c10b02f5937f941ff91d4a303dbb2b02",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-11-boss.png",
+          "sourceSHA256": "69a258e3da2b6b5c08f44b10a7b424b7d05c08537627654cfc31515e3a818642",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/ja/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "ac9a4949de7e52fd130dab26e5d24fb8a980010880a228c3d3bed3dd15590fd1",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-13-overdrive.png",
+          "sourceSHA256": "30aaf66091c98e000c929c88daefc6fa57f0fb5dd7b7d40608d42a63ddc734b2",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/ja/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "e410279bb54211f78d9f02944a2a807427dd0ed99a0b0d3f76df57a7d4f700d6",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-03-squad.png",
+          "sourceSHA256": "b5e928ec45c1aaf8615ed13c12dd85d2262bd13f43924882c85b50f953f9f968",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "boss-survival/ja/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "cf407b0844046b6d32f9eec2647d6584da7ca822723c33cb57f875dcec94e317"
+      }
+    },
+    {
+      "id": "daily-circuit",
+      "referenceName": "Daily Circuit • One Code Your Best Run",
+      "locale": "ja",
+      "headline": [
+        "同じコードで、",
+        "次のベストへ。"
+      ],
+      "promotionalText": "デイリーサーキットのコードを再プレイ。装備を試し、リザルトカードを共有しよう。オンラインランキングなしで友達と記録を比較。",
+      "languageNotice": "ゲーム内表示は英語です。",
+      "keywordCandidates": [
+        "デイリーチャレンジ",
+        "チャレンジコード",
+        "リプレイ"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "daily-circuit/ja/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "b7daa36e648df5becd0ab534b327f8c245fca450516ec7f5e4fca21bd683b684",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-12-daily.png",
+          "sourceSHA256": "ba58e62721346067e239305dda34a54c48a501bd60aecfc6a9bcad13a3db0c8f",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/ja/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "290975043507e4fac0620259052fe2317d2e552e585435c874be69ef7b39950f",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-14-mastery.png",
+          "sourceSHA256": "9939fe3333048b71abbca088f299b91ffb75611d542d3889d57e5355cd0b3dbf",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/ja/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "224de9c912e1169deb65cee680eb1c3f8289b9a05a60db16f5dfb7c4dd2ea39f",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-15-share.png",
+          "sourceSHA256": "86a8d382a45a6e36bd068933bf4f15382040bf081523360248c95cadbf866aaa",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/ja/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "afb872014ea5b21e8ed6433b32ed66a47335a50cca2c111f80e514783431814d",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-12-daily.png",
+          "sourceSHA256": "2031257561fe4ea60c893b0b1dee7e73bd7cc766c4ce67f8f751b56ffbd2352e",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/ja/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "7db32a08aa63b1a59fc4b32a4aec60ef743758a708c7e29d3d20afd48dba857b",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-14-mastery.png",
+          "sourceSHA256": "63b8f5c81fe905717692fde026b20bbcbc09286fd6cdb615f697123f25fd338c",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/ja/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "9085f506ad546e517a44b2c14290f1d170179ef094ec69e5e90b66c3b1b0f93a",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-15-share.png",
+          "sourceSHA256": "ea5388a77a6d1eb0d0940947f16c0237dd843734d5a046c62257d12bb484f93a",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "daily-circuit/ja/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "31c5a4cb05458c04e8e8a972e23c77a2505c869ec671186cb048cc7ad6d6c640"
+      }
+    },
+    {
+      "id": "weapon-fusion",
+      "referenceName": "Weapon Fusion • Craft Your Firepower",
+      "locale": "ko",
+      "headline": [
+        "무기를 합성하고",
+        "전략을 완성하세요."
+      ],
+      "promotionalText": "무기를 합성하고 설계도를 발견해 로봇 분대에 장착하세요. 작업실의 실험을 새로운 전투 전략으로 이어 가세요.",
+      "languageNotice": "게임 인터페이스는 영어입니다.",
+      "keywordCandidates": [
+        "무기 합성",
+        "제작",
+        "설계도"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "weapon-fusion/ko/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "78decf13fd4289020d06a7b86d5496da3e7f356685086744ca87fc8bf162181a",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-05-workshop.png",
+          "sourceSHA256": "909e4fceee4380015f5be5a2b91b891c30fdbbadbb62a040f3a509032f020468",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/ko/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "80450187be2b8cfe631d7f561584950aa2cf73868b15cb50b9e932a2c032b3da",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-07-fusion.png",
+          "sourceSHA256": "da60685ed72358bad8a5710cc3f744546117ab2a0cac4f5bce8c2f2be3a400fc",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/ko/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "6601aadfac2ab5411ed1c598f0bdfa3d0af8be3914aa3491dab69c1a81063274",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-04-blueprints.png",
+          "sourceSHA256": "4a7dfbc59e44d370f496694f5422213ffa1991af49ded5935295bd71ac5b1a58",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/ko/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "43c492615bd9a045e5b352020f6c9cc96b9473541e0a840d185c9e9bafa34610",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-05-workshop.png",
+          "sourceSHA256": "8b67a1bf3bed8a1c3c88efe0bba059d208d4901c7aa1a4d9756019a2afcd8549",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/ko/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "94efde4878a5801b0945b5d1d99a1eeffed60b6e92a4c99837ea9d9d5cae6b47",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-07-fusion.png",
+          "sourceSHA256": "d74a8b0d2b0db74c0f911708911d33d245d78158eb760a91f7c3e3ad664b9dc3",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/ko/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "759dc235a1f419e8111bc074e9798ba4ffbd359736ddce3dbdb68f2d2ed3f74e",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-04-blueprints.png",
+          "sourceSHA256": "d2115fdfcc75b3017d44d2569f3fef3012215acddac3e4709d37ca0942d80b56",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "weapon-fusion/ko/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "703ad0f2568ead70bf954b1e96a5eb40d989345822fe00af8abf4bfb3604fb0e"
+      }
+    },
+    {
+      "id": "boss-survival",
+      "referenceName": "Boss Survival • Dodge Adapt Survive",
+      "locale": "ko",
+      "headline": [
+        "피하고 강화하며",
+        "살아남으세요."
+      ],
+      "promotionalText": "보스의 공격 예고를 읽고 피하며 강화를 선택하세요. 끝없는 웨이브와 보스 3종 도전에 로봇 분대를 이끄세요.",
+      "languageNotice": "게임 인터페이스는 영어입니다.",
+      "keywordCandidates": [
+        "생존",
+        "로봇",
+        "보스전"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "boss-survival/ko/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "b8bf49bbc910540720cfa11cac886a8eb1880011d1d86407767585f7bad09ded",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-11-boss.png",
+          "sourceSHA256": "2595c6becb8b2e6a67b523fb9e465f11c2c6f9fb3e7c04653dfcfa95ea14243b",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/ko/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "ed283802f24a48673240748ca94a2d1ddbf2ba895c080cf2337a0c05fe2dfd6e",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-13-overdrive.png",
+          "sourceSHA256": "5b7f943c6ca9513ee31dd96d9312799ec0a473e162e48fc9abbaeab45f776aee",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/ko/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "0d55953dbb23e25c699e0fd102a6f599374a2ad5692d46789bc69fd92d7bc80f",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-03-squad.png",
+          "sourceSHA256": "cca6d7a10c1d9d4801b46b7764e88525c0b45dd228fecf20d0cdfc5fea657cbd",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/ko/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "c8714268b577976662286f53351c2ece6f84b9d27c3bd2552a6f0ccc5b847350",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-11-boss.png",
+          "sourceSHA256": "69a258e3da2b6b5c08f44b10a7b424b7d05c08537627654cfc31515e3a818642",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/ko/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "6e148943adb8e20c50cb6f9d681863b7d92dc4f7e991a4b83fafc078002ab941",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-13-overdrive.png",
+          "sourceSHA256": "30aaf66091c98e000c929c88daefc6fa57f0fb5dd7b7d40608d42a63ddc734b2",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/ko/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "cc88ec0e44390310ad8ba43b825f6bcc20613c205502cc0f2cfded6129920db5",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-03-squad.png",
+          "sourceSHA256": "b5e928ec45c1aaf8615ed13c12dd85d2262bd13f43924882c85b50f953f9f968",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "boss-survival/ko/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "830cd7b9707fa0b2889c02ff7e229a1e5238f739b2e07a47e47627dbab937446"
+      }
+    },
+    {
+      "id": "daily-circuit",
+      "referenceName": "Daily Circuit • One Code Your Best Run",
+      "locale": "ko",
+      "headline": [
+        "같은 코드로",
+        "최고 기록에 도전."
+      ],
+      "promotionalText": "일일 서킷 코드를 다시 플레이하고 장비를 시험해 결과 카드를 공유하세요. 온라인 순위표 없이 친구와 기록을 비교하세요.",
+      "languageNotice": "게임 인터페이스는 영어입니다.",
+      "keywordCandidates": [
+        "일일 도전",
+        "도전 코드",
+        "다시 플레이"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "daily-circuit/ko/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "d7c2da84b6ef1bc31e6bf8f96f5bdaec2a7b3597c5f3b9a8ec325da4690616b6",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-12-daily.png",
+          "sourceSHA256": "ba58e62721346067e239305dda34a54c48a501bd60aecfc6a9bcad13a3db0c8f",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/ko/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "a4b964a66cce82e92e62f7578cdb4db058268969ace025d77ef76c9d8eaff742",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-14-mastery.png",
+          "sourceSHA256": "9939fe3333048b71abbca088f299b91ffb75611d542d3889d57e5355cd0b3dbf",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/ko/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "34df6a5168fd7f4ea7ea80f3d1246f4aca253cbae09f882a41230197b453e945",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-15-share.png",
+          "sourceSHA256": "86a8d382a45a6e36bd068933bf4f15382040bf081523360248c95cadbf866aaa",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/ko/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "ffab7928212ec1dc35628c637c99db0d5f8f567f5a18e326e7f8c80f36010e49",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-12-daily.png",
+          "sourceSHA256": "2031257561fe4ea60c893b0b1dee7e73bd7cc766c4ce67f8f751b56ffbd2352e",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/ko/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "15e31043cc0e1f244c38c821fbdb0d67aecbd61e43d4166bbf9acdfd86c937e0",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-14-mastery.png",
+          "sourceSHA256": "63b8f5c81fe905717692fde026b20bbcbc09286fd6cdb615f697123f25fd338c",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/ko/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "9207accaea24b252fc7d6ef921f63715ecdd7ed94174193d9e31b38eaaafbb96",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-15-share.png",
+          "sourceSHA256": "ea5388a77a6d1eb0d0940947f16c0237dd843734d5a046c62257d12bb484f93a",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "daily-circuit/ko/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "36b87229b1359a7c1eb57a3140001208d639d7bf5d7a2d053bc98be851ec4538"
+      }
+    },
+    {
+      "id": "weapon-fusion",
+      "referenceName": "Weapon Fusion • Craft Your Firepower",
+      "locale": "zh-Hans",
+      "headline": [
+        "合成武器，",
+        "打造你的火力。"
+      ],
+      "promotionalText": "合成武器，发现蓝图，为机器人小队装备新发明。把工坊里的实验变成下一场战斗的策略。",
+      "languageNotice": "游戏界面为英语。",
+      "keywordCandidates": [
+        "武器合成",
+        "制作",
+        "蓝图"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "weapon-fusion/zh-Hans/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "1b772441542808eb24ac4233a773a9a6d9c769c25cc7de9696d78edee272c198",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-05-workshop.png",
+          "sourceSHA256": "909e4fceee4380015f5be5a2b91b891c30fdbbadbb62a040f3a509032f020468",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/zh-Hans/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "3665e0e4f609c89b65366db395b415cad330f18cc0c5fa73ed1eba7386b76f29",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-07-fusion.png",
+          "sourceSHA256": "da60685ed72358bad8a5710cc3f744546117ab2a0cac4f5bce8c2f2be3a400fc",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/zh-Hans/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "4d83b0630f5426302616dad83a2ea2e322260ba58de87a9f081d520fd3044d5c",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-04-blueprints.png",
+          "sourceSHA256": "4a7dfbc59e44d370f496694f5422213ffa1991af49ded5935295bd71ac5b1a58",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/zh-Hans/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "5c3b0732b5b81eea8158fad949c61cbbb2c5e13540a706eaefbbdff3ac7d96fa",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-05-workshop.png",
+          "sourceSHA256": "8b67a1bf3bed8a1c3c88efe0bba059d208d4901c7aa1a4d9756019a2afcd8549",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/zh-Hans/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "e0a2ded0d2a520533af3c81f55e1fa1b3940e0e91dc311a0b5f24d3f153a3e53",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-07-fusion.png",
+          "sourceSHA256": "d74a8b0d2b0db74c0f911708911d33d245d78158eb760a91f7c3e3ad664b9dc3",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/zh-Hans/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "115bbf65c55a0e0682ab9bd0aeda2017a3ff0b60e460426c2ed53340a1e88ff4",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-04-blueprints.png",
+          "sourceSHA256": "d2115fdfcc75b3017d44d2569f3fef3012215acddac3e4709d37ca0942d80b56",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "weapon-fusion/zh-Hans/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "699dd0a55bbdb9586675109eb45b7139d31980a622c961e9513deea1dea94192"
+      }
+    },
+    {
+      "id": "boss-survival",
+      "referenceName": "Boss Survival • Dodge Adapt Survive",
+      "locale": "zh-Hans",
+      "headline": [
+        "闪避、强化，",
+        "迎战生存挑战。"
+      ],
+      "promotionalText": "观察首领的攻击预警，闪避并选择强化。带领机器人小队挑战无尽波次和三首领战斗。",
+      "languageNotice": "游戏界面为英语。",
+      "keywordCandidates": [
+        "生存",
+        "机器人",
+        "首领战"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "boss-survival/zh-Hans/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "01a05a1064954aa0d57ee3f5d8445435e5ba601e0750fcc06a090f2048092bdf",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-11-boss.png",
+          "sourceSHA256": "2595c6becb8b2e6a67b523fb9e465f11c2c6f9fb3e7c04653dfcfa95ea14243b",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/zh-Hans/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "94336c1e467fe84ffa09213a8fed40a8ca091787ab7570b91dff135f83686132",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-13-overdrive.png",
+          "sourceSHA256": "5b7f943c6ca9513ee31dd96d9312799ec0a473e162e48fc9abbaeab45f776aee",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/zh-Hans/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "a9432c284c65a57ff710eccbee88cfa16fb3868b205b88825a0a836823365d75",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-03-squad.png",
+          "sourceSHA256": "cca6d7a10c1d9d4801b46b7764e88525c0b45dd228fecf20d0cdfc5fea657cbd",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/zh-Hans/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "a1910d967aa9878e759e5889f14bce7a53640eb9c9af91783dd7b99e41911835",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-11-boss.png",
+          "sourceSHA256": "69a258e3da2b6b5c08f44b10a7b424b7d05c08537627654cfc31515e3a818642",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/zh-Hans/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "0976d680b1d5cb2b971082d6a9fb1b8e69b982f452617d9401209c8b91d50548",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-13-overdrive.png",
+          "sourceSHA256": "30aaf66091c98e000c929c88daefc6fa57f0fb5dd7b7d40608d42a63ddc734b2",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/zh-Hans/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "864103683b1457f2b877691972e5d8407773e44843851bbea871ab79ccb2e9ed",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-03-squad.png",
+          "sourceSHA256": "b5e928ec45c1aaf8615ed13c12dd85d2262bd13f43924882c85b50f953f9f968",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "boss-survival/zh-Hans/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "8cd4afaf2ff38583dc182eaa953b97be4b5be0b7be42bfd790353a8de5606715"
+      }
+    },
+    {
+      "id": "daily-circuit",
+      "referenceName": "Daily Circuit • One Code Your Best Run",
+      "locale": "zh-Hans",
+      "headline": [
+        "同一个代码，",
+        "挑战更好成绩。"
+      ],
+      "promotionalText": "重玩每日巡回的挑战代码，探索配装并分享成绩卡。无需在线排行榜，也能与朋友比较战绩。",
+      "languageNotice": "游戏界面为英语。",
+      "keywordCandidates": [
+        "每日挑战",
+        "挑战代码",
+        "重玩"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "daily-circuit/zh-Hans/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "8c6736b1f635d3d6c19a12e5f25ce5fd1efc28ea74b35e930b0d98fcfbe17965",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-12-daily.png",
+          "sourceSHA256": "ba58e62721346067e239305dda34a54c48a501bd60aecfc6a9bcad13a3db0c8f",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/zh-Hans/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "b54e069e65774b86ec03265ffccb683f7b20e502ff82a691c4b5a4773ead0b21",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-14-mastery.png",
+          "sourceSHA256": "9939fe3333048b71abbca088f299b91ffb75611d542d3889d57e5355cd0b3dbf",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/zh-Hans/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "1290d4898a71e48051df152e4e41b99ffa779503702a8d988b48b797a709ba48",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-15-share.png",
+          "sourceSHA256": "86a8d382a45a6e36bd068933bf4f15382040bf081523360248c95cadbf866aaa",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/zh-Hans/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "dcd89d7cfd5f5ac70a5a88d727d5890a926323d4f157fe3ed846f7809b5722f5",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-12-daily.png",
+          "sourceSHA256": "2031257561fe4ea60c893b0b1dee7e73bd7cc766c4ce67f8f751b56ffbd2352e",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/zh-Hans/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "00d29ba635ef4746f1fe59fcecb3519a449ad643e3a3418b4895beb11cf3251a",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-14-mastery.png",
+          "sourceSHA256": "63b8f5c81fe905717692fde026b20bbcbc09286fd6cdb615f697123f25fd338c",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/zh-Hans/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "3ecc523cde9d4fd5d8170acbe3cc5d9fbaebacec11f7e6d72ed991cd032286f1",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-15-share.png",
+          "sourceSHA256": "ea5388a77a6d1eb0d0940947f16c0237dd843734d5a046c62257d12bb484f93a",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "daily-circuit/zh-Hans/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "452333db25344990ecea7ccb8855a7ad91332c3c96b47b79c71e643853867dcf"
+      }
+    },
+    {
+      "id": "weapon-fusion",
+      "referenceName": "Weapon Fusion • Craft Your Firepower",
+      "locale": "zh-Hant",
+      "headline": [
+        "合成武器，",
+        "打造你的火力。"
+      ],
+      "promotionalText": "合成武器，發現藍圖，為機器人小隊裝備新發明。把工坊裡的實驗變成下一場戰鬥的策略。",
+      "languageNotice": "遊戲介面為英語。",
+      "keywordCandidates": [
+        "武器合成",
+        "製作",
+        "藍圖"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "weapon-fusion/zh-Hant/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "565f17f074c2855bc028ab60259d408ebfd0eaa372b95e05adf24eacea01b27d",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-05-workshop.png",
+          "sourceSHA256": "909e4fceee4380015f5be5a2b91b891c30fdbbadbb62a040f3a509032f020468",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/zh-Hant/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "91b609b132b579b5dad9021338e5e36741297e1996b7bdbbb141029c97aa8dd7",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-07-fusion.png",
+          "sourceSHA256": "da60685ed72358bad8a5710cc3f744546117ab2a0cac4f5bce8c2f2be3a400fc",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/zh-Hant/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "25ec17a52d1bef91e4cb381ccaadebc8a2c93e94b99b83a1bd3be60ced7de838",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-04-blueprints.png",
+          "sourceSHA256": "4a7dfbc59e44d370f496694f5422213ffa1991af49ded5935295bd71ac5b1a58",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/zh-Hant/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "2bdd13510b4181ba21090f67d634aa3b947938e949b84ab1e487deaaff01b817",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-05-workshop.png",
+          "sourceSHA256": "8b67a1bf3bed8a1c3c88efe0bba059d208d4901c7aa1a4d9756019a2afcd8549",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/zh-Hant/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "3f15d0d58d2a59b2430e1270159028c3b1f32b234a06aca9b38beb27d09ecbde",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-07-fusion.png",
+          "sourceSHA256": "d74a8b0d2b0db74c0f911708911d33d245d78158eb760a91f7c3e3ad664b9dc3",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "weapon-fusion/zh-Hant/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "5ab38a01912a98775e40b24b4da729a66a6bd933bae11a2d9f9e10f0ee4c9cbf",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-04-blueprints.png",
+          "sourceSHA256": "d2115fdfcc75b3017d44d2569f3fef3012215acddac3e4709d37ca0942d80b56",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "weapon-fusion/zh-Hant/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "e7a2e89977e80dcc858f5112eeae6a971376b92b3b00e1dac63fc181dd6a38f9"
+      }
+    },
+    {
+      "id": "boss-survival",
+      "referenceName": "Boss Survival • Dodge Adapt Survive",
+      "locale": "zh-Hant",
+      "headline": [
+        "閃避、強化，",
+        "迎戰生存挑戰。"
+      ],
+      "promotionalText": "觀察首領的攻擊預警，閃避並選擇強化。帶領機器人小隊挑戰無盡波次和三首領戰鬥。",
+      "languageNotice": "遊戲介面為英語。",
+      "keywordCandidates": [
+        "生存",
+        "機器人",
+        "首領戰"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "boss-survival/zh-Hant/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "cd0702bec0e28e6353ee0c3c51e93c710ed17ed47f4eb6625ceb5f81f79b7237",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-11-boss.png",
+          "sourceSHA256": "2595c6becb8b2e6a67b523fb9e465f11c2c6f9fb3e7c04653dfcfa95ea14243b",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/zh-Hant/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "66ecebe973c86e3f5daf4c137110a62199f169db846e202ce614c3bb9b02e70e",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-13-overdrive.png",
+          "sourceSHA256": "5b7f943c6ca9513ee31dd96d9312799ec0a473e162e48fc9abbaeab45f776aee",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/zh-Hant/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "907618f1a0c55772b1e1a167eaaf444bad3e49d834622c2ddefea47f274a1c61",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-03-squad.png",
+          "sourceSHA256": "cca6d7a10c1d9d4801b46b7764e88525c0b45dd228fecf20d0cdfc5fea657cbd",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/zh-Hant/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "eaa9c6f160822138ea823f1a490a37d4a1b5576dea63e3897bd3834d23b67348",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-11-boss.png",
+          "sourceSHA256": "69a258e3da2b6b5c08f44b10a7b424b7d05c08537627654cfc31515e3a818642",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/zh-Hant/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "edb121d5a01cefa97862badb979bd55f49e316622da11af24540cb62d4cd27a6",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-13-overdrive.png",
+          "sourceSHA256": "30aaf66091c98e000c929c88daefc6fa57f0fb5dd7b7d40608d42a63ddc734b2",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "boss-survival/zh-Hant/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "21f7ade31431f07fc3136f29ad3da9a222d47bb80ad2a043eabf989382817da9",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-03-squad.png",
+          "sourceSHA256": "b5e928ec45c1aaf8615ed13c12dd85d2262bd13f43924882c85b50f953f9f968",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "boss-survival/zh-Hant/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "cc1d83afa3496d033bf6483517677f447391d071cfc7b6cdfa23c236f4f51821"
+      }
+    },
+    {
+      "id": "daily-circuit",
+      "referenceName": "Daily Circuit • One Code Your Best Run",
+      "locale": "zh-Hant",
+      "headline": [
+        "同一個代碼，",
+        "挑戰更好成績。"
+      ],
+      "promotionalText": "重玩每日巡迴的挑戰代碼，探索配裝並分享成績卡。無需線上排行榜，也能與朋友比較戰績。",
+      "languageNotice": "遊戲介面為英語。",
+      "keywordCandidates": [
+        "每日挑戰",
+        "挑戰代碼",
+        "重玩"
+      ],
+      "keywordAssignment": "Only assign terms present in the latest approved version; candidates are unvalidated and may be unavailable before release.",
+      "screenshots": [
+        {
+          "file": "daily-circuit/zh-Hant/iPhone/1.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "2069bf9206bbd1fc82948f415b2b50e250aca98b8e978f2e39642db2a0de1222",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-12-daily.png",
+          "sourceSHA256": "ba58e62721346067e239305dda34a54c48a501bd60aecfc6a9bcad13a3db0c8f",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/zh-Hant/iPhone/2.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "3f426d9a9f3972040548000d0fee828ed2c142c3bd90b06e3c680516f38aa8e6",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-14-mastery.png",
+          "sourceSHA256": "9939fe3333048b71abbca088f299b91ffb75611d542d3889d57e5355cd0b3dbf",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/zh-Hant/iPhone/3.png",
+          "width": 1320,
+          "height": 2868,
+          "sha256": "e290997db2e15874d23c61c8d4c2b3365ddae4d34803b45980536e2ed028b9d9",
+          "device": "iPhone",
+          "source": "Docs/Store/Captures/Store-15-share.png",
+          "sourceSHA256": "86a8d382a45a6e36bd068933bf4f15382040bf081523360248c95cadbf866aaa",
+          "captureProvenance": "Docs/Store/Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/zh-Hant/iPad/1.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "c34a525d8d7c6012b314c1e8aa4471c3417941e50624d84504cacca3d354a1e9",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-12-daily.png",
+          "sourceSHA256": "2031257561fe4ea60c893b0b1dee7e73bd7cc766c4ce67f8f751b56ffbd2352e",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/zh-Hant/iPad/2.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "b61a2099a2df4f0524493a0954936118b0293504edba226a81d7a7a6345158a7",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-14-mastery.png",
+          "sourceSHA256": "63b8f5c81fe905717692fde026b20bbcbc09286fd6cdb615f697123f25fd338c",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        },
+        {
+          "file": "daily-circuit/zh-Hant/iPad/3.png",
+          "width": 2064,
+          "height": 2752,
+          "sha256": "c15f1838045dceb5072a3289d35e28576a7a451e363dfa29664fe93b60865f1f",
+          "device": "iPad",
+          "source": "Docs/Store/iPad-Captures/Store-15-share.png",
+          "sourceSHA256": "ea5388a77a6d1eb0d0940947f16c0237dd843734d5a046c62257d12bb484f93a",
+          "captureProvenance": "Docs/Store/iPad-Captures/capture-provenance.json; combat-campaign-provenance.json for added scenes",
+          "captureIsLatestBuild": false
+        }
+      ],
+      "banner": {
+        "file": "daily-circuit/zh-Hant/header.png",
+        "width": 2400,
+        "height": 1000,
+        "sha256": "08288835bcd2d6cf86d8bf92e227c984362ea7584cf6a74df24d5c6df59ffe63"
+      }
+    }
+  ],
+  "headers": [
+    {
+      "file": "Headers/app-store-universal.png",
+      "width": 5244,
+      "height": 2950,
+      "sha256": "b366bd760bbb624c09cd81aef7c173c459ffbf9a609ac6ff4ae9ec472bbdb828"
+    }
+  ]
+}

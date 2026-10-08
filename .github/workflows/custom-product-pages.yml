@@ -1,0 +1,31 @@
+name: Prepare localized custom product page drafts
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: custom-product-pages
+  cancel-in-progress: false
+jobs:
+  drafts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'PyJWT[crypto]==2.10.1'
+      - name: Save drafts and verify uploaded galleries
+        env:
+          ASC_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          ASC_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_API_PRIVATE_KEY }}
+        run: python Tools/publish_custom_product_pages.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: custom-product-page-status
+          include-hidden-files: true
+          path: .build/custom-product-pages-status.json
+          if-no-files-found: warn
