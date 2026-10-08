@@ -61,8 +61,13 @@ commit `15221bb`: **successful**, eight Android instrumentation tests passed.
 Original cosmetic collection grants, overlap restrictions, invalid selection
 removal and revocation reconciliation passed through the Swift JNI bridge without
 changing progression. This does not constitute an Amazon purchase or backend test.
-The expanded native capture pass and longer boss-battle sample were added later;
-their runtime results are pending.
+GitHub run [37829458644](https://github.com/lanray07/Scrap-Squad/actions/runs/37829458644),
+commit `c7bb3c5`: **successful**, nine Android instrumentation tests passed.
+Nine native menu/preview/run-card captures and the early battle capture were
+retained at 2560×1600. Visual review identified stretched city artwork and a
+long result headline overlapping the run-card robot; both have been corrected
+and compile locally, with final runtime capture verification still pending.
+The longer boss-battle sample and store-art exports are running separately.
 
 Physical process recovery, complete premium battle rendering, purchase validation and
 restoration, Amazon sandbox tests, physical Fire tablet performance and audio,

@@ -10,9 +10,11 @@ Apple purchases do not transfer.
 
 ## Required deployment configuration
 
-1. Add the app-specific public `AppstoreAuthenticationKey.pem` from Amazon to
+1. The app-specific public `AppstoreAuthenticationKey.pem` was downloaded from
+   the Scrap Squad Amazon draft on 8 October 2026 and added to
    `android/app/src/main/assets/`. This is a public authentication key, not the
-   merchant shared secret. The SDK does not start when it is absent.
+   merchant shared secret. The SDK does not start when it is absent. Recheck the
+   key if moving the app to another Amazon record or developer account.
 2. Connect the user's **existing backend**, whose URL, technology and source
    repository have been requested but not supplied. Implement
    `AmazonReceiptVerifier` with that backend's real authenticated protocol, then

@@ -20,7 +20,7 @@ mode on a Swift 6 toolchain; the original iOS compiler settings are unchanged.
 
 ## Build
 
-Requirements: Java 17, Android SDK 36, NDK 28.2.13676358, Swift 6.3.1 or a matching
+Requirements: Java 17, Android SDK 36, NDK 28.2.13676358, Swift 6.4.0 or a matching
 official Swift Android SDK/toolchain. Gradle wrapper is pinned to 9.4.1.
 
 ```powershell
@@ -58,8 +58,9 @@ The slice and initial native menus have passed Android runtime verification; see
 challenge, journal and settings flows call the original Swift rules. Seven shop
 packs and premium previews are present. The official Amazon SDK adapter and
 original Swift cosmetic reconciliation are implemented; purchasing remains
-unavailable until the app's public key and the user's existing validation backend
-are configured. See `AMAZON_PURCHASES.md` for the exact remaining integration.
+unavailable until the user's existing validation backend and console products
+are configured. The app-specific Amazon public key is included.
+See `AMAZON_PURCHASES.md` for the exact remaining integration.
 
 Still required: complete visual parity and device lifecycle verification, connect
 and validate the existing receipt backend and Amazon configuration,

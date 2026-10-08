@@ -35,8 +35,8 @@ Uninstalling removes the app's local data. Amazon retains purchase records under
 its policies. The backend's deletion terms must be specified separately; do not
 state that uninstalling deletes server-side receipt records.
 
-Support currently uses the public GitHub issues page. Players must not post
-receipts or private account identifiers in public issues. Add an appropriate
-private support route for receipt-related requests before launch.
+Contact support privately at **banksmi@mail.com** for purchase or privacy requests.
+The public GitHub issues page is also available for non-private bug reports.
+Players must not post receipts or private account identifiers in public issues.
 
 Reference: [Amazon Privacy Notice](https://www.amazon.com/privacy).

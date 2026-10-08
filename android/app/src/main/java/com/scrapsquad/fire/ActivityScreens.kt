@@ -68,8 +68,13 @@ internal fun MenuScreens.settings() {
     label(t("settings.language")); val languages = listOf("system") + strings.availableLanguages()
     val language = spinner(languages, languages.map { if (it == "system") t("settings.system") else Locale.forLanguageTag(it).getDisplayName(Locale.forLanguageTag(it)) }, profile.getJSONObject("preferences").getString("locale"))
     button("common.done") { preference("locale", languages[language.selectedItemPosition]); show() }
-    button("android.privacy", BuildConfig.PRIVACY_POLICY_URL.startsWith("https://")) { activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(BuildConfig.PRIVACY_POLICY_URL))) }
-    button("android.support") { activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/lanray07/Scrap-Squad/issues"))) }
+    button("android.privacy", BuildConfig.PRIVACY_POLICY_URL.startsWith("https://")) {
+        try { activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(BuildConfig.PRIVACY_POLICY_URL))) } catch (e: Exception) { error(e) }
+    }
+    label("banksmi@mail.com", color = Ui.mint)
+    button("android.support") {
+        try { activity.startActivity(Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:banksmi@mail.com"))) } catch (e: Exception) { error(e) }
+    }
     heading("achievements.title")
     menu.getJSONObject("achievements").keys().forEach { id -> label("${t("achievement.$id")}: ${menu.getJSONObject("achievements").getDouble(id).toInt()}%") }
     separator(); heading("settings.reboot", "settings.reboot.detail")

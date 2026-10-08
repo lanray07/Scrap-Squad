@@ -51,17 +51,19 @@ class RobotPortraitView(context: Context, private val id: String, private val fi
 class CityArtView(context: Context, private val content: JSONObject, private val profile: JSONObject) : View(context) {
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG or Paint.FILTER_BITMAP_FLAG)
     override fun onDraw(canvas: Canvas) {
-        super.onDraw(canvas); canvas.save(); canvas.scale(width / 380f, height / 240f)
-        paint.shader = LinearGradient(0f, 0f, 380f, 240f, Color.rgb(50, 83, 97), Ui.ink, Shader.TileMode.CLAMP)
-        canvas.drawRoundRect(0f, 0f, 380f, 240f, 28f, 28f, paint); paint.shader = null
-        paint.color = Ui.gold; paint.alpha = 204; canvas.drawCircle(290f, 65f, 35f, paint); paint.alpha = 255
+        super.onDraw(canvas); canvas.save()
+        val scale = height / 240f; val logicalWidth = width / scale
+        canvas.scale(scale, scale)
+        paint.shader = LinearGradient(0f, 0f, 0f, 240f, Color.rgb(50, 83, 97), Ui.ink, Shader.TileMode.CLAMP)
+        canvas.drawRoundRect(0f, 0f, logicalWidth, 240f, 28f, 28f, paint); paint.shader = null
+        paint.color = Ui.gold; paint.alpha = 204; canvas.drawCircle(logicalWidth / 2 + 100, 65f, 35f, paint); paint.alpha = 255
         content.getJSONArray("buildings").objects().take(6).forEachIndexed { index, building ->
-            val level = profile.getJSONObject("buildingLevels").optInt(building.getString("id")); val x = 380f * (index % 3 + .5f) / 3; val y = if (index < 3) 120f else 193f; val h = 55f + level * 5
+            val level = profile.getJSONObject("buildingLevels").optInt(building.getString("id")); val x = logicalWidth * (index % 3 + .5f) / 3; val y = if (index < 3) 116f else 189f; val h = 55f + level * 5
             paint.color = if (level > 0) Ui.surface else Color.rgb(48, 64, 71); canvas.drawRoundRect(x - 32, y - h / 2, x + 32, y + h / 2, 12f, 12f, paint)
             paint.color = if (level > 0) Ui.gold else Ui.muted
             for (window in 0..3) { val wx = x - 15 + window % 2 * 23; val wy = y - 12 + window / 2 * 21; canvas.drawRoundRect(wx, wy, wx + 8, wy + 9, 2f, 2f, paint) }
             paint.color = Ui.muted; paint.alpha = 77; canvas.drawRect(x - 36, y + h / 2, x + 36, y + h / 2 + 8, paint); paint.alpha = 255
         }
-        OriginalRobotArt.draw(context, canvas, "bolt", RectF(152.5f, 162.5f, 227.5f, 237.5f), paint); canvas.restore()
+        OriginalRobotArt.draw(context, canvas, "bolt", RectF(logicalWidth / 2 - 37.5f, 162.5f, logicalWidth / 2 + 37.5f, 237.5f), paint); canvas.restore()
     }
 }

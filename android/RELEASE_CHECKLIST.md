@@ -15,6 +15,12 @@ Fire tablets; do not select Fire TV, Vega OS or all historical Fire models.
 - Five localized listing drafts in `store/listings.json`, explicitly disclosing
   the English game interface. Proofread the target locale before upload.
 - Amazon SDK purchase adapter; configuration and live validation pending.
+- Amazon draft record created on 8 October 2026, Games / Action / Indie,
+  English interface, public support `banksmi@mail.com`. App ID:
+  `amzn1.devportal.mobileapp.fd2ac6d759cb418ebcb5560a8e7e5bbc`.
+- App-specific Amazon public SDK key included. English U.S./U.K., German,
+  Spanish, French and Japanese description drafts saved in the console;
+  translated listings explicitly disclose the English interface.
 
 ## Required before a production build
 
@@ -23,8 +29,8 @@ Fire tablets; do not select Fire TV, Vega OS or all historical Fire models.
 2. Create all seven original IDs as Amazon ENTITLED products. Confirm localized
    prices, availability and parental pending-purchase behavior in App Tester and
    Live App Testing. Test restoration, refunds and account changes on real hardware.
-3. Download the app-specific `AppstoreAuthenticationKey.pem` from Amazon's upload
-   screen into `app/src/main/assets/`.
+3. Verify the included `AppstoreAuthenticationKey.pem` matches this Amazon record;
+   no server merchant secret belongs in the APK.
 4. Finalize the Android privacy policy using the actual backend practices and set
    `SCRAP_ANDROID_PRIVACY_URL`. Complete matching Amazon data disclosures. Do not
    reuse the Apple-only policy or select “no data collected” for a server that
@@ -60,7 +66,7 @@ fallback. Core gameplay must remain available when the network or store is absen
 
 ## Store submission
 
-Create a Fire tablet app in Amazon Developer Console. Upload the signed APK (or
+The Fire tablet draft exists in Amazon Developer Console. Upload the signed APK (or
 an AAB if deliberately chosen and validated), confirm package/version/device
 filtering, prices/countries, content rating and payment/tax details. Enter accurate
 listing text and localized drafts, icons, reviewed screenshots and public support

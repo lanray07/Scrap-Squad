@@ -35,22 +35,28 @@ internal object RunCard {
         fun paint(size: Float, color: Int, bold: Boolean = false) = TextPaint(Paint.ANTI_ALIAS_FLAG).apply { textSize = size; this.color = color; typeface = Typeface.create("sans-serif", if (bold) Typeface.BOLD else Typeface.NORMAL) }
         fun layout(line: Line) = StaticLayout.Builder.obtain(line.text, 0, line.text.length, paint(line.size, line.color, line.bold), 292).setAlignment(Layout.Alignment.ALIGN_NORMAL).setIncludePad(false).build()
         val layouts = lines.map(::layout)
-        val cardHeight = 238 + layouts.sumOf { it.height + 14 } + 24
+        val title = strings.text(if (run.getBoolean("victory")) "battle.victory" else "battle.defeat")
+        val titleLayout = StaticLayout.Builder.obtain(title, 0, title.length, paint(25f, Color.WHITE, true), 206).setIncludePad(false).build()
+        val headerBottom = 75f + titleLayout.height + 46f
+        val scoreBaseline = headerBottom + 74f
+        val contentStart = scoreBaseline + 20f
+        val cardHeight = contentStart.toInt() + layouts.sumOf { it.height + 14 } + 24
         val bitmap = Bitmap.createBitmap(1020, cardHeight * 3, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(bitmap); canvas.scale(3f, 3f)
         val background = Paint(Paint.ANTI_ALIAS_FLAG).apply { shader = LinearGradient(0f, 0f, 340f, cardHeight.toFloat(), Ui.surface, Ui.ink, Shader.TileMode.CLAMP) }
         canvas.drawRoundRect(0f, 0f, 340f, cardHeight.toFloat(), 24f, 24f, background)
         canvas.drawText("SCRAP SQUAD", 24f, 41f, paint(17f, Color.WHITE, true))
         canvas.drawText("MERGE & SURVIVE", 232f, 40f, paint(8f, Ui.muted, true))
-        canvas.drawText(strings.text(if (run.getBoolean("victory")) "battle.victory" else "battle.defeat"), 24f, 95f, paint(25f, Color.WHITE, true))
-        canvas.drawText(strings.text("mode.${run.getString("mode")}"), 24f, 119f, paint(12f, Ui.mint))
+        canvas.save(); canvas.translate(24f, 75f); titleLayout.draw(canvas); canvas.restore()
+        canvas.drawText(strings.text("mode.${run.getString("mode")}"), 24f, headerBottom - 24f, paint(12f, Ui.mint))
         val biome = content.getJSONArray("biomes").getJSONObject(run.getInt("zone").coerceIn(0, content.getJSONArray("biomes").length() - 1))
-        canvas.drawText(strings.text(biome.getString("nameKey")), 24f, 139f, paint(12f, Ui.muted))
-        OriginalRobotArt.draw(context, canvas, "bolt", RectF(230f, 67f, 316f, 153f), Paint(Paint.ANTI_ALIAS_FLAG or Paint.FILTER_BITMAP_FLAG))
+        canvas.drawText(strings.text(biome.getString("nameKey")), 24f, headerBottom - 4f, paint(12f, Ui.muted))
+        val robotTop = 75f + (headerBottom - 75f - 86f) / 2
+        OriginalRobotArt.draw(context, canvas, "bolt", RectF(230f, robotTop, 316f, robotTop + 86f), Paint(Paint.ANTI_ALIAS_FLAG or Paint.FILTER_BITMAP_FLAG))
         val score = number.format(run.getInt("score")); val scorePaint = paint(54f, Ui.gold, true)
         while (scorePaint.measureText(score) > 292 && scorePaint.textSize > 27) scorePaint.textSize -= 1
-        canvas.drawText(score, 24f, 218f, scorePaint)
-        var y = 238f
+        canvas.drawText(score, 24f, scoreBaseline, scorePaint)
+        var y = contentStart
         layouts.forEach { value -> canvas.save(); canvas.translate(24f, y); value.draw(canvas); canvas.restore(); y += value.height + 14 }
         canvas.drawRoundRect(.5f, .5f, 339.5f, cardHeight - .5f, 24f, 24f, Paint(Paint.ANTI_ALIAS_FLAG).apply { color = Ui.gold; alpha = 115; style = Paint.Style.STROKE; strokeWidth = 1f })
         return bitmap
