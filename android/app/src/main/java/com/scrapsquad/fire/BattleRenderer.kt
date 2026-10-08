@@ -71,7 +71,13 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
             lastHud = -1.0
         }
     }
-    override fun resize(w: Int, h: Int) { width = w.toFloat(); height = h.toFloat(); camera.setToOrtho(false, width, height) }
+    override fun resize(w: Int, h: Int) {
+        // SpriteKit uses logical points. Use Android logical pixels as well so
+        // robot and projectile sizes do not shrink on high-density tablets.
+        val density = Gdx.graphics.density.coerceAtLeast(1f)
+        width = w / density; height = h / density
+        camera.setToOrtho(false, width, height)
+    }
     private val scale get() = min(width, height) * 1.4f
     private val unit get() = max(.4f, min(1f, scale / 600f))
     private fun x(value: Double) = width / 2 + ((value - battle.getJSONArray("player").getDouble(0)) * scale).toFloat()

@@ -10,6 +10,7 @@ import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.Assert.*
 import org.junit.Test
 import java.io.File
+import java.io.FileInputStream
 
 class BattleSmokeTest {
     private fun find(node: AccessibilityNodeInfo?, text: String): AccessibilityNodeInfo? {
@@ -52,6 +53,11 @@ class BattleSmokeTest {
         val output = File(context.getExternalFilesDir(null), "android-battle-smoke.png")
         output.outputStream().use { screenshot!!.compress(Bitmap.CompressFormat.PNG, 100, it) }
         screenshot!!.recycle()
+        // Gradle uninstalls the test app after instrumentation, removing its
+        // external-files folder. Keep the evidence in shell-owned temporary storage.
+        automation.executeShellCommand("cp ${output.absolutePath} /data/local/tmp/scrap-squad-battle.png").use { descriptor ->
+            FileInputStream(descriptor.fileDescriptor).use { it.readBytes() }
+        }
         context.startActivity(Intent(context, MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK))
         SystemClock.sleep(500)
     }
