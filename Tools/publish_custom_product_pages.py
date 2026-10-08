@@ -5,6 +5,7 @@ unexpected assets rather than deleting them. A rerun reuses pages and checksums.
 """
 import hashlib
 import json
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from configure_iap import AppleAPI, APP_ID, ROOT, relationship, resource
 from release_assets import upload, wait_asset
@@ -69,7 +70,7 @@ def main():
         result = {"campaign": campaign, "pageID": page["id"], "versionID": version["id"],
                   "url": page["attributes"].get("url"), "state": version["attributes"]["state"], "locales": []}
         report["campaigns"].append(result)
-        for entry in entries:
+        def save_entry(entry):
             api = AppleAPI()  # Refresh the short-lived token during long asset batches.
             locale = next((l for l in current if l["attributes"]["locale"] == entry["locale"]), None)
             attrs = {"promotionalText": entry["promotionalText"]}
@@ -84,9 +85,14 @@ def main():
             saved = api.call("GET", f"/v1/appCustomProductPageLocalizations/{locale['id']}")["data"]
             assert saved["attributes"]["promotionalText"] == entry["promotionalText"]
             galleries = [gallery(api, locale["id"], [s for s in entry["screenshots"] if s["device"] == device]) for device in ("iPhone", "iPad")]
-            result["locales"].append({"locale": entry["locale"], "promotionalTextVerified": True, "galleries": galleries})
-            REPORT.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
-            print(f"Verified {campaign} {entry['locale']}: six screenshots", flush=True)
+            return {"locale": entry["locale"], "promotionalTextVerified": True, "galleries": galleries}
+        # Distinct locale resources can upload independently; bound Apple traffic.
+        with ThreadPoolExecutor(max_workers=4) as executor:
+            for saved_locale in executor.map(save_entry, entries):
+                result["locales"].append(saved_locale)
+                REPORT.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+                print(f"Verified {campaign} {saved_locale['locale']}: six screenshots", flush=True)
+
 
 
 if __name__ == "__main__":
