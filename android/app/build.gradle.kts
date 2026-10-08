@@ -31,6 +31,8 @@ android {
 }
 val natives by configurations.creating
 dependencies {
+    implementation("androidx.core:core:1.17.0")
+    implementation("com.amazon.device:amazon-appstore-sdk:3.0.9")
     implementation("com.badlogicgames.gdx:gdx:1.14.2")
     implementation("com.badlogicgames.gdx:gdx-backend-android:1.14.2")
     add("natives", "com.badlogicgames.gdx:gdx-platform:1.14.2:natives-arm64-v8a")

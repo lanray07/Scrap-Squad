@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.GL20
 import com.badlogic.gdx.graphics.OrthographicCamera
 import com.badlogic.gdx.graphics.Texture
+import com.badlogic.gdx.graphics.Pixmap
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.graphics.g2d.TextureRegion
 import com.badlogic.gdx.graphics.g2d.BitmapFont
@@ -42,6 +43,8 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
     private var lastRunState = "fighting"
     private val seenEffects = mutableSetOf<Int>()
     private val presentation = CombatPresentation()
+    private var cosmeticState = JSONObject()
+    private val signatureTextures = mutableMapOf<String, List<TextureRegion>>()
     private var baseFontHeight = 15f
     private data class Print(val x: Double, val y: Double, val born: Double, val rotation: Float)
     private val footprints = ArrayDeque<Print>()
@@ -53,6 +56,19 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
         baseFontHeight = font.capHeight
         atlas.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear)
         audio = Audio(repository.profile.optJSONObject("preferences") ?: JSONObject())
+        cosmeticState = CosmeticRepository(Gdx.app as android.content.Context).state()
+        cosmeticState.getJSONObject("finishes").keys().forEach { robot ->
+            val skin = cosmeticState.getJSONObject("finishes").getJSONObject(robot).optString("skin")
+            if (skin.isNotEmpty() && skin !in signatureTextures) signatureTextures[skin] = (0..3).map { frame ->
+                val bitmap = android.graphics.Bitmap.createScaledBitmap(SignatureRobotArt.image(skin, frame), 128, 128, true)
+                val bytes = java.io.ByteArrayOutputStream().also { bitmap.compress(android.graphics.Bitmap.CompressFormat.PNG, 100, it) }.toByteArray()
+                bitmap.recycle()
+                val pixmap = Pixmap(bytes, 0, bytes.size)
+                val texture = Texture(pixmap); pixmap.dispose()
+                texture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear)
+                TextureRegion(texture)
+            }
+        }
         val args = mutableListOf<Pair<String, Any>>("mode" to mode, "seed" to seed, "zone" to zone)
         if (challenge != null) args.add("challenge" to challenge)
         if (recover) {
@@ -139,7 +155,7 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
             }
         }
         while (footprints.isNotEmpty() && elapsed - footprints.first().born >= 3) footprints.removeFirst()
-        footprints.forEach { shapes.color = Color.valueOf(biome.getJSONArray("palette").getString(2)).apply { a = ((1 - (elapsed - it.born) / 3) * .5).toFloat() }; shapes.rect(x(it.x) - 3.5f * unit, y(it.y) - 5.5f * unit, 3.5f * unit, 5.5f * unit, 7 * unit, 11 * unit, 1f, 1f, it.rotation) }
+        footprints.forEach { shapes.color = Color.valueOf(if (cosmeticState.getJSONObject("selection").getBoolean("goldenTrails")) "FFD878" else biome.getJSONArray("palette").getString(2)).apply { a = ((1 - (elapsed - it.born) / 3) * .5).toFloat() }; shapes.rect(x(it.x) - 3.5f * unit, y(it.y) - 5.5f * unit, 3.5f * unit, 5.5f * unit, 7 * unit, 11 * unit, 1f, 1f, it.rotation) }
         battle.getJSONArray("warnings").objects { warning -> drawArea(warning.getJSONObject("area"), Color(1f, .25f, .2f, .18f + .2f * (1 - warning.getDouble("remaining") / warning.getDouble("duration")).toFloat())) }
         battle.getJSONArray("strikes").objects { drawArea(it.getJSONObject("area"), Color(.74f, .61f, 1f, .3f)) }
         battle.getJSONArray("evolutionAreas").objects { drawArea(it, Color.valueOf(battle.getString("evolutionColor")).apply { a = if (it.getString("shape") == "ring") .55f else .0825f }) }
@@ -178,7 +194,7 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
         presentation.effects.forEach { rendered ->
             val effect = rendered.data; val age = elapsed - rendered.born
             val from = effect.getJSONArray("from"); val to = effect.getJSONArray("to")
-            shapes.color = Color.valueOf(if (effect.getString("style") == "arc") "83EAFF" else if (effect.getString("style") == "beam") "BC9BFF" else biome.getJSONArray("palette").getString(2))
+            shapes.color = if (cosmeticState.getJSONObject("selection").optString("weaponEffectID") == "prism") Color().fromHsv(((elapsed * 90 + effect.getInt("id") * 37) % 360).toFloat(), .55f, 1f) else Color.valueOf(if (effect.getString("style") == "arc") "83EAFF" else if (effect.getString("style") == "beam") "BC9BFF" else biome.getJSONArray("palette").getString(2))
             shapes.color.a = (1 - age / .18).toFloat().coerceIn(0f, 1f)
             val style = effect.getString("style"); val fx = x(from.getDouble(0)); val fy = y(from.getDouble(1)); val tx = x(to.getDouble(0)); val ty = y(to.getDouble(1))
             if (effect.getDouble("damage") <= 0) {
@@ -204,17 +220,22 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
         val squad = battle.getJSONArray("squad")
         for (i in 0 until squad.length()) {
             val index = order.indexOf(squad.getString(i)).coerceAtLeast(0)
-            val region = TextureRegion(atlas, index % 4 * atlas.width / 4, index / 4 * atlas.height / 2, atlas.width / 4, atlas.height / 2)
+            var region = TextureRegion(atlas, index % 4 * atlas.width / 4, index / 4 * atlas.height / 2, atlas.width / 4, atlas.height / 2)
             val angle = i * PI * 2 / squad.length()
             val rx = x(px + if (i == 0) 0.0 else cos(angle) * .055); val ry = y(py + if (i == 0) 0.0 else sin(angle) * .055)
             val stride = battle.getJSONArray("strides").getJSONObject(i)
             val animated = stride.getBoolean("moving") && !reducedMotion
             val phase = stride.getDouble("distance") / .05 * PI * 2
+            val finish = cosmeticState.getJSONObject("finishes").optJSONObject(squad.getString(i))
+            val skin = finish?.optString("skin").orEmpty()
+            if (skin.isNotEmpty()) region = signatureTextures.getValue(skin)[if (animated) floor(stride.getDouble("distance") / .05 * 4).toInt().mod(4) else 0]
+            batch.color = if (finish != null && skin.isEmpty()) Color.valueOf(finish.getString("tint")).lerp(Color.WHITE, .35f) else Color.WHITE
             val bob = if (animated) abs(sin(phase)).toFloat() * 4 else 0f
             val rotation = if (animated) (sin(phase) * .07 - stride.getJSONArray("direction").getDouble(0) * .08) * 180 / PI else 0.0
             val squash = if (animated) 1 - abs(sin(phase)).toFloat() * .04f else 1f
             val dimension = (if (squad.getString(i) in listOf("tank", "boomer")) 60 else 48) * unit
             batch.draw(region, rx - dimension / 2, ry - dimension / 2 + bob, dimension / 2, dimension / 2, dimension, dimension, 1f, squash, rotation.toFloat())
+            batch.color = Color.WHITE
         }
         val activeEffects = mutableSetOf<Int>()
         presentation.effects.forEach { rendered ->
@@ -268,5 +289,5 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
     }
     override fun resume() { if (::audio.isInitialized && !paused) { audio.resume(); audioPaused = false } }
     fun stopRecovery() { restoration?.cancel(true) }
-    override fun dispose() { disposed = true; stopRecovery(); worker.shutdownNow(); repository.battleJournal.close(); android.util.Log.i("ScrapRender", metrics.report().toString()); batch.dispose(); shapes.dispose(); atlas.dispose(); audio.dispose(); font.dispose() }
+    override fun dispose() { disposed = true; stopRecovery(); worker.shutdownNow(); repository.battleJournal.close(); android.util.Log.i("ScrapRender", metrics.report().toString()); signatureTextures.values.flatten().forEach { it.texture.dispose() }; batch.dispose(); shapes.dispose(); atlas.dispose(); audio.dispose(); font.dispose() }
 }

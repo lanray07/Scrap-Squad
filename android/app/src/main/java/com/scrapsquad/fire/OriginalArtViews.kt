@@ -17,25 +17,31 @@ internal object OriginalRobotArt {
 
 class RobotPortraitView(context: Context, private val id: String, private val finish: JSONObject? = null) : View(context) {
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG or Paint.FILTER_BITMAP_FLAG)
+    private val activeFinish = finish ?: CosmeticRepository(context).state().getJSONObject("finishes").optJSONObject(id)
     var frame = 0
     var victory = false
     init { contentDescription = Strings(context).text("robot.$id") }
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas); val dimension = minOf(width, height).toFloat()
         val target = RectF((width - dimension) / 2, (height - dimension) / 2, (width + dimension) / 2, (height + dimension) / 2)
-        val skin = finish?.optString("skin")?.takeIf { it.isNotEmpty() }
+        val skin = activeFinish?.optString("skin")?.takeIf { it.isNotEmpty() }
         if (skin != null) { canvas.drawBitmap(SignatureRobotArt.image(skin, frame, victory), null, target, paint); return }
-        if (finish != null) {
-            val tint = Color.parseColor("#${finish.getString("tint")}")
+        if (activeFinish != null) {
+            val tint = Color.parseColor("#${activeFinish.getString("tint")}")
             paint.colorFilter = ColorMatrixColorFilter(ColorMatrix().apply { setScale(Color.red(tint) / 255f, Color.green(tint) / 255f, Color.blue(tint) / 255f, 1f) })
         }
         OriginalRobotArt.draw(context, canvas, id, target, paint); paint.colorFilter = null
-        if (finish != null) {
+        if (activeFinish != null) {
             val cx = target.right - dimension * .14f; val cy = target.bottom - dimension * .14f; val radius = dimension * .12f
             paint.color = Ui.ink; canvas.drawCircle(cx, cy, radius, paint)
-            paint.style = Paint.Style.STROKE; paint.strokeWidth = dimension * .015f; paint.color = Color.parseColor("#${finish.getString("tint")}"); canvas.drawCircle(cx, cy, radius, paint)
-            paint.color = Color.parseColor("#${finish.getString("accent")}"); paint.style = Paint.Style.FILL
-            val emblem = Path(); val points = if (finish.getString("symbol").contains("diamond")) 4 else 10
+            paint.style = Paint.Style.STROKE; paint.strokeWidth = dimension * .015f; paint.color = Color.parseColor("#${activeFinish.getString("tint")}"); canvas.drawCircle(cx, cy, radius, paint)
+            paint.color = Color.parseColor("#${activeFinish.getString("accent")}"); paint.style = Paint.Style.FILL
+            val symbol = activeFinish.getString("symbol")
+            if (symbol.contains("heart")) {
+                val r = radius * .65f; val heart = Path().apply { moveTo(cx, cy + r); cubicTo(cx - r * 2, cy - r * .2f, cx - r * .5f, cy - r * 1.6f, cx, cy - r * .6f); cubicTo(cx + r * .5f, cy - r * 1.6f, cx + r * 2, cy - r * .2f, cx, cy + r); close() }
+                canvas.drawPath(heart, paint); return
+            }
+            val emblem = Path(); val points = if (symbol.contains("diamond")) 4 else if (symbol == "sparkle") 8 else 10
             for (i in 0 until points) { val angle = i * Math.PI * 2 / points - Math.PI / 2; val r = radius * if (points == 4 || i % 2 == 0) .65 else .3; val x = cx + kotlin.math.cos(angle).toFloat() * r.toFloat(); val y = cy + kotlin.math.sin(angle).toFloat() * r.toFloat(); if (i == 0) emblem.moveTo(x, y) else emblem.lineTo(x, y) }; emblem.close(); canvas.drawPath(emblem, paint)
         }
     }

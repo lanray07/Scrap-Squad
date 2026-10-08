@@ -56,11 +56,13 @@ rendered-FPS equivalence.
 The slice and initial native menus have passed Android runtime verification; see
 `VERIFICATION.md` for exact commits and evidence. City, squad, workshop, blueprint,
 challenge, journal and settings flows call the original Swift rules. Seven shop
-packs and premium previews are present; purchasing remains unavailable until the
-Amazon integration and the user's existing validation backend are configured.
+packs and premium previews are present. The official Amazon SDK adapter and
+original Swift cosmetic reconciliation are implemented; purchasing remains
+unavailable until the app's public key and the user's existing validation backend
+are configured. See `AMAZON_PURCHASES.md` for the exact remaining integration.
 
-Still required: complete premium battle rendering and visual parity, verify
-interrupted battle recovery, integrate Amazon purchases and receipt validation,
+Still required: complete visual parity and device lifecycle verification, connect
+and validate the existing receipt backend and Amazon configuration,
 sandbox and physical Fire-device QA, final Android screenshots, approved localized
 metadata, release signing and submission verification.
 

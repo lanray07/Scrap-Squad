@@ -24,6 +24,16 @@ final class Session {
                 else { profile = PlayerProfile(now: now) }
             }
             guard let content else { throw GameError.invalidContent }
+            if op == "cosmetics" {
+                guard let value = q["catalog"] else { throw GameError.invalidContent }
+                let catalog = try JSONDecoder().decode(CosmeticCatalog.self, from: JSONSerialization.data(withJSONObject: value))
+                let owned = Set(q["owned"] as? [String] ?? [])
+                var selection = try JSONDecoder().decode(CosmeticSelection.self, from: JSONSerialization.data(withJSONObject: q["selection"] ?? [String: Any]()))
+                selection.reconcile(catalog: catalog, owned: owned)
+                let encoded = try JSONSerialization.jsonObject(with: JSONEncoder().encode(selection))
+                let finishes = try JSONSerialization.jsonObject(with: JSONEncoder().encode(selection.activeFinishes(catalog: catalog, owned: owned)))
+                return try serialize(["selection": encoded, "finishes": finishes, "effectiveOwnership": catalog.effectiveOwnership(owned).sorted(), "founder": catalog.hasFounderExtras(owned: owned), "weaponEffects": catalog.availableWeaponEffects(owned: owned).sorted(), "canPurchase": Dictionary(uniqueKeysWithValues: catalog.productIDs.map { ($0, catalog.canPurchase($0, owned: owned)) })])
+            }
             let id = q["id"] as? String ?? ""
             switch op {
             case "deploy":

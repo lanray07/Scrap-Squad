@@ -34,14 +34,20 @@ internal fun MenuScreens.journal() {
     heading("journal.title", "journal.detail"); heading("mastery.title")
     menu.getJSONArray("mastery").objects().forEach { label("${t(it.getString("key"))}: ${it.getInt("progress")} / ${it.getInt("goal")}") }
     val journal = profile.optJSONObject("journal")
+    heading("synergy.title")
+    listOf("thermalShock", "stormLattice", "perfectStorm").forEach { id -> label(t("synergy.$id"), 20f, Ui.mint); label(t("synergy.$id.detail")) }
     if (journal == null || journal.getJSONArray("recent").length() == 0) { label(t("journal.empty")); return }
     journal.getJSONObject("bestScores").keys().forEach { mode -> label("${t("mode.$mode")}: ${number(journal.getJSONObject("bestScores").getInt(mode))}", color = Ui.mint) }
     journal.getJSONArray("recent").objects().forEach { run ->
         separator(); val highlights = run.getJSONObject("highlights")
         val text = "${t(if (run.getBoolean("victory")) "battle.victory" else "battle.defeat")} · ${t("mode.${run.getString("mode")}")}\n${t("battle.score")}: ${number(run.getInt("score"))}\n${t("battle.kills")}: ${run.getInt("kills")} · ${t("momentum.best")}: ${highlights.getInt("bestCombo")}\n${highlights.optString("challengeCode", "")}"
         label(text, 20f, Ui.gold)
-        menu.getJSONObject("runMedals").optJSONArray(run.getString("id"))?.strings()?.forEach { label(t(it), color = Ui.mint) }
-        button("run.share") { share("Scrap Squad\n$text\nhttps://lanray07.github.io/Scrap-Squad/") }
+        val medals = menu.getJSONObject("runMedals").optJSONArray(run.getString("id"))?.strings().orEmpty()
+        medals.forEach { label(t(it), color = Ui.mint) }
+        var card: android.graphics.Bitmap? = null
+        fun image() = card ?: RunCard.render(activity, run, content, strings, medals).also { card = it }
+        button("run.preview") { RunCard.preview(activity, image(), strings) }
+        button("run.share") { try { RunCard.share(activity, image(), run, strings) } catch (e: Exception) { error(e) } }
     }
 }
 
@@ -78,12 +84,40 @@ private fun MenuScreens.preference(field: String, value: Any) {
 
 internal fun MenuScreens.shop() {
     heading("shop.title", "shop.subtitle")
+    val purchases = activity.purchases
+    val cosmetics = CosmeticRepository(activity)
+    val ownership = cosmetics.state()
+    val effective = ownership.getJSONArray("effectiveOwnership").strings().toSet()
+    val selected = ownership.getJSONObject("selection")
+    label(t(purchases.statusKey))
+    button("shop.restore", purchases.ready) { purchases.restore() }
+    button("shop.refresh") { purchases.refresh() }
     val catalog = JSONObject(activity.assets.open("generated/StoreConfiguration.json").bufferedReader().use { it.readText() })
     catalog.getJSONArray("packs").objects().forEach { pack ->
         separator(); label(t(pack.getString("nameKey")), 23f, Ui.gold); label(t(pack.getString("detailKey")))
-        pack.getJSONArray("finishes").objects().forEach { finish -> panel.addView(RobotPortraitView(activity, finish.getString("robotID"), finish), LinearLayout.LayoutParams(Ui.dp(activity, 150), Ui.dp(activity, 150))) }
+        val id = pack.getString("id")
+        pack.getJSONArray("finishes").objects().forEach { finish ->
+            panel.addView(RobotPortraitView(activity, finish.getString("robotID"), finish), LinearLayout.LayoutParams(Ui.dp(activity, 150), Ui.dp(activity, 150)))
+            if (id in effective) {
+                val robot = finish.getString("robotID"); val equipped = selected.getJSONObject("robotFinishIDs").optString(robot) == finish.getString("id")
+                button(if (equipped) "cosmetic.remove" else "cosmetic.equip", robot in profile.getJSONArray("unlockedRobots").strings()) { if (equipped) cosmetics.remove(robot) else cosmetics.equip(finish); show() }
+            }
+        }
         button("premium.preview") { premiumPreview(pack, catalog) }
-        label(t("shop.unavailable")); label(t("cosmetic.once"))
+        if (id in effective) label(t("cosmetic.owned"), color = Ui.mint)
+        else {
+            val price = purchases.price(id)
+            if (price != null) label(price, 20f, Ui.gold)
+            button("cosmetic.buy", purchases.ready && price != null && ownership.getJSONObject("canPurchase").getBoolean(id)) { purchases.purchase(id) }
+        }
+        label(t("cosmetic.once"))
+    }
+    if (ownership.getBoolean("founder")) listOf("goldenTrails" to "cosmetic.trails.enable", "founderBadge" to "cosmetic.badge.enable").forEach { (field, key) ->
+        panel.addView(Switch(activity).apply { text = t(key); setTextColor(Ui.mint); isChecked = selected.getBoolean(field); setOnCheckedChangeListener { _, value -> cosmetics.toggle(field, value) } })
+    }
+    if ("prism" in ownership.getJSONArray("weaponEffects").strings()) {
+        val equipped = selected.optString("weaponEffectID") == "prism"
+        button(if (equipped) "cosmetic.remove" else "cosmetic.equip") { cosmetics.weaponEffect(if (equipped) null else "prism"); show() }
     }
     label(t("shop.note"))
 }

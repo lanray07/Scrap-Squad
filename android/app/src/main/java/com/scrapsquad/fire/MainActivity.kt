@@ -10,6 +10,7 @@ class MainActivity : Activity() {
     private lateinit var strings: Strings
     private lateinit var screens: MenuScreens
     private lateinit var audio: MenuAudio
+    internal val purchases get() = AmazonPurchases.get(this)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         repository = GameRepository(this); strings = Strings(this)
@@ -35,8 +36,15 @@ class MainActivity : Activity() {
     }
     override fun onRestart() { super.onRestart(); if (::screens.isInitialized) { repository.initialize(); if (repository.battleJournal.pending()) { recreate(); return }; screens.show(); screens.offerOffline() } }
     override fun onSaveInstanceState(outState: Bundle) { if (::screens.isInitialized) outState.putString("page", screens.page); super.onSaveInstanceState(outState) }
-    override fun onResume() { super.onResume(); if (::audio.isInitialized) audio.resume() }
+    override fun onResume() {
+        super.onResume(); if (::audio.isInitialized) audio.resume()
+        if (::screens.isInitialized) {
+            purchases.changed = { if (!isFinishing && !isDestroyed && screens.page == "shop") screens.show() }
+            purchases.refresh()
+        }
+    }
     override fun onPause() {
+        purchases.changed = null
         if (::audio.isInitialized) audio.stop()
         if (::repository.isInitialized && !repository.battleJournal.pending()) runCatching { repository.action("background") }.onFailure { android.util.Log.e("ScrapSave", "Background save failed", it) }
         super.onPause()
