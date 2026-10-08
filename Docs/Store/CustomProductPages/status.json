@@ -1,0 +1,1356 @@
+{
+  "appID": "6818847887",
+  "reviewSubmitted": false,
+  "keywordsAssigned": false,
+  "campaigns": [
+    {
+      "campaign": "boss-survival",
+      "pageID": "ddbee4ab-4499-46fe-818b-83add096ab59",
+      "versionID": "027fcd9d-dedc-4b75-97bf-ab7a2b8f3752",
+      "url": "https://apps.apple.com/us/app/scrap-squad-merge-survive/id6818847887?ppid=ddbee4ab-4499-46fe-818b-83add096ab59",
+      "state": "PREPARE_FOR_SUBMISSION",
+      "locales": [
+        {
+          "locale": "de-DE",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "6c700970-8455-419b-bf61-7429d7580e53",
+              "count": 3,
+              "expectedChecksums": [
+                "3961764b08151ea831ddb9d674b5c07f",
+                "5e69b2f94207c4c06725db17f890a36c",
+                "c56c9e1a4b2bd9f1ee27ccefc24d74b5"
+              ],
+              "assetIDs": [
+                "38c00019-66f5-8c8f-8006-76f424342c42",
+                "5b400019-66f5-8c8f-8011-705215b6e15c",
+                "f7400019-66f5-8c8f-803f-3e9c10ede923"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "30ac86b2-bfab-4c83-98be-13f9a40b2926",
+              "count": 3,
+              "expectedChecksums": [
+                "e234cc2d4af8b91534464e4539ba89b1",
+                "f3e9ef5fd767733f74d530ab9c706a84",
+                "7bbe932104a457002ae730135da1a9a9"
+              ],
+              "assetIDs": [
+                "3a800019-66f5-8c8f-8039-03b9a1b48274",
+                "bb800019-66f5-8c8f-8017-c22df7f0a7b8",
+                "91000019-66f5-8c8f-801f-40358d4169b8"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "en-GB",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "1ef45480-6809-4d4c-898b-9fb180b8c066",
+              "count": 3,
+              "expectedChecksums": [
+                "58aead9ebb4f57e7f2b593ba12574792",
+                "de500c50e9522a249f0b73d39f5319f1",
+                "515df364f7b9a3dfe40903193bff595c"
+              ],
+              "assetIDs": [
+                "78800019-66f5-8c8f-803b-240a19df45aa",
+                "5fc00019-66f5-8c8f-800f-6dc063d28a5d",
+                "00000019-66f5-8c8f-801a-e664b4a25b85"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "7bbf772e-7dce-488f-9ab2-973d0b531644",
+              "count": 3,
+              "expectedChecksums": [
+                "b3249276e8c134652b3086fc1478e762",
+                "55b0c8824dbcc330501a86a33366074e",
+                "b21e96827147fabc6fb028b34a80f4c2"
+              ],
+              "assetIDs": [
+                "f4400019-66f5-8c8f-800a-dbd6a028a69d",
+                "07400019-66f5-8c8f-8026-76f6e635fc5e",
+                "ff400019-66f5-8c8f-800b-0e33f7dd7d7b"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "it",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "61466b31-a898-4747-8d68-c03bb941b9e9",
+              "count": 3,
+              "expectedChecksums": [
+                "c2bda4921b74ca944e414a9960fc1333",
+                "03adb8ab60fbffe3c3a6548e5d80236b",
+                "d921911108e69d96080a6780a94423cb"
+              ],
+              "assetIDs": [
+                "6f400019-66f5-8c8f-8035-aedfddb11abf",
+                "60400019-66f5-8c8f-8023-9281414b6825",
+                "59c00019-66f5-8c8f-8032-8e5ca4021345"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "9152885b-8cad-4911-a148-df7fd7a844c7",
+              "count": 3,
+              "expectedChecksums": [
+                "857f55fc2d290cb4c57f3426b2424ea0",
+                "dfa04f66202af38800a3757a48a8395a",
+                "ea177f03a80244ed6045e3420a85ba7a"
+              ],
+              "assetIDs": [
+                "71400019-66f5-8c8f-8014-6844c13e0b4e",
+                "f7800019-66f5-8c8f-8003-132909f75744",
+                "db400019-66f5-8c8f-8022-dc2cbd9736ba"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "pt-BR",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "b319f350-c36f-4ed0-a3f8-fe41fd787690",
+              "count": 3,
+              "expectedChecksums": [
+                "8cade6e47f303a83d3426fc3b1f2a2ac",
+                "d90733f98d028f441e193454c04196b4",
+                "2e346a9d3519a399ea9108e1123c1ad7"
+              ],
+              "assetIDs": [
+                "67800019-66f5-8c8f-8003-1d6c71994e19",
+                "96c00019-66f5-8c8f-802b-da72c4aa4277",
+                "66000019-66f5-8c8f-8038-8ddac8556902"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "d02cfdf9-0f29-4b25-a998-518886ee781b",
+              "count": 3,
+              "expectedChecksums": [
+                "a2ceaa8b36939e2d985f71620fef69b3",
+                "b0cdaca670fb3c86ecd62408122b13b1",
+                "ca10d994050310f7a0804738bc2edda6"
+              ],
+              "assetIDs": [
+                "99c00019-66f5-8c8f-801f-efff2bd43cdc",
+                "3dc00019-66f5-8c8f-803c-42b8e4a3807d",
+                "32800019-66f5-8c8f-8003-0a155f02ea2c"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "pt-PT",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "8eac4cfa-8d5c-4cfe-bfb8-826d2d535828",
+              "count": 3,
+              "expectedChecksums": [
+                "a7d466a2ce32efc78cb2f66c2c8d6d40",
+                "51af7506e2e42398fd0e50ee02f6001e",
+                "1652828b7709c3547ca501bd18585a5e"
+              ],
+              "assetIDs": [
+                "23c00019-66f5-8c8f-8026-473c7523cb8a",
+                "a1c00019-66f5-8c8f-8025-2cba02bcf255",
+                "22c00019-66f5-8c8f-8023-b6552f717850"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "be07ec0c-3069-4e58-bfe2-967a28a63581",
+              "count": 3,
+              "expectedChecksums": [
+                "642a2974458255c9a7b351337a86f594",
+                "b3c4dba61676d26c96938e08dded485c",
+                "f87bd66045d3d5e28a1238299a450667"
+              ],
+              "assetIDs": [
+                "31800019-66f5-8c8f-802a-37e0d3ebbfea",
+                "aa400019-66f5-8c8f-802b-bfa3b5be6baf",
+                "37800019-66f5-8c8f-8022-5f15ac2b3ad6"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "fr-FR",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "185300a1-1bb5-40b4-afb6-57d693f15921",
+              "count": 3,
+              "expectedChecksums": [
+                "47ea59264a36631f04b0845abada9452",
+                "2b151719c44d9c0ffec2f7667e8d0cc4",
+                "4cc020a86986c7aa88cf8686ac94678a"
+              ],
+              "assetIDs": [
+                "75800019-66f5-8c8f-8031-06830d79b745",
+                "a4400019-66f5-8c8f-801c-5ea238d11d7c",
+                "43c00019-66f5-8c8f-803a-4e872a44f103"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "cb3b1431-5997-4dce-b4c0-484d3f17eabc",
+              "count": 3,
+              "expectedChecksums": [
+                "87f1f6a5742b4b5983e8282c5a7682dc",
+                "d92ba58519f61638c44491d2d0dfce0b",
+                "8e6bc6e5ad0833e56da2d5f4d80b9ff3"
+              ],
+              "assetIDs": [
+                "e8000019-66f5-8c8f-8029-a19a9679d907",
+                "ca400019-66f5-8c8f-8010-65e703093718",
+                "c4800019-66f5-8c8f-803f-df87b7e1b8f3"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "es-ES",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "9f9f0b7c-7222-48d9-916e-d6e4b2c74732",
+              "count": 3,
+              "expectedChecksums": [
+                "4bfe5254d7dc382d016a4a5918098b54",
+                "9a0ee13c9f12f540ce68ca70dda48a3b",
+                "82bcda4209c77297dbbb98bf2eed09cf"
+              ],
+              "assetIDs": [
+                "ac400019-66f5-8c8f-8013-eb224fbcb855",
+                "54000019-66f5-8c8f-8023-5442214fe10b",
+                "d1c00019-66f5-8c8f-8013-7f5c15f5f4d8"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "8a4026f0-bd69-439f-bdd5-9b368055f17b",
+              "count": 3,
+              "expectedChecksums": [
+                "2b665dcd870ef4b76ef7095851fe1a5e",
+                "f7a9659a7bcc99c9b627a2ad6ba07764",
+                "df25d9578f11bb855c9f9be782c42c9c"
+              ],
+              "assetIDs": [
+                "1bc00019-66f5-8c8f-8005-678a237ca19f",
+                "02400019-66f5-8c8f-8018-cdde71977580",
+                "97c00019-66f5-8c8f-8029-0d87736ec2e2"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "ja",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "6b2fa4df-7d7e-4fb1-a570-6c5e03184e67",
+              "count": 3,
+              "expectedChecksums": [
+                "0295e79345e9b735cc815e1f74b1bb22",
+                "5636652bcd472901b3637f4c3c0dcf5c",
+                "91b89e1f1e3289bddab545cfa2188ffe"
+              ],
+              "assetIDs": [
+                "a3000019-66f5-8c8f-800c-c4cb26337f93",
+                "d8c00019-66f5-8c8f-801d-09eedb2b00e2",
+                "a8000019-66f5-8c8f-8030-a16ed4070e38"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "54499824-283a-4bbd-8281-8c016623c159",
+              "count": 3,
+              "expectedChecksums": [
+                "bcb22943b7ca840750c2c0a307005dbb",
+                "c358279e8708df309f6128ee886c0734",
+                "b483bc85b2d28382f34db4a5d71538ff"
+              ],
+              "assetIDs": [
+                "fb400019-66f5-8c8f-8014-c89f8ba9445e",
+                "1c400019-66f5-8c8f-8011-54784a16e4bb",
+                "2ac00019-66f5-8c8f-8039-c24b69beaef0"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "ko",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "c596ffc7-a47d-4a89-a823-e1161a4287df",
+              "count": 3,
+              "expectedChecksums": [
+                "dab6f08be2b166a3af1e849d624bd2c4",
+                "a2c10b26694855d9e569fea66bc19e20",
+                "a7e4c5fbcde2f8c0597eade70b346032"
+              ],
+              "assetIDs": [
+                "da800019-66f5-8c8f-8013-46f76e2a2049",
+                "7cc00019-66f5-8c8f-8017-f04ee66d8ed7",
+                "c5000019-66f5-8c8f-803d-943e4993b2db"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "519454b7-9305-44c9-94ba-a24db9bdaac1",
+              "count": 3,
+              "expectedChecksums": [
+                "80922a872b06e8f795fef61c00eb64d7",
+                "ad421be12730b301aef7bdfedec96353",
+                "bd5af80c6d7edc16819fb40d9e70c574"
+              ],
+              "assetIDs": [
+                "79000019-66f5-8c8f-8013-1be6b66918d5",
+                "01000019-66f5-8c8f-802d-6ca295558a5e",
+                "97000019-66f5-8c8f-8007-71a928afa5cf"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "zh-Hans",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "90d45a0d-d3bf-4001-b908-1c4e7d3aed7c",
+              "count": 3,
+              "expectedChecksums": [
+                "2926ec9d5b7019557c6ea2985ac35ebe",
+                "7a48fbe63ba85acc7df79834ae748b09",
+                "362b0a058bd93e695d2aa73457882bd2"
+              ],
+              "assetIDs": [
+                "43400019-66f5-8c8f-802b-ef422df7db14",
+                "11c00019-66f5-8c8f-800c-c9b4b2c844ac",
+                "b4800019-66f5-8c8f-8000-0faf014d01f9"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "957bbfd5-2e7f-4460-8173-31f9bc74ccea",
+              "count": 3,
+              "expectedChecksums": [
+                "d27e04ebfba5c9ea007ef57c0c7ac30f",
+                "5ed7245081ea78ef4750290a72e69b78",
+                "29dbe51dcc6432b8af7c62f69bf54267"
+              ],
+              "assetIDs": [
+                "3e000019-66f5-8c8f-8030-e1d34ca47590",
+                "72000019-66f5-8c8f-800c-752b25e17642",
+                "9e400019-66f5-8c8f-8007-f256a1e59f95"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "zh-Hant",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "1182d0fe-6974-4ff8-abff-baafc91b6e31",
+              "count": 3,
+              "expectedChecksums": [
+                "412b3d57ea1962f38a99e1a8f1bc4f98",
+                "1ec5bc0022b742efe92ff3c6cdff068d",
+                "835be8e8f114b9062472d7410f74b998"
+              ],
+              "assetIDs": [
+                "e4c00019-66f5-8c8f-8018-75dfb4bbdbcb",
+                "67400019-66f5-8c8f-8007-8056714a3f90",
+                "8d000019-66f5-8c8f-8029-83f846eccf1e"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "f0fca103-9875-41ac-b4c9-bfa16c9caad9",
+              "count": 3,
+              "expectedChecksums": [
+                "ef1dc3263048324f58f0d8e91ab617b5",
+                "f0cdb5bd7e14dcc1bbddbefc00a39a45",
+                "481dc1bab3cbea3c258777633dd3d2f8"
+              ],
+              "assetIDs": [
+                "25800019-66f5-8c8f-8013-63d8c493b260",
+                "2dc00019-66f5-8c8f-8015-559137f66f36",
+                "9a400019-66f5-8c8f-8022-2b1daf9fb07e"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "campaign": "daily-circuit",
+      "pageID": "4d7eaa7f-ee8c-4b9f-9c7a-19a94305cf23",
+      "versionID": "9c331696-a978-4233-ae82-1ea947b2222e",
+      "url": "https://apps.apple.com/us/app/scrap-squad-merge-survive/id6818847887?ppid=4d7eaa7f-ee8c-4b9f-9c7a-19a94305cf23",
+      "state": "PREPARE_FOR_SUBMISSION",
+      "locales": [
+        {
+          "locale": "es-ES",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "4603e773-52dc-4e93-afb3-e6ab51d4ff8b",
+              "count": 3,
+              "expectedChecksums": [
+                "27c6bca4367f98ff80c3b25f74fd35c3",
+                "7ca263126ece8c2481b2876c7ab26d78",
+                "5fa2cd98a391dd84daccd6dc815e1bb8"
+              ],
+              "assetIDs": [
+                "94000019-66f5-8c8f-802a-241bdf2271c5",
+                "24c00019-66f5-8c8f-8024-222e58653488",
+                "5fc00019-66f5-8c8f-8036-c0511bf8e706"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "09d13ecd-c4c6-4891-bc54-52cf3af38339",
+              "count": 3,
+              "expectedChecksums": [
+                "53bdc28eda02d95182c99cf420dd19e1",
+                "4dc5f54a4db29bdb50b86ae40bd57c9d",
+                "e0dbf9a6d93a10a6f1bcdd1255b4a1b3"
+              ],
+              "assetIDs": [
+                "e6000019-66f5-8c8f-8039-cb026a377a4e",
+                "a8c00019-66f5-8c8f-8024-35477cf38d8f",
+                "df400019-66f5-8c8f-802e-dfbb047567a2"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "de-DE",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "f3711f78-e013-4899-9b19-a478d89e9ab8",
+              "count": 3,
+              "expectedChecksums": [
+                "e85ec426a60e2d34b175f072ac6a6756",
+                "9cc6bc442ef1d6bebb51d2b6230baef2",
+                "c6eaf60fca9e19210a2fbc2a2c3cce8a"
+              ],
+              "assetIDs": [
+                "0d800019-66f5-8c8f-8036-914386fe2a8b",
+                "f6400019-66f5-8c8f-802d-114769173299",
+                "b2400019-66f5-8c8f-8029-481bce65ac45"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "47c530c4-b798-4a73-8dcb-00b7cd033d53",
+              "count": 3,
+              "expectedChecksums": [
+                "87b86d4800c9b4ed58f7854da69681da",
+                "46356388a7b0a9bbd03a9e83b928a48d",
+                "cb23ffdc9555466d2a51d073d1319779"
+              ],
+              "assetIDs": [
+                "4f400019-66f5-8c8f-8002-1d34c2f1a902",
+                "5d800019-66f5-8c8f-801f-57b72fa7dced",
+                "5e400019-66f5-8c8f-8027-437af5c2a209"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "en-GB",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "797a1b26-cac1-4035-87b2-142b67a2a8e2",
+              "count": 3,
+              "expectedChecksums": [
+                "c61e5ee02a61a37312829988a5b5cb2c",
+                "fac6acbcba3f74209b47f52c4d2fa5b8",
+                "0a3e112a5d9f8eb6681b24d1a7d0cd50"
+              ],
+              "assetIDs": [
+                "01000019-66f5-8c8f-8026-ff36470ec128",
+                "2f000019-66f5-8c8f-8033-9e6ae65eb4f3",
+                "06400019-66f5-8c8f-8036-1d102ef97d98"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "0fddc3b8-c741-49e3-a123-910069487c35",
+              "count": 3,
+              "expectedChecksums": [
+                "cd0461eb8cf623e2215ce3236573f56a",
+                "1b0af7f4d7f45853d267ea74e1d6826f",
+                "296fa90e4217998769c2dc78ec27262f"
+              ],
+              "assetIDs": [
+                "dec00019-66f5-8c8f-8026-e2c41c224958",
+                "ae800019-66f5-8c8f-8038-b4d839b9525c",
+                "42000019-66f5-8c8f-8010-b24959738d76"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "fr-FR",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "ae60761f-0cb4-4e0f-a3d6-669d18195ff2",
+              "count": 3,
+              "expectedChecksums": [
+                "cd01c9192ec34967fced4b51ba56576f",
+                "ae7e3fa1ec53b36e98c7196fc86ef301",
+                "fbe49f882eda5ff2440e996adecce643"
+              ],
+              "assetIDs": [
+                "32000019-66f5-8c8f-8037-8f9095cd668d",
+                "21400019-66f5-8c8f-8018-48bb3db4f119",
+                "6f800019-66f5-8c8f-8004-02352555ce94"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "95c82160-fbcb-41ff-ad43-93bb44483929",
+              "count": 3,
+              "expectedChecksums": [
+                "b02aa6256d4af0f301fcbcfbfffa6c94",
+                "47fe2bc51abde686371749fd2a0bbe23",
+                "1f4f1919779780df95f7a5a936db8ab7"
+              ],
+              "assetIDs": [
+                "26400019-66f5-8c8f-800e-651c442dc5c3",
+                "cb400019-66f5-8c8f-8010-50ea1027b70c",
+                "7a000019-66f5-8c8f-802d-6a7b7fcf6082"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "it",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "c0468745-4078-4cf0-a359-20af571dd2f9",
+              "count": 3,
+              "expectedChecksums": [
+                "f0bf7cbfa4217676b37bfa6208484e61",
+                "21644c79d39ec0db5a822b7d8225c145",
+                "43ad08cf71ee4da856253378ec33fec8"
+              ],
+              "assetIDs": [
+                "bdc00019-66f5-8c8f-802b-c7452700e236",
+                "19c00019-66f5-8c8f-8027-a0ea091442ab",
+                "98c00019-66f5-8c8f-8016-18dec7f121d9"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "aaa610a5-1fee-4e58-b6bf-079c60d2c4c7",
+              "count": 3,
+              "expectedChecksums": [
+                "66a966420adabfa41b228b18b2903be1",
+                "747494050a9eec6b9c2a1415caf16d66",
+                "c8bfeb50257a52f7efedf50c1e5d5d11"
+              ],
+              "assetIDs": [
+                "07000019-66f5-8c8f-8026-adf5cb5e29ed",
+                "f4000019-66f5-8c8f-8033-e7ba7e875f78",
+                "8d000019-66f5-8c8f-801b-3da49c3c98cb"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "pt-BR",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "703bec9c-9d01-4b84-86fc-e31b335a297c",
+              "count": 3,
+              "expectedChecksums": [
+                "6be608261e4a21c541417294894f39bc",
+                "552872daab412d139d2db5c352e491f2",
+                "1ce05677a2f69689d13c02a16b1bc5d8"
+              ],
+              "assetIDs": [
+                "01800019-66f5-8c8f-800c-8d6d9e0db75a",
+                "28400019-66f5-8c8f-801e-47b3949e15f4",
+                "1a400019-66f5-8c8f-8033-de5aaa59a715"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "e9d99f6a-d803-4802-a4a8-3a17d36942a0",
+              "count": 3,
+              "expectedChecksums": [
+                "1662729aa2fa312fca776c221122ffba",
+                "24d7f35b37819624a71a529f8f7e56ba",
+                "da87161dea22ad2c662b35ada154047d"
+              ],
+              "assetIDs": [
+                "f0400019-66f5-8c8f-801e-955ac1a00041",
+                "72c00019-66f5-8c8f-8026-90a3e7213454",
+                "8a800019-66f5-8c8f-803e-00eb11af87d0"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "pt-PT",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "594824f8-2ef1-40f2-9a5c-aa3a56d93a53",
+              "count": 3,
+              "expectedChecksums": [
+                "6991ce9a0a76bb179420e0eef0c6cfe9",
+                "b3a7227312ca4c30485b6ac28c22fbda",
+                "a9e1f1775d8b117969440fb6e2a9a854"
+              ],
+              "assetIDs": [
+                "ac400019-66f5-8c8f-801d-812b28051a99",
+                "6fc00019-66f5-8c8f-800c-65ef6e2b7a90",
+                "cf800019-66f5-8c8f-8029-8a84ed2bdc86"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "219bc5af-c963-40b9-aae0-142713de82d0",
+              "count": 3,
+              "expectedChecksums": [
+                "e2c6af1fcd116733a2d8452481f1fdf4",
+                "4c60e226d36cc3534b0adc278deb7277",
+                "42c26198884c160796e0fb6293f73714"
+              ],
+              "assetIDs": [
+                "64400019-66f5-8c8f-803b-a7a2b52d1b39",
+                "6cc00019-66f5-8c8f-801f-fbff0af55afe",
+                "59800019-66f5-8c8f-800b-1a884de5d41b"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "ja",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "0df1d01c-4186-4786-9e27-ee87d45299b0",
+              "count": 3,
+              "expectedChecksums": [
+                "3b8b466c5dfedfb31e1db26f4c46243a",
+                "0feb69a6166fa6c5c5f7eead5f12ee57",
+                "54defeabb74c8d0cb0bd2895f3e4ec6f"
+              ],
+              "assetIDs": [
+                "11c00019-66f5-8c8f-8016-27c534aa8d0f",
+                "9c800019-66f5-8c8f-803a-130722f04e46",
+                "3bc00019-66f5-8c8f-8027-8d24306774b4"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "4e74548b-28bf-4479-9d18-8574a3a42ae1",
+              "count": 3,
+              "expectedChecksums": [
+                "e673e6b6d38888fd88197d49adcbd1fc",
+                "0c35c9bbdceac0995296769b9ef015a9",
+                "481f75d4c253d4c4a5accc63f1d40014"
+              ],
+              "assetIDs": [
+                "bf000019-66f5-8c8f-800d-ae81f2f9e16e",
+                "ee800019-66f5-8c8f-801f-e5f6f85be3b0",
+                "04c00019-66f5-8c8f-8039-d6123da51508"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "ko",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "06074742-fb6a-4b81-a81b-a3f39e3e9d7b",
+              "count": 3,
+              "expectedChecksums": [
+                "d6ae979dc823c638f51e184f9c3209b7",
+                "c66c2a4ee53bb2748cc40d5363fb415a",
+                "504f9e3155a3e469b12cecbb1a98d7c6"
+              ],
+              "assetIDs": [
+                "5f800019-66f5-8c8f-800a-a8b388b80f07",
+                "0e000019-66f5-8c8f-801f-67759964c972",
+                "e8800019-66f5-8c8f-801f-84f240053e18"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "dc7d11af-6b5f-4078-b2bc-a604f99d682a",
+              "count": 3,
+              "expectedChecksums": [
+                "b1c0435347db8a246e22d485ed682978",
+                "0f91ba43f8c485d1122908e8f3a871a3",
+                "78625a8775d3d934367f39e57bfab3cb"
+              ],
+              "assetIDs": [
+                "d8c00019-66f5-8c8f-8013-c293879ace66",
+                "d9c00019-66f5-8c8f-801c-2653e85421e8",
+                "47c00019-66f5-8c8f-8039-3339436c7150"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "zh-Hans",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "a1b9e8fd-6765-44bc-b91c-060a6b9e705a",
+              "count": 3,
+              "expectedChecksums": [
+                "5ce1f26701ddea71bbfa1b39c6f0d91c",
+                "01b2fe4c5f0f8a4fb5a9590d4dbbba15",
+                "1d3152c923b5b89f5f55613b3c5c7c7b"
+              ],
+              "assetIDs": [
+                "1f400019-66f5-8c8f-8038-be7c6f820c5a",
+                "31000019-66f5-8c8f-8011-c63357df48b7",
+                "b2c00019-66f5-8c8f-8017-d30892647e0d"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "d4a1a046-a4b8-4d68-af9c-5bce741a13d2",
+              "count": 3,
+              "expectedChecksums": [
+                "d0cd9a34e51e0029cd0b3c5958202f9b",
+                "1769a0fdb2b0ba7d617b63b6c1f6f651",
+                "62291296ea840839e6d50367a9da4244"
+              ],
+              "assetIDs": [
+                "d4800019-66f5-8c8f-803b-825d980e52d3",
+                "0e800019-66f5-8c8f-800f-42795ccd4ead",
+                "20400019-66f5-8c8f-800d-abe39c90eded"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "zh-Hant",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "a559a907-8725-4684-af6a-70e95d543678",
+              "count": 3,
+              "expectedChecksums": [
+                "18dff93f8d012b57ab02df3f3cb9582a",
+                "1fac2056dbe54a0f89333028f8388b1a",
+                "4b5e58924829896b490026e37c544af6"
+              ],
+              "assetIDs": [
+                "de000019-66f5-8c8f-8034-c1eb82cdaad9",
+                "f6c00019-66f5-8c8f-8005-bc05a1095b38",
+                "94c00019-66f5-8c8f-8016-f9c3851569cd"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "8ae98ca9-7199-406d-9203-a2dc227a3747",
+              "count": 3,
+              "expectedChecksums": [
+                "0f5872b71dfeb59160c3ee39adc5d1fb",
+                "c08a2b4b7a27d457fbc0fb91a4cdc0a8",
+                "f6457602ace137973e0720653137cae7"
+              ],
+              "assetIDs": [
+                "43000019-66f5-8c8f-8010-7ddcc310497d",
+                "01c00019-66f5-8c8f-8038-aa67ad2d3276",
+                "7e000019-66f5-8c8f-802e-9a9863a77b1a"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "campaign": "weapon-fusion",
+      "pageID": "b8aa1d77-5b8c-44dd-802a-477d03df07e0",
+      "versionID": "42401fdc-4216-4c0d-a872-5b93da1592b8",
+      "url": "https://apps.apple.com/us/app/scrap-squad-merge-survive/id6818847887?ppid=b8aa1d77-5b8c-44dd-802a-477d03df07e0",
+      "state": "PREPARE_FOR_SUBMISSION",
+      "locales": [
+        {
+          "locale": "fr-FR",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "3a9f5330-9a43-439c-bfc7-2b260dbb3f0d",
+              "count": 3,
+              "expectedChecksums": [
+                "3dd6f3da775857e09e7deacab701b194",
+                "72d0782654884aa38f97c843a6867800",
+                "8061f6eaa99230033d2d638d44b79d29"
+              ],
+              "assetIDs": [
+                "969bd21f-9e21-4651-9a17-f0be1ee37ac8",
+                "1e99c177-6687-441c-8671-15be8b3ee4a7",
+                "0b982922-9c5e-4082-bef2-75f9d02f7926"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "c87bbecc-1998-4545-81f5-d66c87b5f900",
+              "count": 3,
+              "expectedChecksums": [
+                "1a8fda80ae864c94f8d0e6b596171c52",
+                "678f017f846b96c48bb57a9a74dae554",
+                "3b7d1d23f53e3842bc83af56be22c9a2"
+              ],
+              "assetIDs": [
+                "848008ba-b4ea-43a9-9b7b-0574b901ecb4",
+                "8a40204f-9dcc-4941-b988-77316b2365d8",
+                "e403e21b-e9d8-422c-8275-425b5e4b2374"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "en-GB",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "bdd7f882-9815-4072-b0a9-8cc1fafc901a",
+              "count": 3,
+              "expectedChecksums": [
+                "40caaf7405b2bf4b64be7a14920723d0",
+                "9b7a78fe926350391b4e9193883db71e",
+                "86ad304e04bc55d8c461eb692b89b67d"
+              ],
+              "assetIDs": [
+                "247bc38d-be13-47a0-a6f5-e65e48385a08",
+                "cf69e8e5-b3d7-4a9c-8dc8-cf266b36406d",
+                "2b950c43-e701-41e0-bfd8-e8855376cc12"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "b0f87248-b651-444a-b040-ed40bbf02b3b",
+              "count": 3,
+              "expectedChecksums": [
+                "c617ab3a7403dd80eff1e1495beda25a",
+                "2aad53669dfe9de3bb5919474e70161f",
+                "52c7a51f0282543aca4c2780b8767abf"
+              ],
+              "assetIDs": [
+                "ae289711-a5f3-49cd-b757-9f05555e45b8",
+                "6f2eb846-bd2d-43e9-bdd0-d8500f566c59",
+                "01abbdc0-3b5d-47cb-9a74-838ab1a72804"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "de-DE",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "0539bf76-e3fc-4af9-bdf6-c81728de1d22",
+              "count": 3,
+              "expectedChecksums": [
+                "fa03f06c235a7913af76c2b3e40a30bc",
+                "bfd0ed48245b6adfb095bc4cf442b897",
+                "3748265d6b7ed3b5e917740283cef1a2"
+              ],
+              "assetIDs": [
+                "7988f271-ec8f-4fe6-95e1-593392a293ee",
+                "4cab9823-0b78-4a09-b3d8-cc41830c462f",
+                "d695f34c-19fb-41c7-805b-0a2a2ca67d4a"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "6e251a05-02cb-4d51-a528-ea9147c16b39",
+              "count": 3,
+              "expectedChecksums": [
+                "0202dcd379c42105c7e94cef8688984b",
+                "92bf3845c5da5e8dcfe8c9b0259375ac",
+                "b933282a142970bb216604831effc22b"
+              ],
+              "assetIDs": [
+                "d0800019-66f5-8c8f-8014-770cfa08f3c7",
+                "6dc00019-66f5-8c8f-803e-74c5f0ae8533",
+                "2cc00019-66f5-8c8f-800f-ecac572589ea"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "es-ES",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "6c8abf62-edcf-4c21-a314-8be6305ed1f2",
+              "count": 3,
+              "expectedChecksums": [
+                "f01a99975b85f3adb1e017034953ae1b",
+                "012b62688a11e410197f203ed55d0619",
+                "de429305137c729787e6a15192ebfa9e"
+              ],
+              "assetIDs": [
+                "0f000019-66f5-8c8f-800f-b7f15cc7c44b",
+                "cf400019-66f5-8c8f-803a-8fc3b6b2e6ff",
+                "13c00019-66f5-8c8f-803f-1c783490bc22"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "78dbfa77-93a1-474c-a13f-8653a8042550",
+              "count": 3,
+              "expectedChecksums": [
+                "dd32681992722906cea6f153e12b9c83",
+                "b2fa106369b420c59aa846cb1611fa1f",
+                "0ed5190b55b204218027ffb0a472bfd0"
+              ],
+              "assetIDs": [
+                "65000019-66f5-8c8f-8032-cbc3dab652e0",
+                "2c400019-66f5-8c8f-801e-93891659150b",
+                "12000019-66f5-8c8f-8002-296d24be5aa3"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "pt-PT",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "f90ef452-f6a9-48e1-986c-0187e5f4bad0",
+              "count": 3,
+              "expectedChecksums": [
+                "7d0919f46d9469e420514326add3fb20",
+                "b24a9896baa69268516d5a0606eef9e4",
+                "3be3f2dcaa238936ce3ca04a0ebc1aaa"
+              ],
+              "assetIDs": [
+                "93800019-66f5-8c8f-800a-71a1754f4db6",
+                "21c00019-66f5-8c8f-800b-5eafc157ad3f",
+                "ff000019-66f5-8c8f-802e-bf64ae7d64a7"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "eb92dbdf-183a-4889-8bc6-86bc7a66d80e",
+              "count": 3,
+              "expectedChecksums": [
+                "73a18a108fb3be19ba96b781bfbd3eba",
+                "4207baac1a80115016657620eae4cce9",
+                "caf52df18d09806ae522c3bf3109a9bf"
+              ],
+              "assetIDs": [
+                "d8800019-66f5-8c8f-8015-b115e5d8fca6",
+                "e3000019-66f5-8c8f-8012-0155023fa7bc",
+                "a6400019-66f5-8c8f-801a-5ad44323e4d8"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "it",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "f2a3b494-c61b-4bd2-a065-a2079ec848ba",
+              "count": 3,
+              "expectedChecksums": [
+                "30a345ba9c5e6a17906982cf0a60f411",
+                "cf7b261580b0859662fa3a66b2b79fe9",
+                "758f41c93c2316998ec21a4828e0bdf1"
+              ],
+              "assetIDs": [
+                "84800019-66f5-8c8f-8010-f38a1801abda",
+                "16800019-66f5-8c8f-802f-72c426af1ffc",
+                "c0000019-66f5-8c8f-801d-410873f7ff67"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "6fc79dc2-a83b-4bb2-8f50-9af240ac4c80",
+              "count": 3,
+              "expectedChecksums": [
+                "c56ad1314a162d468d8c73f81ab0bc1c",
+                "7ef70da382c758a2cc50470c68b16799",
+                "85559a92a3fb7ee3a56ca1e1c206ab89"
+              ],
+              "assetIDs": [
+                "4f800019-66f5-8c8f-803a-fee8b392cabb",
+                "4b000019-66f5-8c8f-803c-770be13c21d9",
+                "18800019-66f5-8c8f-803a-69c4485e9bb6"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "pt-BR",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "0914fe26-0570-4973-a6ea-c5fbaec8901b",
+              "count": 3,
+              "expectedChecksums": [
+                "3d7ac106f53bd274c313914543c26c0b",
+                "618adb2724fefeff9b75bc2381976ec4",
+                "f9800b864fdd7696ed723900510577cc"
+              ],
+              "assetIDs": [
+                "0cc00019-66f5-8c8f-8036-fd4798895633",
+                "95000019-66f5-8c8f-8026-890aa6e79ee0",
+                "61c00019-66f5-8c8f-8002-1c521e135b22"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "5d6a456c-174c-4ac4-a215-380171f5f935",
+              "count": 3,
+              "expectedChecksums": [
+                "5cb5e1c31a0c9db368ea5a3b9da6772a",
+                "ab918757dd642c7e6a730fb4a938878e",
+                "e01cf688d1c1f70985f56908bdda500c"
+              ],
+              "assetIDs": [
+                "96c00019-66f5-8c8f-800a-bae8bced8dd6",
+                "26400019-66f5-8c8f-8026-ce3f926d25d7",
+                "36800019-66f5-8c8f-8003-578c92ec2089"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "ja",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "a88e9b5f-160b-48d2-985c-a69623b58740",
+              "count": 3,
+              "expectedChecksums": [
+                "abfd79e2092be27d3714d257c7a70681",
+                "efbde691c61c603e08326bcb6bcb4b6f",
+                "77be3a09023c86fdc8f72c2b2b7008e1"
+              ],
+              "assetIDs": [
+                "36400019-66f5-8c8f-802e-ee56a96a8dce",
+                "ff000019-66f5-8c8f-801a-e488fabb3f81",
+                "db400019-66f5-8c8f-803a-ce6fa10c00f5"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "36bda3e0-c567-4563-bf66-d0343f65941c",
+              "count": 3,
+              "expectedChecksums": [
+                "9f59ab359c09cb5e4398f8e0c2ea0b6b",
+                "ba35d36e4618877c26cd53f6cb9c0a2a",
+                "8ed40bb4598a7f2727d989f98c7ea60d"
+              ],
+              "assetIDs": [
+                "1bc00019-66f5-8c8f-803b-1666ed068c9b",
+                "7c400019-66f5-8c8f-801f-c0de0e6c8e44",
+                "70c00019-66f5-8c8f-8000-f3e9f8e81b80"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "zh-Hans",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "88592ecf-b73f-4b96-bd0b-ae34bdb5b97d",
+              "count": 3,
+              "expectedChecksums": [
+                "8460ee29ba827650e1380c1f36208f88",
+                "3d8a49b2a88f9f56a35e95d0e29cde7e",
+                "40d6f4dbcde5b58021f594586beb4d0a"
+              ],
+              "assetIDs": [
+                "f8c00019-66f5-8c8f-801e-85a0e942c06a",
+                "81c00019-66f5-8c8f-8027-8357931ec69d",
+                "66c00019-66f5-8c8f-8034-fbe7f5c21d64"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "4141647c-333a-4152-a763-872539c3ab64",
+              "count": 3,
+              "expectedChecksums": [
+                "68e770fbde3a5ec77a93e65586b02dfb",
+                "ee8a228d7ecbe67ff95adeb061dd1a6a",
+                "eb994701dfc960f88655af64520975de"
+              ],
+              "assetIDs": [
+                "07c00019-66f5-8c8f-8039-7693b0bf2333",
+                "ddc00019-66f5-8c8f-8004-80c35aa3eac8",
+                "dac00019-66f5-8c8f-8002-0e0e3ff01438"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "ko",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "c42d9bb4-5a36-41a6-97a5-de623584f34b",
+              "count": 3,
+              "expectedChecksums": [
+                "b4a1320eb16cf4cf9436e75aa72e9a14",
+                "e75d420fff5cc0eecd0e7dc1429a48ad",
+                "0ca58431ea465e04436fd2a884319243"
+              ],
+              "assetIDs": [
+                "f7400019-66f5-8c8f-8004-9d9ae62b8ea9",
+                "c5000019-66f5-8c8f-800e-ce65aa436fed",
+                "73c00019-66f5-8c8f-8036-9c0018db3700"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "4b63dbb1-4567-4232-b053-e583a0876182",
+              "count": 3,
+              "expectedChecksums": [
+                "2a381e9f8375bc8a452ea1f86ae15845",
+                "5988f2a91e0290d77444c8c57d1e2bbe",
+                "47c3306a58e1f4fdfbcda02db209a28a"
+              ],
+              "assetIDs": [
+                "01400019-66f5-8c8f-8033-02ed302d1621",
+                "d5400019-66f5-8c8f-8028-57f5f5854e32",
+                "71800019-66f5-8c8f-8002-f56e823b9411"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        },
+        {
+          "locale": "zh-Hant",
+          "promotionalTextVerified": true,
+          "galleries": [
+            {
+              "display": "APP_IPHONE_67",
+              "setID": "d0399c6b-44f8-4f70-875d-f083400d6bd2",
+              "count": 3,
+              "expectedChecksums": [
+                "dfbaa59b79b6e9c985900b4a7366e069",
+                "4017cd22a0dfe99e919ece5492cd0e5b",
+                "b9f5cc53e959bfb0ab2b1b454443d53e"
+              ],
+              "assetIDs": [
+                "dd400019-66f5-8c8f-8024-eda0d9ff195f",
+                "50c00019-66f5-8c8f-8011-e907fc16b597",
+                "c7000019-66f5-8c8f-8039-708e0f83fbd7"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            },
+            {
+              "display": "APP_IPAD_PRO_3GEN_129",
+              "setID": "5634d8d7-e62a-4948-ab62-0e24d8785212",
+              "count": 3,
+              "expectedChecksums": [
+                "63b8b272c5c95005beae40654bce21a1",
+                "39dd834a1b24fb397541d1c94f4de1b2",
+                "dfaa1606f5891cb4163eb2f46e6c7cc3"
+              ],
+              "assetIDs": [
+                "bd800019-66f5-8c8f-801a-f9816d96285b",
+                "d5400019-66f5-8c8f-802c-267da3a8e4b9",
+                "79800019-66f5-8c8f-8037-2364b916c040"
+              ],
+              "checksumsVerified": true,
+              "ordered": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "verifiedOn": "2026-10-08",
+  "workflow": "https://github.com/lanray07/Scrap-Squad/actions/runs/37768475428"
+}

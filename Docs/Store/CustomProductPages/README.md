@@ -12,7 +12,7 @@ The website uses the English Weapon Fusion banner, including social preview meta
 
 Run the GitHub workflow **Prepare localized custom product page drafts** to save promotional text and screenshot galleries using the repository's existing Apple secrets. The workflow verifies all image checksums, order and completed delivery state. It reuses matching assets and preserves unexpected assets for inspection. It never submits a page or app for review, accepts agreements or changes app pricing.
 
-The new App Store header is uploaded through App Store Connect's header slot. A text-free focal character allows it to serve all storefront languages. Current draft IDs and verified uploads are recorded separately in `status.json` after the workflow completes.
+The new App Store header is uploaded through App Store Connect's header slot. A text-free focal character allows it to serve all storefront languages. All three drafts now have promotional text in eleven locales and all 198 screenshots saved. `status.json` records the successful 8 October 2026 verification of all 66 galleries. The main version and each campaign have an English primary header; other locales inherit the same text-free artwork.
 
 ## Release limits
 
@@ -31,3 +31,5 @@ Use Node.js with `sharp` installed: `node Tools/custom_product_pages.cjs`. Copy 
 - https://developer.apple.com/help/app-store-connect/create-custom-product-pages/configure-multiple-product-page-versions
 - https://developer.apple.com/app-store/asset-best-practices/
 - https://developer.apple.com/documentation/appstoreconnectapi/post-v1-appcustomproductpages
+
+Image transfers and Apple image processing are checked separately. Apple occasionally takes longer than three minutes to process an accepted image. The uploader records reservation/checksum receipts, completes the batch, then polls delivery for up to thirty minutes. A receipt permits recognizing a pending image created by this uploader; it does not count as proof of completed delivery. Final success requires Apple to return matching checksums and COMPLETE states for every image.
