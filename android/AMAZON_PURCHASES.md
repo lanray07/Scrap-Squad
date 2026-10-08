@@ -18,16 +18,19 @@ Apple purchases do not transfer.
    `android/app/src/main/assets/`. This is a public authentication key, not the
    merchant shared secret. The SDK does not start when it is absent. Recheck the
    key if moving the app to another Amazon record or developer account.
-2. Connect the user's **existing backend**, whose URL, technology and source
-   repository have been requested but not supplied. Implement
-   `AmazonReceiptVerifier` with that backend's real authenticated protocol, then
-   configure the process singleton. There is deliberately no permissive default
-   verifier, invented endpoint or embedded merchant credential.
+2. The user confirmed no hosting account and requested preparation first. A small
+   Cloudflare Workers service is now in `backend/amazon-receipts/`; it is not
+   deployed. Follow its README to provision the server-only secret and real HTTPS
+   endpoints. Android's strict `HttpAmazonReceiptVerifier` is configured by public
+   `SCRAP_AMAZON_VERIFY_URL` and debug-only `SCRAP_AMAZON_SANDBOX_URL` build
+   environment variables. Blank or invalid configuration leaves purchases disabled.
 3. The backend must call Amazon Receipt Verification Service using a server-only
    merchant secret, bind app/user/receipt/product, allow only these seven SKUs,
    reject pending/invalid receipts, return cancellation state, and process repeated
    requests idempotently. Keep sandbox/production environments separate and apply
-   authentication/rate limiting appropriate to the existing service.
+   rate limiting. This service has no player login: the private user/receipt pair
+   is verified with Amazon. It does not authenticate a person or authorize player
+   data; see the backend README for this trust boundary and abuse limitations.
 4. Finalize the seven draft product prices/icons, test their configuration, and
    build with the actual app public key, registered SKUs and release signing key.
 

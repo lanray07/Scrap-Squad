@@ -10,6 +10,10 @@ android {
         versionName = "1.0"
         val privacyUrl = providers.environmentVariable("SCRAP_ANDROID_PRIVACY_URL").orElse("").get()
         buildConfigField("String", "PRIVACY_POLICY_URL", "\"" + privacyUrl.replace("\\", "\\\\").replace("\"", "\\\"") + "\"")
+        listOf("RECEIPT_VERIFY_URL" to "SCRAP_AMAZON_VERIFY_URL", "RECEIPT_SANDBOX_URL" to "SCRAP_AMAZON_SANDBOX_URL").forEach { (field, variable) ->
+            val value = providers.environmentVariable(variable).orElse("").get()
+            buildConfigField("String", field, "\"" + value.replace("\\", "\\\\").replace("\"", "\\\"") + "\"")
+        }
         ndk { abiFilters += listOf("arm64-v8a", "x86_64") }
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

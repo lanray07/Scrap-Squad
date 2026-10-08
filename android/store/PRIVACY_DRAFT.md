@@ -1,6 +1,6 @@
 # Scrap Squad for Amazon Fire — privacy policy draft
 
-**Do not publish this draft until the existing backend's operator, hosting,
+**Do not publish this draft until the backend's operator, hosting,
 retention and deletion practices are confirmed.** The original Apple-only policy
 does not describe Amazon receipt validation. Set `SCRAP_ANDROID_PRIVACY_URL` to
 the finalized public HTTPS policy when building the release; the Android privacy
@@ -15,13 +15,15 @@ destination in Android's share sheet. Challenge codes contain no player identity
 Amazon handles payment. The app receives an app-specific Amazon user identifier,
 product identifiers and receipt identifiers to verify and restore cosmetic
 ownership and remove refunded entitlements. The intended receipt backend receives
-the user and receipt identifiers and queries Amazon Receipt Verification Service.
+the user, receipt and product identifiers and queries Amazon Receipt Verification Service.
 Merchant credentials remain on the server. Payment-card details are not requested
 by this game. No progress or inventory upload is implemented.
 
 Before finalizing this policy, document:
 
-- The existing backend operator, host and countries of processing.
+- The backend operator, host and countries of processing. A Cloudflare Workers
+  service is prepared but not deployed: no database or application logs, hashed
+  edge rate-limit keys, and provider network processing must be disclosed.
 - Exactly which request/security logs are retained and their retention periods.
 - Receipt/entitlement retention and deletion procedures, including refund/legal
   obligations and support contact for deletion requests.

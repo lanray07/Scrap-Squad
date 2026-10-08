@@ -18,7 +18,7 @@ import java.util.concurrent.Executors
  * The server must call Amazon RVS with its merchant secret and bind all four fields.
  * Network errors must throw; only authoritative invalid/cancelled receipts revoke. */
 internal fun interface AmazonReceiptVerifier {
-    fun verify(userId: String, receiptId: String, environment: AmazonStoreEnvironment): VerifiedAmazonReceipt
+    fun verify(userId: String, receiptId: String, sku: String, environment: AmazonStoreEnvironment): VerifiedAmazonReceipt
 }
 internal enum class AmazonStoreEnvironment { SANDBOX, PRODUCTION }
 internal data class VerifiedAmazonReceipt(val userId: String, val receiptId: String, val sku: String, val active: Boolean)
@@ -33,6 +33,13 @@ internal class AmazonPurchases private constructor(context: Context) : Purchasin
     private val catalog = JSONObject(app.assets.open("generated/StoreConfiguration.json").bufferedReader().use { it.readText() })
     val skus = catalog.getJSONArray("packs").objects().map { it.getString("id") }.toSet()
     private var verifier: AmazonReceiptVerifier? = null
+    init {
+        val production = BuildConfig.RECEIPT_VERIFY_URL
+        val sandbox = if (BuildConfig.DEBUG) BuildConfig.RECEIPT_SANDBOX_URL else ""
+        if (production.isNotEmpty() || sandbox.isNotEmpty()) {
+            verifier = runCatching { HttpAmazonReceiptVerifier(production, sandbox) }.getOrNull()
+        }
+    }
     private var registered = false
     private var licensed = false
     private var environment: AmazonStoreEnvironment? = null
@@ -45,7 +52,8 @@ internal class AmazonPurchases private constructor(context: Context) : Purchasin
     var changed: (() -> Unit)? = null
     var statusKey = "shop.unavailable"; private set
     val owned: Set<String> get() = receipts.values.filter { it.active }.map { it.sku }.toSet()
-    val ready get() = registered && licensed && environment != null && user != null && verifier != null
+    val ready get() = registered && licensed && environment != null && user != null && verifier != null &&
+        (verifier !is HttpAmazonReceiptVerifier || if (environment == AmazonStoreEnvironment.SANDBOX) BuildConfig.DEBUG && BuildConfig.RECEIPT_SANDBOX_URL.isNotEmpty() else BuildConfig.RECEIPT_VERIFY_URL.isNotEmpty())
     val selectionKey get() = user?.let { id -> "selection." + java.security.MessageDigest.getInstance("SHA-256").digest(id.toByteArray()).joinToString("") { "%02x".format(it) } }
     fun price(sku: String): String? = products[sku]?.price
 
@@ -167,7 +175,7 @@ internal class AmazonPurchases private constructor(context: Context) : Purchasin
         worker.execute {
             try {
                 val checked = values.distinct().map { (receipt, expectedSku) ->
-                    validator.verify(id, receipt, receiptEnvironment).also {
+                    validator.verify(id, receipt, expectedSku, receiptEnvironment).also {
                         require(it.userId == id && it.receiptId == receipt && it.sku == expectedSku && it.sku in skus) { "Receipt binding mismatch" }
                     }
                 }

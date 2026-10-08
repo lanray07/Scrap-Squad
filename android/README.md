@@ -58,12 +58,12 @@ The slice and initial native menus have passed Android runtime verification; see
 challenge, journal and settings flows call the original Swift rules. Seven shop
 packs and premium previews are present. The official Amazon SDK adapter and
 original Swift cosmetic reconciliation are implemented; purchasing remains
-unavailable until the user's existing validation backend and console products
-are configured. The app-specific Amazon public key is included.
+unavailable until the prepared Cloudflare receipt service is deployed and console
+products are configured. The app-specific Amazon public key is included.
 See `AMAZON_PURCHASES.md` for the exact remaining integration.
 
 Still required: complete visual parity and device lifecycle verification, connect
-and validate the existing receipt backend and Amazon configuration,
+and validate the prepared receipt backend and Amazon configuration,
 sandbox and physical Fire-device QA, final Android screenshots, approved localized
 metadata, release signing and submission verification.
 

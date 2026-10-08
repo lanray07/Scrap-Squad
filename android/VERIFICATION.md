@@ -87,6 +87,19 @@ the app-specific Amazon public key, public support email and tablet layout fixes
 included. Amazon purchases are still unavailable without the real backend adapter;
 an emulator pass is not an Amazon licensing or purchase-flow test.
 
+## Prepared receipt service — 8 October 2026
+
+`backend/amazon-receipts/` adds a Cloudflare Workers Free deployment package.
+Eleven local Node tests pass for valid/canceled receipts, repeated requests,
+product/user/receipt binding, malformed and oversized data, server errors,
+rate limits, mode separation and secret-safe error responses. Wrangler 4.149.0
+production and sandbox dry-run bundles pass. These use fake Amazon responses;
+no Cloudflare deployment, real RVS request or purchase test has occurred.
+
+The Android HTTP adapter and four new response/endpoint instrumentation tests
+compile locally. Their runtime pass is pending in the next Android workflow.
+Blank verification URLs preserve the disabled purchase state.
+
 Physical process recovery, complete premium battle rendering, purchase validation and
 restoration, Amazon sandbox tests, physical Fire tablet performance and audio,
 approved translations, final screenshots, signing and submission remain to be

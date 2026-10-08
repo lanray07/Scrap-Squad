@@ -29,8 +29,10 @@ Fire tablets; do not select Fire TV, Vega OS or all historical Fire models.
 
 ## Required before a production build
 
-1. Connect the actual existing backend and implement its verifier adapter. Supply
-   its URL/technology/repository; never put its merchant shared secret in this app.
+1. Deploy the prepared `backend/amazon-receipts/` service on the owner's free
+   Cloudflare account and configure its server-only Amazon merchant shared secret.
+   Set the Android public verification URLs and exercise the real adapter.
+   No account or deployment exists yet; never put the merchant secret in this app.
 2. Finalize the seven original Amazon ENTITLED drafts, including paid prices and
    icons. Confirm localized
    prices, availability and parental pending-purchase behavior in App Tester and

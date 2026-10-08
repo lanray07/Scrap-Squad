@@ -1,0 +1,28 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "scrap-squad-receipts",
+  "main": "src/worker.mjs",
+  "compatibility_date": "2026-10-08",
+  "workers_dev": true,
+  "preview_urls": false,
+  "send_metrics": false,
+  "observability": { "enabled": false },
+  "env": {
+    "production": {
+      "name": "scrap-squad-receipts",
+      "vars": { "RVS_ENVIRONMENT": "PRODUCTION" },
+      "ratelimits": [
+        { "name": "IP_LIMIT", "namespace_id": "68188478871", "simple": { "limit": 120, "period": 60 } },
+        { "name": "USER_LIMIT", "namespace_id": "68188478872", "simple": { "limit": 40, "period": 60 } }
+      ]
+    },
+    "sandbox": {
+      "name": "scrap-squad-receipts-sandbox",
+      "vars": { "RVS_ENVIRONMENT": "SANDBOX" },
+      "ratelimits": [
+        { "name": "IP_LIMIT", "namespace_id": "68188478873", "simple": { "limit": 120, "period": 60 } },
+        { "name": "USER_LIMIT", "namespace_id": "68188478874", "simple": { "limit": 40, "period": 60 } }
+      ]
+    }
+  }
+}
