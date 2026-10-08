@@ -27,6 +27,8 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
     private var moveX = 0.0; private var moveY = 0.0
     private var width = 1f; private var height = 1f
     private var lastHud = -1.0; private var previousKills = 0; private var previousWave = 1
+    private var lastHudState = ""
+    private var audioPaused = false
     private var previousPlayerX = .5; private var previousPlayerY = .5
     private var walked = 0.0; private var nextPrint = .025; private var printSide = 1
     private data class Print(val x: Double, val y: Double, val born: Double, val side: Int)
@@ -56,6 +58,7 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
             override fun touchUp(x: Int, y: Int, pointer: Int, button: Int): Boolean {
                 if (pointer == drag) { drag = -1; moveX = 0.0; moveY = 0.0 }; return true
             }
+            override fun touchCancelled(x: Int, y: Int, pointer: Int, button: Int): Boolean = touchUp(x, y, pointer, button)
         }
     }
     fun action(op: String, id: String? = null) {
@@ -132,10 +135,14 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
             batch.draw(region, rx - dimension / 2, ry - dimension / 2 + bob, dimension, dimension)
         }
         batch.end()
-        if (battle.getInt("bosses") > 0 || battle.getJSONArray("enemies").toString().contains("\"boss\"")) audio.music("boss")
+        val enemies = battle.getJSONArray("enemies")
+        val bossPresent = (0 until enemies.length()).any { enemies.getJSONObject(it).getString("kind") == "boss" }
+        audio.music(if (bossPresent) "boss" else "battle")
+        if (paused != audioPaused) { if (paused) audio.pause() else audio.resume(); audioPaused = paused }
         if (battle.getInt("kills") > previousKills) { audio.cue("explosion"); previousKills = battle.getInt("kills") }
         if (battle.getInt("wave") != previousWave) { audio.cue("combo"); previousWave = battle.getInt("wave") }
-        if (lastHud < 0 || elapsed - lastHud >= .1 || battle.getString("state") != "fighting") { lastHud = elapsed; hud(JSONObject(battle.toString())) }
+        val state = battle.getString("state")
+        if (lastHud < 0 || elapsed - lastHud >= .1 || state != lastHudState) { lastHud = elapsed; lastHudState = state; hud(JSONObject(battle.toString())) }
     }
     private fun drawArea(area: JSONObject, color: Color) {
         val from = area.getJSONArray("from"); val to = area.getJSONArray("to"); val radius = area.getDouble("radius").toFloat() * scale
@@ -146,7 +153,7 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
             else -> shapes.circle(x(to.getDouble(0)), y(to.getDouble(1)), radius, 40)
         }
     }
-    override fun pause() { paused = true; moveX = 0.0; moveY = 0.0; drag = -1; audio.pause() }
-    override fun resume() { if (::audio.isInitialized) audio.resume() }
+    override fun pause() { paused = true; moveX = 0.0; moveY = 0.0; drag = -1; if (::audio.isInitialized) { audio.pause(); audioPaused = true } }
+    override fun resume() { if (::audio.isInitialized && !paused) { audio.resume(); audioPaused = false } }
     override fun dispose() { batch.dispose(); shapes.dispose(); atlas.dispose(); audio.dispose() }
 }
