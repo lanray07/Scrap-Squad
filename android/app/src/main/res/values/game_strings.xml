@@ -1,0 +1,419 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="sq_37f544b4f65fea38" formatted="false">"Combat arena. Drag to move. Automatic weapons target nearby enemies."</string>
+  <string name="sq_eed7ca05a803e452" formatted="false">"Robot portrait"</string>
+  <string name="sq_d59b1dc5e8245af7" formatted="false">"Open settings"</string>
+  <string name="sq_93cf66cafde064da" formatted="false">"Boss Breaker"</string>
+  <string name="sq_f81d41f271fcca22" formatted="false">"First Fusion"</string>
+  <string name="sq_1a69b7e130c58a5b" formatted="false">"Mad Scientist"</string>
+  <string name="sq_33e666d8d31c31ec" formatted="false">"Mythic Engineer"</string>
+  <string name="sq_62006070bb001e3e" formatted="false">"Scrap Engineer"</string>
+  <string name="sq_901dd2bbad39f335" formatted="false">"Swarm Breaker"</string>
+  <string name="sq_00c2f9cb488160e9" formatted="false">"Commander’s record"</string>
+  <string name="sq_7f75361aac296f98" formatted="false">"Scrap Squad"</string>
+  <string name="sq_4e3d5de6288f3dfb" formatted="false">"Build it. Merge it. Survive the swarm."</string>
+  <string name="sq_7a6db72720c66c54" formatted="false">"MERGE &amp; SURVIVE"</string>
+  <string name="sq_d86299c70a5c2106" formatted="false">"Ability"</string>
+  <string name="sq_82f6defcb5b49e00" formatted="false">"Breakable armor"</string>
+  <string name="sq_c42fe58eb4283afc" formatted="false">"Armor destroyed: full damage unlocked"</string>
+  <string name="sq_84399d9d2bab69f2" formatted="false">"Boss incoming"</string>
+  <string name="sq_03394ee4f4004cf2" formatted="false">"Bosses"</string>
+  <string name="sq_10330ca81b06f05a" formatted="false">"Make this invention your own."</string>
+  <string name="sq_ae6bc8599c67cfab" formatted="false">"Choose your upgrade"</string>
+  <string name="sq_8fa50ac471ce0d2f" formatted="false">"Today’s boosted element"</string>
+  <string name="sq_faea7c1ab9920522" formatted="false">"Dash"</string>
+  <string name="sq_6880dece3fb835a9" formatted="false">"Dash in your last movement direction. Escape a warning just before impact for a perfect dodge."</string>
+  <string name="sq_8b240828db182cee" formatted="false">"Back to the drawing board"</string>
+  <string name="sq_972e02f5ae552be9" formatted="false">"Deploy squad"</string>
+  <string name="sq_e52c936136108912" formatted="false">"Drag to steer; Dash follows your last direction (up before your first move). Combine two modules to evolve your weapon. Watch for bonus wave events."</string>
+  <string name="sq_e2e4f735968b866e" formatted="false">"Squad integrity"</string>
+  <string name="sq_238d7d620ec07717" formatted="false">"Machines defeated"</string>
+  <string name="sq_51254085910f5691" formatted="false">"Mission mode"</string>
+  <string name="sq_c68ea0c3e5148e64" formatted="false">"Drag anywhere in the arena to move"</string>
+  <string name="sq_57bb76219d4e828f" formatted="false">"Pause"</string>
+  <string name="sq_11e60be2ea9e996a" formatted="false">"Mission paused"</string>
+  <string name="sq_78c1949ca58214ea" formatted="false">"Perfect dodge • +30% damage"</string>
+  <string name="sq_f83c67ace0e522bf" formatted="false">"Perfect dodges"</string>
+  <string name="sq_b306ca5c8449ff4e" formatted="false">"Target priority"</string>
+  <string name="sq_ba088b1de5ca91e1" formatted="false">"Every expedition brings progress."</string>
+  <string name="sq_ea4bc1181a1a8777" formatted="false">"Resume"</string>
+  <string name="sq_eda3e574721fa665" formatted="false">"Retreat"</string>
+  <string name="sq_f8e25943c6940709" formatted="false">"Return to city"</string>
+  <string name="sq_5e98a22d3d397c15" formatted="false">"Score"</string>
+  <string name="sq_dd2e3cb6a57d37e2" formatted="false">"The swarm is waiting. Bring something ridiculous."</string>
+  <string name="sq_c26d5be818328a9d" formatted="false">"Survival and Arena continue until defeat or retreat. Other modes last two minutes; Boss Rush ends after three bosses."</string>
+  <string name="sq_77af7cdf8a159b2a" formatted="false">"Into the wasteland"</string>
+  <string name="sq_741e056f02ef7377" formatted="false">"Swarm survived"</string>
+  <string name="sq_2327e1ebbf1bd062" formatted="false">"Weakness"</string>
+  <string name="sq_5bd5f9eb35562139" formatted="false">"Equipped weapon"</string>
+  <string name="sq_7c5cbc6fb646ff58" formatted="false">"Select zone"</string>
+  <string name="sq_0b6818cdcd6a45d6" formatted="false">"Abandoned Megacity"</string>
+  <string name="sq_4d5ccb7942527a0a" formatted="false">"Electric Wastes"</string>
+  <string name="sq_464567b6d0387629" formatted="false">"Frozen Foundry"</string>
+  <string name="sq_17b92eff204113ff" formatted="false">"Machine Graveyard"</string>
+  <string name="sq_e6a98e6257b5947d" formatted="false">"Neon Junkyard"</string>
+  <string name="sq_3ae83db452b7bece" formatted="false">"Orbital Factory"</string>
+  <string name="sq_71eceb63fe63d5fd" formatted="false">"Quantum Rift"</string>
+  <string name="sq_11a1425169c27cf7" formatted="false">"Rust Flats"</string>
+  <string name="sq_4b1e26b3dd330e5b" formatted="false">"Toxic Processing Plant"</string>
+  <string name="sq_af674cd0797ff565" formatted="false">"Junk Queen"</string>
+  <string name="sq_f0b6fdba4faf484c" formatted="false">"Omega Warden"</string>
+  <string name="sq_713639f7d8607d6a" formatted="false">"The Harvester"</string>
+  <string name="sq_28f9687c218fb3cb" formatted="false">"The Assembler"</string>
+  <string name="sq_bd51d1ec2f26de92" formatted="false">"Iron Maw"</string>
+  <string name="sq_9781709b3820599d" formatted="false">"Orbital Custodian"</string>
+  <string name="sq_82f9d48462a2da16" formatted="false">"The Rift Heart"</string>
+  <string name="sq_c99b7337ca96134c" formatted="false">"The Scrap Titan"</string>
+  <string name="sq_fcd43ea8bbbaa806" formatted="false">"Void Engine"</string>
+  <string name="sq_59d0cc65fa725ff1" formatted="false">"Arena"</string>
+  <string name="sq_0bf9dd0cfa605378" formatted="false">"A home for score challenges."</string>
+  <string name="sq_a690e591e2033e81" formatted="false">"Blueprint Lab"</string>
+  <string name="sq_1eb6a349ffe19303" formatted="false">"Keep a record of your discoveries."</string>
+  <string name="sq_56270340f9c79df7" formatted="false">"Command Center"</string>
+  <string name="sq_89e536e8c8ab5698" formatted="false">"Every two levels unlock another squad slot."</string>
+  <string name="sq_e46c5511a876c133" formatted="false">"Expedition Dock"</string>
+  <string name="sq_70c2896c4060e15d" formatted="false">"Each level earns 2 scrap and 4 credits per offline minute."</string>
+  <string name="sq_9540ba312e9683be" formatted="false">"Robot Factory"</string>
+  <string name="sq_527102681b5ab1b4" formatted="false">"Rebuild a home for rescued robots."</string>
+  <string name="sq_d0862fc052d58c36" formatted="false">"Market"</string>
+  <string name="sq_8a7fd8a8b61a13c6" formatted="false">"A gathering place for city traders."</string>
+  <string name="sq_a6693da5290d8155" formatted="false">"Portal"</string>
+  <string name="sq_67f4901966fcdd4e" formatted="false">"Study the daily anomaly."</string>
+  <string name="sq_fed79e7b55693d66" formatted="false">"Research Lab"</string>
+  <string name="sq_3146f6b713cfedab" formatted="false">"Each level gives your squad +5% damage."</string>
+  <string name="sq_689c071bfcebfea9" formatted="false">"Workshop"</string>
+  <string name="sq_468828d427988878" formatted="false">"Build and fuse weapons from salvaged components."</string>
+  <string name="sq_b2f9de7047d0fe8f" formatted="false">"Same loadout. Your turn to beat this run."</string>
+  <string name="sq_4dd18dcc0a1010b9" formatted="false">"Play today’s circuit"</string>
+  <string name="sq_441ad304e65d420c" formatted="false">"A rotating seeded arena. Everyone starts with the same loaner weapon and squad. Your upgrades and purchases give no advantage."</string>
+  <string name="sq_16b69f8aeea52f5d" formatted="false">"Use SQS1- followed by eight hexadecimal characters."</string>
+  <string name="sq_7f679d6671b45bb5" formatted="false">"Offline challenge codes, not live multiplayer. Replay any saved code, even after its day ends. Comparisons require the same game version."</string>
+  <string name="sq_c76b617c914cc3a1" formatted="false">"Enter a code: SQS1-1234ABCD"</string>
+  <string name="sq_b9bc0bff92d61244" formatted="false">"Play this challenge code"</string>
+  <string name="sq_12060b5893236692" formatted="false">"Challenge a friend"</string>
+  <string name="sq_bf574b78ca44a9dd" formatted="false">"The Daily Circuit"</string>
+  <string name="sq_d79e2e05e61fcbdd" formatted="false">"City level"</string>
+  <string name="sq_6bb01337019ef534" formatted="false">"Level"</string>
+  <string name="sq_426aee7547a3d17c" formatted="false">"Commander’s orders"</string>
+  <string name="sq_3862ad58057c020f" formatted="false">"A little scrap. A lot of possibility."</string>
+  <string name="sq_577999d4b3addc12" formatted="false">"Welcome to Scrap City"</string>
+  <string name="sq_4d3b17cd1dc52e4d" formatted="false">"Build / Upgrade"</string>
+  <string name="sq_f1cebd0d4a8f5656" formatted="false">"Open Workshop"</string>
+  <string name="sq_f57006f12a5fbd91" formatted="false">"Some rivets carry a charge."</string>
+  <string name="sq_39fbc2dbe04f11e2" formatted="false">"Charge a winter storm."</string>
+  <string name="sq_88e464ebb1e4d17a" formatted="false">"A cold front needs a big entrance."</string>
+  <string name="sq_0583dab5de74f8d5" formatted="false">"One current can become many."</string>
+  <string name="sq_27eec561b8a2fd75" formatted="false">"Let the furnace take flight."</string>
+  <string name="sq_6f9dff1d6bc23e79" formatted="false">"Give a humble blaster a warmer heart."</string>
+  <string name="sq_af5afec3b0016373" formatted="false">"Cool down a scatter of scrap."</string>
+  <string name="sq_3a2d73c9ecada310" formatted="false">"A bigger payload needs a higher perch."</string>
+  <string name="sq_ad9dad16294f5b2e" formatted="false">"Heat an electrical storm."</string>
+  <string name="sq_62c00e20ffd92c18" formatted="false">"Light can take the scenic route."</string>
+  <string name="sq_c6fc0a03fd29dc66" formatted="false">"Split a beam until reality gives way."</string>
+  <string name="sq_b148c2de3fe20fed" formatted="false">"Teach rockets to fly together."</string>
+  <string name="sq_c70fddd658b5bd91" formatted="false">"Cancel"</string>
+  <string name="sq_93e3c1531e9bd1e7" formatted="false">"Done"</string>
+  <string name="sq_ac84b6d0c46aa4f0" formatted="false">"Cannot complete action"</string>
+  <string name="sq_b6991efc31d8ac53" formatted="false">"Locked"</string>
+  <string name="sq_64cefee221ccf815" formatted="false">"Maximum level"</string>
+  <string name="sq_4705e1e8be57234b" formatted="false">"OK"</string>
+  <string name="sq_31100946b90342d7" formatted="false">"Cryo Core"</string>
+  <string name="sq_c29a5ba1affb5922" formatted="false">"Drone Core"</string>
+  <string name="sq_e29afd8a25b7fd5e" formatted="false">"Explosive Payload"</string>
+  <string name="sq_c2ea1fcc9d868063" formatted="false">"Fire Core"</string>
+  <string name="sq_5aaacc1d5ff4c9cd" formatted="false">"Ricochet Chip"</string>
+  <string name="sq_c9e4d5d9b61f7766" formatted="false">"Splitter Module"</string>
+  <string name="sq_af97727b7055a1d0" formatted="false">"Tesla Core"</string>
+  <string name="sq_86c3605f6ebb0a3b" formatted="false">"Aurora"</string>
+  <string name="sq_c11db9257122e06e" formatted="false">"Scrap Squad Founder"</string>
+  <string name="sq_9b316455aaf31774" formatted="false">"Show Founder badge"</string>
+  <string name="sq_6fb917b04b4dcf19" formatted="false">"Buy pack"</string>
+  <string name="sq_544f5e9fe6e2eafa" formatted="false">"Cobalt"</string>
+  <string name="sq_a186097f7d5a164d" formatted="false">"Equip"</string>
+  <string name="sq_9b915cc7f07d1730" formatted="false">"Equipped"</string>
+  <string name="sq_61671ec58aa26eef" formatted="false">"Founder’s Gold finish for BOLT, golden weapon trails and a Founder badge. Cosmetic only."</string>
+  <string name="sq_1368502ab42f4598" formatted="false">"Founder’s Pack"</string>
+  <string name="sq_3ca2c2e861ebab17" formatted="false">"Founder’s Gold"</string>
+  <string name="sq_e1cdf976efb1db67" formatted="false">"One-time purchase. No subscription. No combat or reward bonuses."</string>
+  <string name="sq_d16a8ed0ea37ec96" formatted="false">"Original finish"</string>
+  <string name="sq_0986cf3fe37d4e32" formatted="false">"Owned"</string>
+  <string name="sq_7dceff846c8c87c2" formatted="false">"Remove"</string>
+  <string name="sq_0da763363974e6e1" formatted="false">"Unlock this robot through gameplay to use its finish."</string>
+  <string name="sq_dfc68c2987ad37ae" formatted="false">"Rose"</string>
+  <string name="sq_9691811cdca37927" formatted="false">"Aurora BOLT, Cobalt TANK and Rose PATCH finishes. Robot unlocks are earned through gameplay."</string>
+  <string name="sq_4251f2855c2fa53f" formatted="false">"Robot Style Pack"</string>
+  <string name="sq_61570f2ca9882d38" formatted="false">"Golden weapon trails"</string>
+  <string name="sq_b522ad11c274d733" formatted="false">"Use golden trails"</string>
+  <string name="sq_2d617d63f7353d55" formatted="false">"Cores"</string>
+  <string name="sq_f38c209d3686b802" formatted="false">"Credits"</string>
+  <string name="sq_3739ef435766888c" formatted="false">"Scrap"</string>
+  <string name="sq_14122043ef2d27ce" formatted="false">"Ballistic"</string>
+  <string name="sq_5bbd908aa60457c0" formatted="false">"Cryo"</string>
+  <string name="sq_e69d57d7a7755660" formatted="false">"Drone"</string>
+  <string name="sq_74374c94065e76bd" formatted="false">"Electric"</string>
+  <string name="sq_fac518a3865adebe" formatted="false">"Energy"</string>
+  <string name="sq_170339b91df3f6d4" formatted="false">"Experimental"</string>
+  <string name="sq_ef778760926fd9a2" formatted="false">"Explosive"</string>
+  <string name="sq_42a9c038da576d6f" formatted="false">"Fire"</string>
+  <string name="sq_c33344d904646814" formatted="false">"You need more resources for this upgrade."</string>
+  <string name="sq_0dfcaad39fdee8f6" formatted="false">"The game content could not be loaded."</string>
+  <string name="sq_db19954e467a05da" formatted="false">"Choose a valid squad or pair of different weapons."</string>
+  <string name="sq_41dee4431272c694" formatted="false">"Saved progress could not be read. The original save is preserved; new progress cannot be saved."</string>
+  <string name="sq_cbaf0e3044e08b82" formatted="false">"This action has not been unlocked yet."</string>
+  <string name="sq_99282304e7984a4e" formatted="false">"This upgrade is already at its maximum level."</string>
+  <string name="sq_d1ce39e01487fa99" formatted="false">"You are missing a weapon or component."</string>
+  <string name="sq_8f3bf4ac3d20ff2f" formatted="false">"The purchase could not be verified or completed. Please try again."</string>
+  <string name="sq_94e72285dbc9b0ba" formatted="false">"Event bonus scrap"</string>
+  <string name="sq_21413974a0627a47" formatted="false">"Event cleared • bonus scrap earned"</string>
+  <string name="sq_ee53dd499de9aaf7" formatted="false">"Elite ambush"</string>
+  <string name="sq_173d586f37e6c387" formatted="false">"Defeat the marked elite squad before time runs out: +60 scrap."</string>
+  <string name="sq_84d0fd6d9d1ac7f9" formatted="false">"Scrap storm"</string>
+  <string name="sq_fcab3d51a349f42c" formatted="false">"Dodge the falling scrap and survive the countdown: +40 scrap."</string>
+  <string name="sq_6241f4b7f8aed9f6" formatted="false">"Treasure carrier"</string>
+  <string name="sq_5778a7db14302ae5" formatted="false">"Destroy the fleeing gold carrier before it escapes: +40 scrap."</string>
+  <string name="sq_7204c79f7eeac1c0" formatted="false">"Fire Vortex"</string>
+  <string name="sq_7c20ea274857328a" formatted="false">"Fire Core + Overclock Module: three orbiting fireballs burn nearby enemies."</string>
+  <string name="sq_e2aa7c283238d09e" formatted="false">"Siege Barrage"</string>
+  <string name="sq_aa6c5cc530bcd39e" formatted="false">"Explosive Payload + Critical Processor: marked artillery strikes land after a short delay."</string>
+  <string name="sq_1f882461c9cc20b4" formatted="false">"Storm Cage"</string>
+  <string name="sq_e46ee2843e42445f" formatted="false">"Tesla Coil + a splitting module: an electric ring damages and slows enemies."</string>
+  <string name="sq_a5193ebb674e8295" formatted="false">"Your best runs, earned medals and wildest inventions. Progress is saved on this device. Keep playing at your own pace."</string>
+  <string name="sq_c07922ca5acf62ea" formatted="false">"Your first run starts the story. Finish a battle to save its highlights here."</string>
+  <string name="sq_d717d2f2b0e97775" formatted="false">"Records &amp; mastery"</string>
+  <string name="sq_0210836acb262718" formatted="false">"The Hall of Scrap"</string>
+  <string name="sq_6ef6e3933138514d" formatted="false">"Components"</string>
+  <string name="sq_b60995c25ebb5e9a" formatted="false">"Blueprint database"</string>
+  <string name="sq_c9df386a105fb2bc" formatted="false">"Discovered"</string>
+  <string name="sq_f4233d444e59a393" formatted="false">"Equip"</string>
+  <string name="sq_560d18d39e059e6a" formatted="false">"Fuse weapon"</string>
+  <string name="sq_2432fd6fcc2a12d0" formatted="false">"Fusion initiated…"</string>
+  <string name="sq_8a940c93b9872ba0" formatted="false">"Your arsenal"</string>
+  <string name="sq_32a267a2b8cbb40e" formatted="false">"Workshop"</string>
+  <string name="sq_ec76ff46f793ee12" formatted="false">"New weapon discovered"</string>
+  <string name="sq_5e0b7811174ac394" formatted="false">"Fusion Roulette"</string>
+  <string name="sq_b61894d179e97cde" formatted="false">"Two different weapons + one Mystery Core. Each listed result has an equal chance. No purchase required."</string>
+  <string name="sq_bce05c736b39544f" formatted="false">"Share invention"</string>
+  <string name="sq_5c5aef2e8642fbdd" formatted="false">"Start fusion"</string>
+  <string name="sq_e46971485537afd8" formatted="false">"Every great idea starts with two questionable parts."</string>
+  <string name="sq_e4fe8115631ebad0" formatted="false">"Invent something outrageous"</string>
+  <string name="sq_948291170c01fc6e" formatted="false">"Undiscovered invention"</string>
+  <string name="sq_c2b16a45c17a13e6" formatted="false">"Upgrade weapon"</string>
+  <string name="sq_63ef379164001f1a" formatted="false">"Weapon A"</string>
+  <string name="sq_b926b08641026bdd" formatted="false">"Weapon B"</string>
+  <string name="sq_e4bcb7061333d2ff" formatted="false">"Boss Hunter · defeat 3 bosses"</string>
+  <string name="sq_ff26c0ca93f57706" formatted="false">"Combo Artist · reach a 16-kill chain"</string>
+  <string name="sq_01d97f811a12a7e9" formatted="false">"Field Tested · finish 3 runs"</string>
+  <string name="sq_40e3c4846ec1304a" formatted="false">"Mad Scientist · discover all 3 synergies"</string>
+  <string name="sq_52ef4769f04ee583" formatted="false">"Inventor · discover 6 blueprints"</string>
+  <string name="sq_bfe0780ef6350c5e" formatted="false">"Commander mastery"</string>
+  <string name="sq_4e37b606a6846388" formatted="false">"Scrap Veteran · finish 25 runs"</string>
+  <string name="sq_49c251568593732a" formatted="false">"Boss Breaker"</string>
+  <string name="sq_d5d43a9d319a2d46" formatted="false">"Combo Ace"</string>
+  <string name="sq_73a738bf061c965d" formatted="false">"Synergy Inventor"</string>
+  <string name="sq_77f213d158b32619" formatted="false">"Mission Complete"</string>
+  <string name="sq_7da8ca8e3f94c837" formatted="false">"Claim reward"</string>
+  <string name="sq_18053a2b32c1d2a2" formatted="false">"Reward claimed"</string>
+  <string name="sq_ea4be370480e54d2" formatted="false">"Daily: defeat 60 machines"</string>
+  <string name="sq_a964e5816ca78ad1" formatted="false">"New tasks arrive without streak penalties."</string>
+  <string name="sq_94fe7be91933be6e" formatted="false">"Weekly: defeat 3 bosses"</string>
+  <string name="sq_a7c1c04b389ae389" formatted="false">"Arena"</string>
+  <string name="sq_b9b2dc395cc81fc6" formatted="false">"Boss Rush"</string>
+  <string name="sq_e329dbc3f3caafef" formatted="false">"Campaign"</string>
+  <string name="sq_1c88c080351dfd35" formatted="false">"Daily Anomaly"</string>
+  <string name="sq_8dc9e79bfc0e61b2" formatted="false">"Fusion Lab"</string>
+  <string name="sq_0acfa50779326673" formatted="false">"Scrap Run"</string>
+  <string name="sq_91c4a1b7e9a7f30f" formatted="false">"Survival"</string>
+  <string name="sq_adfb88e0beac1030" formatted="false">"OVERDRIVE ACTIVE"</string>
+  <string name="sq_04f120625c473975" formatted="false">"Best combo"</string>
+  <string name="sq_71d45bed49298e0f" formatted="false">"Combo"</string>
+  <string name="sq_8ab84f6c26369d67" formatted="false">"Chain kills to charge Overdrive"</string>
+  <string name="sq_c130fc31e32a9596" formatted="false">"OVERDRIVE"</string>
+  <string name="sq_256bae57b665506e" formatted="false">"Wave"</string>
+  <string name="sq_8aa1775882c22211" formatted="false">"Battle"</string>
+  <string name="sq_aa42a96b591ce4bb" formatted="false">"Blueprints"</string>
+  <string name="sq_42c751d5156fa4da" formatted="false">"City"</string>
+  <string name="sq_eac5c35c178552ff" formatted="false">"Shop"</string>
+  <string name="sq_015d0eb485c60bb5" formatted="false">"Squad"</string>
+  <string name="sq_0bd1ca9d71f4c867" formatted="false">"Expedition duration"</string>
+  <string name="sq_bf9347f707ac8cd9" formatted="false">"Claim salvage"</string>
+  <string name="sq_c49dd972b67465b3" formatted="false">"Your expedition brought back real salvage. Rewards accumulate for up to eight hours."</string>
+  <string name="sq_46714eaf9003e94a" formatted="false">"Welcome back, commander"</string>
+  <string name="sq_88fa777f5c6e5466" formatted="false">"Battle preview"</string>
+  <string name="sq_e5eb42e1de95edaa" formatted="false">"A heavy-armour TANK design with a tower shield, reinforced shoulders, animated stride and victory salute. Unlock TANK through gameplay."</string>
+  <string name="sq_13f143fa8f6b69b6" formatted="false">"Iron Bastion TANK"</string>
+  <string name="sq_db6580299446d548" formatted="false">"You already own part of this collection. Buy only your missing products below; the bundle is unavailable to avoid duplicate purchases."</string>
+  <string name="sq_173d38f4f6a3e674" formatted="false">"Cosmetic collections"</string>
+  <string name="sq_9f1401605e28367c" formatted="false">"Classic packs"</string>
+  <string name="sq_4d4523f73f16bcdb" formatted="false">"Solar Ronin BOLT, Iron Bastion TANK, Star Medic PATCH and Prism Arsenal. Four permanent cosmetic products; no robot unlocks or combat bonuses."</string>
+  <string name="sq_d172df462975cf5e" formatted="false">"Signature Collection"</string>
+  <string name="sq_e35260645bfccea8" formatted="false">"Done"</string>
+  <string name="sq_d8a2922a073a0c94" formatted="false">"Signature loadout"</string>
+  <string name="sq_d6ac0b373e7f9df4" formatted="false">"A winged PATCH design with a luminous halo, medical insignia, animated stride and victory salute. Unlock PATCH through gameplay."</string>
+  <string name="sq_08f957e663c1ef4e" formatted="false">"Star Medic PATCH"</string>
+  <string name="sq_1a02d6164d88f387" formatted="false">"Try in the arena"</string>
+  <string name="sq_5e85c0defafdcef2" formatted="false">"Drag to steer the preview squad. Try Dash to see the skin in motion."</string>
+  <string name="sq_5f7abb68e220b276" formatted="false">"Preview mode"</string>
+  <string name="sq_b646e1ec14cd8b27" formatted="false">"Preview only. No purchases, ownership changes, rewards or progress are saved."</string>
+  <string name="sq_cb75539ae46cfcc4" formatted="false">"Mint and violet weapon trails, diamond impact sparks and prism projectile colours. Cosmetic only; attack damage and enemy warnings stay the same."</string>
+  <string name="sq_0adf237ad3156815" formatted="false">"Prism Arsenal"</string>
+  <string name="sq_09a248007d7b5723" formatted="false">"A sun-forged BOLT design with a crested helmet, energy blade, animated stride and victory salute. Cosmetic only; BOLT is earned through gameplay."</string>
+  <string name="sq_ebb11f7b1213e55a" formatted="false">"Solar Ronin BOLT"</string>
+  <string name="sq_fb91a700ee5fdfd4" formatted="false">"Signature collection"</string>
+  <string name="sq_08fc71e26a562b70" formatted="false">"Victory poses"</string>
+  <string name="sq_f53be4bb1402bb05" formatted="false">"Boss first"</string>
+  <string name="sq_c907d84b230ec1c5" formatted="false">"Nearest"</string>
+  <string name="sq_0175d58377c3c3af" formatted="false">"Weakest"</string>
+  <string name="sq_bc828ce1c03f7fde" formatted="false">"Common"</string>
+  <string name="sq_2de0d6bada562479" formatted="false">"Epic"</string>
+  <string name="sq_870ee2c01247f0c2" formatted="false">"Legendary"</string>
+  <string name="sq_dce69b929e6ef96d" formatted="false">"Mythic"</string>
+  <string name="sq_3b9f2ab7ff4406f2" formatted="false">"Rare"</string>
+  <string name="sq_5d331b53a94fee9b" formatted="false">"Uncommon"</string>
+  <string name="sq_31c36e08f681ee6f" formatted="false">"BOLT"</string>
+  <string name="sq_fd1c5844ca366082" formatted="false">"Pulse burst: damages nearby enemies."</string>
+  <string name="sq_83fd2e74e0d46ee8" formatted="false">"Balanced circuitry: +8% damage."</string>
+  <string name="sq_529a190a83f3edef" formatted="false">"Optimistic to the last rivet."</string>
+  <string name="sq_5f815e5a8fefb5ce" formatted="false">"BOOMER"</string>
+  <string name="sq_77fe1e74d6131770" formatted="false">"Demolition: a powerful area blast."</string>
+  <string name="sq_22a9ec347705d880" formatted="false">"Payload expert: adds splash damage."</string>
+  <string name="sq_ee92619cba3d8b74" formatted="false">"Safety third. Friendship first."</string>
+  <string name="sq_5e8c3b98671112fa" formatted="false">"GLITCH"</string>
+  <string name="sq_a5a614f533f0b43f" formatted="false">"Scramble: damages and slows nearby enemies."</string>
+  <string name="sq_933db3569ff9a9dc" formatted="false">"Corrupted clock: +10% attack speed."</string>
+  <string name="sq_e07f2801dd817ad2" formatted="false">"Speaks fluent error code."</string>
+  <string name="sq_1478439b2aa1a08c" formatted="false">"MAGNET"</string>
+  <string name="sq_071ba60a5bca7380" formatted="false">"Salvage pulse: area damage and a small repair."</string>
+  <string name="sq_8794c2c8b77fa4f8" formatted="false">"Collector: +10% damage."</string>
+  <string name="sq_67ac520a60b5c05e" formatted="false">"One robot’s trash is their treasure."</string>
+  <string name="sq_d8ca51fe778a3f0a" formatted="false">"NOVA"</string>
+  <string name="sq_557394683fabc51d" formatted="false">"Solar pulse: damages nearby enemies."</string>
+  <string name="sq_0125b629b8ee42f7" formatted="false">"Precision optics: +18% damage."</string>
+  <string name="sq_28fc62a6b2074376" formatted="false">"Quiet until the lights go out."</string>
+  <string name="sq_a33a58ade0f93151" formatted="false">"PATCH"</string>
+  <string name="sq_6125033a7dd8b836" formatted="false">"Repair pulse: restore 35% squad health."</string>
+  <string name="sq_0b0f8e3b0a7cb4a4" formatted="false">"Repair field: regenerate 0.6 health per second."</string>
+  <string name="sq_ca51d4d493ddf201" formatted="false">"Everything deserves a second chance."</string>
+  <string name="sq_61d8a3cc710b9f51" formatted="false">"TANK"</string>
+  <string name="sq_64e121db872d4b8d" formatted="false">"Fortify: immune to damage for 5 seconds."</string>
+  <string name="sq_e26acc81b99bd484" formatted="false">"Heavy chassis: a larger health pool."</string>
+  <string name="sq_f787dd7685aa4e3d" formatted="false">"Big shoulders. Soft heart."</string>
+  <string name="sq_6dd7fa3d96a66eb1" formatted="false">"ZIP"</string>
+  <string name="sq_596f86b4971188f0" formatted="false">"Flash burst: pulse damage and an immediate next shot."</string>
+  <string name="sq_779bfb51358580e2" formatted="false">"Fast servos: +20% attack speed."</string>
+  <string name="sq_ef376fbb0620ce7e" formatted="false">"Already there. Already bored."</string>
+  <string name="sq_79c5b25ec24ed84b" formatted="false">"New personal best"</string>
+  <string name="sq_c260a9d42cb90589" formatted="false">"Preview run card"</string>
+  <string name="sq_c398222f48b61634" formatted="false">"Run it back"</string>
+  <string name="sq_d36a6774aa65fe0f" formatted="false">"Share run card"</string>
+  <string name="sq_fb742e9988d7cc67" formatted="false">"Reduce flashes"</string>
+  <string name="sq_2813fba971a05add" formatted="false">"Connect Game Center"</string>
+  <string name="sq_d62fca2dae270b45" formatted="false">"Haptic feedback"</string>
+  <string name="sq_3a57e08a7a2fbcb5" formatted="false">"Language"</string>
+  <string name="sq_d837f2ffd1f07f17" formatted="false">"Leaderboards"</string>
+  <string name="sq_0a7e6346c720e4ea" formatted="false">"Master volume"</string>
+  <string name="sq_b2d6ea04480e17e4" formatted="false">"Reduce motion"</string>
+  <string name="sq_fd26934104f2a271" formatted="false">"Music volume"</string>
+  <string name="sq_3550a119b3383f88" formatted="false">"Damage numbers"</string>
+  <string name="sq_e3930a1426fad3be" formatted="false">"Particle intensity"</string>
+  <string name="sq_0a5a631f2bc89864" formatted="false">"Core Reboot"</string>
+  <string name="sq_3bbdb732f53f4cf2" formatted="false">"Reboot city"</string>
+  <string name="sq_e673a3b9e191361d" formatted="false">"Resets zone, city buildings, robot levels, credits and scrap. Keeps robots, squad capacity, squad, weapons, weapon levels, components, cores, blueprints, achievements and preferences. Each reboot permanently adds 10% damage. Unlock at zone 6."</string>
+  <string name="sq_682f6b760ebc8f1f" formatted="false">"Your progress could not be saved. Check device storage and retry before closing the app."</string>
+  <string name="sq_98a3cb5e99839b51" formatted="false">"Sound effects"</string>
+  <string name="sq_4f6c003782d3decb" formatted="false">"Screen shake"</string>
+  <string name="sq_20cc3dbf0c7f67b6" formatted="false">"Follow device language"</string>
+  <string name="sq_5bfdb6e418c06f8a" formatted="false">"Your controls"</string>
+  <string name="sq_3fd7328aec8841aa" formatted="false">"Purchase cancelled. You have not been charged."</string>
+  <string name="sq_8af2a125e1577b31" formatted="false">"Owned cosmetics"</string>
+  <string name="sq_e9bbab3aa588ed18" formatted="false">"Loading cosmetic packs"</string>
+  <string name="sq_8a687c773ca76642" formatted="false">"Cosmetics are optional. Prices come from the App Store. Restore purchases using the Apple Account that bought them. All gameplay and progression remain available without buying a pack."</string>
+  <string name="sq_dcb130993827a40a" formatted="false">"Purchase is awaiting approval."</string>
+  <string name="sq_4d95f90c3adde49e" formatted="false">"Load store"</string>
+  <string name="sq_447a13a098af339b" formatted="false">"Restore purchases"</string>
+  <string name="sq_acf6bc8cfa1e0295" formatted="false">"No previous cosmetic purchases were found for this Apple Account."</string>
+  <string name="sq_e2514153a62a9fd2" formatted="false">"Purchases restored."</string>
+  <string name="sq_1fdd00f4901bd4d2" formatted="false">"This purchase was refunded or revoked. Its cosmetics are no longer available."</string>
+  <string name="sq_cb2b53e0541615f3" formatted="false">"The core adventure is free. No mandatory ads."</string>
+  <string name="sq_70de1ac31bdb048b" formatted="false">"Make it yours"</string>
+  <string name="sq_0476462c7dbe4c1b" formatted="false">"Purchases are currently unavailable. Please try Refresh later."</string>
+  <string name="sq_f5b01591bd9712ad" formatted="false">"Purchase verified."</string>
+  <string name="sq_67f4ae79b423818e" formatted="false">"Commander ability"</string>
+  <string name="sq_7d23bde7d2709bab" formatted="false">"Add to squad"</string>
+  <string name="sq_148f31a91cdc9ef5" formatted="false">"Affinity synergy: +15% weapon damage"</string>
+  <string name="sq_d148ca466645b4fd" formatted="false">"The first robot in your squad leads its active ability."</string>
+  <string name="sq_9f5c2e4c2acd22a5" formatted="false">"Passive circuitry"</string>
+  <string name="sq_312cc410719ddf16" formatted="false">"Remove from squad"</string>
+  <string name="sq_0699ba0e6805d475" formatted="false">"Different parts. One purpose."</string>
+  <string name="sq_37b169ec06f5694f" formatted="false">"Your misfit heroes"</string>
+  <string name="sq_93f08cd1cc350e5d" formatted="false">"Rescue robot"</string>
+  <string name="sq_08dfb165f4f0600b" formatted="false">"Upgrade robot"</string>
+  <string name="sq_7d8751324529c931" formatted="false">"Sunset BOLT"</string>
+  <string name="sq_b302c77e82428df8" formatted="false">"An optional warm coral paint finish for BOLT."</string>
+  <string name="sq_2fa1cb8c8aa31ff3" formatted="false">"Starlight NOVA"</string>
+  <string name="sq_1002683002a0281c" formatted="false">"An optional midnight blue paint finish for NOVA."</string>
+  <string name="sq_e5af5452276c1a85" formatted="false">"BUILD SYNERGY ACTIVATED"</string>
+  <string name="sq_81e734f9d7acdc80" formatted="false">"Perfect Storm"</string>
+  <string name="sq_ef1436cffd227e7c" formatted="false">"Choose Critical Processor and Overclock Module in one run for +15% critical chance and +20% attack speed."</string>
+  <string name="sq_786369afe32db93b" formatted="false">"Storm Lattice"</string>
+  <string name="sq_7c7e650e0368a05b" formatted="false">"Choose Tesla Coil and Drone Core or Splitter Module in one run for two extra chain targets."</string>
+  <string name="sq_5e9df76fe13ed467" formatted="false">"Thermal Shock"</string>
+  <string name="sq_d0054c635f21ceac" formatted="false">"Choose Fire Core and Cryo Core in one run for +35% weapon damage."</string>
+  <string name="sq_db943916c89ad45a" formatted="false">"Secret build synergies"</string>
+  <string name="sq_f781cfcfbd0b5fe1" formatted="false">"Drag in battle to dodge attacks. Your squad fires automatically. Choose upgrades, bring home scrap, and combine weapons with cores in the Workshop. Build the Expedition Dock to earn salvage while away."</string>
+  <string name="sq_60483fd14ba2b2d0" formatted="false">"Let’s build something"</string>
+  <string name="sq_486419d1576dc6d2" formatted="false">"A squad worth rebuilding"</string>
+  <string name="sq_e32d569ba378f189" formatted="false">"Critical Processor"</string>
+  <string name="sq_ff9ccdb37fff2831" formatted="false">"Increase critical chance by 12%."</string>
+  <string name="sq_f04b5fac57ae851a" formatted="false">"Cryo Core"</string>
+  <string name="sq_69cfbd28183387db" formatted="false">"Shots slow enemies for two seconds."</string>
+  <string name="sq_ff25c6729006b03b" formatted="false">"Drone Core"</string>
+  <string name="sq_b8c80bebda51f9fc" formatted="false">"Add an extra projectile to each volley."</string>
+  <string name="sq_9456512b9997a18f" formatted="false">"Fire Core"</string>
+  <string name="sq_9d599f5d183c6c91" formatted="false">"Shots burn enemies for three seconds."</string>
+  <string name="sq_bf1f445a59ac916a" formatted="false">"Overclock Module"</string>
+  <string name="sq_23b0482e5d5bc0b3" formatted="false">"Increase attack speed by 25%."</string>
+  <string name="sq_453eeedb8e1b50c0" formatted="false">"Explosive Payload"</string>
+  <string name="sq_a6345f5e4ad8a896" formatted="false">"Shots damage enemies near their target."</string>
+  <string name="sq_6cdb585487cc0281" formatted="false">"Plasma Cell"</string>
+  <string name="sq_4b090038a4283d8d" formatted="false">"Increase damage by 35%."</string>
+  <string name="sq_07996abfdfb13b16" formatted="false">"Repair Nanites"</string>
+  <string name="sq_f85af2193e1b8fc6" formatted="false">"Regenerate 1.8 health each second."</string>
+  <string name="sq_98e846d41a01a13b" formatted="false">"Ricochet Chip"</string>
+  <string name="sq_0c92598b67d99200" formatted="false">"Increase damage by 25%."</string>
+  <string name="sq_86c00eb6eca91bf5" formatted="false">"Splitter Module"</string>
+  <string name="sq_e72332e3fb40057f" formatted="false">"Add two projectiles to each volley."</string>
+  <string name="sq_4863710874b15459" formatted="false">"Tesla Coil"</string>
+  <string name="sq_afcc2599a9921c49" formatted="false">"Hit two additional targets each volley."</string>
+  <string name="sq_15944829aa0b55ae" formatted="false">"Arc Blaster"</string>
+  <string name="sq_5c379255b65104c4" formatted="false">"Electric bolts jump between nearby machines."</string>
+  <string name="sq_a6c3912ed05cff8a" formatted="false">"Aurora Engine"</string>
+  <string name="sq_6d1203322898a11b" formatted="false">"Cold light fractures into a dazzling storm."</string>
+  <string name="sq_a234b6ba97a6949b" formatted="false">"Basic Blaster"</string>
+  <string name="sq_6849b28047dc56b0" formatted="false">"A salvaged rivet driver. Small beginnings, big intentions."</string>
+  <string name="sq_dbae6656ad4655c8" formatted="false">"Blizzard Cannon"</string>
+  <string name="sq_b124dce4797164fc" formatted="false">"Frozen shells burst into a cloud of shrapnel."</string>
+  <string name="sq_760bd51205b21b21" formatted="false">"Chain Cannon"</string>
+  <string name="sq_ddb3ceb6425c63f2" formatted="false">"A branching current finds every loose screw."</string>
+  <string name="sq_9c4c9551f6b1dfc3" formatted="false">"Fire Drone"</string>
+  <string name="sq_3286a160684e0376" formatted="false">"A tiny flying furnace follows your lead."</string>
+  <string name="sq_f6665c0611c4cd73" formatted="false">"Flame Blaster"</string>
+  <string name="sq_a057521fb0d01894" formatted="false">"Hot rivets leave a persistent burn."</string>
+  <string name="sq_db2f653b92e06f59" formatted="false">"Frost Shotgun"</string>
+  <string name="sq_928d2d6ead79c291" formatted="false">"A cold front made from industrial coolant."</string>
+  <string name="sq_53d0a9dba12f2ef3" formatted="false">"Workshop Laser"</string>
+  <string name="sq_35123b903fecc3b3" formatted="false">"A cutting tool with a new job."</string>
+  <string name="sq_76e9b52abff130c3" formatted="false">"Orbital Hammer"</string>
+  <string name="sq_dd70bc461c629f94" formatted="false">"Rebuilt satellites rain down precision fire."</string>
+  <string name="sq_6db4eb2082bf03fc" formatted="false">"Plasma Storm"</string>
+  <string name="sq_9e04ba14addd28b3" formatted="false">"An unstable electric furnace bends the air."</string>
+  <string name="sq_85288f689b340233" formatted="false">"Prism Laser"</string>
+  <string name="sq_a27e3490bb28565a" formatted="false">"Split light ricochets through the swarm."</string>
+  <string name="sq_0cab229dd3553c56" formatted="false">"Rocket Launcher"</string>
+  <string name="sq_048df52f007ece8e" formatted="false">"Recycled fuel. Unrecycled enthusiasm."</string>
+  <string name="sq_f7b676b08ee984d2" formatted="false">"Scrap Shotgun"</string>
+  <string name="sq_e79aff054d742fbe" formatted="false">"Three bolts, one very loud opinion."</string>
+  <string name="sq_d3b2fb7411499c38" formatted="false">"Singularity Array"</string>
+  <string name="sq_5733148698a9e2ad" formatted="false">"An impossible invention. Please stand back."</string>
+  <string name="sq_5844758ddec75936" formatted="false">"Missile Swarm"</string>
+  <string name="sq_928773838ff7b876" formatted="false">"A flock of guided rockets with terrible manners."</string>
+</resources>

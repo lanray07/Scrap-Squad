@@ -1,0 +1,11 @@
+.gradle/
+**/build/
+local.properties
+*.jks
+*.keystore
+app/src/main/jniLibs/
+app/src/main/assets/generated/
+reports/
+.tools/
+*.log
+app/src/androidTest/assets/parity.json
