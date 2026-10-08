@@ -18,6 +18,12 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: fire-gradle-${{ runner.os }}-${{ hashFiles('android/**/*.gradle.kts', 'android/gradle/wrapper/gradle-wrapper.properties') }}
       - name: Install official Swift 6.4 toolchain
         run: |
           curl --fail --location --retry 3 https://download.swift.org/swift-6.4.0-release/ubuntu2404/swift-6.4.0-RELEASE/swift-6.4.0-RELEASE-ubuntu24.04.tar.gz --output "$RUNNER_TEMP/swift.tar.gz"
@@ -61,13 +67,7 @@ jobs:
           profile: Nexus 10
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: true
-          script: |
-            set -e
-            cd android
-            ./gradlew :app:connectedDebugAndroidTest --console=plain
-            mkdir -p reports/screenshots
-            adb pull /sdcard/Android/data/com.scrapsquad.fire/files/android-battle-smoke.png reports/screenshots/
-            adb logcat -d -s ScrapParity:I > reports/parity-throughput.log
+          script: python3 android/tools/verify_runtime.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
