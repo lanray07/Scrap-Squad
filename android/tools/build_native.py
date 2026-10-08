@@ -64,7 +64,11 @@ def main():
     resource = sdk / 'usr/lib/swift'
     if not (resource / 'android' / arch / 'swiftrt.o').exists():
         search = sdk if sdk.exists() else Path.home()
-        runtime = next(p for p in search.rglob('swiftrt.o') if p.parent.name == arch and 'swift_static' not in str(p))
+        # The host Swift toolchain also has x86_64/swiftrt.o. Select only an
+        # Android runtime; otherwise Linux builds silently choose host modules.
+        runtime = next(p for p in search.rglob('swiftrt.o')
+                       if p.parent.name == arch and p.parent.parent.name == 'android'
+                       and 'swift_static' not in str(p))
         resource = runtime.parent.parent.parent
         sdk = resource.parent.parent.parent
     libraries = resource / 'android' / arch
