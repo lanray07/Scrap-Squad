@@ -7,6 +7,7 @@ import struct
 android = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
 parser.add_argument('--screenshots', type=Path)
+parser.add_argument('--assets', type=Path)
 args = parser.parse_args()
 store = json.loads((android / 'store/listings.json').read_text(encoding='utf-8'))
 for locale, listing in store['locales'].items():
@@ -25,3 +26,10 @@ if args.screenshots:
         dimensions = struct.unpack('>II', header[16:24])
         assert dimensions in sizes or dimensions[::-1] in sizes, f'Unsupported size: {path} {dimensions}'
     print('All 10 genuine screenshot dimensions passed.')
+if args.assets:
+    for name, expected in [('icon-114', (114, 114)), ('icon-512', (512, 512)), ('promo', (1024, 500))]:
+        path = args.assets / f'scrap-squad-{name}.png'
+        header = path.read_bytes()[:24]
+        assert header[:8] == b'\x89PNG\r\n\x1a\n', f'Not a PNG: {path}'
+        assert struct.unpack('>II', header[16:24]) == expected, f'Wrong artwork size: {path}'
+    print('Original icon and promotional-art exports passed.')

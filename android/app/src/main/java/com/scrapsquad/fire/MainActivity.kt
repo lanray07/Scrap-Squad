@@ -10,6 +10,7 @@ class MainActivity : Activity() {
     private lateinit var strings: Strings
     private lateinit var screens: MenuScreens
     private lateinit var audio: MenuAudio
+    private var loadFailed = false
     internal val purchases get() = AmazonPurchases.get(this)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,22 +31,31 @@ class MainActivity : Activity() {
                     .setCancelable(false).show()
             } else screens.offerOffline()
         } catch (e: Exception) {
-            android.util.Log.e("ScrapUI", "Native menu initialization failed", e)
-            AlertDialog.Builder(this).setTitle(strings.text("error.load")).setMessage(e.message)
-                .setPositiveButton(strings.text("common.ok")) { _, _ -> finish() }.setCancelable(false).show()
+            loadError(e)
         }
     }
-    override fun onRestart() { super.onRestart(); if (::screens.isInitialized) { repository.initialize(); if (repository.battleJournal.pending()) { recreate(); return }; screens.show(); screens.offerOffline() } }
+    private fun loadError(error: Exception) {
+        loadFailed = true
+        android.util.Log.e("ScrapUI", "Native menu initialization failed", error)
+        AlertDialog.Builder(this).setTitle(strings.text("error.load")).setMessage(strings.text("error.invalidContent"))
+            .setPositiveButton(strings.text("common.ok")) { _, _ -> finish() }.setCancelable(false).show()
+    }
+    override fun onRestart() {
+        super.onRestart()
+        if (::screens.isInitialized && !loadFailed) try {
+            repository.initialize(); if (repository.battleJournal.pending()) { recreate(); return }; screens.show(); screens.offerOffline()
+        } catch (error: Exception) { loadError(error) }
+    }
     override fun onSaveInstanceState(outState: Bundle) { if (::screens.isInitialized) outState.putString("page", screens.page); super.onSaveInstanceState(outState) }
     override fun onResume() {
-        super.onResume(); if (::audio.isInitialized) audio.resume()
-        if (::screens.isInitialized) {
+        super.onResume(); if (::audio.isInitialized && !loadFailed) audio.resume()
+        if (::screens.isInitialized && !loadFailed) {
             purchases.changed = { if (!isFinishing && !isDestroyed && screens.page == "shop") screens.show() }
             purchases.refresh()
         }
     }
     override fun onPause() {
-        purchases.changed = null
+        if (::screens.isInitialized) purchases.changed = null
         if (::audio.isInitialized) audio.stop()
         if (::repository.isInitialized && !repository.battleJournal.pending()) runCatching { repository.action("background") }.onFailure { android.util.Log.e("ScrapSave", "Background save failed", it) }
         super.onPause()

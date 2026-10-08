@@ -60,6 +60,12 @@ class BattleActivity : AndroidApplication() {
         status.text = "${strings.text("battle.health")} ${state.getDouble("health").toInt()}/${state.getDouble("maxHealth").toInt()}   ${strings.text("momentum.wave")} ${state.getInt("wave")}   ${strings.text("battle.score")} ${state.getInt("score")}\n${strings.text("momentum.combo")} ${state.getInt("combo")}   ${strings.text("momentum.overdrive")} ${(state.getDouble("charge") * 100).toInt()}%   ${state.getDouble("elapsed").toInt()}${strings.text("android.seconds")}"
         currentPriority = state.getString("priority")
         val extras = mutableListOf<String>()
+        state.getJSONArray("enemies").objects().firstOrNull { it.getString("kind") == "boss" }?.let { boss ->
+            val biome = repository.content.getJSONArray("biomes").getJSONObject(state.getInt("zone"))
+            extras.add("${strings.text(biome.getString("bossKey"))} ${(100 * boss.getDouble("health") / boss.getDouble("maxHealth")).toInt()}%")
+            val armor = boss.getDouble("armor")
+            extras.add(if (armor > 0) "${strings.text("battle.armor")} ${(100 * armor / (90 * biome.getDouble("difficulty"))).toInt()}%" else strings.text("battle.armor.broken"))
+        }
         state.getJSONArray("synergies").strings().forEach { extras.add(strings.text("synergy.$it")) }
         if (state.getString("evolution").isNotEmpty()) extras.add(strings.text("evolution.${state.getString("evolution")}"))
         if (state.getString("event").isNotEmpty()) extras.add("${strings.text("event.${state.getString("event")}")} ${ceil(state.getDouble("eventRemaining")).toInt()}")

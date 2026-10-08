@@ -56,6 +56,14 @@ run artifact's `reports/render-metrics.log`.
 
 ## Release checks still required
 
+GitHub run [37828177419](https://github.com/lanray07/Scrap-Squad/actions/runs/37828177419),
+commit `15221bb`: **successful**, eight Android instrumentation tests passed.
+Original cosmetic collection grants, overlap restrictions, invalid selection
+removal and revocation reconciliation passed through the Swift JNI bridge without
+changing progression. This does not constitute an Amazon purchase or backend test.
+The expanded native capture pass and longer boss-battle sample were added later;
+their runtime results are pending.
+
 Physical process recovery, complete premium battle rendering, purchase validation and
 restoration, Amazon sandbox tests, physical Fire tablet performance and audio,
 approved translations, final screenshots, signing and submission remain to be

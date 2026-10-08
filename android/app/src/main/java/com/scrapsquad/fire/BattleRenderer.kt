@@ -41,6 +41,15 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
     private var lastStrideSequence = -1
     private var lastShotSoundAt = -1.0
     private var lastRunState = "fighting"
+    private var lastComboTier = 1
+    private var lastSynergyCount = 0
+    private var lastEvolution = ""
+    private var lastEvent = ""
+    private var lastPerfectDodges = 0
+    private var lastCompletedEvents = 0
+    private var shakeAt = -1.0
+    private lateinit var strings: Strings
+    private var announcement: Triple<String, Color, Double>? = null
     private val seenEffects = mutableSetOf<Int>()
     private val presentation = CombatPresentation()
     private var cosmeticState = JSONObject()
@@ -56,6 +65,7 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
         baseFontHeight = font.capHeight
         atlas.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear)
         audio = Audio(repository.profile.optJSONObject("preferences") ?: JSONObject())
+        strings = Strings(Gdx.app as android.content.Context).apply { language = repository.profile.getJSONObject("preferences").getString("locale") }
         cosmeticState = CosmeticRepository(Gdx.app as android.content.Context).state()
         cosmeticState.getJSONObject("finishes").keys().forEach { robot ->
             val skin = cosmeticState.getJSONObject("finishes").getJSONObject(robot).optString("skin")
@@ -109,7 +119,8 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
             val values = mutableListOf<Pair<String, Any>>()
             if (id != null) values.add("id" to id)
             if (op == "dash") { values.add("x" to moveX); values.add("y" to moveY) }
-            battle = repository.battleCommand(op, *values.toTypedArray()).getJSONObject("battle")
+            try { battle = repository.battleCommand(op, *values.toTypedArray()).getJSONObject("battle") }
+            catch (error: Exception) { stopWithError(error); return@postRunnable }
             if (op == "ability" || op == "overdrive") audio.cue(if (op == "overdrive") "overdrive" else "ability")
             lastHud = -1.0
         }
@@ -127,11 +138,35 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
     private fun y(value: Double) = height / 2 + ((value - battle.getJSONArray("player").getDouble(1)) * scale).toFloat()
     private fun JSONArray.objects(block: (JSONObject) -> Unit) { for (i in 0 until length()) block(getJSONObject(i)) }
     private fun position(obj: JSONObject) = obj.getJSONArray("position")
+    private fun stopWithError(error: Exception) {
+        ready = false; paused = true
+        if (::audio.isInitialized) audio.pause()
+        recoveryError(error)
+    }
     override fun render() {
         val renderStarted = System.nanoTime()
         if (!ready || battle.length() == 0) { Gdx.gl.glClearColor(.063f, .145f, .176f, 1f); Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT); return }
-        if (!paused && battle.getString("state") == "fighting") battle = repository.battleCommand("step", "dt" to Gdx.graphics.deltaTime.toDouble(), "x" to moveX, "y" to moveY).getJSONObject("battle")
+        if (!paused && battle.getString("state") == "fighting") try {
+            battle = repository.battleCommand("step", "dt" to Gdx.graphics.deltaTime.toDouble(), "x" to moveX, "y" to moveY).getJSONObject("battle")
+        } catch (error: Exception) { stopWithError(error); return }
         val elapsed = battle.getDouble("elapsed")
+        val preferences = repository.profile.getJSONObject("preferences")
+        if (battle.getInt("kills") > previousKills && preferences.getBoolean("screenShake") && !reducedMotion) shakeAt = elapsed
+        val shakeAge = elapsed - shakeAt
+        camera.position.x = width / 2 - if (shakeAt >= 0 && shakeAge < .08) (if (shakeAge < .04) shakeAge / .04 * 2 else (1 - (shakeAge - .04) / .04) * 2).toFloat() else 0f
+        camera.update()
+        fun announce(text: String, color: String) { announcement = Triple(text, Color.valueOf(color), elapsed) }
+        if (battle.getInt("wave") > previousWave) announce("${strings.text("momentum.wave")} ${battle.getInt("wave")}", "F5B942")
+        val tier = 1 + min(4, battle.getInt("combo") / 8)
+        if (tier > lastComboTier) { announce("×$tier ${strings.text("momentum.combo")}", "79D9BA"); audio.cue("combo") }; lastComboTier = tier
+        val synergies = battle.getJSONArray("synergies").length()
+        if (synergies > lastSynergyCount) announce(strings.text("synergy.activated"), "BA9DEB"); lastSynergyCount = synergies
+        val evolution = battle.getString("evolution")
+        if (evolution != lastEvolution && evolution.isNotEmpty()) announce(strings.text("evolution.$evolution"), battle.getString("evolutionColor")); lastEvolution = evolution
+        if (battle.getInt("perfectDodges") > lastPerfectDodges) announce(strings.text("battle.perfectDodge"), "83EAFF"); lastPerfectDodges = battle.getInt("perfectDodges")
+        val event = battle.getString("event")
+        if (event != lastEvent && event.isNotEmpty()) announce(strings.text("event.$event"), "F5B942"); lastEvent = event
+        if (battle.getInt("completedWaveEvents") > lastCompletedEvents) announce(strings.text("event.complete"), "79D9BA"); lastCompletedEvents = battle.getInt("completedWaveEvents")
         presentation.update(elapsed, battle.getJSONArray("effects"))
         val biome = repository.content.getJSONArray("biomes").getJSONObject(battle.getInt("zone"))
         val background = Color.valueOf(biome.getJSONArray("palette").getString(0))
@@ -175,6 +210,7 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
             if (kind == "treasure") {
                 rounded(ex - 16 * unit, ey - 13 * unit, 32 * unit, 26 * unit, 6 * unit, Color.WHITE)
                 rounded(ex - 15 * unit, ey - 12 * unit, 30 * unit, 24 * unit, 5 * unit, Color.valueOf("F5B942"))
+                shapes.color = Color.WHITE; shapes.rect(ex - 6 * unit, ey - unit, 12 * unit, 2 * unit); shapes.rect(ex - unit, ey - 6 * unit, 2 * unit, 12 * unit)
             } else {
                 for (side in listOf(-1, 1)) rounded(ex + side * radius * .85f - radius * .325f, ey - radius * .9f, radius * .65f, radius * .6f, 3 * unit, Color.valueOf("374A4D").apply { a = alpha })
                 if (kind == "boss") {
@@ -211,7 +247,9 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
             shapes.color.a = (1 - age / .18).toFloat().coerceIn(0f, 1f)
             val style = effect.getString("style"); val fx = x(from.getDouble(0)); val fy = y(from.getDouble(1)); val tx = x(to.getDouble(0)); val ty = y(to.getDouble(1))
             if (effect.getDouble("damage") <= 0) {
-                val radius = 30 * if (reducedMotion) 1f else (1 + 2 * age / rendered.duration.coerceAtLeast(.001)).toFloat()
+                val fixed = effect.getDouble("damage") == -1.0
+                val radius = if (fixed) width * .14f else 30 * if (reducedMotion) 1f else (1 + 2 * age / rendered.duration.coerceAtLeast(.001)).toFloat()
+                shapes.color = Color(1f, .5f, 0f, .1f); shapes.circle(tx, ty, radius, 48)
                 ring(tx, ty, radius, 3f, Color.ORANGE)
                 return@forEach
             }
@@ -263,13 +301,22 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
             }
         }
         seenEffects.retainAll(activeEffects)
+        announcement?.let { (text, color, born) ->
+            val age = elapsed - born
+            if (age < 1.5) {
+                font.data.setScale(min(22f, width / 18) / baseFontHeight)
+                font.color = color.cpy().apply { a = if (reducedMotion || age < 1) 1f else ((1.5 - age) / .5).toFloat() }
+                val layout = com.badlogic.gdx.graphics.g2d.GlyphLayout(font, text)
+                font.draw(batch, layout, width / 2 - layout.width / 2, height * .8f)
+            } else announcement = null
+        }
         batch.end()
         val enemies = battle.getJSONArray("enemies")
         val bossPresent = (0 until enemies.length()).any { enemies.getJSONObject(it).getString("kind") == "boss" }
         audio.music(if (bossPresent) "boss" else "battle")
         if (paused != audioPaused) { if (paused) audio.pause() else audio.resume(); audioPaused = paused }
         if (battle.getInt("kills") > previousKills) { audio.cue("explosion"); previousKills = battle.getInt("kills") }
-        if (battle.getInt("wave") != previousWave) { audio.cue("combo"); previousWave = battle.getInt("wave") }
+        previousWave = battle.getInt("wave")
         val state = battle.getString("state")
         if (state != lastRunState) { if (state == "victory") audio.cue("victory"); lastRunState = state }
         if (lastHud < 0 || elapsed - lastHud >= .1 || state != lastHudState) { lastHud = elapsed; lastHudState = state; hud(JSONObject(battle.toString())) }
