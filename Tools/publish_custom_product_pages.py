@@ -5,13 +5,47 @@ unexpected assets rather than deleting them. A rerun reuses pages and checksums.
 """
 import hashlib
 import json
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from configure_iap import AppleAPI, APP_ID, ROOT, relationship, resource
-from release_assets import upload, wait_asset
+import time
+import threading
+import urllib.parse
+import urllib.request
 
 ASSETS = ROOT / "Marketing/CustomProductPages"
 REPORT = ROOT / ".build/custom-product-pages-status.json"
+
+
+RECEIPTS_PATH = ROOT / "Docs/Store/CustomProductPages/upload-receipts.json"
+receipts = json.loads(RECEIPTS_PATH.read_text(encoding="utf-8")) if RECEIPTS_PATH.exists() else {}
+receipt_lock = threading.Lock()
+
+
+def transfer(api, set_id, file):
+    content = file.read_bytes()
+    checksum = hashlib.md5(content).hexdigest()
+    asset = api.call("POST", "/v1/appScreenshots", {"data": {
+        "type": "appScreenshots", "attributes": {"fileName": file.name, "fileSize": len(content)},
+        "relationships": {"appScreenshotSet": relationship("appScreenshotSets", set_id)}}})["data"]
+    with receipt_lock:
+        receipts[asset["id"]] = checksum
+        (ROOT / ".build/upload-receipts.json").write_text(json.dumps(receipts, indent=2), encoding="utf-8")
+    for operation in asset["attributes"]["uploadOperations"]:
+        if urllib.parse.urlparse(operation["url"]).scheme != "https":
+            raise RuntimeError("Apple asset transfer must use HTTPS")
+        headers = {h["name"]: h["value"] for h in operation["requestHeaders"]}
+        chunk = content[operation["offset"]:operation["offset"] + operation["length"]]
+        request = urllib.request.Request(operation["url"], data=chunk, method=operation["method"], headers=headers)
+        try:
+            with urllib.request.urlopen(request, timeout=90) as response:
+                response.read()
+        except Exception:
+            raise RuntimeError("Asset transfer failed; signed URL omitted") from None
+    api.call("PATCH", f"/v1/appScreenshots/{asset['id']}", {"data": {
+        **resource("appScreenshots", asset["id"]), "attributes": {"uploaded": True, "sourceFileChecksum": checksum}}})
+    print(f"Transferred screenshot {asset['id']}; awaiting Apple processing", flush=True)
+    return asset
 
 
 def gallery(api, locale_id, shots):
@@ -29,19 +63,38 @@ def gallery(api, locale_id, shots):
         data = file.read_bytes()
         assert hashlib.sha256(data).hexdigest() == shot["sha256"], "Asset differs from reviewed manifest"
         expected.append(hashlib.md5(data).hexdigest())
-    if any(s["attributes"].get("sourceFileChecksum") not in expected for s in existing):
+    def identity(asset):
+        checksum = asset["attributes"].get("sourceFileChecksum")
+        return checksum if checksum is not None else receipts.get(asset["id"])
+    if any(identity(s) not in expected for s in existing):
         raise RuntimeError("Unexpected existing screenshot preserved; manual reconciliation needed")
     ordered = []
     for (file, _), checksum in zip(files, expected):
-        match = next((s for s in existing if s["attributes"].get("sourceFileChecksum") == checksum), None)
-        asset = wait_asset(api, match["id"]) if match else upload(api, current["id"], file)
+        match = next((s for s in existing if identity(s) == checksum), None)
+        asset = match if match else transfer(api, current["id"], file)
         ordered.append(asset["id"])
-    api.call("PATCH", f"/v1/appScreenshotSets/{current['id']}/relationships/appScreenshots", {
-        "data": [resource("appScreenshots", identifier) for identifier in ordered]})
-    actual = api.all(f"/v1/appScreenshotSets/{current['id']}/appScreenshots?limit=200")
-    assert [s["attributes"].get("sourceFileChecksum") for s in actual] == expected
-    assert all(s["attributes"].get("assetDeliveryState", {}).get("state") == "COMPLETE" for s in actual)
-    return {"display": display, "count": len(actual), "checksumsVerified": True, "ordered": True}
+    return {"display": display, "setID": current["id"], "count": 3,
+            "expectedChecksums": expected, "assetIDs": ordered, "checksumsVerified": False, "ordered": False}
+
+
+def verify_gallery(gallery):
+    if gallery["checksumsVerified"]:
+        return True
+    api = AppleAPI()
+    actual = api.all(f"/v1/appScreenshotSets/{gallery['setID']}/appScreenshots?limit=200")
+    if any(s["attributes"].get("assetDeliveryState", {}).get("state") == "FAILED" for s in actual):
+        raise RuntimeError("Apple rejected an image; preserving it for diagnosis")
+    if not all(s["attributes"].get("assetDeliveryState", {}).get("state") == "COMPLETE" for s in actual):
+        return False
+    assert {s["id"] for s in actual} == set(gallery["assetIDs"])
+    checksums = {s["id"]: s["attributes"].get("sourceFileChecksum") for s in actual}
+    assert [checksums[i] for i in gallery["assetIDs"]] == gallery["expectedChecksums"]
+    api.call("PATCH", f"/v1/appScreenshotSets/{gallery['setID']}/relationships/appScreenshots", {
+        "data": [resource("appScreenshots", i) for i in gallery["assetIDs"]]})
+    saved = api.all(f"/v1/appScreenshotSets/{gallery['setID']}/appScreenshots?limit=200")
+    assert [s["id"] for s in saved] == gallery["assetIDs"]
+    gallery.update(checksumsVerified=True, ordered=True)
+    return True
 
 
 def main():
@@ -51,6 +104,7 @@ def main():
     REPORT.parent.mkdir(exist_ok=True)
     pages = api.all(f"/v1/apps/{APP_ID}/appCustomProductPages?limit=200")
     for campaign in sorted({e["id"] for e in manifest["campaigns"]}):
+        api = AppleAPI()
         entries = [e for e in manifest["campaigns"] if e["id"] == campaign]
         name = entries[0]["referenceName"]
         page = next((p for p in pages if p["attributes"]["name"] == name), None)
@@ -86,12 +140,30 @@ def main():
             assert saved["attributes"]["promotionalText"] == entry["promotionalText"]
             galleries = [gallery(api, locale["id"], [s for s in entry["screenshots"] if s["device"] == device]) for device in ("iPhone", "iPad")]
             return {"locale": entry["locale"], "promotionalTextVerified": True, "galleries": galleries}
-        # Distinct locale resources can upload independently; bound Apple traffic.
         with ThreadPoolExecutor(max_workers=4) as executor:
-            for saved_locale in executor.map(save_entry, entries):
+            futures = {executor.submit(save_entry, e): e for e in entries}
+            for future in as_completed(futures):
+                try:
+                    saved_locale = future.result()
+                except Exception:
+                    for queued in futures:
+                        queued.cancel()
+                    raise
                 result["locales"].append(saved_locale)
                 REPORT.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
-                print(f"Verified {campaign} {saved_locale['locale']}: six screenshots", flush=True)
+                print(f"Transferred {campaign} {saved_locale['locale']}: six screenshots; delivery not yet verified", flush=True)
+    galleries = [g for c in report["campaigns"] for l in c["locales"] for g in l["galleries"]]
+    deadline = time.monotonic() + 1800
+    while True:
+        with ThreadPoolExecutor(max_workers=8) as executor:
+            completed = sum(executor.map(verify_gallery, galleries))
+        REPORT.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+        print(f"Apple delivery verified: {completed}/{len(galleries)} galleries", flush=True)
+        if completed == len(galleries):
+            break
+        if time.monotonic() >= deadline:
+            raise RuntimeError("Apple processing remains pending; preserve receipts and rerun verification")
+        time.sleep(15)
 
 
 

@@ -9,7 +9,7 @@ concurrency:
 jobs:
   drafts:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -27,5 +27,7 @@ jobs:
         with:
           name: custom-product-page-status
           include-hidden-files: true
-          path: .build/custom-product-pages-status.json
+          path: |
+            .build/custom-product-pages-status.json
+            .build/upload-receipts.json
           if-no-files-found: warn
