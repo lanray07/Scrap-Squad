@@ -1,0 +1,26 @@
+{
+  "checkedOn": "2026-10-08",
+  "mainVersionHeader": "1 of 1 Header Asset; verified in App Store Connect",
+  "customPageHeaders": [
+    {
+      "campaign": "weapon-fusion",
+      "pageID": "b8aa1d77-5b8c-44dd-802a-477d03df07e0",
+      "versionID": "42401fdc-4216-4c0d-a872-5b93da1592b8",
+      "headerCount": 1
+    },
+    {
+      "campaign": "boss-survival",
+      "pageID": "ddbee4ab-4499-46fe-818b-83add096ab59",
+      "versionID": "027fcd9d-dedc-4b75-97bf-ab7a2b8f3752",
+      "headerCount": 1
+    },
+    {
+      "campaign": "daily-circuit",
+      "pageID": "4d7eaa7f-ee8c-4b9f-9c7a-19a94305cf23",
+      "versionID": "9c331696-a978-4233-ae82-1ea947b2222e",
+      "headerCount": 1
+    }
+  ],
+  "localeInheritance": "Chinese (Traditional) Boss Survival UI explicitly confirms Using English (U.K.) header asset. The universal header contains no text.",
+  "reviewSubmitted": false
+}
