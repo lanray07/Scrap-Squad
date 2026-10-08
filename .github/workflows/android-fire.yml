@@ -18,9 +18,12 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-      - uses: swift-actions/setup-swift@v2
-        with:
-          swift-version: '6.4.0'
+      - name: Install official Swift 6.4 toolchain
+        run: |
+          curl --fail --location --retry 3 https://download.swift.org/swift-6.4.0-release/ubuntu2404/swift-6.4.0-RELEASE/swift-6.4.0-RELEASE-ubuntu24.04.tar.gz --output "$RUNNER_TEMP/swift.tar.gz"
+          mkdir -p "$RUNNER_TEMP/swift"
+          tar -xzf "$RUNNER_TEMP/swift.tar.gz" -C "$RUNNER_TEMP/swift" --strip-components=1
+          echo "$RUNNER_TEMP/swift/usr/bin" >> "$GITHUB_PATH"
       - uses: android-actions/setup-android@v3
       - name: Install pinned Android and Swift toolchains
         run: |
