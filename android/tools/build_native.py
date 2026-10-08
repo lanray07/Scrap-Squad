@@ -41,6 +41,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--abi', choices=['arm64-v8a', 'x86_64'], default='arm64-v8a')
     parser.add_argument('--oracle', action='store_true')
+    parser.add_argument('--jni-only', action='store_true', help='Relink only the UTF-8 JNI adapter after a bridge-only edit')
     args = parser.parse_args()
     build = ANDROID / 'native/build'
     build.mkdir(parents=True, exist_ok=True)
@@ -62,24 +63,30 @@ def main():
     output = destination / 'libscrapcore.so'
     resource = sdk / 'usr/lib/swift'
     if not (resource / 'android' / arch / 'swiftrt.o').exists():
-        runtime = next(p for p in sdk.rglob('swiftrt.o') if p.parent.name == arch)
+        search = sdk if sdk.exists() else Path.home()
+        runtime = next(p for p in search.rglob('swiftrt.o') if p.parent.name == arch and 'swift_static' not in str(p))
         resource = runtime.parent.parent.parent
         sdk = resource.parent.parent.parent
+    libraries = resource / 'android' / arch
+    if not (libraries / 'libswiftCore.so').exists():
+        libraries = resource / 'android'
     object_file = build / (arch + '.o')
-    run([swiftc, '-swift-version', '5', '-O', '-whole-module-optimization', '-parse-as-library', '-emit-object', '-module-name', 'ScrapAndroid', '-target', arch + '-unknown-linux-android28',
+    if not args.jni_only:
+        run([swiftc, '-swift-version', '5', '-O', '-whole-module-optimization', '-parse-as-library', '-emit-object', '-module-name', 'ScrapAndroid', '-target', arch + '-unknown-linux-android28',
          '-sdk', sysroot, '-resource-dir', resource, '-tools-directory', tools, '-I', sdk / 'usr/include',
          '-Xcc', '--sysroot=' + str(sysroot), '-Xcc', '-isystem', '-Xcc', next((tools.parent / 'lib/clang').glob('*/include')),
          *sources(), *support, '-o', object_file])
     compiler = tools / ('clang++.exe' if os.name == 'nt' else 'clang++')
     autolink = build / (arch + '.autolink')
     extractor = Path(swiftc).with_name('swift-autolink-extract.exe' if os.name == 'nt' else 'swift-autolink-extract')
-    run([extractor, object_file, '-o', autolink])
-    run([compiler, '--target=' + triple + '28', '--sysroot=' + str(sysroot), '-shared', object_file,
-         resource / 'android' / arch / 'swiftrt.o', '-L' + str(resource / 'android' / arch),
+    if not args.jni_only:
+        run([extractor, object_file, '-o', autolink])
+        run([compiler, '--target=' + triple + '28', '--sysroot=' + str(sysroot), '-shared', object_file,
+         resource / 'android' / arch / 'swiftrt.o', '-L' + str(libraries),
          '@' + str(autolink), '-Wl,-z,max-page-size=16384', '-Wl,-soname,libscrapcore.so', '-o', output])
     run([compiler, '--target=' + triple + '28', '--sysroot=' + str(sysroot), '-shared', '-fPIC', '-std=c++17',
          '-Wl,-z,max-page-size=16384', ANDROID / 'native/jni.cpp', '-L' + str(destination), '-lscrapcore', '-o', destination / 'libscrapjni.so'])
-    for library in (resource / 'android' / arch).glob('*.so'):
+    for library in libraries.glob('*.so'):
         shutil.copy2(library, destination / library.name)
     shutil.copy2(sysroot / 'usr/lib' / triple / 'libc++_shared.so', destination / 'libc++_shared.so')
     print('Native libraries prepared:', destination)
