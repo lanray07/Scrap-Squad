@@ -24,6 +24,14 @@ class BattleSmokeTest {
         val context = instrumentation.targetContext
         context.startActivity(Intent(context, MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK))
         val automation = instrumentation.uiAutomation
+        val strings = Strings(context)
+        val welcomeDeadline = SystemClock.uptimeMillis() + 15000
+        while (find(automation.rootInActiveWindow, strings.text("nav.battle")) == null && SystemClock.uptimeMillis() < welcomeDeadline) {
+            find(automation.rootInActiveWindow, strings.text("tutorial.start"))?.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+            SystemClock.sleep(100)
+        }
+        find(automation.rootInActiveWindow, strings.text("nav.battle"))?.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+        SystemClock.sleep(250)
         val deploy = Strings(context).text("battle.deploy")
         val deadline = SystemClock.uptimeMillis() + 15000
         var button: AccessibilityNodeInfo? = null
@@ -53,11 +61,15 @@ class BattleSmokeTest {
         val output = File(context.getExternalFilesDir(null), "android-battle-smoke.png")
         output.outputStream().use { screenshot!!.compress(Bitmap.CompressFormat.PNG, 100, it) }
         screenshot!!.recycle()
-        // Gradle uninstalls the test app after instrumentation, removing its
-        // external-files folder. Keep the evidence in shell-owned temporary storage.
-        automation.executeShellCommand("cp ${output.absolutePath} /data/local/tmp/scrap-squad-battle.png").use { descriptor ->
+        // Capture directly as shell into public storage: scoped storage prevents
+        // shell cp from reading this application's external-files directory.
+        automation.executeShellCommand("screencap -p /sdcard/Download/scrap-squad-battle.png").use { descriptor ->
             FileInputStream(descriptor.fileDescriptor).use { it.readBytes() }
         }
+        val retained = automation.executeShellCommand("ls /sdcard/Download/scrap-squad-battle.png").use { descriptor ->
+            FileInputStream(descriptor.fileDescriptor).use { it.readBytes().toString(Charsets.UTF_8) }
+        }
+        assertTrue("Screenshot evidence was not retained: $retained", retained.trim() == "/sdcard/Download/scrap-squad-battle.png")
         context.startActivity(Intent(context, MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK))
         SystemClock.sleep(500)
     }

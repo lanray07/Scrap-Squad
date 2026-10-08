@@ -23,6 +23,9 @@ for key, value in catalog['strings'].items():
         if unit.get('state') == 'translated' and isinstance(unit.get('value'), str):
             translations.setdefault(language, {})[key] = unit['value']
 assert translations.get('en'), 'English source catalog missing'
+android_strings = json.loads((ANDROID/'resources/strings.en.json').read_text(encoding='utf-8'))
+assert not (android_strings.keys() & translations['en'].keys()), 'Android keys must not override original translations'
+translations['en'].update(android_strings)
 (DEST/'localization.json').write_text(json.dumps(translations, ensure_ascii=False, indent=2), encoding='utf-8')
 for language, strings in translations.items():
     qualifier = 'values' if language == 'en' else 'values-b+' + language.replace('-', '+')

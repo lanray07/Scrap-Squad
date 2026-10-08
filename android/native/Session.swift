@@ -49,6 +49,9 @@ final class Session {
                 guard let engine, engine.state == .victory || engine.state == .defeated else { throw GameError.invalidSelection }
                 if !claimed { _ = Progression.apply(engine.reward(), profile: &profile, content: content, now: now); claimed = true }
             case "fuse": guard let recipe = content.recipes.first(where: { $0.id == id }) else { throw GameError.invalidSelection }; try Progression.fuse(recipe, profile: &profile)
+            case "roulette":
+                _ = try Progression.roulette(a: q["a"] as? String ?? "", b: q["b"] as? String ?? "", profile: &profile, content: content, randomIndex: q["index"] as? Int ?? 0)
+            case "challenge": guard RunChallenge(code: id) != nil else { throw GameError.invalidSelection }
             case "building": guard let item = content.buildings.first(where: { $0.id == id }) else { throw GameError.invalidSelection }; try Progression.upgradeBuilding(item, profile: &profile, content: content, now: now)
             case "robot": guard let item = content.robots.first(where: { $0.id == id }) else { throw GameError.invalidSelection }; try Progression.upgradeRobot(item, profile: &profile, content: content)
             case "weapon": guard let item = content.weapons.first(where: { $0.id == id }) else { throw GameError.invalidSelection }; try Progression.upgradeWeapon(item, profile: &profile, content: content)
@@ -61,11 +64,27 @@ final class Session {
                 guard let value = q["value"] else { throw GameError.invalidSelection }
                 let preferences = try JSONDecoder().decode(Preferences.self, from: JSONSerialization.data(withJSONObject: value))
                 var candidate = profile; candidate.preferences = preferences; try candidate.validate(content: content); profile = candidate
-            case "init", "state": break
+            case "init", "state", "menu", "roulettePreview": break
             default: throw GameError.invalidSelection
             }
             if op != "step" { Progression.refreshMissions(&profile, now: now) }
-            return try serialize(snapshot())
+            var result = try snapshot()
+            if op == "menu" {
+                let offline = Progression.offline(profile: profile, content: content, now: now)
+                result["menu"] = [
+                    "cityLevel": profile.cityLevel, "playerLevel": profile.playerLevel, "squadCapacity": profile.squadCapacity,
+                    "dailyChallenge": RunChallenge.daily(now: now).code,
+                    "offline": ["seconds": offline.seconds, "scrap": offline.scrap, "credits": offline.credits],
+                    "buildingCosts": Dictionary(uniqueKeysWithValues: content.buildings.map { ($0.id, Progression.cost(base: $0.baseCost, level: profile.buildingLevels[$0.id, default: 0], economy: content.economy)) }),
+                    "robotCosts": Dictionary(uniqueKeysWithValues: content.robots.map { ($0.id, profile.unlockedRobots.contains($0.id) ? Progression.cost(base: content.economy.robotLevelBaseCost, level: profile.robotLevels[$0.id, default: 1] - 1, economy: content.economy) : $0.unlockCost) }),
+                    "weaponCosts": Dictionary(uniqueKeysWithValues: content.weapons.map { ($0.id, Progression.cost(base: 80, level: profile.weaponLevels[$0.id, default: 1] - 1, economy: content.economy)) }),
+                    "achievements": Progression.achievements(profile, content: content),
+                    "mastery": MasteryMilestone.allCases.map { ["key": $0.nameKey, "progress": $0.progress(profile), "goal": $0.goal] as [String: Any] },
+                    "runMedals": Dictionary(uniqueKeysWithValues: (profile.journal?.recent ?? []).map { ($0.id.uuidString, $0.medals.map(\.nameKey)) })
+                ] as [String: Any]
+            }
+            if op == "roulettePreview" { result["candidates"] = Progression.rouletteCandidates(a: q["a"] as? String ?? "", b: q["b"] as? String ?? "", content: content).map(\.id) }
+            return try serialize(result)
         } catch { return (try? serialize(["error": String(describing: error)])) ?? "{\"error\":\"invalidContent\"}" }
     }
     func vector(_ value: Vector) -> [Double] { [value.x, value.y] }
