@@ -41,6 +41,8 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
     private var lastShotSoundAt = -1.0
     private var lastRunState = "fighting"
     private val seenEffects = mutableSetOf<Int>()
+    private val presentation = CombatPresentation()
+    private var baseFontHeight = 15f
     private data class Print(val x: Double, val y: Double, val born: Double, val rotation: Float)
     private val footprints = ArrayDeque<Print>()
     private val order = listOf("bolt", "tank", "zip", "patch", "nova", "boomer", "glitch", "magnet")
@@ -48,6 +50,7 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
     override fun create() {
         batch = SpriteBatch(); shapes = ShapeRenderer(); atlas = Texture(Gdx.files.internal("generated/RobotAtlas.png"))
         font = BitmapFont()
+        baseFontHeight = font.capHeight
         atlas.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear)
         audio = Audio(repository.profile.optJSONObject("preferences") ?: JSONObject())
         val args = mutableListOf<Pair<String, Any>>("mode" to mode, "seed" to seed, "zone" to zone)
@@ -113,6 +116,7 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
         if (!ready || battle.length() == 0) { Gdx.gl.glClearColor(.063f, .145f, .176f, 1f); Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT); return }
         if (!paused && battle.getString("state") == "fighting") battle = repository.battleCommand("step", "dt" to Gdx.graphics.deltaTime.toDouble(), "x" to moveX, "y" to moveY).getJSONObject("battle")
         val elapsed = battle.getDouble("elapsed")
+        presentation.update(elapsed, battle.getJSONArray("effects"))
         val biome = repository.content.getJSONArray("biomes").getJSONObject(battle.getInt("zone"))
         val background = Color.valueOf(biome.getJSONArray("palette").getString(0))
         Gdx.gl.glClearColor(background.r, background.g, background.b, 1f); Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT)
@@ -120,7 +124,11 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
         shapes.projectionMatrix = camera.combined; batch.projectionMatrix = camera.combined
         shapes.begin(ShapeRenderer.ShapeType.Filled)
         shapes.color = Color(1f, 1f, 1f, .04f)
-        for (i in -20..40) { val p = i * .1; shapes.rectLine(x(p), y(-2.0), x(p), y(4.0), 1f); shapes.rectLine(x(-2.0), y(p), x(4.0), y(p), 1f) }
+        for (i in -20..40) { val p = i * 60.0 / scale; shapes.rectLine(x(p), y(-1200.0 / scale), x(p), y(2400.0 / scale), 1f); shapes.rectLine(x(-1200.0 / scale), y(p), x(2400.0 / scale), y(p), 1f) }
+        shapes.color = Color.valueOf("79D9BA").apply { a = .2f }
+        listOf(doubleArrayOf(.07, .07, .93, .07), doubleArrayOf(.93, .07, .93, .93), doubleArrayOf(.93, .93, .07, .93), doubleArrayOf(.07, .93, .07, .07)).forEach { shapes.rectLine(x(it[0]), y(it[1]), x(it[2]), y(it[3]), 2f) }
+        shapes.color = Color.valueOf(biome.getJSONArray("palette").getString(1)).apply { a = .18f }
+        for (i in 0 until 22) { val w = (14 + i % 4 * 5).toFloat(); shapes.rect(x((i * 137 % 570).toDouble() / scale) - w / 2, y((i * 193 % 780).toDouble() / scale) - 4.5f, w / 2, 4.5f, w, 9f, 1f, 1f, (i * .7 * 180 / PI).toFloat()) }
         val p = battle.getJSONArray("player"); val px = p.getDouble(0); val py = p.getDouble(1)
         if (lastStrideSequence != battle.getInt("strideSequence")) {
             lastStrideSequence = battle.getInt("strideSequence")
@@ -134,26 +142,63 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
         footprints.forEach { shapes.color = Color.valueOf(biome.getJSONArray("palette").getString(2)).apply { a = ((1 - (elapsed - it.born) / 3) * .5).toFloat() }; shapes.rect(x(it.x) - 3.5f * unit, y(it.y) - 5.5f * unit, 3.5f * unit, 5.5f * unit, 7 * unit, 11 * unit, 1f, 1f, it.rotation) }
         battle.getJSONArray("warnings").objects { warning -> drawArea(warning.getJSONObject("area"), Color(1f, .25f, .2f, .18f + .2f * (1 - warning.getDouble("remaining") / warning.getDouble("duration")).toFloat())) }
         battle.getJSONArray("strikes").objects { drawArea(it.getJSONObject("area"), Color(.74f, .61f, 1f, .3f)) }
+        battle.getJSONArray("evolutionAreas").objects { drawArea(it, Color.valueOf(battle.getString("evolutionColor")).apply { a = if (it.getString("shape") == "ring") .55f else .0825f }) }
+        if (battle.getDouble("overdrive") > 0) ring(x(px), y(py), 42 * unit, 3 * unit, Color.valueOf("79D9BA"))
+        if (battle.getDouble("dashRemaining") > 0 || battle.getDouble("perfectDodgeBoost") > 0) ring(x(px), y(py), 34 * unit, 3 * unit, Color.valueOf("83EAFF"))
         battle.getJSONArray("enemies").objects { enemy ->
             val point = position(enemy); val ex = x(point.getDouble(0)); var ey = y(point.getDouble(1)); val kind = enemy.getString("kind")
             if (kind == "flying" && !reducedMotion) ey += sin(elapsed * 5).toFloat() * 4
             val radius = (if (kind == "boss") 46 else if (kind == "miniboss") 30 else if (kind == "tank" || kind == "elite") 21 else 13) * unit
-            shapes.color = Color.valueOf(if (kind == "repair") "8CAD8A" else if (kind == "shield") "839CC1" else if (kind == "boss") biome.getJSONArray("palette").getString(1) else if (kind == "treasure") "F5B942" else "8B7572")
-            if (kind == "burrower") shapes.color.a = if (elapsed.toInt() % 5 < 2) .25f else 1f
-            shapes.rect(ex - radius, ey - radius * .9f, radius * 2, radius * 1.8f)
-            shapes.color = Color.valueOf("374A4D"); shapes.rect(ex - radius * 1.2f, ey - radius, radius * .65f, radius * .6f); shapes.rect(ex + radius * .55f, ey - radius, radius * .65f, radius * .6f)
-            shapes.color = Color.valueOf("FFC88C"); shapes.rect(ex - radius / 2, ey, radius, 4 * unit)
-            shapes.color = Color.ORANGE; shapes.rect(ex - radius, ey + radius + 5, radius * 2 * (enemy.getDouble("health") / enemy.getDouble("maxHealth")).toFloat(), 3 * unit)
+            val alpha = if (kind == "burrower" && elapsed.toInt() % 5 < 2) .25f else 1f
+            if (enemy.getInt("id") in battle.getJSONArray("eventIDs").let { ids -> (0 until ids.length()).map { ids.getInt(it) } }) ring(ex, ey, (if (kind == "boss") 54 else 26) * unit, 2 * unit, Color.YELLOW)
+            if (kind == "treasure") {
+                rounded(ex - 16 * unit, ey - 13 * unit, 32 * unit, 26 * unit, 6 * unit, Color.WHITE)
+                rounded(ex - 15 * unit, ey - 12 * unit, 30 * unit, 24 * unit, 5 * unit, Color.valueOf("F5B942"))
+            } else {
+                for (side in listOf(-1, 1)) rounded(ex + side * radius * .85f - radius * .325f, ey - radius * .9f, radius * .65f, radius * .6f, 3 * unit, Color.valueOf("374A4D").apply { a = alpha })
+                if (kind == "boss") {
+                    val pattern = battle.getInt("bossPatternIndex"); val count = 2 + pattern % 4
+                    for (module in 0 until count) {
+                        val angle = module * PI * 2 / count + pattern * .3; val mx = ex + cos(angle).toFloat() * radius; val my = ey + sin(angle).toFloat() * radius
+                        shapes.color = Color.valueOf("10252D"); shapes.rect(mx - 9 * unit, my - 12 * unit, 9 * unit, 12 * unit, 18 * unit, 24 * unit, 1f, 1f, (angle * 180 / PI).toFloat())
+                        shapes.color = Color.valueOf(biome.getJSONArray("palette").getString(2)); shapes.rect(mx - 8 * unit, my - 11 * unit, 8 * unit, 11 * unit, 16 * unit, 22 * unit, 1f, 1f, (angle * 180 / PI).toFloat())
+                    }
+                }
+                val fill = Color.valueOf(if (kind == "repair") "8CAD8A" else if (kind == "shield") "839CC1" else if (kind == "boss") biome.getJSONArray("palette").getString(1) else "8B7572").apply { a = alpha }
+                val border = Color.valueOf(if (kind == "boss") if (enemy.getDouble("health") < enemy.getDouble("maxHealth") / 2) "FF3B30" else biome.getJSONArray("palette").getString(2) else "E4B1A0").apply { a = alpha }
+                val stroke = (if (kind == "boss") 4 else 2) * unit
+                if (kind == "boss" && battle.getString("bossPattern") in listOf("shockRing", "bombardment", "collapse")) { shapes.color = border; shapes.circle(ex, ey, radius + stroke / 2, 40); shapes.color = fill; shapes.circle(ex, ey, radius - stroke / 2, 40) }
+                else { val corner = if (kind == "swarmer") 4 * unit else radius * .5f; rounded(ex - radius - stroke / 2, ey - radius * .9f - stroke / 2, radius * 2 + stroke, radius * 1.8f + stroke, corner, border); rounded(ex - radius + stroke / 2, ey - radius * .9f + stroke / 2, radius * 2 - stroke, radius * 1.8f - stroke, corner, fill) }
+                rounded(ex - radius / 2, ey - 2 * unit, radius, 4 * unit, 2 * unit, Color.valueOf("FFC88C").apply { a = alpha })
+            }
+            shapes.color = Color.ORANGE; shapes.rect(ex - radius, ey + radius + 5 * unit, radius * 2 * (enemy.getDouble("health") / enemy.getDouble("maxHealth")).toFloat(), 3 * unit)
         }
         battle.getJSONArray("projectiles").objects { val at = position(it); shapes.color = Color.valueOf("FFB66C"); shapes.rect(x(at.getDouble(0)), y(at.getDouble(1)), 14 * unit, 5 * unit) }
         battle.getJSONArray("drones").let { drones -> for (i in 0 until drones.length()) { val at = drones.getJSONArray(i); shapes.color = Color.valueOf("F5B942"); shapes.rect(x(at.getDouble(0)) - 9 * unit, y(at.getDouble(1)) - 6 * unit, 18 * unit, 12 * unit) } }
-        battle.getJSONArray("effects").objects { effect ->
+        presentation.effects.forEach { rendered ->
+            val effect = rendered.data; val age = elapsed - rendered.born
             val from = effect.getJSONArray("from"); val to = effect.getJSONArray("to")
             shapes.color = Color.valueOf(if (effect.getString("style") == "arc") "83EAFF" else if (effect.getString("style") == "beam") "BC9BFF" else biome.getJSONArray("palette").getString(2))
-            shapes.color.a = min(1f, effect.getDouble("remaining").toFloat() * 3)
-            shapes.rectLine(x(from.getDouble(0)), y(from.getDouble(1)), x(to.getDouble(0)), y(to.getDouble(1)), 3 * unit)
-            shapes.circle(x(to.getDouble(0)), y(to.getDouble(1)), 7 * unit, 12)
+            shapes.color.a = (1 - age / .18).toFloat().coerceIn(0f, 1f)
+            val style = effect.getString("style"); val fx = x(from.getDouble(0)); val fy = y(from.getDouble(1)); val tx = x(to.getDouble(0)); val ty = y(to.getDouble(1))
+            if (effect.getDouble("damage") <= 0) {
+                val radius = 30 * if (reducedMotion) 1f else (1 + 2 * age / rendered.duration.coerceAtLeast(.001)).toFloat()
+                ring(tx, ty, radius, 3f, Color.ORANGE)
+                return@forEach
+            }
+            if (style == "arc") {
+                val dx = tx - fx; val dy = ty - fy; val length = hypot(dx, dy).coerceAtLeast(1f); var lastX = fx; var lastY = fy
+                for (segment in 1..6) { val t = segment / 6f; val jag = if (segment == 6) 0f else (if (segment % 2 == 0) 7 else -7) * unit; val nextX = fx + dx * t - dy / length * jag; val nextY = fy + dy * t + dx / length * jag; shapes.rectLine(lastX, lastY, nextX, nextY, 2 * unit); lastX = nextX; lastY = nextY }
+            } else shapes.rectLine(if (style == "orbital") tx else fx, if (style == "orbital") ty + scale * .35f else fy, tx, ty, (if (style == "beam" || style == "orbital") 6 else if (effect.getBoolean("critical")) 4 else 2) * unit)
+            if (age < .3 && (style == "missile" || style == "orbital")) ring(tx, ty, scale * if (style == "orbital") .16f else .08f, 3f, shapes.color.cpy().apply { a = (1 - age / .3).toFloat() })
+            if (age < .2 && !reducedMotion) {
+                val count = (repository.profile.getJSONObject("preferences").getDouble("particleIntensity") * 6).toInt()
+                shapes.color.a = (1 - age / .2).toFloat()
+                for (spark in 0 until count) { val angle = spark * PI * 2 / count; shapes.circle(tx + cos(angle).toFloat() * 17 * (age / .2).toFloat(), ty + sin(angle).toFloat() * 17 * (age / .2).toFloat(), 2f, 8) }
+            }
         }
+        val squadForShadows = battle.getJSONArray("squad")
+        for (i in 0 until squadForShadows.length()) { val angle = i * PI * 2 / squadForShadows.length(); val rx = x(px + if (i == 0) 0.0 else cos(angle) * .055); val ry = y(py + if (i == 0) 0.0 else sin(angle) * .055); shapes.color = Color(0f, 0f, 0f, .25f); shapes.ellipse(rx - 17.5f * unit, ry - 25 * unit, 35 * unit, 12 * unit, 24) }
         shapes.end()
         batch.begin()
         val squad = battle.getJSONArray("squad")
@@ -172,13 +217,15 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
             batch.draw(region, rx - dimension / 2, ry - dimension / 2 + bob, dimension / 2, dimension / 2, dimension, dimension, 1f, squash, rotation.toFloat())
         }
         val activeEffects = mutableSetOf<Int>()
-        battle.getJSONArray("effects").objects { effect ->
+        presentation.effects.forEach { rendered ->
+            val effect = rendered.data; val age = elapsed - rendered.born
             val id = effect.getInt("id"); activeEffects.add(id)
-            if (seenEffects.add(id) && effect.getDouble("damage") > 0 && elapsed - lastShotSoundAt >= .09) { audio.cue("weapon"); lastShotSoundAt = elapsed }
+            if (seenEffects.add(id) && effect.getDouble("damage") > 0 && elapsed - lastShotSoundAt >= .18) { audio.cue("weapon"); lastShotSoundAt = elapsed }
             if (effect.getDouble("damage") > 0 && repository.profile.getJSONObject("preferences").getBoolean("damageNumbers")) {
                 val to = effect.getJSONArray("to"); font.color = if (effect.getBoolean("critical")) Color.YELLOW else Color.WHITE
-                font.color.a = (effect.getDouble("remaining") * 3).toFloat().coerceIn(0f, 1f)
-                font.draw(batch, effect.getDouble("damage").toInt().toString(), x(to.getDouble(0)), y(to.getDouble(1)) + 18 * unit)
+                font.color.a = (1 - age / .45).toFloat().coerceIn(0f, 1f)
+                font.data.setScale((if (effect.getBoolean("critical")) 19 else 13) / baseFontHeight)
+                font.draw(batch, effect.getDouble("damage").toInt().toString(), x(to.getDouble(0)), y(to.getDouble(1)) + font.capHeight + if (reducedMotion) 0f else (age / .45 * 20).toFloat())
             }
         }
         seenEffects.retainAll(activeEffects)
@@ -202,6 +249,15 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
             "ring" -> { val cx = x(to.getDouble(0)); val cy = y(to.getDouble(1)); for (i in 0..63) { val a = i * PI / 32; val b = (i + 1) * PI / 32; shapes.rectLine(cx + cos(a).toFloat() * radius, cy + sin(a).toFloat() * radius, cx + cos(b).toFloat() * radius, cy + sin(b).toFloat() * radius, area.getDouble("thickness").toFloat() * scale * 2) } }
             else -> shapes.circle(x(to.getDouble(0)), y(to.getDouble(1)), radius, 40)
         }
+    }
+    private fun rounded(x: Float, y: Float, w: Float, h: Float, radius: Float, color: Color) {
+        val r = radius.coerceIn(0f, min(w, h) / 2); shapes.color = color
+        shapes.rect(x + r, y, w - r * 2, h); shapes.rect(x, y + r, w, h - r * 2)
+        for (cx in listOf(x + r, x + w - r)) for (cy in listOf(y + r, y + h - r)) shapes.circle(cx, cy, r, 12)
+    }
+    private fun ring(cx: Float, cy: Float, radius: Float, thickness: Float, color: Color) {
+        shapes.color = color
+        for (i in 0 until 64) { val a = i * PI / 32; val b = (i + 1) * PI / 32; shapes.rectLine(cx + cos(a).toFloat() * radius, cy + sin(a).toFloat() * radius, cx + cos(b).toFloat() * radius, cy + sin(b).toFloat() * radius, thickness) }
     }
     override fun pause() {
         paused = true; moveX = 0.0; moveY = 0.0; drag = -1

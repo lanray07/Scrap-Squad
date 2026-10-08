@@ -37,12 +37,26 @@ English fallback for an unsupported device language. Genuine Android battle
 screenshot collection succeeded. The renderer now consumes the original Swift
 `RobotStride` results for footprint placement and walking poses.
 
-Interrupted-battle replay, transactional reward settlement and frame metrics were
-added after this run. They compile locally; their Android runtime checks are pending.
+## Interrupted sessions — 8 October 2026
+
+GitHub run [37825746622](https://github.com/lanray07/Scrap-Squad/actions/runs/37825746622),
+commit `ba5a32e`: **successful**, seven Android instrumentation tests passed.
+The additional recovery test replays movement and Dash from a durable command log,
+ignores an incomplete final command, and verifies a simulated interruption between
+reward settlement and profile persistence. Repeated initialization does not grant
+the reward twice. This simulates recovery boundaries; physical process-kill and
+storage-failure testing remain required.
+
+The software-rendered API 30 emulator reported 19 frames over 1.65 seconds after
+warmup: average 11.49 FPS, p50 frame interval 82.92 ms, p95 119.35 ms,
+average CPU render time 15.48 ms, Java heap 12.99 MB and native heap 36.07 MB.
+This short functional-test sample is not representative of physical Fire tablet
+performance and does not establish the 60 FPS target. Raw measurements are in the
+run artifact's `reports/render-metrics.log`.
 
 ## Release checks still required
 
-Process recovery, complete premium battle rendering, purchase validation and
+Physical process recovery, complete premium battle rendering, purchase validation and
 restoration, Amazon sandbox tests, physical Fire tablet performance and audio,
 approved translations, final screenshots, signing and submission remain to be
 verified. No Amazon publication or physical-device performance is claimed.
