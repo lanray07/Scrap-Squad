@@ -15,7 +15,7 @@ import java.io.FileInputStream
 class BattleSmokeTest {
     private fun find(node: AccessibilityNodeInfo?, text: String): AccessibilityNodeInfo? {
         if (node == null) return null
-        if (node.text?.toString() == text) return node
+        if (node.text?.toString()?.equals(text, ignoreCase = true) == true) return node
         for (i in 0 until node.childCount) find(node.getChild(i), text)?.let { return it }
         return null
     }

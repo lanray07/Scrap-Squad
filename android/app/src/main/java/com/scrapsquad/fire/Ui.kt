@@ -19,7 +19,10 @@ object Ui {
         text = value; isAllCaps = false; setTextColor(ink); textSize = 16f; minHeight = dp(activity, 48)
         background = GradientDrawable().apply { cornerRadius = dp(activity, 16).toFloat(); setColor(gold) }
         layoutParams = LinearLayout.LayoutParams(-1, -2).apply { setMargins(6, 8, 6, 8) }
-        setOnClickListener { action() }
+        setOnClickListener {
+            if (activity is MainActivity) { activity.playCue("ui"); if (activity.hapticsEnabled()) performHapticFeedback(android.view.HapticFeedbackConstants.KEYBOARD_TAP) }
+            action()
+        }
     }
     @Suppress("DEPRECATION")
     fun fitInsets(view: View) { view.setOnApplyWindowInsetsListener { v, insets ->

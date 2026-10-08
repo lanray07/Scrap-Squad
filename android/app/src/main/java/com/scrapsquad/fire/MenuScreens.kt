@@ -24,7 +24,7 @@ class MenuScreens(internal val activity: MainActivity, internal val repository: 
     internal fun heading(key: String, detail: String? = null) { label(t(key), 28f, Ui.gold); if (detail != null) label(t(detail)) }
     internal fun button(key: String, enabled: Boolean = true, action: () -> Unit): Button = Ui.button(activity, t(key), action).also { it.isEnabled = enabled; panel.addView(it) }
     internal fun action(op: String, vararg args: Pair<String, Any>, after: (() -> Unit)? = null) {
-        try { repository.action(op, *args); show(); after?.invoke() } catch (e: Exception) { error(e) }
+        try { repository.action(op, *args); if (op == "fuse" || op == "roulette") activity.playCue("fusion"); show(); after?.invoke() } catch (e: Exception) { error(e) }
     }
     internal fun error(e: Exception) {
         val message = runCatching { t("error.${e.message}") }.getOrElse { t("common.error") }

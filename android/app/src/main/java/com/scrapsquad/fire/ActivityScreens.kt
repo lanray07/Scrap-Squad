@@ -73,7 +73,7 @@ internal fun MenuScreens.settings() {
     }
 }
 private fun MenuScreens.preference(field: String, value: Any) {
-    try { repository.action("preferences", "value" to JSONObject(profile.getJSONObject("preferences").toString()).put(field, value)) } catch (e: Exception) { error(e) }
+    try { repository.action("preferences", "value" to JSONObject(profile.getJSONObject("preferences").toString()).put(field, value)); activity.refreshAudio() } catch (e: Exception) { error(e) }
 }
 
 internal fun MenuScreens.shop() {
@@ -81,6 +81,8 @@ internal fun MenuScreens.shop() {
     val catalog = JSONObject(activity.assets.open("generated/StoreConfiguration.json").bufferedReader().use { it.readText() })
     catalog.getJSONArray("packs").objects().forEach { pack ->
         separator(); label(t(pack.getString("nameKey")), 23f, Ui.gold); label(t(pack.getString("detailKey")))
+        pack.getJSONArray("finishes").objects().forEach { finish -> panel.addView(RobotPortraitView(activity, finish.getString("robotID"), finish), LinearLayout.LayoutParams(Ui.dp(activity, 150), Ui.dp(activity, 150))) }
+        button("premium.preview") { premiumPreview(pack, catalog) }
         label(t("shop.unavailable")); label(t("cosmetic.once"))
     }
     label(t("shop.note"))

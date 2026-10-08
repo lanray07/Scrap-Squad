@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.graphics.g2d.TextureRegion
+import com.badlogic.gdx.graphics.g2d.BitmapFont
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import org.json.JSONArray
 import org.json.JSONObject
@@ -19,6 +20,7 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
     private lateinit var shapes: ShapeRenderer
     private lateinit var atlas: Texture
     private lateinit var audio: Audio
+    private lateinit var font: BitmapFont
     private val camera = OrthographicCamera()
     private var battle = JSONObject()
     @Volatile var paused = false
@@ -29,14 +31,17 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
     private var lastHud = -1.0; private var previousKills = 0; private var previousWave = 1
     private var lastHudState = ""
     private var audioPaused = false
-    private var previousPlayerX = .5; private var previousPlayerY = .5
-    private var walked = 0.0; private var nextPrint = .025; private var printSide = 1
-    private data class Print(val x: Double, val y: Double, val born: Double, val side: Int)
+    private var lastStrideSequence = -1
+    private var lastShotSoundAt = -1.0
+    private var lastRunState = "fighting"
+    private val seenEffects = mutableSetOf<Int>()
+    private data class Print(val x: Double, val y: Double, val born: Double, val rotation: Float)
     private val footprints = ArrayDeque<Print>()
     private val order = listOf("bolt", "tank", "zip", "patch", "nova", "boomer", "glitch", "magnet")
     private val reducedMotion get() = repository.profile.optJSONObject("preferences")?.optBoolean("reducedMotion") ?: false
     override fun create() {
         batch = SpriteBatch(); shapes = ShapeRenderer(); atlas = Texture(Gdx.files.internal("generated/RobotAtlas.png"))
+        font = BitmapFont()
         atlas.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear)
         audio = Audio(repository.profile.optJSONObject("preferences") ?: JSONObject()); audio.music("battle")
         val args = mutableListOf<Pair<String, Any>>("mode" to mode, "seed" to seed, "zone" to zone)
@@ -97,15 +102,16 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
         shapes.color = Color(1f, 1f, 1f, .04f)
         for (i in -20..40) { val p = i * .1; shapes.rectLine(x(p), y(-2.0), x(p), y(4.0), 1f); shapes.rectLine(x(-2.0), y(p), x(4.0), y(p), 1f) }
         val p = battle.getJSONArray("player"); val px = p.getDouble(0); val py = p.getDouble(1)
-        val distance = hypot(px - previousPlayerX, py - previousPlayerY)
-        val moving = distance > .000001 && distance < .25
-        if (moving) {
-            walked += distance
-            if (walked >= nextPrint) { nextPrint = walked + .025; printSide *= -1; footprints.addLast(Print(px, py, elapsed, printSide)); if (footprints.size > 96) footprints.removeFirst() }
+        if (lastStrideSequence != battle.getInt("strideSequence")) {
+            lastStrideSequence = battle.getInt("strideSequence")
+            battle.getJSONArray("footsteps").objects { step ->
+                val at = step.getJSONArray("position"); val direction = step.getJSONArray("direction"); val dx = direction.getDouble(0); val dy = direction.getDouble(1); val side = step.getDouble("side")
+                footprints.addLast(Print(at.getDouble(0) - dx * .012 - dy * side * .008, at.getDouble(1) - dy * .012 + dx * side * .008, elapsed, ((atan2(dy, dx) - PI / 2) * 180 / PI).toFloat()))
+                if (footprints.size > 96) footprints.removeFirst()
+            }
         }
-        previousPlayerX = px; previousPlayerY = py
-        while (footprints.isNotEmpty() && elapsed - footprints.first().born > 2) footprints.removeFirst()
-        footprints.forEach { shapes.color = Color(.47f, .85f, .73f, ((1 - (elapsed - it.born) / 2) * .35).toFloat()); shapes.rect(x(it.x) + it.side * 7 * unit, y(it.y) - 20 * unit, 7 * unit, 11 * unit) }
+        while (footprints.isNotEmpty() && elapsed - footprints.first().born >= 3) footprints.removeFirst()
+        footprints.forEach { shapes.color = Color.valueOf(biome.getJSONArray("palette").getString(2)).apply { a = ((1 - (elapsed - it.born) / 3) * .5).toFloat() }; shapes.rect(x(it.x) - 3.5f * unit, y(it.y) - 5.5f * unit, 3.5f * unit, 5.5f * unit, 7 * unit, 11 * unit, 1f, 1f, it.rotation) }
         battle.getJSONArray("warnings").objects { warning -> drawArea(warning.getJSONObject("area"), Color(1f, .25f, .2f, .18f + .2f * (1 - warning.getDouble("remaining") / warning.getDouble("duration")).toFloat())) }
         battle.getJSONArray("strikes").objects { drawArea(it.getJSONObject("area"), Color(.74f, .61f, 1f, .3f)) }
         battle.getJSONArray("enemies").objects { enemy ->
@@ -136,10 +142,26 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
             val region = TextureRegion(atlas, index % 4 * atlas.width / 4, index / 4 * atlas.height / 2, atlas.width / 4, atlas.height / 2)
             val angle = i * PI * 2 / squad.length()
             val rx = x(px + if (i == 0) 0.0 else cos(angle) * .055); val ry = y(py + if (i == 0) 0.0 else sin(angle) * .055)
-            val bob = if (moving && !reducedMotion) abs(sin(walked / .05 * PI * 2)).toFloat() * 4 else 0f
-            val dimension = (if (squad.getString(i) == "tank") 60 else 48) * unit
-            batch.draw(region, rx - dimension / 2, ry - dimension / 2 + bob, dimension, dimension)
+            val stride = battle.getJSONArray("strides").getJSONObject(i)
+            val animated = stride.getBoolean("moving") && !reducedMotion
+            val phase = stride.getDouble("distance") / .05 * PI * 2
+            val bob = if (animated) abs(sin(phase)).toFloat() * 4 else 0f
+            val rotation = if (animated) (sin(phase) * .07 - stride.getJSONArray("direction").getDouble(0) * .08) * 180 / PI else 0.0
+            val squash = if (animated) 1 - abs(sin(phase)).toFloat() * .04f else 1f
+            val dimension = (if (squad.getString(i) in listOf("tank", "boomer")) 60 else 48) * unit
+            batch.draw(region, rx - dimension / 2, ry - dimension / 2 + bob, dimension / 2, dimension / 2, dimension, dimension, 1f, squash, rotation.toFloat())
         }
+        val activeEffects = mutableSetOf<Int>()
+        battle.getJSONArray("effects").objects { effect ->
+            val id = effect.getInt("id"); activeEffects.add(id)
+            if (seenEffects.add(id) && effect.getDouble("damage") > 0 && elapsed - lastShotSoundAt >= .09) { audio.cue("weapon"); lastShotSoundAt = elapsed }
+            if (effect.getDouble("damage") > 0 && repository.profile.getJSONObject("preferences").getBoolean("damageNumbers")) {
+                val to = effect.getJSONArray("to"); font.color = if (effect.getBoolean("critical")) Color.YELLOW else Color.WHITE
+                font.color.a = (effect.getDouble("remaining") * 3).toFloat().coerceIn(0f, 1f)
+                font.draw(batch, effect.getDouble("damage").toInt().toString(), x(to.getDouble(0)), y(to.getDouble(1)) + 18 * unit)
+            }
+        }
+        seenEffects.retainAll(activeEffects)
         batch.end()
         val enemies = battle.getJSONArray("enemies")
         val bossPresent = (0 until enemies.length()).any { enemies.getJSONObject(it).getString("kind") == "boss" }
@@ -148,18 +170,19 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
         if (battle.getInt("kills") > previousKills) { audio.cue("explosion"); previousKills = battle.getInt("kills") }
         if (battle.getInt("wave") != previousWave) { audio.cue("combo"); previousWave = battle.getInt("wave") }
         val state = battle.getString("state")
+        if (state != lastRunState) { if (state == "victory") audio.cue("victory"); lastRunState = state }
         if (lastHud < 0 || elapsed - lastHud >= .1 || state != lastHudState) { lastHud = elapsed; lastHudState = state; hud(JSONObject(battle.toString())) }
     }
     private fun drawArea(area: JSONObject, color: Color) {
         val from = area.getJSONArray("from"); val to = area.getJSONArray("to"); val radius = area.getDouble("radius").toFloat() * scale
         shapes.color = color
         when (area.getString("shape")) {
-            "line" -> shapes.rectLine(x(from.getDouble(0)), y(from.getDouble(1)), x(to.getDouble(0)), y(to.getDouble(1)), radius * 2)
+            "line" -> { shapes.rectLine(x(from.getDouble(0)), y(from.getDouble(1)), x(to.getDouble(0)), y(to.getDouble(1)), radius * 2); shapes.circle(x(from.getDouble(0)), y(from.getDouble(1)), radius, 24); shapes.circle(x(to.getDouble(0)), y(to.getDouble(1)), radius, 24) }
             "ring" -> { val cx = x(to.getDouble(0)); val cy = y(to.getDouble(1)); for (i in 0..63) { val a = i * PI / 32; val b = (i + 1) * PI / 32; shapes.rectLine(cx + cos(a).toFloat() * radius, cy + sin(a).toFloat() * radius, cx + cos(b).toFloat() * radius, cy + sin(b).toFloat() * radius, area.getDouble("thickness").toFloat() * scale * 2) } }
             else -> shapes.circle(x(to.getDouble(0)), y(to.getDouble(1)), radius, 40)
         }
     }
     override fun pause() { paused = true; moveX = 0.0; moveY = 0.0; drag = -1; if (::audio.isInitialized) { audio.pause(); audioPaused = true } }
     override fun resume() { if (::audio.isInitialized && !paused) { audio.resume(); audioPaused = false } }
-    override fun dispose() { batch.dispose(); shapes.dispose(); atlas.dispose(); audio.dispose() }
+    override fun dispose() { batch.dispose(); shapes.dispose(); atlas.dispose(); audio.dispose(); font.dispose() }
 }

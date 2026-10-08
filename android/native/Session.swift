@@ -8,13 +8,16 @@ final class Session {
     var profile = PlayerProfile(now: Date(timeIntervalSince1970: 0))
     var engine: BattleEngine?
     var claimed = false
+    var strides: [RobotStride] = []
+    var footsteps: [RobotFootstep] = []
+    var strideSequence = 0
     func request(_ input: String) -> String {
         do {
             guard let bytes = input.data(using: .utf8), let q = try JSONSerialization.jsonObject(with: bytes) as? [String: Any] else { throw GameError.invalidSelection }
             let op = q["op"] as? String ?? "state"
             let now = Date(timeIntervalSince1970: (q["now"] as? Double) ?? Date().timeIntervalSince1970)
             if op == "init" {
-                engine = nil; claimed = false
+                engine = nil; claimed = false; strides = []; footsteps = []; strideSequence = 0
                 guard let text = q["content"] as? String else { throw GameError.invalidContent }
                 let decoded = try JSONDecoder().decode(GameContent.self, from: Data(text.utf8)); try decoded.validate(); content = decoded
                 if let text = q["profile"] as? String { profile = try JSONDecoder().decode(PlayerProfile.self, from: Data(text.utf8)); try profile.validate(content: decoded) }
@@ -34,11 +37,13 @@ final class Session {
                 let code = q["challenge"] as? String
                 if let code { guard let challenge = RunChallenge(code: code) else { throw GameError.invalidSelection }; snapshot = challenge.profile(content: content, preferences: profile.preferences) }
                 engine = BattleEngine(content: content, profile: snapshot, mode: code == nil ? mode : .dailyAnomaly, seed: code.flatMap { RunChallenge(code: $0).map { UInt64($0.seed) } } ?? seed, challengeCode: code); claimed = false
+                strides = snapshot.squad.map { _ in RobotStride() }; strideSequence = 0; updateStrides()
             case "step":
                 guard let engine else { throw GameError.invalidSelection }
                 let dx = q["x"] as? Double ?? 0, dy = q["y"] as? Double ?? 0, dt = q["dt"] as? Double ?? 0
                 guard dx.isFinite, dy.isFinite, dt.isFinite else { throw GameError.invalidSelection }
                 engine.step(delta: dt, movement: Vector(dx, dy))
+                strideSequence += 1; updateStrides()
             case "choose": guard let engine, let choice = engine.choices.first(where: { $0.id == id }) else { throw GameError.invalidSelection }; engine.choose(choice)
             case "dash": _ = engine?.activateDash(direction: Vector(q["x"] as? Double ?? 0, q["y"] as? Double ?? 0))
             case "overdrive": _ = engine?.activateOverdrive()
@@ -88,6 +93,15 @@ final class Session {
         } catch { return (try? serialize(["error": String(describing: error)])) ?? "{\"error\":\"invalidContent\"}" }
     }
     func vector(_ value: Vector) -> [Double] { [value.x, value.y] }
+    func updateStrides() {
+        footsteps = []
+        guard let engine else { return }
+        for index in strides.indices {
+            let angle = Double(index) * Double.pi * 2 / Double(max(1, strides.count))
+            let offset = index == 0 ? Vector() : Vector(cos(angle), sin(angle)) * 0.055
+            footsteps += strides[index].advance(to: engine.player + offset)
+        }
+    }
     func area(_ value: AttackArea) -> [String: Any] { ["shape": String(describing: value.shape), "from": vector(value.from), "to": vector(value.to), "radius": value.radius, "thickness": value.thickness] }
     func snapshot() throws -> [String: Any] {
         var result: [String: Any] = ["profile": String(decoding: try JSONEncoder().encode(profile), as: UTF8.self)]
@@ -100,6 +114,9 @@ final class Session {
             "evolution": e.evolution?.rawValue ?? "", "perfectDodges": e.perfectDodges, "completedWaveEvents": e.completedWaveEvents,
             "event": e.waveEvent?.kind.rawValue ?? "", "eventIDs": e.waveEvent?.enemyIDs.sorted() ?? [], "bonusScrap": e.bonusScrap,
             "choices": e.choices.map(\.id), "selected": e.selected,
+            "strideSequence": strideSequence,
+            "strides": strides.map { ["moving": $0.moving, "distance": $0.distance, "direction": vector($0.direction)] as [String: Any] },
+            "footsteps": footsteps.map { ["position": vector($0.position), "direction": vector($0.direction), "side": $0.side] as [String: Any] },
             "enemies": e.enemies.map { ["id": $0.id, "kind": $0.kind, "position": vector($0.position), "health": $0.health, "maxHealth": $0.maxHealth, "armor": $0.armor] as [String: Any] },
             "projectiles": e.projectiles.map { ["id": $0.id, "position": vector($0.position), "target": $0.targetID] as [String: Any] },
             "warnings": e.warnings.map { ["id": $0.id, "area": area($0.area), "remaining": $0.remaining, "duration": $0.duration, "boss": $0.boss] as [String: Any] },

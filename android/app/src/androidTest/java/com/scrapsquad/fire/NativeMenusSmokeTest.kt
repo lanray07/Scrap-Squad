@@ -12,7 +12,7 @@ class NativeMenusSmokeTest {
     private val instrumentation get() = InstrumentationRegistry.getInstrumentation()
     private fun find(node: AccessibilityNodeInfo?, text: String): AccessibilityNodeInfo? {
         if (node == null) return null
-        if (node.text?.toString() == text) return node
+        if (node.text?.toString()?.equals(text, ignoreCase = true) == true) return node
         for (i in 0 until node.childCount) find(node.getChild(i), text)?.let { return it }
         return null
     }
@@ -27,8 +27,11 @@ class NativeMenusSmokeTest {
     @Test fun navigateOriginalMenusAndFuseAWeapon() {
         val context = instrumentation.targetContext; val strings = Strings(context)
         context.startActivity(Intent(context, MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK))
-        SystemClock.sleep(1000)
-        find(instrumentation.uiAutomation.rootInActiveWindow, strings.text("tutorial.start"))?.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+        val readyDeadline = SystemClock.uptimeMillis() + 15000
+        while (find(instrumentation.uiAutomation.rootInActiveWindow, strings.text("city.workshop")) == null && SystemClock.uptimeMillis() < readyDeadline) {
+            find(instrumentation.uiAutomation.rootInActiveWindow, strings.text("tutorial.start"))?.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+            SystemClock.sleep(100)
+        }
         click(strings.text("city.workshop"))
         val before = JSONObject(NativeCore.call("state").getString("profile"))
         click(strings.text("lab.fuse"))
