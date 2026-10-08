@@ -67,7 +67,25 @@ Nine native menu/preview/run-card captures and the early battle capture were
 retained at 2560×1600. Visual review identified stretched city artwork and a
 long result headline overlapping the run-card robot; both have been corrected
 and compile locally, with final runtime capture verification still pending.
-The longer boss-battle sample and store-art exports are running separately.
+GitHub run [37830639626](https://github.com/lanray07/Scrap-Squad/actions/runs/37830639626),
+commit `6fadff7`: **successful**, nine Android instrumentation tests passed.
+All ten named native/battle captures and original icon/promo exports passed their
+PNG dimension checks. The boss capture visibly shows Void Engine, its health,
+three warning circles, the original squad and movement footprints.
+
+The longer software-emulator sample measured 208 frames over 21.22 seconds:
+average 9.80 FPS, frame intervals p50 92.91 ms, p95 167.52 ms, p99 184.08 ms,
+worst 249.72 ms; average CPU render time 29.09 ms; Java heap 5.87 MB and native
+heap 44.11 MB. This confirms the rendered path runs, but **does not meet the
+60 FPS target on this software renderer or establish physical Fire performance**.
+Physical GPU profiling is a release requirement; no performance claim is made.
+
+GitHub run [37831791305](https://github.com/lanray07/Scrap-Squad/actions/runs/37831791305),
+commit `3db6b8b`: **successful**. Original rules, both native builds, Android
+instrumentation and all ten capture/three store-art dimension checks passed with
+the app-specific Amazon public key, public support email and tablet layout fixes
+included. Amazon purchases are still unavailable without the real backend adapter;
+an emulator pass is not an Amazon licensing or purchase-flow test.
 
 Physical process recovery, complete premium battle rendering, purchase validation and
 restoration, Amazon sandbox tests, physical Fire tablet performance and audio,

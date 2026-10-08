@@ -5,7 +5,10 @@ The port uses the official `com.amazon.device:amazon-appstore-sdk:3.0.9`.
 ENTITLED-only product checks, paged restore, pending approval, account isolation,
 receipt binding, cancellation handling and write-before-fulfillment persistence.
 The seven original product IDs are preserved as the intended Amazon SKUs.
-They must be created as non-consumable entitlements in the developer console.
+All seven were registered as non-consumable entitlement drafts in the developer
+console on 8 October 2026, with their original IDs, names and cosmetic descriptions.
+They have not been submitted. Pricing and product icons are unfinished; the list
+currently displays USD 0 defaults, which must not be submitted as final pricing.
 Apple purchases do not transfer.
 
 ## Required deployment configuration
@@ -25,7 +28,8 @@ Apple purchases do not transfer.
    reject pending/invalid receipts, return cancellation state, and process repeated
    requests idempotently. Keep sandbox/production environments separate and apply
    authentication/rate limiting appropriate to the existing service.
-4. Build with the actual app public key, registered SKUs and release signing key.
+4. Finalize the seven draft product prices/icons, test their configuration, and
+   build with the actual app public key, registered SKUs and release signing key.
 
 Without a configured verifier, the UI cannot initiate purchases or grant
 entitlements. Product metadata alone does not authorize a grant. Network failure

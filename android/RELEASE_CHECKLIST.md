@@ -21,12 +21,18 @@ Fire tablets; do not select Fire TV, Vega OS or all historical Fire models.
 - App-specific Amazon public SDK key included. English U.S./U.K., German,
   Spanish, French and Japanese description drafts saved in the console;
   translated listings explicitly disclose the English interface.
+- Original 114/512 px icons and the 1024×500 original-art promotional header
+  uploaded to the Amazon draft; genuine capture review remains separate.
+- All seven original cosmetic IDs registered as entitlement drafts with English
+  names/descriptions. Prices/icons and submission are unfinished. The dashboard
+  shows USD 0 defaults; do not submit until actual paid prices are configured.
 
 ## Required before a production build
 
 1. Connect the actual existing backend and implement its verifier adapter. Supply
    its URL/technology/repository; never put its merchant shared secret in this app.
-2. Create all seven original IDs as Amazon ENTITLED products. Confirm localized
+2. Finalize the seven original Amazon ENTITLED drafts, including paid prices and
+   icons. Confirm localized
    prices, availability and parental pending-purchase behavior in App Tester and
    Live App Testing. Test restoration, refunds and account changes on real hardware.
 3. Verify the included `AppstoreAuthenticationKey.pem` matches this Amazon record;
