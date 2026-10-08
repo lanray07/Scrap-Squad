@@ -1,5 +1,10 @@
 {
   "android.privacy": "Privacy Policy",
   "android.support": "Support",
-  "android.minutes": "minutes"
+  "android.minutes": "minutes",
+  "android.recovery.title": "Your squad is still out there",
+  "android.recovery.detail": "An interrupted battle is saved on this device. Resume from the last saved moment, or retreat and collect the rewards you earned.",
+  "android.recovering": "Recovering your battle",
+  "android.recovery.error": "This battle could not be recovered. Your saved progress and battle record have been preserved. Please contact support.",
+  "android.seconds": "s"
 }

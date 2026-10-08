@@ -27,9 +27,22 @@ simulation and touch checks passed; complete visual parity is still in progress.
 Downloaded XML and log evidence is kept under ignored
 `android/reports/run-37820787181/` and in the GitHub run artifact.
 
+## Native menus — 8 October 2026
+
+GitHub run [37824539781](https://github.com/lanray07/Scrap-Squad/actions/runs/37824539781),
+commit `ebdb18f`: **successful**, six Android instrumentation tests passed.
+This includes the full battle comparison, live movement, native menu navigation
+and fusion, fusion/equipment/upgrade persistence across repository reload, and
+English fallback for an unsupported device language. Genuine Android battle
+screenshot collection succeeded. The renderer now consumes the original Swift
+`RobotStride` results for footprint placement and walking poses.
+
+Interrupted-battle replay, transactional reward settlement and frame metrics were
+added after this run. They compile locally; their Android runtime checks are pending.
+
 ## Release checks still required
 
-Native menu flows, process recovery, premium rendering, purchase validation and
+Process recovery, complete premium battle rendering, purchase validation and
 restoration, Amazon sandbox tests, physical Fire tablet performance and audio,
 approved translations, final screenshots, signing and submission remain to be
 verified. No Amazon publication or physical-device performance is claimed.

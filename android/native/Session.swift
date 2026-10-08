@@ -63,6 +63,7 @@ final class Session {
             case "squad": try Progression.toggleSquad(id, profile: &profile)
             case "equip": guard profile.weapons[id, default: 0] > 0 else { throw GameError.locked }; profile.equippedWeapon = id
             case "offline": _ = Progression.claimOffline(&profile, content: content, now: now)
+            case "background": if !Progression.offline(profile: profile, content: content, now: now).isAvailable { profile.lastSeen = max(profile.lastSeen, now) }
             case "mission": try Progression.claimMission(weekly: q["weekly"] as? Bool ?? false, profile: &profile, now: now)
             case "reboot": try Progression.reboot(&profile, content: content)
             case "preferences":

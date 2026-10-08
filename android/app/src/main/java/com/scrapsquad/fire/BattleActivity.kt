@@ -24,11 +24,15 @@ class BattleActivity : AndroidApplication() {
         repository = GameRepository(this); strings = Strings(this)
         repository.initialize()
         val mode = intent.getStringExtra("mode") ?: "campaign"
-        renderer = BattleRenderer(repository, mode, (SecureRandom().nextLong().ushr(1)).toString(), intent.getIntExtra("zone", 0), intent.getStringExtra("challenge")) { state -> runOnUiThread { updateHud(state) } }
+        renderer = BattleRenderer(repository, mode, (SecureRandom().nextLong().ushr(1)).toString(), intent.getIntExtra("zone", 0), intent.getStringExtra("challenge"),
+            recover = repository.battleJournal.pending(), retreatRecovered = intent.getBooleanExtra("retreatRecovered", false),
+            recoveryProgress = { progress -> runOnUiThread { if (::status.isInitialized && !isFinishing) status.text = "${strings.text("android.recovering")} $progress%" } },
+            recoveryError = { error -> runOnUiThread { showRecoveryError(error) } },
+            hud = { state -> runOnUiThread { updateHud(state) } })
         val config = AndroidApplicationConfiguration().apply { useAccelerometer = false; useCompass = false; useGyroscope = false; useImmersiveMode = false; numSamples = 0 }
         val root = FrameLayout(this)
         root.addView(initializeForView(renderer, config), FrameLayout.LayoutParams(-1, -1))
-        status = Ui.text(this, "", 15f, Ui.mint).apply { setBackgroundColor(Ui.surface) }
+        status = Ui.text(this, if (repository.battleJournal.pending()) strings.text("android.recovering") else "", 15f, Ui.mint).apply { setBackgroundColor(Ui.surface) }
         root.addView(status, FrameLayout.LayoutParams(-1, -2, Gravity.TOP))
         val controls = LinearLayout(this).apply { orientation = LinearLayout.HORIZONTAL; setBackgroundColor(Ui.ink) }
         listOf("battle.dash" to "dash", "battle.ability" to "ability", "momentum.overdrive" to "overdrive", "battle.pause" to "pause").forEach { (key, op) ->
@@ -39,7 +43,8 @@ class BattleActivity : AndroidApplication() {
     }
     private fun updateHud(state: JSONObject) {
         if (isFinishing || ending) return
-        status.text = "${strings.text("battle.health")} ${state.getDouble("health").toInt()}/${state.getDouble("maxHealth").toInt()}   ${strings.text("momentum.wave")} ${state.getInt("wave")}   ${strings.text("battle.score")} ${state.getInt("score")}\n${strings.text("momentum.combo")} ${state.getInt("combo")}   ${strings.text("momentum.overdrive")} ${(state.getDouble("charge") * 100).toInt()}%   ${state.getDouble("elapsed").toInt()}s"
+        status.text = "${strings.text("battle.health")} ${state.getDouble("health").toInt()}/${state.getDouble("maxHealth").toInt()}   ${strings.text("momentum.wave")} ${state.getInt("wave")}   ${strings.text("battle.score")} ${state.getInt("score")}\n${strings.text("momentum.combo")} ${state.getInt("combo")}   ${strings.text("momentum.overdrive")} ${(state.getDouble("charge") * 100).toInt()}%   ${state.getDouble("elapsed").toInt()}${strings.text("android.seconds")}"
+        if (state.getString("state") == "fighting" && renderer.paused && dialog == null) pauseDialog()
         when (state.getString("state")) {
             "choosing" -> if (dialog == null) {
                 val ids = state.getJSONArray("choices"); val upgrades = repository.content.getJSONArray("upgrades")
@@ -57,13 +62,21 @@ class BattleActivity : AndroidApplication() {
         }
     }
     private fun pauseDialog() {
-        if (dialog != null || ending) return
+        if (dialog != null || ending || renderer.recovering) return
         renderer.paused = true
         dialog = AlertDialog.Builder(this).setTitle(strings.text("battle.paused"))
             .setPositiveButton(strings.text("battle.resume")) { _, _ -> dialog = null; renderer.paused = false }
             .setNegativeButton(strings.text("battle.retreat")) { _, _ -> dialog = null; renderer.action("retreat") }
             .setCancelable(false).show()
     }
-    @Deprecated("Android back compatibility") override fun onBackPressed() { pauseDialog() }
+    private fun showRecoveryError(error: Throwable) {
+        if (isFinishing || isDestroyed) return
+        android.util.Log.e("ScrapRecovery", "Battle recovery failed", error); ending = true
+        dialog?.dismiss()
+        dialog = AlertDialog.Builder(this).setTitle(strings.text("common.error")).setMessage(strings.text("android.recovery.error"))
+            .setPositiveButton(strings.text("common.ok")) { _, _ -> finish() }.setCancelable(false).show()
+    }
+    override fun finish() { if (::renderer.isInitialized) renderer.stopRecovery(); super.finish() }
+    @Deprecated("Android back compatibility") override fun onBackPressed() { if (::renderer.isInitialized && renderer.recovering) finish() else pauseDialog() }
     override fun onResume() { super.onResume(); if (resumedOnce && ::renderer.isInitialized && !ending) pauseDialog(); resumedOnce = true }
 }

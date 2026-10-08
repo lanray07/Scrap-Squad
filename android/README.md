@@ -53,11 +53,32 @@ rendered-FPS equivalence.
 
 ## Remaining release work
 
-After the slice passes: complete native city/workshop/squad/shop/journal/settings
-screens, reproduce premium vector poses, finish visual parity, resumable pending
-battles, audio/haptics preferences, Amazon SDK purchases and backend receipt
-validation, sandbox and physical Fire-device QA, actual Android screenshots,
-approved localized metadata, release signing and submission verification.
+The slice and initial native menus have passed Android runtime verification; see
+`VERIFICATION.md` for exact commits and evidence. City, squad, workshop, blueprint,
+challenge, journal and settings flows call the original Swift rules. Seven shop
+packs and premium previews are present; purchasing remains unavailable until the
+Amazon integration and the user's existing validation backend are configured.
+
+Still required: complete premium battle rendering and visual parity, verify
+interrupted battle recovery, integrate Amazon purchases and receipt validation,
+sandbox and physical Fire-device QA, final Android screenshots, approved localized
+metadata, release signing and submission verification.
+
+## Interrupted battles
+
+Android records the starting profile/content, original seed, actions and exact
+frame inputs in private app storage. Recovery replays those inputs through the
+same Swift engine on a worker thread. It never runs the simulation on the UI
+thread. The last incomplete append is discarded after an abrupt termination;
+active input is synced at least once per second and on backgrounding. A durable
+reward settlement is written before replacing the profile, allowing a restart
+to finish that transaction without duplicating rewards.
+
+Recovery checks the original rules/content signature. An incompatible future
+rules update must provide a migration; it preserves the pending record instead
+of silently playing it under changed balance. Replay storage grows with run
+duration, and unusually long runs take longer to recover. Validate physical
+device lifecycle and storage behavior before release.
 
 Existing Apple purchases do not grant Amazon entitlements. Never include merchant
 secrets or signing keys in the APK. Production signing is configured only through

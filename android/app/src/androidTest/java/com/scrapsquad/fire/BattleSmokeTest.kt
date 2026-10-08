@@ -70,7 +70,14 @@ class BattleSmokeTest {
             FileInputStream(descriptor.fileDescriptor).use { it.readBytes().toString(Charsets.UTF_8) }
         }
         assertTrue("Screenshot evidence was not retained: $retained", retained.trim() == "/sdcard/Download/scrap-squad-battle.png")
-        context.startActivity(Intent(context, MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK))
+        find(automation.rootInActiveWindow, strings.text("battle.pause"))!!.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+        SystemClock.sleep(200)
+        find(automation.rootInActiveWindow, strings.text("battle.retreat"))!!.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+        val returnDeadline = SystemClock.uptimeMillis() + 10000
+        var returnButton: AccessibilityNodeInfo? = null
+        while (returnButton == null && SystemClock.uptimeMillis() < returnDeadline) { returnButton = find(automation.rootInActiveWindow, strings.text("battle.return")); SystemClock.sleep(100) }
+        assertNotNull("Retreated run was not settled", returnButton)
+        returnButton!!.performAction(AccessibilityNodeInfo.ACTION_CLICK)
         SystemClock.sleep(500)
     }
 }

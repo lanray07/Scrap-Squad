@@ -13,3 +13,5 @@ finally:
         subprocess.run(['adb', 'logcat', '-d'], stdout=log, stderr=subprocess.STDOUT)
     with (reports / 'parity-throughput.log').open('w', encoding='utf-8') as log:
         subprocess.run(['adb', 'logcat', '-d', '-s', 'ScrapParity:I'], stdout=log, stderr=subprocess.STDOUT)
+    with (reports / 'render-metrics.log').open('w', encoding='utf-8') as log:
+        subprocess.run(['adb', 'logcat', '-d', '-s', 'ScrapRender:I'], stdout=log, stderr=subprocess.STDOUT)

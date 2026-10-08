@@ -15,7 +15,7 @@ import org.json.JSONArray
 import org.json.JSONObject
 import kotlin.math.*
 
-class BattleRenderer(private val repository: GameRepository, private val mode: String, private val seed: String, private val zone: Int, private val challenge: String?, private val hud: (JSONObject) -> Unit) : ApplicationAdapter() {
+class BattleRenderer(private val repository: GameRepository, private val mode: String, private val seed: String, private val zone: Int, private val challenge: String?, private val recover: Boolean = false, private val retreatRecovered: Boolean = false, private val recoveryProgress: (Int) -> Unit = {}, private val recoveryError: (Throwable) -> Unit = {}, private val hud: (JSONObject) -> Unit) : ApplicationAdapter() {
     private lateinit var batch: SpriteBatch
     private lateinit var shapes: ShapeRenderer
     private lateinit var atlas: Texture
@@ -23,6 +23,12 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
     private lateinit var font: BitmapFont
     private val camera = OrthographicCamera()
     private var battle = JSONObject()
+    @Volatile private var ready = false
+    @Volatile private var disposed = false
+    val recovering get() = recover && !ready && !disposed
+    private val worker = java.util.concurrent.Executors.newSingleThreadExecutor()
+    private var restoration: java.util.concurrent.Future<*>? = null
+    private val metrics = RenderMetrics()
     @Volatile var paused = false
     private var drag = -1
     private var originX = 0f; private var originY = 0f
@@ -43,10 +49,22 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
         batch = SpriteBatch(); shapes = ShapeRenderer(); atlas = Texture(Gdx.files.internal("generated/RobotAtlas.png"))
         font = BitmapFont()
         atlas.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear)
-        audio = Audio(repository.profile.optJSONObject("preferences") ?: JSONObject()); audio.music("battle")
+        audio = Audio(repository.profile.optJSONObject("preferences") ?: JSONObject())
         val args = mutableListOf<Pair<String, Any>>("mode" to mode, "seed" to seed, "zone" to zone)
         if (challenge != null) args.add("challenge" to challenge)
-        battle = NativeCore.call("deploy", *args.toTypedArray()).getJSONObject("battle")
+        if (recover) {
+            restoration = worker.submit {
+                try {
+                    var restored = repository.restoreBattle(recoveryProgress)
+                    if (Thread.currentThread().isInterrupted) return@submit
+                    if (retreatRecovered) restored = repository.battleCommand("retreat")
+                    Gdx.app.postRunnable { if (!disposed) { battle = restored.getJSONObject("battle"); ready = true; audio.music("battle") } }
+                } catch (e: Exception) { if (!Thread.currentThread().isInterrupted && !disposed) recoveryError(e) }
+            }
+        } else {
+            try { battle = repository.beginBattle(*args.toTypedArray()).getJSONObject("battle"); ready = true; audio.music("battle") }
+            catch (e: Exception) { recoveryError(e) }
+        }
         Gdx.input.inputProcessor = object : InputAdapter() {
             override fun touchDown(x: Int, y: Int, pointer: Int, button: Int): Boolean {
                 if (drag != -1) return false
@@ -68,10 +86,11 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
     }
     fun action(op: String, id: String? = null) {
         Gdx.app.postRunnable {
+            if (!ready || disposed) return@postRunnable
             val values = mutableListOf<Pair<String, Any>>()
             if (id != null) values.add("id" to id)
             if (op == "dash") { values.add("x" to moveX); values.add("y" to moveY) }
-            battle = NativeCore.call(op, *values.toTypedArray()).getJSONObject("battle")
+            battle = repository.battleCommand(op, *values.toTypedArray()).getJSONObject("battle")
             if (op == "ability" || op == "overdrive") audio.cue(if (op == "overdrive") "overdrive" else "ability")
             lastHud = -1.0
         }
@@ -90,8 +109,9 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
     private fun JSONArray.objects(block: (JSONObject) -> Unit) { for (i in 0 until length()) block(getJSONObject(i)) }
     private fun position(obj: JSONObject) = obj.getJSONArray("position")
     override fun render() {
-        if (battle.length() == 0) return
-        if (!paused && battle.getString("state") == "fighting") battle = NativeCore.call("step", "dt" to Gdx.graphics.deltaTime.toDouble(), "x" to moveX, "y" to moveY).getJSONObject("battle")
+        val renderStarted = System.nanoTime()
+        if (!ready || battle.length() == 0) { Gdx.gl.glClearColor(.063f, .145f, .176f, 1f); Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT); return }
+        if (!paused && battle.getString("state") == "fighting") battle = repository.battleCommand("step", "dt" to Gdx.graphics.deltaTime.toDouble(), "x" to moveX, "y" to moveY).getJSONObject("battle")
         val elapsed = battle.getDouble("elapsed")
         val biome = repository.content.getJSONArray("biomes").getJSONObject(battle.getInt("zone"))
         val background = Color.valueOf(biome.getJSONArray("palette").getString(0))
@@ -172,6 +192,7 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
         val state = battle.getString("state")
         if (state != lastRunState) { if (state == "victory") audio.cue("victory"); lastRunState = state }
         if (lastHud < 0 || elapsed - lastHud >= .1 || state != lastHudState) { lastHud = elapsed; lastHudState = state; hud(JSONObject(battle.toString())) }
+        if (!paused && state == "fighting" && elapsed > 2) metrics.record(Gdx.graphics.deltaTime.toDouble(), (System.nanoTime() - renderStarted) / 1000000.0)
     }
     private fun drawArea(area: JSONObject, color: Color) {
         val from = area.getJSONArray("from"); val to = area.getJSONArray("to"); val radius = area.getDouble("radius").toFloat() * scale
@@ -182,7 +203,14 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
             else -> shapes.circle(x(to.getDouble(0)), y(to.getDouble(1)), radius, 40)
         }
     }
-    override fun pause() { paused = true; moveX = 0.0; moveY = 0.0; drag = -1; if (::audio.isInitialized) { audio.pause(); audioPaused = true } }
+    override fun pause() {
+        paused = true; moveX = 0.0; moveY = 0.0; drag = -1
+        if (::audio.isInitialized) { audio.pause(); audioPaused = true }
+        if (ready && repository.battleJournal.pending()) {
+            try { repository.battleCommand("background"); repository.battleJournal.checkpoint() } catch (e: Exception) { recoveryError(e) }
+        }
+    }
     override fun resume() { if (::audio.isInitialized && !paused) { audio.resume(); audioPaused = false } }
-    override fun dispose() { batch.dispose(); shapes.dispose(); atlas.dispose(); audio.dispose(); font.dispose() }
+    fun stopRecovery() { restoration?.cancel(true) }
+    override fun dispose() { disposed = true; stopRecovery(); worker.shutdownNow(); repository.battleJournal.close(); android.util.Log.i("ScrapRender", metrics.report().toString()); batch.dispose(); shapes.dispose(); atlas.dispose(); audio.dispose(); font.dispose() }
 }

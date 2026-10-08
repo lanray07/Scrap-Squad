@@ -37,6 +37,8 @@ for language, strings in translations.items():
         node.text = '"' + value.replace('\\', '\\\\').replace('"', '\\"').replace('\n', '\\n') + '"'
     ET.indent(resources)
     ET.ElementTree(resources).write(folder/'game_strings.xml', encoding='utf-8', xml_declaration=True)
-manifest = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in [ROOT/'Sources/ScrapCore/Resources/content.json', ROOT/'App/Resources/RobotAtlas.png', *sorted((ROOT/'App/Resources/Audio').glob('*.wav'))]}
+manifest = {p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in [ROOT/'Sources/ScrapCore/Resources/content.json', ROOT/'App/Resources/RobotAtlas.png', *sorted((ROOT/'App/Resources/Audio').glob('*.wav'))]}
+for source in sorted((ROOT/'Sources/ScrapCore').glob('*.swift')):
+    manifest[source.relative_to(ROOT).as_posix()] = hashlib.sha256(source.read_text(encoding='utf-8').replace('\r\n', '\n').encode('utf-8')).hexdigest()
 (DEST/'source-hashes.json').write_text(json.dumps(manifest, indent=2))
 print(f'Copied original content, robot atlas, {len(list((DEST/"Audio").glob("*.wav")))} audio files; locales: {sorted(translations)}')
