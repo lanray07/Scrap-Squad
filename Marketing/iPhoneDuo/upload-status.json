@@ -1,0 +1,19 @@
+{
+  "checkedOn": "2026-10-08",
+  "appID": "6818847887",
+  "version": "1.0",
+  "locale": "en-GB",
+  "slot": "iPhone Duo",
+  "uploadedSet": "inner",
+  "dimensions": [
+    2007,
+    2853
+  ],
+  "count": 10,
+  "uiCount": "10 of 10 App Screenshots",
+  "loadedThumbnailCount": 10,
+  "numberedOrderVerified": true,
+  "reviewSubmitted": false,
+  "nativeDuoCapture": false,
+  "verification": "App Store Connect UI accepted ten images; all ten generated thumbnails loaded. Export hashes and sizes verified locally."
+}
