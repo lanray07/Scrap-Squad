@@ -61,7 +61,12 @@ jobs:
           profile: Nexus 10
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: true
-          script: cd android && ./gradlew :app:connectedDebugAndroidTest --console=plain
+          script: |
+            cd android
+            ./gradlew :app:connectedDebugAndroidTest --console=plain
+            mkdir -p reports/screenshots
+            adb pull /sdcard/Android/data/com.scrapsquad.fire/files/android-battle-smoke.png reports/screenshots/
+            adb logcat -d -s ScrapParity:I > reports/parity-throughput.log
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -72,3 +77,4 @@ jobs:
             android/app/build/outputs/androidTest-results/
             android/app/src/androidTest/assets/parity.json
             android/native/build/generated/source-hashes.json
+            android/reports/
