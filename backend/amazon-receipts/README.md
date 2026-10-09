@@ -1,7 +1,8 @@
 # Scrap Squad Amazon receipt service
 
-Prepared for Cloudflare Workers Free. Not deployed; no Cloudflare account,
-production URL or Amazon merchant secret has been supplied. iOS is unaffected.
+Deployed to Cloudflare Workers Free on 9 October 2026. Production still requires
+the owner's Amazon merchant shared secret before it can verify receipts. iOS is
+unaffected. See [deployment status](DEPLOYMENT.md) for the actual endpoints and checks.
 
 ## Behavior and trust boundary
 

@@ -96,9 +96,17 @@ rate limits, mode separation and secret-safe error responses. Wrangler 4.149.0
 production and sandbox dry-run bundles pass. These use fake Amazon responses;
 no Cloudflare deployment, real RVS request or purchase test has occurred.
 
-The Android HTTP adapter and four new response/endpoint instrumentation tests
-compile locally. Their runtime pass is pending in the next Android workflow.
+GitHub run [37834093930](https://github.com/lanray07/Scrap-Squad/actions/runs/37834093930),
+commit `e38dfbf`: **successful**. Thirteen Android instrumentation tests passed,
+including the four response/endpoint tests; backend tests and dry-run bundles,
+original Swift rules, both native builds, JNI parity and captures also passed.
 Blank verification URLs preserve the disabled purchase state.
+
+On 9 October both Cloudflare Workers were deployed on the Free plan with their
+rate-limit bindings. Live rejection/configuration smoke checks passed. Production
+still has no merchant secret and returns 503; sandbox has a separate test-only
+secret. No real receipt or purchase has been verified. See
+[`DEPLOYMENT.md`](../backend/amazon-receipts/DEPLOYMENT.md).
 
 Physical process recovery, complete premium battle rendering, purchase validation and
 restoration, Amazon sandbox tests, physical Fire tablet performance and audio,
