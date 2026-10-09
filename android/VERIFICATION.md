@@ -118,6 +118,20 @@ build passed in run 37906781599 at `209ba24`. No valid purchase, restoration or 
 
 ## Fire tester UI feedback — 9 October 2026
 
+### Battle-end and fusion dialogs
+
+GitHub run [37973442354](https://github.com/lanray07/Scrap-Squad/actions/runs/37973442354),
+commit `a57d55f`: **successful**. Thirteen instrumentation tests and original Swift,
+JNI parity, backend, native-build and capture gates passed. The shared native dialog
+uses rounded colored cards, gradient headers and full-width action buttons. Battle
+results have large stat tiles; fusion reveals have a weapon/rarity/description card.
+The robot portrait and pose button are interactive without changing game state.
+The capture test checks pose toggling, action identity, one callback and callback
+execution before dismissal. Genuine `ui-battle-result` and `ui-fusion-reveal`
+captures are retained alongside a dialog interaction preview. Equip, Share, Return,
+reward settlement and all localized strings preserve their existing behavior.
+UI Review remains a separate test app with paid transactions disabled.
+
 GitHub run [37965203655](https://github.com/lanray07/Scrap-Squad/actions/runs/37965203655),
 commit `7293741`: **successful**. Thirteen Android instrumentation tests passed,
 with original Swift tests, 31 oracle scenarios / 23,808 JNI commands, backend checks,
