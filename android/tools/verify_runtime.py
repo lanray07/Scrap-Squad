@@ -28,6 +28,8 @@ try:
     time.sleep(2)
     running = subprocess.run(['adb', 'shell', 'pidof', 'com.scrapsquad.fire.uireview'], capture_output=True, text=True, check=True)
     assert running.stdout.strip(), 'UI review app did not stay running'
+    startup = subprocess.run(['adb', 'logcat', '-d', f'--pid={running.stdout.strip()}', '-s', 'ScrapUI:E', 'AndroidRuntime:E'], capture_output=True, text=True, check=True)
+    assert 'Native menu initialization failed' not in startup.stdout and 'FATAL EXCEPTION' not in startup.stdout, startup.stdout
     print('UI review launch and coexistence with original package passed.')
 finally:
     with (reports / 'android-logcat.log').open('w', encoding='utf-8') as log:

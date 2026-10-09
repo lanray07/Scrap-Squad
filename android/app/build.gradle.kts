@@ -18,7 +18,7 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
-    buildFeatures { buildConfig = true }
+    buildFeatures { buildConfig = true; resValues = true }
     packaging { jniLibs.useLegacyPackaging = true }
     signingConfigs {
         create("release") {
