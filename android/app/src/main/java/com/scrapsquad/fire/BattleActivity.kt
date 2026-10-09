@@ -18,6 +18,9 @@ class BattleActivity : AndroidApplication() {
     private lateinit var strings: Strings
     private lateinit var renderer: BattleRenderer
     private lateinit var status: TextView
+    private lateinit var battleHud: BattleHudView
+    private lateinit var banner: TextView
+    private val hideBanner = Runnable { if (::banner.isInitialized) banner.visibility = android.view.View.GONE }
     private var dialog: AlertDialog? = null
     private var ending = false
     private var resumedOnce = false
@@ -33,21 +36,31 @@ class BattleActivity : AndroidApplication() {
             recover = repository.battleJournal.pending(), retreatRecovered = intent.getBooleanExtra("retreatRecovered", false),
             recoveryProgress = { progress -> runOnUiThread { if (::status.isInitialized && !isFinishing) status.text = "${strings.text("android.recovering")} $progress%" } },
             recoveryError = { error -> runOnUiThread { showRecoveryError(error) } },
+            notification = { text, color -> runOnUiThread { showAnnouncement(text, color) } },
             hud = { state -> runOnUiThread { updateHud(state) } })
         val config = AndroidApplicationConfiguration().apply { useAccelerometer = false; useCompass = false; useGyroscope = false; useImmersiveMode = false; numSamples = 0 }
         val root = FrameLayout(this)
         root.addView(initializeForView(renderer, config), FrameLayout.LayoutParams(-1, -1))
-        status = Ui.text(this, if (repository.battleJournal.pending()) strings.text("android.recovering") else "", 15f, Ui.mint).apply { setBackgroundColor(Ui.surface) }
-        val top = LinearLayout(this).apply { orientation = LinearLayout.HORIZONTAL; setBackgroundColor(Ui.surface) }
-        top.addView(status, LinearLayout.LayoutParams(0, -2, 1f))
-        top.addView(Ui.button(this, strings.text("battle.priority")) {
+        battleHud = BattleHudView(this, strings)
+        status = battleHud.details
+        if (repository.battleJournal.pending()) status.text = strings.text("android.recovering")
+        battleHud.addPriorityControl(Ui.button(this, strings.text("battle.priority")) {
             if (dialog != null || renderer.recovering) return@button
             val priorities = listOf("nearest", "weakest", "boss")
             dialog = AlertDialog.Builder(this).setTitle(strings.text("battle.priority"))
                 .setSingleChoiceItems(priorities.map { strings.text("priority.$it") }.toTypedArray(), priorities.indexOf(currentPriority)) { selected, which -> currentPriority = priorities[which]; renderer.action("priority", currentPriority); selected.dismiss(); dialog = null }
                 .setNegativeButton(strings.text("common.cancel"), null).create().also { choice -> choice.setOnDismissListener { if (dialog === choice) dialog = null }; choice.show() }
-        }, LinearLayout.LayoutParams(-2, -2))
-        root.addView(top, FrameLayout.LayoutParams(-1, -2, Gravity.TOP))
+        })
+        root.addView(battleHud, FrameLayout.LayoutParams(-1, -2, Gravity.TOP))
+        banner = Ui.text(this, "", 22f, android.graphics.Color.WHITE).apply {
+            gravity = Gravity.CENTER; typeface = android.graphics.Typeface.create("sans-serif", android.graphics.Typeface.BOLD)
+            setPadding(Ui.dp(this@BattleActivity, 18), Ui.dp(this@BattleActivity, 12), Ui.dp(this@BattleActivity, 18), Ui.dp(this@BattleActivity, 12))
+            visibility = android.view.View.GONE; importantForAccessibility = android.view.View.IMPORTANT_FOR_ACCESSIBILITY_NO
+        }
+        root.addView(banner, FrameLayout.LayoutParams(minOf(Ui.dp(this, 660), resources.displayMetrics.widthPixels - Ui.dp(this, 48)), -2, Gravity.TOP or Gravity.CENTER_HORIZONTAL))
+        battleHud.addOnLayoutChangeListener { _, _, _, _, bottom, _, _, _, _ ->
+            (banner.layoutParams as FrameLayout.LayoutParams).also { it.topMargin = bottom + Ui.dp(this, 12); banner.layoutParams = it }
+        }
         val controls = LinearLayout(this).apply { orientation = LinearLayout.HORIZONTAL; setBackgroundColor(Ui.ink) }
         listOf("battle.dash" to "dash", "battle.ability" to "ability", "momentum.overdrive" to "overdrive", "battle.pause" to "pause").forEach { (key, op) ->
             controls.addView(Ui.button(this, strings.text(key)) { if (op == "pause") pauseDialog() else { if (repository.profile.getJSONObject("preferences").getBoolean("haptics")) root.performHapticFeedback(android.view.HapticFeedbackConstants.LONG_PRESS); renderer.action(op) } }.apply { layoutParams = LinearLayout.LayoutParams(0, -2, 1f).apply { setMargins(4, 4, 4, 4) }; textSize = 12f; buttons[op] = this })
@@ -57,7 +70,8 @@ class BattleActivity : AndroidApplication() {
     }
     private fun updateHud(state: JSONObject) {
         if (isFinishing || ending) return
-        status.text = "${strings.text("battle.health")} ${state.getDouble("health").toInt()}/${state.getDouble("maxHealth").toInt()}   ${strings.text("momentum.wave")} ${state.getInt("wave")}   ${strings.text("battle.score")} ${state.getInt("score")}\n${strings.text("momentum.combo")} ${state.getInt("combo")}   ${strings.text("momentum.overdrive")} ${(state.getDouble("charge") * 100).toInt()}%   ${state.getDouble("elapsed").toInt()}${strings.text("android.seconds")}"
+        battleHud.update(state)
+        status.text = "${strings.text("battle.kills")}: ${state.getInt("kills")}   •   ${state.getDouble("elapsed").toInt()}${strings.text("android.seconds")}"
         currentPriority = state.getString("priority")
         val extras = mutableListOf<String>()
         state.getJSONArray("enemies").objects().firstOrNull { it.getString("kind") == "boss" }?.let { boss ->
@@ -79,8 +93,8 @@ class BattleActivity : AndroidApplication() {
         when (state.getString("state")) {
             "choosing" -> if (dialog == null) {
                 val ids = state.getJSONArray("choices"); val upgrades = repository.content.getJSONArray("upgrades")
-                val labels = (0 until ids.length()).map { i -> val id = ids.getString(i); val item = (0 until upgrades.length()).map { upgrades.getJSONObject(it) }.first { it.getString("id") == id }; strings.text(item.getString("nameKey")) + "\n" + strings.text(item.getString("descriptionKey")) }.toTypedArray()
-                dialog = AlertDialog.Builder(this).setTitle(strings.text("battle.choose")).setItems(labels) { _, which -> dialog = null; renderer.action("choose", ids.getString(which)) }.setCancelable(false).show()
+                val choices = ids.strings().map { id -> upgrades.objects().first { it.getString("id") == id } }
+                dialog = UpgradePicker.show(this, strings, choices) { id -> dialog = null; renderer.action("choose", id) }
             }
             "victory", "defeated" -> {
                 ending = true
@@ -91,6 +105,14 @@ class BattleActivity : AndroidApplication() {
                     .setPositiveButton(strings.text("battle.return")) { _, _ -> finish() }.setCancelable(false).show()
             }
         }
+    }
+    private fun showAnnouncement(text: String, hex: String) {
+        if (isFinishing || isDestroyed || !::banner.isInitialized) return
+        banner.removeCallbacks(hideBanner)
+        val accent = android.graphics.Color.parseColor("#" + hex.removePrefix("#"))
+        banner.text = text; banner.background = Ui.rounded(this, Ui.ink, 20, accent)
+        banner.visibility = android.view.View.VISIBLE
+        banner.postDelayed(hideBanner, 1800)
     }
     private fun pauseDialog() {
         if (dialog != null || ending || renderer.recovering) return
@@ -108,6 +130,7 @@ class BattleActivity : AndroidApplication() {
             .setPositiveButton(strings.text("common.ok")) { _, _ -> finish() }.setCancelable(false).show()
     }
     override fun finish() { if (::renderer.isInitialized) renderer.stopRecovery(); super.finish() }
+    override fun onDestroy() { if (::banner.isInitialized) banner.removeCallbacks(hideBanner); dialog?.dismiss(); dialog = null; super.onDestroy() }
     @Deprecated("Android back compatibility") override fun onBackPressed() { if (::renderer.isInitialized && renderer.recovering) finish() else pauseDialog() }
     override fun onResume() { super.onResume(); if (resumedOnce && ::renderer.isInitialized && !ending) pauseDialog(); resumedOnce = true }
 }

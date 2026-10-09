@@ -8,6 +8,7 @@ reports = android / 'reports'
 try:
     subprocess.run(['./gradlew', ':app:connectedDebugAndroidTest', '--console=plain'], cwd=android, check=True)
     subprocess.run(['adb', 'pull', '/sdcard/Download/scrap-squad-battle.png', str(reports / 'screenshots')], check=True)
+    subprocess.run(['adb', 'pull', '/sdcard/Download/scrap-squad-ui-upgrade-picker.png', str(reports / 'screenshots')], check=True)
     for name in ('01-city', '02-squad', '03-workshop', '04-blueprints', '05-battle-lobby', '06-shop', '07-ronin-preview', '08-journal', '09-run-card', '10-boss-battle'):
         subprocess.run(['adb', 'pull', f'/sdcard/Download/scrap-squad-{name}.png', str(reports / 'screenshots')], check=True)
     (reports / 'store-assets').mkdir(exist_ok=True)

@@ -75,6 +75,22 @@ class StoreScreenshotsTest {
             capture("09-run-card")
             test.sendKeyDownUpSync(KeyEvent.KEYCODE_BACK)
             test.waitForIdleSync()
+            // Exercise the production picker and confirm that its button preserves the chosen ID.
+            var chosen: String? = null
+            val previewChoices = content.getJSONArray("upgrades").objects().take(3)
+            lateinit var picker: android.app.AlertDialog
+            test.runOnMainSync { picker = UpgradePicker.show(activity, strings, previewChoices) { chosen = it } }
+            capture("ui-upgrade-picker")
+            test.runOnMainSync {
+                fun select(view: android.view.View): Boolean {
+                    if (view is android.widget.Button && view.contentDescription == strings.text(previewChoices.first().getString("nameKey"))) { view.performClick(); return true }
+                    if (view is android.view.ViewGroup) for (index in 0 until view.childCount) if (select(view.getChildAt(index))) return true
+                    return false
+                }
+                assertTrue("Upgrade choice button missing", select(picker.window!!.decorView))
+            }
+            assertEquals(previewChoices.first().getString("id"), chosen)
+            assertFalse("Upgrade picker did not dismiss", picker.isShowing)
             val monitor = test.addMonitor(BattleActivity::class.java.name, null, false)
             test.runOnMainSync { activity.deploy("bossRush", 3) }
             liveBattle = monitor.waitForActivityWithTimeout(15000) as? BattleActivity
@@ -89,7 +105,7 @@ class StoreScreenshotsTest {
             }
             fun find(node: AccessibilityNodeInfo?, text: String): AccessibilityNodeInfo? {
                 if (node == null) return null
-                if (node.text?.toString()?.equals(text, true) == true) return node
+                if (node.isClickable && (node.contentDescription?.toString()?.equals(text, true) == true || node.text?.toString()?.equals(text, true) == true)) return node
                 for (i in 0 until node.childCount) find(node.getChild(i), text)?.let { return it }
                 return null
             }
@@ -103,8 +119,7 @@ class StoreScreenshotsTest {
                 if (state?.getString("state") == "choosing") {
                     val id = state.getJSONArray("choices").getString(0)
                     val upgrade = content.getJSONArray("upgrades").objects().first { it.getString("id") == id }
-                    // Dialog labels contain the title and description as one row.
-                    find(test.uiAutomation.rootInActiveWindow, strings.text(upgrade.getString("nameKey")) + "\n" + strings.text(upgrade.getString("descriptionKey")))?.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+                    find(test.uiAutomation.rootInActiveWindow, strings.text(upgrade.getString("nameKey")))?.performAction(AccessibilityNodeInfo.ACTION_CLICK)
                 }
                 if (!captured && state?.getString("state") == "fighting" && state.getDouble("elapsed") > 5 && state.getJSONArray("warnings").length() > 0) { capture("10-boss-battle"); captured = true }
                 if (state?.getString("state") in listOf("victory", "defeated")) break
@@ -116,7 +131,7 @@ class StoreScreenshotsTest {
             if (state.getString("state") == "choosing") {
                 val id = state.getJSONArray("choices").getString(0)
                 val upgrade = content.getJSONArray("upgrades").objects().first { it.getString("id") == id }
-                find(test.uiAutomation.rootInActiveWindow, strings.text(upgrade.getString("nameKey")) + "\n" + strings.text(upgrade.getString("descriptionKey")))?.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+                find(test.uiAutomation.rootInActiveWindow, strings.text(upgrade.getString("nameKey")))?.performAction(AccessibilityNodeInfo.ACTION_CLICK)
                 SystemClock.sleep(350)
             }
             if (state.getString("state") in listOf("fighting", "choosing")) {

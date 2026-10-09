@@ -16,7 +16,7 @@ import org.json.JSONArray
 import org.json.JSONObject
 import kotlin.math.*
 
-class BattleRenderer(private val repository: GameRepository, private val mode: String, private val seed: String, private val zone: Int, private val challenge: String?, private val recover: Boolean = false, private val retreatRecovered: Boolean = false, private val recoveryProgress: (Int) -> Unit = {}, private val recoveryError: (Throwable) -> Unit = {}, private val hud: (JSONObject) -> Unit) : ApplicationAdapter() {
+class BattleRenderer(private val repository: GameRepository, private val mode: String, private val seed: String, private val zone: Int, private val challenge: String?, private val recover: Boolean = false, private val retreatRecovered: Boolean = false, private val recoveryProgress: (Int) -> Unit = {}, private val recoveryError: (Throwable) -> Unit = {}, private val notification: (String, String) -> Unit = { _, _ -> }, private val hud: (JSONObject) -> Unit) : ApplicationAdapter() {
     private lateinit var batch: SpriteBatch
     private lateinit var shapes: ShapeRenderer
     private lateinit var atlas: Texture
@@ -49,7 +49,6 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
     private var lastCompletedEvents = 0
     private var shakeAt = -1.0
     private lateinit var strings: Strings
-    private var announcement: Triple<String, Color, Double>? = null
     private val seenEffects = mutableSetOf<Int>()
     private val presentation = CombatPresentation()
     private var cosmeticState = JSONObject()
@@ -61,7 +60,7 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
     private val reducedMotion get() = repository.profile.optJSONObject("preferences")?.optBoolean("reducedMotion") ?: false
     override fun create() {
         batch = SpriteBatch(); shapes = ShapeRenderer(); atlas = Texture(Gdx.files.internal("generated/RobotAtlas.png"))
-        font = BitmapFont()
+        font = BattleNumberFont.create()
         baseFontHeight = font.capHeight
         atlas.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear)
         audio = Audio(repository.profile.optJSONObject("preferences") ?: JSONObject())
@@ -121,6 +120,11 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
             if (op == "dash") { values.add("x" to moveX); values.add("y" to moveY) }
             try { battle = repository.battleCommand(op, *values.toTypedArray()).getJSONObject("battle") }
             catch (error: Exception) { stopWithError(error); return@postRunnable }
+            if (op == "choose" && battle.getString("state") == "fighting") {
+                repository.content.getJSONArray("upgrades").objects().firstOrNull { it.getString("id") == id }?.let {
+                    notification(strings.text(it.getString("nameKey")), "79D9BA")
+                }
+            }
             if (op == "ability" || op == "overdrive") audio.cue(if (op == "overdrive") "overdrive" else "ability")
             lastHud = -1.0
         }
@@ -155,7 +159,7 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
         val shakeAge = elapsed - shakeAt
         camera.position.x = width / 2 - if (shakeAt >= 0 && shakeAge < .08) (if (shakeAge < .04) shakeAge / .04 * 2 else (1 - (shakeAge - .04) / .04) * 2).toFloat() else 0f
         camera.update()
-        fun announce(text: String, color: String) { announcement = Triple(text, Color.valueOf(color), elapsed) }
+        fun announce(text: String, color: String) { notification(text, color) }
         if (battle.getInt("wave") > previousWave) announce("${strings.text("momentum.wave")} ${battle.getInt("wave")}", "F5B942")
         val tier = 1 + min(4, battle.getInt("combo") / 8)
         if (tier > lastComboTier) { announce("×$tier ${strings.text("momentum.combo")}", "79D9BA"); audio.cue("combo") }; lastComboTier = tier
@@ -301,15 +305,6 @@ class BattleRenderer(private val repository: GameRepository, private val mode: S
             }
         }
         seenEffects.retainAll(activeEffects)
-        announcement?.let { (text, color, born) ->
-            val age = elapsed - born
-            if (age < 1.5) {
-                font.data.setScale(min(22f, width / 18) / baseFontHeight)
-                font.color = color.cpy().apply { a = if (reducedMotion || age < 1) 1f else ((1.5 - age) / .5).toFloat() }
-                val layout = com.badlogic.gdx.graphics.g2d.GlyphLayout(font, text)
-                font.draw(batch, layout, width / 2 - layout.width / 2, height * .8f)
-            } else announcement = null
-        }
         batch.end()
         val enemies = battle.getJSONArray("enemies")
         val bossPresent = (0 until enemies.length()).any { enemies.getJSONObject(it).getString("kind") == "boss" }
