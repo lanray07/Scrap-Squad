@@ -114,7 +114,30 @@ returns HTTP 200 with `active:false`, and malformed input returns 400. The
 transport preserves the fetch receiver and uses manual redirect handling with
 all 3xx responses rejected. Twelve backend tests pass. GitHub public URL variables
 are connected to the debug-build workflow; runtime verification for that configured
-build is pending. No valid purchase, restoration or refund has been tested.
+build passed in run 37906781599 at `209ba24`. No valid purchase, restoration or refund has been tested.
+
+## Fire tester UI feedback — 9 October 2026
+
+GitHub run [37965203655](https://github.com/lanray07/Scrap-Squad/actions/runs/37965203655),
+commit `7293741`: **successful**. Thirteen Android instrumentation tests passed,
+with original Swift tests, 31 oracle scenarios / 23,808 JNI commands, backend checks,
+both native architectures and genuine capture/artwork dimension validation.
+
+- Enabled crafting controls use gold gradients; unavailable controls use grey.
+  The workshop capture includes both affordable and missing-material recipes.
+- Battle stats use separate colored cards and a squad-integrity progress bar.
+- The production upgrade picker uses rounded, element-colored cards. Its selection
+  callback and dismissal are checked, and a separate preview capture is retained.
+- Round/event/upgrade announcements use native Android text; damage numbers use
+  a one-time high-resolution font atlas generated from the system bold font.
+- The separate `uiReview` APK compiled, installed alongside the original package
+  and launched without a fatal or native menu initialization error. It has its own
+  save namespace and disables paid transactions. This is not a production release.
+
+The preceding UI gate, [37963547894](https://github.com/lanray07/Scrap-Squad/actions/runs/37963547894)
+at `e55cea2`, also passed all 13 instrumentation tests. Its workshop, HUD and upgrade
+picker captures were visually inspected for text clarity and layout. Original iOS
+files, gameplay rules and premium source artwork remain unchanged.
 
 Physical process recovery, complete premium battle rendering, purchase validation and
 restoration, Amazon sandbox tests, physical Fire tablet performance and audio,

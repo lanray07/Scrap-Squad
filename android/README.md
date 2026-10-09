@@ -58,8 +58,8 @@ The slice and initial native menus have passed Android runtime verification; see
 challenge, journal and settings flows call the original Swift rules. Seven shop
 packs and premium previews are present. The official Amazon SDK adapter and
 original Swift cosmetic reconciliation are implemented; purchasing remains
-unavailable until the prepared Cloudflare receipt service is deployed and console
-products are configured. The app-specific Amazon public key is included.
+subject to completed Amazon console products, licensing and real purchase testing.
+The Cloudflare receipt service is deployed, and the app-specific Amazon public key is included.
 See `AMAZON_PURCHASES.md` for the exact remaining integration.
 
 Still required: complete visual parity and device lifecycle verification, connect
@@ -88,3 +88,15 @@ secrets or signing keys in the APK. Production signing is configured only throug
 `SCRAP_ANDROID_KEYSTORE`, `SCRAP_ANDROID_STORE_PASSWORD`, `SCRAP_ANDROID_KEY_ALIAS`
 and `SCRAP_ANDROID_KEY_PASSWORD` environment variables. Do not distribute an
 unsigned or debug build as a production release.
+
+## Separate UI review APK
+
+`:app:assembleUiReview` builds `app/build/outputs/apk/uiReview/app-uiReview.apk`,
+named **Scrap Squad UI Review** with application ID
+`com.scrapsquad.fire.uireview`. Install this alongside the existing game when
+testing interface changes: private saves belong to separate application IDs,
+so the original save remains in the original app and UI Review starts fresh.
+This avoids overwriting an installed test app signed by a previous GitHub runner.
+Both receipt endpoints are empty in this variant, disabling purchases.
+Use this variant for visual feedback only; store submission requires the signed
+release variant and the remaining release checks above.
