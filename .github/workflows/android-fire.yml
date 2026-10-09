@@ -67,7 +67,7 @@ jobs:
           python3 android/tools/build_native.py --abi arm64-v8a
           python3 android/tools/build_native.py --abi x86_64
           cd android
-          ./gradlew :app:assembleDebug :app:assembleDebugAndroidTest --console=plain
+          ./gradlew :app:assembleDebug :app:assembleUiReview :app:assembleDebugAndroidTest --console=plain
       - name: Enable emulator hardware acceleration
         run: |
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules

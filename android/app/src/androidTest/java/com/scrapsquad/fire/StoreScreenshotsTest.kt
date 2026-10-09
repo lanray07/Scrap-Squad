@@ -53,6 +53,9 @@ class StoreScreenshotsTest {
                 }
             }
             NativeCore.call("retreat"); repository.action("claim")
+            // Show the real affordable and missing-material button states together.
+            repository.profile.getJSONObject("components").put("fire", 1).put("drone", 0)
+            repository.update(NativeCore.call("init", "content" to content.toString(), "profile" to repository.profile.toString()))
             val strings = Strings(context).apply { language = "en" }
             StoreArtExporter.export(context)
             val screens = MenuScreens(activity, repository, strings)

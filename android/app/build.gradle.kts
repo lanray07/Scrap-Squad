@@ -33,6 +33,17 @@ android {
     }
     buildTypes {
         release { signingConfig = signingConfigs.getByName("release"); isMinifyEnabled = false }
+        create("uiReview") {
+            initWith(getByName("debug"))
+            applicationIdSuffix = ".uireview"
+            versionNameSuffix = "-ui-review"
+            resValue("string", "app_name", "Scrap Squad UI Review")
+            // A separate local-save namespace lets testers keep their existing app.
+            // This visual-review build never initiates paid transactions.
+            buildConfigField("String", "RECEIPT_VERIFY_URL", "\"\"")
+            buildConfigField("String", "RECEIPT_SANDBOX_URL", "\"\"")
+            matchingFallbacks += "debug"
+        }
     }
 }
 val natives by configurations.creating
