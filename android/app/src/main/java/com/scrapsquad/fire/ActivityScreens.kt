@@ -1,6 +1,5 @@
 package com.scrapsquad.fire
 
-import android.app.AlertDialog
 import android.content.Intent
 import android.net.Uri
 import android.widget.EditText
@@ -79,7 +78,7 @@ internal fun MenuScreens.settings() {
     menu.getJSONObject("achievements").keys().forEach { id -> label("${t("achievement.$id")}: ${menu.getJSONObject("achievements").getDouble(id).toInt()}%") }
     separator(); heading("settings.reboot", "settings.reboot.detail")
     button("settings.reboot.confirm", profile.getInt("zone") >= content.getJSONObject("economy").getInt("rebootZone")) {
-        AlertDialog.Builder(activity).setTitle(t("settings.reboot")).setMessage(t("settings.reboot.detail")).setNegativeButton(t("common.cancel"), null)
+        PremiumDialog.Builder(activity).setTitle(t("settings.reboot")).setMessage(t("settings.reboot.detail")).setNegativeButton(t("common.cancel"), null)
             .setPositiveButton(t("settings.reboot.confirm")) { _, _ -> action("reboot") }.show()
     }
 }

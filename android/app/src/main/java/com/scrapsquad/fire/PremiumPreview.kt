@@ -1,6 +1,5 @@
 package com.scrapsquad.fire
 
-import android.app.AlertDialog
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import org.json.JSONObject
@@ -18,7 +17,7 @@ internal fun MenuScreens.premiumPreview(pack: JSONObject, catalog: JSONObject) {
     }
     if (pack.optString("weaponEffect") == "prism") body.addView(PrismPreviewView(activity), LinearLayout.LayoutParams(-1, Ui.dp(activity, 180)))
     val pose = Ui.button(activity, t("premium.victory")) { portraits.forEach { it.victory = !it.victory; it.invalidate() } }; body.addView(pose)
-    val dialog = AlertDialog.Builder(activity).setTitle(t(pack.getString("nameKey"))).setView(ScrollView(activity).apply { addView(body) }).setPositiveButton(t("premium.done"), null).create()
+    val dialog = PremiumDialog.Builder(activity).setTitle(t(pack.getString("nameKey"))).setView(ScrollView(activity).apply { addView(body) }).setPositiveButton(t("premium.done"), null).create()
     val animate = object : Runnable {
         override fun run() {
             portraits.forEach { it.frame = (it.frame + 1) % 4; it.invalidate() }

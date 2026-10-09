@@ -1,6 +1,5 @@
 package com.scrapsquad.fire
 
-import android.app.AlertDialog
 import android.content.Intent
 import android.view.Gravity
 import android.view.View
@@ -28,7 +27,7 @@ class MenuScreens(internal val activity: MainActivity, internal val repository: 
     }
     internal fun error(e: Exception) {
         val message = runCatching { t("error.${e.message}") }.getOrElse { t("common.error") }
-        AlertDialog.Builder(activity).setTitle(t("common.error")).setMessage(message).setPositiveButton(t("common.ok"), null).show()
+        PremiumDialog.Builder(activity).setTitle(t("common.error")).setMessage(message).setPositiveButton(t("common.ok"), null).show()
     }
     internal fun separator() { panel.addView(View(activity).apply { setBackgroundColor(Ui.surface); layoutParams = LinearLayout.LayoutParams(-1, Ui.dp(activity, 2)).apply { setMargins(0, 16, 0, 16) } }) }
     internal fun owns(group: String, id: String) = profile.getJSONObject(group).optInt(id) > 0
@@ -62,7 +61,8 @@ class MenuScreens(internal val activity: MainActivity, internal val repository: 
     fun offerOffline() {
         val reward = menu.getJSONObject("offline")
         if (reward.getInt("scrap") == 0 && reward.getInt("credits") == 0) return
-        AlertDialog.Builder(activity).setTitle(t("offline.title"))
+        PremiumDialog.Builder(activity).setTitle(t("offline.title"))
+            .setCharacter("bolt", t("premium.victory"))
             .setMessage("${t("offline.description")}\n${t("offline.away")}: ${reward.getDouble("seconds").toInt() / 60} ${t("android.minutes")}\n${t("currency.scrap")}: ${number(reward.getInt("scrap"))}\n${t("currency.credits")}: ${number(reward.getInt("credits"))}")
             .setPositiveButton(t("offline.claim")) { _, _ -> action("offline") }.setCancelable(false).show()
     }

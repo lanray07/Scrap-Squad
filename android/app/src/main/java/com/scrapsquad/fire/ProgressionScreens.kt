@@ -1,6 +1,5 @@
 package com.scrapsquad.fire
 
-import android.app.AlertDialog
 import android.widget.*
 import java.security.SecureRandom
 import java.text.NumberFormat
@@ -65,7 +64,7 @@ internal fun MenuScreens.workshop() {
             val first = ids[a.selectedItemPosition]; val second = ids[b.selectedItemPosition]
             val options = NativeCore.call("roulettePreview", "a" to first, "b" to second).getJSONArray("candidates").strings()
             if (options.isEmpty()) throw IllegalStateException("invalidSelection")
-            AlertDialog.Builder(activity).setTitle(t("lab.roulette")).setMessage(options.joinToString("\n") { "${t("weapon.$it")} · ${NumberFormat.getPercentInstance().apply { maximumFractionDigits = 1 }.format(1.0 / options.size)}" })
+            PremiumDialog.Builder(activity).setTitle(t("lab.roulette")).setMessage(options.joinToString("\n") { "${t("weapon.$it")} · ${NumberFormat.getPercentInstance().apply { maximumFractionDigits = 1 }.format(1.0 / options.size)}" })
                 .setNegativeButton(t("common.cancel"), null).setPositiveButton(t("lab.spin")) { _, _ -> val index = SecureRandom().nextInt(options.size); action("roulette", "a" to first, "b" to second, "index" to index, after = { reveal(item("weapons", options[index])) }) }.show()
         } catch (e: Exception) { error(e) }
     }
@@ -80,7 +79,9 @@ internal fun MenuScreens.workshop() {
     }
 }
 internal fun MenuScreens.reveal(weapon: JSONObject) {
-    AlertDialog.Builder(activity).setTitle(t("lab.reveal")).setMessage("${t(weapon.getString("nameKey"))}\n${t("rarity.${weapon.getString("rarity")}")}\n${t(weapon.getString("descriptionKey"))}")
+    PremiumDialog.Builder(activity).setTitle(t("lab.reveal"))
+        .setFeature(t(weapon.getString("nameKey")), t("rarity.${weapon.getString("rarity")}"), t(weapon.getString("descriptionKey")))
+        .setCharacter("bolt", t("premium.victory"))
         .setPositiveButton(t("lab.equip")) { _, _ -> action("equip", "id" to weapon.getString("id")) }
         .setNegativeButton(t("common.done"), null).setNeutralButton(t("lab.share")) { _, _ -> share("Scrap Squad\n${t(weapon.getString("nameKey"))}\nhttps://lanray07.github.io/Scrap-Squad/") }.show()
 }

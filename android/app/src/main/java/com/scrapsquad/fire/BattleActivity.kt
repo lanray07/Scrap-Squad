@@ -47,7 +47,7 @@ class BattleActivity : AndroidApplication() {
         battleHud.addPriorityControl(Ui.button(this, strings.text("battle.priority")) {
             if (dialog != null || renderer.recovering) return@button
             val priorities = listOf("nearest", "weakest", "boss")
-            dialog = AlertDialog.Builder(this).setTitle(strings.text("battle.priority"))
+            dialog = PremiumDialog.Builder(this).setTitle(strings.text("battle.priority"))
                 .setSingleChoiceItems(priorities.map { strings.text("priority.$it") }.toTypedArray(), priorities.indexOf(currentPriority)) { selected, which -> currentPriority = priorities[which]; renderer.action("priority", currentPriority); selected.dismiss(); dialog = null }
                 .setNegativeButton(strings.text("common.cancel"), null).create().also { choice -> choice.setOnDismissListener { if (dialog === choice) dialog = null }; choice.show() }
         })
@@ -100,8 +100,10 @@ class BattleActivity : AndroidApplication() {
                 ending = true
                 try { repository.action("claim") } catch (error: Exception) { showRecoveryError(error); return }
                 dialog?.dismiss()
-                dialog = AlertDialog.Builder(this).setTitle(strings.text(if (state.getString("state") == "victory") "battle.victory" else "battle.defeat"))
-                    .setMessage("${strings.text("battle.kills")}: ${state.getInt("kills")}\n${strings.text("battle.score")}: ${state.getInt("score")}\n${strings.text("battle.perfectDodges")}: ${state.getInt("perfectDodges")}")
+                dialog = PremiumDialog.Builder(this).setTitle(strings.text(if (state.getString("state") == "victory") "battle.victory" else "battle.defeat"))
+                    .setAccent(if (state.getString("state") == "victory") Ui.mint else android.graphics.Color.rgb(255, 168, 117))
+                    .setCharacter(repository.profile.getJSONArray("squad").optString(0, "bolt"), strings.text("premium.victory"))
+                    .setStats(listOf(strings.text("battle.kills") to state.getInt("kills").toString(), strings.text("battle.score") to state.getInt("score").toString(), strings.text("battle.perfectDodges") to state.getInt("perfectDodges").toString()))
                     .setPositiveButton(strings.text("battle.return")) { _, _ -> finish() }.setCancelable(false).show()
             }
         }
@@ -117,7 +119,7 @@ class BattleActivity : AndroidApplication() {
     private fun pauseDialog() {
         if (dialog != null || ending || renderer.recovering) return
         renderer.paused = true
-        dialog = AlertDialog.Builder(this).setTitle(strings.text("battle.paused"))
+        dialog = PremiumDialog.Builder(this).setTitle(strings.text("battle.paused"))
             .setPositiveButton(strings.text("battle.resume")) { _, _ -> dialog = null; renderer.paused = false }
             .setNegativeButton(strings.text("battle.retreat")) { _, _ -> dialog = null; renderer.action("retreat") }
             .setCancelable(false).show()
@@ -126,7 +128,7 @@ class BattleActivity : AndroidApplication() {
         if (isFinishing || isDestroyed) return
         android.util.Log.e("ScrapRecovery", "Battle recovery failed", error); ending = true
         dialog?.dismiss()
-        dialog = AlertDialog.Builder(this).setTitle(strings.text("common.error")).setMessage(strings.text("android.recovery.error"))
+        dialog = PremiumDialog.Builder(this).setTitle(strings.text("common.error")).setMessage(strings.text("android.recovery.error"))
             .setPositiveButton(strings.text("common.ok")) { _, _ -> finish() }.setCancelable(false).show()
     }
     override fun finish() { if (::renderer.isInitialized) renderer.stopRecovery(); super.finish() }

@@ -1,7 +1,6 @@
 package com.scrapsquad.fire
 
 import android.app.Activity
-import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 
@@ -22,11 +21,12 @@ class MainActivity : Activity() {
             screens.show()
             val flags = getSharedPreferences("interface", MODE_PRIVATE)
             if (repository.battleJournal.pending()) {
-                AlertDialog.Builder(this).setTitle(strings.text("android.recovery.title")).setMessage(strings.text("android.recovery.detail"))
+                PremiumDialog.Builder(this).setTitle(strings.text("android.recovery.title")).setMessage(strings.text("android.recovery.detail"))
                     .setPositiveButton(strings.text("battle.resume")) { _, _ -> resumeBattle(false) }
                     .setNegativeButton(strings.text("battle.retreat")) { _, _ -> resumeBattle(true) }.setCancelable(false).show()
             } else if (!flags.getBoolean("welcomed", false)) {
-                AlertDialog.Builder(this).setTitle(strings.text("tutorial.title")).setMessage(strings.text("tutorial.body"))
+                PremiumDialog.Builder(this).setTitle(strings.text("tutorial.title")).setMessage(strings.text("tutorial.body"))
+                    .setCharacter("bolt", strings.text("premium.victory"))
                     .setPositiveButton(strings.text("tutorial.start")) { _, _ -> flags.edit().putBoolean("welcomed", true).apply(); screens.offerOffline() }
                     .setCancelable(false).show()
             } else screens.offerOffline()
@@ -37,7 +37,7 @@ class MainActivity : Activity() {
     private fun loadError(error: Exception) {
         loadFailed = true
         android.util.Log.e("ScrapUI", "Native menu initialization failed", error)
-        AlertDialog.Builder(this).setTitle(strings.text("error.load")).setMessage(strings.text("error.invalidContent"))
+        PremiumDialog.Builder(this).setTitle(strings.text("error.load")).setMessage(strings.text("error.invalidContent"))
             .setPositiveButton(strings.text("common.ok")) { _, _ -> finish() }.setCancelable(false).show()
     }
     override fun onRestart() {

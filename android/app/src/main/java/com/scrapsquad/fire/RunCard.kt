@@ -1,6 +1,5 @@
 package com.scrapsquad.fire
 
-import android.app.AlertDialog
 import android.content.ClipData
 import android.content.Context
 import android.content.Intent
@@ -63,7 +62,7 @@ internal object RunCard {
     }
     fun preview(context: Context, bitmap: Bitmap, strings: Strings) {
         val image = ImageView(context).apply { setImageBitmap(bitmap); adjustViewBounds = true; contentDescription = strings.text("run.preview") }
-        AlertDialog.Builder(context).setTitle(strings.text("run.preview")).setView(ScrollView(context).apply { addView(image) }).setPositiveButton(strings.text("common.done"), null).show()
+        PremiumDialog.Builder(context).setTitle(strings.text("run.preview")).setView(ScrollView(context).apply { addView(image) }).setPositiveButton(strings.text("common.done"), null).show()
     }
     fun share(context: Context, bitmap: Bitmap, run: JSONObject, strings: Strings) {
         val folder = File(context.cacheDir, "run-cards").apply { mkdirs() }

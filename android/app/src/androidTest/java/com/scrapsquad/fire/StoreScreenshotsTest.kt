@@ -65,9 +65,39 @@ class StoreScreenshotsTest {
                 val result = test.uiAutomation.executeShellCommand("ls /sdcard/Download/scrap-squad-$name.png").use { descriptor -> FileInputStream(descriptor.fileDescriptor).use { it.readBytes().toString(Charsets.UTF_8) } }
                 assertTrue("Capture missing: $name", result.trim().endsWith("scrap-squad-$name.png"))
             }
+            var confirmations = 0
+            var confirmedWhileVisible = false
+            lateinit var information: android.app.AlertDialog
+            test.runOnMainSync {
+                information = PremiumDialog.Builder(activity).setTitle(strings.text("tutorial.title"))
+                    .setMessage(strings.text("tutorial.body")).setCharacter("bolt", strings.text("premium.victory"))
+                    .setPositiveButton(strings.text("tutorial.start")) { shown, which ->
+                        assertEquals(android.content.DialogInterface.BUTTON_POSITIVE, which)
+                        confirmedWhileVisible = (shown as android.app.AlertDialog).isShowing; confirmations++
+                    }.setCancelable(false).show()
+            }
+            capture("ui-information-dialog")
+            test.runOnMainSync {
+                fun descendants(view: android.view.View): List<android.view.View> = listOf(view) +
+                    if (view is android.view.ViewGroup) (0 until view.childCount).flatMap { descendants(view.getChildAt(it)) } else emptyList()
+                val views = descendants(information.window!!.decorView)
+                val robot = views.filterIsInstance<RobotPortraitView>().single()
+                robot.performClick(); assertTrue("Robot interaction did not change pose", robot.victory)
+                assertTrue("Robot interaction dismissed the information", information.isShowing)
+                robot.performClick(); assertFalse(robot.victory)
+                views.filterIsInstance<android.widget.Button>().first { it.text == strings.text("tutorial.start") }.performClick()
+            }
+            assertEquals(1, confirmations); assertTrue(confirmedWhileVisible)
+            assertFalse("Information action did not dismiss", information.isShowing)
             listOf("01-city" to "city", "02-squad" to "squad", "03-workshop" to "workshop", "04-blueprints" to "blueprints", "05-battle-lobby" to "battle", "06-shop" to "shop", "08-journal" to "journal").forEach { (name, page) ->
                 test.runOnMainSync { screens.page = page; screens.show() }; capture(name)
             }
+            test.runOnMainSync {
+                screens.page = "workshop"; screens.show()
+                screens.reveal(content.getJSONArray("weapons").objects().first { it.getString("id") == "flame" })
+            }
+            capture("ui-fusion-reveal")
+            test.sendKeyDownUpSync(KeyEvent.KEYCODE_BACK); test.waitForIdleSync()
             val catalog = JSONObject(context.assets.open("generated/StoreConfiguration.json").bufferedReader().use { it.readText() })
             test.runOnMainSync { screens.page = "shop"; screens.show(); screens.premiumPreview(catalog.getJSONArray("packs").objects().first { it.getString("id").endsWith(".ronin") }, catalog) }
             capture("07-ronin-preview")
@@ -145,6 +175,7 @@ class StoreScreenshotsTest {
             val deadline = SystemClock.uptimeMillis() + 10000
             while (find(test.uiAutomation.rootInActiveWindow, strings.text("battle.return")) == null && SystemClock.uptimeMillis() < deadline) SystemClock.sleep(100)
             assertNotNull("Benchmark run was not settled", find(test.uiAutomation.rootInActiveWindow, strings.text("battle.return")))
+            capture("ui-battle-result")
             test.runOnMainSync { liveBattle?.finish() }; test.waitForIdleSync(); liveBattle = null
         } finally {
             liveBattle?.let { active -> test.runOnMainSync { active.finish() }; test.waitForIdleSync() }
