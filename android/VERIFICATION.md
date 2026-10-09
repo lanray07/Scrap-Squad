@@ -108,6 +108,14 @@ still has no merchant secret and returns 503; sandbox has a separate test-only
 secret. No real receipt or purchase has been verified. See
 [`DEPLOYMENT.md`](../backend/amazon-receipts/DEPLOYMENT.md).
 
+Later on 9 October the owner stored the required production secret. Its presence
+was checked without displaying its value. A live synthetic invalid receipt now
+returns HTTP 200 with `active:false`, and malformed input returns 400. The
+transport preserves the fetch receiver and uses manual redirect handling with
+all 3xx responses rejected. Twelve backend tests pass. GitHub public URL variables
+are connected to the debug-build workflow; runtime verification for that configured
+build is pending. No valid purchase, restoration or refund has been tested.
+
 Physical process recovery, complete premium battle rendering, purchase validation and
 restoration, Amazon sandbox tests, physical Fire tablet performance and audio,
 approved translations, final screenshots, signing and submission remain to be

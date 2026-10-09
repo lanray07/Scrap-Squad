@@ -29,9 +29,9 @@ Fire tablets; do not select Fire TV, Vega OS or all historical Fire models.
 
 ## Required before a production build
 
-1. The service is deployed on the owner's free Cloudflare account. Configure its
-   server-only Amazon merchant shared secret on the production Worker.
-   Set the Android public verification URLs and exercise the real adapter.
+1. The service is deployed on the owner's free Cloudflare account, with its
+   server-only production secret stored and public URLs configured for CI debug
+   builds. Exercise real Amazon purchases, restoration and refunds through the adapter.
    See `backend/amazon-receipts/DEPLOYMENT.md`; never put the merchant secret in this app.
 2. Finalize the seven original Amazon ENTITLED drafts, including paid prices and
    icons. Confirm localized

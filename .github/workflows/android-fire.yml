@@ -12,6 +12,9 @@ jobs:
   vertical-slice:
     runs-on: ubuntu-24.04
     timeout-minutes: 45
+    env:
+      SCRAP_AMAZON_VERIFY_URL: ${{ vars.SCRAP_AMAZON_VERIFY_URL }}
+      SCRAP_AMAZON_SANDBOX_URL: ${{ vars.SCRAP_AMAZON_SANDBOX_URL }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

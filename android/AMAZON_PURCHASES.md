@@ -19,9 +19,10 @@ Apple purchases do not transfer.
    merchant shared secret. The SDK does not start when it is absent. Recheck the
    key if moving the app to another Amazon record or developer account.
 2. The Cloudflare Workers service in `backend/amazon-receipts/` was deployed on
-   9 October 2026. Production still needs its server-only Amazon merchant secret;
+   9 October 2026. Production has its server-only Amazon merchant secret stored;
    see its `DEPLOYMENT.md` for actual URLs and live smoke checks. No real receipt
-   or purchase has been verified. Android's strict `HttpAmazonReceiptVerifier` is configured by public
+   or purchase has been granted in testing; the live synthetic invalid receipt
+   check rejects ownership. Android's strict `HttpAmazonReceiptVerifier` is configured by public
    `SCRAP_AMAZON_VERIFY_URL` and debug-only `SCRAP_AMAZON_SANDBOX_URL` build
    environment variables. Blank or invalid configuration leaves purchases disabled.
 3. The backend must call Amazon Receipt Verification Service using a server-only

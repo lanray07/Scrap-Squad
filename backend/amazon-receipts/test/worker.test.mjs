@@ -13,7 +13,7 @@ test('binds the exact Amazon user/receipt/product and makes repeat verification 
   let calls = 0;
   const amazon = async (url, options) => {
     calls++; assert.equal(url, 'https://appstore-sdk.amazon.com/version/1.0/verifyReceiptId/developer/server%2Fsecret/user/user%2Fwith%2Bsymbols/receiptId/receipt%2F%3A%2B%3D');
-    assert.equal(options.redirect, 'error'); return Response.json(receipt);
+    assert.equal(options.redirect, 'manual'); return Response.json(receipt);
   };
   for (let i = 0; i < 2; i++) {
     const response = await handle(request(), environment(), amazon);
@@ -34,7 +34,11 @@ test('Amazon 400/410 revoke, while errors and throttling do not masquerade as re
     const response = await handle(request(), environment(), async () => new Response(null, { status }));
     assert.equal(response.status, [400, 410].includes(status) ? 200 : 503);
     if (response.status === 200) assert.equal((await response.json()).active, false);
-    else assert.equal(Object.hasOwn(await response.json(), 'active'), false);
+    else {
+      const body = await response.json();
+      assert.equal(Object.hasOwn(body, 'active'), false);
+      assert.deepEqual(body, status === 496 ? { error: 'merchant_configuration_error' } : status === 497 ? { error: 'invalid_amazon_user' } : { error: 'verification_unavailable', upstreamStatus: status });
+    }
   }
 });
 test('rejects receipt/product/type and malformed cancellation or purchase fields', async () => {
@@ -79,4 +83,17 @@ test('unexpected paths, query strings, methods and media types are rejected', as
 });
 test('Cloudflare entry point does not treat execution context as an HTTP client', async () => {
   assert.equal((await worker.fetch(request(), {}, { waitUntil() {} })).status, 503);
+});
+test('default Amazon transport preserves the global fetch receiver', async () => {
+  const original = globalThis.fetch;
+  try {
+    globalThis.fetch = async function (url) {
+      assert.equal(this, globalThis);
+      assert.ok(url.startsWith('https://appstore-sdk.amazon.com/'));
+      return Response.json(receipt);
+    };
+    const response = await worker.fetch(request(), environment());
+    assert.equal(response.status, 200);
+    assert.equal((await response.json()).active, true);
+  } finally { globalThis.fetch = original; }
 });
