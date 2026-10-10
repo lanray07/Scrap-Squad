@@ -157,3 +157,19 @@ Physical process recovery, complete premium battle rendering, purchase validatio
 restoration, Amazon sandbox tests, physical Fire tablet performance and audio,
 approved translations, final screenshots, signing and submission remain to be
 verified. No Amazon publication or physical-device performance is claimed.
+
+## Categorized blueprint database
+
+Run [38084566219](https://github.com/lanray07/Scrap-Squad/actions/runs/38084566219)
+at `a4e3fb2` passed the original Swift, backend, native parity and all 13 Android
+instrumentation tests. The production database is grouped by weapon element, with
+discovery counts/progress, searchable names/clues, discovery filters and tappable
+recipe cards. Unknown weapons remain hidden. Assertions cover discovery filters,
+empty/reset/name search and unchanged player progression. The native database
+capture was visually inspected; final `efd082c` adds filter-label padding.
+
+The final UI Review APK was built locally with Gradle and its signature verified.
+All 62 native libraries exactly match the verified GitHub APK. It retains the
+separate test package, independent save and disabled purchases. This is a test
+build; the prior CI-signed UI Review must be removed before installation, deleting
+only that test app's save. Keep the original Scrap Squad installed.
