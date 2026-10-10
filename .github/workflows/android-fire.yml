@@ -1,0 +1,96 @@
+name: Verify Amazon Fire port
+on:
+  push:
+    branches: ['codex/amazon-fire-port']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: android-fire-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  vertical-slice:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      SCRAP_AMAZON_VERIFY_URL: ${{ vars.SCRAP_AMAZON_VERIFY_URL }}
+      SCRAP_AMAZON_SANDBOX_URL: ${{ vars.SCRAP_AMAZON_SANDBOX_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify receipt service without credentials or live purchases
+        working-directory: backend/amazon-receipts
+        run: |
+          npm ci --no-fund --no-audit
+          npm test
+          npx wrangler deploy --env production --dry-run
+          npx wrangler deploy --env sandbox --dry-run
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: fire-gradle-${{ runner.os }}-${{ hashFiles('android/**/*.gradle.kts', 'android/gradle/wrapper/gradle-wrapper.properties') }}
+      - name: Install official Swift 6.4 toolchain
+        run: |
+          curl --fail --location --retry 3 https://download.swift.org/swift-6.4.0-release/ubuntu2404/swift-6.4.0-RELEASE/swift-6.4.0-RELEASE-ubuntu24.04.tar.gz --output "$RUNNER_TEMP/swift.tar.gz"
+          mkdir -p "$RUNNER_TEMP/swift"
+          tar -xzf "$RUNNER_TEMP/swift.tar.gz" -C "$RUNNER_TEMP/swift" --strip-components=1
+          echo "$RUNNER_TEMP/swift/usr/bin" >> "$GITHUB_PATH"
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
+          log-accepted-android-sdk-licenses: false
+      - name: Install pinned Android and Swift toolchains
+        run: |
+          sdkmanager 'platforms;android-36' 'build-tools;36.0.0' 'ndk;28.2.13676358'
+          swift sdk install https://download.swift.org/swift-6.4.0-release/android-sdk/swift-6.4.0-RELEASE/swift-6.4.0-RELEASE_android.artifactbundle.tar.gz --checksum 21fb555122a3d801ad943d48df7ebffdd8824de61c25c180bb792d3edaee0b43
+          echo "SWIFT_ANDROID_SDK=$HOME/.swiftpm/swift-sdks" >> "$GITHUB_ENV"
+          echo "ANDROID_NDK_HOME=$ANDROID_HOME/ndk/28.2.13676358" >> "$GITHUB_ENV"
+          chmod +x android/gradlew
+      - name: Preserve and verify original game rules
+        run: |
+          swift test
+          python3 android/tools/sync_assets.py
+          python3 android/tools/validate_localization.py
+          python3 android/tools/validate_store.py
+          python3 android/tools/build_native.py --oracle
+          python3 android/tools/generate_parity.py
+      - name: Compile shared simulation for both Android architectures
+        run: |
+          python3 android/tools/build_native.py --abi arm64-v8a
+          python3 android/tools/build_native.py --abi x86_64
+          cd android
+          ./gradlew :app:assembleDebug :app:assembleUiReview :app:assembleDebugAndroidTest --console=plain
+      - name: Enable emulator hardware acceleration
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - name: Verify real Android JNI gameplay against original Swift traces
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          arch: x86_64
+          target: default
+          profile: Nexus 10
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          disable-animations: true
+          script: python3 android/tools/verify_runtime.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: scrap-squad-fire-vertical-slice
+          path: |
+            android/app/build/outputs/apk/
+            android/app/build/reports/
+            android/app/build/outputs/androidTest-results/
+            android/app/src/androidTest/assets/parity.json
+            android/native/build/generated/source-hashes.json
+            android/reports/

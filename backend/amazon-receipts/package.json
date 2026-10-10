@@ -1,0 +1,16 @@
+{
+  "name": "scrap-squad-amazon-receipts",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "deploy": "wrangler deploy --env production",
+    "deploy:sandbox": "wrangler deploy --env sandbox"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "wrangler": "4.149.0"
+  }
+}
