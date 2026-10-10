@@ -93,6 +93,29 @@ class StoreScreenshotsTest {
                 test.runOnMainSync { screens.page = page; screens.show() }; capture(name)
             }
             test.runOnMainSync {
+                screens.page = "blueprints"; screens.show()
+                val saved = repository.profile.toString()
+                fun descendants(view: android.view.View): List<android.view.View> = listOf(view) +
+                    if (view is android.view.ViewGroup) (0 until view.childCount).flatMap { descendants(view.getChildAt(it)) } else emptyList()
+                fun cards() = descendants(screens.panel).filter { it.tag?.toString()?.startsWith("blueprint:") == true }
+                fun filter(index: Int) = descendants(screens.panel).single { it.tag == "blueprint-filter:$index" }.performClick()
+                assertEquals(content.getJSONArray("recipes").length(), cards().size)
+                filter(1); assertEquals(7, cards().size); assertTrue(cards().all { it.tag.toString().endsWith(":true") })
+                filter(2); assertEquals(content.getJSONArray("recipes").length() - 7, cards().size)
+                assertTrue(cards().all { it.tag.toString().endsWith(":false") })
+                filter(0)
+                val search = descendants(screens.panel).filterIsInstance<android.widget.EditText>().single { it.tag == "blueprint-search" }
+                search.setText("no matching blueprint 987654"); assertTrue(cards().isEmpty())
+                search.setText(""); assertEquals(content.getJSONArray("recipes").length(), cards().size)
+                val known = content.getJSONArray("recipes").objects().first()
+                val weapon = content.getJSONArray("weapons").objects().first { it.getString("id") == known.getString("result") }
+                search.setText(strings.text(weapon.getString("nameKey")))
+                assertTrue(cards().any { it.tag == "blueprint:${known.getString("id")}:true" })
+                search.setText("")
+                assertEquals("Browsing changed player progression", saved, repository.profile.toString())
+            }
+            capture("ui-blueprint-categories")
+            test.runOnMainSync {
                 screens.page = "workshop"; screens.show()
                 screens.reveal(content.getJSONArray("weapons").objects().first { it.getString("id") == "flame" })
             }

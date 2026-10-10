@@ -85,24 +85,3 @@ internal fun MenuScreens.reveal(weapon: JSONObject) {
         .setPositiveButton(t("lab.equip")) { _, _ -> action("equip", "id" to weapon.getString("id")) }
         .setNegativeButton(t("common.done"), null).setNeutralButton(t("lab.share")) { _, _ -> share("Scrap Squad\n${t(weapon.getString("nameKey"))}\nhttps://lanray07.github.io/Scrap-Squad/") }.show()
 }
-internal fun MenuScreens.blueprints() {
-    heading("lab.database", "lab.subtitle"); label("${profile.getJSONArray("blueprints").length()} / ${content.getJSONArray("recipes").length()}", 26f, Ui.mint)
-    val elements = content.getJSONArray("weapons").objects().map { it.getString("element") }.distinct()
-    val filter = spinner(listOf("") + elements, listOf(t("lab.database")) + elements.map { t("element.$it") })
-    val results = Ui.panel(activity); panel.addView(results)
-    fun render(element: String?) {
-        results.removeAllViews()
-        content.getJSONArray("recipes").objects().filter { element == null || item("weapons", it.getString("result")).getString("element") == element }.forEach { recipe ->
-            val known = recipe.getString("id") in profile.getJSONArray("blueprints").strings()
-            results.addView(Ui.text(activity, t(if (known) "weapon.${recipe.getString("result")}" else "lab.unknown"), 22f, Ui.gold))
-            results.addView(Ui.text(activity, t(recipe.getString("clueKey"))))
-            if (known) results.addView(Ui.text(activity, t("lab.discovered"), 16f, Ui.mint))
-        }
-    }
-    filter.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-        override fun onItemSelected(parent: AdapterView<*>?, view: android.view.View?, position: Int, id: Long) { render(if (position == 0) null else elements[position - 1]) }
-        override fun onNothingSelected(parent: AdapterView<*>?) {}
-    }
-    render(null)
-    button("city.workshop") { page = "workshop"; show() }
-}

@@ -6,5 +6,11 @@
   "android.recovery.detail": "An interrupted battle is saved on this device. Resume from the last saved moment, or retreat and collect the rewards you earned.",
   "android.recovering": "Recovering your battle",
   "android.recovery.error": "This battle could not be recovered. Your saved progress and battle record have been preserved. Please contact support.",
-  "android.seconds": "s"
+  "android.seconds": "s",
+  "android.blueprints.all": "All blueprints",
+  "android.blueprints.search": "Search names or clues",
+  "android.blueprints.undiscovered": "Undiscovered",
+  "android.blueprints.empty": "No blueprints match. Try another search or filter.",
+  "android.blueprints.detail": "Tap a card to explore its blueprint",
+  "android.blueprints.ingredients": "Fusion ingredients"
 }
