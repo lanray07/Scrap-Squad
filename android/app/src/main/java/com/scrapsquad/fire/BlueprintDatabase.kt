@@ -109,6 +109,7 @@ internal fun MenuScreens.blueprints() {
     listOf("android.blueprints.all", "lab.discovered", "android.blueprints.undiscovered").forEachIndexed { index, key ->
         val button = Ui.button(activity, t(key)) { status = index; render() }.apply {
             tag = "blueprint-filter:$index"
+            setPadding(Ui.dp(activity, 16), Ui.dp(activity, 8), Ui.dp(activity, 16), Ui.dp(activity, 8))
             layoutParams = LinearLayout.LayoutParams(-2, -2).apply { setMargins(6, 8, 6, 8) }
         }
         filters.add(button); tabs.addView(button)
