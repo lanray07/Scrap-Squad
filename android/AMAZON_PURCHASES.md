@@ -7,8 +7,9 @@ receipt binding, cancellation handling and write-before-fulfillment persistence.
 The seven original product IDs are preserved as the intended Amazon SKUs.
 All seven were registered as non-consumable entitlement drafts in the developer
 console on 8 October 2026, with their original IDs, names and cosmetic descriptions.
-They have not been submitted. Pricing and product icons are unfinished; the list
-currently displays USD 0 defaults, which must not be submitted as final pricing.
+On 11 October 2026 all seven test-only products show Approved, with original
+product icons and paid GBP pricing: Founder 2.99, Styles 1.99,
+Ronin/Bastion/Medic/Prism 2.99 each, Collection 7.99. Public promotion is pending.
 Apple purchases do not transfer.
 
 ## Required deployment configuration
@@ -20,9 +21,10 @@ Apple purchases do not transfer.
    key if moving the app to another Amazon record or developer account.
 2. The Cloudflare Workers service in `backend/amazon-receipts/` was deployed on
    9 October 2026. Production has its server-only Amazon merchant secret stored;
-   see its `DEPLOYMENT.md` for actual URLs and live smoke checks. No real receipt
-   or purchase has been granted in testing; the live synthetic invalid receipt
-   check rejects ownership. Android's strict `HttpAmazonReceiptVerifier` is configured by public
+   see its `DEPLOYMENT.md` for actual URLs and live smoke checks. No real
+   production purchase has been granted in testing; sandbox receipts have been
+   verified through the separate sandbox Worker. The live synthetic invalid
+   receipt check rejects ownership. Android's strict `HttpAmazonReceiptVerifier` is configured by public
    `SCRAP_AMAZON_VERIFY_URL` and debug-only `SCRAP_AMAZON_SANDBOX_URL` build
    environment variables. Blank or invalid configuration leaves purchases disabled.
 3. The backend must call Amazon Receipt Verification Service using a server-only
@@ -49,8 +51,12 @@ bundle overlap and revoked selections; cosmetics never enter gameplay balance.
 
 ## Verification still required
 
-SDK adapter compilation has passed. Amazon App Tester/Live App Testing and the
-actual backend have **not** been exercised. Before release test all seven products,
+SDK adapter compilation and physical Amazon App Tester checks passed on KFTRWI.
+The separate sandbox backend verified a purchase and restore; account switching,
+revocation, failure, pending approval and cancellation checks also passed. All
+seven test IAPs are Approved in Amazon's console. The signed Live App Test is
+prepared but not submitted; production purchase verification remains pending.
+See `VERIFICATION.md` for evidence and limitations. Before release test all seven products,
 approved/declined/pending purchases, rotation/backgrounding during purchase,
 duplicate callbacks, interrupted persistence, paged restoration, account changes,
 refunds, offline cached ownership and invalid/mismatched receipt responses.

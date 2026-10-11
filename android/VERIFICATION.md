@@ -231,7 +231,10 @@ disclosures are saved, including user IDs and purchase history for functionality
 and fraud prevention. Support email: banksmi@mail.com. Core gameplay is free;
 seven optional one-time cosmetic products have saved GBP pricing and original art.
 
-The Canada Royalty Tax Interview still blocks submission of paid cosmetics,
-including test-only submission. The owner opted to complete the interview and
-retain Canada. Production installation/purchase checks through Amazon and final
-submission remain pending. No public publication is claimed.
+All three Amazon tax interviews now show Completed; Canada remains included.
+All seven test-only cosmetic products show Approved, but are not yet Live or
+promoted to the public catalog. One consenting adult tester was added to the
+Fire release test group. The signed Live App Test draft includes that group and
+is prepared for submission, pending the owner's export-certification approval.
+Production installation/purchase checks through Amazon and public submission
+remain pending. No public publication is claimed.

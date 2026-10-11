@@ -23,10 +23,12 @@ The historical preparation tasks below now have the following updates. See
   release secrets are configured; Apple credentials and iOS files are preserved.
 - Physical KFTRWI sandbox purchase, restore, account-change, revocation, failure,
   pending-approval and canceled-dialog checks passed without real-money charges.
-- The Canada Royalty Tax Interview blocks paid catalog submission even to testing.
-  The owner chose to complete it and retain Canada. Production Amazon purchase
-  testing, the owner's export-compliance certification and final submission remain
-  pending. Broader physical performance/device-matrix checks are not claimed.
+- All three Amazon tax interviews show Completed; Canada remains included.
+  All seven test-only cosmetic IAPs show Approved. They are not yet Live or
+  promoted to the public catalog. A consenting adult tester group is prepared
+  for the signed Live App Test. Export-certification approval, test submission,
+  production purchase verification and public app submission remain pending.
+  Broader physical performance/device-matrix checks are not claimed.
 
 ## Already available
 
