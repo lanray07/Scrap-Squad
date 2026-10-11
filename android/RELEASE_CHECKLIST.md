@@ -26,8 +26,9 @@ The historical preparation tasks below now have the following updates. See
 - All three Amazon tax interviews show Completed; Canada remains included.
   All seven test-only cosmetic IAPs show Approved. They are not yet Live or
   promoted to the public catalog. A consenting adult tester group is prepared
-  for the signed Live App Test. Export-certification approval, test submission,
-  production purchase verification and public app submission remain pending.
+  for the signed Live App Test. The owner approved export certification and the
+  console confirms Test submitted on 11 October 2026. Production purchase
+  verification awaits Amazon making the test live; public app submission is pending.
   Broader physical performance/device-matrix checks are not claimed.
 
 ## Already available

@@ -55,12 +55,16 @@ SDK adapter compilation and physical Amazon App Tester checks passed on KFTRWI.
 The separate sandbox backend verified a purchase and restore; account switching,
 revocation, failure, pending approval and cancellation checks also passed. All
 seven test IAPs are Approved in Amazon's console. The signed Live App Test is
-prepared but not submitted; production purchase verification remains pending.
+submitted; production purchase verification awaits test availability.
 See `VERIFICATION.md` for evidence and limitations. Before release test all seven products,
 approved/declined/pending purchases, rotation/backgrounding during purchase,
 duplicate callbacks, interrupted persistence, paged restoration, account changes,
 refunds, offline cached ownership and invalid/mismatched receipt responses.
 Verify the backend secret never appears in the APK, CI output or client config.
+
+The signed Live App Test was submitted on 11 October 2026 after owner approval
+of export certification. Amazon confirms Test submitted; availability and
+production purchase verification remain pending.
 
 Official references:
 - [SDK integration](https://developer.amazon.com/docs/appstore-sdk/integrate-appstore-sdk.html)

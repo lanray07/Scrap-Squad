@@ -235,6 +235,8 @@ All three Amazon tax interviews now show Completed; Canada remains included.
 All seven test-only cosmetic products show Approved, but are not yet Live or
 promoted to the public catalog. One consenting adult tester was added to the
 Fire release test group. The signed Live App Test draft includes that group and
-is prepared for submission, pending the owner's export-certification approval.
+was submitted after the owner's export-certification approval on 11 October 2026.
+Amazon's dashboard confirms Test submitted, not yet Live. The same tester group
+was also saved for DevTest. Channel: `amzn1.channel.e6a5370f37f24cf5b0cebc40f89d5716`.
 Production installation/purchase checks through Amazon and public submission
 remain pending. No public publication is claimed.
