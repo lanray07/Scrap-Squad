@@ -173,3 +173,29 @@ All 62 native libraries exactly match the verified GitHub APK. It retains the
 separate test package, independent save and disabled purchases. This is a test
 build; the prior CI-signed UI Review must be removed before installation, deleting
 only that test app's save. Keep the original Scrap Squad installed.
+
+## Physical Fire purchase checks — 11 October 2026
+
+Test device: KFTRWI, Fire OS / Android API 28, ARM64. The separate accepted
+UI Review installation and its save were preserved. A fresh debug installation
+of the production package used the official Amazon App Tester in SANDBOX mode
+and the deployed sandbox receipt verifier; no real-money purchase was made.
+
+- Found and added the missing DRM response receiver. The release manifest keeps
+  Amazon's documented `com.amazon.drm.Permission.NOTIFY` protection.
+- This Fire OS installation denies App Tester's DRM broadcasts because the tester
+  does not hold that permission. A debug-only manifest uses the existing Amazon
+  signature-protected IAP notification permission instead. It is absent from release.
+- The opt-in physical test passed: SANDBOX mode and LICENSED callback in 1.751 s.
+- All seven entitlement products loaded from the test catalog.
+- Founder Pack purchase completed, and the actual server-verified entitlement
+  file contained one Founder receipt. Raw user and receipt identifiers were not
+  included in this report.
+- Renamed the test entitlement cache, restarted the app, and confirmed the Founder
+  receipt was recovered from Amazon and verified by the server.
+- Changed to Amazon App Tester's second test account and confirmed zero entitlements.
+- Corrected Android shop help and empty-restore wording to refer to Amazon.
+
+Production installation through Amazon, refund/pending/cancel cases, final signed
+artifact validation and submission remain separate gates. CI signed release run
+38154985024 passed at c206913; the Android account wording requires a newer release.

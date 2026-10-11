@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <application>
+        <!-- Fire OS 7 App Tester lacks the DRM NOTIFY permission. Its existing
+             Amazon signature permission still restricts responses to Amazon apps.
+             Release builds retain the documented DRM permission. -->
+        <receiver android:name="com.amazon.device.drm.ResponseReceiver"
+            android:permission="com.amazon.inapp.purchasing.Permission.NOTIFY"
+            tools:replace="android:permission" />
+    </application>
+</manifest>

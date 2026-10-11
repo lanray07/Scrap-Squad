@@ -123,5 +123,5 @@ internal fun MenuScreens.shop() {
         val equipped = selected.optString("weaponEffectID") == "prism"
         button(if (equipped) "cosmetic.remove" else "cosmetic.equip") { cosmetics.weaponEffect(if (equipped) null else "prism"); show() }
     }
-    label(t("shop.note"))
+    label(t("android.shop.note"))
 }

@@ -12,5 +12,7 @@
   "android.blueprints.undiscovered": "Undiscovered",
   "android.blueprints.empty": "No blueprints match. Try another search or filter.",
   "android.blueprints.detail": "Tap a card to explore its blueprint",
-  "android.blueprints.ingredients": "Fusion ingredients"
+  "android.blueprints.ingredients": "Fusion ingredients",
+  "android.shop.note": "Cosmetics are optional. Prices come from the Amazon Appstore. Restore purchases using the Amazon account that bought them. All gameplay and progression remain available without buying a pack.",
+  "android.shop.restore.empty": "No previous cosmetic purchases were found for this Amazon account."
 }

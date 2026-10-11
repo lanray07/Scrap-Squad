@@ -189,7 +189,7 @@ internal class AmazonPurchases private constructor(context: Context) : Purchasin
                         persist(id, next)
                         receipts.clear(); receipts.putAll(next)
                         checked.filter { it.active && it.receiptId !in revokedReceiptIDs }.forEach { PurchasingService.notifyFulfillment(it.receiptId, FulfillmentResult.FULFILLED) }
-                        status(if (checked.any { it.receiptId in revokedReceiptIDs }) "shop.revoked" else if (owned.isEmpty()) "shop.restore.empty" else "shop.verified")
+                        status(if (checked.any { it.receiptId in revokedReceiptIDs }) "shop.revoked" else if (owned.isEmpty()) "android.shop.restore.empty" else "shop.verified")
                     } catch (e: Exception) { android.util.Log.e("ScrapIAP", "Entitlement commit failed", e); status("shop.unavailable") }
                 }
             } catch (e: Exception) {

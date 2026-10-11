@@ -23,6 +23,8 @@
   <string name="sq_533c23985e1b810a" formatted="false">"This battle could not be recovered. Your saved progress and battle record have been preserved. Please contact support."</string>
   <string name="sq_8df10c742cd17059" formatted="false">"Your squad is still out there"</string>
   <string name="sq_05be3ed6e97a5bc5" formatted="false">"s"</string>
+  <string name="sq_24d3397c901fb510" formatted="false">"Cosmetics are optional. Prices come from the Amazon Appstore. Restore purchases using the Amazon account that bought them. All gameplay and progression remain available without buying a pack."</string>
+  <string name="sq_537cbb51fdc6f5f2" formatted="false">"No previous cosmetic purchases were found for this Amazon account."</string>
   <string name="sq_b9e4517ffb5dca31" formatted="false">"Support"</string>
   <string name="sq_7f75361aac296f98" formatted="false">"Scrap Squad"</string>
   <string name="sq_4e3d5de6288f3dfb" formatted="false">"Build it. Merge it. Survive the swarm."</string>

@@ -25,8 +25,8 @@ class AmazonSandboxConnectionTest {
                 latch.countDown()
             }
         }
-        assertTrue("Amazon license callback timed out", latch.await(30, TimeUnit.SECONDS))
         assertEquals("SANDBOX", LicensingService.getAppstoreSDKMode())
+        assertTrue("Amazon license callback timed out", latch.await(30, TimeUnit.SECONDS))
         assertEquals(LicenseResponse.RequestStatus.LICENSED, status)
     }
 }
