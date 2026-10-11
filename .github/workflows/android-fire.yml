@@ -3,6 +3,11 @@ on:
   push:
     branches: ['codex/amazon-fire-port']
   workflow_dispatch:
+    inputs:
+      build_release:
+        description: 'Build a signed Amazon release after verification'
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
@@ -15,6 +20,7 @@ jobs:
     env:
       SCRAP_AMAZON_VERIFY_URL: ${{ vars.SCRAP_AMAZON_VERIFY_URL }}
       SCRAP_AMAZON_SANDBOX_URL: ${{ vars.SCRAP_AMAZON_SANDBOX_URL }}
+      SCRAP_ANDROID_PRIVACY_URL: ${{ vars.SCRAP_ANDROID_PRIVACY_URL }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -83,6 +89,27 @@ jobs:
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: true
           script: python3 android/tools/verify_runtime.py
+      - name: Build signed Amazon release after Android verification
+        if: github.event_name == 'workflow_dispatch' && inputs.build_release
+        env:
+          RELEASE_KEY_BASE64: ${{ secrets.SCRAP_ANDROID_KEYSTORE_BASE64 }}
+          SCRAP_ANDROID_KEYSTORE: ${{ runner.temp }}/scrap-squad-amazon.jks
+          SCRAP_ANDROID_STORE_PASSWORD: ${{ secrets.SCRAP_ANDROID_STORE_PASSWORD }}
+          SCRAP_ANDROID_KEY_PASSWORD: ${{ secrets.SCRAP_ANDROID_KEY_PASSWORD }}
+          SCRAP_ANDROID_KEY_ALIAS: ${{ secrets.SCRAP_ANDROID_KEY_ALIAS }}
+        run: |
+          python3 - <<'PY'
+          import base64, os, pathlib
+          for name in ('RELEASE_KEY_BASE64', 'SCRAP_ANDROID_STORE_PASSWORD', 'SCRAP_ANDROID_KEY_PASSWORD', 'SCRAP_ANDROID_KEY_ALIAS', 'SCRAP_AMAZON_VERIFY_URL', 'SCRAP_ANDROID_PRIVACY_URL'):
+              if not os.environ.get(name): raise SystemExit('Missing release configuration: ' + name)
+          key = pathlib.Path(os.environ['SCRAP_ANDROID_KEYSTORE'])
+          key.write_bytes(base64.b64decode(os.environ['RELEASE_KEY_BASE64'], validate=True))
+          key.chmod(0o600)
+          PY
+          trap 'rm -f "$SCRAP_ANDROID_KEYSTORE"' EXIT
+          cd android
+          ./gradlew :app:assembleRelease --console=plain
+          "$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --verbose app/build/outputs/apk/release/app-release.apk
       - uses: actions/upload-artifact@v4
         if: always()
         with:

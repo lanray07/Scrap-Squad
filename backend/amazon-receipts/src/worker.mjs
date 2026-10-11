@@ -1,3 +1,4 @@
+import { privacy } from './privacy.mjs';
 // No database, receipt cache or application logging. Amazon remains authoritative.
 export const SKUS = new Set(['founder', 'styles', 'ronin', 'bastion', 'medic', 'prism', 'collection'].map(id => `com.ScrapSquad.app.${id}`));
 const MAX_BODY = 8192;
@@ -27,6 +28,10 @@ function identifier(value) { return typeof value === 'string' && value.length > 
 
 export async function handle(request, env, fetchAmazon = (url, options) => globalThis.fetch(url, options)) {
   const url = new URL(request.url);
+  if (url.pathname === '/privacy' && !url.search && request.method === 'GET') return new Response(privacy, { headers: {
+    'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff',
+    'Content-Security-Policy': "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; frame-ancestors 'none'"
+  } });
   if (url.pathname !== '/v1/amazon/verify' || url.search) return reply(404, { error: 'not_found' });
   if (request.method !== 'POST') return reply(405, { error: 'method_not_allowed' });
   if (request.headers.get('content-type')?.split(';')[0].trim().toLowerCase() !== 'application/json') return reply(415, { error: 'json_required' });
