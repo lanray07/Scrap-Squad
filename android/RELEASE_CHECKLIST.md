@@ -5,6 +5,29 @@ Initial ABI support: ARM64; x86-64 is retained for emulator testing. Minimum And
 API 28, OpenGL ES 2 and touch required. Filter the console device list to compatible
 Fire tablets; do not select Fire TV, Vega OS or all historical Fire models.
 
+## Current release status — 11 October 2026
+
+The historical preparation tasks below now have the following updates. See
+`VERIFICATION.md` for evidence and limits:
+
+- Signed release CI run `38156810561` at `2bc4f04` passed. The downloaded APK's
+  signature, integrity, version, ABIs, non-debuggable flag and configured endpoints
+  were verified. Amazon accepted the APK with DRM applied.
+- Eight compatible Fire tablet models are selected; no TV/automotive device.
+- Six description variants and ten English-default tablet screenshots are complete.
+- All seven cosmetic drafts have original product artwork and saved paid GBP prices:
+  Founder 2.99, Styles 1.99, Ronin/Bastion/Medic/Prism 2.99 each, Collection 7.99.
+- The production privacy policy is deployed; matching user-ID/purchase-history
+  disclosures are saved. Target audience is 13+ and rating questions are complete.
+- Durable private release signing is backed up outside the repository. GitHub
+  release secrets are configured; Apple credentials and iOS files are preserved.
+- Physical KFTRWI sandbox purchase, restore, account-change, revocation, failure,
+  pending-approval and canceled-dialog checks passed without real-money charges.
+- The Canada Royalty Tax Interview blocks paid catalog submission even to testing.
+  The owner chose to complete it and retain Canada. Production Amazon purchase
+  testing, the owner's export-compliance certification and final submission remain
+  pending. Broader physical performance/device-matrix checks are not claimed.
+
 ## Already available
 
 - Shared original Swift simulation, Kotlin menus and libGDX rendering.
