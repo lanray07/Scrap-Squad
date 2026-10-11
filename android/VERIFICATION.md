@@ -196,6 +196,42 @@ and the deployed sandbox receipt verifier; no real-money purchase was made.
 - Changed to Amazon App Tester's second test account and confirmed zero entitlements.
 - Corrected Android shop help and empty-restore wording to refer to Amazon.
 
-Production installation through Amazon, refund/pending/cancel cases, final signed
-artifact validation and submission remain separate gates. CI signed release run
-38154985024 passed at c206913; the Android account wording requires a newer release.
+Further physical checks passed in the same disposable sandbox profile:
+
+- Returned to test account 1 and recovered its one verified Founder entitlement.
+- Canceled the fulfilled Founder transaction in App Tester. The app removed access,
+  persisted one revoked receipt and displayed the refund/revocation message.
+- Forced a FAILED purchase response. No entitlement was granted; the shop showed
+  an unavailable message and remained usable.
+- Used App Tester's Request Purchase flow. The tester confirmed approval was
+  required; no entitlement was granted. Canceling another purchase dialog also
+  left the verified entitlement count at zero.
+- Restored the default purchase response, disabled the sandbox system property,
+  removed the temporary App Tester battery exemption and restored normal sleep.
+
+## Signed release and Amazon listing preparation
+
+Run [38156810561](https://github.com/lanray07/Scrap-Squad/actions/runs/38156810561)
+passed at `2bc4f04`, including original Swift tests, native parity, Android
+instrumentation and signed release packaging. The downloaded release APK passed
+ZIP integrity and APK signature verification; it is not debuggable. Package:
+`com.scrapsquad.fire`, version `1.0` / code `1`, minimum API 28, target API 36,
+ARM64 and x86_64. The production verifier, privacy URL and Amazon wording are
+embedded; the release DRM receiver retains the documented protected permission.
+
+APK SHA-256: `e9aaaaa2fcc61e082657532cd0856c0579e95487e3ee3994943f88bc11751aaa`.
+Signing certificate SHA-256:
+`623458bf6dbb121de6a2a6219420cd6115a5e0547d40304652c01dd184fe164e`.
+
+Amazon accepted the uploaded APK with DRM applied. Eight compatible Fire tablet
+models are selected, including the tested KFTRWI; no Fire TV or automotive device
+is selected. All six store descriptions and the English-default ten tablet
+screenshots are complete. The 13+ targeting, rating questionnaire and privacy
+disclosures are saved, including user IDs and purchase history for functionality
+and fraud prevention. Support email: banksmi@mail.com. Core gameplay is free;
+seven optional one-time cosmetic products have saved GBP pricing and original art.
+
+The Canada Royalty Tax Interview still blocks submission of paid cosmetics,
+including test-only submission. The owner opted to complete the interview and
+retain Canada. Production installation/purchase checks through Amazon and final
+submission remain pending. No public publication is claimed.
