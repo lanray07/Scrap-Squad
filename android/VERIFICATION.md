@@ -238,8 +238,8 @@ Fire release test group. The signed Live App Test draft includes that group and
 was submitted after the owner's export-certification approval on 11 October 2026.
 Amazon's dashboard confirms Test submitted, not yet Live. The same tester group
 was also saved for DevTest. Channel: `amzn1.channel.e6a5370f37f24cf5b0cebc40f89d5716`.
-Production installation/purchase checks through Amazon and public submission
-remain pending. No public publication is claimed.
+Production installation and Founder purchase checks through Amazon subsequently
+passed as recorded below. The public app was submitted on 12 October 2026.
 
 ### Amazon-delivered LAT installation — 12 October 2026
 
@@ -256,6 +256,28 @@ Amazon account/restore callbacks return the expected empty-purchase state.
 Founder’s Pack displays the catalog price £2.99 and an enabled purchase button.
 Its Amazon checkout opens successfully. The owner approved the free LAT checkout
 and acceptance of Amazon's displayed terms; Amazon then requested phone/password
-confirmation directly on the Kindle. Account confirmation, server-verified unlock
-and restoration of that entitlement remain pending.
-No purchase completion or charge is claimed.
+confirmation directly on the Kindle. The owner completed account confirmation.
+The app displayed `Purchase verified.` and Founder’s Pack displayed `Owned`,
+with Equip and Try in the arena available. A full process force-stop and relaunch
+retained ownership. An explicit Restore purchases request completed with
+`Purchase verified.` and ownership retained. Scrap, credits and cores remained
+350 / 500 / 3: this cosmetic purchase granted no gameplay currency.
+This verifies the Amazon-delivered release's Founder LAT purchase, production
+receipt-verifier integration, restart persistence and restore path. Other products
+were not individually purchased in LAT; sandbox and automated edge-case coverage
+are separate evidence. No actual charge was observed or reported.
+
+Six Live test products were promoted to the public catalog on 12 October;
+Amazon now lists them without TEST and with Approved status. Star Medic PATCH
+remains test-only Approved and cannot yet be promoted because it is not Live.
+
+### Public app submission — 12 October 2026
+
+The owner approved the public export certification. The expired schedule was
+cleared at the owner's request so publishing starts after approval. Reviewer
+instructions include the completed LAT Founder purchase/restart/restore checks.
+Amazon confirms `SUBMITTED` and `App Submission Successful` at 03:47 GMT-7 on
+12 October 2026. Release: `amzn1.devportal.apprelease.f82811624c8b4964b45fdeb8464fdc4a`.
+Amazon estimates 17 October 2026 at 04:00 PDT (12:00 Europe/London); this is an
+estimate, not approval or a guaranteed publication time. Star Medic promotion
+remains pending Amazon's Live test status. iOS was not modified.

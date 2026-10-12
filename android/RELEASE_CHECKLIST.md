@@ -105,8 +105,15 @@ an AAB if deliberately chosen and validated), confirm package/version/device
 filtering, prices/countries, content rating and payment/tax details. Enter accurate
 listing text and localized drafts, icons, reviewed screenshots and public support
 and privacy links. Submit the app and its IAP items only after the checks above.
-Record the submission ID and status. Submission and approval are distinct; neither
-has occurred for this port.
+Record the submission ID and status. Submission and approval are distinct.
+The signed Live App Test was submitted on 11 October 2026. The Amazon-delivered
+release passed Founder purchase, server verification, process restart and restore
+on KFTRWI on 12 October. Six cosmetic IAPs were promoted to the public catalog;
+Star Medic PATCH remains test-only Approved until Amazon makes it Live. The public
+app was submitted on 12 October after owner export-certification approval. Amazon
+confirms SUBMITTED and App Submission Successful. The owner requested publication
+as soon as Amazon approves, replacing the expired schedule. Amazon's estimate is
+17 October 2026 at 12:00 Europe/London; approval/publication is not yet confirmed.
 
 Requirements checked on 8 October 2026:
 - [Submission](https://developer.amazon.com/docs/app-submission/submitting-apps-to-amazon-appstore.html)

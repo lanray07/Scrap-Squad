@@ -21,9 +21,9 @@ Apple purchases do not transfer.
    key if moving the app to another Amazon record or developer account.
 2. The Cloudflare Workers service in `backend/amazon-receipts/` was deployed on
    9 October 2026. Production has its server-only Amazon merchant secret stored;
-   see its `DEPLOYMENT.md` for actual URLs and live smoke checks. No real
-   production purchase has been granted in testing; sandbox receipts have been
-   verified through the separate sandbox Worker. The live synthetic invalid
+   see its `DEPLOYMENT.md` for actual URLs and live smoke checks. A free LAT
+   Founder purchase was verified through the production Worker on 12 October;
+   sandbox receipts were verified through the separate sandbox Worker. The live synthetic invalid
    receipt check rejects ownership. Android's strict `HttpAmazonReceiptVerifier` is configured by public
    `SCRAP_AMAZON_VERIFY_URL` and debug-only `SCRAP_AMAZON_SANDBOX_URL` build
    environment variables. Blank or invalid configuration leaves purchases disabled.
@@ -54,8 +54,10 @@ bundle overlap and revoked selections; cosmetics never enter gameplay balance.
 SDK adapter compilation and physical Amazon App Tester checks passed on KFTRWI.
 The separate sandbox backend verified a purchase and restore; account switching,
 revocation, failure, pending approval and cancellation checks also passed. All
-seven test IAPs are Approved in Amazon's console. The signed Live App Test is
-submitted; production purchase verification awaits test availability.
+seven test IAPs were Approved in Amazon's console. The signed Live App Test is
+in progress. The Amazon-delivered non-debuggable release passed Founder purchase,
+server verification, process restart and explicit restore on KFTRWI on 12 October
+2026. The other six products have not been individually purchased in LAT.
 See `VERIFICATION.md` for evidence and limitations. Before release test all seven products,
 approved/declined/pending purchases, rotation/backgrounding during purchase,
 duplicate callbacks, interrupted persistence, paged restoration, account changes,
@@ -63,8 +65,11 @@ refunds, offline cached ownership and invalid/mismatched receipt responses.
 Verify the backend secret never appears in the APK, CI output or client config.
 
 The signed Live App Test was submitted on 11 October 2026 after owner approval
-of export certification. Amazon confirms Test submitted; availability and
-production purchase verification remain pending.
+of export certification. Test 1 subsequently became available and the production
+Founder purchase/restore path passed. Six products were promoted to the public
+catalog; Star Medic PATCH still awaits Live test status before promotion.
+The public app was submitted on 12 October 2026 after owner export-certification
+approval. Amazon confirms SUBMITTED; public app approval is still pending.
 
 Official references:
 - [SDK integration](https://developer.amazon.com/docs/appstore-sdk/integrate-appstore-sdk.html)
