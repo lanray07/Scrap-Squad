@@ -240,3 +240,22 @@ Amazon's dashboard confirms Test submitted, not yet Live. The same tester group
 was also saved for DevTest. Channel: `amzn1.channel.e6a5370f37f24cf5b0cebc40f89d5716`.
 Production installation/purchase checks through Amazon and public submission
 remain pending. No public publication is claimed.
+
+### Amazon-delivered LAT installation — 12 October 2026
+
+The first apparent installation retained the previous local debug APK (identical
+SHA-256 to the local debug build). Its private test data and APK were backed up
+under the ignored device report directory before removing that debug package.
+The separate `com.scrapsquad.fire.uireview` app and its player progress were kept.
+After a fresh Amazon download, `com.scrapsquad.fire` version 1.0/code 1 is installed
+by `com.amazon.venezia`, is not debuggable, and has Amazon's Lanray certificate
+SHA-256 `8e35b165d5a1dc14c10820cee25ed2c24e9c543ceb2f059b9f5bc93baa672297`.
+App Tester sandbox mode is `none`.
+
+Amazon account/restore callbacks return the expected empty-purchase state.
+Founder’s Pack displays the catalog price £2.99 and an enabled purchase button.
+Its Amazon checkout opens successfully. The owner approved the free LAT checkout
+and acceptance of Amazon's displayed terms; Amazon then requested phone/password
+confirmation directly on the Kindle. Account confirmation, server-verified unlock
+and restoration of that entitlement remain pending.
+No purchase completion or charge is claimed.
