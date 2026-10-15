@@ -21,5 +21,6 @@
   "android.shop.loading": "Connecting to Amazon. Prices will appear when the store responds. You can retry if the connection takes too long.",
   "android.shop.product": "Amazon has not returned a price for this pack in your marketplace. Retry the store or choose another pack. You have not been charged.",
   "android.shop.overlap": "You already own content included in this pack. Choose an individual cosmetic to avoid buying the same content twice.",
-  "android.shop.timeout": "Amazon did not respond in time. Check your internet connection and Amazon Appstore sign-in, then retry. No new purchase has been started."
+  "android.shop.timeout": "Amazon did not respond in time. Check your internet connection and Amazon Appstore sign-in, then retry. No new purchase has been started.",
+  "android.shop.failed": "Amazon did not complete this purchase. Try again, or use Restore purchases if you already bought this pack."
 }

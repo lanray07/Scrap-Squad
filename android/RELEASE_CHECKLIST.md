@@ -115,6 +115,12 @@ confirms SUBMITTED and App Submission Successful. The owner requested publicatio
 as soon as Amazon approves, replacing the expired schedule. Amazon's estimate is
 17 October 2026 at 12:00 Europe/London; approval/publication is not yet confirmed.
 
+Update, 15 October: code 1 was rejected for inert IAP buttons and is Pending Action.
+The code 2 correction passes a physical regression test for missing-store-data
+tap feedback, but still requires signed-release checks and Amazon-delivered
+checkout verification. Star Medic is now promoted (public Approved); the other
+six cosmetics are public Live. The previous publication estimate no longer applies.
+
 Requirements checked on 8 October 2026:
 - [Submission](https://developer.amazon.com/docs/app-submission/submitting-apps-to-amazon-appstore.html)
 - [Listing text and assets](https://developer.amazon.com/docs/app-submission/appstore-details.html)

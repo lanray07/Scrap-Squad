@@ -71,6 +71,14 @@ catalog; Star Medic PATCH still awaits Live test status before promotion.
 The public app was submitted on 12 October 2026 after owner export-certification
 approval. Amazon confirms SUBMITTED; public app approval is still pending.
 
+Amazon subsequently rejected code 1 for unresponsive Buy pack controls. On
+15 October, `ShopInteractionTest` reproduced disabled controls when store data was
+unavailable, then passed after adding per-pack explanations and an actionable
+availability/retry dialog. The exact upstream failure on Amazon's review account
+is unknown. Six public products are Live; Star Medic was promoted on 15 October
+and is public Approved. Code 2 still needs signed-release and Amazon-delivered
+checkout validation before resubmission. See the dated record in VERIFICATION.md.
+
 Official references:
 - [SDK integration](https://developer.amazon.com/docs/appstore-sdk/integrate-appstore-sdk.html)
 - [Amazon IAP implementation](https://developer.amazon.com/docs/in-app-purchasing/iap-implement-iap.html)

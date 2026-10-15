@@ -109,7 +109,11 @@ internal class AmazonPurchases private constructor(context: Context) : Purchasin
     fun purchase(sku: String) {
         purchaseBlockReason(sku)?.let { status(it); return }
         status("shop.pending")
-        runCatching { PurchasingService.purchase(sku) }.onFailure { status("shop.unavailable") }
+        runCatching { PurchasingService.purchase(sku) }.onFailure { purchaseFailed() }
+    }
+    private fun purchaseFailed() {
+        status("android.shop.failed")
+        android.widget.Toast.makeText(app, Strings(app).text("android.shop.failed"), android.widget.Toast.LENGTH_LONG).show()
     }
     fun canPurchase(sku: String): Boolean {
         val packs = catalog.getJSONArray("packs").objects()
@@ -159,7 +163,7 @@ internal class AmazonPurchases private constructor(context: Context) : Purchasin
             }
             PurchaseResponse.RequestStatus.PENDING -> status("shop.pending") // No entitlement.
             PurchaseResponse.RequestStatus.ALREADY_PURCHASED -> restore()
-            else -> status("shop.unavailable")
+            else -> purchaseFailed()
         }
     }
     override fun onPurchaseUpdatesResponse(response: PurchaseUpdatesResponse) {

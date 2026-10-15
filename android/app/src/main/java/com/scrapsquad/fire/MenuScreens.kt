@@ -45,7 +45,10 @@ class MenuScreens(internal val activity: MainActivity, internal val repository: 
         root.addView(Ui.text(activity, listOf("scrap", "credits", "cores").joinToString("   ") { "${t("currency.$it")} ${number(profile.getInt(it))}" }, 14f, Ui.mint))
         val tabs = LinearLayout(activity).apply { orientation = LinearLayout.HORIZONTAL }
         listOf("city", "squad", "battle", "blueprints", "shop").forEach { tab ->
-            tabs.addView(Ui.button(activity, t("nav.$tab")) { page = tab; show() }.apply {
+            tabs.addView(Ui.button(activity, t("nav.$tab")) {
+                page = tab; show()
+                if (tab == "shop") activity.purchases.refresh()
+            }.apply {
                 textSize = 12f; alpha = if (page == tab) 1f else .7f
                 layoutParams = LinearLayout.LayoutParams(0, -2, 1f).apply { setMargins(3, 8, 3, 8) }
             })

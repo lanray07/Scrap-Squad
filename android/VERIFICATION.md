@@ -299,6 +299,9 @@ explanation/retry dialog. Missing prices now show Check Amazon availability, wit
 inline explanations and a retry dialog. Available packs keep Buy pack. Store
 initialization has a 15-second timeout; empty/failed product responses are surfaced.
 DRM, receipt verification, account isolation and cosmetic grant rules are retained.
+Shop navigation also retries the store connection, and failed checkout requests
+show visible feedback. The final local code 2 QA build passed the same physical
+test in 4.058 seconds. It packages the updated English strings.
 
 On 15 October, the six previously promoted IAPs showed public Live status. Star
 Medic PATCH was now Live in test and was successfully promoted: it is public

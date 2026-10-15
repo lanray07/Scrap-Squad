@@ -25,6 +25,7 @@
   <string name="sq_05be3ed6e97a5bc5" formatted="false">"s"</string>
   <string name="sq_c379333d5463bc43" formatted="false">"Check Amazon availability"</string>
   <string name="sq_553103ef47e9a668" formatted="false">"Amazon checkout is not connected yet. Check your internet connection, sign in to the Amazon Appstore and use the Amazon-installed version, then retry. You have not been charged."</string>
+  <string name="sq_0ee4ae4a9be5fe83" formatted="false">"Amazon did not complete this purchase. Try again, or use Restore purchases if you already bought this pack."</string>
   <string name="sq_4cc091f9a1055e21" formatted="false">"Connecting to Amazon. Prices will appear when the store responds. You can retry if the connection takes too long."</string>
   <string name="sq_24d3397c901fb510" formatted="false">"Cosmetics are optional. Prices come from the Amazon Appstore. Restore purchases using the Amazon account that bought them. All gameplay and progression remain available without buying a pack."</string>
   <string name="sq_4b9bdccbb9e01053" formatted="false">"You already own content included in this pack. Choose an individual cosmetic to avoid buying the same content twice."</string>
