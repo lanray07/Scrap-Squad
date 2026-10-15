@@ -308,3 +308,19 @@ Medic PATCH was now Live in test and was successfully promoted: it is public
 Approved, awaiting Live propagation. No test-only products remain. Version 1.0/code
 2 is being prepared; its signed build, Amazon-delivered checkout verification and
 resubmission remain pending. The original submission is Pending Action.
+
+Signed code 2 CI run [38769263531](https://github.com/lanray07/Scrap-Squad/actions/runs/38769263531)
+at `b63d434` succeeded: 15 Android instrumentation tests passed, including
+the shop interaction regression, with one sandbox connection test skipped in CI
+(16 total, zero failures/errors), and both Android architectures compiled. The
+downloaded release is version 1.0/code 2, non-debuggable, signed with the original
+release certificate (`623458bf6dbb121de6a2a6219420cd6115a5e0547d40304652c01dd184fe164e`).
+APK SHA-256: `65db09766789b11e2e7d5f64093c41d871d6d05eebd97f5ef13e145c8ed91ffe`.
+This confirms build and regression checks, not Amazon-delivered code 2 checkout.
+
+Amazon accepted that APK with DRM in an upcoming Test 1 draft named
+`Scrap Squad 1.0 build 2 - responsive Amazon shop`, beta release
+`amzn1.devportal.apprelease.2344982a568541da900e4eda54210545`. The original eight
+Fire tablet selections and existing consenting tester group are retained.
+Submit Test/export certification awaits owner approval; no code 2 test or public
+resubmission has been submitted yet.
