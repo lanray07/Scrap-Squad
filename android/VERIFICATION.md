@@ -322,5 +322,7 @@ Amazon accepted that APK with DRM in an upcoming Test 1 draft named
 `Scrap Squad 1.0 build 2 - responsive Amazon shop`, beta release
 `amzn1.devportal.apprelease.2344982a568541da900e4eda54210545`. The original eight
 Fire tablet selections and existing consenting tester group are retained.
-Submit Test/export certification awaits owner approval; no code 2 test or public
-resubmission has been submitted yet.
+The owner approved Submit Test/export certification on 15 October 2026. Amazon
+confirms `Test submitted` for this build 2 release in Test 1. It is awaiting
+Amazon processing; the prior code 1 test remains in progress. Amazon-delivered
+code 2 checkout verification and public resubmission remain pending.
