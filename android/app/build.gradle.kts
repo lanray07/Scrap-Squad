@@ -6,7 +6,7 @@ android {
         applicationId = "com.scrapsquad.fire"
         minSdk = 28
         targetSdk = 36
-        versionCode = 1
+        versionCode = 2
         versionName = "1.0"
         val privacyUrl = providers.environmentVariable("SCRAP_ANDROID_PRIVACY_URL").orElse("").get()
         buildConfigField("String", "PRIVACY_POLICY_URL", "\"" + privacyUrl.replace("\\", "\\\\").replace("\"", "\\\"") + "\"")
@@ -19,6 +19,7 @@ android {
     }
     compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
     buildFeatures { buildConfig = true; resValues = true }
+    testBuildType = providers.gradleProperty("scrapTestBuildType").orElse("debug").get()
     packaging { jniLibs.useLegacyPackaging = true }
     signingConfigs {
         create("release") {
@@ -33,6 +34,13 @@ android {
     }
     buildTypes {
         release { signingConfig = signingConfigs.getByName("release"); isMinifyEnabled = false }
+        create("iapQa") {
+            initWith(getByName("debug"))
+            applicationIdSuffix = ".iapqa"
+            versionNameSuffix = "-iap-qa"
+            resValue("string", "app_name", "Scrap Squad IAP QA")
+            matchingFallbacks += "debug"
+        }
         create("uiReview") {
             initWith(getByName("debug"))
             applicationIdSuffix = ".uireview"

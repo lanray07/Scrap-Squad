@@ -46,6 +46,9 @@ internal class AmazonPurchases private constructor(context: Context) : Purchasin
     private var user: String? = null
     private var generation = 0
     private var restoreInFlight = false
+    private var catalogLoading = false
+    private var refreshTicket = 0
+    private var catalogIssue = "android.shop.connect"
     private val products = mutableMapOf<String, Product>()
     private val receipts = linkedMapOf<String, VerifiedAmazonReceipt>()
     private val revokedReceiptIDs = mutableSetOf<String>()
@@ -56,6 +59,13 @@ internal class AmazonPurchases private constructor(context: Context) : Purchasin
         (verifier !is HttpAmazonReceiptVerifier || if (environment == AmazonStoreEnvironment.SANDBOX) BuildConfig.DEBUG && BuildConfig.RECEIPT_SANDBOX_URL.isNotEmpty() else BuildConfig.RECEIPT_VERIFY_URL.isNotEmpty())
     val selectionKey get() = user?.let { id -> "selection." + java.security.MessageDigest.getInstance("SHA-256").digest(id.toByteArray()).joinToString("") { "%02x".format(it) } }
     fun price(sku: String): String? = products[sku]?.price
+    fun purchaseBlockReason(sku: String): String? = when {
+        !canPurchase(sku) -> "android.shop.overlap"
+        !ready -> if (catalogLoading) "android.shop.loading" else catalogIssue
+        products[sku]?.productType != ProductType.ENTITLED || price(sku).isNullOrBlank() ->
+            if (catalogLoading) "android.shop.loading" else "android.shop.product"
+        else -> null
+    }
 
     /** Called only once an actual backend adapter is configured. No default verifier. */
     fun configure(value: AmazonReceiptVerifier) { verifier = value; refresh() }
@@ -71,7 +81,15 @@ internal class AmazonPurchases private constructor(context: Context) : Purchasin
     }
     fun refresh() {
         start()
-        if (!registered) return
+        if (!registered) { catalogIssue = "android.shop.connect"; status("shop.unavailable"); return }
+        catalogLoading = true
+        catalogIssue = "android.shop.connect"
+        val ticket = ++refreshTicket
+        main.postDelayed({
+            if (ticket == refreshTicket && catalogLoading) {
+                catalogLoading = false; catalogIssue = "android.shop.timeout"; status("android.shop.timeout")
+            }
+        }, 15000)
         status("shop.loading")
         runCatching {
             LicensingService.verifyLicense(app) { response ->
@@ -79,9 +97,9 @@ internal class AmazonPurchases private constructor(context: Context) : Purchasin
                 environment = AmazonStoreEnvironment.entries.firstOrNull { it.name == LicensingService.getAppstoreSDKMode() }
                 if (!BuildConfig.DEBUG && environment == AmazonStoreEnvironment.SANDBOX) licensed = false
                 if (licensed && environment != null) runCatching { PurchasingService.getUserData() }.onFailure { status("shop.unavailable") }
-                else status("shop.unavailable")
+                else { catalogLoading = false; catalogIssue = "android.shop.connect"; status("shop.unavailable") }
             }
-        }.onFailure { licensed = false; status("shop.unavailable") }
+        }.onFailure { licensed = false; catalogLoading = false; status("shop.unavailable") }
     }
     fun restore() {
         if (!ready || restoreInFlight) { if (!ready) status("shop.unavailable"); return }
@@ -89,7 +107,7 @@ internal class AmazonPurchases private constructor(context: Context) : Purchasin
         runCatching { PurchasingService.getPurchaseUpdates(true) }.onFailure { restoreInFlight = false; status("shop.unavailable") }
     }
     fun purchase(sku: String) {
-        if (!ready || products[sku]?.productType != ProductType.ENTITLED || !canPurchase(sku)) { status("shop.unavailable"); return }
+        purchaseBlockReason(sku)?.let { status(it); return }
         status("shop.pending")
         runCatching { PurchasingService.purchase(sku) }.onFailure { status("shop.unavailable") }
     }
@@ -118,7 +136,7 @@ internal class AmazonPurchases private constructor(context: Context) : Purchasin
         changed?.invoke()
     }
     override fun onUserDataResponse(response: UserDataResponse) {
-        if (response.requestStatus != UserDataResponse.RequestStatus.SUCCESSFUL) { switchUser(null); status("shop.unavailable"); return }
+        if (response.requestStatus != UserDataResponse.RequestStatus.SUCCESSFUL) { catalogLoading = false; switchUser(null); status("shop.unavailable"); return }
         switchUser(response.userData.userId)
         runCatching { PurchasingService.getProductData(skus) }.onFailure { status("shop.unavailable") }
         if (verifier != null) {
@@ -128,9 +146,10 @@ internal class AmazonPurchases private constructor(context: Context) : Purchasin
         } else status("shop.unavailable")
     }
     override fun onProductDataResponse(response: ProductDataResponse) {
+        catalogLoading = false
         products.clear()
         if (response.requestStatus == ProductDataResponse.RequestStatus.SUCCESSFUL) products.putAll(response.productData.filter { it.key in skus && it.value.productType == ProductType.ENTITLED })
-        changed?.invoke()
+        if (products.isEmpty()) status("android.shop.product") else changed?.invoke()
     }
     override fun onPurchaseResponse(response: PurchaseResponse) {
         when (response.requestStatus) {

@@ -281,3 +281,27 @@ Amazon confirms `SUBMITTED` and `App Submission Successful` at 03:47 GMT-7 on
 Amazon estimates 17 October 2026 at 04:00 PDT (12:00 Europe/London); this is an
 estimate, not approval or a guaranteed publication time. Star Medic promotion
 remains pending Amazon's Live test status. iOS was not modified.
+
+### Amazon rejection investigation — 15 October 2026
+
+Amazon did not publish version 1.0/code 1. Primary and functionality validation
+passed, but the review video shows grey Buy pack buttons without prices. The
+catalog/connection prerequisite disabled those controls and prevented tap feedback.
+The precise reason the review account lacked store data is not available in the
+report; it must not be inferred from the successful Founder LAT test alone.
+
+A dedicated `.iapqa` installation preserves the Amazon release and UI Review saves.
+`ShopInteractionTest` reproduced the inactive controls on KFTRWI in 3.832 seconds
+(`am instrument -w -e class com.scrapsquad.fire.ShopInteractionTest
+com.scrapsquad.fire.iapqa.test/androidx.test.runner.AndroidJUnitRunner`). With the
+fix, the same test passes in 4.506 seconds and asserts that a tap opens an actual
+explanation/retry dialog. Missing prices now show Check Amazon availability, with
+inline explanations and a retry dialog. Available packs keep Buy pack. Store
+initialization has a 15-second timeout; empty/failed product responses are surfaced.
+DRM, receipt verification, account isolation and cosmetic grant rules are retained.
+
+On 15 October, the six previously promoted IAPs showed public Live status. Star
+Medic PATCH was now Live in test and was successfully promoted: it is public
+Approved, awaiting Live propagation. No test-only products remain. Version 1.0/code
+2 is being prepared; its signed build, Amazon-delivered checkout verification and
+resubmission remain pending. The original submission is Pending Action.

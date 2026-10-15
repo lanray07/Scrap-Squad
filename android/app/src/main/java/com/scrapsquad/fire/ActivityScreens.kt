@@ -112,7 +112,15 @@ internal fun MenuScreens.shop() {
         else {
             val price = purchases.price(id)
             if (price != null) label(price, 20f, Ui.gold)
-            button("cosmetic.buy", purchases.ready && price != null && ownership.getJSONObject("canPurchase").getBoolean(id)) { purchases.purchase(id) }
+            val available = purchases.purchaseBlockReason(id) == null
+            if (!available) label(t(purchases.purchaseBlockReason(id)!!), color = Ui.mint)
+            button(if (available) "cosmetic.buy" else "android.shop.check") {
+                val reason = purchases.purchaseBlockReason(id)
+                if (reason == null) purchases.purchase(id)
+                else PremiumDialog.Builder(activity).setTitle(t(pack.getString("nameKey")))
+                    .setMessage(t(reason)).setPositiveButton(t("android.shop.retry")) { _, _ -> purchases.refresh() }
+                    .setNegativeButton(t("common.cancel"), null).show()
+            }.tag = "shop.purchase.$id"
         }
         label(t("cosmetic.once"))
     }

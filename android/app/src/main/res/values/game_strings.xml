@@ -23,8 +23,15 @@
   <string name="sq_533c23985e1b810a" formatted="false">"This battle could not be recovered. Your saved progress and battle record have been preserved. Please contact support."</string>
   <string name="sq_8df10c742cd17059" formatted="false">"Your squad is still out there"</string>
   <string name="sq_05be3ed6e97a5bc5" formatted="false">"s"</string>
+  <string name="sq_c379333d5463bc43" formatted="false">"Check Amazon availability"</string>
+  <string name="sq_553103ef47e9a668" formatted="false">"Amazon checkout is not connected yet. Check your internet connection, sign in to the Amazon Appstore and use the Amazon-installed version, then retry. You have not been charged."</string>
+  <string name="sq_4cc091f9a1055e21" formatted="false">"Connecting to Amazon. Prices will appear when the store responds. You can retry if the connection takes too long."</string>
   <string name="sq_24d3397c901fb510" formatted="false">"Cosmetics are optional. Prices come from the Amazon Appstore. Restore purchases using the Amazon account that bought them. All gameplay and progression remain available without buying a pack."</string>
+  <string name="sq_4b9bdccbb9e01053" formatted="false">"You already own content included in this pack. Choose an individual cosmetic to avoid buying the same content twice."</string>
+  <string name="sq_f195093f79e70398" formatted="false">"Amazon has not returned a price for this pack in your marketplace. Retry the store or choose another pack. You have not been charged."</string>
   <string name="sq_537cbb51fdc6f5f2" formatted="false">"No previous cosmetic purchases were found for this Amazon account."</string>
+  <string name="sq_56046eb58b17752a" formatted="false">"Retry Amazon store"</string>
+  <string name="sq_1eaffaec2fb06679" formatted="false">"Amazon did not respond in time. Check your internet connection and Amazon Appstore sign-in, then retry. No new purchase has been started."</string>
   <string name="sq_b9e4517ffb5dca31" formatted="false">"Support"</string>
   <string name="sq_7f75361aac296f98" formatted="false">"Scrap Squad"</string>
   <string name="sq_4e3d5de6288f3dfb" formatted="false">"Build it. Merge it. Survive the swarm."</string>
