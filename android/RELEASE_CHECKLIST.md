@@ -121,7 +121,10 @@ tap feedback and signed CI checks (15 instrumentation tests passed, one skipped)
 On 16 October the Amazon-delivered code 2 release opened Robot Style Pack checkout;
 the app subsequently verified ownership and retained it after process restart
 and explicit restore. The public code 2 draft and updated reviewer instructions
-are saved, awaiting owner export-certification approval and resubmission.
+were saved. Following owner export-certification approval on 16 October,
+Amazon confirmed SUBMITTED and App Submission Successful for the public code 2
+release. Publication follows approval. Amazon's new estimate is 21 October 2026
+at 12:00 Europe/London, not a confirmed publication date.
 Star Medic is now promoted (public Approved); the other
 six cosmetics are public Live. The previous publication estimate no longer applies.
 

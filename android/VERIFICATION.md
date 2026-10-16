@@ -339,5 +339,13 @@ and Robot Style Pack changed from Buy pack to Owned with Equip controls. After
 full process termination/relaunch and an explicit Restore purchases tap, Purchase
 verified returned and the Style Pack remained Owned. Currency totals were
 unchanged. This is observed entitlement/restore evidence; it does not independently
-audit an Amazon account charge. Public resubmission remains pending. Private
-evidence is in `reports/fire-device-test/`.
+audit an Amazon account charge. Private evidence is in `reports/fire-device-test/`.
+
+The owner approved the public resubmission/export certification on 16 October.
+After Submit App, Amazon displayed SUBMITTED, App Submission Successful, and
+Successfully submitted app submission on 16 Oct 2026 for the existing public
+release `amzn1.devportal.apprelease.f82811624c8b4964b45fdeb8464fdc4a`.
+Code 2, DRM, all-country targeting, eight Fire tablet selections and the updated
+review instructions were confirmed before submission. Publication is configured
+for after approval. Amazon's displayed estimate is 21 October 2026, 04:00 PDT
+(12:00 Europe/London); review approval and actual publication are not confirmed.
