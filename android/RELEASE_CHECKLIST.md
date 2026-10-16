@@ -117,8 +117,12 @@ as soon as Amazon approves, replacing the expired schedule. Amazon's estimate is
 
 Update, 15 October: code 1 was rejected for inert IAP buttons and is Pending Action.
 The code 2 correction passes a physical regression test for missing-store-data
-tap feedback, but still requires signed-release checks and Amazon-delivered
-checkout verification. Star Medic is now promoted (public Approved); the other
+tap feedback and signed CI checks (15 instrumentation tests passed, one skipped).
+On 16 October the Amazon-delivered code 2 release opened Robot Style Pack checkout;
+the app subsequently verified ownership and retained it after process restart
+and explicit restore. The public code 2 draft and updated reviewer instructions
+are saved, awaiting owner export-certification approval and resubmission.
+Star Medic is now promoted (public Approved); the other
 six cosmetics are public Live. The previous publication estimate no longer applies.
 
 Requirements checked on 8 October 2026:

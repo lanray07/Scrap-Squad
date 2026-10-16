@@ -323,6 +323,21 @@ Amazon accepted that APK with DRM in an upcoming Test 1 draft named
 `amzn1.devportal.apprelease.2344982a568541da900e4eda54210545`. The original eight
 Fire tablet selections and existing consenting tester group are retained.
 The owner approved Submit Test/export certification on 15 October 2026. Amazon
-confirms `Test submitted` for this build 2 release in Test 1. It is awaiting
-Amazon processing; the prior code 1 test remains in progress. Amazon-delivered
-code 2 checkout verification and public resubmission remain pending.
+confirmed `Test submitted`, then `Test in-progress`, for this build 2 release
+in Test 1. Code 2 was also saved in the public release draft; that draft has
+not been resubmitted.
+
+On 16 October, ADB confirmed the Amazon-installed `com.scrapsquad.fire` was
+version 1.0/code 2, with installer `com.amazon.venezia` and no sandbox property
+enabled. The saved currency totals (350 scrap, 500 credits, 3 cores) and Founder
+ownership remained intact. Robot Style Pack displayed its £1.99 price; tapping
+Buy pack opened Amazon's Robot Style Pack checkout with VERIFY AND PAY. This
+confirms that the signed, Amazon-delivered build responds to that purchase tap.
+The checkout closed while action-time approval was pending; no VERIFY AND PAY
+tap was issued by the agent. The app subsequently displayed Purchase verified,
+and Robot Style Pack changed from Buy pack to Owned with Equip controls. After
+full process termination/relaunch and an explicit Restore purchases tap, Purchase
+verified returned and the Style Pack remained Owned. Currency totals were
+unchanged. This is observed entitlement/restore evidence; it does not independently
+audit an Amazon account charge. Public resubmission remains pending. Private
+evidence is in `reports/fire-device-test/`.
