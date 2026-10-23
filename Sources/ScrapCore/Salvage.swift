@@ -77,7 +77,10 @@ public struct SalvageOperation: Sendable {
             serial += 1
             // Stable, bounded collectibles: no extra RNG or unbounded scene allocation.
             if drops.count >= 24 { drops.removeFirst() }
-            drops.append(SalvageDrop(id: serial, system: focus, position: enemy.position, expiresAt: time + 24))
+            // Enemies may spawn just outside the arena; keep earned parts reachable
+            // at the same boundary used by player movement, without remote pickup.
+            let position = Vector(min(0.93, max(0.07, enemy.position.x)), min(0.93, max(0.07, enemy.position.y)))
+            drops.append(SalvageDrop(id: serial, system: focus, position: position, expiresAt: time + 24))
         }
     }
     public mutating func advance(delta: Double, time: Double, player: Vector, enemies: [Enemy]) {

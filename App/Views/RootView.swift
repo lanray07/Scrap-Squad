@@ -33,14 +33,16 @@ struct RootView: View {
         }
         .sheet(isPresented: Binding(get: { store.offline != nil && !store.onboardingPresented }, set: { _ in })) {
             if let reward = store.offline {
-                VStack(spacing: 24) {
+                ScrollView {
+                  VStack(spacing: 24) {
                     Image(systemName: "shippingbox.fill").font(.system(size: 72)).foregroundStyle(Theme.gold)
                     PageHeading(title: "offline.title", subtitle: "offline.description")
                     HStack { LText("offline.away"); Spacer(); Text(LocalizedFormatting.duration(reward.seconds)) }
                     HStack { LText("currency.scrap"); Spacer(); Text(reward.scrap, format: .number) }
                     HStack { LText("currency.credits"); Spacer(); Text(reward.credits, format: .number) }
                     ActionButton(key: "offline.claim", symbol: "checkmark") { store.claimOffline() }
-                }.padding(28).presentationDetents([.medium, .large]).interactiveDismissDisabled()
+                  }.padding(28)
+                }.presentationDetents([.large]).interactiveDismissDisabled()
             }
         }
         .alert(Text(LocalizationManager.string("common.error")), isPresented: Binding(get: { store.errorKey != nil }, set: { if !$0 { store.errorKey = nil } })) {

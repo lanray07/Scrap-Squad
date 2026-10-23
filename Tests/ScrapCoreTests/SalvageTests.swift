@@ -45,6 +45,18 @@ private func recover(_ system: SalvageSystem, count: Int, operation: inout Salva
     #expect(operation.damageScale == 1 && operation.attackScale == 0.85 && operation.incomingScale == 0.75)
     #expect(operation.inventory[.weapon] == 1 && operation.inventory[.armor] == 0)
 }
+
+@Test func partsFromEnemiesOutsideTheArenaRemainReachableWithoutRemoteCollection() {
+    for (index, position) in [Vector(-0.05, -0.05), Vector(1.05, 1.05), Vector(-0.05, 0.5), Vector(0.5, 1.05)].enumerated() {
+        var operation = SalvageOperation()
+        operation.strike(enemy: enemy(index, at: position), amount: 30, time: 0)
+        let reachable = Vector(min(0.93, max(0.07, position.x)), min(0.93, max(0.07, position.y)))
+        operation.advance(delta: 0.05, time: 1, player: Vector(0.5, 0.5), enemies: [])
+        #expect(operation.recovered == 0)
+        operation.advance(delta: 0.05, time: 2, player: reachable, enemies: [])
+        #expect(operation.recovered == 1 && operation.drops.isEmpty)
+    }
+}
 @Test func extractionRequiresRescueRebuildEscortAndUncontestedHold() {
     var operation = SalvageOperation()
     for _ in 0..<400 { operation.advance(delta: 0.05, time: 1, player: operation.extraction, enemies: []) }
