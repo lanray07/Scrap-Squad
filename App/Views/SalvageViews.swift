@@ -2,6 +2,7 @@ import SwiftUI
 import ScrapCore
 
 struct SalvageStatus: View {
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
     let operation: SalvageOperation
     let player: Vector
     let interactive: Bool
@@ -16,7 +17,7 @@ struct SalvageStatus: View {
         VStack(alignment: .leading, spacing: 6) {
             HStack {
                 Image(systemName: "location.fill").foregroundStyle(Theme.mint)
-                LText(operation.objectiveKey).font(.caption.bold())
+                LText(operation.objectiveKey).font(.caption.bold()).lineLimit(verticalSizeClass == .compact ? 1 : nil)
                     .accessibilityIdentifier("salvage-status")
                     .accessibilityValue(ProcessInfo.processInfo.arguments.contains("--ui-testing")
                         ? "\(player.x),\(player.y),\(destination.x),\(destination.y),\(operation.inventory[.weapon, default: 0]),\(operation.rebuilds)" : "")
@@ -42,7 +43,7 @@ struct SalvageStatus: View {
                         .accessibilityHint(Text(LocalizationManager.string("salvage.target.hint")))
                 }
             }
-            HStack(spacing: 8) {
+            if verticalSizeClass != .compact { HStack(spacing: 8) {
                 let offset = destination - player
                 Image(systemName: "location.north.fill").rotationEffect(.radians(atan2(offset.x, offset.y)))
                 LText(!operation.rescued ? "salvage.scout.rescue" : operation.readyForExtraction ? "salvage.beacon" : "salvage.recovered")
@@ -51,7 +52,7 @@ struct SalvageStatus: View {
                 Image(systemName: "shippingbox.fill")
                 Text(operation.rebuilds, format: .number).monospacedDigit()
                 Image(systemName: "wrench.fill")
-            }.font(.caption2).foregroundStyle(Theme.mint)
+            }.font(.caption2).foregroundStyle(Theme.mint) }
             if operation.readyForExtraction {
                 ProgressView(value: operation.extractionProgress, total: 12).tint(Theme.mint)
                     .accessibilityLabel(Text(LocalizationManager.string("salvage.extraction")))

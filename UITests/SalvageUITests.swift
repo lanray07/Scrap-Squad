@@ -83,6 +83,10 @@ import XCTest
         capture("Salvage-04-landscape-rebuild")
         resume.tap()
         XCTAssertTrue(rebuild.waitForExistence(timeout: 5))
+        let arena = app.descendants(matching: .any).matching(identifier: "battle-arena").firstMatch
+        XCTAssertGreaterThan(arena.frame.height, 100, "Landscape must retain a usable combat arena")
+        XCTAssertTrue(app.buttons["overdrive-button"].isHittable)
+        capture("Salvage-08-landscape-combat")
         app.buttons["Pause"].tap(); app.buttons["Retreat"].tap()
         XCTAssertTrue(app.buttons["run-retry"].waitForExistence(timeout: 10))
         capture("Salvage-05-results")

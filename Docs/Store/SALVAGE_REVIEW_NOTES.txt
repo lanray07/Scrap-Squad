@@ -1,0 +1,13 @@
+No sign-in or purchase is required for gameplay. The interface is English. Progress is stored on-device. This resubmission candidate adds objective-driven Salvage Operations and earned, run-local robot rebuilding in response to guideline 4.3 feedback.
+
+NEW REVIEW PATH: complete onboarding, open Battle > Launch salvage operation. Move toward RESCUE SCOUT; the rescued scout follows your squad. Select Emitter, Plating or Drive to focus automatic weapon hits on that enemy subsystem. Breaking it drops a matching colored part. Move over dropped parts before they expire to collect them. Broken emitters weaken subsequent attacks, broken drives slow enemies, and stripped plating removes armor/shield mitigation.
+
+Recover at least three parts in total. Open Field rebuild (combat and mission time pause), select a squad robot and install a rig using two matching parts. Emitter rigs increase squad damage but reduce movement; plating reduces incoming damage but slows firing; drives improve movement but reduce damage. Each robot carries one visible rig. Replacements spend new parts without refunds. Rigs last only for this operation and do not replace purchased finishes or permanently change the saved squad.
+
+Escort the scout into the EXTRACT beacon, keep both squad and scout in range and clear enemies from the beacon for twelve seconds. Leaving or enemy occupation drains progress. Extraction ends the operation and grants a single 100-scrap bonus through normal reward settlement. The mission has a two-minute deadline. Results and run cards record salvage and rebuilds. Retry starts a fresh operation. This mode has its own spawn pacing rather than the survival wave events.
+
+Other gameplay remains: City > Open Workshop > Basic Blaster + Fire Core creates Flame Blaster. Equip it, then use the standard Deploy squad entry for the other modes. Drag to move; Ability activates the commander skill and Dash follows movement. Daily Circuit retains its versioned challenge rules.
+
+The seven optional non-consumable purchases are appearance-only. They grant no salvage parts, rigs, currency, combat power or robot unlocks. Shop supports live cosmetic previews, verified StoreKit purchases and Restore Purchases. Existing cosmetic ownership and premium art are retained. No advertising, analytics or external payment flow is included.
+
+Automated gameplay/compatibility testing and iPhone/iPad simulator checks are documented with the candidate. Automated checks are not represented as external human beta feedback. Physical-device acceptance of this new loop remains a separate pre-submission check.
