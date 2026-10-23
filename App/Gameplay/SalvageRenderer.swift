@@ -1,4 +1,5 @@
 import SpriteKit
+import UIKit
 import ScrapCore
 
 /// Additive rig overlays leave all base portraits, signature skins and weapon effects intact.

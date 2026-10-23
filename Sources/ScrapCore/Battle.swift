@@ -197,8 +197,8 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
         if elapsed >= nextSpawn && enemies.count < regularEnemyLimit && mode != .bossRush {
             spawn()
             // Wave bursts create visible groups, with room to breathe between them.
-            if wave >= 2 && enemies.count < regularEnemyLimit && Int(elapsed) % 8 < 2 { spawn() }
-            nextSpawn = elapsed + max(0.35, 1.05 - Double(wave - 1) * 0.12)
+            if salvage == nil && wave >= 2 && enemies.count < regularEnemyLimit && Int(elapsed) % 8 < 2 { spawn() }
+            nextSpawn = elapsed + (salvage == nil ? max(0.35, 1.05 - Double(wave - 1) * 0.12) : max(1.2, 2.1 - Double(wave - 1) * 0.08))
         }
         if elapsed >= nextHazard {
             nextHazard = elapsed + 14
@@ -499,7 +499,7 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
         eventDefeatedIDs = []; waveEvent = nil
     }
     private func advanceWaveEvent() {
-        guard mode != .bossRush else { return }
+        guard mode != .bossRush, salvage == nil else { return }
         if let event = waveEvent {
             if elapsed >= event.endsAt { finishWaveEvent(success: event.kind == .scrapStorm && health > 0) }
             else if event.kind == .scrapStorm && elapsed >= nextStormPulse {

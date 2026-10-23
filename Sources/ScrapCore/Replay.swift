@@ -145,6 +145,7 @@ public struct RunJournal: Codable, Sendable {
                   && weapons.contains(run.highlights.weaponID) && run.highlights.elapsed.isFinite && run.highlights.elapsed >= 0
                   && run.highlights.bestCombo >= 0 && run.highlights.overdrives >= 0
                   && (run.highlights.perfectDodges ?? 0) >= 0 && (run.highlights.completedWaveEvents ?? 0) >= 0
+                    && (run.highlights.salvage.map { $0.recovered >= 0 && $0.rebuilt >= 0 && (!$0.extracted || ($0.rescued && $0.recovered >= 3 && $0.rebuilt > 0)) } ?? true)
                   && (run.highlights.challengeCode == nil || RunChallenge(code: run.highlights.challengeCode!) != nil)
               }) else { throw GameError.invalidContent }
     }

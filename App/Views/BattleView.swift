@@ -117,7 +117,7 @@ struct BattleView: View {
                 }
                 CombatExcitementStatus(engine: engine)
                 if let operation = engine.salvage {
-                    SalvageStatus(operation: operation, interactive: engine.state == .fighting && !session.paused,
+                    SalvageStatus(operation: operation, player: engine.player, interactive: engine.state == .fighting && !session.paused,
                         target: { engine.targetSalvage($0); session.revision += 1 },
                         rebuild: { if engine.openRebuild() { session.scene.movement = Vector(); dragOrigin = nil; session.revision += 1 } })
                 }
