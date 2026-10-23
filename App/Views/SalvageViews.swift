@@ -3,6 +3,7 @@ import ScrapCore
 
 struct SalvageStatus: View {
     let operation: SalvageOperation
+    let player: Vector
     let interactive: Bool
     let target: (SalvageSystem) -> Void
     let rebuild: () -> Void
@@ -33,6 +34,17 @@ struct SalvageStatus: View {
                         .accessibilityHint(Text(LocalizationManager.string("salvage.target.hint")))
                 }
             }
+            HStack(spacing: 8) {
+                let destination = !operation.rescued ? operation.escort : !operation.readyForExtraction ? (operation.drops.min { ($0.position - player).length < ($1.position - player).length }?.position ?? operation.escort) : operation.extraction
+                let offset = destination - player
+                Image(systemName: "location.north.fill").rotationEffect(.radians(atan2(offset.x, offset.y)))
+                LText(!operation.rescued ? "salvage.scout.rescue" : operation.readyForExtraction ? "salvage.beacon" : "salvage.recovered")
+                Spacer()
+                Text("\(min(3, operation.recovered))/3").monospacedDigit()
+                Image(systemName: "shippingbox.fill")
+                Text(operation.rebuilds, format: .number).monospacedDigit()
+                Image(systemName: "wrench.fill")
+            }.font(.caption2).foregroundStyle(Theme.mint)
             if operation.readyForExtraction {
                 ProgressView(value: operation.extractionProgress, total: 12).tint(Theme.mint)
                     .accessibilityLabel(Text(LocalizationManager.string("salvage.extraction")))

@@ -92,7 +92,7 @@ private func recover(_ system: SalvageSystem, count: Int, operation: inout Salva
     }
     #expect(engine.salvage?.recovered ?? 0 >= 3)
     #expect(engine.salvage?.rebuilds == 1)
-    #expect(engine.state == .victory)
+    #expect(engine.state == .victory, "elapsed=\(engine.elapsed), health=\(engine.health), report=\(String(describing: engine.salvage?.report)), hold=\(engine.salvage?.extractionProgress ?? -1), contested=\(engine.salvage?.contested ?? false)")
     #expect(engine.reward().bonusScrap >= 100)
     var profile = PlayerProfile()
     #expect(Progression.apply(engine.reward(), profile: &profile, content: content, now: Date()))
