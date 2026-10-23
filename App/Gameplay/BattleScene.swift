@@ -45,6 +45,7 @@ import ScrapCore
     private var lastPerfectDodges = 0
     private var lastEventSequence = 0
     private var lastCompletedEvents = 0
+    private var salvageRenderer: SalvageRenderer?
     private var dashAura: SKShapeNode?
     init(engine: BattleEngine, finishes: [String: RobotFinish], goldenTrails: Bool, weaponEffect: String? = nil) {
         self.engine = engine
@@ -82,6 +83,10 @@ import ScrapCore
             shadow.position.y = -19; shadow.zPosition = -2; node.addChild(shadow)
             node.zPosition = 5; world.addChild(node); robotNodes.append(node)
             robotStrides.append(RobotStride())
+        }
+        if engine.salvage != nil {
+            let scout = makeRobot(engine.content.robots[0])
+            salvageRenderer = SalvageRenderer(world: world, scout: scout)
         }
         // Reuse a fixed pool rather than allocating ground effects every frame.
         for _ in 0..<96 {
@@ -148,6 +153,7 @@ import ScrapCore
             }
         }
         updateWarnings()
+        salvageRenderer?.update(engine: engine, robots: robotNodes, enemies: enemyNodes, scale: arenaScale, unitScale: unitScale)
         updateProjectiles()
         // Upgrade-added drones appear without rebuilding the battle scene.
         let positions = engine.dronePositions

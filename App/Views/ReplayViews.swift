@@ -92,6 +92,11 @@ struct RunCard: View {
             ForEach(record.highlights.synergies) { Text(text($0.nameKey)).font(.caption.bold()).foregroundStyle(Theme.gold) }
             if let evolution = record.highlights.evolution { Text(text(evolution.nameKey)).font(.headline.bold()).foregroundStyle(Theme.mint) }
             if let dodges = record.highlights.perfectDodges, dodges > 0 { stat("battle.perfectDodges", dodges) }
+            if let salvage = record.highlights.salvage {
+                Text(text(salvage.extracted ? "salvage.objective.complete" : "salvage.incomplete")).font(.headline).foregroundStyle(Theme.mint)
+                stat("salvage.recovered", salvage.recovered)
+                stat("salvage.rebuilt", salvage.rebuilt)
+            }
             if !record.medals.isEmpty {
                 HStack(spacing: 14) { ForEach(record.medals) { Image(systemName: $0.symbol).foregroundStyle(Theme.gold).accessibilityLabel(text($0.nameKey)) } }
             }

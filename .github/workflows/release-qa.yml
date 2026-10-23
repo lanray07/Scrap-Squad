@@ -5,7 +5,7 @@ on:
       test_class:
         description: Release checks to run
         type: choice
-        options: [PremiumShopUITests, ReleaseReadinessUITests, CosmeticPurchaseUITests, CombatShowcaseUITests, ExcitementUITests, ExcitementUITests/testRealUpgradeRecipeWaveEventEvolutionAndCleanRetry]
+        options: [SalvageUITests, PremiumShopUITests, ReleaseReadinessUITests, CosmeticPurchaseUITests, CombatShowcaseUITests, ExcitementUITests, ExcitementUITests/testRealUpgradeRecipeWaveEventEvolutionAndCleanRetry, iOSDeviceHelper]
         default: ReleaseReadinessUITests
       family:
         description: Simulator family
@@ -16,6 +16,7 @@ permissions:
   contents: read
 jobs:
   qa:
+    if: inputs.test_class != 'iOSDeviceHelper'
     runs-on: macos-latest
     timeout-minutes: 30
     strategy:
@@ -47,3 +48,22 @@ jobs:
             .build/release-qa.log
             .build/release-qa.xcresult
             .build/release-qa-captures
+  device-helper:
+    if: inputs.test_class == 'iOSDeviceHelper'
+    runs-on: macos-latest
+    timeout-minutes: 25
+    env:
+      APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+      ASC_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
+      ASC_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+      ASC_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_API_PRIVATE_KEY }}
+      QA_DEVICE_UDID: ${{ secrets.SCRAP_IOS_QA_DEVICE_UDID }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare device-only test helper
+        run: bash Tools/build_device_helper.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ios-device-test-helper
+          path: .build/device-helper.zip
+          retention-days: 3

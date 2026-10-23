@@ -12,6 +12,15 @@ struct BattleLobby: View {
         ScrollView {
             VStack(spacing: 22) {
                 PageHeading(title: "battle.title", subtitle: "battle.subtitle")
+                Panel {
+                    PageHeading(title: "salvage.title", subtitle: "salvage.briefing")
+                    ActionButton(key: "salvage.deploy", symbol: "wrench.and.screwdriver.fill") {
+                        var snapshot = store.profile; snapshot.zone = zone
+                        session = BattleSession(content: store.content, profile: snapshot, mode: .scrapRun,
+                            finishes: commerce.robotFinishes, goldenTrails: commerce.goldenTrails, weaponEffect: commerce.weaponEffect,
+                            seed: ProcessInfo.processInfo.arguments.contains("--ui-testing") ? 42 : UInt64.random(in: 1...UInt64.max))
+                    }.accessibilityIdentifier("salvage-deploy")
+                }
                 let biome = store.content.biomes[min(zone, store.content.biomes.count - 1)]
                 Panel {
                     HStack { Image(systemName: "mountain.2.fill").font(.system(size: 50)).foregroundStyle(Color(hex: biome.palette[2])); Spacer(); VStack(alignment: .trailing) { LText(biome.nameKey).font(.title2.bold()); LText(biome.bossKey).font(.caption).foregroundStyle(Theme.muted) } }
@@ -66,7 +75,7 @@ struct BattleLobby: View {
     let weaponEffect: String?
     init(content: GameContent, profile: PlayerProfile, mode: GameMode, finishes: [String: RobotFinish], goldenTrails: Bool, weaponEffect: String? = nil, seed: UInt64 = UInt64.random(in: 1...UInt64.max), challengeCode: String? = nil) {
         self.finishes = finishes; self.goldenTrails = goldenTrails; self.weaponEffect = weaponEffect
-        engine = BattleEngine(content: content, profile: profile, mode: mode, seed: seed, challengeCode: challengeCode)
+        engine = BattleEngine(content: content, profile: profile, mode: mode, seed: seed, challengeCode: challengeCode, salvageEnabled: true)
         scene = BattleScene(engine: engine, finishes: finishes, goldenTrails: goldenTrails, weaponEffect: weaponEffect)
         scene.refresh = { [weak self] in self?.revision += 1 }
     }
@@ -76,6 +85,7 @@ struct BattleView: View {
     @Environment(GameCenterService.self) var gameCenter
     @Environment(\.dismiss) private var dismiss
     @Environment(\.scenePhase) private var phase
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
     @State var session: BattleSession
     @State private var dragOrigin: CGPoint?
     @State private var priority = TargetPriority.nearest
@@ -85,6 +95,15 @@ struct BattleView: View {
         ZStack {
             Theme.ink.ignoresSafeArea()
             VStack(spacing: 0) {
+                if compactSalvage {
+                    HStack {
+                        Text(Duration.seconds(engine.elapsed).formatted(.time(pattern: .minuteSecond))).font(.caption.monospacedDigit()).accessibilityIdentifier("battle-clock")
+                        ProgressView(value: engine.health, total: max(1, engine.maxHealth)).tint(Theme.mint)
+                            .accessibilityLabel(Text(LocalizationManager.string("battle.health")))
+                        Button { pause() } label: { Image(systemName: "pause.fill").frame(width: 44, height: 44) }
+                            .accessibilityLabel(Text(LocalizationManager.string("battle.pause")))
+                    }.padding(.horizontal, 16)
+                } else {
                 HStack {
                     VStack(alignment: .leading, spacing: 5) {
                         LText(engine.biome.nameKey).font(.headline)
@@ -98,16 +117,22 @@ struct BattleView: View {
                 }.padding(.horizontal, 20).padding(.top, 12)
                 ProgressView(value: engine.health, total: max(1, engine.maxHealth)).tint(Theme.mint).padding(.horizontal, 20).padding(.vertical, 10)
                     .accessibilityLabel(Text(LocalizationManager.string("battle.health")))
+                }
                 if let health = engine.bossHealth {
                     HStack { LText(engine.biome.bossKey).font(.caption.bold()); ProgressView(value: health).tint(.orange) }.padding(.horizontal, 20).padding(.bottom, 6)
                     if let armor = engine.bossArmor {
                         HStack { LText(armor > 0 ? "battle.armor" : "battle.armor.broken").font(.caption2); if armor > 0 { ProgressView(value: armor).tint(Theme.muted) } }.padding(.horizontal, 20).padding(.bottom, 6)
                     }
                 }
-                CombatMomentum(engine: engine) {
-                    if engine.activateOverdrive() { Feedback.play(.ability, preferences: store.profile.preferences); AudioBus.shared.play(.overdrive, preferences: store.profile.preferences); session.revision += 1 }
+                if !compactSalvage {
+                    CombatMomentum(engine: engine, activate: activateOverdrive)
+                    CombatExcitementStatus(engine: engine)
                 }
-                CombatExcitementStatus(engine: engine)
+                if let operation = engine.salvage {
+                    SalvageStatus(operation: operation, player: engine.player, interactive: engine.state == .fighting && !session.paused,
+                        target: { engine.targetSalvage($0); session.revision += 1 },
+                        rebuild: { if engine.openRebuild() { session.scene.movement = Vector(); dragOrigin = nil; session.revision += 1 } })
+                }
                 SpriteView(scene: session.scene, isPaused: session.paused, options: [.ignoresSiblingOrder])
                     .id(session.id)
                     .accessibilityLabel(Text(LocalizationManager.string("accessibility.arena")))
@@ -122,13 +147,19 @@ struct BattleView: View {
                         }
                     }.onEnded { _ in dragOrigin = nil; session.scene.movement = Vector() })
                 ViewThatFits(in: .horizontal) {
-                    HStack { targetingPicker; Spacer(); dashButton; abilityButton }
-                    VStack(spacing: 6) { targetingPicker; HStack { dashButton; Spacer(); abilityButton } }
-                    VStack(spacing: 6) { targetingPicker; dashButton; abilityButton }
+                    HStack { targetingPicker; Spacer(); if compactSalvage { compactOverdrive }; dashButton; abilityButton }
+                    VStack(spacing: 6) { targetingPicker; HStack { if compactSalvage { compactOverdrive }; dashButton; Spacer(); abilityButton } }
+                    VStack(spacing: 6) { targetingPicker; if compactSalvage { compactOverdrive }; dashButton; abilityButton }
                 }.padding(12)
             }
             if session.paused { pauseOverlay }
             else if engine.state == .choosing { choicesOverlay }
+            else if engine.state == .rebuilding, let operation = engine.salvage {
+                SalvageRebuildView(operation: operation, robots: engine.content.robots.filter { engine.profile.squad.contains($0.id) }, finishes: session.finishes,
+                    install: { system, robot in
+                        if engine.rebuild(system, robotID: robot) { Feedback.play(.fusion, preferences: store.profile.preferences); session.revision += 1 }
+                    }, resume: { engine.closeRebuild(); session.scene.movement = Vector(); dragOrigin = nil; session.revision += 1 })
+            }
             else if engine.state == .victory || engine.state == .defeated { resultsOverlay }
         }.preferredColorScheme(.dark).foregroundStyle(.white)
             .onChange(of: phase) { _, value in if value != .active { pause() } }
@@ -141,6 +172,20 @@ struct BattleView: View {
                 }
             }
             .onDisappear { session.scene.isPaused = true; AudioBus.shared.stop(); if phase == .active { AudioBus.shared.play(.city, preferences: store.profile.preferences) } }
+    }
+    private var compactSalvage: Bool { verticalSizeClass == .compact && session.engine.salvage != nil }
+    private func activateOverdrive() {
+        if session.engine.activateOverdrive() {
+            Feedback.play(.ability, preferences: store.profile.preferences)
+            AudioBus.shared.play(.overdrive, preferences: store.profile.preferences); session.revision += 1
+        }
+    }
+    private var compactOverdrive: some View {
+        Button(action: activateOverdrive) {
+            Label { LText("momentum.overdrive") } icon: { Image(systemName: "bolt.circle.fill") }
+                .font(.caption.bold()).padding(10).frame(minHeight: 44).background(Theme.surface, in: Capsule())
+        }.disabled(session.engine.combo.charge < 1 || session.engine.state != .fighting || session.engine.combo.overdrive > 0 || session.paused)
+            .accessibilityIdentifier("overdrive-button")
     }
     private var targetingPicker: some View {
         let engine = session.engine
@@ -158,7 +203,7 @@ struct BattleView: View {
             }
         } label: {
             HStack { Image(systemName: "arrow.up.forward"); LText("battle.dash"); if engine.dashCooldown > 0 { Text(Int(ceil(engine.dashCooldown)), format: .number).monospacedDigit() } }
-                .font(.headline).foregroundStyle(Theme.ink).padding(14).background(Theme.mint, in: Capsule())
+                .font(.headline).foregroundStyle(Theme.ink).padding(compactSalvage ? 10 : 14).frame(minHeight: 44).background(Theme.mint, in: Capsule())
         }.disabled(engine.dashCooldown > 0 || engine.state != .fighting || session.paused)
             .accessibilityIdentifier("battle-dash")
             .accessibilityHint(Text(LocalizationManager.string("battle.dash.hint")))
@@ -170,7 +215,7 @@ struct BattleView: View {
                         engine.activateAbility(); Feedback.play(.ability, preferences: store.profile.preferences)
                     } label: {
                         HStack { Image(systemName: "bolt.fill"); if engine.abilityCooldown > 0 { Text(Int(ceil(engine.abilityCooldown)), format: .number) } else { LText("battle.ability") } }
-                            .font(.headline).foregroundStyle(Theme.ink).padding(18).background(Theme.gold, in: Capsule())
+                            .font(.headline).foregroundStyle(Theme.ink).padding(compactSalvage ? 10 : 18).frame(minHeight: 44).background(Theme.gold, in: Capsule())
                     }.disabled(engine.abilityCooldown > 0 || engine.state != .fighting || session.paused).accessibilityIdentifier("battle-ability")
         }
     }
@@ -226,6 +271,7 @@ struct BattleView: View {
             PageHeading(title: session.engine.state == .victory ? "battle.victory" : "battle.defeat", subtitle: "battle.results")
             HStack { LText("battle.kills"); Spacer(); Text(session.engine.kills, format: .number) }
             HStack { LText("battle.score"); Spacer(); Text(session.engine.score, format: .number) }
+            if let operation = session.engine.salvage { SalvageResults(report: operation.report) }
             if let evolution = session.engine.evolution { Label { LText(evolution.nameKey) } icon: { Image(systemName: "sparkles") }.foregroundStyle(Theme.mint) }
             HStack { LText("battle.perfectDodges"); Spacer(); Text(session.engine.perfectDodges, format: .number) }
             HStack { LText("event.bonusScrap"); Spacer(); Text(session.engine.bonusScrap, format: .number) }
