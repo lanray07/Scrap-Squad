@@ -30,14 +30,18 @@ private func recover(_ system: SalvageSystem, count: Int, operation: inout Salva
 }
 @Test func rebuildingConsumesPartsValidatesRobotAndAppliesTradeoffs() {
     var operation = SalvageOperation()
-    #expect(!operation.install(.weapon, robotID: "bolt", squad: ["bolt"]))
+    let empty = operation.install(.weapon, robotID: "bolt", squad: ["bolt"])
+    #expect(!empty)
     recover(.weapon, count: 3, operation: &operation)
-    #expect(!operation.install(.weapon, robotID: "invalid", squad: ["bolt"]))
-    #expect(operation.install(.weapon, robotID: "bolt", squad: ["bolt"]))
+    let invalid = operation.install(.weapon, robotID: "invalid", squad: ["bolt"])
+    let installed = operation.install(.weapon, robotID: "bolt", squad: ["bolt"])
+    #expect(!invalid && installed)
     #expect(operation.inventory[.weapon] == 1 && operation.damageScale == 1.3 && operation.movementScale == 0.9)
-    #expect(!operation.install(.weapon, robotID: "bolt", squad: ["bolt"]))
+    let duplicate = operation.install(.weapon, robotID: "bolt", squad: ["bolt"])
+    #expect(!duplicate)
     recover(.armor, count: 2, operation: &operation)
-    #expect(operation.install(.armor, robotID: "bolt", squad: ["bolt"]))
+    let replaced = operation.install(.armor, robotID: "bolt", squad: ["bolt"])
+    #expect(replaced)
     #expect(operation.damageScale == 1 && operation.attackScale == 0.85 && operation.incomingScale == 0.75)
     #expect(operation.inventory[.weapon] == 1 && operation.inventory[.armor] == 0)
 }
@@ -46,7 +50,8 @@ private func recover(_ system: SalvageSystem, count: Int, operation: inout Salva
     for _ in 0..<400 { operation.advance(delta: 0.05, time: 1, player: operation.extraction, enemies: []) }
     #expect(!operation.extracted && operation.extractionProgress == 0)
     recover(.weapon, count: 3, operation: &operation)
-    #expect(operation.install(.weapon, robotID: "bolt", squad: ["bolt"]))
+    let installed = operation.install(.weapon, robotID: "bolt", squad: ["bolt"])
+    #expect(installed)
     operation.advance(delta: 0.05, time: 1, player: operation.escort, enemies: [])
     #expect(operation.rescued && operation.readyForExtraction)
     for _ in 0..<400 { operation.advance(delta: 0.05, time: 1, player: operation.extraction, enemies: [enemy(20, at: operation.extraction)]) }
