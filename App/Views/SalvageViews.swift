@@ -17,6 +17,9 @@ struct SalvageStatus: View {
             HStack {
                 Image(systemName: "location.fill").foregroundStyle(Theme.mint)
                 LText(operation.objectiveKey).font(.caption.bold())
+                    .accessibilityIdentifier("salvage-status")
+                    .accessibilityValue(ProcessInfo.processInfo.arguments.contains("--ui-testing")
+                        ? "\(player.x),\(player.y),\(destination.x),\(destination.y),\(operation.inventory[.weapon, default: 0]),\(operation.rebuilds)" : "")
                 Spacer()
                 Button(action: rebuild) { Label { LText("salvage.rebuild") } icon: { Image(systemName: "wrench.adjustable.fill") } }
                     .font(.caption.bold()).buttonStyle(.borderedProminent).tint(Theme.gold).foregroundStyle(Theme.ink)
@@ -54,9 +57,6 @@ struct SalvageStatus: View {
                     .accessibilityLabel(Text(LocalizationManager.string("salvage.extraction")))
             }
         }.padding(.horizontal, 12).padding(.vertical, 6).background(Theme.surface.opacity(0.85))
-            .accessibilityIdentifier("salvage-status")
-            .accessibilityValue(ProcessInfo.processInfo.arguments.contains("--ui-testing")
-                ? "\(player.x),\(player.y),\(destination.x),\(destination.y),\(operation.inventory[.weapon, default: 0]),\(operation.rebuilds)" : "")
     }
 }
 
@@ -96,7 +96,7 @@ struct SalvageRebuildView: View {
                     ActionButton(key: "salvage.resume", symbol: "play.fill", action: resume).accessibilityIdentifier("salvage-resume")
                 }.padding(24).frame(maxWidth: 660).frame(maxWidth: .infinity)
             }
-        }.accessibilityIdentifier("salvage-rebuild-screen")
+        }
     }
     private func moduleCard(_ system: SalvageSystem) -> some View {
         let installed = operation.modules[robotID] == system
