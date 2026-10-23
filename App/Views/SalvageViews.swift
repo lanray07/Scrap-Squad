@@ -7,6 +7,11 @@ struct SalvageStatus: View {
     let interactive: Bool
     let target: (SalvageSystem) -> Void
     let rebuild: () -> Void
+    private var destination: Vector {
+        if !operation.rescued { return operation.escort }
+        if operation.readyForExtraction { return operation.extraction }
+        return operation.drops.min { ($0.position - player).length < ($1.position - player).length }?.position ?? operation.escort
+    }
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack {
@@ -35,7 +40,6 @@ struct SalvageStatus: View {
                 }
             }
             HStack(spacing: 8) {
-                let destination = !operation.rescued ? operation.escort : !operation.readyForExtraction ? (operation.drops.min { ($0.position - player).length < ($1.position - player).length }?.position ?? operation.escort) : operation.extraction
                 let offset = destination - player
                 Image(systemName: "location.north.fill").rotationEffect(.radians(atan2(offset.x, offset.y)))
                 LText(!operation.rescued ? "salvage.scout.rescue" : operation.readyForExtraction ? "salvage.beacon" : "salvage.recovered")
@@ -51,6 +55,8 @@ struct SalvageStatus: View {
             }
         }.padding(.horizontal, 12).padding(.vertical, 6).background(Theme.surface.opacity(0.85))
             .accessibilityIdentifier("salvage-status")
+            .accessibilityValue(ProcessInfo.processInfo.arguments.contains("--ui-testing")
+                ? "\(player.x),\(player.y),\(destination.x),\(destination.y),\(operation.inventory[.weapon, default: 0]),\(operation.rebuilds)" : "")
     }
 }
 
