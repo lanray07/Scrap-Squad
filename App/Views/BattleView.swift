@@ -17,7 +17,8 @@ struct BattleLobby: View {
                     ActionButton(key: "salvage.deploy", symbol: "wrench.and.screwdriver.fill") {
                         var snapshot = store.profile; snapshot.zone = zone
                         session = BattleSession(content: store.content, profile: snapshot, mode: .scrapRun,
-                            finishes: commerce.robotFinishes, goldenTrails: commerce.goldenTrails, weaponEffect: commerce.weaponEffect)
+                            finishes: commerce.robotFinishes, goldenTrails: commerce.goldenTrails, weaponEffect: commerce.weaponEffect,
+                            seed: ProcessInfo.processInfo.arguments.contains("--ui-testing") ? 42 : UInt64.random(in: 1...UInt64.max))
                     }.accessibilityIdentifier("salvage-deploy")
                 }
                 let biome = store.content.biomes[min(zone, store.content.biomes.count - 1)]
