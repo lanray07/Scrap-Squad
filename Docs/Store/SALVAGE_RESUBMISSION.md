@@ -59,9 +59,24 @@ events; the unchanged starter squad completion test then passed.
   full real-combat extraction with no premium content, reward idempotency, old
   highlight decoding, challenge isolation and existing combat/cosmetic checks.
 - Python tooling: 19 tests passed. English catalog audit passed (446 keys).
-- Apple SDK compilation and iPhone/iPad simulator evidence: pending CI completion.
+- Apple SDK compilation and full iPhone regression suite: passed, 23 UI tests.
+- Dedicated salvage UI checks: two tests passed on each iPhone 17 Pro Max and
+  iPad Pro 13 simulator; actual movement/drop recovery, earned rebuilding,
+  pause/rotation/retry and usable landscape arena were verified.
 - Physical iPhone/iPad beta feedback on this new loop: not yet collected.
-- Signed TestFlight build and final screenshot selection: pending native checks.
+- Signed build 1.0 (18) archived/uploaded successfully and Apple reports Validated.
+  Assigned to the existing internal Scrap Squad QA group; testing notes saved.
+- English UK description, keywords, promotional text and review walkthrough saved
+  in the rejected version draft. No Update Review / App Review submission sent.
+- Runtime source: `f0975751c9dcaecf2fc2dc698a68ac6d00950dcf`.
+- [Full native validation](https://github.com/lanray07/Scrap-Squad/actions/runs/39911751249)
+- [iPhone/iPad salvage QA](https://github.com/lanray07/Scrap-Squad/actions/runs/39911754090)
+- [Signed build 18](https://github.com/lanray07/Scrap-Squad/actions/runs/39911759087)
+- Genuine unchanged XCTest captures and SHA-256 provenance are retained locally in
+  `output/ios-salvage-final-evidence`; review PDF is in `output/pdf`.
+  UI navigation fixtures increase health and weapon level, but grant no salvage parts.
+- Amazon branch remains `e5d461e77911122ab36d0cbeb34bee9bda506882`; protected
+  premium graphics, signature rendering, audio and purchase configuration have no diff.
 
 Do not claim external beta feedback, device performance measurements or a specific
 competitor comparison without actual evidence. Retain the workflow URLs, source
