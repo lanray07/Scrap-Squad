@@ -67,7 +67,8 @@ events; the unchanged starter squad completion test then passed.
 - Signed build 1.0 (18) archived/uploaded successfully and Apple reports Validated.
   Assigned to the existing internal Scrap Squad QA group; testing notes saved.
 - English UK description, keywords, promotional text and review walkthrough saved
-  in the rejected version draft. No Update Review / App Review submission sent.
+  in the version draft. Build 18 is selected and the verified four-page gameplay
+  evidence PDF is attached. No Update Review / App Review submission sent.
 - Runtime source: `f0975751c9dcaecf2fc2dc698a68ac6d00950dcf`.
 - [Full native validation](https://github.com/lanray07/Scrap-Squad/actions/runs/39911751249)
 - [iPhone/iPad salvage QA](https://github.com/lanray07/Scrap-Squad/actions/runs/39911754090)
