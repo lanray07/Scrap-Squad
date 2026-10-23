@@ -37,7 +37,25 @@ xcodebuild build-for-testing -project WebDriverAgent.xcodeproj -scheme WebDriver
   }
 cd "$GITHUB_WORKSPACE"
 mkdir -p .build
+HELPER_APP="$RUNNER_TEMP/scrap-wda-build/Build/Products/Debug-iphoneos/WebDriverAgentRunner-Runner.app"
+export HELPER_APP
+# Appium's preinstalled iOS 17+ flow loads XCTest from the mounted device image.
+python3 - <<'PY'
+import os, pathlib, shutil
+app = pathlib.Path(os.environ['HELPER_APP']).resolve()
+assert app.is_relative_to(pathlib.Path(os.environ['RUNNER_TEMP']).resolve() / 'scrap-wda-build')
+for path in (app / 'Frameworks').iterdir():
+    if path.name.startswith('XC') or path.name in ('Testing.framework', 'libXCTestSwiftSupport.dylib'):
+        if path.is_dir():
+            shutil.rmtree(path)
+        else:
+            path.unlink()
+PY
+IDENTITY=$(security find-identity -v -p codesigning | awk '/Apple Development/ {print $2; exit}')
+test -n "$IDENTITY"
+codesign --force --sign "$IDENTITY" --preserve-metadata=identifier,entitlements,flags "$HELPER_APP"
+codesign --verify --deep --strict "$HELPER_APP"
 ditto -c -k --sequesterRsrc --keepParent \
-  "$RUNNER_TEMP/scrap-wda-build/Build/Products/Debug-iphoneos/WebDriverAgentRunner-Runner.app" \
+  "$HELPER_APP" \
   .build/device-helper.zip
 echo 'Developer-signed helper packaged. No game binary or store submission changed.'
