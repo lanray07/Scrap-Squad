@@ -2,7 +2,7 @@
 
 This is a substantive gameplay update prepared in response to Apple's guideline
 4.3 feedback. It is not an assurance of approval. Keep the current rejected binary
-out of a new submission; select the tested salvage build after physical acceptance.
+out of a new submission; use the tested salvage candidate and its recorded validation scope.
 
 ## What changed
 
@@ -48,52 +48,67 @@ cards record recovered parts, rebuild count and extraction outcome.
 - The new strings are English source strings in the existing localization catalog.
   Unreviewed translations are not represented as supported app languages.
 
-## Verification record
+## Verification record - build 19, 23 October 2026
 
-Initial real-combat testing exposed excessive survival-style swarm pressure during
-extraction. Mission-specific spawn pacing replaced the survival bursts and unrelated
-events; the unchanged starter squad completion test then passed.
+- Runtime source: `d4c093f27a4f6c00bf86c8dcfedf3dbf954ac262`.
+- 56 Swift tests passed. A new out-of-arena drop test failed before the fix and
+  passed after clamping drops to the reachable arena boundary; proximity is still required.
+- 19 Python tooling checks and the English catalog audit (446 keys) passed before
+  the final two Swift-only fixes; tooling and catalog were unchanged.
+- Dedicated salvage simulator QA passed: two tests each on iPhone and iPad,
+  including actual collection, earned rebuilding, pause/rotation/retry and layout.
+- Build 18 full native regression passed 23 UI tests. The final build 19 full
+  regression is running; its linked workflow is the authoritative final status.
+- Signed version 1.0 (19) archived, uploaded and processed by Apple successfully.
+  Apple build ID: `9d64d969-ed76-401e-8884-d15601b297f0`.
+- Installed through actual TestFlight update on the physical iPad (iPadOS 26.7).
+  Assigned to the existing internal Scrap Squad QA group. No tester notification sent.
+- Selected build 19 in the App Store draft. The review walkthrough and five-page
+  build 19 evidence PDF are saved. No Update Review / App Review resubmission sent.
+- [Signed build 19](https://github.com/lanray07/Scrap-Squad/actions/runs/39920264734)
+- [iPhone/iPad salvage QA](https://github.com/lanray07/Scrap-Squad/actions/runs/39920269818)
+- [Full native validation](https://github.com/lanray07/Scrap-Squad/actions/runs/39920267601)
+- Amazon branch remains `e5d461e77911122ab36d0cbeb34bee9bda506882`.
+  Protected premium art, signature rendering, audio, cosmetics and store configuration
+  have no diff against the iOS base. No Amazon build or publication was triggered.
 
-- Local Swift suite: 55 tests passed, including component damage/drop behavior,
-  expiry/proximity, rebuild spending/replacement/trade-offs, escort/contestation,
-  full real-combat extraction with no premium content, reward idempotency, old
-  highlight decoding, challenge isolation and existing combat/cosmetic checks.
-- Python tooling: 19 tests passed. English catalog audit passed (446 keys).
-- Apple SDK compilation and full iPhone regression suite: passed, 23 UI tests.
-- Dedicated salvage UI checks: two tests passed on each iPhone 17 Pro Max and
-  iPad Pro 13 simulator; actual movement/drop recovery, earned rebuilding,
-  pause/rotation/retry and usable landscape arena were verified.
-- Physical iPhone/iPad beta feedback on this new loop: not yet collected.
-- Signed build 1.0 (18) archived/uploaded successfully and Apple reports Validated.
-  Assigned to the existing internal Scrap Squad QA group; testing notes saved.
-- English UK description, keywords, promotional text and review walkthrough saved
-  in the version draft. Build 18 is selected and the verified four-page gameplay
-  evidence PDF is attached. No Update Review / App Review submission sent.
-- Runtime source: `f0975751c9dcaecf2fc2dc698a68ac6d00950dcf`.
-- [Full native validation](https://github.com/lanray07/Scrap-Squad/actions/runs/39911751249)
-- [iPhone/iPad salvage QA](https://github.com/lanray07/Scrap-Squad/actions/runs/39911754090)
-- [Signed build 18](https://github.com/lanray07/Scrap-Squad/actions/runs/39911759087)
-- Genuine unchanged XCTest captures and SHA-256 provenance are retained locally in
-  `output/ios-salvage-final-evidence`; review PDF is in `output/pdf`.
-  UI navigation fixtures increase health and weapon level, but grant no salvage parts.
-- Amazon branch remains `e5d461e77911122ab36d0cbeb34bee9bda506882`; protected
-  premium graphics, signature rendering, audio and purchase configuration have no diff.
+## Physical iPad acceptance
 
-Do not claim external beta feedback, device performance measurements or a specific
-competitor comparison without actual evidence. Retain the workflow URLs, source
-commit and genuine XCTest screenshots alongside the final candidate record.
+Automated touch controls exercised the actual TestFlight game with a normal existing
+advanced save, four robots and Plasma Storm. No QA fixture, profile reset or direct
+salvage inventory grant was used. This is device testing, not independent human beta feedback.
 
-## Physical acceptance before App Review
+Two complete operations succeeded:
 
-Play a complete operation with a normal existing save on an iPhone and an iPad.
-Confirm rescue/navigation, collecting each part type, unaffordable/affordable rig
-controls, the visible rig and its combat trade-off, background/foreground during
-rebuilding, extraction contested/clear/leaving behavior, defeat, retry, result
-claim once, journal/share card, audio/motion preferences and premium finish
-retention. Check the smallest supported display and large Dynamic Type as well.
+- Build 18: three recovered parts, an emitter rig on TANK, scout extracted at 1:10,
+  36 kills, 12,600 score and the 100-scrap extraction bonus.
+- Build 19: three recovered emitter parts, explicitly selected NOVA and installed
+  its emitter (three parts to one), scout extracted at 0:42, 20 kills, 2,620 score
+  and the 100-scrap extraction bonus.
 
-Record tester, build/device, observed result, concrete feedback and fixes. Actual
-human feedback is a separate release gate from automated QA.
+Verified empty inventory controls disabled, installed control disabled, scout following,
+paused rotation (clock stayed 0:31), extraction leaving/drain (17% to 0%) and return,
+background/resume (paused at 0:11), retry resetting parts/rigs, journal and run-card
+preview. Saved currency was identical across restart and the TestFlight update:
+12,770 scrap / 22,887 credits / 19 cores before claiming further normal offline rewards.
+
+Device testing found two issues, both fixed in build 19:
+
+1. The landscape welcome reward sheet clipped controls. It now scrolls at full height;
+   the actual corrected panel and claim button were checked on the device.
+2. Enemies outside the playable area could leave unreachable parts. Drops now clamp
+   to reachable boundaries, with red/green regression coverage and device boundary collection.
+
+Genuine unchanged captures and SHA-256 provenance remain in
+`output/ipad-physical-check/review-manifest.json`; the reviewer PDF is
+`output/pdf/Scrap-Squad-iOS-Build19-Review.pdf`. The temporary signed USB control
+helper and its temporary GitHub device secret were removed after testing. Game build
+19 remains installed.
+
+Physical iPhone testing, independent human beta feedback, new StoreKit transactions,
+and performance measurements are not claimed. Starter-squad completion is covered by
+core tests; the physical missions used the owner's advanced save. Before submission,
+consider independent playtesting on the smallest supported device and accessibility settings.
 
 ## Proposed reply to App Review (send after candidate acceptance)
 
