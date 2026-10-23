@@ -1,0 +1,42 @@
+name: iOS salvage device QA
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  salvage:
+    strategy:
+      fail-fast: false
+      matrix:
+        family: [iPhone, iPad]
+    runs-on: macos-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - run: brew install xcodegen
+      - name: Test gameplay and generate project
+        run: |
+          swift test
+          python3 Tools/localize.py audit
+          xcodegen generate
+      - name: Test salvage on device family
+        env:
+          SIMULATOR_FAMILY: ${{ matrix.family }}
+          UI_TEST_CLASS: SalvageUITests
+          UI_RESULT_NAME: salvage-${{ matrix.family }}
+        run: bash Tools/test_ios_ui.sh
+      - name: Export visual evidence
+        if: always()
+        run: |
+          mkdir -p .build/salvage-evidence
+          if [ -d .build/salvage-${{ matrix.family }}.xcresult ]; then
+            xcrun xcresulttool export attachments --path .build/salvage-${{ matrix.family }}.xcresult --output-path .build/salvage-evidence
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: salvage-${{ matrix.family }}
+          path: |
+            .build/salvage-evidence
+            .build/salvage-${{ matrix.family }}.xcresult
+            .build/salvage-${{ matrix.family }}.log

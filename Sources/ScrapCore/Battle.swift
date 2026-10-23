@@ -43,7 +43,7 @@ public struct CombatEffect: Identifiable, Sendable {
     public var remaining: Double
     public var style: WeaponStyle = .bolt
 }
-public enum RunState: Sendable, Equatable { case fighting, choosing, victory, defeated }
+public enum RunState: Sendable, Equatable { case fighting, choosing, rebuilding, victory, defeated }
 public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weakest, boss }
 
 @MainActor public final class BattleEngine {
@@ -55,6 +55,7 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
     public let weapon: Weapon
     public let seed: UInt64
     public let challengeCode: String?
+    public private(set) var salvage: SalvageOperation?
     public private(set) var combo = ComboMeter()
     public private(set) var synergies: Set<BuildSynergy> = []
     public private(set) var evolution: RunEvolution?
@@ -129,7 +130,7 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
     // Leave one place for the scheduled boss, without deleting enemies or granting kills.
     private var regularEnemyLimit: Int { bossSpawned ? enemyLimit : enemyLimit - 1 }
 
-    public init(content: GameContent, profile: PlayerProfile, mode: GameMode, seed: UInt64 = UInt64.random(in: 1...UInt64.max), challengeCode: String? = nil) {
+    public init(content: GameContent, profile: PlayerProfile, mode: GameMode, seed: UInt64 = UInt64.random(in: 1...UInt64.max), challengeCode: String? = nil, salvageEnabled: Bool = false) {
         self.content = content; self.profile = profile; self.mode = mode
         biome = content.biomes[min(max(0, profile.zone), content.biomes.count - 1)]
         weapon = content.weapons.first(where: { $0.id == profile.equippedWeapon }) ?? content.weapons[0]
@@ -137,6 +138,7 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
         offerRng = SeededRandom(seed: seed ^ 0x5343524150)
         eventRng = SeededRandom(seed: seed ^ 0x4556454E54)
         self.seed = seed; self.challengeCode = challengeCode
+        salvage = salvageEnabled && mode == .scrapRun && challengeCode == nil ? SalvageOperation() : nil
         let squad = content.robots.filter { profile.squad.contains($0.id) }
         maxHealth = squad.reduce(0) { $0 + $1.health * (1 + Double(profile.robotLevels[$1.id, default: 1] - 1) * 0.08) }
         health = maxHealth
@@ -166,7 +168,7 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
             let dashTime = min(dt, dashRemaining)
             player = player + dashDirection * (1.2 * dashTime)
             dashRemaining = max(0, dashRemaining - dt)
-        } else { player = player + movement.normalized * (0.24 * dt) }
+        } else { player = player + movement.normalized * (0.24 * (salvage?.movementScale ?? 1) * dt) }
         player.x = min(0.93, max(0.07, player.x)); player.y = min(0.93, max(0.07, player.y))
         effects = effects.compactMap { var effect = $0; effect.remaining -= dt; return effect.remaining > 0 ? effect : nil }
         if nextChoice < content.economy.upgradeSeconds.count && elapsed >= content.economy.upgradeSeconds[nextChoice] {
@@ -211,7 +213,8 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
             let distance = (player - enemies[index].position).length
             let kind = enemies[index].kind
             let slow = enemies[index].slowUntil > elapsed ? 0.35 : 1.0
-            let speed = (kind == "swarmer" || kind == "flying" ? 0.1 : kind == "burrower" ? 0.13 : kind == "tank" || kind == "boss" ? 0.04 : 0.065) * slow
+            let damagedDrive = salvage?.disabled[enemies[index].id]?.contains(.drive) == true ? 0.45 : 1.0
+            let speed = (kind == "swarmer" || kind == "flying" ? 0.1 : kind == "burrower" ? 0.13 : kind == "tank" || kind == "boss" ? 0.04 : 0.065) * slow * damagedDrive
             if kind == "treasure" {
                 enemies[index].position = enemies[index].position + (enemies[index].position - player).normalized * (0.09 * dt)
                 enemies[index].position.x = min(0.93, max(0.07, enemies[index].position.x))
@@ -237,21 +240,26 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
                     enemies[index].target = player
                     let areas = enemies[index].boss ? bossPattern.areas(origin: enemies[index].position, target: player, enraged: enraged, sequence: enemies[index].attackSequence) : [AttackArea(shape: .circle, from: player, to: player, radius: 0.07)]
                     enemies[index].attackSequence += 1
-                    for area in areas { warn(area, damage: enemies[index].boss ? 30 : 12, duration: enemies[index].windup, boss: enemies[index].boss) }
+                    let damagedWeapon = salvage?.disabled[enemies[index].id]?.contains(.weapon) == true ? 0.5 : 1.0
+                    for area in areas { warn(area, damage: (enemies[index].boss ? 30 : 12) * damagedWeapon, duration: enemies[index].windup, boss: enemies[index].boss) }
                 }
             }
             if kind != "treasure" && distance < (enemies[index].boss ? 0.1 : 0.045) && invulnerability == 0 && dashRemaining == 0 {
-                health -= (kind == "exploder" ? 25 : kind == "elite" || kind == "miniboss" ? 18 : 9) * (kind == "exploder" ? 1 : dt)
+                let damagedWeapon = salvage?.disabled[enemies[index].id]?.contains(.weapon) == true ? 0.5 : 1.0
+                health -= (kind == "exploder" ? 25 : kind == "elite" || kind == "miniboss" ? 18 : 9) * (kind == "exploder" ? 1 : dt) * damagedWeapon * (salvage?.incomingScale ?? 1)
                 if kind == "exploder" { enemies[index].health = 0 }
             }
         }
         if elapsed >= nextShot && !enemies.isEmpty {
-            fire(); nextShot = elapsed + weapon.interval / (attackMultiplier * (combo.overdrive > 0 ? 1.65 : 1))
+            fire(); nextShot = elapsed + weapon.interval / (attackMultiplier * (combo.overdrive > 0 ? 1.65 : 1) * (salvage?.attackScale ?? 1))
         }
         advanceProjectiles(dt)
         advanceEvolution(dt)
         collectKills()
+        salvage?.advance(delta: dt, time: elapsed, player: player, enemies: enemies)
         if health <= 0 { health = 0; state = .defeated }
+        else if salvage?.extracted == true { state = .victory }
+        else if salvage != nil && elapsed >= duration { state = .defeated }
         else if mode == .bossRush && bosses >= 3 { state = .victory }
         else if mode != .survival && mode != .arena && mode != .bossRush && elapsed >= duration {
             state = bosses > 0 ? .victory : .defeated
@@ -261,6 +269,20 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
     private var selectedUpgradeKinds: Set<String> {
         Set(content.upgrades.filter { selected[$0.id, default: 0] > 0 }.map(\.kind))
     }
+    public func targetSalvage(_ system: SalvageSystem) {
+        guard state == .fighting else { return }
+        salvage?.target(system)
+    }
+    @discardableResult public func openRebuild() -> Bool {
+        guard state == .fighting, salvage != nil else { return false }
+        state = .rebuilding
+        return true
+    }
+    @discardableResult public func rebuild(_ system: SalvageSystem, robotID: String) -> Bool {
+        guard state == .rebuilding else { return false }
+        return salvage?.install(system, robotID: robotID, squad: profile.squad) ?? false
+    }
+    public func closeRebuild() { if state == .rebuilding { state = .fighting } }
     public func choose(_ upgrade: Upgrade) {
         guard state == .choosing, choices.contains(where: { $0.id == upgrade.id }) else { return }
         selected[upgrade.id, default: 0] += 1; apply(kind: upgrade.kind, value: upgrade.value)
@@ -321,12 +343,12 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
         effects.append(CombatEffect(id: serial, from: player, to: player, element: weapon.element, damage: 0, critical: true, remaining: 0.7))
         collectKills()
     }
-    public func retreat() { if state == .fighting || state == .choosing { state = .defeated; waveEvent = nil; dashRemaining = 0; perfectCandidates = [] } }
+    public func retreat() { if state == .fighting || state == .choosing || state == .rebuilding { state = .defeated; waveEvent = nil; dashRemaining = 0; perfectCandidates = [] } }
     public func reward() -> RunReward {
         RunReward(id: id, mode: mode, zone: profile.zone, kills: kills, bosses: bosses, score: score, victory: state == .victory,
             highlights: RunHighlights(weaponID: weapon.id, elapsed: elapsed, bestCombo: combo.best, overdrives: combo.activations,
                 synergies: BuildSynergy.allCases.filter { synergies.contains($0) }, challengeCode: challengeCode,
-                evolution: evolution, perfectDodges: perfectDodges, completedWaveEvents: completedWaveEvents), bonusScrap: bonusScrap)
+                evolution: evolution, perfectDodges: perfectDodges, completedWaveEvents: completedWaveEvents, salvage: salvage?.report), bonusScrap: bonusScrap + (salvage?.extracted == true ? 100 : 0))
     }
     private func spawn() {
         guard enemies.count < regularEnemyLimit else { return }
@@ -387,8 +409,9 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
     }
     private func hit(_ index: Int, from: Vector, critical: Bool, scale: Double, style: WeaponStyle) {
         let bossBonus = enemies[index].boss && weapon.element == biome.weakness ? 1.75 : 1.0
-        let shield = enemies[index].kind == "shield" && weapon.element == .ballistic ? 0.5 : 1.0
-        let damage = weapon.damage * damageMultiplier * bossBonus * shield * scale * (critical ? 2 : 1) * (combo.overdrive > 0 ? 1.35 : 1) * (perfectDodgeBoost > 0 ? 1.3 : 1)
+        let strippedArmor = salvage?.disabled[enemies[index].id]?.contains(.armor) == true
+        let shield = enemies[index].kind == "shield" && weapon.element == .ballistic && !strippedArmor ? 0.5 : 1.0
+        let damage = weapon.damage * damageMultiplier * bossBonus * shield * scale * (critical ? 2 : 1) * (combo.overdrive > 0 ? 1.35 : 1) * (perfectDodgeBoost > 0 ? 1.3 : 1) * (salvage?.damageScale ?? 1)
         let impact = enemies[index].position
         damageEnemy(index, amount: damage)
         if !enemies[index].boss { enemies[index].position = impact + (impact - from).normalized * 0.012 }
@@ -401,6 +424,8 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
         effects.append(CombatEffect(id: serial, from: from, to: impact, element: weapon.element, damage: Int(damage), critical: critical, remaining: style == .orbital ? 0.45 : 0.24, style: style))
     }
     private func damageEnemy(_ index: Int, amount: Double) {
+        salvage?.strike(enemy: enemies[index], amount: amount, time: elapsed)
+        if salvage?.disabled[enemies[index].id]?.contains(.armor) == true { enemies[index].armor = 0 }
         let absorbed = min(enemies[index].armor, amount)
         enemies[index].armor -= absorbed
         enemies[index].health -= amount - absorbed + absorbed * 0.45
@@ -446,7 +471,7 @@ public enum TargetPriority: String, CaseIterable, Sendable { case nearest, weake
             }
         }
         warnings = active
-        if damage > 0 && invulnerability == 0 && dashRemaining == 0 { health -= damage; invulnerability = 0.35 }
+        if damage > 0 && invulnerability == 0 && dashRemaining == 0 { health -= damage * (salvage?.incomingScale ?? 1); invulnerability = 0.35 }
     }
     private func collectKills() {
         let dead = enemies.filter { $0.health <= 0 }

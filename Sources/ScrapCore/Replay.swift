@@ -96,10 +96,12 @@ public struct RunHighlights: Codable, Sendable {
     public let evolution: RunEvolution?
     public let perfectDodges: Int?
     public let completedWaveEvents: Int?
-    public init(weaponID: String, elapsed: Double, bestCombo: Int, overdrives: Int, synergies: [BuildSynergy], challengeCode: String?, evolution: RunEvolution? = nil, perfectDodges: Int? = nil, completedWaveEvents: Int? = nil) {
+    public let salvage: SalvageReport?
+    public init(weaponID: String, elapsed: Double, bestCombo: Int, overdrives: Int, synergies: [BuildSynergy], challengeCode: String?, evolution: RunEvolution? = nil, perfectDodges: Int? = nil, completedWaveEvents: Int? = nil, salvage: SalvageReport? = nil) {
         self.weaponID = weaponID; self.elapsed = elapsed; self.bestCombo = bestCombo
         self.overdrives = overdrives; self.synergies = synergies; self.challengeCode = challengeCode
         self.evolution = evolution; self.perfectDodges = perfectDodges; self.completedWaveEvents = completedWaveEvents
+        self.salvage = salvage
     }
 }
 public struct RunRecord: Codable, Sendable, Identifiable {
