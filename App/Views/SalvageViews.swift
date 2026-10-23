@@ -108,7 +108,11 @@ struct SalvageRebuildView: View {
                 VStack(alignment: .leading, spacing: 6) {
                     LText(system.nameKey).font(.headline)
                     LText(system.detailKey).font(.subheadline).foregroundStyle(Theme.muted)
-                    HStack { LText(installed ? "salvage.installed" : "salvage.cost"); Text("\(available)/2").monospacedDigit() }.font(.caption.bold())
+                    if installed {
+                        LText("salvage.installed").font(.caption.bold())
+                    } else {
+                        HStack { LText("salvage.cost"); Text("\(available)/2").monospacedDigit() }.font(.caption.bold())
+                    }
                 }
                 Spacer()
                 Image(systemName: installed ? "checkmark.seal.fill" : "plus.circle.fill").foregroundStyle(Color(hex: system.color))

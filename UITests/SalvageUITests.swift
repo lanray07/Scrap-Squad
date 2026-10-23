@@ -41,6 +41,8 @@ import XCTest
         for _ in 0..<3 where !install.isHittable { app.swipeUp() }
         XCTAssertTrue(install.isEnabled); install.tap()
         XCTAssertFalse(install.isEnabled)
+        XCTAssertTrue(app.staticTexts["Installed"].waitForExistence(timeout: 5))
+        Thread.sleep(forTimeInterval: 0.5)
         capture("Salvage-06-installed-emitter")
         let resume = app.buttons["salvage-resume"]
         for _ in 0..<4 where !resume.isHittable { app.swipeUp() }
