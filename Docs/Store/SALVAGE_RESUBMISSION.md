@@ -53,12 +53,11 @@ cards record recovered parts, rebuild count and extraction outcome.
 - Runtime source: `d4c093f27a4f6c00bf86c8dcfedf3dbf954ac262`.
 - 56 Swift tests passed. A new out-of-arena drop test failed before the fix and
   passed after clamping drops to the reachable arena boundary; proximity is still required.
-- 19 Python tooling checks and the English catalog audit (446 keys) passed before
-  the final two Swift-only fixes; tooling and catalog were unchanged.
+- 19 Python tooling checks and the English catalog audit (446 keys) passed.
 - Dedicated salvage simulator QA passed: two tests each on iPhone and iPad,
   including actual collection, earned rebuilding, pause/rotation/retry and layout.
-- Build 18 full native regression passed 23 UI tests. The final build 19 full
-  regression is running; its linked workflow is the authoritative final status.
+- Final build 19 full native regression passed: 23 UI tests, iOS compilation
+  and premium screenshot export; see the linked workflow for diagnostics.
 - Signed version 1.0 (19) archived, uploaded and processed by Apple successfully.
   Apple build ID: `9d64d969-ed76-401e-8884-d15601b297f0`.
 - Installed through actual TestFlight update on the physical iPad (iPadOS 26.7).
