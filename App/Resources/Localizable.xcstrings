@@ -2274,7 +2274,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Scrap Run"
+            "value": "Salvage Operation"
           }
         }
       }
@@ -4548,6 +4548,336 @@
           "stringUnit": {
             "state": "translated",
             "value": "Signature loadout"
+          }
+        }
+      }
+    },
+    "salvage.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salvage Operation"
+          }
+        }
+      }
+    },
+    "salvage.briefing": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Break enemy systems. Recover their parts. Rebuild your squad and bring a stranded scout home."
+          }
+        }
+      }
+    },
+    "salvage.deploy": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Launch salvage operation"
+          }
+        }
+      }
+    },
+    "salvage.system.weapon": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emitter"
+          }
+        }
+      }
+    },
+    "salvage.system.armor": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plating"
+          }
+        }
+      }
+    },
+    "salvage.system.drive": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drive"
+          }
+        }
+      }
+    },
+    "salvage.module.weapon": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Twin emitter rig: +30% squad damage, -10% movement speed."
+          }
+        }
+      }
+    },
+    "salvage.module.armor": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bulwark shell: -25% incoming damage, -15% firing rate."
+          }
+        }
+      }
+    },
+    "salvage.module.drive": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salvage skates: +20% movement speed, -10% squad damage."
+          }
+        }
+      }
+    },
+    "salvage.rebuild": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Field rebuild"
+          }
+        }
+      }
+    },
+    "salvage.rebuild.note": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Combat is paused. Choose a robot, then spend two matching parts to install a rig. Bonuses add across your squad."
+          }
+        }
+      }
+    },
+    "salvage.replace.note": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One rig per robot. Replacing a rig consumes new parts and returns none. All rigs last for this operation only; your skins and permanent squad stay intact."
+          }
+        }
+      }
+    },
+    "salvage.resume": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Return to the operation"
+          }
+        }
+      }
+    },
+    "salvage.installed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Installed"
+          }
+        }
+      }
+    },
+    "salvage.cost": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Matching parts required"
+          }
+        }
+      }
+    },
+    "salvage.target.hint": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Focus automatic fire on this system. Broken emitters weaken attacks, plating exposes armor, and broken drives slow enemies. Move over dropped parts to recover them."
+          }
+        }
+      }
+    },
+    "salvage.objective.rescue": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Move to the stranded scout to rescue it"
+          }
+        }
+      }
+    },
+    "salvage.objective.collect": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recover 3 parts by moving over them"
+          }
+        }
+      }
+    },
+    "salvage.objective.rebuild": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Install a rig in Field rebuild"
+          }
+        }
+      }
+    },
+    "salvage.objective.extract": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escort the scout to the beacon; hold it clear for 12 seconds"
+          }
+        }
+      }
+    },
+    "salvage.objective.contested": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clear enemies from the extraction beacon"
+          }
+        }
+      }
+    },
+    "salvage.objective.complete": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scout and salvage extracted"
+          }
+        }
+      }
+    },
+    "salvage.extraction": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extraction progress"
+          }
+        }
+      }
+    },
+    "salvage.scout.rescue": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RESCUE SCOUT"
+          }
+        }
+      }
+    },
+    "salvage.scout.follow": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SCOUT FOLLOWING"
+          }
+        }
+      }
+    },
+    "salvage.beacon": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EXTRACT"
+          }
+        }
+      }
+    },
+    "salvage.incomplete": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Operation ended before extraction"
+          }
+        }
+      }
+    },
+    "salvage.recovered": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Parts recovered"
+          }
+        }
+      }
+    },
+    "salvage.rebuilt": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Field rebuilds"
+          }
+        }
+      }
+    },
+    "salvage.bonus": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extraction bonus: 100 scrap"
           }
         }
       }

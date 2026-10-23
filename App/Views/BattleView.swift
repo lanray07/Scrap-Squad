@@ -12,6 +12,14 @@ struct BattleLobby: View {
         ScrollView {
             VStack(spacing: 22) {
                 PageHeading(title: "battle.title", subtitle: "battle.subtitle")
+                Panel {
+                    PageHeading(title: "salvage.title", subtitle: "salvage.briefing")
+                    ActionButton(key: "salvage.deploy", symbol: "wrench.and.screwdriver.fill") {
+                        var snapshot = store.profile; snapshot.zone = zone
+                        session = BattleSession(content: store.content, profile: snapshot, mode: .scrapRun,
+                            finishes: commerce.robotFinishes, goldenTrails: commerce.goldenTrails, weaponEffect: commerce.weaponEffect)
+                    }.accessibilityIdentifier("salvage-deploy")
+                }
                 let biome = store.content.biomes[min(zone, store.content.biomes.count - 1)]
                 Panel {
                     HStack { Image(systemName: "mountain.2.fill").font(.system(size: 50)).foregroundStyle(Color(hex: biome.palette[2])); Spacer(); VStack(alignment: .trailing) { LText(biome.nameKey).font(.title2.bold()); LText(biome.bossKey).font(.caption).foregroundStyle(Theme.muted) } }
@@ -66,7 +74,7 @@ struct BattleLobby: View {
     let weaponEffect: String?
     init(content: GameContent, profile: PlayerProfile, mode: GameMode, finishes: [String: RobotFinish], goldenTrails: Bool, weaponEffect: String? = nil, seed: UInt64 = UInt64.random(in: 1...UInt64.max), challengeCode: String? = nil) {
         self.finishes = finishes; self.goldenTrails = goldenTrails; self.weaponEffect = weaponEffect
-        engine = BattleEngine(content: content, profile: profile, mode: mode, seed: seed, challengeCode: challengeCode)
+        engine = BattleEngine(content: content, profile: profile, mode: mode, seed: seed, challengeCode: challengeCode, salvageEnabled: true)
         scene = BattleScene(engine: engine, finishes: finishes, goldenTrails: goldenTrails, weaponEffect: weaponEffect)
         scene.refresh = { [weak self] in self?.revision += 1 }
     }
@@ -108,6 +116,11 @@ struct BattleView: View {
                     if engine.activateOverdrive() { Feedback.play(.ability, preferences: store.profile.preferences); AudioBus.shared.play(.overdrive, preferences: store.profile.preferences); session.revision += 1 }
                 }
                 CombatExcitementStatus(engine: engine)
+                if let operation = engine.salvage {
+                    SalvageStatus(operation: operation, interactive: engine.state == .fighting && !session.paused,
+                        target: { engine.targetSalvage($0); session.revision += 1 },
+                        rebuild: { if engine.openRebuild() { session.scene.movement = Vector(); dragOrigin = nil; session.revision += 1 } })
+                }
                 SpriteView(scene: session.scene, isPaused: session.paused, options: [.ignoresSiblingOrder])
                     .id(session.id)
                     .accessibilityLabel(Text(LocalizationManager.string("accessibility.arena")))
@@ -129,6 +142,12 @@ struct BattleView: View {
             }
             if session.paused { pauseOverlay }
             else if engine.state == .choosing { choicesOverlay }
+            else if engine.state == .rebuilding, let operation = engine.salvage {
+                SalvageRebuildView(operation: operation, robots: engine.content.robots.filter { engine.profile.squad.contains($0.id) }, finishes: session.finishes,
+                    install: { system, robot in
+                        if engine.rebuild(system, robotID: robot) { Feedback.play(.fusion, preferences: store.profile.preferences); session.revision += 1 }
+                    }, resume: { engine.closeRebuild(); session.scene.movement = Vector(); dragOrigin = nil; session.revision += 1 })
+            }
             else if engine.state == .victory || engine.state == .defeated { resultsOverlay }
         }.preferredColorScheme(.dark).foregroundStyle(.white)
             .onChange(of: phase) { _, value in if value != .active { pause() } }
@@ -226,6 +245,7 @@ struct BattleView: View {
             PageHeading(title: session.engine.state == .victory ? "battle.victory" : "battle.defeat", subtitle: "battle.results")
             HStack { LText("battle.kills"); Spacer(); Text(session.engine.kills, format: .number) }
             HStack { LText("battle.score"); Spacer(); Text(session.engine.score, format: .number) }
+            if let operation = session.engine.salvage { SalvageResults(report: operation.report) }
             if let evolution = session.engine.evolution { Label { LText(evolution.nameKey) } icon: { Image(systemName: "sparkles") }.foregroundStyle(Theme.mint) }
             HStack { LText("battle.perfectDodges"); Spacer(); Text(session.engine.perfectDodges, format: .number) }
             HStack { LText("event.bonusScrap"); Spacer(); Text(session.engine.bonusScrap, format: .number) }
